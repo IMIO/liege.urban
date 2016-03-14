@@ -1,7 +1,0 @@
-plone.api
-setuptools
-Products.urban
-
-[test]
-plone.app.testing
-plone.app.robotframework[debug]
