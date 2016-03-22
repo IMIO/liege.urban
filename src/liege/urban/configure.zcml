@@ -7,10 +7,14 @@
 
   <i18n:registerTranslations directory="locales" />
 
-  <includeDependencies package="." />
+  <include package="collective.z3cform.rolefield"/>
 
   <include package=".browser" />
+  <include package=".events" />
+  <include package=".schedule" />
+  <include package=".workflows" />
 
+  <include file="permissions.zcml" />
 
   <genericsetup:registerProfile
       name="default"
