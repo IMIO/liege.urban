@@ -2,4 +2,11 @@
     xmlns="http://namespaces.zope.org/zope"
     i18n_domain="liege.urban">
 
+    <adapter
+        for="Products.urban.interfaces.IUrbanEventOpinionRequest"
+        provides="urban.schedule.interfaces.ICreationCondition"
+        factory=".conditions.IsInternalOpinionRequest"
+        name="liege.urban.schedule.is_internal_opinion"
+    />
+
 </configure>

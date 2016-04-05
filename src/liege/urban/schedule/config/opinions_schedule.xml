@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<object name="survey_schedule" meta_type="ATFolder">
+<object name="opinions_schedule" meta_type="ATFolder">
  <criteria>
   <criterion name="c0">
    <property name="widget">sorting</property>
@@ -19,11 +19,11 @@
    <property name="count">0</property>
    <property name="sortcountable">0</property>
    <property name="hidezerocount">0</property>
-   <property name="vocabulary">liege.schedule.survey_collections</property>
+   <property name="vocabulary">liege.schedule.opinions_collections</property>
    <property name="hidealloption">1</property>
    <property name="maxitems"></property>
    <property name="sortreversed">0</property>
-   <property name="default">2fa4355086b34d8f81599727c0c12900</property>
+   <property name="default">89f02160e4114353af527cbaf429a5bd</property>
   </criterion>
   <criterion name="c4">
    <property name="widget">checkbox</property>
@@ -50,15 +50,15 @@
    <property name="position">center</property>
    <property name="section">default</property>
    <property name="hidden">0</property>
-   <property name="count">0</property>
-   <property name="sortcountable">0</property>
-   <property name="hidezerocount">0</property>
+   <property name="count"></property>
+   <property name="sortcountable"></property>
+   <property name="hidezerocount"></property>
    <property name="index">task_config_UID</property>
    <property name="vocabulary">configuration-da-c-cha-c-ances</property>
    <property name="catalog"></property>
-   <property name="hidealloption">0</property>
+   <property name="hidealloption"></property>
    <property name="maxitems"></property>
-   <property name="sortreversed">0</property>
+   <property name="sortreversed"></property>
    <property name="default"></property>
   </criterion>
   <criterion name="c2">
@@ -71,21 +71,6 @@
    <property name="default"></property>
    <property name="onlyallelements">1</property>
    <property name="wildcard">1</property>
-  </criterion>
-  <criterion name="c5">
-   <property name="widget">select</property>
-   <property name="title">Assigné à</property>
-   <property name="position">center</property>
-   <property name="section">default</property>
-   <property name="hidden">0</property>
-   <property name="count"></property>
-   <property name="sortcountable"></property>
-   <property name="hidezerocount"></property>
-   <property name="index">assigned_user</property>
-   <property name="vocabulary">liege.survey_users</property>
-   <property name="catalog"></property>
-   <property name="sortreversed"></property>
-   <property name="default"></property>
   </criterion>
   <criterion name="c3">
    <property name="widget">resultsperpage</property>

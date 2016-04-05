@@ -1,10 +1,34 @@
 # -*- coding: utf-8 -*-
 
-from liege.urban.workflows.state_roles_mapping import WorkflowStateRolesMapping
+from plone import api
+
+from liege.urban.workflows.adapter import LocalRoleAdapter
 
 
-class StateRolesMapping(WorkflowStateRolesMapping):
+class StateRolesMapping(LocalRoleAdapter):
     """ """
+
+    def get_opinion_editors(self):
+        """
+        Return groups who have external opinion to give on the licence.
+        Thes groups should be to able to partially read the licence (
+        'ExternalReader' role)
+        """
+        portal_urban = api.portal.get_tool('portal_urban')
+        schedule_config = portal_urban.opinions_schedule
+
+        opinion_editors = []
+        all_opinion_request = self.context.getOpinionRequests()
+
+        for opinion_request in all_opinion_request:
+            task = None
+            for task_config in schedule_config.get_all_task_configs():
+                task = task_config.get_started_task(opinion_request)
+                if task:
+                    break
+
+            if task:
+                opinion_editors.append(task.assigned_group)
 
     mapping = {
         'deposit': {
@@ -63,6 +87,7 @@ class StateRolesMapping(WorkflowStateRolesMapping):
             'administrative_validators': ('Contributor',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
+            'get_opinion_editors': ('ExternalReader',),
         },
 
     }

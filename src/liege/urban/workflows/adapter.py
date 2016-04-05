@@ -1,8 +1,10 @@
-# -*- coding: utf-8 -*-
+# encoding: utf-8
 
-from liege.urban.workflows.interfaces import IWorkflowStateRolesMapping
+from borg.localrole.interfaces import ILocalRoleProvider
 
 from plone import api
+
+from Products.CMFCore.WorkflowCore import WorkflowException
 
 from zope.interface import implements
 
@@ -15,21 +17,38 @@ class RoleNotFoundError(Exception):
     """ """
 
 
-class WorkflowStateRolesMapping(object):
+class LocalRoleAdapter(object):
     """
-    Store mapping between roles and groups for each state of a given workflow.
-    This mapping is registered as a named multiadapter adapting  an object and
-    its workflow.
+        borg.localrole adapter to set localrole following type and state configuration
     """
-    implements(IWorkflowStateRolesMapping)
+    implements(ILocalRoleProvider)
 
     mapping = {}
 
-    def __init__(self, obj, workflow):
-        self.obj = obj
-        self.object_created = True
+    def __init__(self, context):
+        self.context = context
 
-    def get_group_roles_mapping_of(self, state):
+    def getRoles(self, principal):
+        """Grant permission for principal"""
+        current_state = self.get_state()
+        state_config = self.get_roles_mapping_for_state(current_state)
+        if not state_config:
+            return []
+        if not state_config.get(principal, []):
+            return ()
+        return tuple(state_config.get(principal))
+
+    def getAllRoles(self):
+        """Grant permissions"""
+        current_state = self.get_state()
+        state_config = self.get_roles_mapping_for_state(current_state)
+        if not state_config:
+            yield ('', ('', ))
+            raise StopIteration
+        for principal, roles in state_config.items():
+            yield (principal, tuple(roles))
+
+    def get_roles_mapping_for_state(self, state):
         """
         Return the group/roles mapping of a given state.
         """
@@ -92,3 +111,10 @@ class WorkflowStateRolesMapping(object):
                     )
                 raise RoleNotFoundError(msg)
         return role_values
+
+    def get_state(self):
+        """ Return the state of the current object """
+        try:
+            return api.content.get_state(obj=self.context)
+        except (WorkflowException, api.portal.CannotGetPortalError):
+            return None

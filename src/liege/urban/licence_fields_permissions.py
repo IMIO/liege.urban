@@ -10,5 +10,6 @@ def init_field_permissions():
 
     for schema in schemas:
         for field in schema.fields():
-            if field.schemata != 'urban_description':
-                field.read_permission = 'liege.urban: Internal Urban Reader'
+            exceptions = ['portal_type']
+            if field.schemata != 'urban_description' and field.getName() not in exceptions:
+                field.read_permission = 'liege.urban: Internal Reader'

@@ -4,6 +4,7 @@ from collective.eeafaceted.collectionwidget.vocabulary import CollectionVocabula
 
 from plone import api
 
+from zope.i18n import translate as _
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
@@ -31,6 +32,31 @@ class SurveyScheduleCollectionVocabulary(CollectionVocabulary):
         return brains
 
 SurveyScheduleCollectionVocabularyFactory = SurveyScheduleCollectionVocabulary()
+
+
+class OpinionsScheduleCollectionVocabulary(CollectionVocabulary):
+    """
+    Return vocabulary of base searchs for schedule faceted view.
+    """
+
+    def _brains(self, context):
+        """
+        Return all the DashboardCollections in the 'schedule' folder.
+        """
+        portal = api.portal.get()
+        schedule_folder = portal.urban.opinions_schedule
+        catalog = api.portal.get_tool('portal_catalog')
+        brains = catalog(
+            path={
+                'query': '/'.join(schedule_folder.getPhysicalPath()),
+                'depth': 2
+            },
+            object_provides='plone.app.collection.interfaces.ICollection',
+            sort_on='getObjPositionInParent'
+        )
+        return brains
+
+OpinionsScheduleCollectionVocabularyFactory = OpinionsScheduleCollectionVocabulary()
 
 
 class UsersFromGroupVocabularyFactory(object):
@@ -61,3 +87,26 @@ class SurveyUsersVocabularyFactory(UsersFromGroupVocabularyFactory):
     Vocabulary factory listing all the users of the survey group.
     """
     group_id = 'survey_editors'
+
+
+class OpinionsRequestWorkflowStates(object):
+    """
+    List all states of urban licence workflow.
+    """
+
+    def __call__(self, context):
+
+        states = ['wating_opinion', 'opinion_validation']
+
+        vocabulary_terms = []
+        for state in states:
+            vocabulary_terms.append(
+                SimpleTerm(
+                    state,
+                    state,
+                    _(state, 'liege.urban', context.REQUEST)
+                )
+            )
+
+        vocabulary = SimpleVocabulary(vocabulary_terms)
+        return vocabulary

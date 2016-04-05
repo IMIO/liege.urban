@@ -32,6 +32,7 @@ def post_install(context):
 
     addLiegeGroups(context)
     setupSurveySchedule(context)
+    setupOpinionsSchedule(context)
     addScheduleConfigs(context)
 
 
@@ -62,6 +63,20 @@ def addLiegeGroups(context):
     portal_groups.addGroup("survey_editors", title="Survey Editors")
     portal_groups.setRolesForGroup('survey_editors', ('UrbanMapReader', ))
     portal_urban.manage_addLocalRoles("survey_editors", ("Reader", ))
+
+    portal_groups.addGroup("opinion_editors", title="Survey Editors")
+    portal_groups.setRolesForGroup('survey_editors', ('UrbanMapReader', ))
+    portal_urban.manage_addLocalRoles("survey_editors", ("Reader", ))
+
+    # external services
+    services = ['Voirie', 'Access', 'Plantation', 'SSSP', 'EDII']
+    for service in services:
+        portal_groups.addGroup("{}_editors".format(service), title="{} Editors".format(service))
+        portal_groups.setRolesForGroup('{}_editors'.format(service), ('UrbanMapReader', ))
+        portal_urban.manage_addLocalRoles("{}_editors".format(service), ("Reader", ))
+        portal_groups.addGroup("{}_validators".format(service), title="{} Validators".format(service))
+        portal_groups.setRolesForGroup('{}_validators'.format(service), ('UrbanMapReader', ))
+        portal_urban.manage_addLocalRoles("{}_validators".format(service), ("Reader", ))
 
     portal_urban.reindexObjectSecurity()
 
@@ -142,6 +157,82 @@ def setupSurveySchedule(context):
     _updateDefaultCollectionFor(schedule_folder, survey_collection.UID())
 
 
+def setupOpinionsSchedule(context):
+    """
+    Enable schedule faceted navigation on schedule folder.
+    """
+    site = context.getSite()
+    urban_folder = site.urban
+    portal_urban = api.portal.get_tool('portal_urban')
+
+    if not hasattr(urban_folder, 'opinions_schedule'):
+        urban_folder.invokeFactory('Folder', id='opinions_schedule')
+    schedule_folder = getattr(urban_folder, 'opinions_schedule')
+    schedule_folder.manage_addLocalRoles("opinions_editors", ("Reader", ))
+    schedule_folder.reindexObjectSecurity()
+
+    # block parent portlets
+    manager = getUtility(IPortletManager, name='plone.leftcolumn')
+    blacklist = getMultiAdapter((schedule_folder, manager), ILocalPortletAssignmentManager)
+    blacklist.setBlacklistStatus(CONTEXT_CATEGORY, True)
+
+    # assign collection portlet
+    manager = getUtility(IPortletManager, name='plone.leftcolumn', context=schedule_folder)
+    mapping = getMultiAdapter((schedule_folder, manager), IPortletAssignmentMapping)
+    if 'schedules' not in mapping.keys():
+        mapping['schedules'] = Assignment('schedules')
+
+    if not hasattr(portal_urban, 'opinions_schedule'):
+        createScheduleConfig(container=portal_urban, portal_type='UrbanEventOpinionRequest', id='opinions_schedule')
+    schedule_config = portal_urban.opinions_schedule
+
+    setFolderAllowedTypes(schedule_folder, 'Folder')
+
+    collection_id = 'opinions_tasks'
+    folder_id = schedule_folder.id
+    collection_folder = getattr(schedule_folder, folder_id)
+
+    config_path = '/schedule/config/{}.xml'.format(folder_id)
+    subtyper = collection_folder.restrictedTraverse('@@faceted_subtyper')
+    if not subtyper.is_faceted:
+        subtyper.enable()
+        collection_folder.restrictedTraverse('@@faceted_settings').toggle_left_column()
+        IFacetedLayout(collection_folder).update_layout('faceted-table-items')
+        collection_folder.unrestrictedTraverse('@@faceted_exportimport').import_xml(
+            import_file=open(os.path.dirname(__file__) + config_path)
+        )
+
+    if not hasattr(collection_folder, collection_id):
+        setFolderAllowedTypes(collection_folder, 'DashboardCollection')
+        create_tasks_collection(
+            schedule_config,
+            container=collection_folder,
+            id=collection_id,
+            title="À faire",
+            customViewFields=(
+                u'pretty_link',
+                u'sortable_title',
+                u'address_column',
+                u'parcelreferences_column',
+                u'due_date',
+                u'assigned_user_column'
+            ),
+            query=[
+                {
+                    'i': 'review_state',
+                    'o': 'plone.app.querystring.operation.selection.is',
+                    'v': ['to_do']
+                }
+            ]
+        )
+        setFolderAllowedTypes(collection_folder, [])
+
+    setFolderAllowedTypes(schedule_folder, [])
+
+    opinions_collection = getattr(schedule_folder, collection_id)
+    _updateDefaultCollectionFor(schedule_folder, opinions_collection.UID())
+
+
 def addScheduleConfigs(context):
     """
     Add schedule config for each licence type.
@@ -157,7 +248,7 @@ def addScheduleConfigs(context):
 
     portal_urban = api.portal.get_tool('portal_urban')
 
-    for schedule_config_id in ['survey_schedule']:
+    for schedule_config_id in ['survey_schedule', 'opinions_schedule']:
         schedule_folder = getattr(portal_urban, schedule_config_id)
         createFolderDefaultValues(
             schedule_folder,
