@@ -18,7 +18,7 @@
     <form id="confirmTransitionForm">
     <tal:warning condition="view/has_open_tasks">
        <table class="listing task_status_table" tal:define="tasks view/get_created_tasks"
-              tal:condition="tasks"  i18n:domain="urban.schedule">
+              tal:condition="tasks"  i18n:domain="imio.schedule">
            <th i18n:translate="">Created tasks</th>
            <th i18n:translate="">To do</th>
            <tr tal:repeat= "task_infos tasks">
@@ -32,7 +32,7 @@
         </table>
         <br />
        <table class="listing task_status_table" tal:define="tasks view/get_started_tasks"
-              tal:condition="tasks"  i18n:domain="urban.schedule">
+              tal:condition="tasks"  i18n:domain="imio.schedule">
            <th i18n:translate="">Started tasks</th>
            <th i18n:translate="">To do</th>
            <tr tal:repeat= "task_infos tasks">

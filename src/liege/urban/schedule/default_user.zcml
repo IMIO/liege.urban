@@ -4,8 +4,8 @@
 
     <adapter
         for="Products.urban.interfaces.IGenericLicence
-             urban.schedule.content.task.IAutomatedTask"
-        provides="urban.schedule.interfaces.IDefaultTaskGroup"
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IDefaultTaskGroup"
         factory=".default_user.SurveyGroup"
         name="liege.urban.schedule.assign_survey"
     />

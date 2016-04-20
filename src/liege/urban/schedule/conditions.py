@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from urban.schedule.content.condition import CreationCondition
+from imio.schedule.content.condition import CreationCondition
 
 
 class IsInternalOpinionRequest(CreationCondition):

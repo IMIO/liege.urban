@@ -4,8 +4,8 @@
 
     <adapter
         for="Products.urban.interfaces.IUrbanEventOpinionRequest
-             urban.schedule.content.task.IAutomatedTask"
-        provides="urban.schedule.interfaces.IStartDate"
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartDate"
         factory=".start_date.AskOpinionDate"
         name="liege.urban.schedule.asking_date"
     />

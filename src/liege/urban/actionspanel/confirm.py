@@ -2,7 +2,7 @@
 
 from imio.actionspanel.browser.transitions import ConfirmTransitionView
 
-from urban.schedule.utils import get_task_configs
+from imio.schedule.utils import get_task_configs
 
 
 class UrbanConfirmTransitionView(ConfirmTransitionView):

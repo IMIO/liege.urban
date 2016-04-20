@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from urban.schedule.content.logic import AssignTaskGroup
+from imio.schedule.content.logic import AssignTaskGroup
 
 
 class SurveyGroup(AssignTaskGroup):

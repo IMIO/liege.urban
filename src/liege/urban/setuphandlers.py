@@ -16,7 +16,7 @@ from Products.urban.setuphandlers import createFolderDefaultValues
 from Products.urban.setuphandlers import createScheduleConfig
 from Products.urban.setuphandlers import setFolderAllowedTypes
 
-from urban.schedule.utils import create_tasks_collection
+from imio.schedule.utils import create_tasks_collection
 
 from zope.component import getMultiAdapter
 from zope.component import getUtility

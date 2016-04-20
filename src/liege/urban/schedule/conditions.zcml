@@ -4,8 +4,8 @@
 
     <adapter
         for="Products.urban.interfaces.IUrbanEventOpinionRequest
-             urban.schedule.content.task_config.ITaskConfig"
-        provides="urban.schedule.interfaces.ICreationCondition"
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
         factory=".conditions.IsInternalOpinionRequest"
         name="liege.urban.schedule.is_internal_opinion"
     />
