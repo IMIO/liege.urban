@@ -59,34 +59,60 @@ class OpinionsScheduleCollectionVocabulary(CollectionVocabulary):
 OpinionsScheduleCollectionVocabularyFactory = OpinionsScheduleCollectionVocabulary()
 
 
-class UsersFromGroupVocabularyFactory(object):
+class UsersFromGroupsVocabularyFactory(object):
     """
     Vocabulary factory listing all the users of a group.
     """
 
-    group_id = ''  # to override
+    group_ids = []  # to override
+    me_value = False  # set to True to add a value representing the current user
 
     def __call__(self, context):
         """
         List users from a group as a vocabulary.
         """
         voc_terms = []
-        group = api.group.get(self.group_id)
+        me_id = ''
+        if self.me_value:
+            me = api.user.get_current()
+            me_id = me.id
+            voc_terms.append(SimpleTerm(me_id, me_id, 'Moi'))
 
-        for user in api.user.get_users(group=group):
-            voc_terms.append(
-                SimpleTerm(user.id, user.id, user.getProperty('fullname') or user.getUserName())
-            )
+        for group_id in self.group_ids:
+            group = api.group.get(group_id)
+
+            for user in api.user.get_users(group=group):
+                if user.id != me_id:
+                    voc_terms.append(
+                        SimpleTerm(
+                            user.id,
+                            user.id,
+                            user.getProperty('fullname') or user.getUserName()
+                        )
+                    )
 
         vocabulary = SimpleVocabulary(voc_terms)
         return vocabulary
 
 
-class SurveyUsersVocabularyFactory(UsersFromGroupVocabularyFactory):
+class SurveyUsersVocabularyFactory(UsersFromGroupsVocabularyFactory):
     """
     Vocabulary factory listing all the users of the survey group.
     """
-    group_id = 'survey_editors'
+    group_ids = ['survey_editors']
+
+
+class ScheduleUsersVocabularyFactory(UsersFromGroupsVocabularyFactory):
+    """
+    Vocabulary factory listing all the users of the urban schedule.
+    """
+    me_value = True
+    group_ids = [
+        'technical_editors',
+        'technical_validators',
+        'administrative_editors',
+        'administrative_validators',
+    ]
 
 
 class OpinionsRequestWorkflowStates(object):

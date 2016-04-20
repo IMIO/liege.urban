@@ -64,10 +64,6 @@ def addLiegeGroups(context):
     portal_groups.setRolesForGroup('survey_editors', ('UrbanMapReader', ))
     portal_urban.manage_addLocalRoles("survey_editors", ("Reader", ))
 
-    portal_groups.addGroup("opinion_editors", title="Survey Editors")
-    portal_groups.setRolesForGroup('survey_editors', ('UrbanMapReader', ))
-    portal_urban.manage_addLocalRoles("survey_editors", ("Reader", ))
-
     # external services
     services = ['Voirie', 'Access', 'Plantation', 'SSSP', 'EDII']
     for service in services:

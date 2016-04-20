@@ -1,0 +1,41 @@
+/* liege.urban stylesheet */
+
+.urban_state_deposit{
+    background-color: grey;
+}
+
+.urban_state_deposit{
+    background-color: grey;
+}
+
+.urban_state_validating_address{
+    background-color: grey;
+}
+
+.urban_state_waiting_address{
+    background-color: orange;
+}
+
+.urban_state_incomplete{
+    background-color: black;
+}
+
+.urban_state_checking_completion{
+    background-color: #ea6619;
+}
+
+.urban_state_validating_completion{
+    background-color: #ea6619;
+}
+
+.urban_state_complete{
+    background-color: green;
+}
+
+.urban_state_Passed{
+    background-color: #75ad0a;
+}
+
+.urban_state_Cancelled{
+    background-color: red;
+}

@@ -2,6 +2,7 @@
 <rolemap>
  <roles>
     <role name="ExternalReader"/>
+    <role name="AddressEditor"/>
  </roles>
  <permissions>
  </permissions>

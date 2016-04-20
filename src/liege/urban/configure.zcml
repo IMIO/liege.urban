@@ -7,8 +7,9 @@
 
   <i18n:registerTranslations directory="locales" />
 
-  <include package="collective.z3cform.rolefield"/>
+  <include package="imio.actionspanel"/>
 
+  <include package=".actionspanel" />
   <include package=".browser" />
   <include package=".events" />
   <include package=".schedule" />
@@ -20,7 +21,7 @@
       name="default"
       title="liege.urban"
       directory="profiles/default"
-      description="Installs the liege.urban add-on."
+      description="Installs liege.urban add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 

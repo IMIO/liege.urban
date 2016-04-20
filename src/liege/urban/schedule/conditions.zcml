@@ -3,7 +3,8 @@
     i18n_domain="liege.urban">
 
     <adapter
-        for="Products.urban.interfaces.IUrbanEventOpinionRequest"
+        for="Products.urban.interfaces.IUrbanEventOpinionRequest
+             urban.schedule.content.task_config.ITaskConfig"
         provides="urban.schedule.interfaces.ICreationCondition"
         factory=".conditions.IsInternalOpinionRequest"
         name="liege.urban.schedule.is_internal_opinion"

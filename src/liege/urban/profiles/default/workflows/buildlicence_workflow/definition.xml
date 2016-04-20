@@ -13,6 +13,9 @@
  <permission>liege.urban: Validate</permission>
  <permission>liege.urban: Internal Reader</permission>
  <permission>urban: Add PortionOut</permission>
+ <permission>urban: Add Contact</permission>
+ <permission>urban: Add Applicant</permission>
+ <permission>urban: Add UrbanEvent</permission>
  <state state_id="checking_completion"
         title="checking_completion"
         i18n:attributes="title">
@@ -64,7 +67,24 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Applicant"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut"
+                  acquired="False">
+   <permission-role>AddressEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEvent"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -121,7 +141,24 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Applicant"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut"
+                  acquired="False">
+   <permission-role>AddressEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEvent"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -178,7 +215,24 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Applicant"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut"
+                  acquired="False">
+   <permission-role>AddressEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEvent"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -235,10 +289,21 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add PortionOut"
+  <permission-map name="urban: Add Applicant"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add PortionOut"
+                  acquired="False">
+   <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
@@ -292,7 +357,24 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Applicant"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut"
+                  acquired="False">
+   <permission-role>AddressEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEvent"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -350,7 +432,24 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Applicant"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut"
+                  acquired="False">
+   <permission-role>AddressEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEvent"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -408,7 +507,24 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Applicant"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut"
+                  acquired="False">
+   <permission-role>AddressEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEvent"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -465,7 +581,24 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Applicant"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut"
+                  acquired="False">
+   <permission-role>AddressEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEvent"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -505,7 +638,7 @@
              i18n:attributes="title">
   <action url="" icon="" category="workflow" i18n:translate="">ask_temporary_address</action>
   <guard>
-    <guard-permission>Modify portal content</guard-permission>
+    <guard-permission>urban: Add PortionOut</guard-permission>
   </guard>
  </transition>
  <transition transition_id="check_completion"
@@ -565,7 +698,7 @@
              i18n:attributes="title">
   <action url="" icon="" category="workflow" i18n:translate="">validate_address</action>
   <guard>
-    <guard-permission>Modify portal content</guard-permission>
+    <guard-permission>urban: Add PortionOut</guard-permission>
   </guard>
  </transition>
  <transition transition_id="validate_completion"
@@ -589,7 +722,7 @@
              i18n:attributes="title">
   <action url="" icon="" category="workflow" i18n:translate="">validate_temporary_adress</action>
   <guard>
-    <guard-permission>Modify portal content</guard-permission>
+    <guard-permission>urban: Add PortionOut</guard-permission>
   </guard>
  </transition>
  <transition transition_id="verify_completion"

@@ -29,6 +29,7 @@ class StateRolesMapping(LocalRoleAdapter):
 
             if task:
                 opinion_editors.append(task.assigned_group)
+        return opinion_editors
 
     mapping = {
         'deposit': {
@@ -43,7 +44,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
-            'survey_editors': ('Editor',),
+            'survey_editors': ('Reader', 'AddressEditor'),
         },
 
         'waiting_address': {
@@ -51,7 +52,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
-            'survey_editors': ('Editor',),
+            'survey_editors': ('Reader', 'AddressEditor'),
         },
 
         'procedure_choice': {

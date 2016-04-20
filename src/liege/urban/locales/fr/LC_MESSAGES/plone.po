@@ -1,0 +1,60 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-01-25 10:33+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+msgid "ask_address_validation"
+msgstr "faire valider l'adresse"
+
+msgid "ask_complements"
+msgstr "demander des compléments"
+
+msgid "ask_temporary_address"
+msgstr "demander une adresse temporaire"
+
+msgid "checking_completion"
+msgstr "Vérification de la complétion"
+
+msgid "complete"
+msgstr "Complet"
+
+msgid "deposit"
+msgstr "Dépôt"
+
+msgid "incomplete"
+msgstr "Incomplet"
+
+msgid "procedure_choice"
+msgstr "Choix de la procédure"
+
+msgid "receive_complements"
+msgstr "compléments reçus"
+
+msgid "validate_address"
+msgstr "valider l'adresse"
+
+msgid "validate_temporary_address"
+msgstr "valider l'adresse temporaire"
+
+msgid "validating_address"
+msgstr "Validation de l'adresse"
+
+msgid "validating_completion"
+msgstr "Validationde la complétude"
+
+msgid "verify_completion"
+msgstr "vérifier la complétion"
+
+msgid "waiting_address"
+msgstr "En attente d'une adresse temporaire"

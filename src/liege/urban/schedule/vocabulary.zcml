@@ -13,6 +13,12 @@
     />
 
     <utility
+        factory=".vocabulary.ScheduleUsersVocabularyFactory"
+        name="liege.schedule_users"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+    />
+
+    <utility
         factory=".vocabulary.SurveyUsersVocabularyFactory"
         name="liege.survey_users"
         provides="zope.schema.interfaces.IVocabularyFactory"

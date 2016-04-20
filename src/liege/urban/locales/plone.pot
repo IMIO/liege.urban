@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-04-13 12:38+0000\n"
+"POT-Creation-Date: 2016-01-25 10:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,47 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: liege.urban\n"
 
-#: ../configure.zcml:27
-msgid "Installs liege.urban add-on."
+msgid "ask_address_validation"
 msgstr ""
 
-#: ../actionspanel/templates/confirm.pt:47
-msgid "The above listed tasks are not done yet !!!"
+msgid "ask_complements"
 msgstr ""
 
-#: ../configure.zcml:27
-#: ../schedule/vocabulary.py:133
-msgid "liege.urban"
+msgid "ask_temporary_address"
+msgstr ""
+
+msgid "checking_completion"
+msgstr ""
+
+msgid "complete"
+msgstr ""
+
+msgid "deposit"
+msgstr ""
+
+msgid "incomplete"
+msgstr ""
+
+msgid "procedure_choice"
+msgstr ""
+
+msgid "receive_complements"
+msgstr ""
+
+msgid "validating_address"
+msgstr ""
+
+msgid "validating_completion"
+msgstr ""
+
+msgid "validate_address"
+msgstr ""
+
+msgid "validate_temporary_address"
+msgstr ""
+
+msgid "verify_completion"
+msgstr ""
+
+msgid "waiting_address"
 msgstr ""
