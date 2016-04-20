@@ -43,9 +43,11 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
+        'borg.localrole',
         'plone.api',
-        'setuptools',
         'Products.urban',
+        'setuptools',
+        'zope.schema'
     ],
     extras_require={
         'test': [

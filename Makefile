@@ -55,7 +55,7 @@ mount_points.conf: bin/templates $(mountpoints)
 	bin/templates -i $(mountpoints) -s tmp/pylon_instances.txt > $@
 
 test: bin/test
-	bin/test -s Products.urban $(options)
+	bin/test -s liege.urban $(options)
 
 instance: bin/instance
 	bin/instance fg
