@@ -38,6 +38,9 @@ msgstr "Incomplet"
 msgid "procedure_choice"
 msgstr "Choix de la procédure"
 
+msgid "propose_complete"
+msgstr "proposer comme complet"
+
 msgid "receive_complements"
 msgstr "compléments reçus"
 

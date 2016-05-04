@@ -2,6 +2,8 @@
 
 from liege.urban.workflows.adapter import LocalRoleAdapter
 
+from plone import api
+
 
 class StateRolesMapping(LocalRoleAdapter):
     """
@@ -9,8 +11,8 @@ class StateRolesMapping(LocalRoleAdapter):
 
     mapping = {
         'draft': {
-            'administrative_editors': ('Editor',),
-            'administrative_validators': ('Editor',),
+            'administrative_editors': ('get_parcel_roles',),
+            'administrative_validators': ('get_parcel_roles',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
             'survey_editors': ('AddressEditor',),
@@ -25,3 +27,9 @@ class StateRolesMapping(LocalRoleAdapter):
         },
 
     }
+
+    def get_parcel_roles(self):
+        licence = self.context.aq_parent
+        if api.content.get_state(licence) == 'deposit':
+            return ('Editor', 'Reader')
+        return ('Reader',)

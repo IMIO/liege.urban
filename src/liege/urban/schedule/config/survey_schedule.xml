@@ -19,11 +19,11 @@
    <property name="count">0</property>
    <property name="sortcountable">0</property>
    <property name="hidezerocount">0</property>
-   <property name="vocabulary">liege.schedule.survey_collections</property>
+   <property name="vocabulary">imio.schedule.collections</property>
    <property name="hidealloption">1</property>
    <property name="maxitems"></property>
    <property name="sortreversed">0</property>
-   <property name="default">2fa4355086b34d8f81599727c0c12900</property>
+   <property name="default">94f6f45460d944af80d9966e12b56e51</property>
   </criterion>
   <criterion name="c4">
    <property name="widget">checkbox</property>
@@ -50,15 +50,15 @@
    <property name="position">center</property>
    <property name="section">default</property>
    <property name="hidden">0</property>
-   <property name="count">0</property>
-   <property name="sortcountable">0</property>
-   <property name="hidezerocount">0</property>
+   <property name="count"></property>
+   <property name="sortcountable"></property>
+   <property name="hidezerocount"></property>
    <property name="index">task_config_UID</property>
    <property name="vocabulary">configuration-da-c-cha-c-ances</property>
    <property name="catalog"></property>
-   <property name="hidealloption">0</property>
+   <property name="hidealloption"></property>
    <property name="maxitems"></property>
-   <property name="sortreversed">0</property>
+   <property name="sortreversed"></property>
    <property name="default"></property>
   </criterion>
   <criterion name="c2">

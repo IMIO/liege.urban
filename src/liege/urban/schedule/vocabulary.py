@@ -73,6 +73,7 @@ class UsersFromGroupsVocabularyFactory(object):
         """
         voc_terms = []
         me_id = ''
+        user_ids = set()
         if self.me_value:
             me = api.user.get_current()
             me_id = me.id
@@ -82,7 +83,8 @@ class UsersFromGroupsVocabularyFactory(object):
             group = api.group.get(group_id)
 
             for user in api.user.get_users(group=group):
-                if user.id != me_id:
+                if user.id != me_id and user.id not in user_ids:
+                    user_ids.add(user.id)
                     voc_terms.append(
                         SimpleTerm(
                             user.id,

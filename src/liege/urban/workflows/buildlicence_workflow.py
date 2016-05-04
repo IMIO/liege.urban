@@ -33,8 +33,8 @@ class StateRolesMapping(LocalRoleAdapter):
 
     mapping = {
         'deposit': {
-            'administrative_editors': ('Editor',),
-            'administrative_validators': ('Contributor',),
+            'administrative_editors': ('Editor', 'AddressEditor'),
+            'administrative_validators': ('Contributor', 'AddressEditor'),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
         },

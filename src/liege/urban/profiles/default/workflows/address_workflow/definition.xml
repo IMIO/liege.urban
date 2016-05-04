@@ -25,7 +25,6 @@
   </permission-map>
   <permission-map name="Add portal content"
                   acquired="False">
-   <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
@@ -39,7 +38,6 @@
   </permission-map>
   <permission-map name="Modify portal content"
                   acquired="False">
-   <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
@@ -72,7 +70,6 @@
   </permission-map>
   <permission-map name="Add portal content"
                   acquired="False">
-   <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
@@ -86,7 +83,6 @@
   </permission-map>
   <permission-map name="Modify portal content"
                   acquired="False">
-   <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>

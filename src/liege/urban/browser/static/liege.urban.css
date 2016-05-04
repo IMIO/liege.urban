@@ -4,16 +4,16 @@
     background-color: grey;
 }
 
-.urban_state_deposit{
-    background-color: grey;
-}
-
 .urban_state_validating_address{
     background-color: grey;
 }
 
 .urban_state_waiting_address{
     background-color: orange;
+}
+
+.urban_state_procedure_choice{
+    background-color: purple;
 }
 
 .urban_state_incomplete{

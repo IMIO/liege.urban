@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-04-13 12:38+0000\n"
+"POT-Creation-Date: 2016-04-26 07:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: liege.urban\n"
 
-#: ../configure.zcml:27
+#: ../configure.zcml:26
 msgid "Installs liege.urban add-on."
 msgstr ""
 
@@ -25,7 +25,7 @@ msgstr ""
 msgid "The above listed tasks are not done yet !!!"
 msgstr ""
 
-#: ../configure.zcml:27
+#: ../configure.zcml:26
 #: ../schedule/vocabulary.py:133
 msgid "liege.urban"
 msgstr ""

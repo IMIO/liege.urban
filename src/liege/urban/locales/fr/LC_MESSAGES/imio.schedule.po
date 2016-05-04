@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-04-26 07:34+0000\n"
+"POT-Creation-Date: 2015-11-19 09:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,15 +14,5 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ../configure.zcml:26
-msgid "Installs liege.urban add-on."
-msgstr ""
-
-#: ../actionspanel/templates/confirm.pt:47
-msgid "The above listed tasks are not done yet !!!"
-msgstr "Attention, il reste des actions à prendre pour les tâches ci-dessus!!!"
-
-#: ../configure.zcml:26
-#: ../schedule/vocabulary.py:133
-msgid "liege.urban"
-msgstr ""
+msgid "liege.urban.schedule.parcels_validated"
+msgstr "Toutes les parcelles du dossiers sont dans l'état 'validé'"

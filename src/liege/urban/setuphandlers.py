@@ -1,25 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from eea.facetednavigation.layout.interfaces import IFacetedLayout
-
-from imio.dashboard.browser.facetedcollectionportlet import Assignment
-from imio.dashboard.utils import _updateDefaultCollectionFor
-
 from plone import api
-from plone.portlets.interfaces import IPortletManager
-from plone.portlets.interfaces import ILocalPortletAssignmentManager
-from plone.portlets.interfaces import IPortletAssignmentMapping
-from plone.portlets.constants import CONTEXT_CATEGORY
 
 from Products.urban.config import URBAN_TYPES
-from Products.urban.setuphandlers import createFolderDefaultValues
 from Products.urban.setuphandlers import createScheduleConfig
-from Products.urban.setuphandlers import setFolderAllowedTypes
 
-from imio.schedule.utils import create_tasks_collection
-
-from zope.component import getMultiAdapter
-from zope.component import getUtility
+from imio.schedule.utils import set_schedule_view
 
 import os
 
@@ -34,6 +20,7 @@ def post_install(context):
     setupSurveySchedule(context)
     setupOpinionsSchedule(context)
     addScheduleConfigs(context)
+    addTestUsers(context)
 
 
 def addLiegeGroups(context):
@@ -91,66 +78,15 @@ def setupSurveySchedule(context):
     schedule_folder.manage_addLocalRoles("survey_editors", ("Reader", ))
     schedule_folder.reindexObjectSecurity()
 
-    # block parent portlets
-    manager = getUtility(IPortletManager, name='plone.leftcolumn')
-    blacklist = getMultiAdapter((schedule_folder, manager), ILocalPortletAssignmentManager)
-    blacklist.setBlacklistStatus(CONTEXT_CATEGORY, True)
+    schedule_config = createScheduleConfig(
+        container=portal_urban,
+        portal_type='GenericLicence',
+        title=u'Configuration d\'échéances survey',
+        id='survey_schedule'
+    )
 
-    # assign collection portlet
-    manager = getUtility(IPortletManager, name='plone.leftcolumn', context=schedule_folder)
-    mapping = getMultiAdapter((schedule_folder, manager), IPortletAssignmentMapping)
-    if 'schedules' not in mapping.keys():
-        mapping['schedules'] = Assignment('schedules')
-
-    if not hasattr(portal_urban, 'survey_schedule'):
-        createScheduleConfig(container=portal_urban, portal_type='GenericLicence', id='survey_schedule')
-    schedule_config = portal_urban.survey_schedule
-
-    setFolderAllowedTypes(schedule_folder, 'Folder')
-
-    collection_id = 'survey_tasks'
-    folder_id = schedule_folder.id
-    collection_folder = getattr(schedule_folder, folder_id)
-
-    config_path = '/schedule/config/{}.xml'.format(folder_id)
-    subtyper = collection_folder.restrictedTraverse('@@faceted_subtyper')
-    if not subtyper.is_faceted:
-        subtyper.enable()
-        collection_folder.restrictedTraverse('@@faceted_settings').toggle_left_column()
-        IFacetedLayout(collection_folder).update_layout('faceted-table-items')
-        collection_folder.unrestrictedTraverse('@@faceted_exportimport').import_xml(
-            import_file=open(os.path.dirname(__file__) + config_path)
-        )
-
-    if not hasattr(collection_folder, collection_id):
-        setFolderAllowedTypes(collection_folder, 'DashboardCollection')
-        create_tasks_collection(
-            schedule_config,
-            container=collection_folder,
-            id=collection_id,
-            title="À faire",
-            customViewFields=(
-                u'pretty_link',
-                u'sortable_title',
-                u'address_column',
-                u'parcelreferences_column',
-                u'due_date',
-                u'assigned_user_column'
-            ),
-            query=[
-                {
-                    'i': 'review_state',
-                    'o': 'plone.app.querystring.operation.selection.is',
-                    'v': ['to_do']
-                }
-            ]
-        )
-        setFolderAllowedTypes(collection_folder, [])
-
-    setFolderAllowedTypes(schedule_folder, [])
-
-    survey_collection = getattr(schedule_folder, collection_id)
-    _updateDefaultCollectionFor(schedule_folder, survey_collection.UID())
+    config_path = '{}/schedule/config/survey_schedule.xml'.format(os.path.dirname(__file__))
+    set_schedule_view(schedule_folder, config_path, schedule_config)
 
 
 def setupOpinionsSchedule(context):
@@ -167,66 +103,15 @@ def setupOpinionsSchedule(context):
     schedule_folder.manage_addLocalRoles("opinions_editors", ("Reader", ))
     schedule_folder.reindexObjectSecurity()
 
-    # block parent portlets
-    manager = getUtility(IPortletManager, name='plone.leftcolumn')
-    blacklist = getMultiAdapter((schedule_folder, manager), ILocalPortletAssignmentManager)
-    blacklist.setBlacklistStatus(CONTEXT_CATEGORY, True)
+    schedule_config = createScheduleConfig(
+        container=portal_urban,
+        portal_type='UrbanEventOpinionRequest',
+        id='opinions_schedule',
+        title=u'Configuration d\'échéances avis de services',
+    )
 
-    # assign collection portlet
-    manager = getUtility(IPortletManager, name='plone.leftcolumn', context=schedule_folder)
-    mapping = getMultiAdapter((schedule_folder, manager), IPortletAssignmentMapping)
-    if 'schedules' not in mapping.keys():
-        mapping['schedules'] = Assignment('schedules')
-
-    if not hasattr(portal_urban, 'opinions_schedule'):
-        createScheduleConfig(container=portal_urban, portal_type='UrbanEventOpinionRequest', id='opinions_schedule')
-    schedule_config = portal_urban.opinions_schedule
-
-    setFolderAllowedTypes(schedule_folder, 'Folder')
-
-    collection_id = 'opinions_tasks'
-    folder_id = schedule_folder.id
-    collection_folder = getattr(schedule_folder, folder_id)
-
-    config_path = '/schedule/config/{}.xml'.format(folder_id)
-    subtyper = collection_folder.restrictedTraverse('@@faceted_subtyper')
-    if not subtyper.is_faceted:
-        subtyper.enable()
-        collection_folder.restrictedTraverse('@@faceted_settings').toggle_left_column()
-        IFacetedLayout(collection_folder).update_layout('faceted-table-items')
-        collection_folder.unrestrictedTraverse('@@faceted_exportimport').import_xml(
-            import_file=open(os.path.dirname(__file__) + config_path)
-        )
-
-    if not hasattr(collection_folder, collection_id):
-        setFolderAllowedTypes(collection_folder, 'DashboardCollection')
-        create_tasks_collection(
-            schedule_config,
-            container=collection_folder,
-            id=collection_id,
-            title="À faire",
-            customViewFields=(
-                u'pretty_link',
-                u'sortable_title',
-                u'address_column',
-                u'parcelreferences_column',
-                u'due_date',
-                u'assigned_user_column'
-            ),
-            query=[
-                {
-                    'i': 'review_state',
-                    'o': 'plone.app.querystring.operation.selection.is',
-                    'v': ['to_do']
-                }
-            ]
-        )
-        setFolderAllowedTypes(collection_folder, [])
-
-    setFolderAllowedTypes(schedule_folder, [])
-
-    opinions_collection = getattr(schedule_folder, collection_id)
-    _updateDefaultCollectionFor(schedule_folder, opinions_collection.UID())
+    config_path = '{}/schedule/config/survey_schedule.xml'.format(os.path.dirname(__file__))
+    set_schedule_view(schedule_folder, config_path, schedule_config)
 
 
 def addScheduleConfigs(context):
@@ -246,17 +131,84 @@ def addScheduleConfigs(context):
 
     for schedule_config_id in ['survey_schedule', 'opinions_schedule']:
         schedule_folder = getattr(portal_urban, schedule_config_id)
-        createFolderDefaultValues(
-            schedule_folder,
-            schedule_config[schedule_config_id]
-        )
+        _create_task_configs(schedule_folder, schedule_config[schedule_config_id])
 
     for urban_type in URBAN_TYPES:
         licence_config_id = urban_type.lower()
         if licence_config_id in schedule_config:
             config_folder = getattr(portal_urban, licence_config_id)
             schedule_folder = getattr(config_folder, 'schedule')
-            createFolderDefaultValues(
-                schedule_folder,
-                schedule_config[licence_config_id]
+            taskconfigs = schedule_config[licence_config_id]
+            _create_task_configs(schedule_folder, taskconfigs)
+
+
+def _create_task_configs(schedule_folder, taskconfigs):
+    """
+    """
+    for taskconfig_kwargs in taskconfigs:
+        if taskconfig_kwargs['id'] not in schedule_folder.objectIds():
+            subtasks = taskconfig_kwargs.get('subtasks', [])
+            task_config_id = schedule_folder.invokeFactory(**taskconfig_kwargs)
+            task_config = getattr(schedule_folder, task_config_id)
+            task_config.dashboard_collection.customViewFields = (
+                u'sortable_title',
+                u'address_column',
+                u'parcelreferences_column',
+                u'assigned_user_column',
+                u'status',
+                u'due_date'
             )
+            for subtasks_kwargs in subtasks:
+                if subtasks_kwargs['id'] not in task_config.objectIds():
+                    subtask_config_id = task_config.invokeFactory(**subtasks_kwargs)
+                    subtask_config = getattr(task_config, subtask_config_id)
+                    subtask_config.dashboard_collection.customViewFields = (
+                        u'sortable_title',
+                        u'address_column',
+                        u'parcelreferences_column',
+                        u'assigned_user_column',
+                        u'status',
+                        u'due_date'
+                    )
+
+
+def addTestUsers(context):
+    """
+    Add some test users for each group
+    """
+    password = '12345'
+    email = 'dll@imio.be'
+
+    users = [
+        {
+            'username': 'armin',
+            'group': 'administrative_editors',
+            'properties': {'fullname': 'Edi Armin'},
+        },
+        {
+            'username': 'valere',
+            'group': 'administrative_validators',
+            'properties': {'fullname': 'Valère Armin'},
+        },
+        {
+            'username': 'teckel',
+            'group': 'technical_editors',
+            'properties': {'fullname': 'Eddy Teckel'},
+        },
+        {
+            'username': 'valtec',
+            'group': 'technical_validators',
+            'properties': {'fullname': 'Valérie Teckel'},
+        },
+        {
+            'username': 'survivor',
+            'group': 'survey_editors',
+            'properties': {'fullname': 'Survivor Survey'},
+        },
+    ]
+
+    for user_args in users:
+        group_id = user_args.pop('group')
+        if not api.user.get(username=user_args.get('username')):
+            user = api.user.create(password=password, email=email, **user_args)
+            api.group.add_user(groupname=group_id, username=user.id)

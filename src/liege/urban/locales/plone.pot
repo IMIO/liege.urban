@@ -41,6 +41,9 @@ msgstr ""
 msgid "procedure_choice"
 msgstr ""
 
+msgid "propose_complete"
+msgstr ""
+
 msgid "receive_complements"
 msgstr ""
 
