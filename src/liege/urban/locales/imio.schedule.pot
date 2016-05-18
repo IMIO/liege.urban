@@ -17,3 +17,7 @@ msgstr ""
 msgid "liege.urban.schedule.parcels_validated"
 msgstr ""
 
+
+msgid "liege.urban.schedule.parcels_added"
+msgstr ""
+

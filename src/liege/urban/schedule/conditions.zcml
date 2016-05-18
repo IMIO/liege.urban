@@ -18,4 +18,28 @@
         name="liege.urban.schedule.parcels_validated"
     />
 
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".end_conditions.ParcelsAdded"
+        name="liege.urban.schedule.parcels_added"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.InquiryZoneIdentifiedCondition"
+        name="liege.urban.schedule.inquiry_zone_identified"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.InquiryDocumentsDoneCondition"
+        name="liege.urban.schedule.inquiry_documents_done"
+    />
+
 </configure>

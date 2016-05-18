@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<dc-workflow workflow_id="opinion_request_workflow"
-             title="opinion_request_workflow"
+<dc-workflow workflow_id="inquiry_event_workflow"
+             title="inquiry_event_workflow"
              state_variable="review_state"
-             initial_state="creation"
+             initial_state="zone_identification"
              xmlns:i18n="http://xml.zope.org/namespaces/i18n"
              i18n:domain="plone">
  <permission>View</permission>
@@ -11,50 +11,8 @@
  <permission>Modify portal content</permission>
  <permission>Add portal content</permission>
  <permission>liege.urban: Validate</permission>
- <state state_id="creation"
-        title="creation"
-        i18n:attributes="title">
-  <exit-transition transition_id="ask_opinion"/>
-  <permission-map name="Access contents information"
-                  acquired="False">
-   <permission-role>Reader</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Add portal content"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Delete objects"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="View"
-                  acquired="False">
-   <permission-role>Reader</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="liege.urban: Validate"
-                  acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
- </state>
- <state state_id="opinion_given"
-        title="opinion_given"
+ <state state_id="closed"
+        title="closed"
         i18n:attributes="title">
   <permission-map name="Access contents information"
                   acquired="False">
@@ -94,11 +52,10 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="opinion_validation"
-        title="opinion_validation"
+ <state state_id="in_progress"
+        title="in_progress"
         i18n:attributes="title">
-  <exit-transition transition_id="invalidate_opinion"/>
-  <exit-transition transition_id="send_opinion"/>
+  <exit-transition transition_id="close"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -137,11 +94,10 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="waiting_opinion"
-        title="waiting_opinion"
+ <state state_id="preparing_documents"
+        title="preparing_documents"
         i18n:attributes="title">
   <exit-transition transition_id="ask_validation"/>
-  <exit-transition transition_id="receive_opinion"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -180,64 +136,133 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <transition transition_id="ask_opinion"
-             title="ask_opinion"
-             new_state="waiting_opinion"
-             trigger="USER"
-             before_script=""
-             after_script=""
-             i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">ask_opinion</action>
-  <guard>
-    <guard-permission>Modify portal content</guard-permission>
-  </guard>
- </transition>
+ <state state_id="validating_documents"
+        title="validating_documents"
+        i18n:attributes="title">
+  <exit-transition transition_id="validate"/>
+  <permission-map name="Access contents information"
+                  acquired="False">
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="View"
+                  acquired="False">
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Validate"
+                  acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="zone_identification"
+        title="zone_identification"
+        i18n:attributes="title">
+  <exit-transition transition_id="validate_identification"/>
+  <permission-map name="Access contents information"
+                  acquired="False">
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="View"
+                  acquired="False">
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Validate"
+                  acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+ </state>
  <transition transition_id="ask_validation"
              title="ask_validation"
-             new_state="opinion_validation"
+             new_state="validating_documents"
              trigger="USER"
              before_script=""
              after_script=""
              i18n:attributes="title">
   <action url="" icon="" category="workflow" i18n:translate="">ask_validation</action>
   <guard>
-    <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="invalidate_opinion"
-             title="invalidate_opinion"
-             new_state="waiting_opinion"
+ <transition transition_id="close"
+             title="close"
+             new_state="closed"
              trigger="USER"
              before_script=""
              after_script=""
              i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">invalidate_opinion</action>
+  <action url="" icon="" category="workflow" i18n:translate="">close</action>
   <guard>
-    <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="receive_opinion"
-             title="receive_opinion"
-             new_state="opinion_given"
+ <transition transition_id="validate"
+             title="validate"
+             new_state="in_progress"
              trigger="USER"
              before_script=""
              after_script=""
              i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">receive_opinion</action>
+  <action url="" icon="" category="workflow" i18n:translate="">validate</action>
   <guard>
     <guard-permission>liege.urban: Validate</guard-permission>
   </guard>
  </transition>
- <transition transition_id="send_opinion"
-             title="send_opinion"
-             new_state="opinion_given"
+ <transition transition_id="validate_identification"
+             title="validate_identification"
+             new_state="preparing_documents"
              trigger="USER"
              before_script=""
              after_script=""
              i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">send_opinion</action>
+  <action url="" icon="" category="workflow" i18n:translate="">validate_identification</action>
   <guard>
-    <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <variable variable_id="action" for_catalog="False"

@@ -14,5 +14,8 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
+msgid "liege.urban.schedule.parcels_added"
+msgstr "Ajouter au moins une parcelle"
+
 msgid "liege.urban.schedule.parcels_validated"
-msgstr "Toutes les parcelles du dossiers sont dans l'état 'validé'"
+msgstr "Passer toutes les parcelles du dossiers à l'état 'validé'"

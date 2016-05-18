@@ -17,6 +17,9 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: liege.urban\n"
 
+msgid "analysis"
+msgstr ""
+
 msgid "ask_address_validation"
 msgstr ""
 
@@ -24,6 +27,9 @@ msgid "ask_complements"
 msgstr ""
 
 msgid "ask_temporary_address"
+msgstr ""
+
+msgid "check_completion"
 msgstr ""
 
 msgid "checking_completion"
@@ -41,22 +47,37 @@ msgstr ""
 msgid "procedure_choice"
 msgstr ""
 
+msgid "procedure_validated"
+msgstr ""
+
 msgid "propose_complete"
 msgstr ""
 
 msgid "receive_complements"
 msgstr ""
 
+msgid "validate_address"
+msgstr ""
+
+msgid "validate_procedure_1"
+msgstr ""
+
+msgid "validate_procedure_2"
+msgstr ""
+
+msgid "validate_report_1"
+msgstr ""
+
+msgid "validate_report_2"
+msgstr ""
+
+msgid "validate_temporary_address"
+msgstr ""
+
 msgid "validating_address"
 msgstr ""
 
 msgid "validating_completion"
-msgstr ""
-
-msgid "validate_address"
-msgstr ""
-
-msgid "validate_temporary_address"
 msgstr ""
 
 msgid "verify_completion"

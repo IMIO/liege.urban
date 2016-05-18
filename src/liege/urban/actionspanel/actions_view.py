@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from plone import api
+
 from Products.urban.browser.actionspanel.actionspanel import LicenceActionsPanelView
 
 
@@ -15,8 +17,9 @@ class UrbanTransitionsPanelView(LicenceActionsPanelView):
         )
 
     def _transitionsToConfirm(self):
-        transitions = {
-            'BuildLicence.ask_address_validation': 'simpleconfirm_view',
-            'BuildLicence.validate_address': 'simpleconfirm_view',
-        }
-        return transitions
+        portal_workflow = api.portal.get_tool('portal_workflow')
+        transitions = portal_workflow.buildlicence_workflow.transitions.objectIds()
+
+        to_confirm = dict([('BuildLicence.%s' % tr, 'simpleconfirm_view') for tr in transitions])
+
+        return to_confirm

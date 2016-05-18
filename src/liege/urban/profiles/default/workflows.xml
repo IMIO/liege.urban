@@ -2,6 +2,7 @@
 <object name="portal_workflow" meta_type="Plone Workflow Tool">
  <object name="address_workflow" meta_type="Workflow"/>
  <object name="buildlicence_workflow" meta_type="Workflow"/>
+ <object name="inquiry_event_workflow" meta_type="Workflow"/>
  <object name="opinion_request_workflow" meta_type="Workflow"/>
 <!-- ##code-section workflowobjects -->
 <!-- ##/code-section workflowobjects -->
@@ -11,6 +12,9 @@
   </type>
   <type type_id="PortionOut">
      <bound-workflow workflow_id="address_workflow" />
+  </type>
+  <type type_id="UrbanEventInquiry">
+     <bound-workflow workflow_id="inquiry_event_workflow" />
   </type>
   <type type_id="UrbanEventOpinionRequest">
      <bound-workflow workflow_id="opinion_request_workflow" />

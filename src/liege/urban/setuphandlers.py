@@ -142,14 +142,14 @@ def addScheduleConfigs(context):
             _create_task_configs(schedule_folder, taskconfigs)
 
 
-def _create_task_configs(schedule_folder, taskconfigs):
+def _create_task_configs(container, taskconfigs):
     """
     """
     for taskconfig_kwargs in taskconfigs:
-        if taskconfig_kwargs['id'] not in schedule_folder.objectIds():
+        if taskconfig_kwargs['id'] not in container.objectIds():
             subtasks = taskconfig_kwargs.get('subtasks', [])
-            task_config_id = schedule_folder.invokeFactory(**taskconfig_kwargs)
-            task_config = getattr(schedule_folder, task_config_id)
+            task_config_id = container.invokeFactory(**taskconfig_kwargs)
+            task_config = getattr(container, task_config_id)
             task_config.dashboard_collection.customViewFields = (
                 u'sortable_title',
                 u'address_column',
@@ -159,17 +159,7 @@ def _create_task_configs(schedule_folder, taskconfigs):
                 u'due_date'
             )
             for subtasks_kwargs in subtasks:
-                if subtasks_kwargs['id'] not in task_config.objectIds():
-                    subtask_config_id = task_config.invokeFactory(**subtasks_kwargs)
-                    subtask_config = getattr(task_config, subtask_config_id)
-                    subtask_config.dashboard_collection.customViewFields = (
-                        u'sortable_title',
-                        u'address_column',
-                        u'parcelreferences_column',
-                        u'assigned_user_column',
-                        u'status',
-                        u'due_date'
-                    )
+                _create_task_configs(container=task_config, taskconfigs=subtasks)
 
 
 def addTestUsers(context):

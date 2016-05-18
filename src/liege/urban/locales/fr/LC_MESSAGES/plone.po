@@ -14,6 +14,9 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
+msgid "analysis"
+msgstr "Analyse du dossier"
+
 msgid "ask_address_validation"
 msgstr "faire valider l'adresse"
 
@@ -23,8 +26,11 @@ msgstr "demander des compléments"
 msgid "ask_temporary_address"
 msgstr "demander une adresse temporaire"
 
+msgid "check_completion"
+msgstr "Vérifier la complétude"
+
 msgid "checking_completion"
-msgstr "Vérification de la complétion"
+msgstr "Vérification de la complétude"
 
 msgid "complete"
 msgstr "Complet"
@@ -38,6 +44,9 @@ msgstr "Incomplet"
 msgid "procedure_choice"
 msgstr "Choix de la procédure"
 
+msgid "procedure_validated"
+msgstr "Procédure validée"
+
 msgid "propose_complete"
 msgstr "proposer comme complet"
 
@@ -46,6 +55,18 @@ msgstr "compléments reçus"
 
 msgid "validate_address"
 msgstr "valider l'adresse"
+
+msgid "validate_procedure_1"
+msgstr "Valider la procédure"
+
+msgid "validate_procedure_2"
+msgstr "Valider la procédure"
+
+msgid "validate_report_1"
+msgstr "Valider le rapport technique"
+
+msgid "validate_report_2"
+msgstr "Valider le rapport technique"
 
 msgid "validate_temporary_address"
 msgstr "valider l'adresse temporaire"
@@ -57,7 +78,7 @@ msgid "validating_completion"
 msgstr "Validationde la complétude"
 
 msgid "verify_completion"
-msgstr "vérifier la complétion"
+msgstr "vérifier la complétude"
 
 msgid "waiting_address"
 msgstr "En attente d'une adresse temporaire"
