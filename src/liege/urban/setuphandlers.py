@@ -7,6 +7,8 @@ from Products.urban.setuphandlers import createScheduleConfig
 
 from imio.schedule.utils import set_schedule_view
 
+from zope.interface import alsoProvides
+
 import os
 
 
@@ -148,8 +150,12 @@ def _create_task_configs(container, taskconfigs):
     for taskconfig_kwargs in taskconfigs:
         if taskconfig_kwargs['id'] not in container.objectIds():
             subtasks = taskconfig_kwargs.get('subtasks', [])
+            marker_interface = taskconfig_kwargs.get('marker_interface', None)
+
             task_config_id = container.invokeFactory(**taskconfig_kwargs)
             task_config = getattr(container, task_config_id)
+
+            # set custom view fields
             task_config.dashboard_collection.customViewFields = (
                 u'sortable_title',
                 u'address_column',
@@ -158,6 +164,11 @@ def _create_task_configs(container, taskconfigs):
                 u'status',
                 u'due_date'
             )
+
+            #set marker_interface
+            if marker_interface:
+                alsoProvides(task_config, marker_interface)
+
             for subtasks_kwargs in subtasks:
                 _create_task_configs(container=task_config, taskconfigs=subtasks)
 

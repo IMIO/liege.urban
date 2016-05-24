@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="liege.urban">
+
+  <browser:page
+     for="liege.urban.schedule.interfaces.ICreateOpinionRequestsTask"
+     name="start_status"
+     class=".display_status.OpinionRequestsTaskStatus"
+     template="templates/create_opinions_requests_status.pt"
+     permission="zope2.View"
+  />
+
+</configure>

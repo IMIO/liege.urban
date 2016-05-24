@@ -15,7 +15,7 @@ class UrbanConfirmTransitionView(ConfirmTransitionView):
         """
         Say wheter the object has open tasks (tasks)
         """
-        return self.get_started_tasks() or self.get_created_tasks()
+        return self.get_started_tasks()
 
     def get_created_tasks(self):
         """

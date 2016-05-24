@@ -14,9 +14,11 @@ msgstr ""
 "Preferred-Encodings: utf-8\n"
 "Domain: imio.schedule\n"
 
-msgid "liege.urban.schedule.parcels_validated"
+msgid "liege.urban.schedule.inquiry_zone_identified"
 msgstr ""
 
+msgid "liege.urban.schedule.parcels_validated"
+msgstr ""
 
 msgid "liege.urban.schedule.parcels_added"
 msgstr ""

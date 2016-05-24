@@ -17,7 +17,7 @@
     <h1 class="documentFirstHeading" tal:content="context/Title">Title</h1>
     <form id="confirmTransitionForm">
     <tal:warning condition="view/has_open_tasks">
-       <table class="listing task_status_table" tal:define="tasks view/get_created_tasks"
+       <!--table class="listing task_status_table" tal:define="tasks view/get_created_tasks"
               tal:condition="tasks"  i18n:domain="imio.schedule">
            <th i18n:translate="">Created tasks</th>
            <th i18n:translate="">To do</th>
@@ -29,7 +29,7 @@
                 <div metal:use-macro="here/@@taskmacros/conditions_status_macro" />
               </td>
            </tr>
-        </table>
+        </table-->
         <br />
        <table class="listing task_status_table" tal:define="tasks view/get_started_tasks"
               tal:condition="tasks"  i18n:domain="imio.schedule">

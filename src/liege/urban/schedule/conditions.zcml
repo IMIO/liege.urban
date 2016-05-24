@@ -27,6 +27,14 @@
     />
 
     <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".end_conditions.WaitingForOpinionRequests"
+        name="liege.urban.schedule.opinion_requests_waiting"
+    />
+
+    <adapter
         for="Products.urban.interfaces.IBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
