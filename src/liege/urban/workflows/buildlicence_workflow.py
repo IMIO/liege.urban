@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from imio.schedule.config import STARTED
+from imio.schedule.config import status_by_state
 from imio.schedule.content.task import IAutomatedTask
 
 from plone import api
@@ -30,7 +32,7 @@ class StateRolesMapping(LocalRoleAdapter):
                         task = obj
                         break
 
-            if task:
+            if task and status_by_state[api.content.get_state(task)] is STARTED:
                 opinion_editors.append(task.assigned_group)
         return opinion_editors
 
