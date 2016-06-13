@@ -54,14 +54,19 @@ def addLiegeGroups(context):
     portal_urban.manage_addLocalRoles("survey_editors", ("Reader", ))
 
     # external services
+    portal_groups.addGroup("opinions_editors", title="Opinion Editors")
+    portal_groups.setRolesForGroup('opinions_editors', ('UrbanMapReader', ))
+    portal_urban.manage_addLocalRoles("opinions_editors", ("Reader", ))
     services = ['Voirie', 'Access', 'Plantation', 'SSSP', 'EDII']
     for service in services:
         portal_groups.addGroup("{}_editors".format(service), title="{} Editors".format(service))
         portal_groups.setRolesForGroup('{}_editors'.format(service), ('UrbanMapReader', ))
         portal_urban.manage_addLocalRoles("{}_editors".format(service), ("Reader", ))
+        portal_groups.addPrincipalToGroup("{}_editors".format(service), 'opinions_editors')
         portal_groups.addGroup("{}_validators".format(service), title="{} Validators".format(service))
         portal_groups.setRolesForGroup('{}_validators'.format(service), ('UrbanMapReader', ))
         portal_urban.manage_addLocalRoles("{}_validators".format(service), ("Reader", ))
+        portal_groups.addPrincipalToGroup("{}_validators".format(service), 'opinions_editors')
 
     portal_urban.reindexObjectSecurity()
 

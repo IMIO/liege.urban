@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from imio.schedule.content.task import IAutomatedTask
+
 from plone import api
 
 from liege.urban.workflows.adapter import LocalRoleAdapter
@@ -23,9 +25,10 @@ class StateRolesMapping(LocalRoleAdapter):
         for opinion_request in all_opinion_request:
             task = None
             for task_config in schedule_config.get_all_task_configs():
-                task = task_config.get_started_task(opinion_request)
-                if task:
-                    break
+                for obj in opinion_request.objectValues():
+                    if IAutomatedTask.providedBy(obj) and obj.task_config_UID == task_config.UID():
+                        task = obj
+                        break
 
             if task:
                 opinion_editors.append(task.assigned_group)

@@ -21,7 +21,7 @@
      for="Products.urban.interfaces.IUrbanEventOpinionRequest"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
      factory=".opinionsrequest_workflow.StateRolesMapping"
-     name="buildlicence_local_roles"
+     name="opinionrequest_local_roles"
   />
 
 </configure>
