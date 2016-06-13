@@ -13,9 +13,12 @@
   <include package=".browser" />
   <include package=".events" />
   <include package=".schedule" />
+  <include package=".schedule" />
   <include package=".workflows" />
 
+  <include file="indexes.zcml" />
   <include file="permissions.zcml" />
+  <include file="vocabulary.zcml" />
 
   <genericsetup:registerProfile
       name="default"

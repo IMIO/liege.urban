@@ -2,9 +2,9 @@
 
 from liege.urban.licence_fields_permissions import init_field_permissions
 
-from Products.CMFCore.permissions import setDefaultRoles
-
 from zope.i18nmessageid import MessageFactory
+
+import liege.urban.content.portion_out
 
 _ = MessageFactory('liege.urban')
 

@@ -7,7 +7,7 @@
 
     <configure package="imio.actionspanel">
       <browser:page
-          for="Products.urban.interfaces.IBuildLicence"
+          for="Products.urban.interfaces.IGenericLicence"
           name="transitions_panel"
           class="liege.urban.actionspanel.actions_view.UrbanTransitionsPanelView"
           layer="imio.actionspanel.interfaces.IActionsPanelLayer"
