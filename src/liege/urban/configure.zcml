@@ -7,12 +7,15 @@
 
   <i18n:registerTranslations directory="locales" />
 
+  <!--five:registerPackage package="." initialize=".initialize" /-->
+
   <include package="imio.actionspanel"/>
 
   <include package=".actionspanel" />
   <include package=".browser" />
+  <include package=".content" />
+  <include package=".documentgenerator" />
   <include package=".events" />
-  <include package=".schedule" />
   <include package=".schedule" />
   <include package=".workflows" />
 

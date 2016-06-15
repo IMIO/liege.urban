@@ -12,7 +12,7 @@ i18ndude rebuild-pot --pot $domain.pot --create $domain ../
 i18ndude merge --pot $domain.pot --merge manual_translations.pot
 
 
-files="liege.urban plone imio.schedule"
+files="liege.urban plone imio.schedule urban"
 for file in $files; do
     i18ndude sync --pot $file.pot fr/LC_MESSAGES/$file.po
     msgfmt -o fr/LC_MESSAGES/$file.mo fr/LC_MESSAGES/$file.po
