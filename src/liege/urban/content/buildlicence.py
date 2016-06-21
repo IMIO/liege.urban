@@ -33,6 +33,9 @@ def update_item_schema(baseSchema):
 
     BuildLicenceSchema = baseSchema + specificSchema.copy()
 
+    # stats INS no longer mandatory
+    BuildLicenceSchema['usage'].required = False
+
     return BuildLicenceSchema
 
 
