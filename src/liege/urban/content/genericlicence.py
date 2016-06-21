@@ -1,0 +1,71 @@
+# -*- coding: utf-8 -*-
+
+from Products.Archetypes.atapi import Schema
+from Products.Archetypes.atapi import StringField
+from Products.Archetypes.atapi import SelectionWidget
+from Products.Archetypes.public import DisplayList
+
+from Products.urban.Article127 import Article127
+from Products.urban.BuildLicence import BuildLicence
+from Products.urban.Declaration import Declaration
+from Products.urban.Division import Division
+from Products.urban.EnvClassOne import EnvClassOne
+from Products.urban.EnvClassThree import EnvClassThree
+from Products.urban.EnvClassTwo import EnvClassTwo
+from Products.urban.MiscDemand import MiscDemand
+from Products.urban.ParcelOutLicence import ParcelOutLicence
+from Products.urban.PatrimonyCertificate import PatrimonyCertificate
+from Products.urban.PreliminaryNotice import PreliminaryNotice
+from Products.urban.UrbanCertificateBase import UrbanCertificateBase
+from Products.urban.UrbanCertificateTwo import UrbanCertificateTwo
+
+
+def update_item_schema(baseSchema):
+
+    specificSchema = Schema((
+        StringField(
+            name='shore',
+            widget=SelectionWidget(
+                format='select',
+                label='Shore',
+                label_msgid='urban_label_Shore',
+                i18n_domain='urban',
+            ),
+            schemata='urban_description',
+            optional=True,
+            vocabulary=DisplayList(
+                (
+                    ('right', 'Droite'),
+                    ('left', 'Gauche'),
+                    ('center', 'Centre'),
+                )
+            ),
+        ),
+    ),)
+
+    LicenceSchema = baseSchema + specificSchema.copy()
+
+    # move folderCategoryTownship field on description schemata
+    LicenceSchema['folderCategoryTownship'].schemata = 'urban_description'
+    LicenceSchema['folderCategoryTownship'].widget.label_msgid = 'urban_label_UsageTownship'
+    LicenceSchema.moveField('folderCategoryTownship', after='folderCategory')
+
+    return LicenceSchema
+
+
+licence_classes = [
+    Article127, BuildLicence, Declaration, Division, EnvClassOne,
+    EnvClassThree, EnvClassTwo, MiscDemand, ParcelOutLicence, PatrimonyCertificate,
+    PreliminaryNotice, UrbanCertificateBase, UrbanCertificateTwo
+]
+
+for licence_class in licence_classes:
+    licence_class.schema = update_item_schema(licence_class.schema)
+
+
+# Classes have already been registered, but we register them again here
+# because we have potentially applied some schema adaptations (see above).
+# Class registering includes generation of accessors and mutators, for
+# example, so this is why we need to do it again now.
+from Products.urban.config import registerClasses
+registerClasses()

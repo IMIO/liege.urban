@@ -40,3 +40,9 @@ msgstr ""
 
 msgid "motivation"
 msgstr ""
+
+msgid "urban_label_Shore"
+msgstr ""
+
+msgid "urban_label_UsageTownship"
+msgstr ""

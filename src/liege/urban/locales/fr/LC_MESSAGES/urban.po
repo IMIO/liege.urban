@@ -23,6 +23,15 @@ msgstr "suite du dispositif"
 msgid "deviceEnd"
 msgstr "fin du dispositif"
 
+msgid "motivation"
+msgstr "motivation"
+
+msgid "urban_label_Shore"
+msgstr "Rive"
+
+msgid "urban_label_UsageTownship"
+msgstr "Nature des travaux (codes Ville)"
+
 msgid "urban_label_device"
 msgstr "Dispositif"
 
@@ -34,6 +43,3 @@ msgstr "Fin du dispositif"
 
 msgid "urban_label_motivation"
 msgstr "Motivation"
-
-msgid "motivation"
-msgstr "motivation"
