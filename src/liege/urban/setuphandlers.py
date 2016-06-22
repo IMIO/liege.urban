@@ -167,10 +167,11 @@ def _create_task_configs(container, taskconfigs):
                 u'parcelreferences_column',
                 u'assigned_user_column',
                 u'status',
-                u'due_date'
+                u'due_date',
+                u'task_actions_column',
             )
 
-            #set marker_interface
+            # set marker_interface
             if marker_interface:
                 alsoProvides(task_config, marker_interface)
 
