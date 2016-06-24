@@ -3,7 +3,7 @@
     i18n_domain="liege.urban">
 
     <utility
-        factory=".vocabularies.BuildLicenceWorkflowStates"
+        factory=".vocabulary.BuildLicenceWorkflowStates"
         name="liege.urban.BuildLicenceWorkflowStates"
         provides="zope.schema.interfaces.IVocabularyFactory"
     />
