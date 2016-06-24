@@ -41,7 +41,7 @@ schedule_config = {
     ],
     'opinions_schedule': [
         {
-            'type_name': 'TaskConfig',
+            'type_name': 'MacroTaskConfig',
             'id': 'ask_road_opinion',
             'title': "Avis voirie",
             'default_assigned_group': 'Voirie_editors',
@@ -54,9 +54,23 @@ schedule_config = {
             'ending_states': ('opinions_given',),
             'start_date': 'liege.urban.schedule.asking_date',
             'additional_delay': 15,
+            'subtasks': [
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'valide',
+                    'title': 'Valider',
+                    'default_assigned_group': 'Voirie_validators',
+                    'default_assigned_user': 'road_validator',
+                    'creation_state': ('creation',),
+                    'starting_states': ('opinion_validation',),
+                    'ending_states': ('opinions_given',),
+                    'start_date': 'liege.urban.schedule.asking_date',
+                    'additional_delay': 15,
+                },
+            ]
         },
         {
-            'type_name': 'TaskConfig',
+            'type_name': 'MacroTaskConfig',
             'id': 'ask_sssp_opinion',
             'title': "Avis SSSP",
             'default_assigned_group': 'SSSP_editors',
@@ -69,9 +83,23 @@ schedule_config = {
             'ending_states': ('opinions_given',),
             'start_date': 'liege.urban.schedule.asking_date',
             'additional_delay': 15,
+            'subtasks': [
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'valide',
+                    'title': 'Valider',
+                    'default_assigned_group': 'SSSP_validators',
+                    'default_assigned_user': 'sssp_validator',
+                    'creation_state': ('creation',),
+                    'starting_states': ('opinion_validation',),
+                    'ending_states': ('opinions_given',),
+                    'start_date': 'liege.urban.schedule.asking_date',
+                    'additional_delay': 15,
+                },
+            ]
         },
         {
-            'type_name': 'TaskConfig',
+            'type_name': 'MacroTaskConfig',
             'id': 'ask_access_opinion',
             'title': "Avis Access",
             'default_assigned_group': 'Access_editors',
@@ -84,9 +112,23 @@ schedule_config = {
             'ending_states': ('opinions_given',),
             'start_date': 'liege.urban.schedule.asking_date',
             'additional_delay': 15,
+            'subtasks': [
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'valide',
+                    'title': 'Valider',
+                    'default_assigned_group': 'Access_validators',
+                    'default_assigned_user': 'access_validator',
+                    'creation_state': ('creation',),
+                    'starting_states': ('opinion_validation',),
+                    'ending_states': ('opinions_given',),
+                    'start_date': 'liege.urban.schedule.asking_date',
+                    'additional_delay': 15,
+                },
+            ]
         },
         {
-            'type_name': 'TaskConfig',
+            'type_name': 'MacroTaskConfig',
             'id': 'ask_plantation_opinion',
             'title': "Avis Plantation",
             'default_assigned_group': 'Plantation_editors',
@@ -99,9 +141,23 @@ schedule_config = {
             'ending_states': ('opinions_given',),
             'start_date': 'liege.urban.schedule.asking_date',
             'additional_delay': 15,
+            'subtasks': [
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'valide',
+                    'title': 'Valider',
+                    'default_assigned_group': 'Plantation_validators',
+                    'default_assigned_user': 'plantation_validator',
+                    'creation_state': ('creation',),
+                    'starting_states': ('opinion_validation',),
+                    'ending_states': ('opinions_given',),
+                    'start_date': 'liege.urban.schedule.asking_date',
+                    'additional_delay': 15,
+                },
+            ]
         },
         {
-            'type_name': 'TaskConfig',
+            'type_name': 'MacroTaskConfig',
             'id': 'ask_edii_opinion',
             'title': "Avis EDII",
             'default_assigned_group': 'EDII_editors',
@@ -114,6 +170,20 @@ schedule_config = {
             'ending_states': ('opinions_given',),
             'start_date': 'liege.urban.schedule.asking_date',
             'additional_delay': 15,
+            'subtasks': [
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'valide',
+                    'title': 'Valider',
+                    'default_assigned_group': 'EDII_validators',
+                    'default_assigned_user': 'edii_validator',
+                    'creation_state': ('creation',),
+                    'starting_states': ('opinion_validation',),
+                    'ending_states': ('opinions_given',),
+                    'start_date': 'liege.urban.schedule.asking_date',
+                    'additional_delay': 15,
+                },
+            ]
         },
     ],
     'buildlicence': [
