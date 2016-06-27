@@ -4,12 +4,7 @@
 
   <adapter
      name="shore"
-     factory=".indexes.genericlicence_shoreindex"
-     />
-
-  <adapter
-     name="shore"
-     factory=".indexes.task_shoreindex"
+     factory=".indexes.genericlicence_shore_index"
      />
 
 </configure>

@@ -24,4 +24,4 @@ def task_shore_index(task):
     """
     licence = task.get_container()
     shore = licence.getShore()
-    return shore
+    return [shore]
