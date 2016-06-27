@@ -12,6 +12,7 @@ def update_item_schema(baseSchema):
 
     # stats INS no longer mandatory
     BuildLicenceSchema['usage'].required = False
+    BuildLicenceSchema['roadTechnicalAdvice'].widget.label_msgid = 'urban_label_roadDescription'
 
     return BuildLicenceSchema
 

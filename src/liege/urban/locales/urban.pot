@@ -38,6 +38,9 @@ msgstr ""
 msgid "urban_label_motivation"
 msgstr ""
 
+msgid "urban_label_roadDescription"
+msgstr ""
+
 msgid "motivation"
 msgstr ""
 

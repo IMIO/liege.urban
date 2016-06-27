@@ -43,3 +43,6 @@ msgstr "Fin du dispositif"
 
 msgid "urban_label_motivation"
 msgstr "Motivation"
+
+msgid "urban_label_roadDescription"
+msgstr "Observations/commentaires"
