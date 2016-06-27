@@ -1,0 +1,10 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="liege.urban">
+
+  <adapter
+     for="imio.dashboard.interfaces.IDashboardCollection"
+     factory=".collection_icon.ScheduleCollectionToIcon"
+  />
+
+</configure>
