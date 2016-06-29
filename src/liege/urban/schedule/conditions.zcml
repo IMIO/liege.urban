@@ -50,4 +50,36 @@
         name="liege.urban.schedule.inquiry_documents_done"
     />
 
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.DecisionProjectDraftedCondition"
+        name="liege.urban.schedule.decision_project_drafted"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.DecisionProjectDraftedCondition"
+        name="liege.urban.schedule.decision_project_drafted"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.DecisionProjectSentCondition"
+        name="liege.urban.schedule.decision_project_sent"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IMacroTaskEndCondition"
+        factory=".conditions.DecisionNotifiedCondition"
+        name="liege.urban.schedule.decision_notified"
+    />
+
 </configure>

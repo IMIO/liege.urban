@@ -53,3 +53,51 @@ class IsInternalOpinionRequest(CreationCondition):
         opinion_config = opinion_request.getUrbaneventtypes()
         is_internal = opinion_config.id == self.task_config.id
         return is_internal
+
+
+class DecisionProjectDraftedCondition(Condition):
+    """
+    Licence decision project is drafted.
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        decision_event = licence.getLastTheLicence()
+        if not decision_event:
+            return False
+
+        if api.content.get_state(decision_event) == 'draft':
+            return False
+
+        return True
+
+
+class DecisionProjectSentCondition(Condition):
+    """
+    Licence decision project is sent to PM.
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        decision_event = licence.getLastTheLicence()
+        if not decision_event:
+            return False
+
+        if api.content.get_state(decision_event) not in ['decision_in_progress', 'notification', 'closed']:
+            return False
+
+        return True
+
+
+class DecisionNotifiedCondition(Condition):
+    """
+    Licence decision has been notified to applicants, FD, ...
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        decision_event = licence.getLastTheLicence()
+        if not decision_event:
+            return False
+
+        return api.content.get_state(decision_event) == 'closed'
