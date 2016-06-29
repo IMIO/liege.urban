@@ -32,6 +32,9 @@ msgstr "Rive"
 msgid "urban_label_UsageTownship"
 msgstr "Nature des travaux (codes Ville)"
 
+msgid "urban_label_composition"
+msgstr "Composition"
+
 msgid "urban_label_device"
 msgstr "Dispositif"
 

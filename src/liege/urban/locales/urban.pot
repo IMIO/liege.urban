@@ -26,6 +26,9 @@ msgstr ""
 msgid "deviceEnd"
 msgstr ""
 
+msgid "urban_label_composition"
+msgstr ""
+
 msgid "urban_label_device"
 msgstr ""
 
