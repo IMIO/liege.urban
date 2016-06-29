@@ -17,6 +17,7 @@
   <include package=".documentgenerator" />
   <include package=".events" />
   <include package=".schedule" />
+  <include package=".services" />
   <include package=".workflows" />
 
   <include file="indexes.zcml" />
