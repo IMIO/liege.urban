@@ -214,6 +214,7 @@ schedule_config = {
             'starting_states': ('incomplete',),
             'ending_states': ('checking_completion',),
             'start_date': 'schedule.start_date.subtask_highest_due_date',
+            'activate_recurrency': True,
             'recurrence_states': ('incomplete',),
             'subtasks': [
                 {
@@ -272,6 +273,7 @@ schedule_config = {
                     'starting_states': ('checking_completion',),
                     'ending_states': ('complete', 'incomplete'),
                     'start_date': 'urban.schedule.start_date.deposit_date',
+                    'activate_recurrency': True,
                     'additional_delay': 1,
                 },
                 {
@@ -294,7 +296,7 @@ schedule_config = {
                     'default_assigned_user': 'teckel',
                     'creation_state': ('checking_completion',),
                     'starting_states': ('checking_completion',),
-                    'ending_states': ('procedure_validated', 'preparing_decision'),
+                    'ending_states': ('procedure_choosen',),
                     'start_date': 'urban.schedule.start_date.deposit_date',
                     'additional_delay': 2,
                     'subtasks': [
@@ -322,9 +324,9 @@ schedule_config = {
                     'title': 'Valider la procédure',
                     'default_assigned_group': 'technical_validators',
                     'default_assigned_user': 'valtec',
-                    'creation_state': ('analysis',),
-                    'starting_states': ('analysis'),
-                    'ending_states': ('procedure_validated', 'preparing_decision'),
+                    'creation_state': ('procedure_choosen',),
+                    'starting_states': ('procedure_choosen'),
+                    'ending_states': ('procedure_validated',),
                     'start_date': 'urban.schedule.start_date.deposit_date',
                     'additional_delay': 13,
                 },
@@ -425,7 +427,7 @@ schedule_config = {
                     'default_assigned_user': 'teckel',
                     'creation_state': ('procedure_validated',),
                     'creation_conditions': (
-                        MacroCreationConditionObject('urban.schedule.condition.acknowledgment_done', 'OR'),
+                        MacroCreationConditionObject('urban.schedule.condition.acknowledgment_done', 'AND'),
                         MacroCreationConditionObject('urban.schedule.condition.has_inquiry'),
                     ),
                     'starting_states': ('procedure_validated',),
@@ -488,7 +490,6 @@ schedule_config = {
                             'default_assigned_user': 'armin',
                             'creation_state': ('FD_opinion',),
                             'starting_states': ('FD_opinion',),
-                            'start_date': 'schedule.start_date.subtask_highest_due_date',
                             'additional_delay': 2,
                         },
                         {
@@ -499,7 +500,6 @@ schedule_config = {
                             'default_assigned_user': 'valere',
                             'creation_state': ('FD_opinion',),
                             'starting_states': ('FD_opinion',),
-                            'start_date': 'schedule.start_date.subtask_highest_due_date',
                             'additional_delay': 2,
                         },
                     ]
@@ -512,7 +512,6 @@ schedule_config = {
                     'default_assigned_user': 'teckel',
                     'creation_state': ('FD_opinion',),
                     'starting_states': ('FD_opinion',),
-                    'start_date': 'schedule.start_date.subtask_highest_due_date',
                     'additional_delay': 2,
                 },
                 {
@@ -523,7 +522,6 @@ schedule_config = {
                     'default_assigned_user': 'teckel',
                     'creation_state': ('FD_opinion',),
                     'starting_states': ('FD_opinion',),
-                    'start_date': 'schedule.start_date.subtask_highest_due_date',
                     'additional_delay': 2,
                 }
             ]
@@ -534,20 +532,44 @@ schedule_config = {
             'title': 'Décision finale à notifier',
             'default_assigned_group': 'administrative_editors',
             'default_assigned_user': 'armin',
-            'creation_state': ('preparing_decision',),
-            'starting_states': ('preparing_decision',),
+            'creation_state': ('decision_in_progress',),
+            'starting_states': ('decision_in_progress',),
+            'ending_states': ('accepted', 'refused'),
+            'end_conditions': (
+                MacroEndConditionObject('liege.urban.schedule.decision_notified'),
+            ),
             'start_date': 'schedule.start_date.subtask_highest_due_date',
             'additional_delay': 2,
             'subtasks': [
                 {
-                    'type_name': 'MacroTaskConfig',
-                    'id': 'projet-permis',
+                    'type_name': 'TaskConfig',
+                    'id': 'rediger-proposition-decision',
                     'title': 'Rédiger le projet de permis',
                     'default_assigned_group': 'administrative_editors',
                     'default_assigned_user': 'armin',
-                    'creation_state': ('preparing_decision',),
-                    'starting_states': ('preparing_decision',),
-                    'start_date': 'schedule.start_date.subtask_highest_due_date',
+                    'creation_state': ('decision_in_progress',),
+                    'starting_states': ('decision_in_progress',),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.decision_project_drafted'),
+                    ),
+                    'start_date': 'schedule.calculation_default_delay',
+                    'additional_delay': 2,
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'envoyer-proposition-decision',
+                    'title': 'Valider et envoyer vers IA délib',
+                    'default_assigned_group': 'administrative_validators',
+                    'default_assigned_user': 'valere',
+                    'creation_state': ('decision_in_progress',),
+                    'starting_states': ('decision_in_progress',),
+                    'start_conditions': (
+                        StartConditionObject('liege.urban.schedule.decision_project_drafted'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.decision_project_sent'),
+                    ),
+                    'start_date': 'schedule.calculation_default_delay',
                     'additional_delay': 2,
                 },
             ]

@@ -21,6 +21,79 @@
         i18n:attributes="title">
   <exit-transition transition_id="receive_FD_opinion"/>
  </state>
+ <state state_id="accepted"
+        title="accepted"
+        i18n:attributes="title">
+  <permission-map name="Access contents information"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="View"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Internal Reader"
+                  acquired="False">
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Validate"
+                  acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Applicant"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add PortionOut"
+                  acquired="False">
+   <permission-role>AddressEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEvent"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+ </state>
  <state state_id="analysis"
         title="analysis"
         i18n:attributes="title">
@@ -246,6 +319,81 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
+ <state state_id="decision_in_progress"
+        title="decision_in_progress"
+        i18n:attributes="title">
+  <exit-transition transition_id="refuse_licence"/>
+  <exit-transition transition_id="accept_licence"/>
+  <permission-map name="Access contents information"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="View"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Internal Reader"
+                  acquired="False">
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Validate"
+                  acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Applicant"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add PortionOut"
+                  acquired="False">
+   <permission-role>AddressEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEvent"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+ </state>
  <state state_id="deposit"
         title="deposit"
         i18n:attributes="title">
@@ -388,9 +536,16 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="preparing_decision"
-        title="preparing_decision"
+ <state state_id="procedure_choosen"
+        title="procedure_choosen"
         i18n:attributes="title">
+  <exit-transition transition_id="refuse_procedure_choice"/>
+  <exit-transition transition_id="validate_procedure_choice"/>
+ </state>
+ <state state_id="procedure_validated"
+        title="procedure_validated"
+        i18n:attributes="title">
+  <exit-transition transition_id="propose_report"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>ExternalReader</permission-role>
@@ -461,16 +616,9 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="procedure_choosen"
-        title="procedure_choosen"
+ <state state_id="refused"
+        title="refused"
         i18n:attributes="title">
-  <exit-transition transition_id="refuse_procedure_choice"/>
-  <exit-transition transition_id="validate_procedure_choice"/>
- </state>
- <state state_id="procedure_validated"
-        title="procedure_validated"
-        i18n:attributes="title">
-  <exit-transition transition_id="propose_report"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>ExternalReader</permission-role>
@@ -697,6 +845,17 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
+ <transition transition_id="accept_licence"
+             title="accept_licence"
+             new_state="accepted"
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+  <action url="" icon="" category="workflow" i18n:translate="">accept_licence</action>
+  <guard>
+  </guard>
+ </transition>
  <transition transition_id="ask_address_validation"
              title="ask_address_validation"
              new_state="validating_address"
@@ -795,7 +954,7 @@
  </transition>
  <transition transition_id="receive_FD_opinion"
              title="receive_FD_opinion"
-             new_state="preparing_decision"
+             new_state="decision_in_progress"
              trigger="USER"
              before_script=""
              after_script=""
@@ -815,6 +974,17 @@
   <action url="" icon="" category="workflow" i18n:translate="">receive_complements</action>
   <guard>
     <guard-permission>Modify portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="refuse_licence"
+             title="refuse_licence"
+             new_state="refused"
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+  <action url="" icon="" category="workflow" i18n:translate="">refuse_licence</action>
+  <guard>
   </guard>
  </transition>
  <transition transition_id="refuse_procedure_choice"
@@ -879,7 +1049,7 @@
  </transition>
  <transition transition_id="validate_report_1"
              title="validate_report_1"
-             new_state="preparing_decision"
+             new_state="decision_in_progress"
              trigger="USER"
              before_script=""
              after_script=""

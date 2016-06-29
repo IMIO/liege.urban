@@ -55,7 +55,7 @@
  <state state_id="decision_in_progress"
         title="decision_in_progress"
         i18n:attributes="title">
-  <exit-transition transition_id="close"/>
+  <exit-transition transition_id="notify"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -98,6 +98,48 @@
         title="draft"
         i18n:attributes="title">
   <exit-transition transition_id="propose"/>
+  <permission-map name="Access contents information"
+                  acquired="False">
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="View"
+                  acquired="False">
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Validate"
+                  acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="notification"
+        title="notification"
+        i18n:attributes="title">
+  <exit-transition transition_id="close"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -187,6 +229,17 @@
              after_script=""
              i18n:attributes="title">
   <action url="" icon="" category="workflow" i18n:translate="">close</action>
+  <guard>
+  </guard>
+ </transition>
+ <transition transition_id="notify"
+             title="notify"
+             new_state="notification"
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+  <action url="" icon="" category="workflow" i18n:translate="">notify</action>
   <guard>
   </guard>
  </transition>
