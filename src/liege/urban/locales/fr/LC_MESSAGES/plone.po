@@ -14,6 +14,9 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
+msgid "accept_licence"
+msgstr "accepter le permis"
+
 msgid "analysis"
 msgstr "Analyse du dossier"
 
@@ -35,14 +38,29 @@ msgstr "Vérification de la complétude"
 msgid "complete"
 msgstr "Complet"
 
+msgid "decision_in_progress"
+msgstr "Passage au collége"
+
 msgid "deposit"
 msgstr "Dépôt"
+
+msgid "draft"
+msgstr "Brouillon"
 
 msgid "incomplete"
 msgstr "Incomplet"
 
+msgid "invalidate_completion"
+msgstr "Revérifier la complétude"
+
+msgid "notification"
+msgstr "Notification du permis"
+
 msgid "procedure_choice"
 msgstr "Choix de la procédure"
+
+msgid "procedure_choosen"
+msgstr "Choix de la procédure fait"
 
 msgid "procedure_validated"
 msgstr "Procédure validée"
@@ -50,23 +68,44 @@ msgstr "Procédure validée"
 msgid "propose_complete"
 msgstr "proposer comme complet"
 
+msgid "propose_procedure_choice"
+msgstr "proposer le choix de procédure"
+
+msgid "propose_report"
+msgstr "proposer le rapport d'analyse"
+
+msgid "proposed"
+msgstr "Projet de décision rédigé"
+
 msgid "receive_complements"
 msgstr "compléments reçus"
+
+msgid "refuse_licence"
+msgstr "refuser le permis"
+
+msgid "refuse_procedure_choice"
+msgstr "Refaire le choix de procédure"
+
+msgid "refuse_report"
+msgstr "Refaire le rapport d'analyse"
+
+msgid "report_written"
+msgstr "Rapport d'analyse fait"
 
 msgid "validate_address"
 msgstr "valider l'adresse"
 
-msgid "validate_procedure_1"
-msgstr "Valider la procédure"
+msgid "validate_completion"
+msgstr "Valider la complétude"
 
-msgid "validate_procedure_2"
+msgid "validate_procedure_choice"
 msgstr "Valider la procédure"
 
 msgid "validate_report_1"
-msgstr "Valider le rapport technique"
+msgstr "Valider le rapport d'analyse"
 
 msgid "validate_report_2"
-msgstr "Valider le rapport technique"
+msgstr "Valider le rapport d'analyse (FD)"
 
 msgid "validate_temporary_address"
 msgstr "valider l'adresse temporaire"
@@ -75,7 +114,7 @@ msgid "validating_address"
 msgstr "Validation de l'adresse"
 
 msgid "validating_completion"
-msgstr "Validationde la complétude"
+msgstr "Validation de la complétude"
 
 msgid "verify_completion"
 msgstr "vérifier la complétude"

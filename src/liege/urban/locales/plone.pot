@@ -17,6 +17,9 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: liege.urban\n"
 
+msgid "accept_licence"
+msgstr ""
+
 msgid "analysis"
 msgstr ""
 
@@ -38,13 +41,28 @@ msgstr ""
 msgid "complete"
 msgstr ""
 
+msgid "decision_in_progress"
+msgstr ""
+
 msgid "deposit"
+msgstr ""
+
+msgid "draft"
 msgstr ""
 
 msgid "incomplete"
 msgstr ""
 
+msgid "invalidate_completion"
+msgstr ""
+
+msgid "notification"
+msgstr ""
+
 msgid "procedure_choice"
+msgstr ""
+
+msgid "procedure_choosen"
 msgstr ""
 
 msgid "procedure_validated"
@@ -53,16 +71,37 @@ msgstr ""
 msgid "propose_complete"
 msgstr ""
 
+msgid "propose_procedure_choice"
+msgstr ""
+
+msgid "propose_report"
+msgstr ""
+
+msgid "proposed"
+msgstr ""
+
 msgid "receive_complements"
+msgstr ""
+
+msgid "refuse_licence"
+msgstr ""
+
+msgid "refuse_procedure_choice"
+msgstr ""
+
+msgid "refuse_report"
+msgstr ""
+
+msgid "report_written"
 msgstr ""
 
 msgid "validate_address"
 msgstr ""
 
-msgid "validate_procedure_1"
+msgid "validate_completion"
 msgstr ""
 
-msgid "validate_procedure_2"
+msgid "validate_procedure_choice"
 msgstr ""
 
 msgid "validate_report_1"

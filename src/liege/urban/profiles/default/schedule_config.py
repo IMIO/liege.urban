@@ -273,6 +273,7 @@ schedule_config = {
                     'starting_states': ('checking_completion',),
                     'ending_states': ('complete', 'incomplete'),
                     'start_date': 'urban.schedule.start_date.deposit_date',
+                    'recurrence_states': ('checking_completion'),
                     'activate_recurrency': True,
                     'additional_delay': 1,
                 },
@@ -350,8 +351,8 @@ schedule_config = {
         },
         {
             'type_name': 'MacroTaskConfig',
-            'id': 'analyse',
-            'title': 'Analyse',
+            'id': 'valider-analyse',
+            'title': 'Valider analyse',
             'default_assigned_group': 'technical_validators',
             'default_assigned_user': 'valtec',
             'creation_state': ('procedure_validated',),
@@ -359,97 +360,111 @@ schedule_config = {
             'start_conditions': (
                 MacroStartConditionObject('urban.schedule.condition.acknowledgment_done'),
             ),
-            'ending_states': ('preparing_decision',),
+            'ending_states': ('decision_in_progress',),
             'start_date': 'urban.schedule.start_date.acknowledgment_date',
-            'additional_delay': 5,
+            'additional_delay': 6,
             'subtasks': [
                 {
                     'type_name': 'MacroTaskConfig',
-                    'id': 'avis-services',
-                    'title': 'Avis de services',
+                    'id': 'rediger-analyse',
+                    'title': 'Rédiger analyse',
                     'default_assigned_group': 'technical_editors',
-                    'default_assigned_user': 'teckel',
-                    'creation_state': ('analysis',),
-                    'creation_conditions': (
-                        MacroCreationConditionObject('urban.schedule.condition.has_opinion_requests'),
-                    ),
-                    'starting_states': ('analysis',),
-                    'end_conditions': (
-                        MacroEndConditionObject('urban.schedule.condition.opinion_requests_done'),
-                    ),
+                    'default_assigned_user': 'valtec',
+                    'creation_state': ('procedure_validated',),
+                    'starting_states': ('procedure_validated',),
+                    'ending_states': ('report_written',),
                     'start_date': 'urban.schedule.start_date.acknowledgment_date',
+                    'additional_delay': 5,
                     'subtasks': [
                         {
                             'type_name': 'MacroTaskConfig',
-                            'id': 'documents-avis',
-                            'title': 'Envoyer les demandes d\'avis',
-                            'default_assigned_group': 'administrative_editors',
-                            'default_assigned_user': 'armin',
-                            'marker_interfaces': [u'liege.urban.schedule.interfaces.ISendOpinionRequestsTask'],
+                            'id': 'avis-services',
+                            'title': 'Avis de services',
+                            'default_assigned_group': 'technical_editors',
+                            'default_assigned_user': 'teckel',
                             'creation_state': ('analysis',),
                             'creation_conditions': (
                                 MacroCreationConditionObject('urban.schedule.condition.has_opinion_requests'),
                             ),
                             'starting_states': ('analysis',),
                             'end_conditions': (
-                                MacroEndConditionObject('liege.urban.schedule.opinion_requests_waiting'),
+                                MacroEndConditionObject('urban.schedule.condition.opinion_requests_done'),
                             ),
-                            'start_date': 'urban.schedule.start_date.deposit_date',
-                            'additional_delay': 3,
+                            'start_date': 'urban.schedule.start_date.acknowledgment_date',
                             'subtasks': [
                                 {
-                                    'type_name': 'TaskConfig',
-                                    'id': 'demander-avis',
-                                    'title': 'Créer les événements',
-                                    'default_assigned_group': 'technical_editors',
-                                    'default_assigned_user': 'teckel',
-                                    'marker_interfaces': [u'liege.urban.schedule.interfaces.ICreateOpinionRequestsTask'],
+                                    'type_name': 'MacroTaskConfig',
+                                    'id': 'documents-avis',
+                                    'title': 'Envoyer les demandes d\'avis',
+                                    'default_assigned_group': 'administrative_editors',
+                                    'default_assigned_user': 'armin',
+                                    'marker_interfaces': [u'liege.urban.schedule.interfaces.ISendOpinionRequestsTask'],
                                     'creation_state': ('analysis',),
                                     'creation_conditions': (
-                                        CreationConditionObject('urban.schedule.condition.has_opinion_requests'),
+                                        MacroCreationConditionObject('urban.schedule.condition.has_opinion_requests'),
                                     ),
                                     'starting_states': ('analysis',),
                                     'end_conditions': (
-                                        EndConditionObject('urban.schedule.condition.opinion_requests_created'),
+                                        MacroEndConditionObject('liege.urban.schedule.opinion_requests_waiting'),
                                     ),
                                     'start_date': 'urban.schedule.start_date.deposit_date',
-                                    'additional_delay': 1,
+                                    'additional_delay': 3,
+                                    'subtasks': [
+                                        {
+                                            'type_name': 'TaskConfig',
+                                            'id': 'demander-avis',
+                                            'title': 'Créer les événements',
+                                            'default_assigned_group': 'technical_editors',
+                                            'default_assigned_user': 'teckel',
+                                            'marker_interfaces': [u'liege.urban.schedule.interfaces.ICreateOpinionRequestsTask'],
+                                            'creation_state': ('analysis',),
+                                            'creation_conditions': (
+                                                CreationConditionObject('urban.schedule.condition.has_opinion_requests'),
+                                            ),
+                                            'starting_states': ('analysis',),
+                                            'end_conditions': (
+                                                EndConditionObject('urban.schedule.condition.opinion_requests_created'),
+                                            ),
+                                            'start_date': 'urban.schedule.start_date.deposit_date',
+                                            'additional_delay': 1,
+                                        },
+                                    ],
                                 },
-                            ],
+                            ]
                         },
-                    ]
-                },
-                {
-                    'type_name': 'MacroTaskConfig',
-                    'id': 'enquete',
-                    'title': 'Enquête publique',
-                    'default_assigned_group': 'technical_editors',
-                    'default_assigned_user': 'teckel',
-                    'creation_state': ('procedure_validated',),
-                    'creation_conditions': (
-                        MacroCreationConditionObject('urban.schedule.condition.acknowledgment_done', 'AND'),
-                        MacroCreationConditionObject('urban.schedule.condition.has_inquiry'),
-                    ),
-                    'starting_states': ('procedure_validated',),
-                    'end_conditions': (
-                        MacroEndConditionObject('urban.schedule.condition.inquiry_done'),
-                    ),
-                    'start_date': 'urban.schedule.start_date.inquiry_end_date',
-                    'subtasks': [
                         {
-                            'type_name': 'TaskConfig',
-                            'id': 'enquete-documents',
-                            'title': 'Produire les documents',
-                            'default_assigned_group': 'administrative_editors',
-                            'default_assigned_user': 'armin',
+                            'type_name': 'MacroTaskConfig',
+                            'id': 'enquete',
+                            'title': 'Enquête publique',
+                            'default_assigned_group': 'technical_editors',
+                            'default_assigned_user': 'teckel',
                             'creation_state': ('procedure_validated',),
                             'creation_conditions': (
-                                CreationConditionObject('urban.schedule.condition.has_inquiry'),
+                                MacroCreationConditionObject('urban.schedule.condition.acknowledgment_done', 'AND'),
+                                MacroCreationConditionObject('urban.schedule.condition.has_inquiry'),
                             ),
+                            'starting_states': ('procedure_validated',),
                             'end_conditions': (
-                                EndConditionObject('liege.urban.schedule.inquiry_documents_done'),
+                                MacroEndConditionObject('urban.schedule.condition.inquiry_done'),
                             ),
-                            'start_date': 'urban.schedule.start_date.acknowledgment_date',
+                            'start_date': 'urban.schedule.start_date.inquiry_end_date',
+                            'subtasks': [
+                                {
+                                    'type_name': 'TaskConfig',
+                                    'id': 'enquete-documents',
+                                    'title': 'Produire les documents',
+                                    'default_assigned_group': 'administrative_editors',
+                                    'default_assigned_user': 'armin',
+                                    'creation_state': ('procedure_validated',),
+                                    'creation_conditions': (
+                                        CreationConditionObject('urban.schedule.condition.has_inquiry'),
+                                    ),
+                                    'end_conditions': (
+                                        EndConditionObject('liege.urban.schedule.inquiry_documents_done'),
+                                    ),
+                                    'start_date': 'urban.schedule.start_date.acknowledgment_date',
+                                },
+                            ]
                         },
                     ]
                 },
@@ -552,7 +567,7 @@ schedule_config = {
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.decision_project_drafted'),
                     ),
-                    'start_date': 'schedule.calculation_default_delay',
+                    'start_date': 'schedule.start_date.starting_date',
                     'additional_delay': 2,
                 },
                 {
@@ -569,7 +584,7 @@ schedule_config = {
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.decision_project_sent'),
                     ),
-                    'start_date': 'schedule.calculation_default_delay',
+                    'start_date': 'schedule.start_date.starting_date',
                     'additional_delay': 2,
                 },
             ]
