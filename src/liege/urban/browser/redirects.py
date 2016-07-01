@@ -28,3 +28,4 @@ class UrbanRootRedirects(object):
                 return 'urban/survey_schedule'
             if 'opinions_editors' in group_ids:
                 return 'urban/opinions_schedule'
+            return 'urban'
