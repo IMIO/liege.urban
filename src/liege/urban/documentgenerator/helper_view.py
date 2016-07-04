@@ -16,3 +16,16 @@ class LiegeDocumentHelperView(ATDocumentGenerationHelperView):
         raw_div = parcel_view.context.division
         division = raw_div and raw_div[raw_div.find('(') + 1:-1] or 'DIVISION INCONNUE'
         return division
+
+    def reference(self):
+        """
+        Append shore abbreviation to the base reference.
+        """
+        licence = self.real_context
+        shore_abbr = {
+            'right': u'D',
+            'left': u'G',
+            'center': u'C',
+        }
+        ref = '{} {}'.format(licence.reference, shore_abbr[licence.shore])
+        return ref
