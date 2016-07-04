@@ -31,7 +31,11 @@ def update_item_schema(baseSchema):
                 i18n_domain='urban',
             ),
             schemata='urban_description',
-            vocabulary='listComposition',
+            vocabulary=DisplayList((
+                ('285', 'Art. 285 - complet avec architecte'),
+                ('288', 'Art. 288 - simplifié avec architecte'),
+                ('291', 'Art. 291 - simplifié sans architecte'),
+            )),
         ),
     ),
     )
@@ -57,17 +61,7 @@ def getCompositionMissingParts(self, composition):
     return DisplayList(display_values)
 
 
-def listComposition(self):
-    vocab = (
-        ('285', 'Art. 285 - complet avec architecte'),
-        ('288', 'Art. 288 - simplifié avec architecte'),
-        ('291', 'Art. 291 - simplifié sans architecte'),
-    )
-    return DisplayList(vocab)
-
-
 BuildLicence.getCompositionMissingParts = getCompositionMissingParts
-BuildLicence.listComposition = listComposition
 BuildLicence.schema = update_item_schema(BuildLicence.schema)
 
 
