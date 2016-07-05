@@ -18,4 +18,12 @@
         name="document_generation_helper_view"
      />
 
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             zope.interface.Interface"
+        provides="collective.documentgenerator.interfaces.IDisplayProxyObject"
+        factory=".helper_view.LiegeLicenceProxyObject"
+        permission="zope2.View"
+     />
+
 </configure>

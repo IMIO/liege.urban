@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from collective.documentgenerator.helper.archetypes import ATDisplayProxyObject
 from collective.documentgenerator.helper.archetypes import ATDocumentGenerationHelperView
 
 
@@ -17,11 +18,18 @@ class LiegeDocumentHelperView(ATDocumentGenerationHelperView):
         division = raw_div and raw_div[raw_div.find('(') + 1:-1] or 'DIVISION INCONNUE'
         return division
 
+
+class LiegeLicenceProxyObject(ATDisplayProxyObject):
+    """
+    Archetypes implementation of DisplayProxyObject.
+    """
+
+    @property
     def reference(self):
         """
         Append shore abbreviation to the base reference.
         """
-        licence = self.real_context
+        licence = self.context
         shore_abbr = {
             'right': u'D',
             'left': u'G',
