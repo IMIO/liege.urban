@@ -14,6 +14,9 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
+msgid "liege.urban.schedule.assign_task_owner"
+msgstr "Utilisateur connecté, sinon agent du dossier, sinon 'À ASSIGNER'"
+
 msgid "liege.urban.schedule.decision_notified"
 msgstr "Générer les documents de permis, clôturer l'événement d'octroi du permis"
 

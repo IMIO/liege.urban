@@ -78,6 +78,7 @@ class UsersFromGroupsVocabularyFactory(object):
             me = api.user.get_current()
             me_id = me.id
             voc_terms.append(SimpleTerm(me_id, me_id, 'Moi'))
+            voc_terms.append(SimpleTerm('to_assign', 'to_assign', 'À ASSIGNER'))
 
         for group_id in self.group_ids:
             group = api.group.get(group_id)
