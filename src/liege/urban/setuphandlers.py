@@ -169,6 +169,7 @@ def _create_task_configs(container, taskconfigs):
             # set custom view fields
             task_config.dashboard_collection.customViewFields = (
                 u'sortable_title',
+                u'address_column',
                 u'assigned_user_column',
                 u'status',
                 u'due_date',
