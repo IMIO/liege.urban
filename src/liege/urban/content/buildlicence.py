@@ -30,7 +30,7 @@ def update_item_schema(baseSchema):
                 label_msgid='urban_label_composition',
                 i18n_domain='urban',
             ),
-            schemata='urban_description',
+            schemata='urban_location',
             vocabulary=DisplayList((
                 ('285', 'Art. 285 - complet avec architecte'),
                 ('288', 'Art. 288 - simplifié avec architecte'),
@@ -45,7 +45,7 @@ def update_item_schema(baseSchema):
     # stats INS no longer mandatory
     BuildLicenceSchema['usage'].required = False
     BuildLicenceSchema['roadTechnicalAdvice'].widget.label_msgid = 'urban_label_roadDescription'
-    BuildLicenceSchema.moveField('composition', after='workType')
+    BuildLicenceSchema.moveField('composition', before='locationMissingParts')
 
     return BuildLicenceSchema
 
