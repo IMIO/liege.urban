@@ -58,6 +58,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
+            'get_opinion_editor': ('Reader',),
         },
 
     }
