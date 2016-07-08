@@ -11,7 +11,7 @@ from Products.urban.BuildLicence import BuildLicence
 
 slave_fields_composition = (
     {
-        'name': 'missingParts',
+        'name': 'locationMissingParts',
         'action': 'vocabulary',
         'vocab_method': 'getCompositionMissingParts',
         'control_param': 'composition',
@@ -41,7 +41,7 @@ def update_item_schema(baseSchema):
     )
     BuildLicenceSchema = baseSchema + specificSchema.copy()
 
-    BuildLicenceSchema['missingParts'].widget.format = None
+    BuildLicenceSchema['locationMissingParts'].widget.format = None
     # stats INS no longer mandatory
     BuildLicenceSchema['usage'].required = False
     BuildLicenceSchema['roadTechnicalAdvice'].widget.label_msgid = 'urban_label_roadDescription'
@@ -53,10 +53,10 @@ def update_item_schema(baseSchema):
 def getCompositionMissingParts(self, composition):
     """
     """
-    urban_voc = self.schema['missingParts'].vocabulary
-    all_terms = urban_voc.getAllVocTerms(self)
+    urban_voc = self.schema['locationMissingParts'].vocabulary
+    all_terms = urban_voc.listAllVocTerms(self)
 
-    display_values = [(term.Title().decode('utf-8'), id) for id, term in all_terms.iteritems() if str(composition) in term.getExtraValue()]
+    display_values = [(term.Title().decode('utf-8'), term.id) for term in all_terms if str(composition) in term.getExtraValue()]
 
     return DisplayList(display_values)
 

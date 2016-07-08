@@ -14,7 +14,7 @@ schedule_config = {
             'id': 'check_address',
             'title': "Vérifier l'adresse",
             'default_assigned_group': 'survey_editors',
-            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'default_assigned_user': 'survivor',
             'creation_state': ('validating_address',),
             'starting_states': ('validating_address',),
             'ending_states': ('waiting_address', 'checking_completion'),
@@ -382,11 +382,11 @@ schedule_config = {
                             'title': 'Avis de services',
                             'default_assigned_group': 'technical_editors',
                             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                            'creation_state': ('analysis',),
+                            'creation_state': ('analysis', 'procedure_validated'),
                             'creation_conditions': (
                                 MacroCreationConditionObject('urban.schedule.condition.has_opinion_requests'),
                             ),
-                            'starting_states': ('analysis',),
+                            'starting_states': ('analysis', 'procedure_validated'),
                             'end_conditions': (
                                 MacroEndConditionObject('urban.schedule.condition.opinion_requests_done'),
                             ),
@@ -399,11 +399,11 @@ schedule_config = {
                                     'default_assigned_group': 'administrative_editors',
                                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
                                     'marker_interfaces': [u'liege.urban.schedule.interfaces.ISendOpinionRequestsTask'],
-                                    'creation_state': ('analysis',),
+                                    'creation_state': ('analysis', 'procedure_validated'),
                                     'creation_conditions': (
                                         MacroCreationConditionObject('urban.schedule.condition.has_opinion_requests'),
                                     ),
-                                    'starting_states': ('analysis',),
+                                    'starting_states': ('analysis', 'procedure_validated'),
                                     'end_conditions': (
                                         MacroEndConditionObject('liege.urban.schedule.opinion_requests_waiting'),
                                     ),
@@ -417,11 +417,11 @@ schedule_config = {
                                             'default_assigned_group': 'technical_editors',
                                             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
                                             'marker_interfaces': [u'liege.urban.schedule.interfaces.ICreateOpinionRequestsTask'],
-                                            'creation_state': ('analysis',),
+                                            'creation_state': ('analysis', 'procedure_validated'),
                                             'creation_conditions': (
                                                 CreationConditionObject('urban.schedule.condition.has_opinion_requests'),
                                             ),
-                                            'starting_states': ('analysis',),
+                                            'starting_states': ('analysis', 'procedure_validated'),
                                             'end_conditions': (
                                                 EndConditionObject('urban.schedule.condition.opinion_requests_created'),
                                             ),
