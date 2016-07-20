@@ -286,7 +286,7 @@ schedule_config = {
                     'creation_state': ('complete',),
                     'starting_states': ('complete',),
                     'ending_states': ('checking_completion', 'analysis'),
-                    'start_date': 'schedule.start_date.starting_date',
+                    'start_date': 'schedule.start_date.task_starting_date',
                     'additional_delay': 2,
                 },
                 {
@@ -567,7 +567,7 @@ schedule_config = {
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.decision_project_drafted'),
                     ),
-                    'start_date': 'schedule.start_date.starting_date',
+                    'start_date': 'schedule.start_date.task_starting_date',
                     'additional_delay': 2,
                 },
                 {
@@ -584,7 +584,7 @@ schedule_config = {
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.decision_project_sent'),
                     ),
-                    'start_date': 'schedule.start_date.starting_date',
+                    'start_date': 'schedule.start_date.task_starting_date',
                     'additional_delay': 2,
                 },
             ]
