@@ -326,7 +326,7 @@ schedule_config = {
                     'default_assigned_group': 'technical_validators',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
                     'creation_state': ('procedure_choosen',),
-                    'starting_states': ('procedure_choosen'),
+                    'starting_states': ('procedure_choosen',),
                     'ending_states': ('procedure_validated',),
                     'start_date': 'urban.schedule.start_date.deposit_date',
                     'additional_delay': 13,
