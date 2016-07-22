@@ -481,6 +481,11 @@ schedule_config = {
                 MacroCreationConditionObject('urban.schedule.condition.need_FD_opinion'),
             ),
             'starting_states': ('procedure_validated',),
+            'start_conditions': (
+                MacroStartConditionObject('urban.schedule.condition.opinion_requests_done', 'AND'),
+                MacroStartConditionObject('urban.schedule.condition.inquiry_done', 'OR'),
+                MacroStartConditionObject('urban.schedule.condition.no_inquiry'),
+            ),
             'end_conditions': (
                 MacroEndConditionObject('urban.schedule.condition.FD_opinion_received'),
             ),
