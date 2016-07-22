@@ -27,7 +27,7 @@ class StateRolesMapping(LocalRoleAdapter):
         if task:
             return (task.assigned_group,)
 
-        return ('Technical_editors',)
+        return ('technical_editors',)
 
     mapping = {
         'creation': {
