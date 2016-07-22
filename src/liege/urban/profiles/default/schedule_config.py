@@ -398,7 +398,7 @@ schedule_config = {
                                     'title': 'Envoyer les demandes d\'avis',
                                     'default_assigned_group': 'administrative_editors',
                                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                                    'marker_interfaces': [u'liege.urban.schedule.interfaces.ISendOpinionRequestsTask'],
+                                    'marker_interfaces': [u'Products.urban.schedule.interfaces.ISendOpinionRequestsTask'],
                                     'creation_state': ('analysis', 'procedure_validated'),
                                     'creation_conditions': (
                                         MacroCreationConditionObject('urban.schedule.condition.has_opinion_requests'),
@@ -416,7 +416,7 @@ schedule_config = {
                                             'title': 'Créer les événements',
                                             'default_assigned_group': 'technical_editors',
                                             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                                            'marker_interfaces': [u'liege.urban.schedule.interfaces.ICreateOpinionRequestsTask'],
+                                            'marker_interfaces': [u'Products.urban.schedule.interfaces.ICreateOpinionRequestsTask'],
                                             'creation_state': ('analysis', 'procedure_validated'),
                                             'creation_conditions': (
                                                 CreationConditionObject('urban.schedule.condition.has_opinion_requests'),
