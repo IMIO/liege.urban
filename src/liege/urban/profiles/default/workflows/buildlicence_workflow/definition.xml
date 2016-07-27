@@ -1195,6 +1195,7 @@
   <action url="" icon="" category="workflow" i18n:translate="">validate_report_1</action>
   <guard>
     <guard-permission>liege.urban: Validate</guard-permission>
+    <guard-expression> python: 'FD' not in here.getProcedureChoice()</guard-expression>
   </guard>
  </transition>
  <transition transition_id="validate_report_2"
@@ -1207,6 +1208,7 @@
   <action url="" icon="" category="workflow" i18n:translate="">validate_report_2</action>
   <guard>
     <guard-permission>liege.urban: Validate</guard-permission>
+    <guard-expression> python: 'FD' in here.getProcedureChoice()</guard-expression>
   </guard>
  </transition>
  <transition transition_id="validate_temporary_adress"
