@@ -21,10 +21,10 @@ msgid "liege.urban.schedule.decision_notified"
 msgstr "Générer les documents de permis, clôturer l'événement d'octroi du permis"
 
 msgid "liege.urban.schedule.decision_project_drafted"
-msgstr "Passer l'événement d'cotroi du permis dans l'état 'Projet de décision rédigé'"
+msgstr "Passer l'événement d'octroi du permis dans l'état 'Projet de décision rédigé'"
 
 msgid "liege.urban.schedule.decision_project_sent"
-msgstr "Passer l'événement d'cotroi du permis dans l'état 'Passage au collège'"
+msgstr "Passer l'événement d'octroi du permis dans l'état 'Passage au collège'"
 
 msgid "liege.urban.schedule.inquiry_zone_identified"
 msgstr "Identifier le périmètre de l'enquête dans l'événement d'enquête"
