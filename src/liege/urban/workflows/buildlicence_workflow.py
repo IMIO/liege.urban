@@ -100,14 +100,6 @@ class StateRolesMapping(LocalRoleAdapter):
             'get_opinion_editors': ('ExternalReader',),
         },
 
-        'analysis': {
-            'administrative_editors': ('Reader',),
-            'administrative_validators': ('Reader',),
-            'technical_editors': ('Editor',),
-            'technical_validators': ('Contributor',),
-            'get_opinion_editors': ('ExternalReader',),
-        },
-
         'procedure_choosen': {
             'administrative_editors': ('Reader',),
             'administrative_validators': ('Reader',),
