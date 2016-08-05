@@ -18,11 +18,19 @@ def post_install(context):
         return
     # Do something during the installation of this package
 
+    setEventTypeMapping(context)
     addLiegeGroups(context)
     setupSurveySchedule(context)
     setupOpinionsSchedule(context)
     addScheduleConfigs(context)
     addTestUsers(context)
+
+
+def setEventTypeMapping(context):
+    """
+    """
+    portal_urban = api.portal.get_tool('portal_urban')
+    portal_urban.eventtype_portaltype_mapping['Products.urban.interfaces.IWalloonRegionOpinionRequestEvent'] = 'UrbanEventFDOpinion'
 
 
 def addLiegeGroups(context):
@@ -159,8 +167,9 @@ def _create_task_configs(container, taskconfigs):
     """
     """
     for taskconfig_kwargs in taskconfigs:
+        subtasks = taskconfig_kwargs.get('subtasks', [])
+
         if taskconfig_kwargs['id'] not in container.objectIds():
-            subtasks = taskconfig_kwargs.get('subtasks', [])
             marker_interface = taskconfig_kwargs.get('marker_interface', None)
 
             task_config_id = container.invokeFactory(**taskconfig_kwargs)
@@ -180,8 +189,8 @@ def _create_task_configs(container, taskconfigs):
             if marker_interface:
                 alsoProvides(task_config, marker_interface)
 
-            for subtasks_kwargs in subtasks:
-                _create_task_configs(container=task_config, taskconfigs=subtasks)
+        for subtasks_kwargs in subtasks:
+            _create_task_configs(container=task_config, taskconfigs=subtasks)
 
 
 def addTestUsers(context):
