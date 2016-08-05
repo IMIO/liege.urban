@@ -21,7 +21,9 @@
   <include package=".workflows" />
 
   <include file="indexes.zcml" />
+  <include file="interfaces.zcml" />
   <include file="permissions.zcml" />
+  <include file="skins.zcml" />
   <include file="vocabulary.zcml" />
 
   <genericsetup:registerProfile
