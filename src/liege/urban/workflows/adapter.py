@@ -3,6 +3,7 @@
 from borg.localrole.interfaces import ILocalRoleProvider
 
 from plone import api
+from plone.memoize.request import cache
 
 from Products.CMFCore.WorkflowCore import WorkflowException
 
@@ -15,6 +16,10 @@ class GroupNotFoundError(Exception):
 
 class RoleNotFoundError(Exception):
     """ """
+
+
+def get_rolemap_caching_key(method, localrole_adapter, state):
+    return (localrole_adapter.context.UID(), state)
 
 
 class LocalRoleAdapter(object):
@@ -48,6 +53,7 @@ class LocalRoleAdapter(object):
         for principal, roles in state_config.items():
             yield (principal, tuple(roles))
 
+    @cache(get_key=get_rolemap_caching_key, get_request='self.context.REQUEST')
     def get_roles_mapping_for_state(self, state):
         """
         Return the group/roles mapping of a given state.
