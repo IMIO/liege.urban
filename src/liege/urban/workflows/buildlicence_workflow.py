@@ -65,7 +65,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader',),
             'technical_editors': ('Editor',),
             'technical_validators': ('Contributor',),
-            'get_opinion_editors': ('ExternalReader',),
+            get_opinion_editors: ('ExternalReader',),
         },
 
         'checking_completion': {
@@ -73,7 +73,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader',),
             'technical_editors': ('Editor',),
             'technical_validators': ('Contributor',),
-            'get_opinion_editors': ('ExternalReader',),
+            get_opinion_editors: ('ExternalReader',),
         },
 
         'incomplete': {
@@ -81,39 +81,31 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Contributor',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
-            'get_opinion_editors': ('ExternalReader',),
-        },
-
-        'validating_completion': {
-            'administrative_editors': ('Reader',),
-            'administrative_validators': ('Reader',),
-            'technical_editors': ('Reader',),
-            'technical_validators': ('Contributor',),
-            'get_opinion_editors': ('ExternalReader',),
+            get_opinion_editors: ('ExternalReader',),
         },
 
         'complete': {
-            'administrative_editors': ('Editor',),
-            'administrative_validators': ('Contributor',),
-            'technical_editors': ('Reader',),
-            'technical_validators': ('Reader',),
-            'get_opinion_editors': ('ExternalReader',),
+            'administrative_editors': ('Reader',),
+            'administrative_validators': ('Reader',),
+            'technical_editors': ('Editor',),
+            'technical_validators': ('Contributor',),
+            get_opinion_editors: ('ExternalReader',),
         },
 
         'procedure_choosen': {
             'administrative_editors': ('Reader',),
             'administrative_validators': ('Reader',),
-            'technical_editors': ('Editor',),
+            'technical_editors': ('Reader',),
             'technical_validators': ('Contributor',),
-            'get_opinion_editors': ('ExternalReader',),
+            get_opinion_editors: ('ExternalReader',),
         },
 
         'procedure_validated': {
-            'administrative_editors': ('Reader',),
-            'administrative_validators': ('Reader',),
+            'administrative_editors': ('Editor',),
+            'administrative_validators': ('Contributor',),
             'technical_editors': ('Editor',),
             'technical_validators': ('Contributor',),
-            'get_opinion_editors': ('ExternalReader',),
+            get_opinion_editors: ('ExternalReader',),
         },
 
         'report_written': {
@@ -121,7 +113,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Contributor',),
-            'get_opinion_editors': ('ExternalReader',),
+            get_opinion_editors: ('ExternalReader',),
         },
 
         'decision_in_progress': {
@@ -129,7 +121,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Contributor',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
-            'get_opinion_editors': ('ExternalReader',),
+            get_opinion_editors: ('ExternalReader',),
         },
 
         'accepted': {
@@ -137,7 +129,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
-            'get_opinion_editors': ('ExternalReader',),
+            get_opinion_editors: ('ExternalReader',),
         },
 
         'refused': {
@@ -145,7 +137,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
-            'get_opinion_editors': ('ExternalReader',),
+            get_opinion_editors: ('ExternalReader',),
         },
 
     }

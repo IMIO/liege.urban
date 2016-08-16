@@ -24,4 +24,11 @@
      name="opinionrequest_local_roles"
   />
 
+  <adapter
+     for="Products.urban.interfaces.IWalloonRegionOpinionRequestEvent"
+     provides="borg.localrole.interfaces.ILocalRoleProvider"
+     factory=".FD_opinion_workflow.StateRolesMapping"
+     name="FD_opinion_local_roles"
+  />
+
 </configure>

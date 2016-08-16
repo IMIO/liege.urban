@@ -242,7 +242,7 @@
         title="complete"
         i18n:attributes="title">
   <exit-transition transition_id="invalidate_completion"/>
-  <exit-transition transition_id="validate_completion"/>
+  <exit-transition transition_id="propose_procedure_choice"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>ExternalReader</permission-role>
@@ -533,8 +533,77 @@
  <state state_id="procedure_choosen"
         title="procedure_choosen"
         i18n:attributes="title">
+  <exit-transition transition_id="invalidate_procedure_choice"/>
   <exit-transition transition_id="validate_procedure_choice"/>
-  <exit-transition transition_id="check_completion"/>
+  <permission-map name="Access contents information"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="View"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Internal Reader"
+                  acquired="False">
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Validate"
+                  acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Applicant"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add PortionOut"
+                  acquired="False">
+   <permission-role>AddressEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEvent"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
  <state state_id="procedure_validated"
         title="procedure_validated"
@@ -955,18 +1024,6 @@
     <guard-permission>urban: Add PortionOut</guard-permission>
   </guard>
  </transition>
- <transition transition_id="check_completion"
-             title="check_completion"
-             new_state="complete"
-             trigger="USER"
-             before_script=""
-             after_script=""
-             i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">check_completion</action>
-  <guard>
-    <guard-permission>liege.urban: Validate</guard-permission>
-  </guard>
- </transition>
  <transition transition_id="invalidate_completion"
              title="invalidate_completion"
              new_state="checking_completion"
@@ -979,6 +1036,18 @@
     <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
+ <transition transition_id="invalidate_procedure_choice"
+             title="invalidate_procedure_choice"
+             new_state="complete"
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+  <action url="" icon="" category="workflow" i18n:translate="">invalidate_procedure_choice</action>
+  <guard>
+    <guard-permission>liege.urban: Validate</guard-permission>
+  </guard>
+ </transition>
  <transition transition_id="propose_complete"
              title="propose_complete"
              new_state="complete"
@@ -987,6 +1056,18 @@
              after_script=""
              i18n:attributes="title">
   <action url="" icon="" category="workflow" i18n:translate="">propose_complete</action>
+  <guard>
+    <guard-permission>Modify portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="propose_procedure_choice"
+             title="propose_procedure_choice"
+             new_state="procedure_choosen"
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+  <action url="" icon="" category="workflow" i18n:translate="">propose_procedure_choice</action>
   <guard>
     <guard-permission>Modify portal content</guard-permission>
   </guard>
@@ -1060,18 +1141,6 @@
   <action url="" icon="" category="workflow" i18n:translate="">validate_address</action>
   <guard>
     <guard-permission>urban: Add PortionOut</guard-permission>
-  </guard>
- </transition>
- <transition transition_id="validate_completion"
-             title="validate_completion"
-             new_state="procedure_choosen"
-             trigger="USER"
-             before_script=""
-             after_script=""
-             i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">validate_completion</action>
-  <guard>
-    <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="validate_procedure_choice"

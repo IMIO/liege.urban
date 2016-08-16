@@ -25,6 +25,7 @@ specific_schema = Schema((
         default_content_type='text/html',
         default_output_type='text/html',
         optional=True,
+        pm_text_field=True,
     ),
     TextField(
         name='device',
@@ -38,6 +39,7 @@ specific_schema = Schema((
         default_content_type='text/html',
         default_output_type='text/html',
         optional=True,
+        pm_text_field=True,
     ),
     TextField(
         name='deviceContinuation',
@@ -51,6 +53,7 @@ specific_schema = Schema((
         default_content_type='text/html',
         default_output_type='text/html',
         optional=True,
+        pm_text_field=True,
     ),
     TextField(
         name='deviceEnd',
@@ -64,6 +67,7 @@ specific_schema = Schema((
         default_content_type='text/html',
         default_output_type='text/html',
         optional=True,
+        pm_text_field=True,
     ),
 ),)
 

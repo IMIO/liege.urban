@@ -4,7 +4,6 @@ from imio.schedule.content.object_factories import CreationConditionObject
 from imio.schedule.content.object_factories import EndConditionObject
 from imio.schedule.content.object_factories import MacroCreationConditionObject
 from imio.schedule.content.object_factories import MacroEndConditionObject
-from imio.schedule.content.object_factories import MacroStartConditionObject
 from imio.schedule.content.object_factories import StartConditionObject
 
 schedule_config = {
@@ -348,7 +347,7 @@ schedule_config = {
                 MacroCreationConditionObject('urban.schedule.condition.acknowledgment_done'),
             ),
             'starting_states': ('procedure_validated',),
-            'ending_states': ('decision_in_progress',),
+            'ending_states': ('decision_in_progress', 'FD_opinion'),
             'start_date': 'urban.schedule.start_date.acknowledgment_date',
             'additional_delay': 6,
             'subtasks': [
@@ -465,18 +464,15 @@ schedule_config = {
             'title': 'Avis du FD',
             'default_assigned_group': 'administrative_editors',
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-            'creation_state': ('procedure_validated',),
+            'creation_state': ('procedure_validated', 'FD_opinion'),
             'creation_conditions': (
-                MacroCreationConditionObject('urban.schedule.condition.need_FD_opinion'),
+                MacroCreationConditionObject('liege.urban.schedule.only_need_FD_opinion', 'OR'),
+                MacroCreationConditionObject('liege.urban.schedule.licence_state_is_FD_opinion'),
             ),
-            'starting_states': ('procedure_validated',),
-            'start_conditions': (
-                MacroStartConditionObject('urban.schedule.condition.opinion_requests_done', 'AND'),
-                MacroStartConditionObject('urban.schedule.condition.inquiry_done', 'OR'),
-                MacroStartConditionObject('urban.schedule.condition.no_inquiry'),
-            ),
+            'starting_states': ('procedure_validated', 'FD_opinion'),
+            'ending_states': ('decision_in_progress',),
             'end_conditions': (
-                MacroEndConditionObject('urban.schedule.condition.FD_opinion_received'),
+                MacroEndConditionObject('liege.urban.schedule.FD_opinion_received'),
             ),
             'start_date': 'urban.schedule.start_date.inquiry_end_date',
             'subtasks': [
@@ -486,9 +482,13 @@ schedule_config = {
                     'title': 'Premier passage collège',
                     'default_assigned_group': 'technical_editors',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('FD_opinion',),
-                    'starting_states': ('FD_opinion',),
+                    'creation_state': ('procedure_validated', 'FD_opinion'),
+                    'starting_states': ('procedure_validated', 'FD_opinion'),
                     'start_date': 'schedule.start_date.subtask_highest_due_date',
+                    'end_conditions': (
+                        MacroEndConditionObject('liege.urban.schedule.FD_project_college_done'),
+                    ),
+                    'start_date': 'schedule.start_date.task_starting_date',
                     'additional_delay': 2,
                     'subtasks': [
                         {
@@ -497,9 +497,13 @@ schedule_config = {
                             'title': 'Rédiger le projet d\'avis',
                             'default_assigned_group': 'administrative_editors',
                             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                            'creation_state': ('FD_opinion',),
-                            'starting_states': ('FD_opinion',),
+                            'creation_state': ('procedure_validated', 'FD_opinion'),
+                            'starting_states': ('procedure_validated', 'FD_opinion'),
+                            'end_conditions': (
+                                EndConditionObject('liege.urban.schedule.FD_project_writen'),
+                            ),
                             'additional_delay': 2,
+                            'start_date': 'schedule.start_date.task_starting_date',
                         },
                         {
                             'type_name': 'TaskConfig',
@@ -507,8 +511,16 @@ schedule_config = {
                             'title': 'Valider le projet d\'avis',
                             'default_assigned_group': 'administrative_validators',
                             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                            'creation_state': ('FD_opinion',),
-                            'starting_states': ('FD_opinion',),
+                            'creation_state': ('procedure_validated', 'FD_opinion'),
+                            'starting_states': ('procedure_validated', 'FD_opinion'),
+                            'start_conditions': (
+                                StartConditionObject('liege.urban.schedule.FD_project_writen'),
+                            ),
+                            'end_conditions': (
+                                EndConditionObject('liege.urban.schedule.FD_project_validated', 'AND'),
+                                EndConditionObject('liege.urban.schedule.FD_project_sent_to_college'),
+                            ),
+                            'start_date': 'schedule.start_date.task_starting_date',
                             'additional_delay': 2,
                         },
                     ]
@@ -519,20 +531,17 @@ schedule_config = {
                     'title': 'Envoyer la demande d\'avis',
                     'default_assigned_group': 'technical_editors',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('FD_opinion',),
-                    'starting_states': ('FD_opinion',),
+                    'creation_state': ('procedure_validated', 'FD_opinion'),
+                    'starting_states': ('procedure_validated', 'FD_opinion'),
+                    'start_conditions': (
+                        StartConditionObject('liege.urban.schedule.FD_project_college_done'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.FD_opinion_asked'),
+                    ),
+                    'start_date': 'schedule.start_date.task_starting_date',
                     'additional_delay': 2,
                 },
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'reception-avis-FD',
-                    'title': 'Réception de l\'avis',
-                    'default_assigned_group': 'technical_editors',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('FD_opinion',),
-                    'starting_states': ('FD_opinion',),
-                    'additional_delay': 2,
-                }
             ]
         },
         {

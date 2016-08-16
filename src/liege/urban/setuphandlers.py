@@ -168,8 +168,9 @@ def _create_task_configs(container, taskconfigs):
     """
     for taskconfig_kwargs in taskconfigs:
         subtasks = taskconfig_kwargs.get('subtasks', [])
+        task_config_id = taskconfig_kwargs['id']
 
-        if taskconfig_kwargs['id'] not in container.objectIds():
+        if task_config_id not in container.objectIds():
             marker_interface = taskconfig_kwargs.get('marker_interface', None)
 
             task_config_id = container.invokeFactory(**taskconfig_kwargs)
@@ -189,6 +190,7 @@ def _create_task_configs(container, taskconfigs):
             if marker_interface:
                 alsoProvides(task_config, marker_interface)
 
+        task_config = getattr(container, task_config_id)
         for subtasks_kwargs in subtasks:
             _create_task_configs(container=task_config, taskconfigs=subtasks)
 

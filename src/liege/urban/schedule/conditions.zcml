@@ -2,14 +2,7 @@
     xmlns="http://namespaces.zope.org/zope"
     i18n_domain="liege.urban">
 
-    <adapter
-        for="Products.urban.interfaces.IUrbanEventOpinionRequest
-             imio.schedule.content.task_config.ITaskConfig"
-        provides="imio.schedule.interfaces.ICreationCondition"
-        factory=".conditions.IsInternalOpinionRequest"
-        name="liege.urban.schedule.is_internal_opinion"
-    />
-
+    <!-- survey conditions -->
     <adapter
         for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"
@@ -26,6 +19,7 @@
         name="liege.urban.schedule.parcels_added"
     />
 
+    <!-- opinion requests conditions -->
     <adapter
         for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"
@@ -34,6 +28,15 @@
         name="liege.urban.schedule.opinion_requests_waiting"
     />
 
+    <adapter
+        for="Products.urban.interfaces.IUrbanEventOpinionRequest
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".conditions.IsInternalOpinionRequest"
+        name="liege.urban.schedule.is_internal_opinion"
+    />
+
+    <!-- inquiry conditions -->
     <adapter
         for="Products.urban.interfaces.IBuildLicence
              imio.schedule.content.task.IAutomatedTask"
@@ -50,6 +53,104 @@
         name="liege.urban.schedule.inquiry_documents_done"
     />
 
+    <!-- FD opinion conditions -->
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".conditions.OnlyNeedFDOpinion"
+        name="liege.urban.schedule.only_need_FD_opinion"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".conditions.LicenceStateIsFDOpinion"
+        name="liege.urban.schedule.licence_state_is_FD_opinion"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.FDProjectWritten"
+        name="liege.urban.schedule.FD_project_writen"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.FDProjectWritten"
+        name="liege.urban.schedule.FD_project_writen"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.FDProjectValidated"
+        name="liege.urban.schedule.FD_project_validated"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.FDProjectValidated"
+        name="liege.urban.schedule.FD_project_validated"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.FDProjectSentToCollege"
+        name="liege.urban.schedule.FD_project_sent_to_college"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.FDProjectSentToCollege"
+        name="liege.urban.schedule.FD_project_sent_to_college"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.FDProjectCollegeDone"
+        name="liege.urban.schedule.FD_project_college_done"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.FDProjectCollegeDone"
+        name="liege.urban.schedule.FD_project_college_done"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.FDOpinionAsked"
+        name="liege.urban.schedule.FD_opinion_asked"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.FDOpinionReceived"
+        name="liege.urban.schedule.FD_opinion_received"
+    />
+
+    <!-- final decision conditions -->
     <adapter
         for="Products.urban.interfaces.IBuildLicence
              imio.schedule.content.task.IAutomatedTask"
