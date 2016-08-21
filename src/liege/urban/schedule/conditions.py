@@ -39,10 +39,38 @@ class InquiryDocumentsDoneCondition(Condition):
         if not inquiry:
             return False
 
-        if not api.content.get_state(inquiry) in ['in_progress', 'done']:
+        if api.content.get_state(inquiry) in ['in_progress', 'closed']:
             return False
 
         return True
+
+
+class AcknowledgmentWrittenCondition(Condition):
+    """
+    Draft of acknowledgment document is done.
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        ack_event = licence.getLastAcknowledgment()
+        if not ack_event:
+            return False
+
+        return api.content.get_state(ack_event) == 'to_validate'
+
+
+class AcknowledgmentValidatedCondition(Condition):
+    """
+    Validation of acknowledgment document is done.
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        ack_event = licence.getLastAcknowledgment()
+        if not ack_event:
+            return False
+
+        return api.content.get_state(ack_event) == 'to_send'
 
 
 class IsInternalOpinionRequest(CreationCondition):

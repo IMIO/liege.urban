@@ -92,6 +92,9 @@ msgstr "Refaire le rapport d'analyse"
 msgid "report_written"
 msgstr "Rapport d'analyse fait"
 
+msgid "to_validate"
+msgstr "à valider"
+
 msgid "validate_address"
 msgstr "valider l'adresse"
 

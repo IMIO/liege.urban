@@ -136,10 +136,11 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="validating_documents"
-        title="validating_documents"
+ <state state_id="to_validate"
+        title="to_validate"
         i18n:attributes="title">
   <exit-transition transition_id="validate"/>
+  <exit-transition transition_id="refuse"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -222,7 +223,7 @@
  </state>
  <transition transition_id="ask_validation"
              title="ask_validation"
-             new_state="validating_documents"
+             new_state="to_validate"
              trigger="USER"
              before_script=""
              after_script=""
@@ -239,6 +240,17 @@
              after_script=""
              i18n:attributes="title">
   <action url="" icon="" category="workflow" i18n:translate="">close</action>
+  <guard>
+  </guard>
+ </transition>
+ <transition transition_id="refuse"
+             title="refuse"
+             new_state="preparing_documents"
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+  <action url="" icon="" category="workflow" i18n:translate="">refuse</action>
   <guard>
   </guard>
  </transition>

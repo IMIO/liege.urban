@@ -45,6 +45,18 @@ def update_item_schema(baseSchema):
 
     LicenceSchema = baseSchema + specificSchema.copy()
 
+    # some fields are edit only
+    LicenceSchema['locationMissingPartsDetails'].edit_only = True
+    LicenceSchema['protectedBuildingDetails'].edit_only = True
+    LicenceSchema['rcuDetails'].edit_only = True
+    LicenceSchema['prenuDetails'].edit_only = True
+    LicenceSchema['prevuDetails'].edit_only = True
+    LicenceSchema['airportNoiseZoneDetails'].edit_only = True
+    LicenceSchema['pashDetails'].edit_only = True
+    LicenceSchema['catchmentAreaDetails'].edit_only = True
+    LicenceSchema['karstConstraintsDetails'].edit_only = True
+    LicenceSchema['floodingLevelDetails'].edit_only = True
+
     # move folderCategoryTownship field on description schemata
     LicenceSchema['folderCategoryTownship'].schemata = 'urban_description'
     LicenceSchema['folderCategoryTownship'].widget.label_msgid = 'urban_label_UsageTownship'

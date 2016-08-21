@@ -95,6 +95,9 @@ msgstr ""
 msgid "report_written"
 msgstr ""
 
+msgid "to_validate"
+msgstr ""
+
 msgid "validate_address"
 msgstr ""
 

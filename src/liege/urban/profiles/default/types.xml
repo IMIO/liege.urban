@@ -3,4 +3,6 @@
         meta_type="Plone Types Tool">
  <object name="UrbanEventFDOpinion"
          meta_type="Factory-based Type Information with dynamic views"/>
+ <object name="UrbanEventAcknowledgment"
+         meta_type="Factory-based Type Information with dynamic views"/>
 </object>

@@ -22,30 +22,16 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_validators': ('Reader',),
         },
 
-        'decision_in_progress': {
-            'administrative_editors': ('Reader',),
-            'administrative_validators': ('Contributor',),
-            'technical_editors': ('Reader',),
-            'technical_validators': ('Reader',),
-        },
-
-        'preparing_opinion_request': {
+        'to_send': {
             'administrative_editors': ('Editor',),
             'administrative_validators': ('Contributor',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
         },
 
-        'waiting_opinion': {
+        'closed': {
             'administrative_editors': ('Editor',),
             'administrative_validators': ('Contributor',),
-            'technical_editors': ('Reader',),
-            'technical_validators': ('Reader',),
-        },
-
-        'opinion_given': {
-            'administrative_editors': ('Reader',),
-            'administrative_validators': ('Reader',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
         },

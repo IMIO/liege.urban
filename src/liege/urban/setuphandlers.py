@@ -31,6 +31,7 @@ def setEventTypeMapping(context):
     """
     portal_urban = api.portal.get_tool('portal_urban')
     portal_urban.eventtype_portaltype_mapping['Products.urban.interfaces.IWalloonRegionOpinionRequestEvent'] = 'UrbanEventFDOpinion'
+    portal_urban.eventtype_portaltype_mapping['Products.urban.interfaces.IAcknowledgmentEvent'] = 'UrbanEventAcknowledgment'
 
 
 def addLiegeGroups(context):

@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <object name="portal_workflow" meta_type="Plone Workflow Tool">
  <object name="FD_opinion_worfklow" meta_type="Workflow"/>
+ <object name="acknowledgment_event_workflow" meta_type="Workflow"/>
  <object name="address_workflow" meta_type="Workflow"/>
  <object name="buildlicence_workflow" meta_type="Workflow"/>
  <object name="college_event_workflow" meta_type="Workflow"/>
@@ -14,6 +15,9 @@
   </type>
   <type type_id="PortionOut">
      <bound-workflow workflow_id="address_workflow" />
+  </type>
+  <type type_id="UrbanEventAcknowledgment">
+     <bound-workflow workflow_id="acknowledgment_event_workflow" />
   </type>
   <type type_id="UrbanEventCollege">
      <bound-workflow workflow_id="college_event_workflow" />

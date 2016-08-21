@@ -6,7 +6,9 @@ from zope.i18nmessageid import MessageFactory
 
 import liege.urban.content.buildlicence
 import liege.urban.content.contact
+import liege.urban.content.foldermanager
 import liege.urban.content.genericlicence
+import liege.urban.content.inquiry_licence
 import liege.urban.content.portion_out
 
 _ = MessageFactory('liege.urban')
