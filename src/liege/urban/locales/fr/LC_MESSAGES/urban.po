@@ -26,6 +26,9 @@ msgstr "fin du dispositif"
 msgid "motivation"
 msgstr "motivation"
 
+msgid "urban_label_RCB"
+msgstr "Réglement communal sur les Bâtisses"
+
 msgid "urban_label_Shore"
 msgstr "Rive"
 
@@ -46,6 +49,9 @@ msgstr "Fin du dispositif"
 
 msgid "urban_label_motivation"
 msgstr "Motivation"
+
+msgid "urban_label_rcbDetails"
+msgstr "Détails concernant le RCB"
 
 msgid "urban_label_roadDescription"
 msgstr "Observations/commentaires"

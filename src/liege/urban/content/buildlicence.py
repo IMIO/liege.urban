@@ -26,6 +26,8 @@ def update_item_schema(baseSchema):
     BuildLicenceSchema['roadTechnicalAdvice'].widget.label_msgid = 'urban_label_roadDescription'
     BuildLicenceSchema['locationTechnicalRemarks'].widget.label_msgid = 'urban_label_description'
     BuildLicenceSchema['missingParts'].widget.size = 15
+    BuildLicenceSchema['RCU'].widget.label_msgid = 'urban_label_RCB'
+    BuildLicenceSchema['rcuDetails'].widget.label_msgid = 'urban_label_rcbDetails'
 
     return BuildLicenceSchema
 

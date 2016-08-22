@@ -47,6 +47,12 @@ msgstr ""
 msgid "motivation"
 msgstr ""
 
+msgid "urban_label_RCB"
+msgstr ""
+
+msgid "urban_label_rcbDetails"
+msgstr ""
+
 msgid "urban_label_Shore"
 msgstr ""
 
