@@ -11,6 +11,16 @@ def update_item_schema(baseSchema):
     BuildLicenceSchema['pebDetails'].edit_only = True
     BuildLicenceSchema['pebTechnicalAdvice'].edit_only = True
 
+    # move PEB fields to analysis schemata
+    BuildLicenceSchema['pebType'].schemata = 'urban_analysis'
+    BuildLicenceSchema.moveField('pebType', after='usage')
+    BuildLicenceSchema['pebDetails'].schemata = 'urban_analysis'
+    BuildLicenceSchema.moveField('pebDetails', after='pebType')
+    BuildLicenceSchema['pebStudy'].schemata = 'urban_analysis'
+    BuildLicenceSchema.moveField('pebStudy', after='pebDetails')
+    BuildLicenceSchema['pebTechnicalAdvice'].schemata = 'urban_analysis'
+    BuildLicenceSchema.moveField('pebTechnicalAdvice', after='pebStudy')
+
     # stats INS no longer mandatory
     BuildLicenceSchema['usage'].required = False
     BuildLicenceSchema['roadTechnicalAdvice'].widget.label_msgid = 'urban_label_roadDescription'
