@@ -21,6 +21,32 @@ def update_item_schema(baseSchema):
     BuildLicenceSchema['pebTechnicalAdvice'].schemata = 'urban_analysis'
     BuildLicenceSchema.moveField('pebTechnicalAdvice', after='pebStudy')
 
+    # move some road fields to location schemata
+    BuildLicenceSchema['sevesoSite'].schemata = 'urban_location'
+    BuildLicenceSchema.moveField('sevesoSite', after='airportNoiseZoneDetails')
+    BuildLicenceSchema['natura_2000'].schemata = 'urban_location'
+    BuildLicenceSchema.moveField('natura_2000', after='sevesoSite')
+    BuildLicenceSchema['roadDgrneUnderground'].schemata = 'urban_location'
+    BuildLicenceSchema.moveField('roadDgrneUnderground', after='natura_2000')
+    BuildLicenceSchema['roadType'].schemata = 'urban_location'
+    BuildLicenceSchema.moveField('roadType', after='roadDgrneUnderground')
+    BuildLicenceSchema['pash'].schemata = 'urban_location'
+    BuildLicenceSchema.moveField('pash', after='roadType')
+    BuildLicenceSchema['pashDetails'].schemata = 'urban_location'
+    BuildLicenceSchema.moveField('pashDetails', after='pash')
+    BuildLicenceSchema['catchmentArea'].schemata = 'urban_location'
+    BuildLicenceSchema.moveField('catchmentArea', after='pashDetails')
+    BuildLicenceSchema['catchmentAreaDetails'].schemata = 'urban_location'
+    BuildLicenceSchema.moveField('catchmentAreaDetails', after='catchmentArea')
+    BuildLicenceSchema['karstConstraints'].schemata = 'urban_location'
+    BuildLicenceSchema.moveField('karstConstraints', after='catchmentAreaDetails')
+    BuildLicenceSchema['karstConstraintsDetails'].schemata = 'urban_location'
+    BuildLicenceSchema.moveField('karstConstraintsDetails', after='karstConstraints')
+    BuildLicenceSchema['floodingLevel'].schemata = 'urban_location'
+    BuildLicenceSchema.moveField('floodingLevel', after='karstConstraintsDetails')
+    BuildLicenceSchema['floodingLevelDetails'].schemata = 'urban_location'
+    BuildLicenceSchema.moveField('floodingLevelDetails', after='floodingLevel')
+
     # stats INS no longer mandatory
     BuildLicenceSchema['usage'].required = False
     BuildLicenceSchema['roadTechnicalAdvice'].widget.label_msgid = 'urban_label_roadDescription'
