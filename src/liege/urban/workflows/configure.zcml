@@ -31,4 +31,11 @@
      name="FD_opinion_local_roles"
   />
 
+  <adapter
+     for="Products.urban.interfaces.IInquiryEvent"
+     provides="borg.localrole.interfaces.ILocalRoleProvider"
+     factory=".inquiry_workflow.StateRolesMapping"
+     name="inquiry_local_roles"
+  />
+
 </configure>

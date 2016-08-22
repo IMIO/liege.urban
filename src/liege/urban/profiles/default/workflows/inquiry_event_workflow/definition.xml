@@ -136,6 +136,48 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
+ <state state_id="sending_documents"
+        title="sending_documents"
+        i18n:attributes="title">
+  <exit-transition transition_id="documents_sent"/>
+  <permission-map name="Access contents information"
+                  acquired="False">
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="View"
+                  acquired="False">
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Validate"
+                  acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+ </state>
  <state state_id="to_validate"
         title="to_validate"
         i18n:attributes="title">
@@ -243,6 +285,17 @@
   <guard>
   </guard>
  </transition>
+ <transition transition_id="documents_sent"
+             title="documents_sent"
+             new_state="in_progress"
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+  <action url="" icon="" category="workflow" i18n:translate="">documents_sent</action>
+  <guard>
+  </guard>
+ </transition>
  <transition transition_id="refuse"
              title="refuse"
              new_state="preparing_documents"
@@ -256,7 +309,7 @@
  </transition>
  <transition transition_id="validate"
              title="validate"
-             new_state="in_progress"
+             new_state="sending_documents"
              trigger="USER"
              before_script=""
              after_script=""

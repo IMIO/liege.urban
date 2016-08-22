@@ -116,6 +116,14 @@ class StateRolesMapping(LocalRoleAdapter):
             get_opinion_editors: ('ExternalReader',),
         },
 
+        'FD_opinion': {
+            'administrative_editors': ('Editor',),
+            'administrative_validators': ('Contributor',),
+            'technical_editors': ('Editor',),
+            'technical_validators': ('Contributor',),
+            get_opinion_editors: ('ExternalReader',),
+        },
+
         'decision_in_progress': {
             'administrative_editors': ('Editor',),
             'administrative_validators': ('Contributor',),

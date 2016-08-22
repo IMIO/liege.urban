@@ -73,9 +73,41 @@
     <adapter
         for="Products.urban.interfaces.IBuildLicence
              imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.InquiryDocumentsDoneCondition"
+        name="liege.urban.schedule.inquiry_documents_done"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.InquiryDocumentsDoneCondition"
         name="liege.urban.schedule.inquiry_documents_done"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.InquiryDocumentsValidatedCondition"
+        name="liege.urban.schedule.inquiry_documents_validated"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.InquiryDocumentsValidatedCondition"
+        name="liege.urban.schedule.inquiry_documents_validated"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.InquiryDocumentsSentCondition"
+        name="liege.urban.schedule.inquiry_documents_sent"
     />
 
     <!-- FD opinion conditions -->

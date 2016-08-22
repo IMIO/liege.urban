@@ -30,7 +30,7 @@ class InquiryZoneIdentifiedCondition(Condition):
 
 class InquiryDocumentsDoneCondition(Condition):
     """
-    Licence inquiry documents are produced and validated.
+    Licence inquiry documents are produced.
     """
 
     def evaluate(self):
@@ -39,10 +39,35 @@ class InquiryDocumentsDoneCondition(Condition):
         if not inquiry:
             return False
 
-        if api.content.get_state(inquiry) in ['in_progress', 'closed']:
+        return api.content.get_state(inquiry) == 'to_validate'
+
+
+class InquiryDocumentsValidatedCondition(Condition):
+    """
+    Licence inquiry documents are validated.
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        inquiry = licence.getLastInquiry()
+        if not inquiry:
             return False
 
-        return True
+        return api.content.get_state(inquiry) == 'sending_documents'
+
+
+class InquiryDocumentsSentCondition(Condition):
+    """
+    Licence inquiry documents are sent.
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        inquiry = licence.getLastInquiry()
+        if not inquiry:
+            return False
+
+        return api.content.get_state(inquiry) == 'in_progress'
 
 
 class AcknowledgmentWrittenCondition(Condition):

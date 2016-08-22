@@ -357,7 +357,6 @@ schedule_config = {
                     'default_assigned_group': 'administrative_validators',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
                     'creation_state': ('checking_completion',),
-                    'starting_states': ('checking_completion',),
                     'start_conditions': (
                         StartConditionObject('liege.urban.schedule.acknowledgment_written'),
                     ),
@@ -487,16 +486,35 @@ schedule_config = {
                                 },
                                 {
                                     'type_name': 'TaskConfig',
-                                    'id': 'enquete-documents',
-                                    'title': 'Produire les documents',
-                                    'default_assigned_group': 'administrative_editors',
+                                    'id': 'valider-documents',
+                                    'title': 'Valider les documents',
+                                    'default_assigned_group': 'administrative_validators',
                                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                                    'creation_state': ('procedure_validated',),
                                     'creation_conditions': (
                                         CreationConditionObject('urban.schedule.condition.has_inquiry'),
                                     ),
+                                    'start_conditions': (
+                                        StartConditionObject('liege.urban.schedule.inquiry_documents_done'),
+                                    ),
                                     'end_conditions': (
-                                        EndConditionObject('liege.urban.schedule.inquiry_documents_done'),
+                                        EndConditionObject('liege.urban.schedule.inquiry_documents_validated'),
+                                    ),
+                                    'start_date': 'urban.schedule.start_date.acknowledgment_date',
+                                },
+                                {
+                                    'type_name': 'TaskConfig',
+                                    'id': 'envoyer-documents',
+                                    'title': 'Envoyer les documents',
+                                    'default_assigned_group': 'administrative_editors',
+                                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                                    'creation_conditions': (
+                                        CreationConditionObject('urban.schedule.condition.has_inquiry'),
+                                    ),
+                                    'start_conditions': (
+                                        StartConditionObject('liege.urban.schedule.inquiry_documents_validated'),
+                                    ),
+                                    'end_conditions': (
+                                        EndConditionObject('liege.urban.schedule.inquiry_documents_sent'),
                                     ),
                                     'start_date': 'urban.schedule.start_date.acknowledgment_date',
                                 },

@@ -94,11 +94,10 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="to validate"
-        title="to validate"
+ <state state_id="to_send"
+        title="to_send"
         i18n:attributes="title">
-  <exit-transition transition_id="refuse"/>
-  <exit-transition transition_id="validate"/>
+  <exit-transition transition_id="close"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -137,10 +136,11 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="to_send"
-        title="to_send"
+ <state state_id="to_validate"
+        title="to_validate"
         i18n:attributes="title">
-  <exit-transition transition_id="close"/>
+  <exit-transition transition_id="refuse"/>
+  <exit-transition transition_id="validate"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -192,7 +192,7 @@
  </transition>
  <transition transition_id="propose"
              title="propose"
-             new_state="to validate"
+             new_state="to_validate"
              trigger="USER"
              before_script=""
              after_script=""
