@@ -20,6 +20,13 @@ def update_item_schema(baseSchema):
     LicenceSchema['demandDisplay'].edit_only = True
     LicenceSchema['investigationDetails'].edit_only = True
 
+    # reorder fields
+    LicenceSchema.moveField('derogation', after='investigationArticlesText')
+    LicenceSchema.moveField('derogationDetails', after='derogation')
+    LicenceSchema.moveField('investigationReasons', after='derogationDetails')
+    LicenceSchema.moveField('demandDisplay', after='investigationEnd')
+    LicenceSchema.moveField('investigationDetails', after='investigationWriteReclamationNumber')
+
     return LicenceSchema
 
 
