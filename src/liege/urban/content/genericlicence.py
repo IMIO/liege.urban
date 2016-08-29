@@ -46,7 +46,7 @@ def update_item_schema(baseSchema):
     LicenceSchema = baseSchema + specificSchema.copy()
 
     # some fields are edit only
-    LicenceSchema['locationMissingPartsDetails'].edit_only = True
+    LicenceSchema['missingPartsDetails'].edit_only = True
     LicenceSchema['protectedBuildingDetails'].edit_only = True
     LicenceSchema['rcuDetails'].edit_only = True
     LicenceSchema['prenuDetails'].edit_only = True
