@@ -106,7 +106,7 @@ class IsInternalOpinionRequest(CreationCondition):
     def evaluate(self):
         opinion_request = self.task_container
         opinion_config = opinion_request.getUrbaneventtypes()
-        is_internal = opinion_config.id == self.task_config.id
+        is_internal = opinion_config.id in self.task_config.id
         return is_internal
 
 
