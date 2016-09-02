@@ -60,6 +60,8 @@ def update_item_schema(baseSchema):
     # move folderCategoryTownship field on description schemata
     LicenceSchema['folderCategoryTownship'].schemata = 'urban_description'
     LicenceSchema['folderCategoryTownship'].widget.label_msgid = 'urban_label_UsageTownship'
+    LicenceSchema['roadCoating'].widget.label_msgid = 'urban_label_pathCoating'
+    LicenceSchema['futureRoadCoating'].widget.label_msgid = 'urban_label_futurePathCoating'
     LicenceSchema.moveField('folderCategoryTownship', after='folderCategory')
 
     return LicenceSchema

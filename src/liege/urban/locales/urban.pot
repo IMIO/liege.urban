@@ -38,7 +38,13 @@ msgstr ""
 msgid "urban_label_deviceEnd"
 msgstr ""
 
+msgid "urban_label_futurePathCoating"
+msgstr ""
+
 msgid "urban_label_motivation"
+msgstr ""
+
+msgid "urban_label_pathCoating"
 msgstr ""
 
 msgid "urban_label_roadDescription"

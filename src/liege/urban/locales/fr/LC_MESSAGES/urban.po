@@ -47,8 +47,14 @@ msgstr "Suite du dispositif"
 msgid "urban_label_deviceEnd"
 msgstr "Fin du dispositif"
 
+msgid "urban_label_futurePathCoating"
+msgstr "Revêtement de trottoir futur"
+
 msgid "urban_label_motivation"
 msgstr "Motivation"
+
+msgid "urban_label_pathCoating"
+msgstr "Revêtement de trottoir existant"
 
 msgid "urban_label_rcbDetails"
 msgstr "Détails concernant le RCB"
