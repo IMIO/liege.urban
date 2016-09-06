@@ -4,58 +4,58 @@ from Products.urban.BuildLicence import BuildLicence
 
 
 def update_item_schema(baseSchema):
-    BuildLicenceSchema = baseSchema
+    LicenceSchema = baseSchema.copy()
 
     # some fields are edit only
-    BuildLicenceSchema['annoncedDelayDetails'].edit_only = True
-    BuildLicenceSchema['pebDetails'].edit_only = True
-    BuildLicenceSchema['pebTechnicalAdvice'].edit_only = True
+    LicenceSchema['annoncedDelayDetails'].edit_only = True
+    LicenceSchema['pebDetails'].edit_only = True
+    LicenceSchema['pebTechnicalAdvice'].edit_only = True
 
     # move PEB fields to analysis schemata
-    BuildLicenceSchema['pebType'].schemata = 'urban_analysis'
-    BuildLicenceSchema.moveField('pebType', after='usage')
-    BuildLicenceSchema['pebDetails'].schemata = 'urban_analysis'
-    BuildLicenceSchema.moveField('pebDetails', after='pebType')
-    BuildLicenceSchema['pebStudy'].schemata = 'urban_analysis'
-    BuildLicenceSchema.moveField('pebStudy', after='pebDetails')
-    BuildLicenceSchema['pebTechnicalAdvice'].schemata = 'urban_analysis'
-    BuildLicenceSchema.moveField('pebTechnicalAdvice', after='pebStudy')
+    LicenceSchema['pebType'].schemata = 'urban_analysis'
+    LicenceSchema.moveField('pebType', after='usage')
+    LicenceSchema['pebDetails'].schemata = 'urban_analysis'
+    LicenceSchema.moveField('pebDetails', after='pebType')
+    LicenceSchema['pebStudy'].schemata = 'urban_analysis'
+    LicenceSchema.moveField('pebStudy', after='pebDetails')
+    LicenceSchema['pebTechnicalAdvice'].schemata = 'urban_analysis'
+    LicenceSchema.moveField('pebTechnicalAdvice', after='pebStudy')
 
     # move some road fields to location schemata
-    BuildLicenceSchema['sevesoSite'].schemata = 'urban_location'
-    BuildLicenceSchema.moveField('sevesoSite', after='airportNoiseZoneDetails')
-    BuildLicenceSchema['natura_2000'].schemata = 'urban_location'
-    BuildLicenceSchema.moveField('natura_2000', after='sevesoSite')
-    BuildLicenceSchema['roadDgrneUnderground'].schemata = 'urban_location'
-    BuildLicenceSchema.moveField('roadDgrneUnderground', after='natura_2000')
-    BuildLicenceSchema['roadType'].schemata = 'urban_location'
-    BuildLicenceSchema.moveField('roadType', after='roadDgrneUnderground')
-    BuildLicenceSchema['pash'].schemata = 'urban_location'
-    BuildLicenceSchema.moveField('pash', after='roadType')
-    BuildLicenceSchema['pashDetails'].schemata = 'urban_location'
-    BuildLicenceSchema.moveField('pashDetails', after='pash')
-    BuildLicenceSchema['catchmentArea'].schemata = 'urban_location'
-    BuildLicenceSchema.moveField('catchmentArea', after='pashDetails')
-    BuildLicenceSchema['catchmentAreaDetails'].schemata = 'urban_location'
-    BuildLicenceSchema.moveField('catchmentAreaDetails', after='catchmentArea')
-    BuildLicenceSchema['karstConstraints'].schemata = 'urban_location'
-    BuildLicenceSchema.moveField('karstConstraints', after='catchmentAreaDetails')
-    BuildLicenceSchema['karstConstraintsDetails'].schemata = 'urban_location'
-    BuildLicenceSchema.moveField('karstConstraintsDetails', after='karstConstraints')
-    BuildLicenceSchema['floodingLevel'].schemata = 'urban_location'
-    BuildLicenceSchema.moveField('floodingLevel', after='karstConstraintsDetails')
-    BuildLicenceSchema['floodingLevelDetails'].schemata = 'urban_location'
-    BuildLicenceSchema.moveField('floodingLevelDetails', after='floodingLevel')
+    LicenceSchema['sevesoSite'].schemata = 'urban_location'
+    LicenceSchema.moveField('sevesoSite', after='airportNoiseZoneDetails')
+    LicenceSchema['natura_2000'].schemata = 'urban_location'
+    LicenceSchema.moveField('natura_2000', after='sevesoSite')
+    LicenceSchema['roadDgrneUnderground'].schemata = 'urban_location'
+    LicenceSchema.moveField('roadDgrneUnderground', after='natura_2000')
+    LicenceSchema['roadType'].schemata = 'urban_location'
+    LicenceSchema.moveField('roadType', after='roadDgrneUnderground')
+    LicenceSchema['pash'].schemata = 'urban_location'
+    LicenceSchema.moveField('pash', after='roadType')
+    LicenceSchema['pashDetails'].schemata = 'urban_location'
+    LicenceSchema.moveField('pashDetails', after='pash')
+    LicenceSchema['catchmentArea'].schemata = 'urban_location'
+    LicenceSchema.moveField('catchmentArea', after='pashDetails')
+    LicenceSchema['catchmentAreaDetails'].schemata = 'urban_location'
+    LicenceSchema.moveField('catchmentAreaDetails', after='catchmentArea')
+    LicenceSchema['karstConstraints'].schemata = 'urban_location'
+    LicenceSchema.moveField('karstConstraints', after='catchmentAreaDetails')
+    LicenceSchema['karstConstraintsDetails'].schemata = 'urban_location'
+    LicenceSchema.moveField('karstConstraintsDetails', after='karstConstraints')
+    LicenceSchema['floodingLevel'].schemata = 'urban_location'
+    LicenceSchema.moveField('floodingLevel', after='karstConstraintsDetails')
+    LicenceSchema['floodingLevelDetails'].schemata = 'urban_location'
+    LicenceSchema.moveField('floodingLevelDetails', after='floodingLevel')
 
     # stats INS no longer mandatory
-    BuildLicenceSchema['usage'].required = False
-    BuildLicenceSchema['roadTechnicalAdvice'].widget.label_msgid = 'urban_label_roadDescription'
-    BuildLicenceSchema['locationTechnicalRemarks'].widget.label_msgid = 'urban_label_description'
-    BuildLicenceSchema['missingParts'].widget.size = 15
-    BuildLicenceSchema['RCU'].widget.label_msgid = 'urban_label_RCB'
-    BuildLicenceSchema['rcuDetails'].widget.label_msgid = 'urban_label_rcbDetails'
+    LicenceSchema['usage'].required = False
+    LicenceSchema['roadTechnicalAdvice'].widget.label_msgid = 'urban_label_roadDescription'
+    LicenceSchema['locationTechnicalRemarks'].widget.label_msgid = 'urban_label_description'
+    LicenceSchema['missingParts'].widget.size = 15
+    LicenceSchema['RCU'].widget.label_msgid = 'urban_label_RCB'
+    LicenceSchema['rcuDetails'].widget.label_msgid = 'urban_label_rcbDetails'
 
-    return BuildLicenceSchema
+    return LicenceSchema
 
 
 BuildLicence.schema = update_item_schema(BuildLicence.schema)
