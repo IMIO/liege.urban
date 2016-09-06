@@ -26,6 +26,12 @@ msgstr ""
 msgid "deviceEnd"
 msgstr ""
 
+msgid "motivation"
+msgstr ""
+
+msgid "pmObject"
+msgstr ""
+
 msgid "urban_label_composition"
 msgstr ""
 
@@ -47,10 +53,10 @@ msgstr ""
 msgid "urban_label_pathCoating"
 msgstr ""
 
-msgid "urban_label_roadDescription"
+msgid "urban_label_pmObject"
 msgstr ""
 
-msgid "motivation"
+msgid "urban_label_roadDescription"
 msgstr ""
 
 msgid "urban_label_RCB"

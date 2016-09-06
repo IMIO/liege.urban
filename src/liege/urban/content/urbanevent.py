@@ -14,6 +14,20 @@ from zope.interface import implements
 
 specific_schema = Schema((
     TextField(
+        name='pmObject',
+        allowable_content_types=('text/html',),
+        widget=RichWidget(
+            label='Pmobject',
+            label_msgid='urban_label_pmObject',
+            i18n_domain='urban',
+        ),
+        default_method='getDefaultText',
+        default_content_type='text/html',
+        default_output_type='text/html',
+        optional=True,
+        pm_text_field=True,
+    ),
+    TextField(
         name='motivation',
         allowable_content_types=('text/html',),
         widget=RichWidget(

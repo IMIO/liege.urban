@@ -26,6 +26,9 @@ msgstr "fin du dispositif"
 msgid "motivation"
 msgstr "motivation"
 
+msgid "pmObject"
+msgstr "Objet"
+
 msgid "urban_label_RCB"
 msgstr "Réglement communal sur les Bâtisses"
 
@@ -55,6 +58,9 @@ msgstr "Motivation"
 
 msgid "urban_label_pathCoating"
 msgstr "Revêtement de trottoir existant"
+
+msgid "urban_label_pmObject"
+msgstr "Objet"
 
 msgid "urban_label_rcbDetails"
 msgstr "Détails concernant le RCB"
