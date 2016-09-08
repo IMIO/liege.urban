@@ -32,6 +32,9 @@ msgstr ""
 msgid "pmObject"
 msgstr ""
 
+msgid "urban_label_closeDate"
+msgstr ""
+
 msgid "urban_label_composition"
 msgstr ""
 
@@ -42,6 +45,9 @@ msgid "urban_label_deviceContinuation"
 msgstr ""
 
 msgid "urban_label_deviceEnd"
+msgstr ""
+
+msgid "urban_label_explanationDate"
 msgstr ""
 
 msgid "urban_label_futurePathCoating"

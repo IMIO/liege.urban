@@ -38,6 +38,9 @@ msgstr "Rive"
 msgid "urban_label_UsageTownship"
 msgstr "Nature des travaux (codes Ville)"
 
+msgid "urban_label_closeDate"
+msgstr "Date de clôture"
+
 msgid "urban_label_composition"
 msgstr "Composition"
 
@@ -49,6 +52,9 @@ msgstr "Suite du dispositif"
 
 msgid "urban_label_deviceEnd"
 msgstr "Fin du dispositif"
+
+msgid "urban_label_explanationDate"
+msgstr "Date de séance d'explications"
 
 msgid "urban_label_futurePathCoating"
 msgstr "Revêtement de trottoir futur"
