@@ -24,7 +24,8 @@ def update_item_schema(baseSchema):
     LicenceSchema.moveField('derogation', after='investigationArticlesText')
     LicenceSchema.moveField('derogationDetails', after='derogation')
     LicenceSchema.moveField('investigationReasons', after='derogationDetails')
-    LicenceSchema.moveField('demandDisplay', after='investigationEnd')
+    # TODO to remove after testing the update script of migration
+    # LicenceSchema.moveField('demandDisplay', after='investigationEnd')
     LicenceSchema.moveField('investigationDetails', after='investigationWriteReclamationNumber')
 
     return LicenceSchema
