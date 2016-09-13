@@ -17,6 +17,9 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: liege.urban\n"
 
+msgid "abandoned"
+msgstr ""
+
 msgid "accept_licence"
 msgstr ""
 
@@ -48,6 +51,9 @@ msgid "deposit"
 msgstr ""
 
 msgid "draft"
+msgstr ""
+
+msgid "filed_away"
 msgstr ""
 
 msgid "incomplete"

@@ -14,6 +14,9 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
+msgid "abandoned"
+msgstr "Abandonné"
+
 msgid "accept_licence"
 msgstr "accepter le permis"
 
@@ -46,6 +49,9 @@ msgstr "Dépôt"
 
 msgid "draft"
 msgstr "Brouillon"
+
+msgid "filed_away"
+msgstr "Classé sans suite"
 
 msgid "incomplete"
 msgstr "Incomplet"
