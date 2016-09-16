@@ -25,7 +25,7 @@ def update_item_schema(baseSchema):
     LicenceSchema.moveField('derogationDetails', after='derogation')
     LicenceSchema.moveField('investigationReasons', after='derogationDetails')
     LicenceSchema.moveField('demandDisplay', after='derogation')
-    LicenceSchema.moveField('investigationDetails', after='investigationWriteReclamationNumber')
+    LicenceSchema.moveField('investigationDetails', after='demandDisplay')
 
     return LicenceSchema
 
