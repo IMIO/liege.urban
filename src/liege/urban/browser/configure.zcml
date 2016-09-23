@@ -16,4 +16,33 @@
         factory=".redirects.UrbanRootRedirects"
     />
 
+    <browser:page
+        name="search_address"
+        for="Products.urban.interfaces.IGenericLicence"
+        permission="zope2.View"
+        class=".address_search.AddressSearchFormView"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             zope.publisher.interfaces.browser.IBrowserRequest
+             .address_search.AddressSearchForm
+             .address_search.StreetNameField
+             z3c.form.interfaces.ITextWidget"
+        provides="z3c.form.interfaces.IValue"
+        factory=".address_search.DefaulStreetName"
+        name="default"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             zope.publisher.interfaces.browser.IBrowserRequest
+             .address_search.AddressSearchForm
+             .address_search.StreetNumberField
+             z3c.form.interfaces.ITextWidget"
+        provides="z3c.form.interfaces.IValue"
+        factory=".address_search.DefaulStreetNumber"
+        name="default"
+    />
+
 </configure>
