@@ -20,4 +20,4 @@ class LicenceToShore(object):
         return sorted(list(shores))
 
     def display(self):
-        return ''.join(self.getShore())
+        return ''.join(self.get_shore())
