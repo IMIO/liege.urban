@@ -47,7 +47,8 @@ setup(
         'plone.api',
         'Products.urban',
         'setuptools',
-        'zope.schema'
+        'zope.schema',
+        'z3c.unconfigure',
     ],
     extras_require={
         'test': [
