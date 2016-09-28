@@ -10,6 +10,16 @@
         directory="static"
     />
 
+    <include file="table.zcml" />
+
+    <browser:page
+       for="Products.urban.interfaces.IGenericLicence"
+       name="licencetabs-macros"
+       class="Products.urban.browser.licence.licenceview.LicenceView"
+       template="templates/licencetabsmacros.pt"
+       permission="zope2.View"
+    />
+
     <adapter
         for="zope.interface.Interface"
         provides="Products.urban.interfaces.IUrbanRootRedirects"
@@ -17,7 +27,7 @@
     />
 
     <browser:page
-        name="search_address"
+        name="searchparcels"
         for="Products.urban.interfaces.IGenericLicence"
         permission="zope2.View"
         class=".address_search.AddressSearchFormView"
@@ -30,7 +40,18 @@
              .address_search.StreetNameField
              z3c.form.interfaces.ITextWidget"
         provides="z3c.form.interfaces.IValue"
-        factory=".address_search.DefaulStreetName"
+        factory=".address_search.DefaultStreetName"
+        name="default"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             zope.publisher.interfaces.browser.IBrowserRequest
+             .address_search.AddressSearchForm
+             .address_search.INSCodeField
+             z3c.form.interfaces.ITextWidget"
+        provides="z3c.form.interfaces.IValue"
+        factory=".address_search.DefaultINSCode"
         name="default"
     />
 
@@ -41,7 +62,7 @@
              .address_search.StreetNumberField
              z3c.form.interfaces.ITextWidget"
         provides="z3c.form.interfaces.IValue"
-        factory=".address_search.DefaulStreetNumber"
+        factory=".address_search.DefaultStreetNumber"
         name="default"
     />
 

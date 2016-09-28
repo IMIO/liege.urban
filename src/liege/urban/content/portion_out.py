@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from Products.Archetypes.atapi import IntegerField
 from Products.Archetypes.atapi import Schema
 from Products.Archetypes.atapi import StringField
 from Products.Archetypes.atapi import SelectionWidget
@@ -12,6 +13,51 @@ def update_item_schema(baseSchema):
 
     specificSchema = Schema((
         StringField(
+            name='street_code',
+            widget=StringField._properties['widget'](
+                visible={'edit': 'visible', 'view': 'hidden'},
+                label='Street_code',
+                label_msgid='urban_label_street_code',
+                i18n_domain='urban',
+            ),
+        ),
+        StringField(
+            name='street_name',
+            widget=StringField._properties['widget'](
+                visible={'edit': 'visible', 'view': 'visible'},
+                label='Street_name',
+                label_msgid='urban_label_street_name',
+                i18n_domain='urban',
+            ),
+        ),
+        StringField(
+            name='street_number',
+            widget=StringField._properties['widget'](
+                visible={'edit': 'visible', 'view': 'visible'},
+                label='Street_number',
+                label_msgid='urban_label_street_number',
+                i18n_domain='urban',
+            ),
+        ),
+        StringField(
+            name='zip_code',
+            widget=StringField._properties['widget'](
+                visible={'edit': 'visible', 'view': 'visible'},
+                label='Zip_code',
+                label_msgid='urban_label_zip_code',
+                i18n_domain='urban',
+            ),
+        ),
+        IntegerField(
+            name='address_point',
+            widget=IntegerField._properties['widget'](
+                visible={'edit': 'visible', 'view': 'visible'},
+                label='Address_point',
+                label_msgid='urban_label_address_point',
+                i18n_domain='urban',
+            ),
+        ),
+        StringField(
             name='shore',
             widget=SelectionWidget(
                 format='select',
@@ -22,9 +68,9 @@ def update_item_schema(baseSchema):
             optional=True,
             vocabulary=DisplayList(
                 (
-                    ('right', 'Droite'),
-                    ('left', 'Gauche'),
-                    ('center', 'Centre'),
+                    ('D', 'Droite'),
+                    ('G', 'Gauche'),
+                    ('C', 'Centre'),
                 )
             ),
         ),

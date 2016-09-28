@@ -3,6 +3,16 @@
 
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
+from zope.interface import Interface
+
 
 class ILiegeUrbanLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
+
+
+class IAddressFactory(Interface):
+    """  """
+
+
+class IShore(Interface):
+    """ """

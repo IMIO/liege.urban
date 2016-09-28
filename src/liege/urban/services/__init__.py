@@ -7,4 +7,4 @@ try:
     config = ExternalConfig('services')
 except:
     config = {}
-liege_address = LiegeAddressService(**(config and config.liege_address))
+address_service = LiegeAddressService(**(config and config.liege_address))

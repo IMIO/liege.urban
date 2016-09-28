@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
 
+from liege.urban.browser.table import AddressesListingTable
+from liege.urban.services import address_service
+
 from plone import api
 from plone.z3cform.layout import FormWrapper
+
+from Products.urban.browser.table.urbantable import ParcelsTable
 
 from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile
 
@@ -18,6 +23,10 @@ class StreetNameField(TextLine):
     """ """
 
 
+class INSCodeField(TextLine):
+    """ """
+
+
 class StreetNumberField(TextLine):
     """ """
 
@@ -26,6 +35,11 @@ class IAddressSearchForm(Interface):
 
     street_name = StreetNameField(
         title=_(u'Street name'),
+        required=False
+    )
+
+    INS_code = INSCodeField(
+        title=_(u'INS code'),
         required=False
     )
 
@@ -48,34 +62,66 @@ class FieldDefaultValue(object):
     def get(self):
         """ To implements."""
 
-
-class DefaulStreetName(FieldDefaultValue):
-    """ """
-
-    def get(self):
-        """ """
+    def get_address_to_find(self):
+        """Return the first street on the licence """
         location = self.licence.getWorkLocations()
         if not location:
-            return ''
+            return None
 
         catalog = api.portal.get_tool('portal_catalog')
-        street_UID = location[0]['street']
-        street_brain = catalog(UID=street_UID)
-        default_street = street_brain[0].Title.split('(')[0]
+        addresses_street_codes = set([int(adr.getStreet_code()) for adr in self.licence.getParcels()])
 
-        return default_street
+        for manual_address in location:
+            street_UID = manual_address['street']
+            street_brains = catalog(UID=street_UID)
+            street = street_brains[0].getObject()
+            if street.getStreetCode() not in addresses_street_codes:
+                return manual_address, street
+
+        return (None, None)
+
+    def get_default_street(self):
+        """Return the first street on the licence """
+        manual_address, street = self.get_address_to_find()
+        return street
 
 
-class DefaulStreetNumber(FieldDefaultValue):
+class DefaultStreetName(FieldDefaultValue):
     """ """
 
     def get(self):
         """ """
-        location = self.licence.getWorkLocations()
-        if not location:
+        street = self.get_default_street()
+        if not street:
             return ''
 
-        street_number = location[0]['number']
+        street_name = street.Title().split('(')[0]
+        return street_name
+
+
+class DefaultINSCode(FieldDefaultValue):
+    """ """
+
+    def get(self):
+        """ """
+        street = self.get_default_street()
+        if not street:
+            return None
+
+        ins_code = street.getStreetCode()
+        return ins_code
+
+
+class DefaultStreetNumber(FieldDefaultValue):
+    """ """
+
+    def get(self):
+        """ """
+        manual_address, street = self.get_address_to_find()
+        if not manual_address:
+            return ''
+
+        street_number = manual_address['number']
 
         return street_number
 
@@ -107,9 +153,56 @@ class AddressSearchFormView(FormWrapper):
         self.request.set('disable_plone.rightcolumn', 1)
         self.request.set('disable_plone.leftcolumn', 1)
 
-    def do_search(self):
+    def search_submitted(self):
         """
         """
         form_inputs = self.form_instance.extractData()[0]
-        do_search = any(form_inputs.values())
-        return do_search
+        submitted = any(form_inputs.values())
+        return submitted
+
+    def get_search_args(self):
+        """
+        """
+        form_inputs = self.form_instance.extractData()[0]
+        return form_inputs
+
+    def update(self):
+        super(AddressSearchFormView, self).update()
+
+        self.search_result = AddressesListingTable(self, self.request)
+        self.search_result.update()
+
+    def values(self):
+        if self.search_submitted():
+            search_session = address_service.new_session()
+            inputs = self.get_search_args()
+            inputs = dict([(k, v) for k, v in inputs.iteritems() if v])
+            records = search_session.query_addresses(**inputs)
+            values = [AddressRecord(**record._asdict()) for record in records]
+            return values
+
+        return []
+
+    def refreshBatch(self, batch_start):
+        self.search_result.batchStart = batch_start
+        self.search_result.update()
+
+    def renderParcelsListing(self):
+        parcels = self.context.getParcels()
+        if not parcels:
+            return ''
+        parceltable = ParcelsTable(parcels, self.request)
+        parceltable.update()
+        parcels_listing = parceltable.render()
+        return parcels_listing
+
+
+class AddressRecord(object):
+    """Dummy class for address search result records """
+
+    def __init__(self, **kwargs):
+        for k, v in kwargs.iteritems():
+            setattr(self, k, v)
+
+    def iteritems(self):
+        return self.__dict__.iteritems()

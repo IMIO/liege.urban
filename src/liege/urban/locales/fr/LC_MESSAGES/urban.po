@@ -23,6 +23,9 @@ msgstr "suite du dispositif"
 msgid "deviceEnd"
 msgstr "fin du dispositif"
 
+msgid "label_colname_shore"
+msgstr "Rive"
+
 msgid "motivation"
 msgstr "motivation"
 
@@ -58,6 +61,9 @@ msgstr "Date de séance d'explications"
 
 msgid "urban_label_futurePathCoating"
 msgstr "Revêtement de trottoir futur"
+
+msgid "urban_label_manual_addresses"
+msgstr "Addresse(s) à l'encodage du dossier"
 
 msgid "urban_label_motivation"
 msgstr "Motivation"

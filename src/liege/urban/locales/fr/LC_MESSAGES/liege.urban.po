@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-09-13 12:32+0000\n"
+"POT-Creation-Date: 2016-09-27 12:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,14 +14,26 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ../configure.zcml:34
+#: ../browser/address_search.py:42
+msgid "INS code"
+msgstr "Code INS"
+
+#: ../configure.zcml:50
 msgid "Installs liege.urban add-on."
 msgstr ""
+
+#: ../browser/address_search.py:37
+msgid "Street name"
+msgstr "Rue"
+
+#: ../browser/address_search.py:47
+msgid "Street number"
+msgstr "N° de police"
 
 msgid "The above listed tasks are not done yet !!!"
 msgstr "Attention, il reste des actions à prendre pour les tâches ci-dessus!!!"
 
-#: ../configure.zcml:34
+#: ../configure.zcml:50
 #: ../schedule/vocabulary.py:136
 msgid "liege.urban"
 msgstr ""

@@ -2,6 +2,10 @@
 
 from collective.documentgenerator.helper.archetypes import ATDisplayProxyObject
 
+from liege.urban.interfaces import IShore
+
+from zope.component import queryAdapter
+
 
 class LiegeLicenceProxyObject(ATDisplayProxyObject):
     """
@@ -14,10 +18,6 @@ class LiegeLicenceProxyObject(ATDisplayProxyObject):
         Append shore abbreviation to the base reference.
         """
         licence = self.context
-        shore_abbr = {
-            'right': u'D',
-            'left': u'G',
-            'center': u'C',
-        }
-        ref = '{} {}'.format(licence.reference, shore_abbr[licence.shore])
+        to_shore = queryAdapter(licence, IShore)
+        ref = '{} {}'.format(licence.reference, to_shore.display())
         return ref

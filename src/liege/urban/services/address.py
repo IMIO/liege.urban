@@ -3,6 +3,8 @@
 from Products.urban.services.base import SQLService
 from Products.urban.services.base import SQLSession
 
+IGNORE = []
+
 
 class UnreferencedParcelError(Exception):
     """
@@ -14,11 +16,23 @@ class LiegeAddressService(SQLService):
     """
     """
 
-    def __init__(self, dialect='postgresql+psycopg2', user='urb_xxx', host='', db_name='urb_xxx', password=''):
+    def __init__(self, dialect='postgresql+psycopg2', user='', host='', db_name='', password=''):
         super(LiegeAddressService, self).__init__(dialect, user, host, db_name, password)
 
         if self.can_connect():
-            self._init_table('ptadresses_vdl', column_names=['secteururb', 'num_cad_a_'])
+            self._init_table(
+                'ptadresses_vdl',
+                column_names=[
+                    'gid',
+                    'secteururb',
+                    'num_cad_a_',
+                    'coderue',
+                    'ref_rue',
+                    'adresse',
+                    'num_police',
+                    'lishab_cp',
+                ]
+            )
 
 
 class LiegeAddressSession(SQLSession):
@@ -26,11 +40,29 @@ class LiegeAddressSession(SQLSession):
     Implements all the sql queries of cadastre DB with sqlalchemy methods
     """
 
-    def get_shore(self, capakey):
-        """Return all divisions records of da table"""
-        pt_adresses = self.tables.ptadresses_vdl
-        query = self.session.query(pt_adresses.secteururb)
-        query = query.filter(pt_adresses.num_cad_a_.like(capakey))
+    def query_addresses(self, street_name=IGNORE, INS_code=IGNORE, street_number=IGNORE):
+        """
+        """
+        table = self.tables.ptadresses_vdl
+        query = self.session.query(
+            table.gid.label('address_point'),
+            table.coderue.label('street_code'),
+            table.num_cad_a_.label('capakey'),
+            table.adresse.label('street_name'),
+            table.num_police.label('street_number'),
+            table.secteururb.label('shore'),
+            table.lishab_cp.label('zip_code'),
+        )
+        # search on street if name if only if there's no INS code
+        if INS_code is IGNORE:
+            query = street_name is IGNORE and query or query.filter(table.adresse.ilike(u'%{}%'.format(street_name)))
 
-        result = query.distinct().all()
-        return result
+        query = street_number is IGNORE and query or query.filter(table.num_police == int(street_number))
+
+        while INS_code != IGNORE and len(INS_code) < 4:
+            INS_code = '0' + INS_code
+        query = INS_code is IGNORE and query or query.filter(table.coderue == INS_code)
+
+        records = query.distinct().all()
+
+        return records

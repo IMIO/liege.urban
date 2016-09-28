@@ -1,6 +1,7 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="liege.urban">
@@ -10,7 +11,22 @@
   <!--five:registerPackage package="." initialize=".initialize" /-->
 
   <include package="imio.actionspanel"/>
+  <include package="Products.urban"/>
 
+  <include package="z3c.unconfigure" file="meta.zcml"/>
+
+  <!-- unregister licencetabsmacros so we can re-register it with a custom template -->
+  <unconfigure package="Products.urban">
+      <browser:page
+         for="Products.urban.interfaces.IGenericLicence"
+         name="licencetabs-macros"
+         class=".browser.licence.licenceview.LicenceView"
+         template="browser/licence/templates/licencetabsmacros.pt"
+         permission="zope2.View"
+      />
+  </unconfigure>
+
+  <include package=".adapters" />
   <include package=".browser" />
   <include package=".content" />
   <include package=".dashboard" />
@@ -37,7 +53,7 @@
       name="liege.urban-postInstall"
       title="liege.urban post_install import step"
       description="Post install import step from liege.urban"
-      handler=".setuphandlers.post_install">
+   handler=".setuphandlers.post_install">
   </genericsetup:importStep>
 
 </configure>

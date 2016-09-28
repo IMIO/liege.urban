@@ -1,0 +1,120 @@
+<metal:field_display define-macro="field_display">
+    <metal:parent_call use-macro="here/@@urban-tabs-macros/field_display">
+    </metal:parent_call>
+</metal:field_display>
+
+<metal:description define-macro="description_macro" i18n:domain="urban">
+    <metal:parent_call use-macro="here/@@urban-tabs-macros/description_macro">
+            <metal:worklocations fill-slot="worklocations">
+
+                <fieldset tal:define="workLocations context/getWorkLocations;
+                                      member context/@@plone_portal_state/member;
+                                      addresses context/getParcels">
+                    <legend i18n:translate="urban_label_situation">Situation</legend>
+                    <div tal:condition="python: workLocations and not addresses">
+                        <metal:myfield use-macro="python:here.widget('workLocations', mode='view')" />
+                        <div class="parcel-action">
+                            <form tal:condition="python: member.has_permission('urban: Add PortionOut', context)" name="quickAdd"
+                                  tal:attributes="action python: context.absolute_url() + '/searchparcels'" action="searchparcels" method="post">
+                                <input type="submit" class="contenttype-portionout apButton" id="addPortionOut" value="search_parcels" i18n:attributes="value" />
+                            </form>
+                        </div>
+                        <div class="parcel-action">
+                            <form tal:condition="python: member.has_permission('urban: Add PortionOut', context)" name="manualQuickAdd"
+                                  tal:attributes="action python: context.absolute_url() + '/createObject?type_name=PortionOut'" action="searchparcels" method="post">
+                                <input type="submit" class="context apButton contenttype-portionout" id="manualAddPortionOut" value="manual_parcel" i18n:attributes="value" />
+                            </form>
+                        </div>
+                    </div>
+                    <div tal:condition="python: addresses">
+                        <div metal:use-macro="here/@@globalmacros/urbanParcelsMacro" />
+                        <div id="urban-coring" class="parcel-action"
+                             tal:condition="context/getOfficialParcels">
+                            <a class="coring link-overlay"
+                               tal:attributes="href python:context.absolute_url() + '/@@parcelcoring'">
+                                <button class="context apButton">
+                                    <img src="coring.png"/>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <span tal:condition="python: not workLocations and not addresses" class="discreet" i18n:translate="content_none">None</span>
+                </fieldset>
+            </metal:worklocations>
+
+            <metal:parcels fill-slot="parcels">
+            </metal:parcels>
+    </metal:parent_call>
+</metal:description>
+
+<metal:analysis define-macro="analysis_macro" i18n:domain="urban">
+    <metal:parent_call use-macro="here/@@urban-tabs-macros/analysis_macro">
+    </metal:parent_call>
+</metal:analysis>
+
+<metal:road define-macro="road_macro" i18n:domain="urban">
+    <metal:parent_call use-macro="here/@@urban-tabs-macros/road_macro">
+    </metal:parent_call>
+</metal:road>
+
+<metal:location define-macro="location_macro" i18n:domain="urban">
+    <metal:parent_call use-macro="here/@@urban-tabs-macros/location_macro">
+    </metal:parent_call>
+</metal:location>
+
+<metal:peb define-macro="habitation_macro" i18n:domain="urban">
+    <metal:parent_call use-macro="here/@@urban-tabs-macros/habitation_macro">
+    </metal:parent_call>
+</metal:peb>
+
+<metal:peb define-macro="peb_macro" i18n:domain="urban">
+    <metal:parent_call use-macro="here/@@urban-tabs-macros/peb_macro">
+    </metal:parent_call>
+</metal:peb>
+
+<metal:inquiry define-macro="inquiry_macro" i18n:domain="urban">
+    <metal:parent_call use-macro="here/@@urban-tabs-macros/inquiry_macro" />
+</metal:inquiry>
+
+<metal:advices define-macro="advices_macro" i18n:domain="urban">
+    <metal:parent_call use-macro="here/@@urban-tabs-macros/advices_macro" />
+</metal:advices>
+
+
+<metal:events define-macro="urbanAttachmentsMacro" i18n:domain="urban">
+
+    <fieldset>
+        <legend i18n:translate="">Attachments</legend>
+        <div class="clear">
+            <tal:listing content="structure view/renderAttachmentsListing" />
+        </div>
+
+        <tal:add_attachment i18n:domain="urban"
+                            tal:define="mayAddAttachment view/mayAddAttachment">
+            <form tal:condition="mayAddAttachment" name="quickAdd" action="createObject" method="post">
+                <input name="type_name" value="File" type="hidden">
+                <input i18n:attributes="value" class="context apButton" id="event" value="add_an_attachment" type="submit">
+            </form>
+        </tal:add_attachment>
+    </fieldset>
+
+    <fieldset>
+        <legend i18n:translate="">Events attachments</legend>
+        <div class="clear">
+            <tal:listing content="structure view/renderNestedAttachmentsListing" />
+        </div>
+    </fieldset>
+
+</metal:events>
+
+
+<metal:events define-macro="urbanEventsMacro" i18n:domain="urban">
+    <metal:parent_call use-macro="here/@@urban-tabs-macros/urbanEventsMacro">
+    </metal:parent_call>
+</metal:events>
+
+
+<metal:add_all_advices define-macro="urbanAdvicesEventsMacro" i18n:domain="urban">
+    <metal:parent_call use-macro="here/@@urban-tabs-macros/urbanAdvicesEventsMacro">
+    </metal:parent_call>
+</metal:add_all_advices>

@@ -12,18 +12,37 @@
             <tal:comment replace="nothing">Go back...</tal:comment>
             <metal:listing use-macro="context/@@globalmacros/goBackToMacro" />
 
-            <div style="vertical-align:top"
+            <div style="vertical-align:top; max-width: 45%; display:inline-block"
                 tal:define="form nocall:view/form">
                 <fieldset>
                 <legend i18n:translate="">Filter</legend>
                     <span tal:replace="structure view/contents" />
                 </fieldset>
             </div>
-            <div tal:condition="view/do_search">
+            <div style="vertical-align:top; max-width: 45%; display:inline-block">
                 <fieldset>
-                <legend i18n:translate="">Ongoing events</legend>
-                    <tal:listing content="structure view/search_result/render" />
-                    <tal:batch content="structure view/search_result/renderBatch" />
+                <legend i18n:translate="urban_label_manual_addresses">Manual adresses</legend>
+                    <metal:myfield use-macro="python:context.widget('workLocations', mode='view')" />
+                </fieldset>
+            </div>
+            <div style="vertical-align:top; max-width: 45%; display: inline-block">
+                <fieldset>
+                    <legend i18n:translate="concerned_addresses">Address point(s)</legend>
+                    <div class="clear">
+                        <tal:listing content="structure view/renderParcelsListing" />
+                    </div>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                <legend i18n:translate="">Results</legend>
+                    <div class="clear" tal:condition="view/search_submitted">
+                        <tal:listing content="structure view/search_result/render" />
+                        <tal:batch content="structure view/search_result/renderBatch" />
+                    </div>
+                    <div class="clear" tal:condition="not: view/search_submitted" i18n:translate="">
+                        No results
+                    </div>
                 </fieldset>
             </div>
         </metal:main>

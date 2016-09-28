@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from Products.Archetypes.atapi import Schema
-from Products.Archetypes.atapi import StringField
-from Products.Archetypes.atapi import SelectionWidget
-from Products.Archetypes.public import DisplayList
 
 from Products.urban.Article127 import Article127
 from Products.urban.BuildLicence import BuildLicence
@@ -23,24 +20,6 @@ from Products.urban.UrbanCertificateTwo import UrbanCertificateTwo
 def update_item_schema(baseSchema):
 
     specificSchema = Schema((
-        StringField(
-            name='shore',
-            widget=SelectionWidget(
-                format='select',
-                label='Shore',
-                label_msgid='urban_label_Shore',
-                i18n_domain='urban',
-            ),
-            schemata='urban_description',
-            optional=True,
-            vocabulary=DisplayList(
-                (
-                    ('right', 'Droite'),
-                    ('left', 'Gauche'),
-                    ('center', 'Centre'),
-                )
-            ),
-        ),
     ),)
 
     LicenceSchema = baseSchema + specificSchema.copy()

@@ -26,6 +26,9 @@ msgstr ""
 msgid "deviceEnd"
 msgstr ""
 
+msgid "label_colname_shore"
+msgstr ""
+
 msgid "motivation"
 msgstr ""
 
@@ -52,6 +55,9 @@ msgstr ""
 
 msgid "urban_label_futurePathCoating"
 msgstr ""
+
+msgid "urban_label_manual_addresses"
+msgstr
 
 msgid "urban_label_motivation"
 msgstr ""
