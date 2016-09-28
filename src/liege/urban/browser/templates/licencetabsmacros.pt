@@ -38,7 +38,7 @@
                             </a>
                         </div>
                     </div>
-                    <span tal:condition="python: not workLocations and not addresses" class="discreet" i18n:translate="content_none">None</span>
+                    <div tal:condition="python: not workLocations and not addresses" class="discreet clear" i18n:translate="content_none">None</div>
                 </fieldset>
             </metal:worklocations>
 

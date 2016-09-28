@@ -21,3 +21,8 @@ class LiegeLicenceProxyObject(ATDisplayProxyObject):
         to_shore = queryAdapter(licence, IShore)
         ref = '{} {}'.format(licence.reference, to_shore.display())
         return ref
+
+    def getShore(self):
+        licence = self.context
+        to_shore = queryAdapter(licence, IShore)
+        return to_shore.display()
