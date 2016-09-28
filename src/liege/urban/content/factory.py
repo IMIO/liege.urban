@@ -46,3 +46,5 @@ class AdressFactory(BrowserView):
         for field_name, value in address_args.iteritems():
             field = address.getField(field_name)
             field.set(address, value)
+
+        licence.updateTitle()

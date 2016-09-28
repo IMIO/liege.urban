@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from liege.urban.interfaces import IShore
+
 from Products.Archetypes.atapi import Schema
 
 from Products.urban.Article127 import Article127
@@ -9,12 +11,16 @@ from Products.urban.Division import Division
 from Products.urban.EnvClassOne import EnvClassOne
 from Products.urban.EnvClassThree import EnvClassThree
 from Products.urban.EnvClassTwo import EnvClassTwo
+from Products.urban.GenericLicence import GenericLicence
 from Products.urban.MiscDemand import MiscDemand
 from Products.urban.ParcelOutLicence import ParcelOutLicence
 from Products.urban.PatrimonyCertificate import PatrimonyCertificate
 from Products.urban.PreliminaryNotice import PreliminaryNotice
 from Products.urban.UrbanCertificateBase import UrbanCertificateBase
 from Products.urban.UrbanCertificateTwo import UrbanCertificateTwo
+
+from zope.i18n import translate
+from zope.component import queryAdapter
 
 
 def update_item_schema(baseSchema):
@@ -55,6 +61,21 @@ licence_classes = [
 for licence_class in licence_classes:
     licence_class.schema = update_item_schema(licence_class.schema)
 
+
+def updateTitle(self):
+    """
+        Update the title to clearly identify the licence
+    """
+    if self.getApplicants():
+        applicantTitle = self.getApplicants()[0].Title()
+    else:
+        applicantTitle = translate('no_applicant_defined', 'urban', context=self.REQUEST).encode('utf8')
+    to_shore = queryAdapter(self, IShore)
+    title = "%s %s - %s - %s" % (self.getReference(), to_shore.display(), self.getLicenceSubject(), applicantTitle)
+    self.setTitle(title)
+    self.reindexObject(idxs=('Title', 'applicantInfosIndex', 'sortable_title', ))
+
+GenericLicence.updateTitle = updateTitle
 
 # Classes have already been registered, but we register them again here
 # because we have potentially applied some schema adaptations (see above).
