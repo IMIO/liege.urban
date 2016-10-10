@@ -11,6 +11,13 @@
   />
 
   <adapter
+     for="Products.urban.interfaces.IPreliminaryNotice"
+     provides="borg.localrole.interfaces.ILocalRoleProvider"
+     factory=".preliminarynotice_workflow.StateRolesMapping"
+     name="preliminarynotice_local_roles"
+  />
+
+  <adapter
      for="Products.urban.interfaces.IPortionOut"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
      factory=".address_workflow.StateRolesMapping"
