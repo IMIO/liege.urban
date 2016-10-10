@@ -23,6 +23,9 @@ msgstr "accepter le permis"
 msgid "analysis"
 msgstr "Analyse du dossier"
 
+msgid "analysis_validation"
+msgstr "Valider l'analyse"
+
 msgid "ask_address_validation"
 msgstr "faire valider l'adresse"
 
@@ -37,6 +40,15 @@ msgstr "Vérifier la complétude"
 
 msgid "checking_completion"
 msgstr "Vérification de la complétude"
+
+msgid "close_defavorable"
+msgstr "Avis favorable"
+
+msgid "close_favorable"
+msgstr "Avis défavorable"
+
+msgid "college_in_progress"
+msgstr "Passage au collège"
 
 msgid "complete"
 msgstr "Complet"
@@ -53,6 +65,18 @@ msgstr "Brouillon"
 msgid "filed_away"
 msgstr "Classé sans suite"
 
+msgid "go_back_1"
+msgstr "Retour"
+
+msgid "go_back_2"
+msgstr "Retour"
+
+msgid "go_back_3"
+msgstr "Retour"
+
+msgid "go_back_4"
+msgstr "Retour"
+
 msgid "incomplete"
 msgstr "Incomplet"
 
@@ -62,6 +86,9 @@ msgstr "Revérifier la complétude"
 msgid "notification"
 msgstr "Notification du permis"
 
+msgid "procedure_analysis"
+msgstr "Analyse technique"
+
 msgid "procedure_choice"
 msgstr "Choix de la procédure"
 
@@ -70,6 +97,9 @@ msgstr "Choix de la procédure fait"
 
 msgid "procedure_validated"
 msgstr "Procédure validée"
+
+msgid "propose_analysis"
+msgstr "proposer l'analyse technique"
 
 msgid "propose_complete"
 msgstr "proposer comme complet"
@@ -86,6 +116,9 @@ msgstr "Projet de décision rédigé"
 msgid "receive_complements"
 msgstr "compléments reçus"
 
+msgid "refuse_analysis"
+msgstr "Renvoyer"
+
 msgid "refuse_licence"
 msgstr "refuser le permis"
 
@@ -97,6 +130,9 @@ msgstr "Refaire le rapport d'analyse"
 
 msgid "report_written"
 msgstr "Rapport d'analyse fait"
+
+msgid "to_analyse"
+msgstr "Envoyer à l'analyse"
 
 msgid "to_validate"
 msgstr "à valider"

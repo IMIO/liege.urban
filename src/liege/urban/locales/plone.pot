@@ -26,6 +26,9 @@ msgstr ""
 msgid "analysis"
 msgstr ""
 
+msgid "analysis_validation"
+msgstr ""
+
 msgid "ask_address_validation"
 msgstr ""
 
@@ -39,6 +42,15 @@ msgid "check_completion"
 msgstr ""
 
 msgid "checking_completion"
+msgstr ""
+
+msgid "close_defavorable"
+msgstr ""
+
+msgid "close_favorable"
+msgstr ""
+
+msgid "college_in_progress"
 msgstr ""
 
 msgid "complete"
@@ -56,6 +68,18 @@ msgstr ""
 msgid "filed_away"
 msgstr ""
 
+msgid "go_back_1"
+msgstr ""
+
+msgid "go_back_2"
+msgstr ""
+
+msgid "go_back_3"
+msgstr ""
+
+msgid "go_back_4"
+msgstr ""
+
 msgid "incomplete"
 msgstr ""
 
@@ -65,6 +89,9 @@ msgstr ""
 msgid "notification"
 msgstr ""
 
+msgid "procedure_analysis"
+msgstr ""
+
 msgid "procedure_choice"
 msgstr ""
 
@@ -72,6 +99,9 @@ msgid "procedure_choosen"
 msgstr ""
 
 msgid "procedure_validated"
+msgstr ""
+
+msgid "propose_analysis"
 msgstr ""
 
 msgid "propose_complete"
@@ -89,6 +119,9 @@ msgstr ""
 msgid "receive_complements"
 msgstr ""
 
+msgid "refuse_analysis"
+msgstr ""
+
 msgid "refuse_licence"
 msgstr ""
 
@@ -99,6 +132,9 @@ msgid "refuse_report"
 msgstr ""
 
 msgid "report_written"
+msgstr ""
+
+msgid "to_analyse"
 msgstr ""
 
 msgid "to_validate"
