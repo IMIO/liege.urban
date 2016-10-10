@@ -7,6 +7,7 @@
  <object name="college_event_workflow" meta_type="Workflow"/>
  <object name="inquiry_event_workflow" meta_type="Workflow"/>
  <object name="opinion_request_workflow" meta_type="Workflow"/>
+ <object name="preliminary_notice_workflow" meta_type="Workflow"/>
 <!-- ##code-section workflowobjects -->
 <!-- ##/code-section workflowobjects -->
  <bindings>
@@ -15,6 +16,9 @@
   </type>
   <type type_id="PortionOut">
      <bound-workflow workflow_id="address_workflow" />
+  </type>
+  <type type_id="PreliminaryNotice">
+     <bound-workflow workflow_id="preliminary_notice_workflow" />
   </type>
   <type type_id="UrbanEventAcknowledgment">
      <bound-workflow workflow_id="acknowledgment_event_workflow" />

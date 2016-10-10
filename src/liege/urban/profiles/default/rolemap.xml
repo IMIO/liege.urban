@@ -3,6 +3,8 @@
  <roles>
     <role name="ExternalReader"/>
     <role name="AddressEditor"/>
+    <role name="RoadReader"/>
+    <role name="RoadEditor"/>
  </roles>
  <permissions>
  </permissions>
