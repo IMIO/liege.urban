@@ -69,7 +69,7 @@ class FieldDefaultValue(object):
             return None
 
         catalog = api.portal.get_tool('portal_catalog')
-        addresses_street_codes = set([int(adr.getStreet_code()) for adr in self.licence.getParcels()])
+        addresses_street_codes = set([int(adr.getStreet_code() or 0) for adr in self.licence.getParcels()])
 
         for manual_address in location:
             street_UID = manual_address['street']
