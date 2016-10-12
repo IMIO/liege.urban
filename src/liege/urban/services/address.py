@@ -44,15 +44,8 @@ class LiegeAddressSession(SQLSession):
         """
         """
         table = self.tables.ptadresses_vdl
-        query = self.session.query(
-            table.gid.label('address_point'),
-            table.coderue.label('street_code'),
-            table.num_cad_a_.label('capakey'),
-            table.adresse.label('street_name'),
-            table.num_police.label('street_number'),
-            table.secteururb.label('shore'),
-            table.lishab_cp.label('zip_code'),
-        )
+        query = self._base_query_address()
+
         # search on street if name if only if there's no INS code
         if INS_code is IGNORE:
             query = street_name is IGNORE and query or query.filter(table.adresse.ilike(u'%{}%'.format(street_name)))
@@ -66,3 +59,33 @@ class LiegeAddressSession(SQLSession):
         records = query.distinct().all()
 
         return records
+
+    def query_address_by_gid(self, gid):
+        """
+        Return the unique 'gid' address point .
+        """
+        table = self.tables.ptadresses_vdl
+        query = self._base_query_address()
+
+        query = query.filter(table.gid == gid)
+        try:
+            address = query.distinct().one()
+            return address
+        except:
+            return
+
+    def _base_query_address(self):
+        """
+        """
+        table = self.tables.ptadresses_vdl
+        # columns to return
+        query = self.session.query(
+            table.gid.label('address_point'),
+            table.coderue.label('street_code'),
+            table.num_cad_a_.label('capakey'),
+            table.adresse.label('street_name'),
+            table.num_police.label('street_number'),
+            table.secteururb.label('shore'),
+            table.lishab_cp.label('zip_code'),
+        )
+        return query
