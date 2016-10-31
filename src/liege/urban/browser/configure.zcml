@@ -12,14 +12,6 @@
 
     <include file="table.zcml" />
 
-    <browser:page
-       for="Products.urban.interfaces.IGenericLicence"
-       name="licencetabs-macros"
-       class="Products.urban.browser.licence.licenceview.LicenceView"
-       template="templates/licencetabsmacros.pt"
-       permission="zope2.View"
-    />
-
     <adapter
         for="zope.interface.Interface"
         provides="Products.urban.interfaces.IUrbanRootRedirects"

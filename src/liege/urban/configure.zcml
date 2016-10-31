@@ -8,23 +8,13 @@
 
   <i18n:registerTranslations directory="locales" />
 
-  <!--five:registerPackage package="." initialize=".initialize" /-->
-
   <include package="imio.actionspanel"/>
   <include package="Products.urban"/>
+  <include package="z3c.jbot" file="meta.zcml" />
 
-  <include package="z3c.unconfigure" file="meta.zcml"/>
-
-  <!-- unregister licencetabsmacros so we can re-register it with a custom template -->
-  <unconfigure package="Products.urban">
-      <browser:page
-         for="Products.urban.interfaces.IGenericLicence"
-         name="licencetabs-macros"
-         class=".browser.licence.licenceview.LicenceView"
-         template="browser/licence/templates/licencetabsmacros.pt"
-         permission="zope2.View"
-      />
-  </unconfigure>
+  <browser:jbot
+      directory="jbot"
+      layer=".interfaces.ILiegeUrbanLayer" />
 
   <include package=".adapters" />
   <include package=".browser" />

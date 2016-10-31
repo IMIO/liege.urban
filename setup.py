@@ -48,7 +48,7 @@ setup(
         'Products.urban',
         'setuptools',
         'zope.schema',
-        'z3c.unconfigure',
+        'z3c.jbot',
     ],
     extras_require={
         'test': [
