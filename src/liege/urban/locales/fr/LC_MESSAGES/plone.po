@@ -99,7 +99,7 @@ msgid "procedure_validated"
 msgstr "Procédure validée"
 
 msgid "propose_analysis"
-msgstr "proposer l'analyse technique"
+msgstr "proposer l'analyse"
 
 msgid "propose_complete"
 msgstr "proposer comme complet"
