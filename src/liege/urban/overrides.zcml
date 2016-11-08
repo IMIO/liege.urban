@@ -26,16 +26,6 @@
          provides="z3c.table.interfaces.IColumn"
          name="relatedlicencesColumn"
       />
-
-      <!-- tune display address for all licences, first register urban licence
-           macros under another name 'urban-tabs-macros'-->
-      <browser:page
-         for="Products.urban.interfaces.IGenericLicence"
-         name="urban-tabs-macros"
-         class="Products.urban.browser.licence.licenceview.LicenceView"
-         template="browser/licence/templates/licencetabsmacros.pt"
-         permission="zope2.View"
-      />
   </configure>
 
 </configure>
