@@ -15,7 +15,6 @@ from Products.urban.GenericLicence import GenericLicence
 from Products.urban.MiscDemand import MiscDemand
 from Products.urban.ParcelOutLicence import ParcelOutLicence
 from Products.urban.PatrimonyCertificate import PatrimonyCertificate
-from Products.urban.PreliminaryNotice import PreliminaryNotice
 from Products.urban.UrbanCertificateBase import UrbanCertificateBase
 from Products.urban.UrbanCertificateTwo import UrbanCertificateTwo
 
@@ -55,7 +54,7 @@ def update_item_schema(baseSchema):
 licence_classes = [
     Article127, BuildLicence, Declaration, Division, EnvClassOne,
     EnvClassThree, EnvClassTwo, MiscDemand, ParcelOutLicence, PatrimonyCertificate,
-    PreliminaryNotice, UrbanCertificateBase, UrbanCertificateTwo
+    UrbanCertificateBase, UrbanCertificateTwo
 ]
 
 for licence_class in licence_classes:

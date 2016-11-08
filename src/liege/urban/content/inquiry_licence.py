@@ -5,7 +5,6 @@ from Products.urban.BuildLicence import BuildLicence
 from Products.urban.MiscDemand import MiscDemand
 from Products.urban.ParcelOutLicence import ParcelOutLicence
 from Products.urban.PatrimonyCertificate import PatrimonyCertificate
-from Products.urban.PreliminaryNotice import PreliminaryNotice
 from Products.urban.UrbanCertificateTwo import UrbanCertificateTwo
 
 
@@ -32,7 +31,7 @@ def update_item_schema(baseSchema):
 
 licence_classes = [
     Article127, BuildLicence, MiscDemand, ParcelOutLicence, PatrimonyCertificate,
-    PreliminaryNotice, UrbanCertificateTwo
+    UrbanCertificateTwo
 ]
 
 for licence_class in licence_classes:
