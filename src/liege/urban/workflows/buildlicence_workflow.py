@@ -121,7 +121,9 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Contributor',),
             'technical_editors': ('Editor',),
             'technical_validators': ('Contributor',),
-            get_opinion_editors: ('ExternalReader',),
+            'Voirie_editors': ('RoadEditor',),
+            'Voirie_validators': ('RoadEditor',),
+#            get_opinion_editors: ('ExternalReader',),
         },
 
         'decision_in_progress': {

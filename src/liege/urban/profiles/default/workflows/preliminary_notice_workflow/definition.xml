@@ -89,8 +89,8 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="analysis_proposition"
-        title="analysis_proposition"
+ <state state_id="analysis_validation"
+        title="analysis_validation"
         i18n:attributes="title">
   <exit-transition transition_id="validate"/>
   <exit-transition transition_id="refuse_analysis"/>
@@ -165,8 +165,9 @@
  <state state_id="college_in_progress"
         title="college_in_progress"
         i18n:attributes="title">
-  <exit-transition transition_id="close"/>
+  <exit-transition transition_id="close_favorable"/>
   <exit-transition transition_id="go_back_2"/>
+  <exit-transition transition_id="close_defavorable"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -222,6 +223,11 @@
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+ </state>
+ <state state_id="defavorable"
+        title="defavorable"
+        i18n:attributes="title">
+  <exit-transition transition_id="go_back_4"/>
  </state>
  <state state_id="deposit"
         title="deposit"
@@ -295,8 +301,8 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="opinion_sent"
-        title="opinion_sent"
+ <state state_id="favorable"
+        title="favorable"
         i18n:attributes="title">
   <exit-transition transition_id="go_back_3"/>
   <permission-map name="Access contents information"
@@ -367,14 +373,25 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <transition transition_id="close"
-             title="close"
-             new_state="opinion_sent"
+ <transition transition_id="close_defavorable"
+             title="close_defavorable"
+             new_state="defavorable"
              trigger="USER"
              before_script=""
              after_script=""
              i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">close</action>
+  <action url="" icon="" category="workflow" i18n:translate="">close_defavorable</action>
+  <guard>
+  </guard>
+ </transition>
+ <transition transition_id="close_favorable"
+             title="close_favorable"
+             new_state="favorable"
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+  <action url="" icon="" category="workflow" i18n:translate="">close_favorable</action>
   <guard>
   </guard>
  </transition>
@@ -392,7 +409,7 @@
  </transition>
  <transition transition_id="go_back_2"
              title="go_back_2"
-             new_state="analysis_proposition"
+             new_state="analysis_validation"
              trigger="USER"
              before_script=""
              after_script=""
@@ -414,9 +431,21 @@
     <guard-permission>Manage portal content</guard-permission>
   </guard>
  </transition>
+ <transition transition_id="go_back_4"
+             title="go_back_4"
+             new_state="college_in_progress"
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+  <action url="" icon="" category="workflow" i18n:translate="">go_back_4</action>
+  <guard>
+    <guard-permission>Manage portal content</guard-permission>
+  </guard>
+ </transition>
  <transition transition_id="propose_analysis"
              title="propose_analysis"
-             new_state="analysis_proposition"
+             new_state="analysis_validation"
              trigger="USER"
              before_script=""
              after_script=""

@@ -11,11 +11,13 @@
  <permission>Modify portal content</permission>
  <permission>Add portal content</permission>
  <permission>liege.urban: Validate</permission>
- <permission>liege.urban: Internal Reader</permission>
+ <permission>liege.urban: External Reader</permission>
  <permission>urban: Add PortionOut</permission>
  <permission>urban: Add Contact</permission>
  <permission>urban: Add Applicant</permission>
  <permission>urban: Add UrbanEvent</permission>
+ <permission>liege.urban: Road Reader</permission>
+ <permission>liege.urban: Road Editor</permission>
  <state state_id="FD_opinion"
         title="FD_opinion"
         i18n:attributes="title">
@@ -23,7 +25,9 @@
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -48,88 +52,33 @@
   </permission-map>
   <permission-map name="View"
                   acquired="False">
-   <permission-role>ExternalReader</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: Internal Reader"
-                  acquired="False">
-   <permission-role>Reader</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="liege.urban: Validate"
-                  acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add Applicant"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add Contact"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add PortionOut"
-                  acquired="False">
-   <permission-role>AddressEditor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add UrbanEvent"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
- </state>
- <state state_id="abandoned"
-        title="abandoned"
-        i18n:attributes="title">
-  <permission-map name="Access contents information"
+  <permission-map name="liege.urban: External Reader"
                   acquired="False">
    <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="Add portal content"
+  <permission-map name="liege.urban: Road Editor"
                   acquired="False">
+   <permission-role>RoadEditor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="Delete objects"
+  <permission-map name="liege.urban: Road Reader"
                   acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="View"
-                  acquired="False">
-   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
    <permission-role>Reader</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="liege.urban: Internal Reader"
-                  acquired="False">
-   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -200,7 +149,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: Internal Reader"
+  <permission-map name="liege.urban: External Reader"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
@@ -275,7 +224,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: Internal Reader"
+  <permission-map name="liege.urban: External Reader"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
@@ -350,7 +299,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: Internal Reader"
+  <permission-map name="liege.urban: External Reader"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
@@ -425,7 +374,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: Internal Reader"
+  <permission-map name="liege.urban: External Reader"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
@@ -499,80 +448,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: Internal Reader"
-                  acquired="False">
-   <permission-role>Reader</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="liege.urban: Validate"
-                  acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add Applicant"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add Contact"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add PortionOut"
-                  acquired="False">
-   <permission-role>AddressEditor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add UrbanEvent"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
- </state>
- <state state_id="filed_away"
-        title="filed_away"
-        i18n:attributes="title">
-  <permission-map name="Access contents information"
-                  acquired="False">
-   <permission-role>ExternalReader</permission-role>
-   <permission-role>Reader</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Add portal content"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Delete objects"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="View"
-                  acquired="False">
-   <permission-role>ExternalReader</permission-role>
-   <permission-role>Reader</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="liege.urban: Internal Reader"
+  <permission-map name="liege.urban: External Reader"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
@@ -646,7 +522,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: Internal Reader"
+  <permission-map name="liege.urban: External Reader"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
@@ -673,6 +549,12 @@
   <permission-map name="urban: Add PortionOut"
                   acquired="False">
    <permission-role>AddressEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEvent"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
@@ -715,7 +597,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: Internal Reader"
+  <permission-map name="liege.urban: External Reader"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
@@ -789,7 +671,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: Internal Reader"
+  <permission-map name="liege.urban: External Reader"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
@@ -862,7 +744,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: Internal Reader"
+  <permission-map name="liege.urban: External Reader"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
@@ -938,7 +820,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: Internal Reader"
+  <permission-map name="liege.urban: External Reader"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
@@ -1013,7 +895,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: Internal Reader"
+  <permission-map name="liege.urban: External Reader"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
@@ -1087,7 +969,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: Internal Reader"
+  <permission-map name="liege.urban: External Reader"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>

@@ -3,8 +3,18 @@
            i18n_domain="liege.urban">
 
   <permission
-    id="liege.urban.internalurbanreader"
-    title="liege.urban: Internal Reader"
+    id="liege.urban.externalurbanreader"
+    title="liege.urban: External Reader"
+    />
+
+  <permission
+    id="liege.urban.roadreader"
+    title="liege.urban: Road Reader"
+    />
+
+  <permission
+    id="liege.urban.roadeditor"
+    title="liege.urban: Road Editor"
     />
 
   <permission

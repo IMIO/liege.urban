@@ -228,7 +228,7 @@ schedule_config = {
                         EndConditionObject('urban.schedule.condition.complements_asked'),
                     ),
                     'start_date': 'urban.schedule.start_date.deposit_date',
-                    'additional_delay': 1,
+                    'additional_delay': 15,
                 },
                 {
                     'type_name': 'TaskConfig',
@@ -243,8 +243,7 @@ schedule_config = {
                     'end_conditions': (
                         EndConditionObject('urban.schedule.condition.complements_received'),
                     ),
-                    'start_date': 'urban.schedule.start_date.ask_complements_date',
-                    'additional_delay': 15,
+                    'start_date': None,  # infinite deadline
                 },
             ],
         },
@@ -274,7 +273,7 @@ schedule_config = {
                         MacroEndConditionObject('liege.urban.schedule.acknowledgment_written'),
                     ),
                     'start_date': 'urban.schedule.start_date.deposit_date',
-                    'additional_delay': 15,
+                    'additional_delay': 13,
                     'subtasks': [
                         {
                             'type_name': 'TaskConfig',
@@ -288,7 +287,7 @@ schedule_config = {
                             'start_date': 'urban.schedule.start_date.deposit_date',
                             'recurrence_states': ('checking_completion'),
                             'activate_recurrency': True,
-                            'additional_delay': 1,
+                            'additional_delay': 11,
                         },
                         {
                             'type_name': 'MacroTaskConfig',
@@ -300,7 +299,7 @@ schedule_config = {
                             'starting_states': ('complete',),
                             'ending_states': ('procedure_choosen',),
                             'start_date': 'urban.schedule.start_date.deposit_date',
-                            'additional_delay': 2,
+                            'additional_delay': 11,
                             'subtasks': [
                                 {
                                     'type_name': 'TaskConfig',
@@ -316,7 +315,7 @@ schedule_config = {
                                         EndConditionObject('liege.urban.schedule.inquiry_zone_identified'),
                                     ),
                                     'start_date': 'urban.schedule.start_date.deposit_date',
-                                    'additional_delay': 12,
+                                    'additional_delay': 11,
                                 },
                             ],
                         },
@@ -330,13 +329,13 @@ schedule_config = {
                             'starting_states': ('procedure_choosen',),
                             'ending_states': ('procedure_validated',),
                             'start_date': 'urban.schedule.start_date.deposit_date',
-                            'additional_delay': 13,
+                            'additional_delay': 12,
                         },
                         {
                             'type_name': 'TaskConfig',
                             'id': 'enquete-dates',
                             'title': 'Définir les dates de d\'enquête',
-                            'default_assigned_group': 'technical_editors',
+                            'default_assigned_group': 'administrative_editors',
                             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
                             'creation_state': ('procedure_validated',),
                             'creation_conditions': (
@@ -346,7 +345,7 @@ schedule_config = {
                                 EndConditionObject('urban.schedule.condition.inquiry_dates_defined'),
                             ),
                             'start_date': 'urban.schedule.start_date.deposit_date',
-                            'additional_delay': 15,
+                            'additional_delay': 13,
                         },
                     ],
                 },
@@ -364,7 +363,7 @@ schedule_config = {
                         EndConditionObject('liege.urban.schedule.acknowledgment_validated'),
                     ),
                     'start_date': 'urban.schedule.start_date.deposit_date',
-                    'additional_delay': 15,
+                    'additional_delay': 14,
                 }
             ]
         },
@@ -381,7 +380,10 @@ schedule_config = {
             'starting_states': ('procedure_validated',),
             'ending_states': ('decision_in_progress', 'FD_opinion'),
             'start_date': 'urban.schedule.start_date.acknowledgment_date',
-            'additional_delay': 6,
+            'calculation_delay': (
+                'urban.schedule.delay.annonced_delay',
+            ),
+            'additional_delay': 0,
             'subtasks': [
                 {
                     'type_name': 'MacroTaskConfig',
@@ -411,6 +413,7 @@ schedule_config = {
                                 MacroEndConditionObject('urban.schedule.condition.opinion_requests_done'),
                             ),
                             'start_date': 'urban.schedule.start_date.acknowledgment_date',
+                            'additional_delay': 33,
                             'subtasks': [
                                 {
                                     'type_name': 'MacroTaskConfig',
@@ -427,8 +430,8 @@ schedule_config = {
                                     'end_conditions': (
                                         MacroEndConditionObject('liege.urban.schedule.opinion_requests_waiting'),
                                     ),
-                                    'start_date': 'urban.schedule.start_date.deposit_date',
-                                    'additional_delay': 3,
+                                    'start_date': 'urban.schedule.start_date.acknowledgment_date',
+                                    'additional_delay': 0,
                                     'subtasks': [
                                         {
                                             'type_name': 'TaskConfig',
@@ -445,8 +448,8 @@ schedule_config = {
                                             'end_conditions': (
                                                 EndConditionObject('urban.schedule.condition.opinion_requests_created'),
                                             ),
-                                            'start_date': 'urban.schedule.start_date.deposit_date',
-                                            'additional_delay': 1,
+                                            'start_date': 'urban.schedule.start_date.acknowledgment_date',
+                                            'additional_delay': 0,
                                         },
                                     ],
                                 },
@@ -468,6 +471,7 @@ schedule_config = {
                                 MacroEndConditionObject('urban.schedule.condition.inquiry_done'),
                             ),
                             'start_date': 'urban.schedule.start_date.inquiry_end_date',
+                            'additional_delay': 1,
                             'subtasks': [
                                 {
                                     'type_name': 'TaskConfig',
@@ -637,7 +641,10 @@ schedule_config = {
                         EndConditionObject('liege.urban.schedule.decision_project_drafted'),
                     ),
                     'start_date': 'schedule.start_date.task_starting_date',
-                    'additional_delay': 2,
+                    'calculation_delay': (
+                        'urban.schedule.delay.annonced_delay',
+                    ),
+                    'additional_delay': -7,
                 },
                 {
                     'type_name': 'TaskConfig',
@@ -657,6 +664,130 @@ schedule_config = {
                     'additional_delay': 2,
                 },
             ]
+        },
+    ],
+    'preliminarynotice': [
+        {
+            'type_name': 'TaskConfig',
+            'id': 'depot',
+            'title': 'Dépôt de la demande',
+            'default_assigned_group': 'administrative_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('deposit',),
+            'starting_states': ('deposit',),
+            'ending_states': ('analysis',),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 0,
+        },
+        {
+            'type_name': 'MacroTaskConfig',
+            'id': 'analysis_validation',
+            'title': 'Valider l\'analyse',
+            'default_assigned_group': 'technical_validators',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('analysis',),
+            'starting_states': ('analysis',),
+            'ending_states': ('college_in_progress',),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 5,
+            'subtasks': [
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'analysis',
+                    'title': 'Analyse',
+                    'default_assigned_group': 'technical_editors',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_state': ('analysis',),
+                    'starting_states': ('analysis',),
+                    'ending_states': ('analysis_proposition',),
+                    'start_date': 'urban.schedule.start_date.creation_date',
+                    'additional_delay': 4,
+                    'activate_recurrency': True,
+                    'recurrence_states': ('analysis',),
+                },
+            ]
+        },
+        {
+            'type_name': 'MacroTaskConfig',
+            'id': 'valider-reponse',
+            'title': 'Valider le projet de réponse',
+            'default_assigned_group': 'administrative_validators',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('college_in_progress',),
+            'starting_states': ('college_in_progress',),
+            'end_conditions': (
+                MacroEndConditionObject('liege.urban.schedule.notification_project_validated'),
+            ),
+            'start_date': 'schedule.start_date.subtask_highest_due_date',
+            'additional_delay': 2,
+            'subtasks': [
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'envoi-college',
+                    'title': 'Préparer et envoyer vers IA délib',
+                    'default_assigned_group': 'administrative_editors',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_state': ('college_in_progress',),
+                    'starting_states': ('college_in_progress',),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.college_project_sent'),
+                    ),
+                    'start_date': 'schedule.start_date.task_starting_date',
+                    'additional_delay': 2,
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'passage-college',
+                    'title': 'Passage au collège',
+                    'default_assigned_group': 'administrative_editors',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_state': ('college_in_progress',),
+                    'starting_states': ('college_in_progress',),
+                    'start_conditions': (
+                        StartConditionObject('liege.urban.schedule.college_project_sent'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.college_done'),
+                    ),
+                    'start_date': 'schedule.start_date.task_starting_date',
+                    'additional_delay': 2,
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'rediger-projet-reponse',
+                    'title': 'Rédiger le projet de réponse',
+                    'default_assigned_group': 'administrative_editors',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_state': ('decision_in_progress',),
+                    'starting_states': ('decision_in_progress',),
+                    'start_conditions': (
+                        StartConditionObject('liege.urban.schedule.college_done'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.notification_project_written'),
+                    ),
+                    'start_date': 'schedule.start_date.task_starting_date',
+                    'additional_delay': 2,
+                },
+            ]
+        },
+        {
+            'type_name': 'MacroTaskConfig',
+            'id': 'notifier-reponse',
+            'title': 'Envoyer la réponse',
+            'default_assigned_group': 'administrative_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('college_in_progress',),
+            'starting_states': ('college_in_progress',),
+            'start_conditions': (
+                StartConditionObject('liege.urban.schedule.notification_project_validated'),
+            ),
+            'ending_states': ('opinion_sent',),
+            'end_conditions': (
+                MacroEndConditionObject('liege.urban.schedule.notification_sent'),
+            ),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 5,
         },
     ],
 }
