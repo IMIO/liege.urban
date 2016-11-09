@@ -41,37 +41,37 @@ schedule_config = {
         },
     ],
     'opinions_schedule': [
+#        {
+#            'type_name': 'MacroTaskConfig',
+#            'id': 'ask_road_opinion',
+#            'title': "Avis voirie",
+#            'default_assigned_group': 'Voirie_editors',
+#            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+#            'creation_state': ('creation',),
+#            'creation_conditions': (
+#                CreationConditionObject('liege.urban.schedule.is_internal_opinion'),
+#            ),
+#            'starting_states': ('waiting_opinion',),
+#            'ending_states': ('opinions_given',),
+#            'start_date': 'liege.urban.schedule.asking_date',
+#            'additional_delay': 15,
+#            'subtasks': [
+#                {
+#                    'type_name': 'TaskConfig',
+#                    'id': 'valide',
+#                    'title': 'Valider',
+#                    'default_assigned_group': 'Voirie_validators',
+#                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+#                    'creation_state': ('creation',),
+#                    'starting_states': ('opinion_validation',),
+#                    'ending_states': ('opinions_given',),
+#                    'start_date': 'liege.urban.schedule.asking_date',
+#                    'additional_delay': 15,
+#                },
+#            ]
+#        },
         {
-            'type_name': 'MacroTaskConfig',
-            'id': 'ask_road_opinion',
-            'title': "Avis voirie",
-            'default_assigned_group': 'Voirie_editors',
-            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-            'creation_state': ('creation',),
-            'creation_conditions': (
-                CreationConditionObject('liege.urban.schedule.is_internal_opinion'),
-            ),
-            'starting_states': ('waiting_opinion',),
-            'ending_states': ('opinions_given',),
-            'start_date': 'liege.urban.schedule.asking_date',
-            'additional_delay': 15,
-            'subtasks': [
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'valide',
-                    'title': 'Valider',
-                    'default_assigned_group': 'Voirie_validators',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('creation',),
-                    'starting_states': ('opinion_validation',),
-                    'ending_states': ('opinions_given',),
-                    'start_date': 'liege.urban.schedule.asking_date',
-                    'additional_delay': 15,
-                },
-            ]
-        },
-        {
-            'type_name': 'MacroTaskConfig',
+            'type_name': 'TaskConfig',
             'id': 'ask_sssp_opinion',
             'title': "Avis SSSP",
             'default_assigned_group': 'SSSP_editors',
@@ -84,20 +84,6 @@ schedule_config = {
             'ending_states': ('opinions_given',),
             'start_date': 'liege.urban.schedule.asking_date',
             'additional_delay': 15,
-            'subtasks': [
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'valide',
-                    'title': 'Valider',
-                    'default_assigned_group': 'SSSP_validators',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('creation',),
-                    'starting_states': ('opinion_validation',),
-                    'ending_states': ('opinions_given',),
-                    'start_date': 'liege.urban.schedule.asking_date',
-                    'additional_delay': 15,
-                },
-            ]
         },
         {
             'type_name': 'MacroTaskConfig',

@@ -3,6 +3,16 @@
            i18n_domain="liege.urban">
 
   <permission
+    id="liege.urban.internalurbanreader"
+    title="liege.urban: Internal Reader"
+    />
+
+  <permission
+    id="liege.urban.internalurbaneditor"
+    title="liege.urban: Internal Editor"
+    />
+
+  <permission
     id="liege.urban.externalurbanreader"
     title="liege.urban: External Reader"
     />

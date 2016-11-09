@@ -10,28 +10,28 @@ class StateRolesMapping(LocalRoleAdapter):
     mapping = {
         'draft': {
             'administrative_editors': ('Editor',),
-            'administrative_validators': ('Contributor',),
+            'administrative_validators': ('Editor', 'Contributor'),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
         },
 
         'to_validate': {
             'administrative_editors': ('Reader',),
-            'administrative_validators': ('Contributor',),
+            'administrative_validators': ('Editor', 'Contributor'),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
         },
 
         'to_send': {
             'administrative_editors': ('Editor',),
-            'administrative_validators': ('Contributor',),
+            'administrative_validators': ('Editor', 'Contributor'),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
         },
 
         'closed': {
             'administrative_editors': ('Editor',),
-            'administrative_validators': ('Contributor',),
+            'administrative_validators': ('Editor', 'Contributor'),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
         },

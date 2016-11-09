@@ -29,6 +29,12 @@ class StateRolesMapping(LocalRoleAdapter):
 
         return ('technical_editors',)
 
+    def get_opinion_editor_role(self):
+        groups = self.get_opinion_editor()
+        if 'technical_editors' in groups:
+            return ('Contributor',)
+        return ('Editor',)
+
     mapping = {
         'creation': {
             'administrative_editors': ('Editor',),
@@ -42,7 +48,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
-            get_opinion_editor: ('Editor',),
+            get_opinion_editor: (get_opinion_editor_role,),
         },
 
         'opinion_validation': {

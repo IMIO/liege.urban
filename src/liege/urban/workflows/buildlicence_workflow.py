@@ -21,6 +21,7 @@ class StateRolesMapping(LocalRoleAdapter):
         portal_urban = api.portal.get_tool('portal_urban')
         schedule_config = portal_urban.opinions_schedule
 
+        exceptions = ['Voirie_editors', 'Voirie_Validators']
         opinion_editors = []
         all_opinion_request = self.context.getOpinionRequests()
 
@@ -33,13 +34,16 @@ class StateRolesMapping(LocalRoleAdapter):
                         break
 
             if task and status_by_state[api.content.get_state(task)] is STARTED:
-                opinion_editors.append(task.assigned_group)
+                group = task.assigned_group
+                if group not in exceptions:
+                    opinion_editors.append(group)
+
         return opinion_editors
 
     mapping = {
         'deposit': {
-            'administrative_editors': ('Editor', 'AddressEditor'),
-            'administrative_validators': ('Contributor', 'AddressEditor'),
+            'administrative_editors': ('Editor',),
+            'administrative_validators': ('Contributor',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
         },
@@ -105,6 +109,8 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Contributor',),
             'technical_editors': ('Editor',),
             'technical_validators': ('Contributor',),
+            'Voirie_editors': ('RoadEditor',),
+            'Voirie_validators': ('RoadEditor',),
             get_opinion_editors: ('ExternalReader',),
         },
 
@@ -113,6 +119,8 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Contributor',),
+            'Voirie_editors': ('RoadEditor',),
+            'Voirie_validators': ('RoadEditor',),
             get_opinion_editors: ('ExternalReader',),
         },
 
@@ -123,7 +131,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_validators': ('Contributor',),
             'Voirie_editors': ('RoadEditor',),
             'Voirie_validators': ('RoadEditor',),
-#            get_opinion_editors: ('ExternalReader',),
+            get_opinion_editors: ('ExternalReader',),
         },
 
         'decision_in_progress': {
@@ -131,6 +139,8 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Contributor',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
+            'Voirie_editors': ('RoadReader',),
+            'Voirie_validators': ('RoadReader',),
             get_opinion_editors: ('ExternalReader',),
         },
 
@@ -139,6 +149,8 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
+            'Voirie_editors': ('RoadReader',),
+            'Voirie_validators': ('RoadReader',),
             get_opinion_editors: ('ExternalReader',),
         },
 
@@ -147,6 +159,8 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
+            'Voirie_editors': ('RoadReader',),
+            'Voirie_validators': ('RoadReader',),
             get_opinion_editors: ('ExternalReader',),
         },
 

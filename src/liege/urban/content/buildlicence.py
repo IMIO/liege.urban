@@ -2,6 +2,15 @@
 
 from Products.urban.BuildLicence import BuildLicence
 
+from liege.urban.licence_fields_permissions import set_field_permissions
+
+permissions_mapping = {
+    'urban_description': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
+    'urban_advices': ('liege.urban: Road Reader', 'liege.urban: Internal Editor'),
+    'urban_location': ('liege.urban: Road Reader', 'liege.urban: Road Editor'),
+    'urban_road': ('liege.urban: Road Reader', 'liege.urban: Road Editor'),
+}
+
 
 def update_item_schema(baseSchema):
     LicenceSchema = baseSchema.copy()
@@ -59,6 +68,11 @@ def update_item_schema(baseSchema):
 
 
 BuildLicence.schema = update_item_schema(BuildLicence.schema)
+BuildLicence.schema = set_field_permissions(
+    BuildLicence.schema,
+    permissions_mapping,
+    exceptions=['portal_type']
+)
 
 
 # Classes have already been registered, but we register them again here
