@@ -5,6 +5,7 @@ from zope.i18nmessageid import MessageFactory
 import liege.urban.content.genericlicence
 # !!! import order matters, always import genericlicence schema changes
 # before other licence types schema changes
+import liege.urban.content.article127
 import liege.urban.content.buildlicence
 import liege.urban.content.contact
 import liege.urban.content.foldermanager
