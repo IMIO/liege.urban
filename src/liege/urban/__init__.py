@@ -11,5 +11,7 @@ import liege.urban.content.foldermanager
 import liege.urban.content.inquiry_event
 import liege.urban.content.inquiry_licence
 import liege.urban.content.portion_out
+import liege.urban.content.urbanevent
+import liege.urban.content.urbanevent_opinionrequest
 
 _ = MessageFactory('liege.urban')
