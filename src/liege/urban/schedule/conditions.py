@@ -15,8 +15,13 @@ class InquiryZoneIdentifiedCondition(Condition):
 
     def evaluate(self):
         licence = self.task_container
+        licence_inquiries = licence.getAllInquiries()
         inquiry = licence.getLastInquiry()
+
         if not inquiry:
+            return False
+
+        if inquiry.getLinkedInquiry() != licence_inquiries[-1]:
             return False
 
         if not inquiry.getRecipients():
