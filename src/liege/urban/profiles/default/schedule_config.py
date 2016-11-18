@@ -234,6 +234,18 @@ schedule_config = {
             ],
         },
         {
+            'type_name': 'TaskConfig',
+            'id': 'suspension',
+            'title': 'Suspension',
+            'default_assigned_group': 'technical_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('suspension',),
+            'starting_states': ('suspension',),
+            'ending_states': ('checking_completion',),
+            'activate_recurrency': True,
+            'recurrence_states': ('suspension',),
+        },
+        {
             'type_name': 'MacroTaskConfig',
             'id': 'accuse',
             'title': 'Accusé de réception',
