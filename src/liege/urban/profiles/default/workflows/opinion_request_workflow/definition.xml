@@ -225,7 +225,7 @@
              i18n:attributes="title">
   <action url="" icon="" category="workflow" i18n:translate="">receive_opinion</action>
   <guard>
-    <guard-permission>liege.urban: Validate</guard-permission>
+    <guard-permission>liege.urban: Internal Editor</guard-permission>
   </guard>
  </transition>
  <transition transition_id="send_opinion"
