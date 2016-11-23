@@ -10,6 +10,23 @@
      name="buildlicence_local_roles"
   />
 
+  <!--!!! not a mistake !!!
+      article127 has the same workflow local roles than buildlicence
+    -->
+  <adapter
+     for="Products.urban.interfaces.IArticle127"
+     provides="borg.localrole.interfaces.ILocalRoleProvider"
+     factory=".buildlicence_workflow.StateRolesMapping"
+     name="article127_local_roles"
+  />
+
+ <!-- register article127 workflow adaptation -->
+ <utility
+      name="liege.urban.wfadaptations.article127"
+      provides="collective.wfadaptations.interfaces.IWorkflowAdaptation"
+      factory=".article127_workflow.Article127WorkflowAdaptation"
+      />
+
   <adapter
      for="Products.urban.interfaces.IPreliminaryNotice"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
