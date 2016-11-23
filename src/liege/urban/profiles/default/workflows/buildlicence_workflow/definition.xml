@@ -1385,7 +1385,7 @@
  <state state_id="waiting_address"
         title="waiting_address"
         i18n:attributes="title">
-  <exit-transition transition_id="validate_temporary_adress"/>
+  <exit-transition transition_id="validate_temporary_address"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>ExternalReader</permission-role>
@@ -1695,14 +1695,14 @@
     <guard-expression> python: 'FD' in here.getProcedureChoice()</guard-expression>
   </guard>
  </transition>
- <transition transition_id="validate_temporary_adress"
-             title="validate_temporary_adress"
+ <transition transition_id="validate_temporary_address"
+             title="validate_temporary_address"
              new_state="checking_completion"
              trigger="USER"
              before_script=""
              after_script=""
              i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">validate_temporary_adress</action>
+  <action url="" icon="" category="workflow" i18n:translate="">validate_temporary_address</action>
   <guard>
     <guard-permission>urban: Add PortionOut</guard-permission>
   </guard>
