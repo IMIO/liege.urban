@@ -63,7 +63,7 @@
 
     <!-- inquiry conditions -->
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.InquiryZoneIdentifiedCondition"
@@ -71,7 +71,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IStartCondition"
         factory=".conditions.InquiryDocumentsDoneCondition"
@@ -79,7 +79,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.InquiryDocumentsDoneCondition"
@@ -87,7 +87,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IStartCondition"
         factory=".conditions.InquiryDocumentsValidatedCondition"
@@ -95,7 +95,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.InquiryDocumentsValidatedCondition"
@@ -103,7 +103,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.InquiryDocumentsSentCondition"
@@ -112,7 +112,7 @@
 
     <!-- FD opinion conditions -->
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task_config.ITaskConfig"
         provides="imio.schedule.interfaces.ICreationCondition"
         factory=".conditions.OnlyNeedFDOpinion"
@@ -120,7 +120,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task_config.ITaskConfig"
         provides="imio.schedule.interfaces.ICreationCondition"
         factory=".conditions.LicenceStateIsFDOpinion"
@@ -128,7 +128,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IStartCondition"
         factory=".conditions.FDProjectWritten"
@@ -136,7 +136,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.FDProjectWritten"
@@ -144,7 +144,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IStartCondition"
         factory=".conditions.FDProjectValidated"
@@ -152,7 +152,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.FDProjectValidated"
@@ -160,7 +160,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IStartCondition"
         factory=".conditions.FDProjectSentToCollege"
@@ -168,7 +168,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.FDProjectSentToCollege"
@@ -176,7 +176,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IStartCondition"
         factory=".conditions.FDProjectCollegeDone"
@@ -184,7 +184,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.FDProjectCollegeDone"
@@ -192,7 +192,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.FDOpinionAsked"
@@ -200,7 +200,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.FDOpinionReceived"
@@ -209,7 +209,7 @@
 
     <!-- final decision conditions -->
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IStartCondition"
         factory=".conditions.DecisionProjectDraftedCondition"
@@ -217,7 +217,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.DecisionProjectDraftedCondition"
@@ -225,7 +225,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.DecisionProjectSentCondition"
@@ -233,7 +233,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBuildLicence
+        for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IMacroTaskEndCondition"
         factory=".conditions.DecisionNotifiedCondition"
