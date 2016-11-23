@@ -31,38 +31,14 @@ def update_item_schema(baseSchema):
     LicenceSchema.moveField('pebTechnicalAdvice', after='pebStudy')
 
     # move some road fields to location schemata
-    LicenceSchema['sevesoSite'].schemata = 'urban_location'
-    LicenceSchema.moveField('sevesoSite', after='airportNoiseZoneDetails')
-    LicenceSchema['natura_2000'].schemata = 'urban_location'
-    LicenceSchema.moveField('natura_2000', after='sevesoSite')
     LicenceSchema['roadDgrneUnderground'].schemata = 'urban_location'
     LicenceSchema.moveField('roadDgrneUnderground', after='natura_2000')
-    LicenceSchema['roadType'].schemata = 'urban_location'
     LicenceSchema.moveField('roadType', after='roadDgrneUnderground')
-    LicenceSchema['pash'].schemata = 'urban_location'
-    LicenceSchema.moveField('pash', after='roadType')
-    LicenceSchema['pashDetails'].schemata = 'urban_location'
-    LicenceSchema.moveField('pashDetails', after='pash')
-    LicenceSchema['catchmentArea'].schemata = 'urban_location'
-    LicenceSchema.moveField('catchmentArea', after='pashDetails')
-    LicenceSchema['catchmentAreaDetails'].schemata = 'urban_location'
-    LicenceSchema.moveField('catchmentAreaDetails', after='catchmentArea')
-    LicenceSchema['karstConstraints'].schemata = 'urban_location'
-    LicenceSchema.moveField('karstConstraints', after='catchmentAreaDetails')
-    LicenceSchema['karstConstraintsDetails'].schemata = 'urban_location'
-    LicenceSchema.moveField('karstConstraintsDetails', after='karstConstraints')
-    LicenceSchema['floodingLevel'].schemata = 'urban_location'
-    LicenceSchema.moveField('floodingLevel', after='karstConstraintsDetails')
-    LicenceSchema['floodingLevelDetails'].schemata = 'urban_location'
-    LicenceSchema.moveField('floodingLevelDetails', after='floodingLevel')
 
     # stats INS no longer mandatory
     LicenceSchema['usage'].required = False
     LicenceSchema['roadTechnicalAdvice'].widget.label_msgid = 'urban_label_roadDescription'
-    LicenceSchema['locationTechnicalRemarks'].widget.label_msgid = 'urban_label_description'
     LicenceSchema['missingParts'].widget.size = 15
-    LicenceSchema['RCU'].widget.label_msgid = 'urban_label_RCB'
-    LicenceSchema['rcuDetails'].widget.label_msgid = 'urban_label_rcbDetails'
 
     return LicenceSchema
 
