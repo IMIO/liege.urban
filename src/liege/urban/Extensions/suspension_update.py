@@ -8,6 +8,10 @@ from imio.schedule.content.object_factories import MacroEndConditionObject
 from plone import api
 
 
+def apply_wf_adaptations():
+    apply_from_registry()
+
+
 def add_suspension_state():
     """
     """
