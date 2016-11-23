@@ -129,7 +129,7 @@ msgid "refuse_report"
 msgstr "Refaire le rapport d'analyse"
 
 msgid "report_written"
-msgstr "Rapport d'analyse fait"
+msgstr "Rapport d'analyse écrit"
 
 msgid "to_analyse"
 msgstr "Envoyer à l'analyse"
