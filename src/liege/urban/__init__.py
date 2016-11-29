@@ -8,6 +8,7 @@ import liege.urban.content.genericlicence
 import liege.urban.content.article127
 import liege.urban.content.buildlicence
 import liege.urban.content.contact
+import liege.urban.content.cu2
 import liege.urban.content.foldermanager
 import liege.urban.content.inquiry_event
 import liege.urban.content.inquiry_licence

@@ -27,6 +27,16 @@
       factory=".article127_workflow.Article127WorkflowAdaptation"
       />
 
+  <!--!!! not a mistake !!!
+      CU2 has the same workflow local roles than buildlicence
+    -->
+  <adapter
+     for="Products.urban.interfaces.IUrbanCertificateTwo"
+     provides="borg.localrole.interfaces.ILocalRoleProvider"
+     factory=".buildlicence_workflow.StateRolesMapping"
+     name="cu2_local_roles"
+  />
+
   <adapter
      for="Products.urban.interfaces.IPreliminaryNotice"
      provides="borg.localrole.interfaces.ILocalRoleProvider"

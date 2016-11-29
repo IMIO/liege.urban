@@ -18,6 +18,10 @@
   <type type_id="Article127">
      <bound-workflow workflow_id="article127_workflow" />
   </type>
+  <!-- !!! Not a mistake: CU2 has exactly the same workflow than BuildLicence-->
+  <type type_id="UrbanCertificateTwo">
+     <bound-workflow workflow_id="buildlicence_workflow" />
+  </type>
   <type type_id="PortionOut">
      <bound-workflow workflow_id="address_workflow" />
   </type>
