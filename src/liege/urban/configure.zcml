@@ -8,6 +8,8 @@
 
   <i18n:registerTranslations directory="locales" />
 
+  <include file="interfaces.zcml" />
+
   <include package="imio.actionspanel"/>
   <include package="Products.urban"/>
   <include package="z3c.jbot" file="meta.zcml" />

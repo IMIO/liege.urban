@@ -26,6 +26,9 @@ msgstr ""
 msgid "deviceEnd"
 msgstr ""
 
+msgid "IInternalOpinionRequestEvent type marker interface"
+msgstr ""
+
 msgid "label_colname_shore"
 msgstr ""
 
