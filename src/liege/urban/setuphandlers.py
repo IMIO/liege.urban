@@ -30,8 +30,9 @@ def setEventTypeMapping(context):
     """
     """
     portal_urban = api.portal.get_tool('portal_urban')
-    portal_urban.eventtype_portaltype_mapping['Products.urban.interfaces.IWalloonRegionOpinionRequestEvent'] = 'UrbanEventFDOpinion'
     portal_urban.eventtype_portaltype_mapping['Products.urban.interfaces.IAcknowledgmentEvent'] = 'UrbanEventAcknowledgment'
+    portal_urban.eventtype_portaltype_mapping['Products.urban.interfaces.ISimpleCollegeEvent'] = 'UrbanEventFDCollege'
+    portal_urban.eventtype_portaltype_mapping['Products.urban.interfaces.IWalloonRegionOpinionRequestEvent'] = 'UrbanEventOpinionRequest'
     portal_urban.eventtype_portaltype_mapping['liege.urban.interfaces.IInternalOpinionRequestEvent'] = 'UrbanEventOpinionRequest'
 
 

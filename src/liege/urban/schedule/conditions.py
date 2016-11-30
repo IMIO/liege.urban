@@ -136,6 +136,66 @@ class LicenceStateIsFDOpinion(CreationCondition):
         return api.content.get_state(self.task_container) == 'FD_opinion'
 
 
+class SimpleCollegeCondition(Condition):
+    """
+    Base class for college event based conditions
+    """
+
+    def __init__(self, licence, task):
+        super(SimpleCollegeCondition, self).__init__(licence, task)
+        self.college_event = licence.getLastSimpleCollege()
+
+
+class FDProjectWritten(SimpleCollegeCondition):
+    """
+    Opinion request project is written
+    """
+
+    def evaluate(self):
+        if not self.college_event:
+            return False
+        return api.content.get_state(self.college_event) == 'to_validate'
+
+
+class FDProjectValidated(SimpleCollegeCondition):
+    """
+    Opinion request project is validated
+    """
+
+    def evaluate(self):
+        if not self.college_event:
+            return False
+        return api.content.get_state(self.college_event) == 'decision_in_progress'
+
+
+class FDProjectSentToCollege(SimpleCollegeCondition):
+    """
+    Opinion request project is sent to college
+    """
+
+    def evaluate(self):
+        return True
+        if not self.college_event:
+            return False
+        request = api.portal.getRequest()
+        context = self.college_event
+        portal_state = getMultiAdapter((context, request), name=u'plone_portal_state')
+        ws4pm_settings = getMultiAdapter((portal_state.portal(), request), name='ws4pmclient-settings')
+        sent = ws4pm_settings.checkAlreadySentToPloneMeeting(self.college_event)
+        return sent
+
+
+class FDProjectCollegeDone(SimpleCollegeCondition):
+    """
+    Opinion request project college is done
+    """
+
+    def evaluate(self):
+        if not self.college_event:
+            return False
+        return api.content.get_state(self.college_event) == 'closed'
+
+
 class FDCondition(Condition):
     """
     Base class for FD opinion request condition
@@ -144,55 +204,6 @@ class FDCondition(Condition):
     def __init__(self, licence, task):
         super(FDCondition, self).__init__(licence, task)
         self.FD_event = licence.getLastWalloonRegionOpinionRequest()
-
-
-class FDProjectWritten(FDCondition):
-    """
-    Opinion request project is written
-    """
-
-    def evaluate(self):
-        if not self.FD_event:
-            return False
-        return api.content.get_state(self.FD_event) == 'proposed'
-
-
-class FDProjectValidated(FDCondition):
-    """
-    Opinion request project is validated
-    """
-
-    def evaluate(self):
-        if not self.FD_event:
-            return False
-        return api.content.get_state(self.FD_event) == 'decision_in_progress'
-
-
-class FDProjectSentToCollege(FDCondition):
-    """
-    Opinion request project is sent to college
-    """
-
-    def evaluate(self):
-        if not self.FD_event:
-            return False
-        request = api.portal.getRequest()
-        context = self.FD_event
-        portal_state = getMultiAdapter((context, request), name=u'plone_portal_state')
-        ws4pm_settings = getMultiAdapter((portal_state.portal(), request), name='ws4pmclient-settings')
-        sent = ws4pm_settings.checkAlreadySentToPloneMeeting(self.FD_event)
-        return sent
-
-
-class FDProjectCollegeDone(FDCondition):
-    """
-    Opinion request project college is done
-    """
-
-    def evaluate(self):
-        if not self.FD_event:
-            return False
-        return api.content.get_state(self.FD_event) == 'preparing_opinion_request'
 
 
 class FDOpinionAsked(FDCondition):
