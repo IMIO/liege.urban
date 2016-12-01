@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<dc-workflow workflow_id="acknowledgement_event_workflow"
-             title="acknowledgement_event_workflow"
+<dc-workflow workflow_id="notification_college_event_workflow"
+             title="notification_college_event_workflow"
              state_variable="review_state"
              initial_state="draft"
              xmlns:i18n="http://xml.zope.org/namespaces/i18n"
@@ -14,6 +14,48 @@
  <state state_id="closed"
         title="closed"
         i18n:attributes="title">
+  <permission-map name="Access contents information"
+                  acquired="False">
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="View"
+                  acquired="False">
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Validate"
+                  acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="decision_in_progress"
+        title="decision_in_progress"
+        i18n:attributes="title">
+  <exit-transition transition_id="notify"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -94,11 +136,10 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="to validate"
-        title="to validate"
+ <state state_id="notification"
+        title="notification"
         i18n:attributes="title">
-  <exit-transition transition_id="refuse"/>
-  <exit-transition transition_id="validate"/>
+  <exit-transition transition_id="close"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -137,10 +178,11 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="to_send"
-        title="to_send"
+ <state state_id="to_validate"
+        title="to_validate"
         i18n:attributes="title">
-  <exit-transition transition_id="close"/>
+  <exit-transition transition_id="validate"/>
+  <exit-transition transition_id="refuse"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -190,9 +232,20 @@
   <guard>
   </guard>
  </transition>
+ <transition transition_id="notify"
+             title="notify"
+             new_state="notification"
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+  <action url="" icon="" category="workflow" i18n:translate="">notify</action>
+  <guard>
+  </guard>
+ </transition>
  <transition transition_id="propose"
              title="propose"
-             new_state="to validate"
+             new_state="to_validate"
              trigger="USER"
              before_script=""
              after_script=""
@@ -214,14 +267,13 @@
  </transition>
  <transition transition_id="validate"
              title="validate"
-             new_state="to_send"
+             new_state="decision_in_progress"
              trigger="USER"
              before_script=""
              after_script=""
              i18n:attributes="title">
   <action url="" icon="" category="workflow" i18n:translate="">validate</action>
   <guard>
-    <guard-permission>liege.urban: Validate</guard-permission>
   </guard>
  </transition>
  <variable variable_id="action" for_catalog="False"
