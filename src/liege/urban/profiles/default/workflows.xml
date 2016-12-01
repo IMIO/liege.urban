@@ -9,6 +9,8 @@
  <object name="opinion_request_workflow" meta_type="Workflow"/>
  <object name="preliminary_notice_workflow" meta_type="Workflow"/>
 <!-- ##code-section workflowobjects -->
+ <object name="article127_workflow" meta_type="Workflow"/>
+ <object name="cu2_workflow" meta_type="Workflow"/>
 <!-- ##/code-section workflowobjects -->
  <bindings>
   <type type_id="BuildLicence">
@@ -39,9 +41,8 @@
   <type type_id="Article127">
      <bound-workflow workflow_id="article127_workflow" />
   </type>
-  <!-- !!! Not a mistake: CU2 has exactly the same workflow than BuildLicence-->
   <type type_id="UrbanCertificateTwo">
-     <bound-workflow workflow_id="buildlicence_workflow" />
+     <bound-workflow workflow_id="cu2_workflow" />
   </type>
 <!-- ##/code-section workflowbindings -->
  </bindings>
