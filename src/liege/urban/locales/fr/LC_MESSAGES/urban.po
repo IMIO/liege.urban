@@ -60,7 +60,7 @@ msgid "urban_label_deviceEnd"
 msgstr "Fin du dispositif"
 
 msgid "urban_label_explanationDate"
-msgstr "Date de séance de soirée de consultation"
+msgstr "Date de soirée de consultation"
 
 msgid "urban_label_futurePathCoating"
 msgstr "Revêtement de trottoir futur"
