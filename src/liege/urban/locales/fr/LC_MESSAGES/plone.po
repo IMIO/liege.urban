@@ -47,7 +47,7 @@ msgstr "Avis favorable"
 msgid "close_favorable"
 msgstr "Avis défavorable"
 
-msgid "college_in_progress"
+msgid "college"
 msgstr "Passage au collège"
 
 msgid "complete"

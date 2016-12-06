@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<dc-workflow workflow_id="preliminary_notice_workflow"
-             title="preliminary_notice_workflow"
+<dc-workflow workflow_id="urbancertificateone_workflow"
+             title="urbancertificateone_workflow"
              state_variable="review_state"
              initial_state="deposit"
              xmlns:i18n="http://xml.zope.org/namespaces/i18n"
@@ -19,81 +19,7 @@
  <state state_id="analysis"
         title="analysis"
         i18n:attributes="title">
-  <exit-transition transition_id="propose_analysis"/>
-  <exit-transition transition_id="go_back_1"/>
-  <permission-map name="Access contents information"
-                  acquired="False">
-   <permission-role>Reader</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Add portal content"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Delete objects"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="View"
-                  acquired="False">
-   <permission-role>Reader</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="liege.urban: External Reader"
-                  acquired="False">
-   <permission-role>Reader</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="liege.urban: Validate"
-                  acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add Applicant"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add Contact"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add PortionOut"
-                  acquired="False">
-   <permission-role>AddressEditor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add UrbanEvent"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
- </state>
- <state state_id="analysis_validation"
-        title="analysis_validation"
-        i18n:attributes="title">
-  <exit-transition transition_id="validate"/>
-  <exit-transition transition_id="refuse_analysis"/>
+  <exit-transition transition_id="pass_to_college"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -165,9 +91,8 @@
  <state state_id="college"
         title="college"
         i18n:attributes="title">
-  <exit-transition transition_id="close_favorable"/>
-  <exit-transition transition_id="go_back_2"/>
-  <exit-transition transition_id="close_defavorable"/>
+  <exit-transition transition_id="close"/>
+  <exit-transition transition_id="back_to_analyse"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -212,6 +137,12 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Applicant"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add Contact"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -223,11 +154,12 @@
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
- </state>
- <state state_id="defavorable"
-        title="defavorable"
-        i18n:attributes="title">
-  <exit-transition transition_id="go_back_4"/>
+  <permission-map name="urban: Add UrbanEvent"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
  <state state_id="deposit"
         title="deposit"
@@ -301,10 +233,10 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="favorable"
-        title="favorable"
+ <state state_id="done"
+        title="done"
         i18n:attributes="title">
-  <exit-transition transition_id="go_back_3"/>
+  <exit-transition transition_id="go_back_1"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -373,31 +305,33 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <transition transition_id="close_defavorable"
-             title="close_defavorable"
-             new_state="defavorable"
+ <transition transition_id="back_to_analyse"
+             title="back_to_analyse"
+             new_state="analysis"
              trigger="USER"
              before_script=""
              after_script=""
              i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">close_defavorable</action>
+  <action url="" icon="" category="workflow" i18n:translate="">back_to_analyse</action>
   <guard>
+    <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="close_favorable"
-             title="close_favorable"
-             new_state="favorable"
+ <transition transition_id="close"
+             title="close"
+             new_state="done"
              trigger="USER"
              before_script=""
              after_script=""
              i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">close_favorable</action>
+  <action url="" icon="" category="workflow" i18n:translate="">close</action>
   <guard>
+    <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="go_back_1"
              title="go_back_1"
-             new_state="deposit"
+             new_state="college"
              trigger="USER"
              before_script=""
              after_script=""
@@ -407,64 +341,16 @@
     <guard-permission>Manage portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="go_back_2"
-             title="go_back_2"
-             new_state="analysis_validation"
-             trigger="USER"
-             before_script=""
-             after_script=""
-             i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">go_back_2</action>
-  <guard>
-    <guard-permission>Manage portal content</guard-permission>
-  </guard>
- </transition>
- <transition transition_id="go_back_3"
-             title="go_back_3"
+ <transition transition_id="pass_to_college"
+             title="pass_to_college"
              new_state="college"
              trigger="USER"
              before_script=""
              after_script=""
              i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">go_back_3</action>
-  <guard>
-    <guard-permission>Manage portal content</guard-permission>
-  </guard>
- </transition>
- <transition transition_id="go_back_4"
-             title="go_back_4"
-             new_state="college"
-             trigger="USER"
-             before_script=""
-             after_script=""
-             i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">go_back_4</action>
-  <guard>
-    <guard-permission>Manage portal content</guard-permission>
-  </guard>
- </transition>
- <transition transition_id="propose_analysis"
-             title="propose_analysis"
-             new_state="analysis_validation"
-             trigger="USER"
-             before_script=""
-             after_script=""
-             i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">propose_analysis</action>
+  <action url="" icon="" category="workflow" i18n:translate="">pass_to_college</action>
   <guard>
     <guard-permission>Modify portal content</guard-permission>
-  </guard>
- </transition>
- <transition transition_id="refuse_analysis"
-             title="refuse_analysis"
-             new_state="analysis"
-             trigger="USER"
-             before_script=""
-             after_script=""
-             i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">refuse_analysis</action>
-  <guard>
-    <guard-permission>liege.urban: Validate</guard-permission>
   </guard>
  </transition>
  <transition transition_id="to_analyse"
@@ -477,18 +363,6 @@
   <action url="" icon="" category="workflow" i18n:translate="">to_analyse</action>
   <guard>
     <guard-permission>Modify portal content</guard-permission>
-  </guard>
- </transition>
- <transition transition_id="validate"
-             title="validate"
-             new_state="college"
-             trigger="USER"
-             before_script=""
-             after_script=""
-             i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">validate</action>
-  <guard>
-    <guard-permission>liege.urban: Validate</guard-permission>
   </guard>
  </transition>
  <variable variable_id="action" for_catalog="False"

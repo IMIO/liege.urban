@@ -21,13 +21,6 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_validators': ('Contributor',),
         },
 
-        'analysis_validation': {
-            'administrative_editors': ('Reader',),
-            'administrative_validators': ('Reader',),
-            'technical_editors': ('Reader',),
-            'technical_validators': ('Contributor',),
-        },
-
         'college': {
             'administrative_editors': ('Editor',),
             'administrative_validators': ('Contributor',),
@@ -35,14 +28,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_validators': ('Reader',),
         },
 
-        'favorable': {
-            'administrative_editors': ('Reader',),
-            'administrative_validators': ('Reader',),
-            'technical_editors': ('Reader',),
-            'technical_validators': ('Reader',),
-        },
-
-        'defavorable': {
+        'done': {
             'administrative_editors': ('Reader',),
             'administrative_validators': ('Reader',),
             'technical_editors': ('Reader',),

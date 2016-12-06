@@ -38,6 +38,13 @@
   />
 
   <adapter
+     for="Products.urban.interfaces.IUrbanCertificateOne"
+     provides="borg.localrole.interfaces.ILocalRoleProvider"
+     factory=".urbancertificateone_workflow.StateRolesMapping"
+     name="cu1_local_roles"
+  />
+
+  <adapter
      for="Products.urban.interfaces.IPreliminaryNotice"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
      factory=".preliminarynotice_workflow.StateRolesMapping"

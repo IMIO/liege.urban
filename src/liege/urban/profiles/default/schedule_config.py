@@ -554,7 +554,7 @@ schedule_config = {
                     'starting_states': ('procedure_validated', 'FD_opinion'),
                     'start_date': 'schedule.start_date.subtask_highest_due_date',
                     'end_conditions': (
-                        MacroEndConditionObject('liege.urban.schedule.FD_project_college_done'),
+                        MacroEndConditionObject('liege.urban.schedule.college_done'),
                     ),
                     'start_date': 'schedule.start_date.task_starting_date',
                     'additional_delay': 2,
@@ -568,7 +568,7 @@ schedule_config = {
                             'creation_state': ('procedure_validated', 'FD_opinion'),
                             'starting_states': ('procedure_validated', 'FD_opinion'),
                             'end_conditions': (
-                                EndConditionObject('liege.urban.schedule.FD_project_writen'),
+                                EndConditionObject('liege.urban.schedule.college_project_writen'),
                             ),
                             'additional_delay': 2,
                             'start_date': 'schedule.start_date.task_starting_date',
@@ -582,11 +582,11 @@ schedule_config = {
                             'creation_state': ('procedure_validated', 'FD_opinion'),
                             'starting_states': ('procedure_validated', 'FD_opinion'),
                             'start_conditions': (
-                                StartConditionObject('liege.urban.schedule.FD_project_writen'),
+                                StartConditionObject('liege.urban.schedule.college_project_writen'),
                             ),
                             'end_conditions': (
-                                EndConditionObject('liege.urban.schedule.FD_project_validated', 'AND'),
-                                EndConditionObject('liege.urban.schedule.FD_project_sent_to_college'),
+                                EndConditionObject('liege.urban.schedule.college_project_validated', 'AND'),
+                                EndConditionObject('liege.urban.schedule.project_sent_to_college'),
                             ),
                             'start_date': 'schedule.start_date.task_starting_date',
                             'additional_delay': 2,
@@ -602,7 +602,7 @@ schedule_config = {
                     'creation_state': ('procedure_validated', 'FD_opinion'),
                     'starting_states': ('procedure_validated', 'FD_opinion'),
                     'start_conditions': (
-                        StartConditionObject('liege.urban.schedule.FD_project_college_done'),
+                        StartConditionObject('liege.urban.schedule.college_done'),
                     ),
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.FD_opinion_asked'),
@@ -983,7 +983,7 @@ schedule_config = {
                     'starting_states': ('procedure_validated', 'FD_opinion'),
                     'start_date': 'schedule.start_date.subtask_highest_due_date',
                     'end_conditions': (
-                        MacroEndConditionObject('liege.urban.schedule.FD_project_college_done'),
+                        MacroEndConditionObject('liege.urban.schedule.college_done'),
                     ),
                     'start_date': 'schedule.start_date.task_starting_date',
                     'additional_delay': 2,
@@ -997,7 +997,7 @@ schedule_config = {
                             'creation_state': ('procedure_validated', 'FD_opinion'),
                             'starting_states': ('procedure_validated', 'FD_opinion'),
                             'end_conditions': (
-                                EndConditionObject('liege.urban.schedule.FD_project_writen'),
+                                EndConditionObject('liege.urban.schedule.college_project_writen'),
                             ),
                             'additional_delay': 2,
                             'start_date': 'schedule.start_date.task_starting_date',
@@ -1011,11 +1011,11 @@ schedule_config = {
                             'creation_state': ('procedure_validated', 'FD_opinion'),
                             'starting_states': ('procedure_validated', 'FD_opinion'),
                             'start_conditions': (
-                                StartConditionObject('liege.urban.schedule.FD_project_writen'),
+                                StartConditionObject('liege.urban.schedule.college_project_writen'),
                             ),
                             'end_conditions': (
-                                EndConditionObject('liege.urban.schedule.FD_project_validated', 'AND'),
-                                EndConditionObject('liege.urban.schedule.FD_project_sent_to_college'),
+                                EndConditionObject('liege.urban.schedule.college_project_validated', 'AND'),
+                                EndConditionObject('liege.urban.schedule.project_sent_to_college'),
                             ),
                             'start_date': 'schedule.start_date.task_starting_date',
                             'additional_delay': 2,
@@ -1031,7 +1031,7 @@ schedule_config = {
                     'creation_state': ('procedure_validated', 'FD_opinion'),
                     'starting_states': ('procedure_validated', 'FD_opinion'),
                     'start_conditions': (
-                        StartConditionObject('liege.urban.schedule.FD_project_college_done'),
+                        StartConditionObject('liege.urban.schedule.college_done'),
                     ),
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.FD_opinion_asked'),
@@ -1328,7 +1328,7 @@ schedule_config = {
         {
             'type_name': 'MacroTaskConfig',
             'id': 'decision-finale',
-            'title': 'Décision finale à notifier',
+            'title': 'Transmettre avis collège au FD',
             'default_assigned_group': 'administrative_editors',
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
             'creation_state': ('decision_in_progress',),
@@ -1343,7 +1343,7 @@ schedule_config = {
                 {
                     'type_name': 'TaskConfig',
                     'id': 'rediger-proposition-decision',
-                    'title': 'Rédiger le projet de permis',
+                    'title': 'Rédiger le projet davis',
                     'default_assigned_group': 'administrative_editors',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
                     'creation_state': ('decision_in_progress',),
@@ -1398,7 +1398,7 @@ schedule_config = {
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
             'creation_state': ('analysis',),
             'starting_states': ('analysis',),
-            'ending_states': ('college_in_progress',),
+            'ending_states': ('college',),
             'start_date': 'urban.schedule.start_date.creation_date',
             'additional_delay': 5,
             'subtasks': [
@@ -1424,8 +1424,8 @@ schedule_config = {
             'title': 'Valider le projet de réponse',
             'default_assigned_group': 'administrative_validators',
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-            'creation_state': ('college_in_progress',),
-            'starting_states': ('college_in_progress',),
+            'creation_state': ('college',),
+            'starting_states': ('college',),
             'end_conditions': (
                 MacroEndConditionObject('liege.urban.schedule.notification_project_validated'),
             ),
@@ -1438,8 +1438,8 @@ schedule_config = {
                     'title': 'Préparer et envoyer vers IA délib',
                     'default_assigned_group': 'administrative_editors',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('college_in_progress',),
-                    'starting_states': ('college_in_progress',),
+                    'creation_state': ('college',),
+                    'starting_states': ('college',),
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.college_project_sent'),
                     ),
@@ -1452,8 +1452,8 @@ schedule_config = {
                     'title': 'Passage au collège',
                     'default_assigned_group': 'administrative_editors',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('college_in_progress',),
-                    'starting_states': ('college_in_progress',),
+                    'creation_state': ('college',),
+                    'starting_states': ('college',),
                     'start_conditions': (
                         StartConditionObject('liege.urban.schedule.college_project_sent'),
                     ),
@@ -1469,8 +1469,8 @@ schedule_config = {
                     'title': 'Rédiger le projet de réponse',
                     'default_assigned_group': 'administrative_editors',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('decision_in_progress',),
-                    'starting_states': ('decision_in_progress',),
+                    'creation_state': ('college',),
+                    'starting_states': ('college',),
                     'start_conditions': (
                         StartConditionObject('liege.urban.schedule.college_done'),
                     ),
@@ -1488,12 +1488,120 @@ schedule_config = {
             'title': 'Envoyer la réponse',
             'default_assigned_group': 'administrative_editors',
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-            'creation_state': ('college_in_progress',),
-            'starting_states': ('college_in_progress',),
+            'creation_state': ('college',),
+            'starting_states': ('college',),
             'start_conditions': (
                 StartConditionObject('liege.urban.schedule.notification_project_validated'),
             ),
-            'ending_states': ('opinion_sent',),
+            'ending_states': ('favorable', 'defavorable'),
+            'end_conditions': (
+                MacroEndConditionObject('liege.urban.schedule.notification_sent'),
+            ),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 5,
+        },
+    ],
+    'urbancertificateone': [
+        {
+            'type_name': 'TaskConfig',
+            'id': 'depot',
+            'title': 'Dépôt de la demande',
+            'default_assigned_group': 'administrative_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('deposit',),
+            'starting_states': ('deposit',),
+            'ending_states': ('analysis',),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 0,
+        },
+        {
+            'type_name': 'TaskConfig',
+            'id': 'analysis',
+            'title': 'Analyse',
+            'default_assigned_group': 'technical_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('analysis',),
+            'starting_states': ('analysis',),
+            'ending_states': ('college',),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 4,
+        },
+        {
+            'type_name': 'MacroTaskConfig',
+            'id': 'valider-reponse',
+            'title': 'Valider le projet de réponse',
+            'default_assigned_group': 'administrative_validators',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('college',),
+            'starting_states': ('college',),
+            'end_conditions': (
+                MacroEndConditionObject('liege.urban.schedule.notification_project_validated'),
+            ),
+            'start_date': 'schedule.start_date.subtask_highest_due_date',
+            'additional_delay': 2,
+            'subtasks': [
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'envoi-college',
+                    'title': 'Préparer et envoyer vers IA délib',
+                    'default_assigned_group': 'administrative_editors',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_state': ('college',),
+                    'starting_states': ('college',),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.college_project_sent'),
+                    ),
+                    'start_date': 'schedule.start_date.task_starting_date',
+                    'additional_delay': 2,
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'passage-college',
+                    'title': 'Passage au collège',
+                    'default_assigned_group': 'administrative_editors',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_state': ('college',),
+                    'starting_states': ('college',),
+                    'start_conditions': (
+                        StartConditionObject('liege.urban.schedule.college_project_sent'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.college_done'),
+                    ),
+                    'start_date': 'schedule.start_date.task_starting_date',
+                    'additional_delay': 2,
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'rediger-projet-reponse',
+                    'title': 'Rédiger le certificat',
+                    'default_assigned_group': 'administrative_editors',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_state': ('college',),
+                    'starting_states': ('college',),
+                    'start_conditions': (
+                        StartConditionObject('liege.urban.schedule.college_done'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.notification_project_written'),
+                    ),
+                    'start_date': 'schedule.start_date.task_starting_date',
+                    'additional_delay': 2,
+                },
+            ]
+        },
+        {
+            'type_name': 'MacroTaskConfig',
+            'id': 'notifier-reponse',
+            'title': 'Envoyer le certificat',
+            'default_assigned_group': 'administrative_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('college',),
+            'starting_states': ('college',),
+            'start_conditions': (
+                StartConditionObject('liege.urban.schedule.notification_project_validated'),
+            ),
+            'ending_states': ('done',),
             'end_conditions': (
                 MacroEndConditionObject('liege.urban.schedule.notification_sent'),
             ),

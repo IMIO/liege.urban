@@ -50,7 +50,7 @@ msgstr ""
 msgid "close_favorable"
 msgstr ""
 
-msgid "college_in_progress"
+msgid "college"
 msgstr ""
 
 msgid "complete"
