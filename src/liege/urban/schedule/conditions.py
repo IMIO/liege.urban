@@ -146,9 +146,9 @@ class SimpleCollegeCondition(Condition):
         self.college_event = licence.getLastSimpleCollege()
 
 
-class FDProjectWritten(SimpleCollegeCondition):
+class CollegeProjectWritten(SimpleCollegeCondition):
     """
-    Opinion request project is written
+    College project is written
     """
 
     def evaluate(self):
@@ -157,9 +157,9 @@ class FDProjectWritten(SimpleCollegeCondition):
         return api.content.get_state(self.college_event) == 'to_validate'
 
 
-class FDProjectValidated(SimpleCollegeCondition):
+class CollegeProjectValidated(SimpleCollegeCondition):
     """
-    Opinion request project is validated
+    College project is validated
     """
 
     def evaluate(self):
@@ -168,9 +168,9 @@ class FDProjectValidated(SimpleCollegeCondition):
         return api.content.get_state(self.college_event) == 'decision_in_progress'
 
 
-class FDProjectSentToCollege(SimpleCollegeCondition):
+class ProjectSentToCollege(SimpleCollegeCondition):
     """
-    Opinion request project is sent to college
+    College project is sent to college
     """
 
     def evaluate(self):
@@ -185,9 +185,9 @@ class FDProjectSentToCollege(SimpleCollegeCondition):
         return sent
 
 
-class FDProjectCollegeDone(SimpleCollegeCondition):
+class CollegeDone(SimpleCollegeCondition):
     """
-    Opinion request project college is done
+    College is done
     """
 
     def evaluate(self):
