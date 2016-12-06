@@ -227,7 +227,7 @@
     <adapter
         for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IEndCondition"
+        provides="imio.schedule.interfaces.IStartCondition"
         factory=".conditions.DecisionProjectSentCondition"
         name="liege.urban.schedule.decision_project_sent"
     />
