@@ -209,7 +209,7 @@
 
     <!-- final decision conditions -->
     <adapter
-        for="Products.urban.interfaces.IBaseBuildLicence
+        for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IStartCondition"
         factory=".conditions.DecisionProjectDraftedCondition"
@@ -217,7 +217,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBaseBuildLicence
+        for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.DecisionProjectDraftedCondition"
@@ -225,7 +225,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBaseBuildLicence
+        for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.DecisionProjectSentCondition"
@@ -233,7 +233,23 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBaseBuildLicence
+        for="Products.urban.interfaces.IGenericLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.DecisionProjectSentCondition"
+        name="liege.urban.schedule.decision_project_sent"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.ITaskEndCondition"
+        factory=".conditions.DecisionNotifiedCondition"
+        name="liege.urban.schedule.decision_notified"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IMacroTaskEndCondition"
         factory=".conditions.DecisionNotifiedCondition"
