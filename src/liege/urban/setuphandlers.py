@@ -18,22 +18,11 @@ def post_install(context):
         return
     # Do something during the installation of this package
 
-    setEventTypeMapping(context)
     addLiegeGroups(context)
     setupSurveySchedule(context)
     setupOpinionsSchedule(context)
     addScheduleConfigs(context)
     addTestUsers(context)
-
-
-def setEventTypeMapping(context):
-    """
-    """
-    portal_urban = api.portal.get_tool('portal_urban')
-    portal_urban.eventtype_portaltype_mapping['Products.urban.interfaces.IAcknowledgmentEvent'] = 'UrbanEventAcknowledgment'
-    portal_urban.eventtype_portaltype_mapping['Products.urban.interfaces.ISimpleCollegeEvent'] = 'UrbanEventCollege'
-    portal_urban.eventtype_portaltype_mapping['Products.urban.interfaces.IWalloonRegionOpinionRequestEvent'] = 'UrbanEventOpinionRequest'
-    portal_urban.eventtype_portaltype_mapping['liege.urban.interfaces.IInternalOpinionRequestEvent'] = 'UrbanEventOpinionRequest'
 
 
 def addLiegeGroups(context):
