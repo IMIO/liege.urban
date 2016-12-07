@@ -42,6 +42,10 @@
                 </fieldset>
             </metal:worklocations>
 
+            <metal:representatives fill-slot="representatives">
+                 <metal:representatives_macro use-macro="here/@@licencemacros/urbanArchitectsMacro" />
+            </metal:representatives>
+
             <metal:parcels fill-slot="parcels">
             </metal:parcels>
     </metal:parent_call>
