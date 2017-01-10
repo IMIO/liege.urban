@@ -9,9 +9,9 @@ class ShoreVocabularyFactory(object):
     def __call__(self, context):
         vocabulary = SimpleVocabulary(
             [
-                SimpleTerm('right', 'right', 'Droite'),
-                SimpleTerm('left', 'left', 'Gauche'),
-                SimpleTerm('center', 'center', 'Centre'),
+                SimpleTerm('D', 'D', 'Droite'),
+                SimpleTerm('G', 'G', 'Gauche'),
+                SimpleTerm('C', 'C', 'Centre'),
             ]
         )
         return vocabulary
