@@ -305,6 +305,7 @@
              i18n:attributes="title">
   <action url="" icon="" category="workflow" i18n:translate="">refuse</action>
   <guard>
+    <guard-permission>liege.urban: Validate</guard-permission>
   </guard>
  </transition>
  <transition transition_id="validate"
