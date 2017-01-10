@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from Products.urban.interfaces import IGenericLicence
+from liege.urban.interfaces import IShore
 
 from plone.indexer import indexer
+
+from Products.urban.interfaces import IGenericLicence
+
+from zope.component import queryAdapter
 
 
 @indexer(IGenericLicence)
@@ -10,5 +14,6 @@ def genericlicence_shore_index(licence):
     """
     Index Liège shore value
     """
-    shore = licence.getShore()
-    return [shore]
+    adapter = queryAdapter(licence, IShore)
+    shore = adapter.get_shore()
+    return shore
