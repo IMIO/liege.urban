@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-11-29 10:00+0000\n"
+"POT-Creation-Date: 2017-01-10 12:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,12 +21,12 @@ msgstr ""
 msgid "IInternalOpinionRequestEvent type marker interface"
 msgstr ""
 
-#: ../browser/address_search.py:42
-msgid "INS code"
-msgstr ""
-
 #: ../configure.zcml:42
 msgid "Installs liege.urban add-on."
+msgstr ""
+
+#: ../browser/address_search.py:42
+msgid "Street code"
 msgstr ""
 
 #: ../browser/address_search.py:37

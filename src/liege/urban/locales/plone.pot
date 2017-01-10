@@ -20,9 +20,6 @@ msgstr ""
 msgid "abandoned"
 msgstr ""
 
-msgid "accept_licence"
-msgstr ""
-
 msgid "analysis"
 msgstr ""
 
@@ -36,6 +33,12 @@ msgid "ask_complements"
 msgstr ""
 
 msgid "ask_temporary_address"
+msgstr ""
+
+msgid "authorize_licence"
+msgstr ""
+
+msgid "authorized"
 msgstr ""
 
 msgid "check_completion"

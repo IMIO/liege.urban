@@ -34,17 +34,17 @@ class StreetNumberField(TextLine):
 class IAddressSearchForm(Interface):
 
     street_name = StreetNameField(
-        title=_(u'Nom de la rue'),
+        title=_(u'Street name'),
         required=False
     )
 
     INS_code = INSCodeField(
-        title=_(u'Code rue'),
+        title=_(u'Street code'),
         required=False
     )
 
     street_number = StreetNumberField(
-        title=_(u'Numéro'),
+        title=_(u'Street number'),
         required=False
     )
 

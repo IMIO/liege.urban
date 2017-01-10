@@ -17,9 +17,6 @@ msgstr ""
 msgid "abandoned"
 msgstr "Abandonné"
 
-msgid "accept_licence"
-msgstr "accepter le permis"
-
 msgid "analysis"
 msgstr "Analyse du dossier"
 
@@ -34,6 +31,12 @@ msgstr "demander des compléments"
 
 msgid "ask_temporary_address"
 msgstr "demander une adresse temporaire"
+
+msgid "authorize_licence"
+msgstr "Permis autorisé"
+
+msgid "authorized"
+msgstr "Autorisé"
 
 msgid "check_completion"
 msgstr "Vérifier la complétude"
@@ -120,7 +123,7 @@ msgid "refuse_analysis"
 msgstr "Renvoyer"
 
 msgid "refuse_licence"
-msgstr "refuser le permis"
+msgstr "Permis refusé"
 
 msgid "refuse_procedure_choice"
 msgstr "Refaire le choix de procédure"
