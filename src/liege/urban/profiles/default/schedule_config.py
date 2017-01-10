@@ -620,7 +620,7 @@ schedule_config = {
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
             'creation_state': ('decision_in_progress',),
             'starting_states': ('decision_in_progress',),
-            'ending_states': ('accepted', 'refused'),
+            'ending_states': ('authorized', 'refused'),
             'end_conditions': (
                 MacroEndConditionObject('liege.urban.schedule.decision_notified'),
             ),
@@ -1049,7 +1049,7 @@ schedule_config = {
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
             'creation_state': ('decision_in_progress',),
             'starting_states': ('decision_in_progress',),
-            'ending_states': ('accepted', 'refused'),
+            'ending_states': ('authorized', 'refused'),
             'end_conditions': (
                 MacroEndConditionObject('liege.urban.schedule.decision_notified'),
             ),
@@ -1333,7 +1333,7 @@ schedule_config = {
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
             'creation_state': ('decision_in_progress',),
             'starting_states': ('decision_in_progress',),
-            'ending_states': ('accepted', 'refused'),
+            'ending_states': ('authorized', 'refused'),
             'end_conditions': (
                 MacroEndConditionObject('liege.urban.schedule.decision_notified'),
             ),

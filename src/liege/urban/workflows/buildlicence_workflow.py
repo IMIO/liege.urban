@@ -144,7 +144,7 @@ class StateRolesMapping(LocalRoleAdapter):
             get_opinion_editors: ('ExternalReader',),
         },
 
-        'accepted': {
+        'authorized': {
             'administrative_editors': ('Reader',),
             'administrative_validators': ('Reader',),
             'technical_editors': ('Reader',),
