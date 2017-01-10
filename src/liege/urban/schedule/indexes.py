@@ -2,7 +2,11 @@
 
 from imio.schedule.content.task import IAutomatedTask
 
+from liege.urban.interfaces import IShore
+
 from plone.indexer import indexer
+
+from zope.component import queryAdapter
 
 
 @indexer(IAutomatedTask)
@@ -23,5 +27,6 @@ def task_shore_index(task):
     to query on it.
     """
     licence = task.get_container()
-    shore = licence.getShore()
-    return [shore]
+    adapter = queryAdapter(licence, IShore)
+    shore = adapter.get_shore()
+    return shore
