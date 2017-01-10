@@ -33,6 +33,20 @@ class InquiryZoneIdentifiedCondition(Condition):
         return True
 
 
+class WriteInquiryDocumentsCondition(Condition):
+    """
+    Licence inquiry documents are produced.
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        inquiry = licence.getLastInquiry()
+        if not inquiry:
+            return False
+
+        return api.content.get_state(inquiry) == 'preparing_documents'
+
+
 class InquiryDocumentsDoneCondition(Condition):
     """
     Licence inquiry documents are produced.
