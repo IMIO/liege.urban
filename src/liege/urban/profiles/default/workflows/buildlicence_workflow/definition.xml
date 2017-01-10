@@ -21,6 +21,7 @@
  <permission>liege.urban: Internal Editor</permission>
  <permission>liege.urban: Road Reader</permission>
  <permission>liege.urban: Road Editor</permission>
+ <permission>urban: Add Corporation</permission>
  <state state_id="FD_opinion"
         title="FD_opinion"
         i18n:attributes="title">
@@ -115,6 +116,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -236,6 +243,12 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Corporation"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut"
                   acquired="False">
    <permission-role>AddressEditor</permission-role>
@@ -346,6 +359,12 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Corporation"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut"
                   acquired="False">
    <permission-role>AddressEditor</permission-role>
@@ -451,6 +470,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -574,6 +599,12 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Corporation"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut"
                   acquired="False">
    <permission-role>AddressEditor</permission-role>
@@ -678,6 +709,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -792,6 +829,12 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Corporation"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut"
                   acquired="False">
    <permission-role>AddressEditor</permission-role>
@@ -897,6 +940,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -1019,6 +1068,12 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Corporation"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut"
                   acquired="False">
    <permission-role>AddressEditor</permission-role>
@@ -1130,6 +1185,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -1254,6 +1315,12 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Corporation"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut"
                   acquired="False">
    <permission-role>AddressEditor</permission-role>
@@ -1364,6 +1431,12 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Corporation"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut"
                   acquired="False">
    <permission-role>AddressEditor</permission-role>
@@ -1468,6 +1541,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
