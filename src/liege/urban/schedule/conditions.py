@@ -33,7 +33,7 @@ class InquiryZoneIdentifiedCondition(Condition):
         return True
 
 
-class WriteInquiryDocumentsCondition(Condition):
+class WriteInquiryDocumentsCondition(CreationCondition):
     """
     Licence inquiry documents are produced.
     """
@@ -47,7 +47,7 @@ class WriteInquiryDocumentsCondition(Condition):
         return api.content.get_state(inquiry) == 'preparing_documents'
 
 
-class InquiryDocumentsDoneCondition(Condition):
+class InquiryDocumentsDone():
     """
     Licence inquiry documents are produced.
     """
@@ -59,6 +59,18 @@ class InquiryDocumentsDoneCondition(Condition):
             return False
 
         return api.content.get_state(inquiry) == 'to_validate'
+
+
+class InquiryDocumentsDoneCondition(InquiryDocumentsDone, Condition):
+    """
+    Licence inquiry documents are produced.
+    """
+
+
+class InquiryDocumentsDoneCreationCondition(InquiryDocumentsDone, CreationCondition):
+    """
+    Licence inquiry documents are produced.
+    """
 
 
 class InquiryDocumentsValidatedCondition(Condition):

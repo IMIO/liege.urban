@@ -72,17 +72,17 @@
 
     <adapter
         for="Products.urban.interfaces.IBaseBuildLicence
-             imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IRecurrenceCondition"
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
         factory=".conditions.WriteInquiryDocumentsCondition"
         name="liege.urban.schedule.write_inquiry_documents"
     />
 
     <adapter
         for="Products.urban.interfaces.IBaseBuildLicence
-             imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IRecurrenceCondition"
-        factory=".conditions.InquiryDocumentsDoneCondition"
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".conditions.InquiryDocumentsDoneCreationCondition"
         name="liege.urban.schedule.inquiry_documents_done"
     />
 
