@@ -71,15 +71,16 @@ class UsersFromGroupsVocabularyFactory(object):
         """
         List users from a group as a vocabulary.
         """
-        voc_terms = []
+        base_terms = []
         me_id = ''
         user_ids = set()
         if self.me_value:
             me = api.user.get_current()
             me_id = me.id
-            voc_terms.append(SimpleTerm(me_id, me_id, 'Moi'))
-            voc_terms.append(SimpleTerm('to_assign', 'to_assign', 'À ASSIGNER'))
+            base_terms.append(SimpleTerm(me_id, me_id, 'Moi'))
+            base_terms.append(SimpleTerm('to_assign', 'to_assign', 'À ASSIGNER'))
 
+        voc_terms = []
         for group_id in self.group_ids:
             group = api.group.get(group_id)
 
@@ -94,7 +95,7 @@ class UsersFromGroupsVocabularyFactory(object):
                         )
                     )
 
-        vocabulary = SimpleVocabulary(voc_terms)
+        vocabulary = SimpleVocabulary(base_terms + sorted(voc_terms, key=lambda term: term.title))
         return vocabulary
 
 
