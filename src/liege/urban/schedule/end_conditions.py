@@ -28,6 +28,15 @@ class AllParcelsAreValidated(EndCondition):
         return True
 
 
+class LicenceInTemporaryAddressState(EndCondition):
+    """
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        return api.content.get_state(licence) == 'waiting_address'
+
+
 class WaitingForOpinionRequests(EndCondition):
     """
     All opinion request events should be in a state different than 'creation'.
