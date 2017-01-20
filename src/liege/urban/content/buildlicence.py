@@ -9,6 +9,7 @@ permissions_mapping = {
     'urban_advices': ('liege.urban: Road Reader', 'liege.urban: Internal Editor'),
     'urban_location': ('liege.urban: Road Reader', 'liege.urban: Road Editor'),
     'urban_road': ('liege.urban: Road Reader', 'liege.urban: Road Editor'),
+    'urban_habitation': ('liege.urban: External Reader', 'liege.urban: Address Editor'),
 }
 
 
