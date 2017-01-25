@@ -11,9 +11,14 @@
  <permission>Modify portal content</permission>
  <permission>Add portal content</permission>
  <permission>liege.urban: Validate</permission>
+ <permission>ATContentTypes: Add File</permission>
  <state state_id="closed"
         title="closed"
         i18n:attributes="title">
+  <permission-map name="ATContentTypes: Add File"
+                  acquired="False">
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -23,6 +28,7 @@
   </permission-map>
   <permission-map name="Add portal content"
                   acquired="False">
+   <permission-role>ClaimantEditor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -35,6 +41,7 @@
   </permission-map>
   <permission-map name="Modify portal content"
                   acquired="False">
+   <permission-role>ClaimantEditor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
