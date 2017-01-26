@@ -46,6 +46,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Contributor',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
+            'urban_reader': ('Reader',),
         },
 
         'validating_address': {
@@ -54,6 +55,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
             'survey_editors': ('Reader', 'AddressEditor'),
+            'urban_reader': ('Reader',),
         },
 
         'waiting_address': {
@@ -62,6 +64,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
             'survey_editors': ('Reader', 'AddressEditor'),
+            'urban_reader': ('Reader',),
         },
 
         'procedure_choice': {
@@ -70,6 +73,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_editors': ('Editor',),
             'technical_validators': ('Contributor',),
             get_opinion_editors: ('ExternalReader',),
+            'urban_reader': ('Reader',),
         },
 
         'checking_completion': {
@@ -78,6 +82,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_editors': ('Editor',),
             'technical_validators': ('Contributor',),
             get_opinion_editors: ('ExternalReader',),
+            'urban_reader': ('Reader',),
         },
 
         'incomplete': {
@@ -86,6 +91,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
             get_opinion_editors: ('ExternalReader',),
+            'urban_reader': ('Reader',),
         },
 
         'complete': {
@@ -94,6 +100,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_editors': ('Editor',),
             'technical_validators': ('Contributor',),
             get_opinion_editors: ('ExternalReader',),
+            'urban_reader': ('Reader',),
         },
 
         'procedure_choosen': {
@@ -102,6 +109,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_editors': ('Reader',),
             'technical_validators': ('Contributor',),
             get_opinion_editors: ('ExternalReader',),
+            'urban_reader': ('Reader',),
         },
 
         'procedure_validated': {
@@ -112,6 +120,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'Voirie_editors': ('RoadEditor',),
             'Voirie_validators': ('RoadEditor',),
             get_opinion_editors: ('ExternalReader',),
+            'urban_reader': ('Reader',),
         },
 
         'report_written': {
@@ -122,6 +131,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'Voirie_editors': ('RoadEditor',),
             'Voirie_validators': ('RoadEditor',),
             get_opinion_editors: ('ExternalReader',),
+            'urban_reader': ('Reader',),
         },
 
         'FD_opinion': {
@@ -132,6 +142,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'Voirie_editors': ('RoadEditor',),
             'Voirie_validators': ('RoadEditor',),
             get_opinion_editors: ('ExternalReader',),
+            'urban_reader': ('Reader',),
         },
 
         'decision_in_progress': {
@@ -142,6 +153,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'Voirie_editors': ('RoadReader',),
             'Voirie_validators': ('RoadReader',),
             get_opinion_editors: ('ExternalReader',),
+            'urban_reader': ('Reader',),
         },
 
         'authorized': {
@@ -152,6 +164,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'Voirie_editors': ('RoadReader',),
             'Voirie_validators': ('RoadReader',),
             get_opinion_editors: ('ExternalReader',),
+            'urban_reader': ('Reader',),
         },
 
         'refused': {
@@ -162,6 +175,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'Voirie_editors': ('RoadReader',),
             'Voirie_validators': ('RoadReader',),
             get_opinion_editors: ('ExternalReader',),
+            'urban_reader': ('Reader',),
         },
 
     }
