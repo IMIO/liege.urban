@@ -11,6 +11,7 @@
  <permission>Modify portal content</permission>
  <permission>Add portal content</permission>
  <permission>liege.urban: Validate</permission>
+ <permission>Products.urban: SendToPM</permission>
  <state state_id="closed"
         title="closed"
         i18n:attributes="title">
@@ -78,6 +79,11 @@
   <permission-map name="Modify portal content"
                   acquired="False">
    <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Products.urban: SendToPM"
+                  acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
