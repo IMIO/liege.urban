@@ -18,11 +18,26 @@ def post_install(context):
         return
     # Do something during the installation of this package
 
+    setAllowedTypes(context)
     addLiegeGroups(context)
     setupSurveySchedule(context)
     setupOpinionsSchedule(context)
     addScheduleConfigs(context)
     addTestUsers(context)
+
+
+def setAllowedTypes(context):
+    """
+    New content types are added on liege profile. Allow these types to be created.
+    """
+    portal_types = api.portal.get_tool('portal_types')
+    licence_types = ['BuildLicence', 'Article127', 'UniqueLicence', 'IntegratedLicence', 'UrbanCertificateTwo']
+
+    for licence_type in licence_types:
+        type_info = getattr(portal_types, licence_type)
+        values = type_info.allowed_content_types
+        if 'UrbanEventAcknowledgment' not in values:
+            type_info.allowed_content_types = values + ('UrbanEventAcknowledgment',)
 
 
 def addLiegeGroups(context):
