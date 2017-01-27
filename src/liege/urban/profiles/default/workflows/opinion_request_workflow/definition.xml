@@ -56,6 +56,7 @@
  <state state_id="opinion_given"
         title="opinion_given"
         i18n:attributes="title">
+  <exit-transition transition_id="reopen"/>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -65,20 +66,14 @@
   </permission-map>
   <permission-map name="Add portal content"
                   acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="Delete objects"
                   acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="Modify portal content"
                   acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="View"
@@ -90,6 +85,7 @@
   </permission-map>
   <permission-map name="liege.urban: Validate"
                   acquired="False">
+   <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -215,6 +211,18 @@
   <action url="" icon="" category="workflow" i18n:translate="">invalidate_opinion</action>
   <guard>
     <guard-permission>Modify portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="reopen"
+             title="reopen"
+             new_state="waiting_opinion"
+             trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+  <action url="" icon="%(portal_url)s/reopen.png" category="workflow" i18n:translate="">reopen</action>
+  <guard>
+    <guard-permission>liege.urban: Internal Editor</guard-permission>
   </guard>
  </transition>
  <transition transition_id="receive_opinion"
