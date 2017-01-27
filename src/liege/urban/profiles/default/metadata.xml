@@ -3,5 +3,6 @@
   <version>1000</version>
   <dependencies>
      <dependency>profile-Products.urban:default</dependency>
+     <dependency>profile-collective.wfadaptations:default</dependency>
   </dependencies>
 </metadata>
