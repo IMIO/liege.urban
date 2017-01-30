@@ -271,7 +271,6 @@
   <action url="" icon="%(portal_url)s/reopen.png" category="workflow" i18n:translate="">reopen</action>
   <guard>
     <guard-permission>liege.urban: Internal Editor</guard-permission>
-    <guard-group>administrative_editors</guard-group>
   </guard>
  </transition>
  <transition transition_id="receive_opinion"
@@ -284,6 +283,7 @@
   <action url="" icon="" category="workflow" i18n:translate="">receive_opinion</action>
   <guard>
     <guard-permission>liege.urban: Internal Editor</guard-permission>
+    <guard-group>administrative_editors</guard-group>
   </guard>
  </transition>
  <transition transition_id="send_opinion"
