@@ -32,12 +32,10 @@ class StateRolesMapping(LocalRoleAdapter):
                 for obj in opinion_request.objectValues():
                     if IAutomatedTask.providedBy(obj) and obj.task_config_UID == task_config.UID():
                         task = obj
-                        break
-
-            if task and status_by_state[api.content.get_state(task)] in [STARTED, DONE]:
-                group = task.assigned_group
-                if group not in exceptions:
-                    opinion_editors.append(group)
+                        if task and status_by_state[api.content.get_state(task)] in [STARTED, DONE]:
+                            group = task.assigned_group
+                            if group not in exceptions:
+                                opinion_editors.append(group)
 
         return opinion_editors
 
