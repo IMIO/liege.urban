@@ -52,6 +52,18 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="WebDAV Lock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="WebDAV Unlock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
  <state state_id="opinion_given"
         title="opinion_given"
@@ -84,6 +96,18 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="liege.urban: Validate"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="WebDAV Lock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="WebDAV Unlock items"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -132,6 +156,18 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="WebDAV Lock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="WebDAV Unlock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
  <state state_id="waiting_opinion"
         title="waiting_opinion"
@@ -172,6 +208,18 @@
   </permission-map>
   <permission-map name="liege.urban: Validate"
                   acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="WebDAV Lock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="WebDAV Unlock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -223,6 +271,7 @@
   <action url="" icon="%(portal_url)s/reopen.png" category="workflow" i18n:translate="">reopen</action>
   <guard>
     <guard-permission>liege.urban: Internal Editor</guard-permission>
+    <guard-group>administrative_editors</guard-group>
   </guard>
  </transition>
  <transition transition_id="receive_opinion"
