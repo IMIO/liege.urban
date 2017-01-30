@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from imio.schedule.config import DONE
 from imio.schedule.config import STARTED
 from imio.schedule.config import status_by_state
 from imio.schedule.content.task import IAutomatedTask
@@ -33,7 +34,7 @@ class StateRolesMapping(LocalRoleAdapter):
                         task = obj
                         break
 
-            if task and status_by_state[api.content.get_state(task)] is STARTED:
+            if task and status_by_state[api.content.get_state(task)] in [STARTED, DONE]:
                 group = task.assigned_group
                 if group not in exceptions:
                     opinion_editors.append(group)
