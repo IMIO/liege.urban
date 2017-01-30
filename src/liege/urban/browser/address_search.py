@@ -128,6 +128,7 @@ class DefaultStreetNumber(FieldDefaultValue):
 
 class AddressSearchForm(form.Form):
 
+    method = 'get'
     fields = field.Fields(IAddressSearchForm)
     ignoreContext = True
 
