@@ -269,6 +269,7 @@
              i18n:attributes="title">
   <action url="" icon="" category="workflow" i18n:translate="">refuse</action>
   <guard>
+    <guard-permission>liege.urban: Validate</guard-permission>
   </guard>
  </transition>
  <transition transition_id="validate"
@@ -280,6 +281,7 @@
              i18n:attributes="title">
   <action url="" icon="" category="workflow" i18n:translate="">validate</action>
   <guard>
+    <guard-permission>liege.urban: Validate</guard-permission>
   </guard>
  </transition>
  <variable variable_id="action" for_catalog="False"
