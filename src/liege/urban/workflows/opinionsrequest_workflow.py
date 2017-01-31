@@ -40,18 +40,18 @@ class StateRolesMapping(LocalRoleAdapter):
     def get_opinion_editor_role(self):
         groups = self.get_opinion_editor()
         if 'technical_editors' in groups:
-            return ('Contributor',)
-        return ('Editor',)
+            return ('Reader', 'Contributor',)
+        return ('Reader', 'Editor',)
 
     def get_technical_roles(self):
         if 'technical_editors' in self.get_opinion_editor():
-            return ('Contributor',)
+            return ('Reader', 'Contributor',)
         return ('Reader',)
 
     mapping = {
         'creation': {
-            'administrative_editors': ('Editor',),
-            'administrative_validators': ('Contributor',),
+            'administrative_editors': ('Reader', 'Editor',),
+            'administrative_validators': ('Reader', 'Contributor',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
         },
@@ -71,12 +71,12 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
             get_opinion_editor: ('Reader',),
-            get_opinion_validator: ('Contributor',),
+            get_opinion_validator: ('Reader', 'Contributor',),
         },
 
         'opinion_given': {
-            'administrative_editors': (get_technical_roles,),
-            'administrative_validators': (get_technical_roles,),
+            'administrative_editors': ('Reader',),
+            'administrative_validators': ('Reader',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
             get_opinion_editor: ('Reader',),

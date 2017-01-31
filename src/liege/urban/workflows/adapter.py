@@ -19,7 +19,7 @@ class RoleNotFoundError(Exception):
 
 
 def _get_rolemap_caching_key(method, localrole_adapter, state):
-    return (localrole_adapter.context.UID(), state)
+    return (str(localrole_adapter), localrole_adapter.context.UID(), state)
 
 
 class LocalRoleAdapter(object):

@@ -30,8 +30,8 @@ class StateRolesMapping(LocalRoleAdapter):
         },
 
         'closed': {
-            'administrative_editors': ('Editor',),
-            'administrative_validators': ('Editor', 'Contributor'),
+            'administrative_editors': ('Reader',),
+            'administrative_validators': ('Reader',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
         },
