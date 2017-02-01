@@ -9,7 +9,7 @@ class StateRolesMapping(LocalRoleAdapter):
 
     mapping = {
         'draft': {
-            'administrative_editors': ('Editor',),
+            'administrative_editors': ('Reader', 'Editor',),
             'administrative_validators': ('Contributor',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
@@ -24,13 +24,6 @@ class StateRolesMapping(LocalRoleAdapter):
 
         'decision_in_progress': {
             'administrative_editors': ('Reader',),
-            'administrative_validators': ('Contributor',),
-            'technical_editors': ('Reader',),
-            'technical_validators': ('Reader',),
-        },
-
-        'notification': {
-            'administrative_editors': ('Editor',),
             'administrative_validators': ('Contributor',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),

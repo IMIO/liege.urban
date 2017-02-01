@@ -10,11 +10,16 @@
  <permission>Delete objects</permission>
  <permission>Modify portal content</permission>
  <permission>Add portal content</permission>
+ <permission>ATContentTypes: Add File</permission>
  <permission>liege.urban: Validate</permission>
  <permission>Products.urban: SendToPM</permission>
  <state state_id="closed"
         title="closed"
         i18n:attributes="title">
+  <permission-map name="ATContentTypes: Add File"
+                  acquired="False">
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -57,6 +62,10 @@
         title="decision_in_progress"
         i18n:attributes="title">
   <exit-transition transition_id="receive_college_decision"/>
+  <permission-map name="ATContentTypes: Add File"
+                  acquired="False">
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -104,6 +113,12 @@
         title="draft"
         i18n:attributes="title">
   <exit-transition transition_id="propose"/>
+  <permission-map name="ATContentTypes: Add File"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -147,6 +162,12 @@
         i18n:attributes="title">
   <exit-transition transition_id="validate"/>
   <exit-transition transition_id="refuse"/>
+  <permission-map name="ATContentTypes: Add File"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
