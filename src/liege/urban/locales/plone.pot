@@ -32,6 +32,9 @@ msgstr ""
 msgid "ask_complements"
 msgstr ""
 
+msgid "ask_opinion"
+msgstr ""
+
 msgid "ask_temporary_address"
 msgstr ""
 
@@ -42,6 +45,9 @@ msgid "authorize_licence"
 msgstr ""
 
 msgid "authorized"
+msgstr ""
+
+msgid "back_in_draft"
 msgstr ""
 
 msgid "check_completion"

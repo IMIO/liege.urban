@@ -29,6 +29,9 @@ msgstr "faire valider l'adresse"
 msgid "ask_complements"
 msgstr "demander des compléments"
 
+msgid "ask_opinion"
+msgstr "Demander l'avis"
+
 msgid "ask_temporary_address"
 msgstr "demander une adresse temporaire"
 
@@ -40,6 +43,9 @@ msgstr "Permis autorisé"
 
 msgid "authorized"
 msgstr "Autorisé"
+
+msgid "back_in_draft"
+msgstr "retour"
 
 msgid "check_completion"
 msgstr "Vérifier la complétude"
