@@ -200,7 +200,6 @@ class ProjectSentToCollege(SimpleCollegeCondition):
     """
 
     def evaluate(self):
-        return True
         if not self.college_event:
             return False
         request = api.portal.getRequest()
