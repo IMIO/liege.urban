@@ -1677,6 +1677,7 @@
   <action url="" icon="" category="workflow" i18n:translate="">propose_report</action>
   <guard>
     <guard-permission>liege.urban: Internal Editor</guard-permission>
+    <guard-group>technical_editors</guard-group>
   </guard>
  </transition>
  <transition transition_id="receive_FD_opinion"
