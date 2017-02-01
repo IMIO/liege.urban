@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-01-10 12:36+0000\n"
+"POT-Creation-Date: 2017-02-01 06:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,6 +41,6 @@ msgid "The above listed tasks are not done yet !!!"
 msgstr ""
 
 #: ../configure.zcml:42
-#: ../schedule/vocabulary.py:136
+#: ../schedule/vocabulary.py:137
 msgid "liege.urban"
 msgstr ""

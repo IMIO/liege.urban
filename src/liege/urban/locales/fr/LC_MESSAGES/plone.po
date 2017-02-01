@@ -32,6 +32,9 @@ msgstr "demander des compléments"
 msgid "ask_temporary_address"
 msgstr "demander une adresse temporaire"
 
+msgid "ask_validation"
+msgstr "faire valider"
+
 msgid "authorize_licence"
 msgstr "Permis autorisé"
 
@@ -86,8 +89,17 @@ msgstr "Incomplet"
 msgid "invalidate_completion"
 msgstr "Revérifier la complétude"
 
+msgid "invalidate_opinion"
+msgstr "refuser"
+
+msgid "invalidate_procedure_choice"
+msgstr "refuser"
+
 msgid "notification"
 msgstr "Notification du permis"
+
+msgid "opinion_validation"
+msgstr "validation"
 
 msgid "procedure_analysis"
 msgstr "Analyse technique"
@@ -116,8 +128,14 @@ msgstr "proposer le rapport d'analyse"
 msgid "proposed"
 msgstr "Projet de décision rédigé"
 
+msgid "receive_college_decision"
+msgstr "recevoir la décision"
+
 msgid "receive_complements"
 msgstr "compléments reçus"
+
+msgid "receive_opinion"
+msgstr "recevoir l'avis"
 
 msgid "refuse_analysis"
 msgstr "Renvoyer"
@@ -134,8 +152,17 @@ msgstr "Refaire le rapport d'analyse"
 msgid "report_written"
 msgstr "Rapport d'analyse écrit"
 
+msgid "send_opinion"
+msgstr "envoyer l'avis"
+
+msgid "suspend"
+msgstr "suspendre"
+
 msgid "to_analyse"
 msgstr "Envoyer à l'analyse"
+
+msgid "to_send"
+msgstr "Envoi de l'accusé"
 
 msgid "to_validate"
 msgstr "à valider"
@@ -169,3 +196,6 @@ msgstr "vérifier la complétude"
 
 msgid "waiting_address"
 msgstr "En attente d'une adresse temporaire"
+
+msgid "waiting_opinion"
+msgstr "En attente d'avis"

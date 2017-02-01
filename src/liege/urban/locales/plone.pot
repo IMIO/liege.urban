@@ -35,6 +35,9 @@ msgstr ""
 msgid "ask_temporary_address"
 msgstr ""
 
+msgid "ask_validation"
+msgstr ""
+
 msgid "authorize_licence"
 msgstr ""
 
@@ -89,7 +92,16 @@ msgstr ""
 msgid "invalidate_completion"
 msgstr ""
 
+msgid "invalidate_opinion"
+msgstr ""
+
+msgid "invalidate_procedure_choice"
+msgstr ""
+
 msgid "notification"
+msgstr ""
+
+msgid "opinion_validation"
 msgstr ""
 
 msgid "procedure_analysis"
@@ -122,6 +134,9 @@ msgstr ""
 msgid "receive_complements"
 msgstr ""
 
+msgid "receive_opinion"
+msgstr ""
+
 msgid "refuse_analysis"
 msgstr ""
 
@@ -137,10 +152,22 @@ msgstr ""
 msgid "report_written"
 msgstr ""
 
+msgid "send_opinion"
+msgstr ""
+
+msgid "suspend"
+msgstr ""
+
 msgid "to_analyse"
 msgstr ""
 
+msgid "to_send"
+msgstr ""
+
 msgid "to_validate"
+msgstr ""
+
+msgid "receive_college_decision"
 msgstr ""
 
 msgid "validate_address"
@@ -171,4 +198,7 @@ msgid "verify_completion"
 msgstr ""
 
 msgid "waiting_address"
+msgstr ""
+
+msgid "waiting_opinion"
 msgstr ""
