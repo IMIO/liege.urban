@@ -203,16 +203,37 @@ class ProjectSentToCollege(SimpleCollegeCondition):
         if not self.college_event:
             return False
         request = api.portal.getRequest()
-        context = self.college_event
-        portal_state = getMultiAdapter((context, request), name=u'plone_portal_state')
-        ws4pm_settings = getMultiAdapter((portal_state.portal(), request), name='ws4pmclient-settings')
-        sent = ws4pm_settings.checkAlreadySentToPloneMeeting(self.college_event)
+        ws4pm = getMultiAdapter((api.portal.get(), request), name='ws4pmclient-settings')
+
+        sent = ws4pm.checkAlreadySentToPloneMeeting(self.college_event)
+
         return sent
 
 
 class CollegeDone(SimpleCollegeCondition):
     """
     College is done
+    """
+
+    def evaluate(self):
+        if not self.college_event:
+            return False
+
+        request = api.portal.getRequest()
+        ws4pm = getMultiAdapter((api.portal.get(), request), name='ws4pmclient-settings')
+        items = ws4pm._soap_searchItems({'externalIdentifier': self.college_event.UID()})
+        if not items:
+            return False
+
+        accepted_states = ['accepted', 'accepted_but_modified', 'accepted_and_returned']
+        college_done = items and items[0]['review_state'] in accepted_states
+
+        return college_done
+
+
+class CollegeEventClosed(SimpleCollegeCondition):
+    """
+    College event state is 'closed'
     """
 
     def evaluate(self):

@@ -219,6 +219,14 @@
         for="Products.urban.interfaces.IBaseBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.CollegeEventClosed"
+        name="liege.urban.schedule.college_event_closed"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBaseBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.FDOpinionAsked"
         name="liege.urban.schedule.FD_opinion_asked"
     />

@@ -25,6 +25,13 @@
         class=".address_search.AddressSearchFormView"
     />
 
+    <browser:page
+        name="update_college_done_tasks"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        permission="cmf.ManagePortal"
+        class=".cron.UpdateCollegeEventDoneTasks"
+    />
+
     <adapter
         for="Products.urban.interfaces.IGenericLicence
              zope.publisher.interfaces.browser.IBrowserRequest
