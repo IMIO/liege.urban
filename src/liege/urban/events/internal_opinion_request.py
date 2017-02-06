@@ -1,9 +1,16 @@
 # -*- coding: utf-8 -*-
 
+from liege.urban.interfaces import IInternalOpinionRequestEvent
+
 
 def set_dates(urban_event, event):
     """
     """
+
+    # only automatcially set dates for internal opinion requests
+    if not IInternalOpinionRequestEvent.providedBy(urban_event):
+        return
+
     ask_date = None
     opinion_date = None
 
