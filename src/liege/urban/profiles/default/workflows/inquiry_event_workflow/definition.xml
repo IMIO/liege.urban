@@ -2,7 +2,7 @@
 <dc-workflow workflow_id="inquiry_event_workflow"
              title="inquiry_event_workflow"
              state_variable="review_state"
-             initial_state="zone_identification"
+             initial_state="preparing_documents"
              xmlns:i18n="http://xml.zope.org/namespaces/i18n"
              i18n:domain="plone">
  <permission>View</permission>
@@ -228,48 +228,6 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="zone_identification"
-        title="zone_identification"
-        i18n:attributes="title">
-  <exit-transition transition_id="validate_identification"/>
-  <permission-map name="Access contents information"
-                  acquired="False">
-   <permission-role>Reader</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Add portal content"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Delete objects"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content"
-                  acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="View"
-                  acquired="False">
-   <permission-role>Reader</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="liege.urban: Validate"
-                  acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
- </state>
  <transition transition_id="ask_validation"
              title="ask_validation"
              new_state="to_validate"
@@ -325,17 +283,6 @@
   <action url="" icon="" category="workflow" i18n:translate="">validate</action>
   <guard>
     <guard-permission>liege.urban: Validate</guard-permission>
-  </guard>
- </transition>
- <transition transition_id="validate_identification"
-             title="validate_identification"
-             new_state="preparing_documents"
-             trigger="USER"
-             before_script=""
-             after_script=""
-             i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">validate_identification</action>
-  <guard>
   </guard>
  </transition>
  <variable variable_id="action" for_catalog="False"

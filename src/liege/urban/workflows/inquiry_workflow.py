@@ -8,30 +8,30 @@ class StateRolesMapping(LocalRoleAdapter):
     """
 
     mapping = {
-        'zone_identification': {
-            'administrative_editors': ('Reader',),
-            'administrative_validators': ('Reader',),
-            'technical_editors': ('Editor',),
-            'technical_validators': ('Contributor',),
-        },
-
         'preparing_documents': {
-            'administrative_editors': ('Editor',),
-            'administrative_validators': ('Contributor',),
+            'administrative_editors': ('Reader', 'Editor',),
+            'administrative_validators': ('Reader', 'Contributor',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
         },
 
         'to_validate': {
             'administrative_editors': ('Reader',),
-            'administrative_validators': ('Contributor',),
+            'administrative_validators': ('Reader', 'Contributor',),
+            'technical_editors': ('Reader',),
+            'technical_validators': ('Reader',),
+        },
+
+        'sending_documents': {
+            'administrative_editors': ('Reader', 'Editor',),
+            'administrative_validators': ('Reader', 'Contributor',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
         },
 
         'in_progress': {
-            'administrative_editors': ('Editor',),
-            'administrative_validators': ('Contributor',),
+            'administrative_editors': ('Reader', 'Editor',),
+            'administrative_validators': ('Reader', 'Contributor',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
         },
