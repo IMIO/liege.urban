@@ -14,4 +14,5 @@ def set_dates(urban_event, event):
             opinion_date = wf_action['time']
 
     urban_event.setEventDate(ask_date)
+    urban_event.setTransmitDate(ask_date)
     urban_event.setReceiptDate(opinion_date)
