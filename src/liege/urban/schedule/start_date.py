@@ -10,5 +10,5 @@ class AskOpinionDate(StartDate):
 
     def start_date(self):
         opinion_request = self.task_container
-        ask_date = opinion_request.getEventDate()
+        ask_date = opinion_request.getTransmitDate()
         return ask_date
