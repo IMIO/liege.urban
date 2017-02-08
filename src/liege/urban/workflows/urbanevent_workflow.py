@@ -21,4 +21,11 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
         },
+
+        'preparing_documents': {
+            'administrative_editors': ('Reader', 'Editor',),
+            'administrative_validators': ('Reader', 'Contributor'),
+            'technical_editors': ('Editor',),
+            'technical_validators': ('Editor', 'Contributor'),
+        },
     }
