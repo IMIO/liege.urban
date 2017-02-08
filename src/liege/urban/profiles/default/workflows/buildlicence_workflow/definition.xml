@@ -23,6 +23,7 @@
  <permission>liege.urban: Road Editor</permission>
  <permission>urban: Add Corporation</permission>
  <permission>ATContentTypes: Add File</permission>
+ <permission>ATContentTypes: Add Image</permission>
  <state state_id="FD_opinion"
         title="FD_opinion"
         i18n:attributes="title">
@@ -38,6 +39,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="ATContentTypes: Add File"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="ATContentTypes: Add Image"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -171,6 +178,12 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="ATContentTypes: Add Image"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Add portal content"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -299,6 +312,12 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="ATContentTypes: Add Image"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Add portal content"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -416,6 +435,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="ATContentTypes: Add File"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="ATContentTypes: Add Image"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -540,6 +565,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="ATContentTypes: Add File"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="ATContentTypes: Add Image"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -672,6 +703,12 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="ATContentTypes: Add Image"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Add portal content"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -788,6 +825,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="ATContentTypes: Add File"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="ATContentTypes: Add Image"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -910,6 +953,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="ATContentTypes: Add File"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="ATContentTypes: Add Image"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -1038,6 +1087,12 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="ATContentTypes: Add Image"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Add portal content"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -1161,6 +1216,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="ATContentTypes: Add File"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="ATContentTypes: Add Image"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -1297,6 +1358,12 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="ATContentTypes: Add Image"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Add portal content"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -1425,6 +1492,12 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="ATContentTypes: Add Image"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Add portal content"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -1542,6 +1615,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="ATContentTypes: Add File"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="ATContentTypes: Add Image"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>

@@ -12,6 +12,8 @@
  <permission>Add portal content</permission>
  <permission>ATContentTypes: Add File</permission>
  <permission>liege.urban: Validate</permission>
+ <permission>WebDAV Lock items</permission>
+ <permission>WebDAV Unlock items</permission>
  <state state_id="closed"
         title="closed"
         i18n:attributes="title">
@@ -56,6 +58,18 @@
   </permission-map>
   <permission-map name="liege.urban: Validate"
                   acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="WebDAV Lock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="WebDAV Unlock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -107,6 +121,18 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="WebDAV Lock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="WebDAV Unlock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
  <state state_id="to_send"
         title="to_send"
@@ -150,6 +176,18 @@
   </permission-map>
   <permission-map name="liege.urban: Validate"
                   acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="WebDAV Lock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="WebDAV Unlock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -199,6 +237,18 @@
   </permission-map>
   <permission-map name="liege.urban: Validate"
                   acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="WebDAV Lock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="WebDAV Unlock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>

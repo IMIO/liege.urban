@@ -11,20 +11,28 @@
  <permission>Modify portal content</permission>
  <permission>Add portal content</permission>
  <permission>ATContentTypes: Add File</permission>
+ <permission>ATContentTypes: Add Image</permission>
  <permission>liege.urban: Validate</permission>
  <permission>Products.urban: SendToPM</permission>
+ <permission>WebDAV Lock items</permission>
+ <permission>WebDAV Unlock items</permission>
  <state state_id="closed"
         title="closed"
         i18n:attributes="title">
-  <permission-map name="ATContentTypes: Add File"
-                  acquired="False">
-   <permission-role>Manager</permission-role>
-  </permission-map>
+
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="ATContentTypes: Add File"
+                  acquired="False">
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="ATContentTypes: Add Image"
+                  acquired="False">
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="Add portal content"
@@ -57,12 +65,28 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="WebDAV Lock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="WebDAV Unlock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
  <state state_id="decision_in_progress"
         title="decision_in_progress"
         i18n:attributes="title">
   <exit-transition transition_id="receive_college_decision"/>
   <permission-map name="ATContentTypes: Add File"
+                  acquired="False">
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="ATContentTypes: Add Image"
                   acquired="False">
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -108,12 +132,30 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="WebDAV Lock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="WebDAV Unlock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
  <state state_id="draft"
         title="draft"
         i18n:attributes="title">
   <exit-transition transition_id="propose"/>
   <permission-map name="ATContentTypes: Add File"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="ATContentTypes: Add Image"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -153,6 +195,18 @@
   </permission-map>
   <permission-map name="liege.urban: Validate"
                   acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="WebDAV Lock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="WebDAV Unlock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -168,6 +222,12 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="ATContentTypes: Add Image"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
@@ -202,6 +262,18 @@
   </permission-map>
   <permission-map name="liege.urban: Validate"
                   acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="WebDAV Lock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="WebDAV Unlock items"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
