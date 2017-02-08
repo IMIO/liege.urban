@@ -13,6 +13,8 @@
  <permission>ATContentTypes: Add File</permission>
  <permission>ATContentTypes: Add Image</permission>
  <permission>liege.urban: Validate</permission>
+ <permission>WebDAV Lock items</permission>
+ <permission>WebDAV UnLock items</permission>
  <state state_id="creation"
         title="creation"
         i18n:attributes="title">
