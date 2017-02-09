@@ -13,6 +13,7 @@
  <permission>liege.urban: Validate</permission>
  <permission>ATContentTypes: Add File</permission>
  <permission>ATContentTypes: Add Image</permission>
+ <permission>urban: Add Claimant</permission>
  <permission>WebDAV Lock items</permission>
  <permission>WebDAV Unlock items</permission>
  <state state_id="closed"
@@ -26,9 +27,15 @@
                   acquired="False">
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Claimant"
+                  acquired="False">
+   <permission-role>ClaimantEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
+   <permission-role>ClaimantEditor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -94,9 +101,15 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Claimant"
+                  acquired="False">
+   <permission-role>ClaimantEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
+   <permission-role>ClaimantEditor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -160,9 +173,15 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Claimant"
+                  acquired="False">
+   <permission-role>ClaimantEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
+   <permission-role>ClaimantEditor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -226,9 +245,15 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Claimant"
+                  acquired="False">
+   <permission-role>ClaimantEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
+   <permission-role>ClaimantEditor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -293,9 +318,15 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Claimant"
+                  acquired="False">
+   <permission-role>ClaimantEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="Access contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
+   <permission-role>ClaimantEditor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
