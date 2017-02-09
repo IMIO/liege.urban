@@ -12,9 +12,11 @@ from Products.urban.EnvClassOne import EnvClassOne
 from Products.urban.EnvClassThree import EnvClassThree
 from Products.urban.EnvClassTwo import EnvClassTwo
 from Products.urban.GenericLicence import GenericLicence
+from Products.urban.IntegratedLicence import IntegratedLicence
 from Products.urban.MiscDemand import MiscDemand
 from Products.urban.ParcelOutLicence import ParcelOutLicence
 from Products.urban.PatrimonyCertificate import PatrimonyCertificate
+from Products.urban.UniqueLicence import UniqueLicence
 from Products.urban.UrbanCertificateBase import UrbanCertificateBase
 from Products.urban.UrbanCertificateTwo import UrbanCertificateTwo
 
@@ -82,7 +84,7 @@ def update_item_schema(baseSchema):
 licence_classes = [
     Article127, BuildLicence, Declaration, Division, EnvClassOne,
     EnvClassThree, EnvClassTwo, MiscDemand, ParcelOutLicence, PatrimonyCertificate,
-    UrbanCertificateBase, UrbanCertificateTwo
+    UrbanCertificateBase, UrbanCertificateTwo, IntegratedLicence, UniqueLicence
 ]
 
 for licence_class in licence_classes:
