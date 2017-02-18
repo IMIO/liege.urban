@@ -13,6 +13,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader', 'Contributor',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
+            'urban_readers': ('Reader',),
         },
 
         'to_validate': {
@@ -20,6 +21,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader', 'Contributor',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
+            'urban_readers': ('Reader',),
         },
 
         'sending_documents': {
@@ -27,6 +29,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader', 'Contributor',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
+            'urban_readers': ('Reader',),
         },
 
         'in_progress': {
@@ -34,6 +37,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader', 'Contributor',  'ClaimantEditor'),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
+            'urban_readers': ('Reader',),
         },
 
         'closed': {
@@ -41,6 +45,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader', 'ClaimantEditor'),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
+            'urban_readers': ('Reader',),
         },
 
     }

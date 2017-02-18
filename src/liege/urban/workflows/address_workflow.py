@@ -21,6 +21,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': (get_parcel_roles,),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
+            'urban_readers': ('Reader',),
             'survey_editors': ('AddressEditor',),
         },
 
@@ -29,6 +30,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
+            'urban_readers': ('Reader',),
             'survey_editors': ('AddressEditor',),
         },
 
