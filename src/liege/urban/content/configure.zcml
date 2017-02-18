@@ -9,4 +9,9 @@
     for="Products.urban.interfaces.IUrbanEventType"
     factory=".urbanevent.UrbanEventOptionalFields" />
 
+  <adapter
+    for="Products.urban.interfaces.IGenericLicence"
+    factory=".worklocation_signaletic.LiegeLicenceToWorklocationsSignaletic"
+    provides="Products.urban.interfaces.IWorklocationSignaletic" />
+
 </configure>
