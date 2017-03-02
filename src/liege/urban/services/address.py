@@ -24,6 +24,7 @@ class LiegeAddressService(SQLService):
                 'ptadresses_vdl',
                 column_names=[
                     'gid',
+                    'g_legnum',
                     'secteururb',
                     'num_cad_a_',
                     'coderue',
@@ -68,6 +69,20 @@ class LiegeAddressSession(SQLSession):
         query = self._base_query_address()
 
         query = query.filter(table.gid == gid)
+        try:
+            address = query.distinct().one()
+            return address
+        except:
+            return
+
+    def query_address_by_legnum(self, legnum):
+        """
+        Return the unique 'gid' address point .
+        """
+        table = self.tables.ptadresses_vdl
+        query = self._base_query_address()
+
+        query = query.filter(table.g_legnum == legnum)
         try:
             address = query.distinct().one()
             return address
