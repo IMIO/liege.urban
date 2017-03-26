@@ -163,6 +163,19 @@ class StateRolesMapping(LocalRoleAdapter):
             'Voirie_editors': ('RoadReader',),
             'Voirie_validators': ('RoadReader',),
             get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
+            'urban_readers': ('Reader',),
+        },
+
+        'accepted': {
+            'administrative_editors': ('Reader',),
+            'administrative_validators': ('Reader',),
+            'technical_editors': ('Reader',),
+            'technical_validators': ('Reader',),
+            'Voirie_editors': ('RoadReader',),
+            'Voirie_validators': ('RoadReader',),
+            get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 
@@ -174,6 +187,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'Voirie_editors': ('RoadReader',),
             'Voirie_validators': ('RoadReader',),
             get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 
