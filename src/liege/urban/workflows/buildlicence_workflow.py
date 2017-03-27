@@ -156,10 +156,10 @@ class StateRolesMapping(LocalRoleAdapter):
         },
 
         'authorized': {
-            'administrative_editors': ('Reader',),
-            'administrative_validators': ('Reader',),
-            'technical_editors': ('Reader',),
-            'technical_validators': ('Reader',),
+            'administrative_editors': ('Editor',),
+            'administrative_validators': ('Editor',),
+            'technical_editors': ('Editor',),
+            'technical_validators': ('Editor',),
             'Voirie_editors': ('RoadReader',),
             'Voirie_validators': ('RoadReader',),
             get_opinion_editors: ('ExternalReader',),
@@ -168,10 +168,10 @@ class StateRolesMapping(LocalRoleAdapter):
         },
 
         'accepted': {
-            'administrative_editors': ('Reader',),
-            'administrative_validators': ('Reader',),
-            'technical_editors': ('Reader',),
-            'technical_validators': ('Reader',),
+            'administrative_editors': ('Editor',),
+            'administrative_validators': ('Editor',),
+            'technical_editors': ('Editor',),
+            'technical_validators': ('Editor',),
             'Voirie_editors': ('RoadReader',),
             'Voirie_validators': ('RoadReader',),
             get_opinion_editors: ('ExternalReader',),
@@ -180,10 +180,10 @@ class StateRolesMapping(LocalRoleAdapter):
         },
 
         'refused': {
-            'administrative_editors': ('Reader',),
-            'administrative_validators': ('Reader',),
-            'technical_editors': ('Reader',),
-            'technical_validators': ('Reader',),
+            'administrative_editors': ('Editor',),
+            'administrative_validators': ('Editor',),
+            'technical_editors': ('Editor',),
+            'technical_validators': ('Editor',),
             'Voirie_editors': ('RoadReader',),
             'Voirie_validators': ('RoadReader',),
             get_opinion_editors: ('ExternalReader',),
