@@ -66,7 +66,7 @@ class FieldDefaultValue(object):
         """Return the first street on the licence """
         location = self.licence.getWorkLocations()
         if not location:
-            return None
+            return (None, None)
 
         catalog = api.portal.get_tool('portal_catalog')
         addresses_street_codes = set([int(adr.getStreet_code() or 0) for adr in self.licence.getParcels()])
