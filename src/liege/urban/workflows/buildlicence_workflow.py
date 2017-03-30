@@ -191,4 +191,16 @@ class StateRolesMapping(LocalRoleAdapter):
             'urban_readers': ('Reader',),
         },
 
+        'suspension': {
+            'administrative_editors': ('Editor',),
+            'administrative_validators': ('Editor',),
+            'technical_editors': ('Editor',),
+            'technical_validators': ('Editor',),
+            'Voirie_editors': ('RoadReader',),
+            'Voirie_validators': ('RoadReader',),
+            get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
+            'urban_readers': ('Reader',),
+        },
+
     }
