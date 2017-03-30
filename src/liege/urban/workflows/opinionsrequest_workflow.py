@@ -54,6 +54,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader', 'Contributor',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
+            'survey_editors': ('Reader',),
             'urban_readers': ('Reader',),
         },
 
@@ -64,6 +65,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_validators': ('Reader',),
             get_opinion_editor: (get_opinion_editor_role,),
             get_opinion_validator: (get_opinion_editor_role,),
+            'survey_editors': ('Reader',),
             'urban_readers': ('Reader',),
         },
 
@@ -74,6 +76,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_validators': ('Reader',),
             get_opinion_editor: ('Reader',),
             get_opinion_validator: ('Reader', 'Contributor',),
+            'survey_editors': ('Reader',),
             'urban_readers': ('Reader',),
         },
 
@@ -84,6 +87,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_validators': ('Reader',),
             get_opinion_editor: ('Reader',),
             get_opinion_validator: ('Reader',),
+            'survey_editors': ('Reader',),
             'urban_readers': ('Reader',),
         },
 
