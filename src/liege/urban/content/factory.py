@@ -6,6 +6,7 @@ from plone import api
 
 from Products.Five import BrowserView
 from Products.urban.services import cadastre
+from Products.urban.services.cadastral import parse_cadastral_reference
 
 from zope.interface import implements
 
@@ -35,12 +36,18 @@ class AdressFactory(BrowserView):
 
     def create_address(self, **address_args):
         session = cadastre.new_session()
-        parcel = session.query_parcel_by_capakey(address_args.pop('capakey'))
+        capakey = address_args.pop('capakey')
+        parcel = session.query_parcel_by_capakey(capakey)
+        if parcel:
+            reference_dict = parcel.reference_dict()
+        else:
+            reference_dict = parse_cadastral_reference(capakey)
+
         licence = self.context
         portal_urban = api.portal.get_tool('portal_urban')
 
         with api.env.adopt_roles(['Manager']):
-            portal_urban.createPortionOut(licence, **parcel.reference_as_dict())
+            portal_urban.createPortionOut(licence, **reference_dict)
 
         address = licence.getParcels()[-1]
         for field_name, value in address_args.iteritems():
