@@ -9,4 +9,10 @@
      provides="liege.urban.interfaces.IShore"
   />
 
+  <adapter
+     for="Products.urban.interfaces.IGenericLicence"
+     factory=".is_archive.IsArchive"
+     provides="Products.urban.interfaces.IIsArchive"
+  />
+
 </configure>
