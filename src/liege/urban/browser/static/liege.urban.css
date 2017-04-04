@@ -39,10 +39,3 @@
 .urban_state_Cancelled{
     background-color: red;
 }
-
-#linkAddTask{
-    float:right;
-    position:absolute;
-    bottom:8em;
-    right: 0.5em;
-}
