@@ -17,6 +17,7 @@ class Article127WorkflowAdaptation(SimplifyWorkflowAdaptation):
     ]
     transitions_to_remove = [
         "ask_complements",
+        "invalidate_completion",
         "receive_complements",
         "validate_report_2",
         "receive_FD_opinion",
