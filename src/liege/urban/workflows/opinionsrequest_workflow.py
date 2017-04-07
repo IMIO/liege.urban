@@ -2,7 +2,7 @@
 
 from imio.schedule.content.task import IAutomatedTask
 
-from liege.urban.workflows.adapter import LocalRoleAdapter
+from Products.urban.workflows.adapter import LocalRoleAdapter
 
 from plone import api
 

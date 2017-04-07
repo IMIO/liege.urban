@@ -7,7 +7,7 @@ from imio.schedule.content.task import IAutomatedTask
 
 from plone import api
 
-from liege.urban.workflows.adapter import LocalRoleAdapter
+from Products.urban.workflows.adapter import LocalRoleAdapter
 
 
 class StateRolesMapping(LocalRoleAdapter):
