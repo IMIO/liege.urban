@@ -33,6 +33,14 @@
          provides="z3c.table.interfaces.IColumn"
          name="relatedlicencesColumn"
       />
+
+      <!-- overrides default workflow local roles-->
+      <adapter
+         for="Products.urban.interfaces.IGenericLicence"
+         provides="borg.localrole.interfaces.ILocalRoleProvider"
+         factory="liege.urban.workflows.licences_workflow.DefaultStateRolesMapping"
+         name="licence_local_roles"
+      />
   </configure>
 
 </configure>
