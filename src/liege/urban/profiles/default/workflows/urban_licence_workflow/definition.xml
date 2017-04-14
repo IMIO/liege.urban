@@ -1,42 +1,38 @@
 <?xml version="1.0"?>
-<dc-workflow workflow_id="urbancertificateone_workflow"
-             title="urbancertificateone_workflow"
+<dc-workflow workflow_id="urban_licence_workflow"
+             title="urban_licence_workflow"
              state_variable="review_state"
-             initial_state="deposit"
+             initial_state="in_progress"
              xmlns:i18n="http://xml.zope.org/namespaces/i18n"
              i18n:domain="plone">
  <permission>View</permission>
- <permission>Access contents information</permission>
- <permission>Delete objects</permission>
+ <permission>Acces contents information</permission>
  <permission>Modify portal content</permission>
+ <permission>Review portal content</permission>
+ <permission>Delete objects</permission>
  <permission>Add portal content</permission>
- <permission>liege.urban: Validate</permission>
- <permission>liege.urban: External Reader</permission>
- <permission>urban: Add PortionOut</permission>
- <permission>urban: Add Contact</permission>
+ <permission>Modify view template</permission>
  <permission>urban: Add Applicant</permission>
+ <permission>urban: Add Contact</permission>
+ <permission>urban: Add Corporation</permission>
+ <permission>urban: Add PortionOut</permission>
  <permission>urban: Add UrbanEvent</permission>
- <permission>ATContentTypes: Add File</permission>
- <permission>ATContentTypes: Add Image</permission>
- <state state_id="analysis"
-        title="analysis"
+ <permission>urban: Add UrbanEventOpinionRequest</permission>
+ <permission>Access contents information</permission>
+ <state state_id="accepted"
+        title="accepted"
         i18n:attributes="title">
-  <exit-transition transition_id="pass_to_college"/>
-  <permission-map name="Access contents information"
+  <exit-transition transition_id="reopen"/>
+  <permission-map name="Acces contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="ATContentTypes: Add File"
+  <permission-map name="Access contents information"
                   acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="ATContentTypes: Add Image"
-                  acquired="False">
+   <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -60,22 +56,19 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="Modify view template"
+                  acquired="False">
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content"
+                  acquired="False">
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="View"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="liege.urban: External Reader"
-                  acquired="False">
-   <permission-role>Reader</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="liege.urban: Validate"
-                  acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -91,9 +84,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Corporation"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut"
                   acquired="False">
-   <permission-role>AddressEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add UrbanEvent"
@@ -102,27 +102,30 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add UrbanEventOpinionRequest"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
- <state state_id="college"
-        title="college"
+ <state state_id="in_progress"
+        title="in_progress"
         i18n:attributes="title">
-  <exit-transition transition_id="close"/>
-  <exit-transition transition_id="back_to_analyse"/>
-  <permission-map name="Access contents information"
+  <exit-transition transition_id="refuse"/>
+  <exit-transition transition_id="accept"/>
+  <exit-transition transition_id="isincomplete"/>
+  <exit-transition transition_id="retire"/>
+  <permission-map name="Acces contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="ATContentTypes: Add File"
+  <permission-map name="Access contents information"
                   acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="ATContentTypes: Add Image"
-                  acquired="False">
+   <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -146,22 +149,20 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="Modify view template"
+                  acquired="False">
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content"
+                  acquired="False">
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="View"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="liege.urban: External Reader"
-                  acquired="False">
-   <permission-role>Reader</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="liege.urban: Validate"
-                  acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -177,9 +178,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Corporation"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut"
                   acquired="False">
-   <permission-role>AddressEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add UrbanEvent"
@@ -188,26 +196,27 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add UrbanEventOpinionRequest"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
- <state state_id="deposit"
-        title="deposit"
+ <state state_id="incomplete"
+        title="incomplete"
         i18n:attributes="title">
-  <exit-transition transition_id="to_analyse"/>
-  <permission-map name="Access contents information"
+  <exit-transition transition_id="reopen"/>
+  <permission-map name="Acces contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="ATContentTypes: Add File"
+  <permission-map name="Access contents information"
                   acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="ATContentTypes: Add Image"
-                  acquired="False">
+   <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -231,22 +240,19 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="Modify view template"
+                  acquired="False">
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content"
+                  acquired="False">
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="View"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="liege.urban: External Reader"
-                  acquired="False">
-   <permission-role>Reader</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="liege.urban: Validate"
-                  acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -262,9 +268,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Corporation"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut"
                   acquired="False">
-   <permission-role>AddressEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add UrbanEvent"
@@ -273,26 +286,27 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add UrbanEventOpinionRequest"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
- <state state_id="done"
-        title="done"
+ <state state_id="refused"
+        title="refused"
         i18n:attributes="title">
-  <exit-transition transition_id="go_back_1"/>
-  <permission-map name="Access contents information"
+  <exit-transition transition_id="reopen"/>
+  <permission-map name="Acces contents information"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="ATContentTypes: Add File"
+  <permission-map name="Access contents information"
                   acquired="False">
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="ATContentTypes: Add Image"
-                  acquired="False">
+   <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -316,22 +330,20 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="Modify view template"
+                  acquired="False">
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content"
+                  acquired="False">
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="View"
                   acquired="False">
    <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="liege.urban: External Reader"
-                  acquired="False">
-   <permission-role>Reader</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="liege.urban: Validate"
-                  acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -347,9 +359,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add Corporation"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut"
                   acquired="False">
-   <permission-role>AddressEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add UrbanEvent"
@@ -358,65 +377,161 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add UrbanEventOpinionRequest"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
- <transition transition_id="back_to_analyse"
-             title="back_to_analyse"
-             new_state="analysis"
+ <state state_id="retired"
+        title="retired"
+        i18n:attributes="title">
+  <exit-transition transition_id="reopen"/>
+  <permission-map name="Acces contents information"
+                  acquired="False">
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Access contents information"
+                  acquired="False">
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content"
+                  acquired="False">
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Modify view template"
+                  acquired="False">
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content"
+                  acquired="False">
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="View"
+                  acquired="False">
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Applicant"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add PortionOut"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEvent"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEventOpinionRequest"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+ </state>
+ <transition transition_id="accept"
+             title="accept"
+             new_state="accepted"
              trigger="USER"
              before_script=""
              after_script=""
              i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">back_to_analyse</action>
+  <action url="" icon="%(portal_url)s/accept.png" category="workflow" i18n:translate="">accept</action>
   <guard>
-    <guard-permission>Modify portal content</guard-permission>
+    <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="close"
-             title="close"
-             new_state="done"
+ <transition transition_id="isincomplete"
+             title="isincomplete"
+             new_state="incomplete"
              trigger="USER"
              before_script=""
              after_script=""
              i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">close</action>
+  <action url="" icon="%(portal_url)s/isincomplete.png" category="workflow" i18n:translate="">isincomplete</action>
   <guard>
-    <guard-permission>Modify portal content</guard-permission>
+    <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="go_back_1"
-             title="go_back_1"
-             new_state="college"
+ <transition transition_id="refuse"
+             title="refuse"
+             new_state="refused"
              trigger="USER"
              before_script=""
              after_script=""
              i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">go_back_1</action>
+  <action url="" icon="%(portal_url)s/refuse.png" category="workflow" i18n:translate="">refuse</action>
   <guard>
-    <guard-permission>Manage portal content</guard-permission>
+    <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="pass_to_college"
-             title="pass_to_college"
-             new_state="college"
+ <transition transition_id="reopen"
+             title="reopen"
+             new_state="in_progress"
              trigger="USER"
              before_script=""
              after_script=""
              i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">pass_to_college</action>
+  <action url="" icon="%(portal_url)s/reopen.png" category="workflow" i18n:translate="">reopen</action>
   <guard>
-    <guard-permission>Modify portal content</guard-permission>
+    <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="to_analyse"
-             title="to_analyse"
-             new_state="analysis"
+ <transition transition_id="retire"
+             title="retire"
+             new_state="retired"
              trigger="USER"
              before_script=""
              after_script=""
              i18n:attributes="title">
-  <action url="" icon="" category="workflow" i18n:translate="">to_analyse</action>
+  <action url="" icon="%(portal_url)s/retire.png" category="workflow" i18n:translate="">retire</action>
   <guard>
-    <guard-permission>Modify portal content</guard-permission>
+    <guard-permission>Review portal content</guard-permission>
   </guard>
  </transition>
  <variable variable_id="action" for_catalog="False"

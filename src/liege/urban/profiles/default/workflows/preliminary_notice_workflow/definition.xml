@@ -45,6 +45,7 @@
   </permission-map>
   <permission-map name="Add portal content"
                   acquired="False">
+   <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -136,6 +137,7 @@
   </permission-map>
   <permission-map name="Add portal content"
                   acquired="False">
+   <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -228,6 +230,7 @@
   </permission-map>
   <permission-map name="Add portal content"
                   acquired="False">
+   <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -318,6 +321,7 @@
   </permission-map>
   <permission-map name="Add portal content"
                   acquired="False">
+   <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -408,6 +412,7 @@
   </permission-map>
   <permission-map name="Add portal content"
                   acquired="False">
+   <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
@@ -498,6 +503,7 @@
   </permission-map>
   <permission-map name="Add portal content"
                   acquired="False">
+   <permission-role>Reader</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
