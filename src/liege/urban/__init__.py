@@ -19,3 +19,14 @@ import liege.urban.content.urbanevent
 import liege.urban.content.urbanevent_opinionrequest
 
 _ = MessageFactory('liege.urban')
+
+
+# hide assigned_user and assigned_group fields from task
+from collective.task.behaviors import ITask
+from plone.directives.form import mode
+from zope.interface import Interface
+mode_values = ITask._Element__tagged_values.get(mode.key, [])
+mode_values.append((Interface, 'assigned_user', 'hidden'))
+mode_values.append((Interface, 'assigned_group', 'hidden'))
+ITask._Element__tagged_values[mode.key] = mode_values
+# END # hide assigned_user and assigned_group fields from task
