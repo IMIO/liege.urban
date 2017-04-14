@@ -37,6 +37,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -166,6 +176,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -286,6 +306,16 @@
         i18n:attributes="title">
   <exit-transition transition_id="reopen"/>
   <permission-map name="Access contents information"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="List folder contents"
                   acquired="False">
    <permission-role>ExternalReader</permission-role>
    <permission-role>RoadReader</permission-role>
@@ -432,6 +462,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -566,6 +606,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -652,6 +702,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -688,6 +744,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -774,6 +840,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -812,6 +884,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -904,6 +986,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -939,6 +1027,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -1025,6 +1123,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -1060,6 +1164,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -1146,6 +1260,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -1182,6 +1302,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -1268,6 +1398,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -1305,6 +1441,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -1397,6 +1543,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -1434,6 +1586,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -1526,6 +1688,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -1565,6 +1733,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -1657,6 +1835,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -1693,6 +1877,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -1779,6 +1973,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -1814,6 +2014,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -1900,6 +2110,12 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact"
+                  acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation"
                   acquired="False">
    <permission-role>Editor</permission-role>
    <permission-role>Contributor</permission-role>

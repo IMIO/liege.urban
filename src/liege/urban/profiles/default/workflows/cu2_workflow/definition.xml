@@ -7,6 +7,7 @@
              i18n:domain="plone">
  <permission>View</permission>
  <permission>Access contents information</permission>
+ <permission>List folder contents</permission>
  <permission>Delete objects</permission>
  <permission>Modify portal content</permission>
  <permission>Add portal content</permission>
@@ -29,6 +30,16 @@
         i18n:attributes="title">
   <exit-transition transition_id="receive_FD_opinion"/>
   <permission-map name="Access contents information"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="List folder contents"
                   acquired="False">
    <permission-role>ExternalReader</permission-role>
    <permission-role>RoadReader</permission-role>
@@ -172,6 +183,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -306,6 +327,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -434,6 +465,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -555,6 +596,16 @@
   <exit-transition transition_id="refuse_licence"/>
   <exit-transition transition_id="authorize_licence"/>
   <permission-map name="Access contents information"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="List folder contents"
                   acquired="False">
    <permission-role>ExternalReader</permission-role>
    <permission-role>RoadReader</permission-role>
@@ -697,6 +748,14 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -817,6 +876,14 @@
         i18n:attributes="title">
   <exit-transition transition_id="receive_complements"/>
   <permission-map name="Access contents information"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="List folder contents"
                   acquired="False">
    <permission-role>ExternalReader</permission-role>
    <permission-role>Reader</permission-role>
@@ -945,6 +1012,14 @@
   <exit-transition transition_id="invalidate_procedure_choice"/>
   <exit-transition transition_id="validate_procedure_choice"/>
   <permission-map name="Access contents information"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="List folder contents"
                   acquired="False">
    <permission-role>ExternalReader</permission-role>
    <permission-role>Reader</permission-role>
@@ -1081,6 +1156,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -1206,6 +1291,16 @@
         title="refused"
         i18n:attributes="title">
   <permission-map name="Access contents information"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="List folder contents"
                   acquired="False">
    <permission-role>ExternalReader</permission-role>
    <permission-role>RoadReader</permission-role>
@@ -1352,6 +1447,16 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>RoadReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -1486,6 +1591,14 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="List folder contents"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="ATContentTypes: Add File"
                   acquired="False">
    <permission-role>Editor</permission-role>
@@ -1606,6 +1719,14 @@
         i18n:attributes="title">
   <exit-transition transition_id="validate_temporary_address"/>
   <permission-map name="Access contents information"
+                  acquired="False">
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="List folder contents"
                   acquired="False">
    <permission-role>ExternalReader</permission-role>
    <permission-role>Reader</permission-role>
