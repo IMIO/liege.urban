@@ -18,6 +18,7 @@
  <permission>urban: Add Applicant</permission>
  <permission>urban: Add UrbanEvent</permission>
  <permission>urban: Add UrbanEventOpinionRequest</permission>
+ <permission>urban: Add Inquiry</permission>
  <permission>liege.urban: Internal Reader</permission>
  <permission>liege.urban: Internal Editor</permission>
  <permission>liege.urban: Road Reader</permission>
