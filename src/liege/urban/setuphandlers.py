@@ -206,7 +206,7 @@ def addTestUsers(context):
     """
     Add some test users for each group
     """
-    password = '12345'
+    password = 'Aaaaa12345@'
     email = 'dll@imio.be'
 
     users = [
