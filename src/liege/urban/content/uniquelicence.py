@@ -2,7 +2,7 @@
 
 from Products.urban.UniqueLicence import UniqueLicence
 
-# buildlicence and article127 schema should have the same changes
+# buildlicence and uniquelicence schema should have the same changes
 from liege.urban.content.buildlicence import update_item_schema
 
 
