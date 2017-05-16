@@ -41,6 +41,15 @@
          factory="liege.urban.workflows.licences_workflow.DefaultStateRolesMapping"
          name="licence_local_roles"
       />
+
+      <!-- documentgenerator proxy object-->
+      <adapter
+          for="Products.urban.interfaces.IGenericLicence
+               zope.interface.Interface"
+          provides="collective.documentgenerator.interfaces.IDisplayProxyObject"
+          factory="liege.urban.documentgenerator.helper_view.LiegeLicenceProxyObject"
+          permission="zope2.View"
+       />
   </configure>
 
 </configure>

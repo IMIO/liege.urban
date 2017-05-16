@@ -4,12 +4,4 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="liege.urban">
 
-    <adapter
-        for="Products.urban.interfaces.IGenericLicence
-             zope.interface.Interface"
-        provides="collective.documentgenerator.interfaces.IDisplayProxyObject"
-        factory=".helper_view.LiegeLicenceProxyObject"
-        permission="zope2.View"
-     />
-
 </configure>

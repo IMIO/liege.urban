@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 
-from collective.documentgenerator.helper.archetypes import ATDisplayProxyObject
-
 from liege.urban.interfaces import IShore
+
+from Products.urban.docgen.helper_view import LicenceDisplayProxyObject
 
 from zope.component import queryAdapter
 
-from plone import api
 
-
-class LiegeLicenceProxyObject(ATDisplayProxyObject):
+class LiegeLicenceProxyObject(LicenceDisplayProxyObject):
     """
     Archetypes implementation of DisplayProxyObject.
     """
