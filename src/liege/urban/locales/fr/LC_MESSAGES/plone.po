@@ -54,10 +54,10 @@ msgid "checking_completion"
 msgstr "Vérification de la complétude"
 
 msgid "close_defavorable"
-msgstr "Avis favorable"
+msgstr "Avis défavorable"
 
 msgid "close_favorable"
-msgstr "Avis défavorable"
+msgstr "Avis favorable"
 
 msgid "college"
 msgstr "Passage au collège"
