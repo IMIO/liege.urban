@@ -3,6 +3,7 @@
  <object name="acknowledgment_event_workflow" meta_type="Workflow"/>
  <object name="address_workflow" meta_type="Workflow"/>
  <object name="buildlicence_workflow" meta_type="Workflow"/>
+ <object name="codt_buildlicence_workflow" meta_type="Workflow"/>
  <object name="college_event_workflow" meta_type="Workflow"/>
  <object name="inquiry_event_workflow" meta_type="Workflow"/>
  <object name="notification_college_event_workflow" meta_type="Workflow"/>
@@ -17,6 +18,15 @@
  <bindings>
   <type type_id="BuildLicence">
      <bound-workflow workflow_id="buildlicence_workflow" />
+  </type>
+  <type type_id="CODT_BuildLicence">
+     <bound-workflow workflow_id="codt_buildlicence_workflow" />
+  </type>
+  <type type_id="CODT_Article127">
+     <bound-workflow workflow_id="article127_workflow" />
+  </type>
+  <type type_id="COTD_UrbanCertificateTwo">
+     <bound-workflow workflow_id="cu2_workflow" />
   </type>
   <type type_id="PortionOut">
      <bound-workflow workflow_id="address_workflow" />
