@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from Products.urban.Article127 import Article127
+from Products.urban.CODT_Article127 import CODT_Article127
 
 # buildlicence and article127 schema should have the same changes
 from liege.urban.content.buildlicence import update_item_schema
@@ -14,9 +14,9 @@ permissions_mapping = {
 }
 
 
-Article127.schema = update_item_schema(Article127.schema)
-Article127.schema = set_field_permissions(
-    Article127.schema,
+CODT_Article127.schema = update_item_schema(CODT_Article127.schema)
+CODT_Article127.schema = set_field_permissions(
+    CODT_Article127.schema,
     permissions_mapping,
     exceptions=['portal_type']
 )

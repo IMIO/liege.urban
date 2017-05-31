@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from Products.urban.IntegratedLicence import IntegratedLicence
+from Products.urban.CODT_BuildLicence import CODT_BuildLicence
 
 # buildlicence and article127 schema should have the same changes
 from liege.urban.content.buildlicence import update_item_schema
 
 
-IntegratedLicence.schema = update_item_schema(IntegratedLicence.schema)
+CODT_BuildLicence.schema = update_item_schema(CODT_BuildLicence.schema)
 
 
 # Classes have already been registered, but we register them again here
