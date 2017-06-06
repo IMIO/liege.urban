@@ -6,6 +6,10 @@ from Products.Archetypes.atapi import Schema
 
 from Products.urban.Article127 import Article127
 from Products.urban.BuildLicence import BuildLicence
+from Products.urban.CODT_Article127 import CODT_Article127
+from Products.urban.CODT_BuildLicence import CODT_BuildLicence
+from Products.urban.CODT_IntegratedLicence import CODT_IntegratedLicence
+from Products.urban.CODT_UrbanCertificateTwo import CODT_UrbanCertificateTwo
 from Products.urban.Declaration import Declaration
 from Products.urban.Division import Division
 from Products.urban.EnvClassOne import EnvClassOne
@@ -34,7 +38,9 @@ def update_item_schema(baseSchema):
     # some fields are edit only
     LicenceSchema['missingPartsDetails'].edit_only = True
     LicenceSchema['protectedBuildingDetails'].edit_only = True
-    LicenceSchema['rcuDetails'].edit_only = True
+    rcu_details = LicenceSchema.get('rcuDetails', None)
+    if rcu_details:
+        rcu_details.edit_only = True
     LicenceSchema['prenuDetails'].edit_only = True
     LicenceSchema['prevuDetails'].edit_only = True
     LicenceSchema['airportNoiseZoneDetails'].edit_only = True
@@ -75,8 +81,11 @@ def update_item_schema(baseSchema):
     LicenceSchema.moveField('floodingLevelDetails', after='floodingLevel')
 
     LicenceSchema['locationTechnicalRemarks'].widget.label_msgid = 'urban_label_description'
-    LicenceSchema['RCU'].widget.label_msgid = 'urban_label_RCB'
-    LicenceSchema['rcuDetails'].widget.label_msgid = 'urban_label_rcbDetails'
+    rcu = LicenceSchema.get('RCU', None)
+    if rcu:
+        rcu.widget.label_msgid = 'urban_label_RCB'
+    if rcu_details:
+        rcu_details.widget.label_msgid = 'urban_label_rcbDetails'
 
     return LicenceSchema
 
@@ -84,7 +93,8 @@ def update_item_schema(baseSchema):
 licence_classes = [
     Article127, BuildLicence, Declaration, Division, EnvClassOne,
     EnvClassThree, EnvClassTwo, MiscDemand, ParcelOutLicence, PatrimonyCertificate,
-    UrbanCertificateBase, UrbanCertificateTwo, IntegratedLicence, UniqueLicence
+    UrbanCertificateBase, UrbanCertificateTwo, IntegratedLicence, UniqueLicence,
+    CODT_Article127, CODT_BuildLicence, CODT_UrbanCertificateTwo, CODT_IntegratedLicence
 ]
 
 for licence_class in licence_classes:
