@@ -21,6 +21,16 @@
   />
 
   <!--!!! not a mistake !!!
+      CODT article 127 has the same workflow local roles than buildlicence
+    -->
+  <adapter
+     for="Products.urban.interfaces.ICODT_Article127"
+     provides="borg.localrole.interfaces.ILocalRoleProvider"
+     factory=".buildlicence_workflow.StateRolesMapping"
+     name="article127_local_roles"
+  />
+
+  <!--!!! not a mistake !!!
       article127 has the same workflow local roles than buildlicence
     -->
   <adapter
