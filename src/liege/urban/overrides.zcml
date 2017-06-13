@@ -41,6 +41,12 @@
          factory="liege.urban.workflows.licences_workflow.DefaultStateRolesMapping"
          name="licence_local_roles"
       />
+      <adapter
+         for="Products.urban.interfaces.ICODT_BaseBuildLicence"
+         provides="borg.localrole.interfaces.ILocalRoleProvider"
+         factory="liege.urban.workflows.licences_workflow.DefaultStateRolesMapping"
+         name="licence_local_roles"
+      />
 
       <!-- documentgenerator proxy object-->
       <adapter
