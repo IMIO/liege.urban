@@ -239,6 +239,110 @@
         name="liege.urban.schedule.FD_opinion_received"
     />
 
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".conditions.OnlyNeedFDOpinion"
+        name="liege.urban.schedule.only_need_FD_opinion"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".conditions.LicenceStateIsFDOpinion"
+        name="liege.urban.schedule.licence_state_is_FD_opinion"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.CollegeProjectWritten"
+        name="liege.urban.schedule.college_project_writen"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.CollegeProjectWritten"
+        name="liege.urban.schedule.college_project_writen"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.CollegeProjectValidated"
+        name="liege.urban.schedule.college_project_validated"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.CollegeProjectValidated"
+        name="liege.urban.schedule.college_project_validated"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.ProjectSentToCollege"
+        name="liege.urban.schedule.project_sent_to_college"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.ProjectSentToCollege"
+        name="liege.urban.schedule.project_sent_to_college"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.CollegeDone"
+        name="liege.urban.schedule.college_done"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.CollegeDone"
+        name="liege.urban.schedule.college_done"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.CollegeEventClosed"
+        name="liege.urban.schedule.college_event_closed"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.FDOpinionAsked"
+        name="liege.urban.schedule.FD_opinion_asked"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.FDOpinionReceived"
+        name="liege.urban.schedule.FD_opinion_received"
+    />
+
     <!-- final decision conditions -->
     <adapter
         for="Products.urban.interfaces.IGenericLicence
