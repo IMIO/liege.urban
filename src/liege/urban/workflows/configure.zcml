@@ -57,6 +57,16 @@
      name="cu2_local_roles"
   />
 
+  <!--!!! not a mistake !!!
+      CODT CU2 has the same workflow local roles than buildlicence
+    -->
+  <adapter
+     for="Products.urban.interfaces.ICODT_UrbanCertificateTwo"
+     provides="borg.localrole.interfaces.ILocalRoleProvider"
+     factory=".buildlicence_workflow.StateRolesMapping"
+     name="cu2_local_roles"
+  />
+
   <adapter
      for="Products.urban.interfaces.IUrbanCertificateOne"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
