@@ -319,3 +319,23 @@ class DecisionNotifiedCondition(Condition):
             return False
 
         return api.content.get_state(decision_event) == 'closed'
+
+
+class LicenceEndedCondition(Condition):
+    """
+    Licence is in a final state
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        final_states = [
+            'accepted',
+            'authorized',
+            'refused',
+            'suspension',
+            'retired',
+            'abandoned',
+            'filed_away',
+        ]
+        is_ended =  api.content.get_state(decision_event)  in final_states
+        return is_ended
