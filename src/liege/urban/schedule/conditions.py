@@ -337,5 +337,5 @@ class LicenceEndedCondition(Condition):
             'abandoned',
             'filed_away',
         ]
-        is_ended =  api.content.get_state(decision_event)  in final_states
+        is_ended = api.content.get_state(licence) in final_states
         return is_ended

@@ -6,10 +6,9 @@ from imio.schedule.content.object_factories import MacroEndConditionObject
 from plone import api
 
 
-def add_suspension_state():
+def add_licence_ended_condition():
     """
     """
-    # update the schdule conditions
     portal_urban = api.portal.get_tool('portal_urban')
     for licence_config in portal_urban.objectValues('LicenceConfig'):
         schedule_cfg = licence_config.schedule
