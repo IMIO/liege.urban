@@ -46,6 +46,9 @@
   <type type_id="UrbanEventInquiry">
      <bound-workflow workflow_id="inquiry_event_workflow" />
   </type>
+  <type type_id="UrbanEventAnnouncement">
+     <bound-workflow workflow_id="inquiry_event_workflow" />
+  </type>
   <type type_id="UrbanEventNotificationCollege">
      <bound-workflow workflow_id="notification_college_event_workflow" />
   </type>

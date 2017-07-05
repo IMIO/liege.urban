@@ -109,6 +109,16 @@
      name="inquiry_local_roles"
   />
 
+  <!--!!! not a mistake !!!
+      CODT Announcement event has the same workflow local roles than Inquiry
+    -->
+  <adapter
+     for="Products.urban.interfaces.IUrbanEventAnnouncement"
+     provides="borg.localrole.interfaces.ILocalRoleProvider"
+     factory=".inquiry_workflow.StateRolesMapping"
+     name="inquiry_local_roles"
+  />
+
   <adapter
      for="Products.urban.interfaces.IAcknowledgmentEvent"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
