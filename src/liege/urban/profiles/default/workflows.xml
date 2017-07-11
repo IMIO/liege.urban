@@ -11,6 +11,7 @@
  <object name="preliminary_notice_workflow" meta_type="Workflow"/>
  <object name="urbancertificateone_workflow" meta_type="Workflow"/>
  <object name="urban_licence_workflow" meta_type="Workflow"/>
+ <object name="urbandoc_workflow" meta_type="Workflow"/>
 <!-- ##code-section workflowobjects -->
  <object name="article127_workflow" meta_type="Workflow"/>
  <object name="cu2_workflow" meta_type="Workflow"/>
@@ -61,6 +62,9 @@
   </type>
   <type type_id="UrbanCertificateTwo">
      <bound-workflow workflow_id="cu2_workflow" />
+  </type>
+  <type type_id="UrbanDoc">
+     <bound-workflow workflow_id="urbandoc_workflow" />
   </type>
 <!-- ##/code-section workflowbindings -->
  </bindings>
