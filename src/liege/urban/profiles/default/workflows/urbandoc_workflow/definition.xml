@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<dc-workflow workflow_id="address_workflow" title="address_workflow" description="" state_variable="review_state" initial_state="draft" manager_bypass="False">
+<dc-workflow workflow_id="address_workflow" title="address_workflow" description="" state_variable="review_state" initial_state="open" manager_bypass="False">
  <permission>Access contents information</permission>
  <permission>Delete objects</permission>
  <permission>Modify portal content</permission>
  <permission>View</permission>
  <permission>liege.urban: Validate</permission>
  <state state_id="open" title="open">
-  <exit-transition transition_id="validate"/>
+  <exit-transition transition_id="lock"/>
   <permission-map name="Access contents information" acquired="True">
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -23,7 +23,7 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="validated" title="validated">
+ <state state_id="locked" title="locked">
   <exit-transition transition_id="reopen"/>
   <permission-map name="Access contents information" acquired="True">
    <permission-role>Manager</permission-role>
@@ -44,13 +44,13 @@
   </permission-map>
  </state>
  <transition transition_id="reopen" title="reopen" new_state="open" trigger="USER" before_script="" after_script="">
-  <action url="" category="workflow" icon="">reopen</action>
+  <action url="" category="workflow" icon="%(portal_url)s/reopen.png">reopen</action>
   <guard>
    <guard-permission>liege.urban: Validate</guard-permission>
   </guard>
  </transition>
- <transition transition_id="validate" title="validate" new_state="validated" trigger="USER" before_script="" after_script="">
-  <action url="" category="workflow" icon="">validate</action>
+ <transition transition_id="lock" title="lock" new_state="locked" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="%(portal_url)s/lock.png">lock</action>
   <guard>
    <guard-permission>liege.urban: Validate</guard-permission>
   </guard>

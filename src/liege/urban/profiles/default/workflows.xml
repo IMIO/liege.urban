@@ -63,7 +63,7 @@
   <type type_id="UrbanCertificateTwo">
      <bound-workflow workflow_id="cu2_workflow" />
   </type>
-  <type type_id="UrbanDoc">
+  <type type_id="File">
      <bound-workflow workflow_id="urbandoc_workflow" />
   </type>
 <!-- ##/code-section workflowbindings -->
