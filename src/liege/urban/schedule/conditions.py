@@ -221,6 +221,11 @@ class CollegeDone(SimpleCollegeCondition):
 
         request = api.portal.getRequest()
         ws4pm = getMultiAdapter((api.portal.get(), request), name='ws4pmclient-settings')
+
+        # if the current user has no acces to pm return False
+        if not ws4pm._soap_getUserInfos():
+            return False
+
         items = ws4pm._soap_searchItems({'externalIdentifier': self.college_event.UID()})
         if not items:
             return False
