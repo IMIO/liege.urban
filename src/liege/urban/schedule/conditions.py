@@ -3,6 +3,8 @@
 from imio.schedule.content.condition import Condition
 from imio.schedule.content.condition import CreationCondition
 
+from liege.urban.config import LICENCE_FINAL_STATES
+
 from plone import api
 
 from zope.component import getMultiAdapter
@@ -333,14 +335,5 @@ class LicenceEndedCondition(Condition):
 
     def evaluate(self):
         licence = self.task_container
-        final_states = [
-            'accepted',
-            'authorized',
-            'refused',
-            'suspension',
-            'retired',
-            'abandoned',
-            'filed_away',
-        ]
-        is_ended = api.content.get_state(licence) in final_states
+        is_ended = api.content.get_state(licence) in LICENCE_FINAL_STATES
         return is_ended
