@@ -5,6 +5,8 @@ from imio.schedule.config import STARTED
 from imio.schedule.config import states_by_status
 from imio.schedule.content.task import IAutomatedTask
 
+from liege.urban.config import LICENCE_FINAL_STATES
+
 from plone import api
 
 from Products.urban.interfaces import IGenericLicence
@@ -21,7 +23,7 @@ def close_old_tasks():
         review_state=states
     )
     open_tasks = [b.getObject() for b in task_brains]
-    licences = set([t.aq_parent for t in open_tasks if IGenericLicence.providedBy(t.aq_parent)])
+    licences = set([t.aq_parent for t in open_tasks if IGenericLicence.providedBy(t.aq_parent) and api.content.get_state(t.aq_parent) in LICENCE_FINAL_STATES])
     for licence in licences:
         notify(ObjectModifiedEvent(licence))
         print "notified licence {}".format(licence)
