@@ -66,6 +66,8 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': (get_technical_roles,),
             'technical_editors': (get_technical_roles,),
             'technical_validators': ('Reader',),
+            'Voirie_editors': ('Reader',),   # !!! order matters, let voirie role be overwritten
+            'Voirie_validators': ('Reader',),# by 'get_opinion_...' if needed
             get_opinion_editor: (get_opinion_editor_role,),
             get_opinion_validator: (get_opinion_editor_role,),
             'survey_editors': ('Reader',),
@@ -77,6 +79,8 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
+            'Voirie_editors': ('Reader',),   # !!! order matters, let voirie role be overwritten
+            'Voirie_validators': ('Reader',),# by 'get_opinion_...' if needed
             get_opinion_editor: ('Reader',),
             get_opinion_validator: ('Reader', 'Contributor',),
             'survey_editors': ('Reader',),
@@ -88,6 +92,8 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
+            'Voirie_editors': ('Reader',),   # !!! order matters, let voirie role be overwritten
+            'Voirie_validators': ('Reader',),# by 'get_opinion_...' if needed
             get_opinion_editor: ('Reader',),
             get_opinion_validator: ('Reader',),
             'survey_editors': ('Reader',),
