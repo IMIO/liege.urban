@@ -11,6 +11,7 @@ import liege.urban.content.codt_article127
 import liege.urban.content.codt_buildlicence
 import liege.urban.content.codt_cu2
 import liege.urban.content.codt_integratedlicence
+import liege.urban.content.codt_uniquelicence
 import liege.urban.content.contact
 import liege.urban.content.cu2
 import liege.urban.content.integratedlicence
