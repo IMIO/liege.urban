@@ -34,6 +34,8 @@ def update_item_schema(baseSchema):
     LicenceSchema['roadDgrneUnderground'].schemata = 'urban_location'
     LicenceSchema.moveField('roadDgrneUnderground', after='natura_2000')
     LicenceSchema.moveField('roadType', after='roadDgrneUnderground')
+    LicenceSchema['roadAdaptation'].schemata = 'urban_analysis'
+    LicenceSchema.moveField('roadAdaptation', before='annoncedDelay')
 
     # stats INS no longer mandatory
     LicenceSchema['usage'].required = False
