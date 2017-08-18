@@ -175,10 +175,11 @@ class AddressSearchFormView(FormWrapper):
 
     def values(self):
         if self.search_submitted():
-            search_session = address_service.new_session()
+            session = address_service.new_session()
             inputs = self.get_search_args()
             inputs = dict([(k, v) for k, v in inputs.iteritems() if v])
-            records = search_session.query_addresses(**inputs)
+            records = session.query_addresses(**inputs)
+            session.close()
             values = [AddressRecord(**record._asdict()) for record in records]
             return values
 

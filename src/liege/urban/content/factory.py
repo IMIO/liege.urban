@@ -38,6 +38,7 @@ class AdressFactory(BrowserView):
         session = cadastre.new_session()
         capakey = address_args.pop('capakey')
         parcel = session.query_parcel_by_capakey(capakey)
+        session.close()
         if parcel:
             reference_dict = parcel.reference_as_dict()
         else:
