@@ -6,7 +6,6 @@
  <object name="codt_buildlicence_workflow" meta_type="Workflow"/>
  <object name="college_event_workflow" meta_type="Workflow"/>
  <object name="inquiry_event_workflow" meta_type="Workflow"/>
- <object name="notification_college_event_workflow" meta_type="Workflow"/>
  <object name="opinion_request_workflow" meta_type="Workflow"/>
  <object name="preliminary_notice_workflow" meta_type="Workflow"/>
  <object name="urbancertificateone_workflow" meta_type="Workflow"/>

@@ -147,13 +147,6 @@
   />
 
   <adapter
-     for="Products.urban.interfaces.ITheLicenceCollegeEvent"
-     provides="borg.localrole.interfaces.ILocalRoleProvider"
-     factory=".notification_college_event_workflow.StateRolesMapping"
-     name="notificationcollege_local_roles"
-  />
-
-  <adapter
      for="Products.urban.interfaces.ISimpleCollegeEvent"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
      factory=".college_event_workflow.StateRolesMapping"
