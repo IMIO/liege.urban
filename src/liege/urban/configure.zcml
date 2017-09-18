@@ -10,6 +10,7 @@
 
   <include file="interfaces.zcml" />
 
+  <include package="collective.wfadaptations" />
   <include package="imio.actionspanel"/>
   <include package="Products.urban"/>
   <include package="z3c.jbot" file="meta.zcml" />
