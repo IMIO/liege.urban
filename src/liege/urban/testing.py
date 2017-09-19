@@ -1,27 +1,25 @@
 # -*- coding: utf-8 -*-
 from plone.app.robotframework.testing import REMOTE_LIBRARY_BUNDLE_FIXTURE
-from plone.app.testing import applyProfile
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
-from plone.app.testing import PLONE_FIXTURE
-from plone.app.testing import PloneSandboxLayer
+from plone.app.testing import PloneWithPackageLayer
 from plone.testing import z2
 
 import liege.urban
 
 
-class LiegeUrbanLayer(PloneSandboxLayer):
-
-    defaultBases = (PLONE_FIXTURE,)
-
-    def setUpZope(self, app, configurationContext):
-        self.loadZCML(package=liege.urban)
-
-    def setUpPloneSite(self, portal):
-        applyProfile(portal, 'liege.urban:default')
-
-
-LIEGE_URBAN_FIXTURE = LiegeUrbanLayer()
+LIEGE_URBAN_FIXTURE = PloneWithPackageLayer(
+    zcml_filename="testing.zcml",
+    zcml_package=liege.urban,
+    additional_z2_products=(
+        'Products.urban',
+        'liege.urban',
+        'Products.CMFPlacefulWorkflow',
+        'imio.dashboard',
+    ),
+    gs_profile_id='liege.urban:default',
+    name="LIEGE_URBAN_FIXTURE"
+)
 
 
 LIEGE_URBAN_INTEGRATION_TESTING = IntegrationTesting(
