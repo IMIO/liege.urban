@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-06-20 07:02+0000\n"
+"POT-Creation-Date: 2017-09-28 11:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 msgid "IInternalOpinionRequestEvent type marker interface"
 msgstr ""
 
-#: ../configure.zcml:42
+#: ../configure.zcml:46
 msgid "Installs liege.urban add-on."
 msgstr ""
 
@@ -37,7 +37,7 @@ msgstr "Numéro"
 msgid "The above listed tasks are not done yet !!!"
 msgstr "Attention, il reste des actions à prendre pour les tâches ci-dessus!!!"
 
-#: ../configure.zcml:42
-#: ../schedule/vocabulary.py:137
+#: ../configure.zcml:46
+#: ../schedule/vocabulary.py:99
 msgid "liege.urban"
 msgstr ""

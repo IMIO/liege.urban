@@ -82,3 +82,9 @@ msgstr "Détails concernant le RCB"
 
 msgid "urban_label_roadDescription"
 msgstr "Observations/commentaires"
+
+msgid "urban_label_solicitExternalOpinionsTo"
+msgstr "Avis externe(s) sollicité(s)"
+
+msgid "urban_label_solicitInternalOpinionsTo"
+msgstr "Avis interne(s) sollicité(s)"
