@@ -2,9 +2,17 @@
 
 from Products.urban.Article127 import Article127
 from Products.urban.BuildLicence import BuildLicence
+from Products.urban.CODT_Article127 import CODT_Article127
+from Products.urban.CODT_BuildLicence import CODT_BuildLicence
+from Products.urban.CODT_IntegratedLicence import CODT_IntegratedLicence
+from Products.urban.CODT_ParcelOutLicence import CODT_ParcelOutLicence
+from Products.urban.CODT_UniqueLicence import CODT_UniqueLicence
+from Products.urban.CODT_UrbanCertificateTwo import CODT_UrbanCertificateTwo
+from Products.urban.IntegratedLicence import IntegratedLicence
 from Products.urban.MiscDemand import MiscDemand
 from Products.urban.ParcelOutLicence import ParcelOutLicence
 from Products.urban.PatrimonyCertificate import PatrimonyCertificate
+from Products.urban.UniqueLicence import UniqueLicence
 from Products.urban.UrbanCertificateTwo import UrbanCertificateTwo
 
 
@@ -26,11 +34,17 @@ def update_item_schema(baseSchema):
     LicenceSchema.moveField('demandDisplay', after='derogation')
     LicenceSchema.moveField('investigationDetails', after='demandDisplay')
 
+    # re translate some fields
+    LicenceSchema['solicitOpinionsTo'].widget.label_msgid = 'urban_label_solicitExternalOpinionsTo'
+    LicenceSchema['solicitOpinionsToOptional'].widget.label_msgid = 'urban_label_solicitInternalOpinionsTo'
+
     return LicenceSchema
 
 
 licence_classes = [
-    Article127, BuildLicence, MiscDemand, ParcelOutLicence, PatrimonyCertificate,
+    Article127, BuildLicence, CODT_Article127, CODT_BuildLicence, CODT_IntegratedLicence,
+    CODT_ParcelOutLicence, CODT_UniqueLicence, CODT_UrbanCertificateTwo,
+    IntegratedLicence, MiscDemand, ParcelOutLicence, PatrimonyCertificate, UniqueLicence,
     UrbanCertificateTwo
 ]
 
