@@ -4,8 +4,4 @@
 
   <adapter name="shore" factory=".indexes.genericlicence_shore_index" />
 
-  <adapter name="getDecisionDate" factory=".indexes.article127_decisiondate" />
-
-  <adapter name="getDecisionDate" factory=".indexes.buillicence_decisiondate" />
-
 </configure>
