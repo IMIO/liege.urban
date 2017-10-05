@@ -14,6 +14,7 @@
   </configure>
 
   <configure package="Products.urban">
+
       <!-- overrides Portion table title display to also display address -->
       <adapter
          for="zope.interface.Interface
