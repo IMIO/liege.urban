@@ -16,6 +16,6 @@ class LiegeLicenceToUrbain220Street(object):
             if address.street_name and address.street_code:
                 first_address = address
                 break
-        self.street_name = first_address and first_address.street_name
-        self.street_code = first_address and first_address.street_code
-        self.street_number = first_address and first_address.street_number
+        self.street_name = first_address and first_address.street_name.encode('utf-8')
+        self.street_code = first_address and first_address.street_code.encode('utf-8')
+        self.street_number = first_address and first_address.street_number.encode('utf-8')
