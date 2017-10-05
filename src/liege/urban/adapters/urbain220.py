@@ -18,4 +18,4 @@ class LiegeLicenceToUrbain220Street(object):
                 break
         self.street_name = first_address and first_address.street_name.encode('utf-8')
         self.street_code = first_address and first_address.street_code.encode('utf-8')
-        self.street_number = first_address and first_address.street_number.encode('utf-8')
+        self.street_number = first_address and first_address.street_number
