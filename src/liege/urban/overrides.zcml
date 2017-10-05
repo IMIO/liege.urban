@@ -57,6 +57,14 @@
           factory="liege.urban.documentgenerator.helper_view.LiegeLicenceProxyObject"
           permission="zope2.View"
        />
+
+      <!-- documentgenerator proxy object-->
+      <adapter
+          for="Products.urban.interfaces.IGenericLicence"
+          provides="Products.urban.interfaces.IToUrbain220Street"
+          factory="liege.urban.adapters.urbain220.LiegeLicenceToUrbain220Street"
+          permission="zope2.View"
+      />
   </configure>
 
 </configure>
