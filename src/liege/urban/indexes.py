@@ -21,7 +21,7 @@ def genericlicence_shore_index(licence):
 
 
 @indexer(IBaseAllBuildLicence)
-def allbuildlicence_decisiondate(licence):
+def allbuildlicences_decisiondate(licence):
     decision_event = licence.getLastTheLicence()
     if decision_event:
         return decision_event.getDecisionDate()
