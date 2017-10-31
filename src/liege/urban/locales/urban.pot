@@ -80,6 +80,9 @@ msgstr ""
 msgid "urban_label_rcbDetails"
 msgstr ""
 
+msgid "urban_label_referenceFD"
+msgstr ""
+
 msgid "urban_label_Shore"
 msgstr ""
 
@@ -87,6 +90,9 @@ msgid "urban_label_solicitExternalOpinionsTo"
 msgstr ""
 
 msgid "urban_label_solicitInternalOpinionsTo"
+msgstr ""
+
+msgid "urban_label_urbanReference"
 msgstr ""
 
 msgid "urban_label_UsageTownship"

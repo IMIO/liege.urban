@@ -27,11 +27,11 @@ from Products.urban.UrbanCertificateTwo import UrbanCertificateTwo
 from zope.i18n import translate
 from zope.component import queryAdapter
 
+specificSchema = Schema((
+),)
 
 def update_item_schema(baseSchema):
 
-    specificSchema = Schema((
-    ),)
 
     LicenceSchema = baseSchema + specificSchema.copy()
 

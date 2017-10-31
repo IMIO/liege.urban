@@ -80,6 +80,9 @@ msgstr "Objet"
 msgid "urban_label_rcbDetails"
 msgstr "Détails concernant le RCB"
 
+msgid "urban_label_referenceFD"
+msgstr "Référence FD"
+
 msgid "urban_label_roadDescription"
 msgstr "Observations/commentaires"
 
@@ -88,3 +91,6 @@ msgstr "Avis externe(s) sollicité(s)"
 
 msgid "urban_label_solicitInternalOpinionsTo"
 msgstr "Avis interne(s) sollicité(s)"
+
+msgid "urban_label_urbanReference"
+msgstr "Référence urbanisme"
