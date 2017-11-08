@@ -21,18 +21,17 @@ def update_item_schema(baseSchema):
     LicenceSchema = baseSchema
 
     # some fields are only visible in edit
-    LicenceSchema['investigationArticlesText'].edit_only = True
-    LicenceSchema['derogationDetails'].edit_only = True
-    LicenceSchema['investigationReasons'].edit_only = True
-    LicenceSchema['demandDisplay'].edit_only = True
-    LicenceSchema['investigationDetails'].edit_only = True
+    LicenceSchema['investigationArticlesText'].widget.visible = {'edit': 'visible', 'view': 'invisible'}
+    LicenceSchema['derogationDetails'].widget.visible = {'edit': 'visible', 'view': 'invisible'}
+    LicenceSchema['investigationReasons'].widget.visible = {'edit': 'visible', 'view': 'invisible'}
+    LicenceSchema['demandDisplay'].widget.visible = {'edit': 'visible', 'view': 'invisible'}
+    LicenceSchema['investigationDetails'].widget.visible = {'edit': 'visible', 'view': 'invisible'}
 
     # reorder fields
     LicenceSchema.moveField('derogation', after='investigationArticlesText')
     LicenceSchema.moveField('derogationDetails', after='derogation')
-    LicenceSchema.moveField('investigationReasons', after='derogationDetails')
-    LicenceSchema.moveField('demandDisplay', after='derogation')
-    LicenceSchema.moveField('investigationDetails', after='demandDisplay')
+    LicenceSchema.moveField('investigationReasons', after='demandDisplay')
+    LicenceSchema.moveField('investigationDetails', after='roadModificationSubject')
 
     # re translate some fields
     LicenceSchema['solicitOpinionsTo'].widget.label_msgid = 'urban_label_solicitExternalOpinionsTo'

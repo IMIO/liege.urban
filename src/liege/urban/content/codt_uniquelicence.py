@@ -14,7 +14,18 @@ specific_schema = Schema((
 def update_item_schema(baseSchema):
     LicenceSchema = baseSchema + specific_schema.copy()
 
-    # reanme some fields
+    # show and hide inquiry fields
+    LicenceSchema['inquiry_type'].widget.visible = {'view': 'invisible', 'edit': 'invisible'}
+    LicenceSchema['investigationArticles'].widget.visible = {'edit': 'visible', 'view': 'visible'}
+    LicenceSchema['investigationArticlesText'].widget.visible = {'edit': 'visible', 'view': 'visible'}
+    LicenceSchema['derogationDetails'].widget.visible = {'edit': 'visible', 'view': 'visible'}
+    LicenceSchema['investigationReasons'].widget.visible = {'edit': 'visible', 'view': 'visible'}
+    LicenceSchema['demandDisplay'].widget.visible = {'edit': 'visible', 'view': 'visible'}
+    LicenceSchema['investigationDetails'].widget.visible = {'edit': 'visible', 'view': 'visible'}
+    # reorder fields
+    LicenceSchema.moveField('inquiry_category', after='divergenceDetails')
+
+    # rename some fields
     LicenceSchema['reference'].widget.label_msgid = 'urban_label_urbanReference'
     LicenceSchema['referenceDGATLP'].widget.label_msgid = 'urban_label_referenceFD'
 

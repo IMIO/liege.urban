@@ -30,24 +30,24 @@ from zope.component import queryAdapter
 specificSchema = Schema((
 ),)
 
-def update_item_schema(baseSchema):
 
+def update_item_schema(baseSchema):
 
     LicenceSchema = baseSchema + specificSchema.copy()
 
     # some fields are edit only
-    LicenceSchema['missingPartsDetails'].edit_only = True
-    LicenceSchema['protectedBuildingDetails'].edit_only = True
+    LicenceSchema['missingPartsDetails'].widget.visible = {'edit': 'visible', 'view': 'invisible'}
+    LicenceSchema['protectedBuildingDetails'].widget.visible = {'edit': 'visible', 'view': 'invisible'}
     rcu_details = LicenceSchema.get('rcuDetails', None)
     if rcu_details:
-        rcu_details.edit_only = True
-    LicenceSchema['prenuDetails'].edit_only = True
-    LicenceSchema['prevuDetails'].edit_only = True
-    LicenceSchema['airportNoiseZoneDetails'].edit_only = True
-    LicenceSchema['pashDetails'].edit_only = True
-    LicenceSchema['catchmentAreaDetails'].edit_only = True
-    LicenceSchema['karstConstraintsDetails'].edit_only = True
-    LicenceSchema['floodingLevelDetails'].edit_only = True
+        rcu_details.widget.visible = {'edit': 'visible', 'view': 'invisible'}
+    LicenceSchema['prenuDetails'].widget.visible = {'edit': 'visible', 'view': 'invisible'}
+    LicenceSchema['prevuDetails'].widget.visible = {'edit': 'visible', 'view': 'invisible'}
+    LicenceSchema['airportNoiseZoneDetails'].widget.visible = {'edit': 'visible', 'view': 'invisible'}
+    LicenceSchema['pashDetails'].widget.visible = {'edit': 'visible', 'view': 'invisible'}
+    LicenceSchema['catchmentAreaDetails'].widget.visible = {'edit': 'visible', 'view': 'invisible'}
+    LicenceSchema['karstConstraintsDetails'].widget.visible = {'edit': 'visible', 'view': 'invisible'}
+    LicenceSchema['floodingLevelDetails'].widget.visible = {'edit': 'visible', 'view': 'invisible'}
 
     # move folderCategoryTownship field on description schemata
     LicenceSchema['folderCategoryTownship'].schemata = 'urban_description'

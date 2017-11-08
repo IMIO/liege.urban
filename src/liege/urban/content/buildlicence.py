@@ -16,9 +16,9 @@ def update_item_schema(baseSchema):
     LicenceSchema = baseSchema.copy()
 
     # some fields are edit only
-    LicenceSchema['annoncedDelayDetails'].edit_only = True
-    LicenceSchema['pebDetails'].edit_only = True
-    LicenceSchema['pebTechnicalAdvice'].edit_only = True
+    LicenceSchema['annoncedDelayDetails'].widget.visible = {'edit': 'visible', 'view': 'invisible'}
+    LicenceSchema['pebDetails'].widget.visible = {'edit': 'visible', 'view': 'invisible'}
+    LicenceSchema['pebTechnicalAdvice'].widget.visible = {'edit': 'visible', 'view': 'invisible'}
 
     # move PEB fields to analysis schemata
     LicenceSchema['pebType'].schemata = 'urban_analysis'
