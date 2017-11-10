@@ -9,6 +9,7 @@ from Products.urban.BuildLicence import BuildLicence
 from Products.urban.CODT_Article127 import CODT_Article127
 from Products.urban.CODT_BuildLicence import CODT_BuildLicence
 from Products.urban.CODT_IntegratedLicence import CODT_IntegratedLicence
+from Products.urban.CODT_UniqueLicence import CODT_UniqueLicence
 from Products.urban.CODT_UrbanCertificateTwo import CODT_UrbanCertificateTwo
 from Products.urban.Declaration import Declaration
 from Products.urban.Division import Division
@@ -59,8 +60,10 @@ def update_item_schema(baseSchema):
     # move some road fields to location schemata
     LicenceSchema['sevesoSite'].schemata = 'urban_location'
     LicenceSchema.moveField('sevesoSite', after='airportNoiseZoneDetails')
+    LicenceSchema['pipelines'].schemata = 'urban_location'
+    LicenceSchema.moveField('pipelines', after='sevesoSite')
     LicenceSchema['natura_2000'].schemata = 'urban_location'
-    LicenceSchema.moveField('natura_2000', after='sevesoSite')
+    LicenceSchema.moveField('natura_2000', after='pipelines')
     LicenceSchema['roadType'].schemata = 'urban_location'
     LicenceSchema.moveField('roadType', after='natura_2000')
     LicenceSchema['pash'].schemata = 'urban_location'
@@ -94,7 +97,8 @@ licence_classes = [
     Article127, BuildLicence, Declaration, Division, EnvClassOne,
     EnvClassThree, EnvClassTwo, MiscDemand, ParcelOutLicence, PatrimonyCertificate,
     UrbanCertificateBase, UrbanCertificateTwo, IntegratedLicence, UniqueLicence,
-    CODT_Article127, CODT_BuildLicence, CODT_UrbanCertificateTwo, CODT_IntegratedLicence
+    CODT_Article127, CODT_BuildLicence, CODT_UrbanCertificateTwo, CODT_IntegratedLicence,
+    CODT_UniqueLicence
 ]
 
 for licence_class in licence_classes:
