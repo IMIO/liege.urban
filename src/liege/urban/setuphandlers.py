@@ -57,8 +57,8 @@ def addLiegeGroups(context):
     portal_groups.addGroup("administrative_validators", title="Administrative Validators")
     portal_groups.setRolesForGroup('administrative_validators', ('UrbanMapReader', ))
     portal_urban.manage_addLocalRoles("administrative_validators", ("Reader", ))
-    portal_groups.addPrincipalToGroup("administrative_editors", 'urban_readers')
-    portal_groups.addPrincipalToGroup("administrative_editors", 'urban_editors')
+    portal_groups.addPrincipalToGroup("administrative_validators", 'urban_readers')
+    portal_groups.addPrincipalToGroup("administrative_validators", 'urban_editors')
 
     portal_groups.addGroup("technical_editors", title="Technical Editors")
     portal_groups.setRolesForGroup('technical_editors', ('UrbanMapReader', ))
@@ -211,24 +211,24 @@ def addTestUsers(context):
 
     users = [
         {
-            'username': 'armin',
+            'username': 'rich',
             'group': 'administrative_editors',
-            'properties': {'fullname': 'Edi Armin'},
+            'properties': {'fullname': 'Richard Administrative'},
         },
         {
-            'username': 'valere',
+            'username': 'rach',
             'group': 'administrative_validators',
-            'properties': {'fullname': 'Valère Armin'},
+            'properties': {'fullname': 'Rachel Val Administrative'},
         },
         {
-            'username': 'teckel',
+            'username': 'gert',
             'group': 'technical_editors',
-            'properties': {'fullname': 'Eddy Teckel'},
+            'properties': {'fullname': 'Gertrude Technical'},
         },
         {
-            'username': 'valtec',
+            'username': 'gont',
             'group': 'technical_validators',
-            'properties': {'fullname': 'Valérie Teckel'},
+            'properties': {'fullname': 'Gontrand Val Technical'},
         },
         {
             'username': 'survivor',
