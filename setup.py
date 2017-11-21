@@ -56,8 +56,9 @@ setup(
             'plone.app.robotframework[debug]',
         ],
     },
-    entry_points="""
-    [z3c.autoinclude.plugin]
-    target = plone
-    """,
+    entry_points={
+        'Products.urban.testing.profile': [
+            'default = liege.urban.testing:testing_profile',
+        ],
+    },
 )
