@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
-from liege.urban.testing import LIEGE_URBAN_INTEGRATION_TESTING  # noqa
+from Products.urban.testing import URBAN_TESTS_PROFILE_INTEGRATION
 from plone import api
 
 import unittest
@@ -9,7 +9,7 @@ import unittest
 class TestSetup(unittest.TestCase):
     """Test that liege.urban is properly installed."""
 
-    layer = LIEGE_URBAN_INTEGRATION_TESTING
+    layer = URBAN_TESTS_PROFILE_INTEGRATION
 
     def setUp(self):
         """Custom shared utility setup for tests."""
@@ -31,7 +31,7 @@ class TestSetup(unittest.TestCase):
 
 class TestUninstall(unittest.TestCase):
 
-    layer = LIEGE_URBAN_INTEGRATION_TESTING
+    layer = URBAN_TESTS_PROFILE_INTEGRATION
 
     def setUp(self):
         self.portal = self.layer['portal']

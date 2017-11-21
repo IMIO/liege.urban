@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from liege.urban.testing import LIEGE_URBAN_ACCEPTANCE_TESTING  # noqa
+from Products.urban.testing import URBAN_TEST_ROBOT
 from plone.app.testing import ROBOT_TEST_LEVEL
 from plone.testing import layered
 
@@ -22,7 +22,7 @@ def test_suite():
         suite.addTests([
             layered(
                 robottestsuite,
-                layer=LIEGE_URBAN_ACCEPTANCE_TESTING
+                layer=URBAN_TEST_ROBOT
             ),
         ])
     return suite
