@@ -4,6 +4,8 @@ from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PloneWithPackageLayer
 from plone.testing import z2
+from plone.app.testing import helpers
+from plone import api
 
 from Products.urban.testing import UrbanConfigFunctionalLayer
 from Products.urban.testing import UrbanConfigLayer
@@ -53,38 +55,53 @@ LIEGE_URBAN_ACCEPTANCE_TESTING = FunctionalTesting(
 
 
 LIEGE_URBAN_TESTS_PROFILE_INTEGRATION = IntegrationTesting(
-    bases=(LIEGE_URBAN_FIXTURE,), name="URBAN_TESTS_PROFILE_INTEGRATION")
+    bases=(LIEGE_URBAN_FIXTURE,), name="LIEGE_URBAN_TESTS_PROFILE_INTEGRATION")
 
 LIEGE_URBAN_TESTS_PROFILE_FUNCTIONAL = FunctionalTesting(
-    bases=(LIEGE_URBAN_FIXTURE,), name="URBAN_TESTS_PROFILE_FUNCTIONAL")
+    bases=(LIEGE_URBAN_FIXTURE,), name="LIEGE_URBAN_TESTS_PROFILE_FUNCTIONAL")
 
 
-LIEGE_URBAN_TESTS_INTEGRATION = UrbanWithUsersLayer(
-    bases=(LIEGE_URBAN_FIXTURE, ), name="URBAN_TESTS_INTEGRATION")
+class UrbanLiegeWithUsersLayer(UrbanWithUsersLayer):
+    """ """
+    default_user = 'rach'
+    default_password = 'Aaaaa12345@'
+
+LIEGE_URBAN_TESTS_INTEGRATION = UrbanLiegeWithUsersLayer(
+    bases=(LIEGE_URBAN_FIXTURE, ), name="LIEGE_URBAN_TESTS_INTEGRATION")
 
 
-LIEGE_URBAN_TESTS_CONFIG = UrbanConfigLayer(
-    bases=(LIEGE_URBAN_FIXTURE, ), name="URBAN_TESTS_CONFIG")
+class UrbanLiegeConfigLayer(UrbanConfigLayer, UrbanLiegeWithUsersLayer):
+    """ """
+
+    def setUp(self):
+        super(UrbanLiegeConfigLayer, self).setUp()
+        with helpers.ploneSite() as portal:
+            portal.setupCurrentSkin(portal.REQUEST)
+            setup_tool = api.portal.get_tool('portal_setup')
+            setup_tool.runImportStepFromProfile('profile-liege.urban:default', 'workflow')
+
+LIEGE_URBAN_TESTS_CONFIG = UrbanLiegeConfigLayer(
+    bases=(LIEGE_URBAN_FIXTURE, ), name="LIEGE_URBAN_TESTS_CONFIG")
 
 
 LIEGE_URBAN_TESTS_LICENCES = UrbanLicencesLayer(
-    bases=(LIEGE_URBAN_FIXTURE, ), name="URBAN_TESTS_LICENCES")
+    bases=(LIEGE_URBAN_FIXTURE, ), name="LIEGE_URBAN_TESTS_LICENCES")
 
 
 LIEGE_URBAN_IMPORTS = UrbanImportsLayer(
-    bases=(LIEGE_URBAN_FIXTURE, ), name="URBAN_IMPORTS")
+    bases=(LIEGE_URBAN_FIXTURE, ), name="LIEGE_URBAN_IMPORTS")
 
 
 LIEGE_URBAN_TESTS_FUNCTIONAL = UrbanWithUsersFunctionalLayer(
-    bases=(LIEGE_URBAN_FIXTURE, ), name="URBAN_TESTS_FUNCTIONAL")
+    bases=(LIEGE_URBAN_FIXTURE, ), name="LIEGE_URBAN_TESTS_FUNCTIONAL")
 
 
 LIEGE_URBAN_TESTS_CONFIG_FUNCTIONAL = UrbanConfigFunctionalLayer(
-    bases=(LIEGE_URBAN_FIXTURE, ), name="URBAN_TESTS_CONFIG_FUNCTIONAL")
+    bases=(LIEGE_URBAN_FIXTURE, ), name="LIEGE_URBAN_TESTS_CONFIG_FUNCTIONAL")
 
 
 LIEGE_URBAN_TESTS_LICENCES_FUNCTIONAL = UrbanLicencesFunctionalLayer(
-    bases=(LIEGE_URBAN_FIXTURE, ), name="URBAN_TESTS_LICENCES_FUNCTIONAL")
+    bases=(LIEGE_URBAN_FIXTURE, ), name="LIEGE_URBAN_TESTS_LICENCES_FUNCTIONAL")
 
 
 LIEGE_URBAN_TEST_ROBOT = UrbanConfigFunctionalLayer(
@@ -93,5 +110,5 @@ LIEGE_URBAN_TEST_ROBOT = UrbanConfigFunctionalLayer(
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
         z2.ZSERVER_FIXTURE
     ),
-    name="URBAN_ROBOT"
+    name="LIEGE_URBAN_ROBOT"
 )
