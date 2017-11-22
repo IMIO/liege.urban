@@ -59,16 +59,18 @@ def addLiegeGroups(context):
     portal_urban.manage_addLocalRoles("administrative_validators", ("Reader", ))
     portal_groups.addPrincipalToGroup("administrative_validators", 'urban_readers')
     portal_groups.addPrincipalToGroup("administrative_validators", 'urban_editors')
+    portal_groups.addPrincipalToGroup("administrative_validators", 'urban_managers')
 
     portal_groups.addGroup("technical_editors", title="Technical Editors")
     portal_groups.setRolesForGroup('technical_editors', ('UrbanMapReader', ))
     portal_urban.manage_addLocalRoles("technical_editors", ("Reader", ))
-    portal_groups.addPrincipalToGroup("administrative_editors", 'urban_readers')
+    portal_groups.addPrincipalToGroup("technical_editors", 'urban_readers')
 
     portal_groups.addGroup("technical_validators", title="Technical Validators")
     portal_groups.setRolesForGroup('technical_validators', ('UrbanMapReader', ))
     portal_urban.manage_addLocalRoles("technical_validators", ("Reader", ))
-    portal_groups.addPrincipalToGroup("administrative_editors", 'urban_readers')
+    portal_groups.addPrincipalToGroup("technical_validators", 'urban_readers')
+    portal_groups.addPrincipalToGroup("technical_validators", 'urban_managers')
 
     portal_groups.addGroup("survey_editors", title="Survey Editors")
     portal_groups.setRolesForGroup('survey_editors', ('UrbanMapReader', ))
