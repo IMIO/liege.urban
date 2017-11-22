@@ -54,11 +54,13 @@ setup(
         'test': [
             'plone.app.testing',
             'plone.app.robotframework[debug]',
+            'ipdb',
         ],
     },
     entry_points={
         'Products.urban.testing.profile': [
-            'default = liege.urban.testing:testing_profile',
+            'base = liege.urban.testing:override_testing_profile',
+            'layers = liege.urban.testing:override_testing_layers',
         ],
     },
 )
