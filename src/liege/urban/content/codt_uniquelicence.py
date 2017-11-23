@@ -24,6 +24,11 @@ def update_item_schema(baseSchema):
     LicenceSchema['investigationDetails'].widget.visible = {'edit': 'visible', 'view': 'visible'}
     # reorder fields
     LicenceSchema.moveField('inquiry_category', after='divergenceDetails')
+    LicenceSchema.moveField('rubrics', after='folderTendency')
+    LicenceSchema.moveField('rubricsDetails', after='rubrics')
+    LicenceSchema.moveField('minimumLegalConditions', after='rubricsDetails')
+    LicenceSchema.moveField('additionalLegalConditions', after='minimumLegalConditions')
+    LicenceSchema.moveField('description', after='impactStudy')
 
     # rename some fields
     LicenceSchema['reference'].widget.label_msgid = 'urban_label_urbanReference'
