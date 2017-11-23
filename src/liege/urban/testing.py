@@ -80,10 +80,32 @@ def override_testing_layers(layers):
     LIEGE_URBAN_IMPORTS = UrbanImportsLayer(
         bases=(LIEGE_URBAN_FIXTURE, ), name="LIEGE_URBAN_IMPORTS")
 
-    LIEGE_URBAN_TESTS_FUNCTIONAL = UrbanWithUsersFunctionalLayer(
+    class UrbanLiegeWithUsersFunctionalLayer(UrbanWithUsersFunctionalLayer):
+        """
+        Instanciate test users
+
+        Must collaborate with a layer that installs Plone and Urban
+        Useful for performances: Plone site is instanciated only once
+        """
+        default_user = 'rach'
+        default_password = 'Aaaaa12345@'
+
+    LIEGE_URBAN_TESTS_FUNCTIONAL = UrbanLiegeWithUsersFunctionalLayer(
         bases=(LIEGE_URBAN_FIXTURE, ), name="LIEGE_URBAN_TESTS_FUNCTIONAL")
 
-    LIEGE_URBAN_TESTS_CONFIG_FUNCTIONAL = UrbanConfigFunctionalLayer(
+    class UrbanLiegeConfigFunctionalLayer(UrbanConfigFunctionalLayer, UrbanLiegeWithUsersFunctionalLayer):
+        """ """
+        default_user = 'rich'
+        default_password = 'Aaaaa12345@'
+
+        def setUp(self):
+            super(UrbanLiegeConfigFunctionalLayer, self).setUp()
+            with helpers.ploneSite() as portal:
+                portal.setupCurrentSkin(portal.REQUEST)
+                setup_tool = api.portal.get_tool('portal_setup')
+                setup_tool.runImportStepFromProfile('profile-liege.urban:default', 'workflow')
+
+    LIEGE_URBAN_TESTS_CONFIG_FUNCTIONAL = UrbanLiegeConfigFunctionalLayer(
         bases=(LIEGE_URBAN_FIXTURE, ), name="LIEGE_URBAN_TESTS_CONFIG_FUNCTIONAL")
 
     LIEGE_URBAN_TESTS_LICENCES_FUNCTIONAL = UrbanLicencesFunctionalLayer(
