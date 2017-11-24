@@ -11,4 +11,8 @@
                    zope.lifecycleevent.interfaces.IObjectModifiedEvent"
               handler=".internal_opinion_request.set_dates" />
 
+  <subscriber for="Products.urban.interfaces.IGenericLicence
+                   zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+              handler=".licence_events.reindex_licence_tasks" />
+
 </configure>
