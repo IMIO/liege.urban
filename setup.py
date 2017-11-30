@@ -56,8 +56,13 @@ setup(
             'plone.app.robotframework[debug]',
             'ipdb',
         ],
+        'pytest': [
+            'pytest',
+            'gocept.pytestlayer',
+        ],
     },
     entry_points={
+        'z3c.autoinclude.plugin': ['target = plone'],
         'Products.urban.testing.profile': [
             'base = liege.urban.testing:override_testing_profile',
             'layers = liege.urban.testing:override_testing_layers',
