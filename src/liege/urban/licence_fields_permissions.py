@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-def set_field_permissions(schema, mapping, exceptions=[]):
+def set_field_permissions(schema, mapping, exceptions=['portal_type']):
     """
     """
 
