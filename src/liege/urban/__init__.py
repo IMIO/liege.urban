@@ -53,3 +53,6 @@ def initialize(context):
                           permission=config.ADD_PERMISSIONS[atype.portal_type],
                           extra_constructors=(constructor, ),
                           ).initialize(context)
+
+from Products.urban import config
+config.registerClasses()
