@@ -100,11 +100,15 @@ class LicencesExtractForm(form.Form):
                                 for fm in licence.getFoldermanagers()],
             'deposit_dates': self.extract_deposit_dates(licence),
             'acknowledgement_date': licence.getLastAcknowledgment() and str(licence.getLastAcknowledgment().getEventDate()) or '',
-            'due_date': brain.licence_final_duedate or '',
             'decision_date': licence.getLastTheLicence() and str(licence.getLastTheLicence().getDecisionDate()) or '',
             'decision': licence.getLastTheLicence() and licence.getLastTheLicence().getDecision() or '',
             'notification_date': licence.getLastLicenceNotification() and str(licence.getLastLicenceNotification().getEventDate()) or '',
         }
+        if brain.licence_final_duedate and brain.licence_final_duedate.year < 9000:
+            licence_dict['due_date'] = str(brain.licence_final_duedate)
+        else:
+            licence_dict['due_date'] = ''
+
         return licence_dict
 
     def extract_address(self, address):
@@ -127,7 +131,7 @@ class LicencesExtractForm(form.Form):
         return fm_dict
 
     def extract_deposit_dates(self, licence):
-        deposits = licence.getAllEvents(interfaces.IAcknowledgmentEvent)
+        deposits = licence.getAllEvents(interfaces.IDepositEvent)
         dates = [str(event.getEventDate()) for event in deposits]
         return dates
 
