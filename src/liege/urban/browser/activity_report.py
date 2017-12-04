@@ -99,11 +99,11 @@ class LicencesExtractForm(form.Form):
             'folder_managers': [self.extract_folder_managers(fm)
                                 for fm in licence.getFoldermanagers()],
             'deposit_dates': self.extract_deposit_dates(licence),
-            'acknowledgement_date': licence.getLastAcknowledgment() and licence.getLastAcknowledgment().getEventDate() or '',
+            'acknowledgement_date': licence.getLastAcknowledgment() and str(licence.getLastAcknowledgment().getEventDate()) or '',
             'due_date': brain.licence_final_duedate or '',
-            'decision_date': licence.getLastTheLicence() and licence.getLastTheLicence().getDecisionDate() or '',
+            'decision_date': licence.getLastTheLicence() and str(licence.getLastTheLicence().getDecisionDate()) or '',
             'decision': licence.getLastTheLicence() and licence.getLastTheLicence().getDecision() or '',
-            'notification_date': licence.getLastLicenceNotification() and licence.getLastLicenceNotification().getEventDate() or '',
+            'notification_date': licence.getLastLicenceNotification() and str(licence.getLastLicenceNotification().getEventDate()) or '',
         }
         return licence_dict
 
@@ -128,7 +128,7 @@ class LicencesExtractForm(form.Form):
 
     def extract_deposit_dates(self, licence):
         deposits = licence.getAllEvents(interfaces.IAcknowledgmentEvent)
-        dates = [event.getEventDate() for event in deposits]
+        dates = [str(event.getEventDate()) for event in deposits]
         return dates
 
 
