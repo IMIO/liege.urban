@@ -15,6 +15,7 @@ from zope.interface import Interface
 from liege.urban import _
 
 import json
+import re
 
 
 class ILicencesExtractForm(Interface):
@@ -90,6 +91,7 @@ class LicencesExtractForm(form.Form):
         return licences_dict
 
     def extract_licence_dict(self, brain, licence):
+        cfg = licence.getUrbanConfig()
         licence_dict = {
             'portal_type': brain.portal_type,
             'reference': brain.getReference,
@@ -101,7 +103,9 @@ class LicencesExtractForm(form.Form):
             'applicants': [self.extract_applicants(obj) for obj in licence.objectValues()
                            if interfaces.IContact.providedBy(obj)],
             'deposit_dates': self.extract_deposit_dates(licence),
+            'incomplete_dates': self.extract_incomplete_dates(licence),
             'acknowledgement_date': licence.getLastAcknowledgment() and str(licence.getLastAcknowledgment().getEventDate()) or '',
+            'inquiry_dates': self.extract_inquiry_dates(licence),
             'decision_date': licence.getLastTheLicence() and str(licence.getLastTheLicence().getDecisionDate()) or '',
             'decision': licence.getLastTheLicence() and licence.getLastTheLicence().getDecision() or '',
             'notification_date': licence.getLastLicenceNotification() and str(licence.getLastLicenceNotification().getEventDate()) or '',
@@ -110,6 +114,30 @@ class LicencesExtractForm(form.Form):
             licence_dict['due_date'] = str(brain.licence_final_duedate)
         else:
             licence_dict['due_date'] = ''
+
+        if hasattr(licence, 'annoncedDelay'):
+            if licence.getAnnoncedDelay():
+                vocterm = cfg.folderdelays.get(licence.getAnnoncedDelay())
+                licence_dict['delay'] = vocterm.getDeadLineDelay()
+            else:
+                licence_dict['delay'] = ''
+
+        if hasattr(licence, 'procedureChoice'):
+            licence_dict['procedure_choice'] = licence.getProcedureChoice()
+
+        if hasattr(licence, 'workType'):
+            licence_dict['worktype_220'] = licence.getWorkType()
+
+        if hasattr(licence, 'folderCategoryTownship'):
+            if licence.getFolderCategoryTownship():
+                vocterms = [cfg.townshipfoldercategories.get(val) for val in licence.getFolderCategoryTownship()]
+                worktypes = []
+                for term in vocterms:
+                    code, label = re.match('(.*)\((.*)\)', term.Title()).groups()
+                    worktypes.append({'code': code, 'label': label})
+                licence_dict['worktype_city'] = worktypes
+            else:
+                licence_dict['worktype_city'] = []
 
         return licence_dict
 
@@ -148,6 +176,18 @@ class LicencesExtractForm(form.Form):
     def extract_deposit_dates(self, licence):
         deposits = licence.getAllEvents(interfaces.IDepositEvent)
         dates = [str(event.getEventDate()) for event in deposits]
+        return dates
+
+    def extract_incomplete_dates(self, licence):
+        deposits = licence.getAllEvents(interfaces.IMissingPartEvent)
+        dates = [str(event.getEventDate()) for event in deposits]
+        return dates
+
+    def extract_inquiry_dates(self, licence):
+        inquiries = licence.getAllEvents(interfaces.IInquiryEvent)
+        announcements = licence.getAllEvents(interfaces.IAnnouncementEvent)
+        all_inquiries = inquiries + announcements
+        dates = [{'start_date': str(inq.getInvestigationStart()), 'end_date': str(inq.getInvestigationEnd())} for inq in all_inquiries]
         return dates
 
 
