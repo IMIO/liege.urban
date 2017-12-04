@@ -19,6 +19,13 @@
     />
 
     <browser:page
+        name="activityreport"
+        for="zope.interface.Interface"
+        permission="zope2.View"
+        class=".activity_report.LicencesExtractForm"
+    />
+
+    <browser:page
         name="searchparcels"
         for="Products.urban.interfaces.IGenericLicence"
         permission="zope2.View"
