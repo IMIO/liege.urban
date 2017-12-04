@@ -98,6 +98,8 @@ class LicencesExtractForm(form.Form):
             'workflow_state': brain.review_state,
             'folder_managers': [self.extract_folder_managers(fm)
                                 for fm in licence.getFoldermanagers()],
+            'applicants': [self.extract_applicants(obj) for obj in licence.objectValues()
+                           if interfaces.IContact.providedBy(obj)],
             'deposit_dates': self.extract_deposit_dates(licence),
             'acknowledgement_date': licence.getLastAcknowledgment() and str(licence.getLastAcknowledgment().getEventDate()) or '',
             'decision_date': licence.getLastTheLicence() and str(licence.getLastTheLicence().getDecisionDate()) or '',
@@ -129,6 +131,19 @@ class LicencesExtractForm(form.Form):
             'lastname': folder_manager.getName1(),
         }
         return fm_dict
+
+    def extract_applicants(self, applicant):
+        applicant = {
+            'firstname': applicant.getName2(),
+            'lastname': applicant.getName1(),
+            'street': applicant.getStreet(),
+            'number': applicant.getNumber(),
+            'zipe_code': applicant.getZipcode(),
+            'city': applicant.getCity(),
+            'country': applicant.getCountry(),
+            'phone': applicant.getPhone(),
+        }
+        return applicant
 
     def extract_deposit_dates(self, licence):
         deposits = licence.getAllEvents(interfaces.IDepositEvent)
