@@ -55,6 +55,8 @@ def rename_voc():
         for vocterm in cfg.townshipfoldercategories.objectValues():
             match = re.match('(.*)\((.*)\)', vocterm.Title())
             if match:
-                code = match.group(1).strip()
+                code = match.group(1).strip()[:3]
                 mapping[cfg.id][vocterm.id] = code
                 api.content.rename(obj=vocterm, new_id=code)
+
+    return mapping
