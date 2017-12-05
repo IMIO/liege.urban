@@ -29,9 +29,10 @@ def fix():
                 elif old_val.upper() in vocabulary_mapping.values():
                     new_val = old_val.upper()
                     new_vals.append(new_val)
-                else:
+                elif vocabulary_mapping:
                     unmatched_voc[old_val] = licence
-                    new_vals = None
+                    new_vals = []
+                    break
         if new_vals:
             licence.setFolderCategoryTownship(new_vals)
         else:
