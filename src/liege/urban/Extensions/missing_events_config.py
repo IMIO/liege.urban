@@ -15,7 +15,7 @@ def list_missing_events():
     for licence in licences:
         broken_events = [obj for obj in licence.objectValues()
                          if IUrbanEvent.providedBy(obj) and not obj.getUrbaneventtypes()]
-        for broken_event in broken_event:
+        for broken_event in broken_events:
             if licence.portal_type not in all_broken_events:
                 all_broken_events[licence.portal_type] = {}
             events_by_licence = all_broken_events[licence.portal_type]
