@@ -10,7 +10,7 @@ def list_missing_events():
     """
     """
     catalog = api.portal.get_tool('portal_catalog')
-    licences = [b.getObject() for b i catalog(object_provides=IGenericLicence.__identifier__)]
+    licences = [b.getObject() for b in catalog(object_provides=IGenericLicence.__identifier__)]
     all_broken_events = {}
     for licence in licences:
         broken_events = [obj for obj in licence.objectValues()
