@@ -17,6 +17,15 @@ msgstr ""
 msgid "liege.urban.schedule.acknowledgment_written"
 msgstr ""
 
+msgid "liege.urban.schedule.announcement_documents_done"
+msgstr ""
+
+msgid "liege.urban.schedule.announcement_documents_sent"
+msgstr ""
+
+msgid "liege.urban.schedule.announcement_documents_validated"
+msgstr ""
+
 msgid "liege.urban.schedule.assign_task_owner"
 msgstr ""
 
@@ -30,9 +39,6 @@ msgid "liege.urban.schedule.decision_project_drafted"
 msgstr ""
 
 msgid "liege.urban.schedule.decision_project_sent"
-msgstr ""
-
-msgid "liege.urban.schedule.inquiry_zone_identified"
 msgstr ""
 
 msgid "liege.urban.schedule.inquiry_documents_done"

@@ -129,18 +129,21 @@ class LicencesExtractForm(form.Form):
             licence_dict['worktype_220'] = licence.getWorkType()
 
         if hasattr(licence, 'folderCategoryTownship'):
-            if licence.getFolderCategoryTownship():
-                vocterms = [cfg.townshipfoldercategories.get(val) for val in licence.getFolderCategoryTownship()]
-                worktypes = []
-                for term in vocterms:
-                    if term:
-                        code, label = re.match('(.*)\((.*)\)', term.Title()).groups()
-                        worktypes.append({'code': code, 'label': label})
-                licence_dict['worktype_city'] = worktypes
-            else:
-                licence_dict['worktype_city'] = []
+            licence_dict['worktype_city'] = self.extract_foldercategory_township(licence, cfg)
 
         return licence_dict
+
+    def extract_foldercategory_township(self, licence, cfg):
+        if licence.getFolderCategoryTownship():
+            vocterms = [cfg.townshipfoldercategories.get(val) for val in licence.getFolderCategoryTownship()]
+            worktypes = []
+            for term in vocterms:
+                if term:
+                    code, label = re.match('(.*)\((.*)\)', term.Title()).groups()
+                    worktypes.append({'code': code, 'label': label})
+            return worktypes
+        else:
+            return []
 
     def extract_address(self, address):
         address_dict = {

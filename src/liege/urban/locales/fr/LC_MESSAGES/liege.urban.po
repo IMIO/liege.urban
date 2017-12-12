@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-10-30 14:53+0000\n"
+"POT-Creation-Date: 2017-12-12 09:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,12 +14,28 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
+#: ../browser/activity_report.py:29
+msgid "Date end"
+msgstr ""
+
+#: ../browser/activity_report.py:34
+msgid "Date index"
+msgstr ""
+
+#: ../browser/activity_report.py:24
+msgid "Date start"
+msgstr ""
+
 #: ../interfaces.py:25
 msgid "IInternalOpinionRequestEvent type marker interface"
 msgstr ""
 
-#: ../configure.zcml:46
+#: ../configure.zcml:44
 msgid "Installs liege.urban add-on."
+msgstr ""
+
+#: ../browser/activity_report.py:41
+msgid "Licence types"
 msgstr ""
 
 #: ../browser/address_search.py:42
@@ -37,7 +53,7 @@ msgstr "Numéro"
 msgid "The above listed tasks are not done yet !!!"
 msgstr "Attention, il reste des actions à prendre pour les tâches ci-dessus!!!"
 
-#: ../configure.zcml:46
+#: ../configure.zcml:44
 #: ../schedule/vocabulary.py:99
 msgid "liege.urban"
 msgstr ""

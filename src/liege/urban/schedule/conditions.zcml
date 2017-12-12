@@ -69,15 +69,65 @@
         name="liege.urban.schedule.is_internal_opinion"
     />
 
-    <!-- inquiry conditions -->
+    <!-- announcement conditions -->
+
     <adapter
-        for="Products.urban.interfaces.IBaseAllBuildLicence
-             imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IEndCondition"
-        factory=".conditions.InquiryZoneIdentifiedCondition"
-        name="liege.urban.schedule.inquiry_zone_identified"
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".conditions.WriteAnnouncementDocumentsCondition"
+        name="liege.urban.schedule.write_announcement_documents"
     />
 
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".conditions.AnnouncementDocumentsDoneCreationCondition"
+        name="liege.urban.schedule.announcement_documents_done"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.AnnouncementDocumentsDoneCondition"
+        name="liege.urban.schedule.announcement_documents_done"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.AnnouncementDocumentsDoneCondition"
+        name="liege.urban.schedule.announcement_documents_done"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.AnnouncementDocumentsValidatedCondition"
+        name="liege.urban.schedule.announcement_documents_validated"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.AnnouncementDocumentsValidatedCondition"
+        name="liege.urban.schedule.announcement_documents_validated"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.AnnouncementDocumentsSentCondition"
+        name="liege.urban.schedule.announcement_documents_sent"
+    />
+
+    <!-- inquiry conditions -->
     <adapter
         for="Products.urban.interfaces.IBaseAllBuildLicence
              imio.schedule.content.task_config.ITaskConfig"

@@ -10,31 +10,6 @@ from plone import api
 from zope.component import getMultiAdapter
 
 
-class InquiryZoneIdentifiedCondition(Condition):
-    """
-    Licence inquiry zone is identified.
-    """
-
-    def evaluate(self):
-        licence = self.task_container
-        licence_inquiries = licence.getAllInquiries()
-        inquiry = licence.getLastInquiry()
-
-        if not inquiry:
-            return False
-
-        if inquiry.getLinkedInquiry() != licence_inquiries[-1]:
-            return False
-
-        if not inquiry.getRecipients():
-            return False
-
-        if api.content.get_state(inquiry) == 'zone_identification':
-            return False
-
-        return True
-
-
 class WriteInquiryDocumentsCondition(CreationCondition):
     """
     Licence inquiry documents are produced.
@@ -101,6 +76,74 @@ class InquiryDocumentsSentCondition(Condition):
             return False
 
         return api.content.get_state(inquiry) == 'in_progress'
+
+
+class WriteAnnouncementDocumentsCondition(CreationCondition):
+    """
+    Licence announcement documents are produced.
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        announcement = licence.getLastAnnouncement()
+        if not announcement:
+            return False
+
+        return api.content.get_state(announcement) == 'preparing_documents'
+
+
+class AnnouncementDocumentsDone():
+    """
+    Licence announcement documents are produced.
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        announcement = licence.getLastAnnouncement()
+        if not announcement:
+            return False
+
+        return api.content.get_state(announcement) == 'to_validate'
+
+
+class AnnouncementDocumentsDoneCondition(AnnouncementDocumentsDone, Condition):
+    """
+    Licence announcement documents are produced.
+    """
+
+
+class AnnouncementDocumentsDoneCreationCondition(AnnouncementDocumentsDone, CreationCondition):
+    """
+    Licence announcement documents are produced.
+    """
+
+
+class AnnouncementDocumentsValidatedCondition(Condition):
+    """
+    Licence announcement documents are validated.
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        announcement = licence.getLastAnnouncement()
+        if not announcement:
+            return False
+
+        return api.content.get_state(announcement) == 'sending_documents'
+
+
+class AnnouncementDocumentsSentCondition(Condition):
+    """
+    Licence announcement documents are sent.
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        announcement = licence.getLastAnnouncement()
+        if not announcement:
+            return False
+
+        return api.content.get_state(announcement) == 'in_progress'
 
 
 class AcknowledgmentWrittenCondition(Condition):

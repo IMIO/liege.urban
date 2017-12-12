@@ -17,6 +17,15 @@ msgstr ""
 msgid "liege.urban.schedule.acknowledgment_written"
 msgstr "Rédiger l'accusé de réception"
 
+msgid "liege.urban.schedule.announcement_documents_done"
+msgstr "Générer les documents de l'annonce de projet"
+
+msgid "liege.urban.schedule.announcement_documents_sent"
+msgstr "Envoyer les documents de l'annonce de projet"
+
+msgid "liege.urban.schedule.announcement_documents_validated"
+msgstr "Valider les documents de l'annonce de projet"
+
 msgid "liege.urban.schedule.assign_task_owner"
 msgstr "Utilisateur connecté, sinon agent du dossier, sinon 'À ASSIGNER'"
 
@@ -40,9 +49,6 @@ msgstr "Envoyer les documents d'enquête publique"
 
 msgid "liege.urban.schedule.inquiry_documents_validated"
 msgstr "Valider les documents d'enquête publique"
-
-msgid "liege.urban.schedule.inquiry_zone_identified"
-msgstr "Identifier le périmètre de l'enquête dans l'événement d'enquête"
 
 msgid "liege.urban.schedule.parcels_added"
 msgstr "Ajouter au moins une parcelle"
