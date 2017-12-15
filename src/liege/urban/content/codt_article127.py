@@ -19,3 +19,19 @@ CODT_Article127.schema = set_field_permissions(
     CODT_Article127.schema,
     permissions_mapping,
 )
+
+
+def getProcedureDelays(self, *values):
+    selection = [v['val'] for v in values if v['selected']]
+    unknown = 'ukn' in selection
+    opinions = 'external_opinions' in selection
+    inquiry = 'inquiry' in selection or 'light_inquiry' in selection
+
+    if unknown:
+        return ''
+    elif not opinions and not inquiry:
+        return '30j'
+    else:
+        return '60j'
+
+CODT_Article127.getProcedureDelays = getProcedureDelays
