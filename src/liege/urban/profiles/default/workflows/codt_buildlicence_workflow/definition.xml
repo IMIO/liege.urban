@@ -24,6 +24,7 @@
  <state state_id="FD_opinion" title="FD_opinion">
   <exit-transition transition_id="receive_FD_opinion"/>
   <exit-transition transition_id="suspend"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -152,7 +153,7 @@
   </permission-map>
  </state>
  <state state_id="abandoned" title="abandoned">
-  <exit-transition transition_id="reopen"/>
+  <exit-transition transition_id="resume"/>
   <permission-map name="ATContentTypes: Add File" acquired="True">
   </permission-map>
   <permission-map name="ATContentTypes: Add Image" acquired="True">
@@ -498,6 +499,7 @@
   <exit-transition transition_id="ask_complements"/>
   <exit-transition transition_id="propose_complete"/>
   <exit-transition transition_id="suspend"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -619,6 +621,7 @@
   <exit-transition transition_id="invalidate_completion"/>
   <exit-transition transition_id="propose_procedure_choice"/>
   <exit-transition transition_id="suspend"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -740,6 +743,7 @@
   <exit-transition transition_id="refuse_licence"/>
   <exit-transition transition_id="authorize_licence"/>
   <exit-transition transition_id="suspend"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -870,6 +874,7 @@
  <state state_id="deposit" title="deposit">
   <exit-transition transition_id="ask_address_validation"/>
   <exit-transition transition_id="suspend"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -1080,6 +1085,7 @@
  <state state_id="incomplete" title="incomplete">
   <exit-transition transition_id="receive_complements"/>
   <exit-transition transition_id="suspend"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -1290,6 +1296,7 @@
   <exit-transition transition_id="invalidate_procedure_choice"/>
   <exit-transition transition_id="validate_procedure_choice"/>
   <exit-transition transition_id="suspend"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -1410,6 +1417,7 @@
  <state state_id="procedure_validated" title="procedure_validated">
   <exit-transition transition_id="propose_report"/>
   <exit-transition transition_id="suspend"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -1669,6 +1677,7 @@
   <exit-transition transition_id="validate_report_2"/>
   <exit-transition transition_id="validate_report_1"/>
   <exit-transition transition_id="suspend"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -1798,6 +1807,7 @@
  </state>
  <state state_id="suspension" title="suspension">
   <exit-transition transition_id="resume"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -1928,6 +1938,7 @@
   <exit-transition transition_id="validate_address"/>
   <exit-transition transition_id="ask_temporary_address"/>
   <exit-transition transition_id="suspend"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -2049,6 +2060,7 @@
  <state state_id="waiting_address" title="waiting_address">
   <exit-transition transition_id="validate_temporary_address"/>
   <exit-transition transition_id="suspend"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -2167,6 +2179,11 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
+ <transition transition_id="abandon" title="abandon" new_state="abandoned" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">abandon</action>
+  <guard>
+  </guard>
+ </transition>
  <transition transition_id="accept_licence" title="accept_licence" new_state="accepted" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">accept_licence</action>
   <guard>

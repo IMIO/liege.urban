@@ -43,3 +43,21 @@ def add_suspension_state():
             else:
                 suspension_condition = EndConditionObject(suspension_id, 'OR')
             task_cfg.end_conditions = (suspension_condition,) + tuple(end_conditions)
+
+
+def add_abandoned_state():
+    """
+    """
+    # update the buildlicence workflow with the abandoned state
+    apply_from_registry()
+
+    # update the schedule conditions
+    portal_urban = api.portal.get_tool('portal_urban')
+    schedule_cfg = portal_urban.buildlicence.schedule
+
+    for task_cfg in schedule_cfg.get_all_task_configs():
+        # add 'abandoned' to the ending states
+        ending_states = task_cfg.ending_states
+        if ending_states and 'abandoned' not in ending_states:
+            new_states = tuple(ending_states) + ('abandoned',)
+            task_cfg.ending_states = set(new_states)

@@ -17,6 +17,9 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: liege.urban\n"
 
+msgid "abandon"
+msgstr ""
+
 msgid "abandoned"
 msgstr ""
 

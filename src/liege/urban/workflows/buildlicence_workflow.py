@@ -180,4 +180,16 @@ class StateRolesMapping(LiegeBase):
             'urban_readers': ('Reader',),
         },
 
+        'abandoned': {
+            'administrative_editors': ('Reader',),
+            'administrative_validators': ('Reader',),
+            'technical_editors': ('Reader',),
+            'technical_validators': ('Reader',),
+            'Voirie_editors': ('RoadReader',),
+            'Voirie_validators': ('RoadReader',),
+            LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
+            'urban_readers': ('Reader',),
+        },
+
     }

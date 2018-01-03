@@ -16,10 +16,11 @@ def add_licence_ended_condition():
         for task_cfg in schedule_cfg.get_all_task_configs():
 
             # add 'licence_ended' to the end conditions
+            ending_states = task_cfg.ending_states
             end_conditions = task_cfg.end_conditions or []
             end_condition_ids = end_conditions and [c.condition for c in end_conditions]
             condition_id = 'liege.urban.schedule.licence_ended'
-            if end_condition_ids and condition_id not in end_condition_ids:
+            if (end_condition_ids or not ending_states) and condition_id not in end_condition_ids:
                 if task_cfg.portal_type == 'MacroTaskConfig':
                     condition = MacroEndConditionObject(
                         condition=condition_id,
