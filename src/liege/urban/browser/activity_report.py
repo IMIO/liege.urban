@@ -120,7 +120,7 @@ class LicencesExtractForm(form.Form):
                 raw_delay = licence.getAnnoncedDelay()
                 vocterm = cfg.folderdelays.get(licence.getAnnoncedDelay())
                 if not vocterm:
-                    match = re.match('\d+j', raw_delay):
+                    match = re.match('\d+j', raw_delay)
                     licence_dict['delay'] = match and match.groups()[0] or ''
                 else:
                     licence_dict['delay'] = vocterm.getDeadLineDelay()
