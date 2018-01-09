@@ -135,7 +135,7 @@ class LicencesExtractForm(form.Form):
 
     def extract_annonced_delay(self, licence, cfg):
         delay = ''
-        if licence.getAnnoncedDelay():
+        if licence.getAnnoncedDelay() and any(licence.getAnnoncedDelay()):
             raw_delay = licence.getAnnoncedDelay()
             vocterm = cfg.folderdelays.get(licence.getAnnoncedDelay())
             if not vocterm:
