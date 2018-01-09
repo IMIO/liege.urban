@@ -107,7 +107,6 @@ class LicencesExtractForm(form.Form):
             'inquiry_dates': self.extract_inquiry_dates(licence),
             'decision_date': licence.getLastTheLicence() and str(licence.getLastTheLicence().getDecisionDate()) or '',
             'decision': licence.getLastTheLicence() and licence.getLastTheLicence().getDecision() or '',
-            'notification_date': licence.getLastLicenceNotification() and str(licence.getLastLicenceNotification().getEventDate()) or '',
         }
         if brain.licence_final_duedate and brain.licence_final_duedate.year < 9000:
             licence_dict['due_date'] = str(brain.licence_final_duedate)
@@ -115,7 +114,10 @@ class LicencesExtractForm(form.Form):
             licence_dict['due_date'] = ''
 
         if hasattr(licence, 'getLastAcknowledgment'):
-            licence_dict['acknowledgement_date'] = licence.getLastAcknowledgment() and str(licence.getLastAcknowledgment().getEventDate()) or '',
+            licence_dict['acknowledgement_date'] = licence.getLastAcknowledgment() and str(licence.getLastAcknowledgment().getEventDate()) or ''
+
+        if hasattr(licence, 'getLastLicenceNotification'):
+            licence_dict['notification_date'] = licence.getLastLicenceNotification() and str(licence.getLastLicenceNotification().getEventDate()) or ''
 
         if hasattr(licence, 'annoncedDelay'):
             licence_dict['delay'] = self.extract_annonced_delay(licence, cfg)
