@@ -137,7 +137,7 @@ class LicencesExtractForm(form.Form):
         delay = ''
         if licence.getAnnoncedDelay() and any(licence.getAnnoncedDelay()):
             raw_delay = licence.getAnnoncedDelay()
-            vocterm = cfg.folderdelays.get(licence.getAnnoncedDelay())
+            vocterm = hasattr(cfg, 'folderdelays') and cfg.folderdelays.get(licence.getAnnoncedDelay()) or None
             if not vocterm:
                 match = re.match('\d+j', raw_delay)
                 delay = match and match.groups()[0] or ''
