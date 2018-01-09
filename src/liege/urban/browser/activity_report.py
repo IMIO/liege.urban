@@ -104,7 +104,6 @@ class LicencesExtractForm(form.Form):
                            if interfaces.IContact.providedBy(obj)],
             'deposit_dates': self.extract_deposit_dates(licence),
             'incomplete_dates': self.extract_incomplete_dates(licence),
-            'acknowledgement_date': licence.getLastAcknowledgment() and str(licence.getLastAcknowledgment().getEventDate()) or '',
             'inquiry_dates': self.extract_inquiry_dates(licence),
             'decision_date': licence.getLastTheLicence() and str(licence.getLastTheLicence().getDecisionDate()) or '',
             'decision': licence.getLastTheLicence() and licence.getLastTheLicence().getDecision() or '',
@@ -114,6 +113,9 @@ class LicencesExtractForm(form.Form):
             licence_dict['due_date'] = str(brain.licence_final_duedate)
         else:
             licence_dict['due_date'] = ''
+
+        if hasattr(licence, 'getLastAcknowledgment'):
+            licence_dict['acknowledgement_date'] = licence.getLastAcknowledgment() and str(licence.getLastAcknowledgment().getEventDate()) or '',
 
         if hasattr(licence, 'annoncedDelay'):
             licence_dict['delay'] = self.extract_annonced_delay(licence, cfg)
