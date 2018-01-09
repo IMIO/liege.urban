@@ -151,8 +151,12 @@ class LicencesExtractForm(form.Form):
             worktypes = []
             for term in vocterms:
                 if term:
-                    code, label = re.match('(.*)\((.*)\)', term.Title()).groups()
-                    worktypes.append({'code': code, 'label': label})
+                    match = re.match('(.*)\((.*)\)', term.Title())
+                    if match:
+                        code, label = match.groups()
+                        worktypes.append({'code': code, 'label': label})
+                    else:
+                        worktypes.append({'code': '', 'label': term.Title()})
             return worktypes
         else:
             return []
