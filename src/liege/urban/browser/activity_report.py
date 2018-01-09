@@ -116,16 +116,7 @@ class LicencesExtractForm(form.Form):
             licence_dict['due_date'] = ''
 
         if hasattr(licence, 'annoncedDelay'):
-            if licence.getAnnoncedDelay():
-                raw_delay = licence.getAnnoncedDelay()
-                vocterm = cfg.folderdelays.get(licence.getAnnoncedDelay())
-                if not vocterm:
-                    match = re.match('\d+j', raw_delay)
-                    licence_dict['delay'] = match and match.groups()[0] or ''
-                else:
-                    licence_dict['delay'] = vocterm.getDeadLineDelay()
-            else:
-                licence_dict['delay'] = ''
+            licence_dict['delay'] = self.extract_annonced_delay(licence, cfg)
 
         if hasattr(licence, 'procedureChoice'):
             licence_dict['procedure_choice'] = licence.getProcedureChoice()
@@ -137,6 +128,18 @@ class LicencesExtractForm(form.Form):
             licence_dict['worktype_city'] = self.extract_foldercategory_township(licence, cfg)
 
         return licence_dict
+
+    def extract_annonced_delay(self, licence, cfg):
+        delay = ''
+        if licence.getAnnoncedDelay():
+            raw_delay = licence.getAnnoncedDelay()
+            vocterm = cfg.folderdelays.get(licence.getAnnoncedDelay())
+            if not vocterm:
+                match = re.match('\d+j', raw_delay)
+                delay = match and match.groups()[0] or ''
+            else:
+                delay = vocterm.getDeadLineDelay()
+        return delay
 
     def extract_foldercategory_township(self, licence, cfg):
         if licence.getFolderCategoryTownship():
@@ -156,10 +159,14 @@ class LicencesExtractForm(form.Form):
             'street_number': address.getStreet_number(),
             'street_code': address.getStreet_code(),
             'zipe_code': address.getZip_code(),
-            'capakey': address.get_capakey(),
             'address_point': address.getAddress_point(),
             'shore': address.getShore(),
         }
+        try:
+            capakey = address.get_capakey()
+        except:
+            capakey = ''
+        address_dict['capakey'] = capakey
         return address_dict
 
     def extract_folder_managers(self, folder_manager):
