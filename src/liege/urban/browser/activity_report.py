@@ -131,6 +131,11 @@ class LicencesExtractForm(form.Form):
         if hasattr(licence, 'folderCategoryTownship'):
             licence_dict['worktype_city'] = self.extract_foldercategory_township(licence, cfg)
 
+        if hasattr(licence, 'habitationsBeforeLicence'):
+            licence_dict['habitations_before_licence'] = licence.getHabitationsBeforeLicence()
+            licence_dict['habitations_asked'] = licence.getAdditionalHabitationsAsked()
+            licence_dict['habitations_authorized'] = licence.getAdditionalHabitationsGiven()
+
         return licence_dict
 
     def extract_annonced_delay(self, licence, cfg):
