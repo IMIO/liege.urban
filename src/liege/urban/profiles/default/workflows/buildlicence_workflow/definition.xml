@@ -1545,6 +1545,7 @@
   </permission-map>
  </state>
  <state state_id="refused" title="refused">
+  <exit-transition transition_id="reopen"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
