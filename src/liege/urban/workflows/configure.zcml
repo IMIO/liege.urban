@@ -26,7 +26,7 @@
   <adapter
      for="Products.urban.interfaces.ICODT_UniqueLicence"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
-     factory=".buildlicence_workflow.StateRolesMapping"
+     factory=".uniquelicence_workflow.StateRolesMapping"
      name="codt_uniquelicence_local_roles"
   />
 

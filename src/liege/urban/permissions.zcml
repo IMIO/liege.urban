@@ -13,6 +13,26 @@
     />
 
   <permission
+    id="liege.urban.urbanreader"
+    title="liege.urban: Urban Reader"
+    />
+
+  <permission
+    id="liege.urban.urbaneditor"
+    title="liege.urban: Urban Editor"
+    />
+
+  <permission
+    id="liege.urban.environmentreader"
+    title="liege.urban: Environment Reader"
+    />
+
+  <permission
+    id="liege.urban.environmenteditor"
+    title="liege.urban: Environment Editor"
+    />
+
+  <permission
     id="liege.urban.externalurbanreader"
     title="liege.urban: External Reader"
     />

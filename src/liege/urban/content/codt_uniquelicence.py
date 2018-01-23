@@ -6,6 +6,7 @@ from Products.urban.CODT_UniqueLicence import CODT_UniqueLicence
 
 # buildlicence and uniquelicence schema should have the same changes
 from liege.urban.content.buildlicence import update_item_schema as base_update_item_schema
+from liege.urban.licence_fields_permissions import set_field_permissions
 
 specific_schema = Schema((
 ),)
@@ -37,3 +38,15 @@ def update_item_schema(baseSchema):
     return LicenceSchema
 
 CODT_UniqueLicence.schema = update_item_schema(base_update_item_schema(CODT_UniqueLicence.schema))
+
+permissions_mapping = {
+    'urban_description': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
+    'urban_location': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
+    'urban_road': ('liege.urban: Road Reader', 'liege.urban: Road Editor'),
+    'urban_habitation': ('liege.urban: External Reader', 'urban: Add PortionOut'),
+}
+
+CODT_UniqueLicence.schema = set_field_permissions(
+    CODT_UniqueLicence.schema,
+    permissions_mapping,
+)

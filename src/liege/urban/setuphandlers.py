@@ -72,6 +72,28 @@ def addLiegeGroups(context):
     portal_groups.addPrincipalToGroup("technical_validators", 'urban_readers')
     portal_groups.addPrincipalToGroup("technical_validators", 'urban_managers')
 
+    portal_groups.addGroup("administrative_editors_environment", title="Administrative Editors Environment")
+    portal_groups.setRolesForGroup('administrative_editors_environment', ('UrbanMapReader', ))
+    portal_urban.manage_addLocalRoles("administrative_editors_environment", ("Reader", ))
+    portal_groups.addPrincipalToGroup("administrative_editors_environment", 'urban_readers')
+    portal_groups.addPrincipalToGroup("administrative_editors_environment", 'urban_editors')
+
+    portal_groups.addGroup("administrative_validators_environment", title="Administrative Validators Environment")
+    portal_groups.setRolesForGroup('administrative_validators_environment', ('UrbanMapReader', ))
+    portal_urban.manage_addLocalRoles("administrative_validators_environment", ("Reader", ))
+    portal_groups.addPrincipalToGroup("administrative_validators_environment", 'urban_readers')
+    portal_groups.addPrincipalToGroup("administrative_validators_environment", 'urban_editors')
+
+    portal_groups.addGroup("technical_editors_environment", title="Technical Editor Environments")
+    portal_groups.setRolesForGroup('technical_editors_environment', ('UrbanMapReader', ))
+    portal_urban.manage_addLocalRoles("technical_editors_environment", ("Reader", ))
+    portal_groups.addPrincipalToGroup("technical_editors_environment", 'urban_readers')
+
+    portal_groups.addGroup("technical_validators_environment", title="Technical Validators Environment")
+    portal_groups.setRolesForGroup('technical_validators_environment', ('UrbanMapReader', ))
+    portal_urban.manage_addLocalRoles("technical_validators_environment", ("Reader", ))
+    portal_groups.addPrincipalToGroup("technical_validators_environment", 'urban_readers')
+
     portal_groups.addGroup("survey_editors", title="Survey Editors")
     portal_groups.setRolesForGroup('survey_editors', ('UrbanMapReader', ))
     portal_urban.manage_addLocalRoles("survey_editors", ("Reader", ))
@@ -231,6 +253,26 @@ def addTestUsers(context):
             'username': 'gont',
             'group': 'technical_validators',
             'properties': {'fullname': 'Gontrand Val Technical'},
+        },
+        {
+            'username': 'rich_e',
+            'group': 'administrative_editors_environment',
+            'properties': {'fullname': 'Richard Administrative Environment'},
+        },
+        {
+            'username': 'rach_e',
+            'group': 'administrative_validators_environment',
+            'properties': {'fullname': 'Rachel Val Administrative Environment'},
+        },
+        {
+            'username': 'gert_e',
+            'group': 'technical_editors_environment',
+            'properties': {'fullname': 'Gertrude Technical Environment'},
+        },
+        {
+            'username': 'gont_e',
+            'group': 'technical_validators_environment',
+            'properties': {'fullname': 'Gontrand Val Technical Environment'},
         },
         {
             'username': 'survivor',

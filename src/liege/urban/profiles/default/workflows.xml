@@ -4,6 +4,7 @@
  <object name="address_workflow" meta_type="Workflow"/>
  <object name="buildlicence_workflow" meta_type="Workflow"/>
  <object name="codt_buildlicence_workflow" meta_type="Workflow"/>
+ <object name="codt_uniquelicence_workflow" meta_type="Workflow"/>
  <object name="college_event_workflow" meta_type="Workflow"/>
  <object name="inquiry_event_workflow" meta_type="Workflow"/>
  <object name="opinion_request_workflow" meta_type="Workflow"/>
@@ -21,6 +22,9 @@
   </type>
   <type type_id="CODT_BuildLicence">
      <bound-workflow workflow_id="codt_buildlicence_workflow" />
+  </type>
+  <type type_id="CODT_UniqueLicence">
+     <bound-workflow workflow_id="codt_uniquelicence_workflow" />
   </type>
   <type type_id="CODT_Article127">
      <bound-workflow workflow_id="article127_workflow" />

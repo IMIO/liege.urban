@@ -2333,12 +2333,6 @@
    <guard-permission>urban: Add PortionOut</guard-permission>
   </guard>
  </transition>
- <transition transition_id="validate_temporary_adress" title="validate_temporary_adress" new_state="checking_completion" trigger="USER" before_script="" after_script="">
-  <action url="" category="workflow" icon="">validate_temporary_adress</action>
-  <guard>
-   <guard-permission>urban: Add PortionOut</guard-permission>
-  </guard>
- </transition>
  <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
   <description>The last transition</description>
   <default>
