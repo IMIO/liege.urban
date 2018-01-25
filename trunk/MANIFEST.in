@@ -1,4 +1,0 @@
-graft src/liege
-graft docs
-include *.rst
-global-exclude *.pyc
