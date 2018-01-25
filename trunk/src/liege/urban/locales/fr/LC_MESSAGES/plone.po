@@ -1,0 +1,207 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-01-25 10:33+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+msgid "abandoned"
+msgstr "Abandonné"
+
+msgid "analysis"
+msgstr "Analyse du dossier"
+
+msgid "analysis_validation"
+msgstr "Valider l'analyse"
+
+msgid "ask_address_validation"
+msgstr "faire valider l'adresse"
+
+msgid "ask_complements"
+msgstr "demander des compléments"
+
+msgid "ask_opinion"
+msgstr "Demander l'avis"
+
+msgid "ask_temporary_address"
+msgstr "demander une adresse temporaire"
+
+msgid "ask_validation"
+msgstr "faire valider"
+
+msgid "authorize_licence"
+msgstr "Permis autorisé"
+
+msgid "authorized"
+msgstr "Autorisé"
+
+msgid "back_in_draft"
+msgstr "retour"
+
+msgid "check_completion"
+msgstr "Vérifier la complétude"
+
+msgid "checking_completion"
+msgstr "Vérification de la complétude"
+
+msgid "close_defavorable"
+msgstr "Avis défavorable"
+
+msgid "close_favorable"
+msgstr "Avis favorable"
+
+msgid "college"
+msgstr "Passage au collège"
+
+msgid "complete"
+msgstr "Complet"
+
+msgid "decision_in_progress"
+msgstr "Passage au collége"
+
+msgid "deposit"
+msgstr "Dépôt"
+
+msgid "draft"
+msgstr "Brouillon"
+
+msgid "filed_away"
+msgstr "Classé sans suite"
+
+msgid "go_back_1"
+msgstr "Retour"
+
+msgid "go_back_2"
+msgstr "Retour"
+
+msgid "go_back_3"
+msgstr "Retour"
+
+msgid "go_back_4"
+msgstr "Retour"
+
+msgid "incomplete"
+msgstr "Incomplet"
+
+msgid "invalidate_completion"
+msgstr "Revérifier la complétude"
+
+msgid "invalidate_opinion"
+msgstr "refuser"
+
+msgid "invalidate_procedure_choice"
+msgstr "refuser"
+
+msgid "notification"
+msgstr "Notification du permis"
+
+msgid "opinion_validation"
+msgstr "validation"
+
+msgid "procedure_analysis"
+msgstr "Analyse technique"
+
+msgid "procedure_choice"
+msgstr "Choix de la procédure"
+
+msgid "procedure_choosen"
+msgstr "Choix de la procédure fait"
+
+msgid "procedure_validated"
+msgstr "Procédure validée"
+
+msgid "propose_analysis"
+msgstr "proposer l'analyse"
+
+msgid "propose_complete"
+msgstr "proposer comme complet"
+
+msgid "propose_procedure_choice"
+msgstr "proposer le choix de procédure"
+
+msgid "propose_report"
+msgstr "proposer le rapport d'analyse"
+
+msgid "proposed"
+msgstr "Projet de décision rédigé"
+
+msgid "receive_college_decision"
+msgstr "recevoir la décision"
+
+msgid "receive_complements"
+msgstr "compléments reçus"
+
+msgid "receive_opinion"
+msgstr "recevoir l'avis"
+
+msgid "refuse_analysis"
+msgstr "Renvoyer"
+
+msgid "refuse_licence"
+msgstr "Permis refusé"
+
+msgid "refuse_procedure_choice"
+msgstr "Refaire le choix de procédure"
+
+msgid "refuse_report"
+msgstr "Refaire le rapport d'analyse"
+
+msgid "report_written"
+msgstr "Rapport d'analyse écrit"
+
+msgid "send_opinion"
+msgstr "envoyer l'avis"
+
+msgid "suspend"
+msgstr "suspendre"
+
+msgid "to_analyse"
+msgstr "Envoyer à l'analyse"
+
+msgid "to_send"
+msgstr "Envoi de l'accusé"
+
+msgid "to_validate"
+msgstr "à valider"
+
+msgid "validate_address"
+msgstr "valider l'adresse"
+
+msgid "validate_completion"
+msgstr "Valider la complétude"
+
+msgid "validate_procedure_choice"
+msgstr "Valider la procédure"
+
+msgid "validate_report_1"
+msgstr "Valider le rapport d'analyse"
+
+msgid "validate_report_2"
+msgstr "Valider le rapport d'analyse (FD)"
+
+msgid "validate_temporary_address"
+msgstr "valider l'adresse temporaire"
+
+msgid "validating_address"
+msgstr "Validation de l'adresse"
+
+msgid "validating_completion"
+msgstr "Validation de la complétude"
+
+msgid "verify_completion"
+msgstr "vérifier la complétude"
+
+msgid "waiting_address"
+msgstr "En attente d'une adresse temporaire"
+
+msgid "waiting_opinion"
+msgstr "En attente d'avis"

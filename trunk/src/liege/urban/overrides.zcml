@@ -1,0 +1,70 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="liege.urban">
+
+  <configure package="imio.schedule">
+      <adapter
+         name="getReference"
+         factory="liege.urban.schedule.indexes.task_reference_index"
+         />
+  </configure>
+
+  <configure package="Products.urban">
+
+      <!-- overrides Portion table title display to also display address -->
+      <adapter
+         for="zope.interface.Interface
+              Products.urban.browser.table.interfaces.ITitleColumn
+              Products.urban.browser.table.interfaces.IItemForUrbanTable
+              Products.urban.interfaces.IPortionOut"
+         factory="liege.urban.browser.table.AddressTitleDisplay"
+         provides="Products.urban.browser.table.interfaces.ITitleCell"
+      />
+
+      <!-- overrides parcels info display to also display details link -->
+      <adapter
+         for="zope.interface.Interface
+              zope.publisher.interfaces.browser.IBrowserRequest
+              Products.urban.browser.table.interfaces.IParcelsTable"
+         factory="liege.urban.browser.table.AddressParcelColumn"
+         provides="z3c.table.interfaces.IColumn"
+         name="relatedlicencesColumn"
+      />
+
+      <!-- overrides default workflow local roles-->
+      <adapter
+         for="Products.urban.interfaces.IGenericLicence"
+         provides="borg.localrole.interfaces.ILocalRoleProvider"
+         factory="liege.urban.workflows.licences_workflow.DefaultStateRolesMapping"
+         name="licence_local_roles"
+      />
+      <adapter
+         for="Products.urban.interfaces.ICODT_BaseBuildLicence"
+         provides="borg.localrole.interfaces.ILocalRoleProvider"
+         factory="liege.urban.workflows.licences_workflow.DefaultStateRolesMapping"
+         name="licence_local_roles"
+      />
+
+      <!-- documentgenerator proxy object-->
+      <adapter
+          for="Products.urban.interfaces.IGenericLicence
+               zope.interface.Interface"
+          provides="collective.documentgenerator.interfaces.IDisplayProxyObject"
+          factory="liege.urban.documentgenerator.helper_view.LiegeLicenceProxyObject"
+          permission="zope2.View"
+       />
+
+      <!-- documentgenerator proxy object-->
+      <adapter
+          for="Products.urban.interfaces.IGenericLicence"
+          provides="Products.urban.interfaces.IToUrbain220Street"
+          factory="liege.urban.adapters.urbain220.LiegeLicenceToUrbain220Street"
+          permission="zope2.View"
+      />
+  </configure>
+
+</configure>

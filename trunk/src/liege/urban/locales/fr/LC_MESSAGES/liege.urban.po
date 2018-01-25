@@ -1,0 +1,43 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-10-30 14:53+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: ../interfaces.py:25
+msgid "IInternalOpinionRequestEvent type marker interface"
+msgstr ""
+
+#: ../configure.zcml:46
+msgid "Installs liege.urban add-on."
+msgstr ""
+
+#: ../browser/address_search.py:42
+msgid "Street code"
+msgstr "Code rue"
+
+#: ../browser/address_search.py:37
+msgid "Street name"
+msgstr "Nom de la rue"
+
+#: ../browser/address_search.py:47
+msgid "Street number"
+msgstr "Numéro"
+
+msgid "The above listed tasks are not done yet !!!"
+msgstr "Attention, il reste des actions à prendre pour les tâches ci-dessus!!!"
+
+#: ../configure.zcml:46
+#: ../schedule/vocabulary.py:99
+msgid "liege.urban"
+msgstr ""
