@@ -1,5 +1,0 @@
-====================
-liege.urban
-====================
-
-User documentation
