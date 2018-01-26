@@ -72,4 +72,13 @@
         name="default"
     />
 
+  <adapter
+        for="Products.urban.interfaces.ICODT_UniqueLicence
+             zope.publisher.interfaces.browser.IBrowserRequest"
+        provides="zope.interface.Interface"
+        factory=".codt_uniquelicence.IsLeaderUser"
+        name="is_licence_leader"
+        permission="zope2.View"
+  />
+
 </configure>

@@ -95,6 +95,12 @@ msgstr "Retour"
 msgid "incomplete"
 msgstr "Incomplet"
 
+msgid "internal_advice_done"
+msgstr "Avis préliminaire rendu"
+
+msgid "internal_prelimnary_advice"
+msgstr "En cours d'avis préliminaire"
+
 msgid "invalidate_completion"
 msgstr "Revérifier la complétude"
 
@@ -103,6 +109,12 @@ msgstr "refuser"
 
 msgid "invalidate_procedure_choice"
 msgstr "refuser"
+
+msgid "is_complete"
+msgstr "déclarer complet"
+
+msgid "is_incomplete"
+msgstr "déclarer incomplet"
 
 msgid "notification"
 msgstr "Notification du permis"
@@ -163,6 +175,9 @@ msgstr "Rapport d'analyse écrit"
 
 msgid "send_opinion"
 msgstr "envoyer l'avis"
+
+msgid "send_preliminary_advice"
+msgstr "Envoyer l'avis préliminaire"
 
 msgid "suspend"
 msgstr "suspendre"

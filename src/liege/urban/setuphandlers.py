@@ -60,6 +60,7 @@ def addLiegeGroups(context):
     portal_groups.addPrincipalToGroup("administrative_validators", 'urban_readers')
     portal_groups.addPrincipalToGroup("administrative_validators", 'urban_editors')
     portal_groups.addPrincipalToGroup("administrative_validators", 'urban_managers')
+    portal_groups.addPrincipalToGroup("administrative_validators", 'administrative_editors')
 
     portal_groups.addGroup("technical_editors", title="Technical Editors")
     portal_groups.setRolesForGroup('technical_editors', ('UrbanMapReader', ))
@@ -71,6 +72,7 @@ def addLiegeGroups(context):
     portal_urban.manage_addLocalRoles("technical_validators", ("Reader", ))
     portal_groups.addPrincipalToGroup("technical_validators", 'urban_readers')
     portal_groups.addPrincipalToGroup("technical_validators", 'urban_managers')
+    portal_groups.addPrincipalToGroup("technical_validators", 'technical_editors')
 
     portal_groups.addGroup("administrative_editors_environment", title="Administrative Editors Environment")
     portal_groups.setRolesForGroup('administrative_editors_environment', ('UrbanMapReader', ))
@@ -83,6 +85,7 @@ def addLiegeGroups(context):
     portal_urban.manage_addLocalRoles("administrative_validators_environment", ("Reader", ))
     portal_groups.addPrincipalToGroup("administrative_validators_environment", 'urban_readers')
     portal_groups.addPrincipalToGroup("administrative_validators_environment", 'urban_editors')
+    portal_groups.addPrincipalToGroup("administrative_validators_environment", 'administrative_editors_environment')
 
     portal_groups.addGroup("technical_editors_environment", title="Technical Editor Environments")
     portal_groups.setRolesForGroup('technical_editors_environment', ('UrbanMapReader', ))
@@ -93,6 +96,7 @@ def addLiegeGroups(context):
     portal_groups.setRolesForGroup('technical_validators_environment', ('UrbanMapReader', ))
     portal_urban.manage_addLocalRoles("technical_validators_environment", ("Reader", ))
     portal_groups.addPrincipalToGroup("technical_validators_environment", 'urban_readers')
+    portal_groups.addPrincipalToGroup("technical_validators_environment", 'technical_editors_environment')
 
     portal_groups.addGroup("survey_editors", title="Survey Editors")
     portal_groups.setRolesForGroup('survey_editors', ('UrbanMapReader', ))

@@ -30,7 +30,6 @@ def update_item_schema(baseSchema):
     LicenceSchema.moveField('minimumLegalConditions', after='rubricsDetails')
     LicenceSchema.moveField('additionalLegalConditions', after='minimumLegalConditions')
     LicenceSchema.moveField('description', after='impactStudy')
-
     # rename some fields
     LicenceSchema['reference'].widget.label_msgid = 'urban_label_urbanReference'
     LicenceSchema['referenceDGATLP'].widget.label_msgid = 'urban_label_referenceFD'
@@ -41,6 +40,8 @@ CODT_UniqueLicence.schema = update_item_schema(base_update_item_schema(CODT_Uniq
 
 permissions_mapping = {
     'urban_description': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
+    'urban_analysis': ('liege.urban: External Reader', 'liege.urban: Urban Editor'),
+    'urban_environment': ('liege.urban: External Reader', 'liege.urban: Environment Editor'),
     'urban_location': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
     'urban_road': ('liege.urban: Road Reader', 'liege.urban: Road Editor'),
     'urban_habitation': ('liege.urban: External Reader', 'urban: Add PortionOut'),
