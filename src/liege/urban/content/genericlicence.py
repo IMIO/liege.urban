@@ -62,8 +62,10 @@ def update_item_schema(baseSchema):
     LicenceSchema.moveField('sevesoSite', after='airportNoiseZoneDetails')
     LicenceSchema['pipelines'].schemata = 'urban_location'
     LicenceSchema.moveField('pipelines', after='sevesoSite')
+    LicenceSchema['pipelinesDetails'].schemata = 'urban_location'
+    LicenceSchema.moveField('pipelinesDetails', after='pipelines')
     LicenceSchema['natura_2000'].schemata = 'urban_location'
-    LicenceSchema.moveField('natura_2000', after='pipelines')
+    LicenceSchema.moveField('natura_2000', after='pipelinesDetails')
     LicenceSchema['roadType'].schemata = 'urban_location'
     LicenceSchema.moveField('roadType', after='natura_2000')
     LicenceSchema['pash'].schemata = 'urban_location'

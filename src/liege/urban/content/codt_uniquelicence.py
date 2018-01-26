@@ -15,6 +15,9 @@ specific_schema = Schema((
 def update_item_schema(baseSchema):
     LicenceSchema = baseSchema + specific_schema.copy()
 
+    # move some fields
+    LicenceSchema['pipelines'].schemata = 'urban_environment'
+    LicenceSchema['pipelinesDetails'].schemata = 'urban_environment'
     # show and hide inquiry fields
     LicenceSchema['inquiry_type'].widget.visible = {'view': 'invisible', 'edit': 'invisible'}
     LicenceSchema['investigationArticles'].widget.visible = {'edit': 'visible', 'view': 'visible'}
