@@ -80,6 +80,15 @@ msgstr ""
 msgid "draft"
 msgstr ""
 
+msgid "executive_refuse"
+msgstr ""
+
+msgid "executive_validate"
+msgstr ""
+
+msgid "executive_validation"
+msgstr ""
+
 msgid "filed_away"
 msgstr ""
 
@@ -123,6 +132,9 @@ msgid "notification"
 msgstr ""
 
 msgid "opinion_validation"
+msgstr ""
+
+msgid "preliminary_advice_sent"
 msgstr ""
 
 msgid "procedure_analysis"
@@ -180,6 +192,15 @@ msgid "send_preliminary_advice"
 msgstr ""
 
 msgid "suspend"
+msgstr ""
+
+msgid "technical_refuse"
+msgstr ""
+
+msgid "technical_validate"
+msgstr ""
+
+msgid "technical_validation"
 msgstr ""
 
 msgid "to_analyse"

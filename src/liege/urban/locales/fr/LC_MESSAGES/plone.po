@@ -77,6 +77,15 @@ msgstr "Dépôt"
 msgid "draft"
 msgstr "Brouillon"
 
+msgid "executive_refuse"
+msgstr "Refuser"
+
+msgid "executive_validate"
+msgstr "Valider"
+
+msgid "executive_validation"
+msgstr "Validation direction"
+
 msgid "filed_away"
 msgstr "Classé sans suite"
 
@@ -121,6 +130,9 @@ msgstr "Notification du permis"
 
 msgid "opinion_validation"
 msgstr "validation"
+
+msgid "preliminary_advice_sent"
+msgstr "Avis interne prélminaire rendu"
 
 msgid "procedure_analysis"
 msgstr "Analyse technique"
@@ -181,6 +193,15 @@ msgstr "Envoyer l'avis préliminaire"
 
 msgid "suspend"
 msgstr "suspendre"
+
+msgid "technical_refuse"
+msgstr "Refuser"
+
+msgid "technical_validate"
+msgstr "Valider"
+
+msgid "technical_validation"
+msgstr "Validation technique"
 
 msgid "to_analyse"
 msgstr "Envoyer à l'analyse"
