@@ -52,10 +52,8 @@ class StateRolesMapping(LocalRoleAdapter):
 
     mapping = {
         'creation': {
-            'administrative_editors': ('Reader', 'Editor',),
-            'administrative_validators': ('Reader', 'Contributor',),
-            'technical_editors': ('Reader',),
-            'technical_validators': ('Reader',),
+            'administrative_editors': ('Editor',),
+            'administrative_validators': ('Contributor',),
             'opinions_editors': ('Reader',),
             'Voirie_editors': ('Reader',),
             'Voirie_validators': ('Reader',),
@@ -67,7 +65,6 @@ class StateRolesMapping(LocalRoleAdapter):
             ('administrative_editors', (get_technical_roles,)),
             ('administrative_validators', (get_technical_roles,)),
             ('technical_editors', (get_technical_roles,)),
-            ('technical_validators', ('Reader',)),
             ('Voirie_editors', ('Reader',)),   # !!! order matters, let voirie role be overwritten
             ('Voirie_validators', ('Reader',)),# by ('get_opinion_...' if needed
             (get_opinion_editor, (get_opinion_editor_role,)),
@@ -77,10 +74,6 @@ class StateRolesMapping(LocalRoleAdapter):
         ]),
 
         'opinion_validation': OrderedDict([
-            ('administrative_editors', ('Reader',)),
-            ('administrative_validators', ('Reader',)),
-            ('technical_editors', ('Reader',)),
-            ('technical_validators', ('Reader',)),
             ('Voirie_editors', ('Reader',)),   # !!! order matters, let voirie role be overwritten
             ('Voirie_validators', ('Reader',)),# by ('get_opinion_...' if needed
             (get_opinion_editor, ('Reader',)),
@@ -90,10 +83,6 @@ class StateRolesMapping(LocalRoleAdapter):
         ]),
 
         'opinion_given': OrderedDict([
-            ('administrative_editors', ('Reader',)),
-            ('administrative_validators', ('Reader',)),
-            ('technical_editors', ('Reader',)),
-            ('technical_validators', ('Reader',)),
             ('Voirie_editors', ('Reader',)),   # !!! order matters, let voirie role be overwritten
             ('Voirie_validators', ('Reader',)),# by ('get_opinion_...' if needed
             (get_opinion_editor, ('Reader',)),

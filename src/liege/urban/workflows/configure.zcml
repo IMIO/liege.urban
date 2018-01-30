@@ -164,6 +164,13 @@
   />
 
   <adapter
+     for="Products.urban.interfaces.IEnvironmentSimpleCollegeEvent"
+     provides="borg.localrole.interfaces.ILocalRoleProvider"
+     factory=".env_college_event_workflow.StateRolesMapping"
+     name="environmentsimplecollege_local_roles"
+  />
+
+  <adapter
      for="Products.urban.interfaces.IInternalPreliminaryAdviceEvent"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
      factory=".preliminaryadvice_event_workflow.StateRolesMapping"
