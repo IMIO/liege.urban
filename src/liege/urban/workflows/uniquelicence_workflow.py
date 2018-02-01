@@ -16,11 +16,19 @@ class StateRolesMapping(LiegeBase):
         },
 
         'validating_address': {
+            'technical_editors_environment': ('Editor', 'EnvironmentEditor'),
+            'technical_validators_environment': ('Contributor', 'EnvironmentEditor'),
+            'technical_editors': ('Editor', 'UrbanEditor'),
+            'technical_validators': ('Contributor', 'UrbanEditor'),
             'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 
         'waiting_address': {
+            'technical_editors_environment': ('Editor', 'EnvironmentEditor'),
+            'technical_validators_environment': ('Contributor', 'EnvironmentEditor'),
+            'technical_editors': ('Editor', 'UrbanEditor'),
+            'technical_validators': ('Contributor', 'UrbanEditor'),
             'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
