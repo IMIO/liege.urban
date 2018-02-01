@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from imio.schedule.content.condition import EndCondition
+from imio.schedule.content.condition import CreationCondition
 
 from plone import api
 
 
-class LicenceInValidatingAddressState(EndCondition):
+class LicenceInValidatingAddressState(CreationCondition):
     """
     """
 
