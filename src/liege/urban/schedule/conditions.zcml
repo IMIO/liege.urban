@@ -27,6 +27,14 @@
         name="liege.urban.schedule.temporary_address"
     />
 
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".creation_conditions.LicenceInValidatingAddressState"
+        name="liege.urban.schedule.validating_address"
+    />
+
     <!-- acknowledgment conditions -->
     <adapter
         for="Products.urban.interfaces.IGenericLicence
