@@ -4,7 +4,7 @@
 
     <!-- survey conditions -->
     <adapter
-        for="Products.urban.interfaces.IGenericLicence
+        for="Products.urban.interfaces.IBaseAllBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".end_conditions.AllParcelsAreValidated"
@@ -12,7 +12,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IGenericLicence
+        for="Products.urban.interfaces.IBaseAllBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".end_conditions.ParcelsAdded"
@@ -20,7 +20,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IGenericLicence
+        for="Products.urban.interfaces.IBaseAllBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".end_conditions.LicenceInTemporaryAddressState"
@@ -28,8 +28,8 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IGenericLicence
-             imio.schedule.content.task.IAutomatedTask"
+        for="Products.urban.interfaces.IBaseAllBuildLicence
+             imio.schedule.content.task_config.ITaskConfig"
         provides="imio.schedule.interfaces.ICreationCondition"
         factory=".creation_conditions.LicenceInValidatingAddressState"
         name="liege.urban.schedule.validating_address"
