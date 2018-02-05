@@ -18,6 +18,10 @@ def update_item_schema(baseSchema):
     # move some fields
     LicenceSchema['pipelines'].schemata = 'urban_environment'
     LicenceSchema['pipelinesDetails'].schemata = 'urban_environment'
+    LicenceSchema['procedureChoice'].schemata = 'urban_description'
+    LicenceSchema['annoncedDelay'].schemata = 'urban_description'
+    LicenceSchema['annoncedDelayDetails'].schemata = 'urban_description'
+    LicenceSchema['prorogation'].schemata = 'urban_description'
     # show and hide inquiry fields
     LicenceSchema['inquiry_type'].widget.visible = {'view': 'invisible', 'edit': 'invisible'}
     LicenceSchema['investigationArticles'].widget.visible = {'edit': 'visible', 'view': 'visible'}
@@ -33,9 +37,14 @@ def update_item_schema(baseSchema):
     LicenceSchema.moveField('minimumLegalConditions', after='rubricsDetails')
     LicenceSchema.moveField('additionalLegalConditions', after='minimumLegalConditions')
     LicenceSchema.moveField('description', after='impactStudy')
+    LicenceSchema.moveField('procedureChoice', after='folderCategory')
+    LicenceSchema.moveField('annoncedDelay', after='procedureChoice')
+    LicenceSchema.moveField('annoncedDelayDetails', after='annoncedDelay')
+    LicenceSchema.moveField('prorogation', after='annoncedDelayDetails')
     # rename some fields
     LicenceSchema['reference'].widget.label_msgid = 'urban_label_urbanReference'
     LicenceSchema['referenceDGATLP'].widget.label_msgid = 'urban_label_referenceFD'
+    LicenceSchema['procedureChoice'].widget.label_msgid = 'urban_label_folderCategory'
 
     return LicenceSchema
 
