@@ -65,6 +65,15 @@
           factory="liege.urban.adapters.urbain220.LiegeLicenceToUrbain220Street"
           permission="zope2.View"
       />
+
+      <!-- Override default role mapping for urban events-->
+      <adapter
+         for="Products.urban.interfaces.IUrbanEvent"
+         provides="borg.localrole.interfaces.ILocalRoleProvider"
+         factory="liege.urban.workflows.urbanevent_workflow.StateRolesMapping"
+         name="urbanevent_local_roles"
+      />
+
   </configure>
 
 </configure>
