@@ -73,7 +73,7 @@ class StateRolesMapping(LocalRoleAdapter):
 
         'closed': {
             get_editors: ('ClaimantEditor',),
-            get_contributors: ('ClaimantEditor',),
+            get_contributors: ('Contributor', 'ClaimantEditor',),
             'urban_readers': ('Reader',),
         },
 

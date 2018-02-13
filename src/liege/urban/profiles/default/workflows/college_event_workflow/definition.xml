@@ -295,21 +295,25 @@
  <transition transition_id="close" title="close" new_state="closed" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">close</action>
   <guard>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="notify" title="notify" new_state="notification" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">notify</action>
   <guard>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="propose" title="propose" new_state="to_validate" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">propose</action>
   <guard>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="receive_college_decision" title="receive_college_decision" new_state="closed" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">receive_college_decision</action>
   <guard>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="refuse" title="refuse" new_state="draft" trigger="USER" before_script="" after_script="">

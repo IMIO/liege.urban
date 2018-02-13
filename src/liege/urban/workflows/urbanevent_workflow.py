@@ -79,6 +79,6 @@ class StateRolesMapping(LocalRoleAdapter):
             ('administrative_editors', ('Reader',)),
             ('technical_editors_environment', ('Reader',)),
             ('administrative_editors_environment', ('Reader',)),
-            (get_editors, ('Editor',)),
+            (get_editors, ('Editor',)),  # !!! order matters, let editors group be overwritten
         ]),
     }

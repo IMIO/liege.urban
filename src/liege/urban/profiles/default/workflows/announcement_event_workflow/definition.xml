@@ -342,16 +342,19 @@
  <transition transition_id="ask_validation" title="ask_validation" new_state="to_validate" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">ask_validation</action>
   <guard>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="close" title="close" new_state="closed" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">close</action>
   <guard>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="documents_sent" title="documents_sent" new_state="in_progress" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">documents_sent</action>
   <guard>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="refuse" title="refuse" new_state="preparing_documents" trigger="USER" before_script="" after_script="">
