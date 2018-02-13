@@ -227,7 +227,6 @@
   <guard>
    <guard-permission>liege.urban: Validate</guard-permission>
   </guard>
-  </guard>
  </transition>
  <transition transition_id="validate" title="validate" new_state="to_send" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">validate</action>
