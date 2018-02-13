@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from collections import OrderedDict
+
 from Products.urban.interfaces import ICODT_UniqueLicence
 from Products.urban.interfaces import IEnvironmentBase
 from Products.urban.interfaces import IEnvironmentOnlyEvent
@@ -62,21 +64,21 @@ class StateRolesMapping(LocalRoleAdapter):
             return mapping.get(allowed_group)
 
     mapping = {
-        'in_progress': {
-            'urban_readers': ('Reader',),
-            'technical_editors': ('Reader',),
-            'administrative_editors': ('Reader',),
-            'technical_editors_environment': ('Reader',),
-            'administrative_editors_environment': ('Reader',),
-            get_editors: ('Editor',),
-        },
+        'in_progress': OrderedDict([
+            ('urban_readers', ('Reader',)),
+            ('technical_editors', ('Reader',)),
+            ('administrative_editors', ('Reader',)),
+            ('technical_editors_environment', ('Reader',)),
+            ('administrative_editors_environment', ('Reader',)),
+            (get_editors, ('Editor',)),  # !!! order matters, let editors group be overwritten
+        ]),
 
-        'closed': {
-            'urban_readers': ('Reader',),
-            'technical_editors': ('Reader',),
-            'administrative_editors': ('Reader',),
-            'technical_editors_environment': ('Reader',),
-            'administrative_editors_environment': ('Reader',),
-            get_editors: ('Editor',),
-        },
+        'closed': OrderedDict([
+            ('urban_readers', ('Reader',)),
+            ('technical_editors', ('Reader',)),
+            ('administrative_editors', ('Reader',)),
+            ('technical_editors_environment', ('Reader',)),
+            ('administrative_editors_environment', ('Reader',)),
+            (get_editors, ('Editor',)),
+        ]),
     }
