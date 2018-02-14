@@ -10,12 +10,14 @@ class StateRolesMapping(LiegeBase):
         'deposit': {
             'administrative_editors_environment': ('Editor', 'EnvironmentEditor'),
             'administrative_validators_environment': ('Contributor', 'EnvironmentEditor'),
-            'technical_editors_environment': ('Editor',),
-            'technical_validators_environment': ('Contributor',),
+            'technical_editors_environment': ('Editor', 'EnvironmentEditor'),
+            'technical_validators_environment': ('Contributor', 'EnvironmentEditor'),
             'urban_readers': ('Reader',),
         },
 
         'validating_address': {
+            'administrative_editors_environment': ('Editor', 'EnvironmentEditor'),
+            'administrative_validators_environment': ('Contributor', 'EnvironmentEditor'),
             'technical_editors_environment': ('Editor', 'EnvironmentEditor'),
             'technical_validators_environment': ('Contributor', 'EnvironmentEditor'),
             'technical_editors': ('Editor', 'UrbanEditor'),
@@ -25,6 +27,8 @@ class StateRolesMapping(LiegeBase):
         },
 
         'waiting_address': {
+            'administrative_editors_environment': ('Editor', 'EnvironmentEditor'),
+            'administrative_validators_environment': ('Contributor', 'EnvironmentEditor'),
             'technical_editors_environment': ('Editor', 'EnvironmentEditor'),
             'technical_validators_environment': ('Contributor', 'EnvironmentEditor'),
             'technical_editors': ('Editor', 'UrbanEditor'),
