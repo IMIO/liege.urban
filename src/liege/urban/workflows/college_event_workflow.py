@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from liege.urban.workflows.urbanevent_workflow import StateRolesMapping as LocalRoleAdapter
+from Products.urban.workflows.urbanevent_workflow import StateRolesMapping as BaseRolesMapping
 
 
-class StateRolesMapping(LocalRoleAdapter):
+class StateRolesMapping(BaseRolesMapping):
     """
     """
 
@@ -51,25 +51,25 @@ class StateRolesMapping(LocalRoleAdapter):
         'draft': {
             get_editors: ('Editor',),
             get_contributors: ('Contributor',),
-            'urban_readers': ('Reader',),
+            BaseRolesMapping.get_readers: ('Reader',),
         },
 
         'to_validate': {
             get_editors: ('Reader',),
             get_contributors: ('Contributor',),
-            'urban_readers': ('Reader',),
+            BaseRolesMapping.get_readers: ('Reader',),
         },
 
         'decision_in_progress': {
             get_editors: ('Reader',),
             get_contributors: ('Contributor',),
-            'urban_readers': ('Reader',),
+            BaseRolesMapping.get_readers: ('Reader',),
         },
 
         'closed': {
             get_editors: ('Editor',),
             get_contributors: ('Contributor',),
-            'urban_readers': ('Reader',),
+            BaseRolesMapping.get_readers: ('Reader',),
         },
 
     }

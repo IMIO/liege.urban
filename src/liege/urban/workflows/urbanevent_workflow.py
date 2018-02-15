@@ -1,43 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from collections import OrderedDict
-
-from Products.urban.interfaces import ICODT_UniqueLicence
-from Products.urban.interfaces import IEnvironmentBase
-from Products.urban.interfaces import IEnvironmentOnlyEvent
-from Products.urban.interfaces import IUniqueLicence
-from Products.urban.interfaces import IUrbanAndEnvironmentEvent
-from Products.urban.interfaces import IUrbanOrEnvironmentEvent
-from Products.urban.workflows.adapter import LocalRoleAdapter
+from Products.urban.workflows.urbanevent_workflow import StateRolesMapping as BaseRolesMapping
 
 
-class StateRolesMapping(LocalRoleAdapter):
+class StateRolesMapping(BaseRolesMapping):
     """
     """
-
-    def __init__(self, context):
-        self.context = context
-        self.event = context
-        self.licence = self.context.aq_parent
-
-    def get_allowed_groups(self, licence, event):
-        if IEnvironmentBase.providedBy(licence):
-            if IUniqueLicence.providedBy(licence) or ICODT_UniqueLicence.providedBy(licence):
-                if IEnvironmentOnlyEvent.providedBy(event):
-                    return 'environment_only'
-                elif IUrbanOrEnvironmentEvent.providedBy(event):
-                    if 'urb' in licence.getFolderTendency():
-                        return 'urban_only'
-                    elif 'env' in licence.getFolderTendency():
-                        return 'environment_only'
-                elif IUrbanAndEnvironmentEvent.providedBy(event):
-                    return 'urban_and_environment'
-                else:
-                    return 'urban_only'
-            else:
-                return 'environment_only'
-        else:
-            return 'urban_only'
 
     def get_editors(self):
         """ """
@@ -65,20 +34,12 @@ class StateRolesMapping(LocalRoleAdapter):
 
     mapping = {
         'in_progress': OrderedDict([
-            ('urban_readers', ('Reader',)),
-            ('technical_editors', ('Reader',)),
-            ('administrative_editors', ('Reader',)),
-            ('technical_editors_environment', ('Reader',)),
-            ('administrative_editors_environment', ('Reader',)),
+            (BaseRolesMapping.get_readers, ('Reader',)),
             (get_editors, ('Editor',)),  # !!! order matters, let editors group be overwritten
         ]),
 
         'closed': OrderedDict([
-            ('urban_readers', ('Reader',)),
-            ('technical_editors', ('Reader',)),
-            ('administrative_editors', ('Reader',)),
-            ('technical_editors_environment', ('Reader',)),
-            ('administrative_editors_environment', ('Reader',)),
+            (BaseRolesMapping.get_readers, ('Reader',)),
             (get_editors, ('Editor',)),  # !!! order matters, let editors group be overwritten
         ]),
     }
