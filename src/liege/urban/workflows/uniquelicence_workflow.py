@@ -13,6 +13,7 @@ class StateRolesMapping(LiegeBase):
             'technical_editors_environment': ('Editor', 'EnvironmentEditor'),
             'technical_validators_environment': ('Contributor', 'EnvironmentEditor'),
             'urban_readers': ('Reader',),
+            'environment_readers': ('Reader',),
         },
 
         'validating_address': {
@@ -24,6 +25,7 @@ class StateRolesMapping(LiegeBase):
             'technical_validators': ('Contributor', 'UrbanEditor'),
             'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
+            'environment_readers': ('Reader',),
         },
 
         'waiting_address': {
@@ -35,6 +37,7 @@ class StateRolesMapping(LiegeBase):
             'technical_validators': ('Contributor', 'UrbanEditor'),
             'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
+            'environment_readers': ('Reader',),
         },
 
         'internal_preliminary_advice': {
@@ -46,6 +49,7 @@ class StateRolesMapping(LiegeBase):
             'Voirie_validators': ('Reader',),
             LiegeBase.get_opinion_editors: ('ExternalReader',),
             'urban_readers': ('Reader',),
+            'environment_readers': ('Reader',),
         },
 
         'internal_advice_done': {
@@ -61,6 +65,7 @@ class StateRolesMapping(LiegeBase):
             'Voirie_validators': ('Reader',),
             LiegeBase.get_opinion_editors: ('ExternalReader',),
             'urban_readers': ('Reader',),
+            'environment_readers': ('Reader',),
         },
 
         'incomplete': {
@@ -76,6 +81,7 @@ class StateRolesMapping(LiegeBase):
             'Voirie_validators': ('Reader',),
             LiegeBase.get_opinion_editors: ('ExternalReader',),
             'urban_readers': ('Reader',),
+            'environment_readers': ('Reader',),
         },
 
         'complete': {
@@ -91,6 +97,7 @@ class StateRolesMapping(LiegeBase):
             'Voirie_validators': ('RoadEditor',),
             LiegeBase.get_opinion_editors: ('ExternalReader',),
             'urban_readers': ('Reader',),
+            'environment_readers': ('Reader',),
         },
 
         'authorized': {
@@ -102,6 +109,7 @@ class StateRolesMapping(LiegeBase):
             'Voirie_validators': ('Reader',),
             LiegeBase.get_opinion_editors: ('ExternalReader',),
             'urban_readers': ('Reader',),
+            'environment_readers': ('Reader',),
         },
 
         'refused': {
@@ -113,6 +121,7 @@ class StateRolesMapping(LiegeBase):
             'Voirie_validators': ('Reader',),
             LiegeBase.get_opinion_editors: ('ExternalReader',),
             'urban_readers': ('Reader',),
+            'environment_readers': ('Reader',),
         },
 
         'inacceptable': {
@@ -128,6 +137,7 @@ class StateRolesMapping(LiegeBase):
             'Voirie_validators': ('Reader',),
             LiegeBase.get_opinion_editors: ('ExternalReader',),
             'urban_readers': ('Reader',),
+            'environment_readers': ('Reader',),
         },
 
         'suspension': {
@@ -143,6 +153,7 @@ class StateRolesMapping(LiegeBase):
             'Voirie_validators': ('Reader',),
             LiegeBase.get_opinion_editors: ('ExternalReader',),
             'urban_readers': ('Reader',),
+            'environment_readers': ('Reader',),
         },
 
         'abandoned': {
@@ -154,5 +165,6 @@ class StateRolesMapping(LiegeBase):
             'Voirie_validators': ('Reader',),
             LiegeBase.get_opinion_editors: ('ExternalReader',),
             'urban_readers': ('Reader',),
+            'environment_readers': ('Reader',),
         },
     }
