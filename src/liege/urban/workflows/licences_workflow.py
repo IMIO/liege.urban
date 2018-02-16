@@ -7,10 +7,10 @@ from imio.schedule.content.task import IAutomatedTask
 
 from plone import api
 
-from Products.urban.workflows.adapter import LocalRoleAdapter
+from Products.urban.workflows.licence_workflow import StateRolesMapping as BaseRolesMapping
 
 
-class DefaultStateRolesMapping(LocalRoleAdapter):
+class DefaultStateRolesMapping(BaseRolesMapping):
     """ """
 
     def get_opinion_editors(self):
@@ -41,11 +41,8 @@ class DefaultStateRolesMapping(LocalRoleAdapter):
 
     mapping = {
         'in_progress': {
-            'urban_readers': ('Reader',),
-            'administrative_editors': ('Editor',),
-            'administrative_validators': ('Editor',),
-            'technical_editors': ('Editor',),
-            'technical_validators': ('Editor',),
+            BaseRolesMapping.get_readers: ('Reader',),
+            BaseRolesMapping.get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor',),
             'Voirie_validators': ('RoadEditor',),
             get_opinion_editors: ('ExternalReader',),
@@ -53,11 +50,8 @@ class DefaultStateRolesMapping(LocalRoleAdapter):
         },
 
         'accepted': {
-            'urban_readers': ('Reader',),
-            'administrative_editors': ('Editor',),
-            'administrative_validators': ('Editor',),
-            'technical_editors': ('Editor',),
-            'technical_validators': ('Editor',),
+            BaseRolesMapping.get_readers: ('Reader',),
+            BaseRolesMapping.get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor',),
             'Voirie_validators': ('RoadEditor',),
             get_opinion_editors: ('ExternalReader',),
@@ -65,11 +59,8 @@ class DefaultStateRolesMapping(LocalRoleAdapter):
         },
 
         'incomplete': {
-            'urban_readers': ('Reader',),
-            'administrative_editors': ('Editor',),
-            'administrative_validators': ('Editor',),
-            'technical_editors': ('Editor',),
-            'technical_validators': ('Editor',),
+            BaseRolesMapping.get_readers: ('Reader',),
+            BaseRolesMapping.get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor',),
             'Voirie_validators': ('RoadEditor',),
             get_opinion_editors: ('ExternalReader',),
@@ -77,11 +68,8 @@ class DefaultStateRolesMapping(LocalRoleAdapter):
         },
 
         'refused': {
-            'urban_readers': ('Reader',),
-            'administrative_editors': ('Editor',),
-            'administrative_validators': ('Editor',),
-            'technical_editors': ('Editor',),
-            'technical_validators': ('Editor',),
+            BaseRolesMapping.get_readers: ('Reader',),
+            BaseRolesMapping.get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor',),
             'Voirie_validators': ('RoadEditor',),
             get_opinion_editors: ('ExternalReader',),
@@ -89,11 +77,8 @@ class DefaultStateRolesMapping(LocalRoleAdapter):
         },
 
         'retired': {
-            'urban_readers': ('Reader',),
-            'administrative_editors': ('Editor',),
-            'administrative_validators': ('Editor',),
-            'technical_editors': ('Editor',),
-            'technical_validators': ('Editor',),
+            BaseRolesMapping.get_readers: ('Reader',),
+            BaseRolesMapping.get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor',),
             'Voirie_validators': ('RoadEditor',),
             get_opinion_editors: ('ExternalReader',),
