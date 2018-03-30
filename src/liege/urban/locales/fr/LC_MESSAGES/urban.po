@@ -77,6 +77,9 @@ msgstr "Revêtement de trottoir existant"
 msgid "urban_label_pmObject"
 msgstr "Objet"
 
+msgid "urban_label_procedureType"
+msgstr "Type de dossier"
+
 msgid "urban_label_rcbDetails"
 msgstr "Détails concernant le RCB"
 

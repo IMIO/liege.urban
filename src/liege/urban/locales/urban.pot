@@ -71,6 +71,9 @@ msgstr ""
 msgid "urban_label_pmObject"
 msgstr ""
 
+msgid "urban_label_procedureType"
+msgstr ""
+
 msgid "urban_label_roadDescription"
 msgstr ""
 

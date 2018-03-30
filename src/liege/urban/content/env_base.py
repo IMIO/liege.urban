@@ -35,6 +35,8 @@ def update_item_schema(baseSchema):
     LicenceSchema.moveField('additionalLegalConditions', after='minimumLegalConditions')
     LicenceSchema.moveField('businessDescription', after='additionalLegalConditions')
     LicenceSchema.moveField('natura_2000', after='sevesoSite')
+    # rename fields
+    LicenceSchema['procedureChoice'].widget.label_msgid = 'urban_label_procedureType'
 
     return LicenceSchema
 
