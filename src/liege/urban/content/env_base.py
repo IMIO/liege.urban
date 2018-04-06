@@ -26,6 +26,8 @@ def update_item_schema(baseSchema):
     LicenceSchema['investigationArticlesText'].widget.visible = {'edit': 'visible', 'view': 'visible'}
     LicenceSchema['derogation'].widget.visible = {'edit': 'invisible', 'view': 'invisible'}
     LicenceSchema['derogationDetails'].widget.visible = {'edit': 'invisible', 'view': 'invisible'}
+    LicenceSchema['divergence'].widget.visible = {'edit': 'invisible', 'view': 'invisible'}
+    LicenceSchema['divergenceDetails'].widget.visible = {'edit': 'invisible', 'view': 'invisible'}
     LicenceSchema['investigationReasons'].widget.visible = {'edit': 'visible', 'view': 'visible'}
     LicenceSchema['demandDisplay'].widget.visible = {'edit': 'visible', 'view': 'visible'}
     LicenceSchema['investigationDetails'].widget.visible = {'edit': 'visible', 'view': 'visible'}
