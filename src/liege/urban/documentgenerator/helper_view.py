@@ -2,8 +2,8 @@
 
 from liege.urban.interfaces import IShore
 
-from Products.CMFCore.utils import getToolByName
 from Products.urban.docgen.helper_view import LicenceDisplayProxyObject
+from Products.urban.interfaces import IEnvironmentBase
 
 from zope.component import queryAdapter
 
@@ -27,6 +27,8 @@ class LiegeLicenceProxyObject(LicenceDisplayProxyObject):
         Append shore abbreviation to the base reference.
         """
         licence = self.context
+        if IEnvironmentBase.providedBy(licence):
+            return licence.reference
         to_shore = queryAdapter(licence, IShore)
         ref = '{} {}'.format(licence.reference, to_shore.display())
         return ref
