@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from Products.urban import UrbanMessage as _
 from Products.urban.EnvClassOne import EnvClassOne
 from Products.urban.EnvClassThree import EnvClassThree
 from Products.urban.EnvClassTwo import EnvClassTwo
@@ -38,7 +39,8 @@ def update_item_schema(baseSchema):
     LicenceSchema.moveField('businessDescription', after='additionalLegalConditions')
     LicenceSchema.moveField('natura_2000', after='sevesoSite')
     # rename fields
-    LicenceSchema['procedureChoice'].widget.label_msgid = 'urban_label_procedureType'
+    LicenceSchema['procedureChoice'].widget.label = _('urban_label_procedureType')
+    LicenceSchema['workLocations'].widget.label = _('urban_label_exploitationAddress')
 
     return LicenceSchema
 

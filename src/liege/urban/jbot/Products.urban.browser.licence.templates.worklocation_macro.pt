@@ -41,7 +41,7 @@
                       member context/@@plone_portal_state/member;
                       addresses context/getParcels">
     <fieldset>
-        <legend i18n:translate="urban_label_situation">Situation</legend>
+        <legend i18n:translate="urban_label_exploitationAddress">Situation</legend>
         <div tal:condition="python: workLocations and not addresses">
             <metal:myfield use-macro="python:here.widget('workLocations', mode='view')" />
             <div class="parcel-action">

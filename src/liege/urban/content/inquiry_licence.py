@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from Products.urban import UrbanMessage as _
 from Products.urban.Article127 import Article127
 from Products.urban.BuildLicence import BuildLicence
 from Products.urban.CODT_Article127 import CODT_Article127
@@ -37,8 +38,8 @@ def update_item_schema(baseSchema):
     LicenceSchema.moveField('investigationDetails', after='roadModificationSubject')
 
     # re translate some fields
-    LicenceSchema['solicitOpinionsTo'].widget.label_msgid = 'urban_label_solicitExternalOpinionsTo'
-    LicenceSchema['solicitOpinionsToOptional'].widget.label_msgid = 'urban_label_solicitInternalOpinionsTo'
+    LicenceSchema['solicitOpinionsTo'].widget.label = _('urban_label_solicitExternalOpinionsTo')
+    LicenceSchema['solicitOpinionsToOptional'].widget.label = _('urban_label_solicitInternalOpinionsTo')
 
     return LicenceSchema
 

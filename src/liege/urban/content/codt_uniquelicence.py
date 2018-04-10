@@ -2,6 +2,7 @@
 
 from Products.Archetypes.atapi import Schema
 
+from Products.urban import UrbanMessage as _
 from Products.urban.CODT_UniqueLicence import CODT_UniqueLicence
 
 # buildlicence and uniquelicence schema should have the same changes
@@ -42,9 +43,9 @@ def update_item_schema(baseSchema):
     LicenceSchema.moveField('annoncedDelayDetails', after='annoncedDelay')
     LicenceSchema.moveField('prorogation', after='annoncedDelayDetails')
     # rename some fields
-    LicenceSchema['reference'].widget.label_msgid = 'urban_label_urbanReference'
-    LicenceSchema['referenceDGATLP'].widget.label_msgid = 'urban_label_referenceFD'
-    LicenceSchema['procedureChoice'].widget.label_msgid = 'urban_label_folderCategory'
+    LicenceSchema['reference'].widget.label = _('urban_label_urbanReference')
+    LicenceSchema['referenceDGATLP'].widget.label = _('urban_label_referenceFD')
+    LicenceSchema['procedureChoice'].widget.label = _('urban_label_folderCategory')
 
     return LicenceSchema
 

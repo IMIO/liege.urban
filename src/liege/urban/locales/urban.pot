@@ -38,6 +38,9 @@ msgstr ""
 msgid "pmObject"
 msgstr ""
 
+msgid "urban_label_exploitationAddress"
+msgstr ""
+
 msgid "urban_label_closeDate"
 msgstr ""
 

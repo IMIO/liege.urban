@@ -4,6 +4,7 @@ from liege.urban.interfaces import IShore
 
 from Products.Archetypes.atapi import Schema
 
+from Products.urban import UrbanMessage as _
 from Products.urban.Article127 import Article127
 from Products.urban.BuildLicence import BuildLicence
 from Products.urban.CODT_Article127 import CODT_Article127
@@ -52,9 +53,9 @@ def update_item_schema(baseSchema):
 
     # move folderCategoryTownship field on description schemata
     LicenceSchema['folderCategoryTownship'].schemata = 'urban_description'
-    LicenceSchema['folderCategoryTownship'].widget.label_msgid = 'urban_label_UsageTownship'
-    LicenceSchema['roadCoating'].widget.label_msgid = 'urban_label_pathCoating'
-    LicenceSchema['futureRoadCoating'].widget.label_msgid = 'urban_label_futurePathCoating'
+    LicenceSchema['folderCategoryTownship'].widget.label = _('urban_label_UsageTownship')
+    LicenceSchema['roadCoating'].widget.label = _('urban_label_pathCoating')
+    LicenceSchema['futureRoadCoating'].widget.label = _('urban_label_futurePathCoating')
     LicenceSchema.moveField('folderCategoryTownship', after='folderCategory')
 
     # move some road fields to location schemata
@@ -85,12 +86,12 @@ def update_item_schema(baseSchema):
     LicenceSchema['floodingLevelDetails'].schemata = 'urban_location'
     LicenceSchema.moveField('floodingLevelDetails', after='floodingLevel')
 
-    LicenceSchema['locationTechnicalRemarks'].widget.label_msgid = 'urban_label_description'
+    LicenceSchema['locationTechnicalRemarks'].widget.label = _('urban_label_description')
     rcu = LicenceSchema.get('RCU', None)
     if rcu:
-        rcu.widget.label_msgid = 'urban_label_RCB'
+        rcu.widget.label = _('urban_label_RCB')
     if rcu_details:
-        rcu_details.widget.label_msgid = 'urban_label_rcbDetails'
+        rcu_details.widget.label = _('urban_label_rcbDetails')
 
     return LicenceSchema
 

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from Products.urban import UrbanMessage as _
 from Products.urban.UrbanEventInquiry import UrbanEventInquiry
 
 
@@ -14,8 +15,8 @@ def update_item_schema(baseSchema):
     EventSchema['claimsDate'].widget.format = '%d/%m/%Y'
 
     # rename fields
-    EventSchema['explanationStartSDate'].widget.label_msgid = 'urban_label_explanationDate'
-    EventSchema['claimsDate'].widget.label_msgid = 'urban_label_closeDate'
+    EventSchema['explanationStartSDate'].widget.label = _('urban_label_explanationDate')
+    EventSchema['claimsDate'].widget.label = _('urban_label_closeDate')
 
     return EventSchema
 

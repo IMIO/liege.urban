@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from Products.urban import UrbanMessage as _
 from Products.urban.BuildLicence import BuildLicence
 
 from liege.urban.licence_fields_permissions import set_field_permissions
@@ -39,7 +40,7 @@ def update_item_schema(baseSchema):
 
     # stats INS no longer mandatory
     LicenceSchema['usage'].required = False
-    LicenceSchema['roadTechnicalAdvice'].widget.label_msgid = 'urban_label_roadDescription'
+    LicenceSchema['roadTechnicalAdvice'].widget.label = _('urban_label_roadDescription')
     LicenceSchema['missingParts'].widget.size = 15
 
     return LicenceSchema
