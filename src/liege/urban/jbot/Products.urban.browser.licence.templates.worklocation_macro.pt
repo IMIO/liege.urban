@@ -72,7 +72,7 @@
         <div tal:condition="python: not workLocations and not addresses" class="discreet clear" i18n:translate="content_none">None</div>
     </fieldset>
 
-    <fieldset>
+    <fieldset tal:condition="python: 'businessOldLocation' in view.getUsedAttributes()">
         <legend i18n:translate="urban_label_businessOldLocation">Old business location</legend>
         <div tal:condition="old_workLocations">
             <metal:myfield use-macro="python:here.widget('businessOldLocation', mode='view')" />
