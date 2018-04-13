@@ -1,16 +1,19 @@
 # -*- coding: utf-8 -*-
 
-from Products.urban import UrbanMessage as _
+from liege.urban import UrbanMessage as _
 from Products.urban.EnvClassOne import EnvClassOne
 from Products.urban.EnvClassThree import EnvClassThree
 from Products.urban.EnvClassTwo import EnvClassTwo
 
 
-def update_item_schema(baseSchema):
+def update_base_schema(baseSchema):
     LicenceSchema = baseSchema.copy()
 
     # hide some fields
     LicenceSchema['folderCategory'].widget.visible = {'edit': 'invisible', 'view': 'invisible'}
+    LicenceSchema['natura2000'].widget.visible = {'edit': 'invisible', 'view': 'invisible'}
+    LicenceSchema['natura2000location'].widget.visible = {'edit': 'invisible', 'view': 'invisible'}
+    LicenceSchema['natura2000Details'].widget.visible = {'edit': 'invisible', 'view': 'invisible'}
 
     # move road fields schemata
     LicenceSchema['businessDescription'].schemata = 'urban_environment'
@@ -41,12 +44,31 @@ def update_item_schema(baseSchema):
     # rename fields
     LicenceSchema['procedureChoice'].widget.label = _('urban_label_procedureType')
     LicenceSchema['workLocations'].widget.label = _('urban_label_exploitationAddress')
+    LicenceSchema['folderCategoryTownship'].widget.label = _('urban_label_ExploitationUsage')
 
     return LicenceSchema
 
-licence_classes = [
+env_base_classes = [
     EnvClassOne, EnvClassThree, EnvClassTwo
 ]
 
-for licence_class in licence_classes:
-    licence_class.schema = update_item_schema(licence_class.schema)
+for licence_class in env_base_classes:
+    licence_class.schema = update_base_schema(licence_class.schema)
+
+
+def update_licences_schema(baseSchema):
+    LicenceSchema = baseSchema.copy()
+
+    # hide some fields
+    LicenceSchema['isSeveso'].widget.visible = {'edit': 'invisible', 'view': 'invisible'}
+    # rename fields
+    LicenceSchema['ftSolicitOpinionsTo'].widget.label = _('urban_label_decisionNotificationTo')
+
+    return LicenceSchema
+
+env_licence_classes = [
+    EnvClassOne, EnvClassTwo
+]
+
+for licence_class in env_licence_classes:
+    licence_class.schema = update_licences_schema(licence_class.schema)

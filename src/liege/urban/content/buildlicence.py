@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from Products.urban import UrbanMessage as _
 from Products.urban.BuildLicence import BuildLicence
 
+from liege.urban import UrbanMessage as _
 from liege.urban.licence_fields_permissions import set_field_permissions
 
 permissions_mapping = {

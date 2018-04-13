@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
+from liege.urban import UrbanMessage as _
 from liege.urban.interfaces import IShore
 
 from Products.Archetypes.atapi import Schema
 
-from Products.urban import UrbanMessage as _
 from Products.urban.Article127 import Article127
 from Products.urban.BuildLicence import BuildLicence
 from Products.urban.CODT_Article127 import CODT_Article127

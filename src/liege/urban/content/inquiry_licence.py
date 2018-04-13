@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from Products.urban import UrbanMessage as _
 from Products.urban.Article127 import Article127
 from Products.urban.BuildLicence import BuildLicence
 from Products.urban.CODT_Article127 import CODT_Article127
@@ -18,6 +17,8 @@ from Products.urban.ParcelOutLicence import ParcelOutLicence
 from Products.urban.PatrimonyCertificate import PatrimonyCertificate
 from Products.urban.UniqueLicence import UniqueLicence
 from Products.urban.UrbanCertificateTwo import UrbanCertificateTwo
+
+from liege.urban import UrbanMessage as _
 
 
 def update_item_schema(baseSchema):

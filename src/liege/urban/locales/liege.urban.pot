@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-04-09 12:57+0000\n"
+"POT-Creation-Date: 2018-04-13 10:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,4 +59,76 @@ msgstr ""
 #: ../configure.zcml:44
 #: ../schedule/vocabulary.py:99
 msgid "liege.urban"
+msgstr ""
+
+#: ../content/env_base.py:47
+msgid "urban_label_ExploitationUsage"
+msgstr ""
+
+#: ../content/genericlicence.py:92
+msgid "urban_label_RCB"
+msgstr ""
+
+#: ../content/genericlicence.py:56
+msgid "urban_label_UsageTownship"
+msgstr ""
+
+#: ../content/inquiry_event.py:20
+msgid "urban_label_closeDate"
+msgstr ""
+
+#: ../content/env_base.py:65
+msgid "urban_label_decisionNotificationTo"
+msgstr ""
+
+#: ../content/genericlicence.py:89
+msgid "urban_label_description"
+msgstr ""
+
+#: ../content/inquiry_event.py:19
+msgid "urban_label_explanationDate"
+msgstr ""
+
+#: ../content/env_base.py:46
+msgid "urban_label_exploitationAddress"
+msgstr ""
+
+#: ../content/codt_uniquelicence.py:48
+msgid "urban_label_folderCategory"
+msgstr ""
+
+#: ../content/genericlicence.py:58
+msgid "urban_label_futurePathCoating"
+msgstr ""
+
+#: ../content/genericlicence.py:57
+msgid "urban_label_pathCoating"
+msgstr ""
+
+#: ../content/env_base.py:45
+msgid "urban_label_procedureType"
+msgstr ""
+
+#: ../content/genericlicence.py:94
+msgid "urban_label_rcbDetails"
+msgstr ""
+
+#: ../content/codt_uniquelicence.py:47
+msgid "urban_label_referenceFD"
+msgstr ""
+
+#: ../content/buildlicence.py:43
+msgid "urban_label_roadDescription"
+msgstr ""
+
+#: ../content/inquiry_licence.py:42
+msgid "urban_label_solicitExternalOpinionsTo"
+msgstr ""
+
+#: ../content/inquiry_licence.py:43
+msgid "urban_label_solicitInternalOpinionsTo"
+msgstr ""
+
+#: ../content/codt_uniquelicence.py:46
+msgid "urban_label_urbanReference"
 msgstr ""

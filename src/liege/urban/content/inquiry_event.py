@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from Products.urban import UrbanMessage as _
 from Products.urban.UrbanEventInquiry import UrbanEventInquiry
+
+from liege.urban import UrbanMessage as _
 
 
 def update_item_schema(baseSchema):

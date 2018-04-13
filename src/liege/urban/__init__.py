@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from zope.i18nmessageid import MessageFactory
+UrbanMessage = MessageFactory('liege.urban')
 
 import liege.urban.content.genericlicence
 import liege.urban.content.inquiry_licence
@@ -23,8 +24,6 @@ import liege.urban.content.inquiry_event
 import liege.urban.content.portion_out
 import liege.urban.content.urbanevent
 import liege.urban.content.urbanevent_opinionrequest
-
-_ = MessageFactory('liege.urban')
 
 
 # hide assigned_user and assigned_group fields from task

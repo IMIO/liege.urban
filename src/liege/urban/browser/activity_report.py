@@ -12,7 +12,7 @@ from z3c.form.browser.checkbox import CheckBoxFieldWidget
 from zope import schema
 from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile
 from zope.interface import Interface
-from liege.urban import _
+from liege.urban import UrbanMessage as _
 
 import json
 import re

@@ -2,9 +2,9 @@
 
 from Products.Archetypes.atapi import Schema
 
-from Products.urban import UrbanMessage as _
 from Products.urban.CODT_UniqueLicence import CODT_UniqueLicence
 
+from liege.urban import UrbanMessage as _
 # buildlicence and uniquelicence schema should have the same changes
 from liege.urban.content.buildlicence import update_item_schema as base_update_item_schema
 from liege.urban.licence_fields_permissions import set_field_permissions

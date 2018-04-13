@@ -15,7 +15,7 @@ msgstr ""
 "Domain: DOMAIN\n"
 
 msgid "IInternalOpinionRequestEvent type marker interface"
-msgstr "Demande d'avis interne"
+msgstr ""
 
 msgid "device"
 msgstr "dispositif"
@@ -35,21 +35,6 @@ msgstr "motivation"
 msgid "pmObject"
 msgstr "Objet"
 
-msgid "urban_label_RCB"
-msgstr "Réglement communal sur les Bâtisses"
-
-msgid "urban_label_Shore"
-msgstr "Rive"
-
-msgid "urban_label_UsageTownship"
-msgstr "Nature des travaux (codes Ville)"
-
-msgid "urban_label_closeDate"
-msgstr "Date de séance de clôture"
-
-msgid "urban_label_composition"
-msgstr "Composition"
-
 msgid "urban_label_device"
 msgstr "Dispositif"
 
@@ -59,44 +44,11 @@ msgstr "Suite du dispositif"
 msgid "urban_label_deviceEnd"
 msgstr "Fin du dispositif"
 
-msgid "urban_label_explanationDate"
-msgstr "Date de soirée de consultation"
-
-msgid "urban_label_exploitationAddress"
-msgstr "Adresse de l'exploitation"
-
-msgid "urban_label_futurePathCoating"
-msgstr "Revêtement de trottoir futur"
-
 msgid "urban_label_manual_addresses"
 msgstr "Addresse(s) à l'encodage du dossier"
 
 msgid "urban_label_motivation"
 msgstr "Motivation"
 
-msgid "urban_label_pathCoating"
-msgstr "Revêtement de trottoir existant"
-
 msgid "urban_label_pmObject"
 msgstr "Objet"
-
-msgid "urban_label_procedureType"
-msgstr "Type de dossier"
-
-msgid "urban_label_rcbDetails"
-msgstr "Détails concernant le RCB"
-
-msgid "urban_label_referenceFD"
-msgstr "Référence FD"
-
-msgid "urban_label_roadDescription"
-msgstr "Observations/commentaires"
-
-msgid "urban_label_solicitExternalOpinionsTo"
-msgstr "Avis externe(s) sollicité(s)"
-
-msgid "urban_label_solicitInternalOpinionsTo"
-msgstr "Avis interne(s) sollicité(s)"
-
-msgid "urban_label_urbanReference"
-msgstr "Référence urbanisme"
