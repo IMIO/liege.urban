@@ -3,6 +3,8 @@
 from Products.urban.services.base import SQLService
 from Products.urban.services.base import SQLSession
 
+from sqlalchemy.sql.expression import func
+
 IGNORE = []
 
 
@@ -48,7 +50,9 @@ class LiegeAddressSession(SQLSession):
 
         # search on street if name if only if there's no INS code
         if INS_code is IGNORE:
-            query = street_name is IGNORE and query or query.filter(table.adresse.ilike(u'%{}%'.format(street_name)))
+            query = street_name is IGNORE and query or query.filter(
+                func.replace(table.adresse, ' ', '').ilike(u'%{}%'.format(street_name.replace(' ', '')))
+            )
 
         query = street_number is IGNORE and query or query.filter(table.num_police == int(street_number))
 
