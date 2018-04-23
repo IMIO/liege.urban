@@ -431,4 +431,4 @@ class PreliminaryAdviceSent(PreliminaryAdviceCondition):
     def evaluate(self):
         if not self.preliminary_advice_event:
             return False
-        return api.content.get_state(self.preliminary_advice_event) == 'preliminary_advice_event'
+        return api.content.get_state(self.preliminary_advice_event) == 'preliminary_advice_sent'
