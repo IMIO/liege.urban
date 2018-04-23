@@ -42,3 +42,14 @@ class PreliminaryAdviceWritten(PreliminaryAdviceCondition):
         if not self.preliminary_advice_event:
             return False
         return api.content.get_state(self.preliminary_advice_event) == 'technical_validation'
+
+
+class PreliminaryAdviceTechnicalValidationDone(PreliminaryAdviceCondition):
+    """
+    Preliminary advice event is proposed to executive validation
+    """
+
+    def evaluate(self):
+        if not self.preliminary_advice_event:
+            return False
+        return api.content.get_state(self.preliminary_advice_event) == 'executive_validation'
