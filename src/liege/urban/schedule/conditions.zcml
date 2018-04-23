@@ -350,6 +350,14 @@
 
     <adapter
         for="Products.urban.interfaces.ICODT_UniqueLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".conditions.PreliminaryAdviceEventCreated"
+        name="liege.urban.schedule.preliminary_advice_event_created"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_UniqueLicence
              imio.schedule.content.task_config.ITaskConfig"
         provides="imio.schedule.interfaces.ICreationCondition"
         factory=".creation_conditions.PreliminaryAdviceEventCreated"
