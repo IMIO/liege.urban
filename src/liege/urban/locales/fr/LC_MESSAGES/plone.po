@@ -63,7 +63,7 @@ msgid "close_favorable"
 msgstr "Avis favorable"
 
 msgid "college"
-msgstr "Passage au collège"
+msgstr "Passage en séance e-délib"
 
 msgid "complete"
 msgstr "Complet"
