@@ -41,6 +41,8 @@ class StateRolesMapping(LiegeBase):
         },
 
         'internal_preliminary_advice': {
+            'administrative_editors_environment': ('Editor', 'EnvironmentEditor'),
+            'administrative_validators_environment': ('Contributor', 'EnvironmentEditor'),
             'technical_editors_environment': ('Editor', 'EnvironmentEditor'),
             'technical_validators_environment': ('Contributor', 'EnvironmentEditor'),
             'technical_editors': ('Editor', 'UrbanEditor'),
