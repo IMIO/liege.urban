@@ -350,6 +350,14 @@
 
     <adapter
         for="Products.urban.interfaces.ICODT_UniqueLicence
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".creation_conditions.PreliminaryAdviceEventCreated"
+        name="liege.urban.schedule.preliminary_advice_event_created"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_UniqueLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.PreliminaryAdviceWritten"
@@ -360,7 +368,7 @@
         for="Products.urban.interfaces.ICODT_UniqueLicence
              imio.schedule.content.task_config.ITaskConfig"
         provides="imio.schedule.interfaces.ICreationCondition"
-        factory=".conditions.PreliminaryAdviceWritten"
+        factory=".creation_conditions.PreliminaryAdviceWritten"
         name="liege.urban.schedule.preliminary_advice_written"
     />
 
@@ -376,7 +384,7 @@
         for="Products.urban.interfaces.ICODT_UniqueLicence
              imio.schedule.content.task_config.ITaskConfig"
         provides="imio.schedule.interfaces.ICreationCondition"
-        factory=".conditions.PreliminaryAdviceTechnicalValidationDone"
+        factory=".creation_conditions.PreliminaryAdviceTechnicalValidationDone"
         name="liege.urban.schedule.preliminary_advice_technical_validation_done"
     />
 
