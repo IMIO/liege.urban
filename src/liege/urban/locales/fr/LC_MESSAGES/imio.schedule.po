@@ -55,3 +55,15 @@ msgstr "Ajouter au moins une parcelle"
 
 msgid "liege.urban.schedule.parcels_validated"
 msgstr "Passer toutes les parcelles du dossiers à l'état 'validé'"
+
+msgid "liege.urban.schedule.preliminary_advice_event_created"
+msgstr "Avis préliminaire en brouillon"
+
+msgid "liege.urban.schedule.preliminary_advice_sent"
+msgstr "Avis préliminaire validé (direction)"
+
+msgid "liege.urban.schedule.preliminary_advice_technical_validation_done"
+msgstr "Avis préliminaire validé (technique)"
+
+msgid "liege.urban.schedule.preliminary_advice_written"
+msgstr "Avis préliminaire proposé à validation technique"

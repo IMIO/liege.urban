@@ -56,3 +56,15 @@ msgstr ""
 msgid "liege.urban.schedule.parcels_added"
 msgstr ""
 
+msgid "liege.urban.schedule.preliminary_advice_event_created"
+msgstr ""
+
+msgid "liege.urban.schedule.preliminary_advice_sent"
+msgstr ""
+
+msgid "liege.urban.schedule.preliminary_advice_technical_validation_done"
+msgstr ""
+
+msgid "liege.urban.schedule.preliminary_advice_written"
+msgstr ""
+

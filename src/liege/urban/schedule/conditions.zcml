@@ -346,6 +346,8 @@
         name="liege.urban.schedule.licence_ended"
     />
 
+    <!-- Preliminary advice conditions -->
+
     <adapter
         for="Products.urban.interfaces.ICODT_UniqueLicence
              imio.schedule.content.task.IAutomatedTask"
@@ -356,8 +358,8 @@
 
     <adapter
         for="Products.urban.interfaces.ICODT_UniqueLicence
-             imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IStartCondition"
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
         factory=".conditions.PreliminaryAdviceWritten"
         name="liege.urban.schedule.preliminary_advice_written"
     />
@@ -372,8 +374,8 @@
 
     <adapter
         for="Products.urban.interfaces.ICODT_UniqueLicence
-             imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IStartCondition"
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
         factory=".conditions.PreliminaryAdviceTechnicalValidationDone"
         name="liege.urban.schedule.preliminary_advice_technical_validation_done"
     />
