@@ -390,6 +390,17 @@ class PreliminaryAdviceCondition(Condition):
         self.preliminary_advice_event = licence.getLastInternalPreliminaryAdvice()
 
 
+class PreliminaryAdviceEventCreated(PreliminaryAdviceCondition):
+    """
+    Preliminary advice event is created and proposed to technical validation
+    """
+
+    def evaluate(self):
+        if not self.preliminary_advice_event:
+            return False
+        return api.content.get_state(self.preliminary_advice_event) == 'in_progress'
+
+
 class PreliminaryAdviceWritten(PreliminaryAdviceCondition):
     """
     Preliminary advice event is created and proposed to technical validation
