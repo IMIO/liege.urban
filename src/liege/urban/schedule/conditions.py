@@ -380,3 +380,44 @@ class LicenceEndedCondition(Condition):
         licence = self.task_container
         is_ended = api.content.get_state(licence) in LICENCE_FINAL_STATES
         return is_ended
+
+
+class PreliminaryAdviceCondition(Condition):
+    """
+    """
+    def __init__(self, licence, task):
+        super(PreliminaryAdviceCondition, self).__init__(licence, task)
+        self.preliminary_advice_event = licence.getLastInternalPreliminaryAdvice()
+
+
+class PreliminaryAdviceWritten(PreliminaryAdviceCondition):
+    """
+    Preliminary advice event is created and proposed to technical validation
+    """
+
+    def evaluate(self):
+        if not self.preliminary_advice_event:
+            return False
+        return api.content.get_state(self.preliminary_advice_event) == 'technical_validation'
+
+
+class PreliminaryAdviceTechnicalValidationDone(PreliminaryAdviceCondition):
+    """
+    Preliminary advice event is proposed to executive validation
+    """
+
+    def evaluate(self):
+        if not self.preliminary_advice_event:
+            return False
+        return api.content.get_state(self.preliminary_advice_event) == 'executive_validation'
+
+
+class PreliminaryAdviceSent(PreliminaryAdviceCondition):
+    """
+    Preliminary advice event is sent
+    """
+
+    def evaluate(self):
+        if not self.preliminary_advice_event:
+            return False
+        return api.content.get_state(self.preliminary_advice_event) == 'preliminary_advice_event'
