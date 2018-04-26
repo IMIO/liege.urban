@@ -8,17 +8,20 @@ class StateRolesMapping(LiegeBase):
 
     mapping = {
         'deposit': {
+            LiegeBase.get_opinion_editors: ('ExternalReader',),
             'administrative_editors': ('Editor',),
             'administrative_validators': ('Contributor',),
             'urban_readers': ('Reader',),
         },
 
         'validating_address': {
+            LiegeBase.get_opinion_editors: ('ExternalReader',),
             'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 
         'waiting_address': {
+            LiegeBase.get_opinion_editors: ('ExternalReader',),
             'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
