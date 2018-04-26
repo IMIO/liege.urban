@@ -22,12 +22,13 @@ class StateRolesMapping(LocalRoleAdapter):
         },
 
         'executive_validation': {
-            'technical_validators': ('Editor', 'Contributor'),
+            'administrative_validators': ('Editor', 'Contributor'),
             'urban_readers': ('Reader',),
             'environment_readers': ('Reader',),
         },
 
         'preliminary_advice_sent': {
+            'administrative_validators': ('Editor', 'Contributor'),
             'technical_validators': ('Editor', 'Contributor'),
             'urban_readers': ('Reader',),
             'environment_readers': ('Reader',),
