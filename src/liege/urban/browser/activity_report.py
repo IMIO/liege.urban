@@ -152,16 +152,15 @@ class LicencesExtractForm(form.Form):
 
     def extract_foldercategory_township(self, licence, cfg):
         if licence.getFolderCategoryTownship():
-            vocterms = [cfg.townshipfoldercategories.get(val) for val in licence.getFolderCategoryTownship()]
+            term = cfg.townshipfoldercategories.get(licence.getFolderCategoryTownship())
             worktypes = []
-            for term in vocterms:
-                if term:
-                    match = re.match('(.*)\((.*)\)', term.Title())
-                    if match:
-                        code, label = match.groups()
-                        worktypes.append({'code': code, 'label': label})
-                    else:
-                        worktypes.append({'code': '', 'label': term.Title()})
+            if term:
+                match = re.match('(.*)\((.*)\)', term.Title())
+                if match:
+                    code, label = match.groups()
+                    worktypes.append({'code': code, 'label': label})
+                else:
+                    worktypes.append({'code': '', 'label': term.Title()})
             return worktypes
         else:
             return []
@@ -189,17 +188,20 @@ class LicencesExtractForm(form.Form):
         }
         return fm_dict
 
-    def extract_applicants(self, applicant):
+    def extract_applicants(self, applicant_obj):
         applicant = {
-            'firstname': applicant.getName2(),
-            'lastname': applicant.getName1(),
-            'street': applicant.getStreet(),
-            'number': applicant.getNumber(),
-            'zipe_code': applicant.getZipcode(),
-            'city': applicant.getCity(),
-            'country': applicant.getCountry(),
-            'phone': applicant.getPhone(),
+            'firstname': applicant_obj.getName2(),
+            'lastname': applicant_obj.getName1(),
+            'street': applicant_obj.getStreet(),
+            'number': applicant_obj.getNumber(),
+            'zipe_code': applicant_obj.getZipcode(),
+            'city': applicant_obj.getCity(),
+            'country': applicant_obj.getCountry(),
+            'phone': applicant_obj.getPhone(),
         }
+        if not applicant['firstname'] and not applicant['lastname']:
+            if hasattr(applicant_obj, 'denomination'):
+                applicant['lastname'] = applicant_obj.getDenomination()
         return applicant
 
     def extract_deposit_dates(self, licence):
