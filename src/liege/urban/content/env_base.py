@@ -45,7 +45,6 @@ def update_base_schema(baseSchema):
     LicenceSchema['procedureChoice'].widget.label = _('urban_label_procedureType')
     LicenceSchema['workLocations'].widget.label = _('urban_label_exploitationAddress')
     LicenceSchema['folderCategoryTownship'].widget.label = _('urban_label_ExploitationUsage')
-    LicenceSchema['commentsOnSPWOpinion'].widget.label = _('urban_label_CommentsOnDecisionProject')
 
     return LicenceSchema
 
@@ -64,6 +63,7 @@ def update_licences_schema(baseSchema):
     LicenceSchema['isSeveso'].widget.visible = {'edit': 'invisible', 'view': 'invisible'}
     # rename fields
     LicenceSchema['ftSolicitOpinionsTo'].widget.label = _('urban_label_decisionNotificationTo')
+    LicenceSchema['commentsOnSPWOpinion'].widget.label = _('urban_label_CommentsOnDecisionProject')
 
     return LicenceSchema
 
