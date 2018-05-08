@@ -202,6 +202,8 @@ class LicencesExtractForm(form.Form):
         if not applicant['firstname'] and not applicant['lastname']:
             if hasattr(applicant_obj, 'denomination'):
                 applicant['lastname'] = applicant_obj.getDenomination()
+            if hasattr(applicant_obj, 'legalForm'):
+                applicant['firstname'] = applicant_obj.getLegalForm()
         return applicant
 
     def extract_deposit_dates(self, licence):
