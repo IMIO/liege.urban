@@ -17,41 +17,11 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: urban\n"
 
-msgid "device"
-msgstr ""
-
-msgid "deviceContinuation"
-msgstr ""
-
-msgid "deviceEnd"
-msgstr ""
-
 msgid "IInternalOpinionRequestEvent type marker interface"
 msgstr ""
 
 msgid "label_colname_shore"
 msgstr ""
 
-msgid "motivation"
-msgstr ""
-
-msgid "pmObject"
-msgstr ""
-
-msgid "urban_label_device"
-msgstr ""
-
-msgid "urban_label_deviceContinuation"
-msgstr ""
-
-msgid "urban_label_deviceEnd"
-msgstr ""
-
 msgid "urban_label_manual_addresses"
 msgstr
-
-msgid "urban_label_motivation"
-msgstr ""
-
-msgid "urban_label_pmObject"
-msgstr ""

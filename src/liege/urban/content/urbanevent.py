@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from liege.urban import UrbanMessage as _
+
 from Products.Archetypes.atapi import Schema
 from Products.Archetypes.atapi import RichWidget
 from Products.Archetypes.atapi import TextField
@@ -16,9 +18,7 @@ specific_schema = Schema((
         name='pmObject',
         allowable_content_types=('text/html',),
         widget=RichWidget(
-            label='Pmobject',
-            label_msgid='urban_label_pmObject',
-            i18n_domain='urban',
+            label=_('urban_label_pmObject', default='Pmobject'),
         ),
         default_method='getDefaultText',
         default_content_type='text/html',
@@ -30,9 +30,7 @@ specific_schema = Schema((
         name='motivation',
         allowable_content_types=('text/html',),
         widget=RichWidget(
-            label='Motivation',
-            label_msgid='urban_label_motivation',
-            i18n_domain='urban',
+            label=_('urban_label_motivation', default='Motivation'),
         ),
         default_method='getDefaultText',
         default_content_type='text/html',
@@ -44,9 +42,7 @@ specific_schema = Schema((
         name='device',
         allowable_content_types=('text/html',),
         widget=RichWidget(
-            label='Device',
-            label_msgid='urban_label_device',
-            i18n_domain='urban',
+            label=_('urban_label_device', default='Device'),
         ),
         default_method='getDefaultText',
         default_content_type='text/html',
@@ -58,9 +54,7 @@ specific_schema = Schema((
         name='deviceContinuation',
         allowable_content_types=('text/html',),
         widget=RichWidget(
-            label='DeviceContinuation',
-            label_msgid='urban_label_deviceContinuation',
-            i18n_domain='urban',
+            label=_('urban_label_deviceContinuation', default='DeviceContinuation'),
         ),
         default_method='getDefaultText',
         default_content_type='text/html',
@@ -72,9 +66,7 @@ specific_schema = Schema((
         name='deviceEnd',
         allowable_content_types=('text/html',),
         widget=RichWidget(
-            label='DeviceEnd',
-            label_msgid='urban_label_deviceEnd',
-            i18n_domain='urban',
+            label=_('urban_label_deviceEnd', default='DeviceEnd'),
         ),
         default_method='getDefaultText',
         default_content_type='text/html',

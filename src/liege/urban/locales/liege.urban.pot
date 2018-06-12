@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-05-07 09:36+0000\n"
+"POT-Creation-Date: 2018-06-12 08:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,7 +61,8 @@ msgstr ""
 msgid "liege.urban"
 msgstr ""
 
-#: ../content/env_base.py:48
+#: ../content/codt_uniquelicence.py:49
+#: ../content/env_base.py:66
 msgid "urban_label_CommentsOnDecisionProject"
 msgstr ""
 
@@ -81,12 +82,27 @@ msgstr ""
 msgid "urban_label_closeDate"
 msgstr ""
 
-#: ../content/env_base.py:66
+#: ../content/env_base.py:65
 msgid "urban_label_decisionNotificationTo"
 msgstr ""
 
 #: ../content/genericlicence.py:89
 msgid "urban_label_description"
+msgstr ""
+
+#. Default: "Device"
+#: ../content/urbanevent.py:45
+msgid "urban_label_device"
+msgstr ""
+
+#. Default: "DeviceContinuation"
+#: ../content/urbanevent.py:57
+msgid "urban_label_deviceContinuation"
+msgstr ""
+
+#. Default: "DeviceEnd"
+#: ../content/urbanevent.py:69
+msgid "urban_label_deviceEnd"
 msgstr ""
 
 #: ../content/inquiry_event.py:19
@@ -105,8 +121,18 @@ msgstr ""
 msgid "urban_label_futurePathCoating"
 msgstr ""
 
+#. Default: "Motivation"
+#: ../content/urbanevent.py:33
+msgid "urban_label_motivation"
+msgstr ""
+
 #: ../content/genericlicence.py:57
 msgid "urban_label_pathCoating"
+msgstr ""
+
+#. Default: "Pmobject"
+#: ../content/urbanevent.py:21
+msgid "urban_label_pmObject"
 msgstr ""
 
 #: ../content/env_base.py:45
