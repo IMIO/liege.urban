@@ -1,0 +1,4 @@
+*.py?
+*.mo
+*.egg-info
+*.swo
