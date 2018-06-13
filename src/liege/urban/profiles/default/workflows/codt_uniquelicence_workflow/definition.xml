@@ -45,6 +45,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Add portal content" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -63,6 +66,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -81,6 +87,9 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="liege.urban: Internal Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -191,6 +200,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Add portal content" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -209,6 +221,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>AddressEditor</permission-role>
@@ -228,6 +243,9 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="liege.urban: Internal Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -337,6 +355,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Add portal content" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -355,6 +376,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>AddressEditor</permission-role>
@@ -374,6 +398,9 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="liege.urban: Internal Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -483,6 +510,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Add portal content" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -501,6 +531,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -519,6 +552,9 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="liege.urban: Internal Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -629,6 +665,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Add portal content" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -647,6 +686,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>AddressEditor</permission-role>
@@ -666,6 +708,9 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="liege.urban: Internal Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -776,6 +821,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Add portal content" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -794,6 +842,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>AddressEditor</permission-role>
@@ -813,6 +864,9 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="liege.urban: Internal Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -923,6 +977,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Add portal content" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -941,6 +998,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>AddressEditor</permission-role>
@@ -960,6 +1020,9 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="liege.urban: Internal Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1067,12 +1130,16 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Add portal content" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+
   </permission-map>
   <permission-map name="Delete objects" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1085,6 +1152,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>AddressEditor</permission-role>
@@ -1104,6 +1174,9 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="liege.urban: Internal Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1211,6 +1284,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Add portal content" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1229,6 +1305,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>AddressEditor</permission-role>
@@ -1248,6 +1327,9 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="liege.urban: Internal Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1355,6 +1437,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Add portal content" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1373,6 +1458,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>AddressEditor</permission-role>
@@ -1392,6 +1480,9 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="liege.urban: Internal Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1499,6 +1590,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Add portal content" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1517,6 +1611,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>AddressEditor</permission-role>
@@ -1536,6 +1633,9 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="liege.urban: Internal Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1643,6 +1743,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Add portal content" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1661,6 +1764,9 @@
    <permission-role>ExternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>AddressEditor</permission-role>
@@ -1680,6 +1786,9 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+
   </permission-map>
   <permission-map name="liege.urban: Internal Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1838,7 +1947,7 @@
  <transition transition_id="send_preliminary_advice" title="send_preliminary_advice" new_state="internal_advice_done" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">send_preliminary_advice</action>
   <guard>
-   <guard-permission>liege.urban: Urban Editor</guard-permission>
+   <guard-group>administrative_validators_environment</guard-group>
   </guard>
  </transition>
  <transition transition_id="suspend" title="suspend" new_state="suspension" trigger="USER" before_script="" after_script="">
