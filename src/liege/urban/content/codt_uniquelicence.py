@@ -47,6 +47,7 @@ def update_item_schema(baseSchema):
     LicenceSchema['referenceDGATLP'].widget.label = _('urban_label_referenceFD')
     LicenceSchema['procedureChoice'].widget.label = _('urban_label_folderCategory')
     LicenceSchema['commentsOnSPWOpinion'].widget.label = _('urban_label_CommentsOnDecisionProject')
+    LicenceSchema['ftSolicitOpinionsTo'].widget.label = _('urban_label_decisionNotificationTo')
 
     return LicenceSchema
 
