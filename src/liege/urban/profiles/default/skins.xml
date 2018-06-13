@@ -17,6 +17,8 @@
  <skin-path name="*">
   <layer insert-after="custom"
          name="liege_templates"/>
+  <layer insert-after="custom"
+         name="liege_images"/>
  </skin-path>
 
 </object>
