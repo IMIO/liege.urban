@@ -10,6 +10,10 @@
          meta_type="Filesystem Directory View"
          directory="liege.urban:skins/liege_templates"/>
 
+ <object name="liege_images"
+         meta_type="Filesystem Directory View"
+         directory="liege.urban:skins/liege_images"/>
+
  <skin-path name="*">
   <layer insert-after="custom"
          name="liege_templates"/>
