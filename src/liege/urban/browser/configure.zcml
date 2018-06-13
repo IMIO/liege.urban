@@ -117,22 +117,4 @@
         permission="zope2.View"
   />
 
-  <adapter
-        for="Products.urban.interfaces.IUrbanEvent
-             zope.publisher.interfaces.browser.IBrowserRequest"
-        provides="zope.interface.Interface"
-        factory=".codt_uniquelicence.IsUrbanUser"
-        name="is_urban_user"
-        permission="zope2.View"
-  />
-
-  <adapter
-        for="Products.urban.interfaces.IUrbanEvent
-             zope.publisher.interfaces.browser.IBrowserRequest"
-        provides="zope.interface.Interface"
-        factory=".codt_uniquelicence.IsEnvironmentUser"
-        name="is_environment_user"
-        permission="zope2.View"
-  />
-
 </configure>
