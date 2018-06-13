@@ -37,7 +37,7 @@ def update_item_schema(baseSchema):
     LicenceSchema.moveField('rubricsDetails', after='rubrics')
     LicenceSchema.moveField('minimumLegalConditions', after='rubricsDetails')
     LicenceSchema.moveField('additionalLegalConditions', after='minimumLegalConditions')
-    LicenceSchema.moveField('description', after='impactStudy')
+    LicenceSchema.moveField('description', after='ftSolicitOpinionsTo')
     LicenceSchema.moveField('procedureChoice', after='folderCategory')
     LicenceSchema.moveField('annoncedDelay', after='procedureChoice')
     LicenceSchema.moveField('annoncedDelayDetails', after='annoncedDelay')
