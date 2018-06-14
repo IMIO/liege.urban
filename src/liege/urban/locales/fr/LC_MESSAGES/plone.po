@@ -158,6 +158,9 @@ msgstr "proposer le choix de procédure"
 msgid "propose_report"
 msgstr "proposer le rapport d'analyse"
 
+msgid "propose_technical_report"
+msgstr "proposer le rapport technique"
+
 msgid "proposed"
 msgstr "Projet de décision rédigé"
 
@@ -182,6 +185,9 @@ msgstr "Refaire le choix de procédure"
 msgid "refuse_report"
 msgstr "Refaire le rapport d'analyse"
 
+msgid "refuse_technical_report"
+msgstr "Renvoyer"
+
 msgid "report_written"
 msgstr "Rapport d'analyse écrit"
 
@@ -196,6 +202,9 @@ msgstr "suspendre"
 
 msgid "technical_refuse"
 msgstr "Refuser"
+
+msgid "technical_report_validation"
+msgstr "Validation du rapport technique"
 
 msgid "technical_validate"
 msgstr "Valider"
@@ -226,6 +235,9 @@ msgstr "Valider le rapport d'analyse"
 
 msgid "validate_report_2"
 msgstr "Valider le rapport d'analyse (FD)"
+
+msgid "validate_technical_report"
+msgstr "Valider le rapport technique"
 
 msgid "validate_temporary_address"
 msgstr "valider l'adresse temporaire"

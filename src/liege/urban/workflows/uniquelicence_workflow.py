@@ -105,6 +105,38 @@ class StateRolesMapping(LiegeBase):
             'environment_readers': ('Reader',),
         },
 
+        'technical_report_validation': {
+            'administrative_editors_environment': ('Editor', 'EnvironmentEditor'),
+            'administrative_validators_environment': ('Contributor', 'EnvironmentEditor'),
+            'technical_editors_environment': ('Editor', 'EnvironmentEditor'),
+            'technical_validators_environment': ('Reviewer', 'Contributor', 'EnvironmentEditor'),
+            'administrative_editors': ('Editor', 'UrbanEditor'),
+            'administrative_validators': ('Contributor', 'UrbanEditor'),
+            'technical_editors': ('Editor', 'UrbanEditor'),
+            'technical_validators': ('Contributor', 'UrbanEditor'),
+            'Voirie_editors': ('RoadEditor',),
+            'Voirie_validators': ('RoadEditor',),
+            LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'urban_readers': ('Reader',),
+            'environment_readers': ('Reader',),
+        },
+
+        'college_in_progress': {
+            'administrative_editors_environment': ('Editor', 'EnvironmentEditor'),
+            'administrative_validators_environment': ('Contributor', 'EnvironmentEditor'),
+            'technical_editors_environment': ('Editor', 'EnvironmentEditor'),
+            'technical_validators_environment': ('Contributor', 'EnvironmentEditor'),
+            'administrative_editors': ('Editor', 'UrbanEditor'),
+            'administrative_validators': ('Contributor', 'UrbanEditor'),
+            'technical_editors': ('Editor', 'UrbanEditor'),
+            'technical_validators': ('Contributor', 'UrbanEditor'),
+            'Voirie_editors': ('RoadEditor',),
+            'Voirie_validators': ('RoadEditor',),
+            LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'urban_readers': ('Reader',),
+            'environment_readers': ('Reader',),
+        },
+
         'authorized': {
             'administrative_editors_environment': ('Editor', 'EnvironmentEditor'),
             'administrative_validators_environment': ('Editor', 'EnvironmentEditor'),

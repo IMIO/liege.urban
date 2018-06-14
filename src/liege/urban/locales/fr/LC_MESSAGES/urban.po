@@ -17,38 +17,8 @@ msgstr ""
 msgid "IInternalOpinionRequestEvent type marker interface"
 msgstr ""
 
-msgid "device"
-msgstr "dispositif"
-
-msgid "deviceContinuation"
-msgstr "suite du dispositif"
-
-msgid "deviceEnd"
-msgstr "fin du dispositif"
-
 msgid "label_colname_shore"
 msgstr "Rive"
 
-msgid "motivation"
-msgstr "motivation"
-
-msgid "pmObject"
-msgstr "Objet"
-
-msgid "urban_label_device"
-msgstr "Dispositif"
-
-msgid "urban_label_deviceContinuation"
-msgstr "Suite du dispositif"
-
-msgid "urban_label_deviceEnd"
-msgstr "Fin du dispositif"
-
 msgid "urban_label_manual_addresses"
 msgstr "Addresse(s) à l'encodage du dossier"
-
-msgid "urban_label_motivation"
-msgstr "Motivation"
-
-msgid "urban_label_pmObject"
-msgstr "Objet"

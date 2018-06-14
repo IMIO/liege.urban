@@ -48,6 +48,11 @@ def update_item_schema(baseSchema):
     LicenceSchema['procedureChoice'].widget.label = _('urban_label_folderCategory')
     LicenceSchema['commentsOnSPWOpinion'].widget.label = _('urban_label_CommentsOnDecisionProject')
     LicenceSchema['ftSolicitOpinionsTo'].widget.label = _('urban_label_decisionNotificationTo')
+    # change permissions of some fields
+    LicenceSchema['claimsSynthesis'].read_permission = 'liege.urban: External Reader'
+    LicenceSchema['claimsSynthesis'].write_permission = 'Review portal content'
+    LicenceSchema['environmentTechnicalAdviceAfterInquiry'].read_permission = 'liege.urban: External Reader'
+    LicenceSchema['environmentTechnicalAdviceAfterInquiry'].write_permission = 'Review portal content'
 
     return LicenceSchema
 
@@ -62,7 +67,14 @@ permissions_mapping = {
     'urban_habitation': ('liege.urban: External Reader', 'urban: Add PortionOut'),
 }
 
+# claimsSynthesis and environmentTechnicalAdviceAfterInquiry must have reviewer
+# write permission to be able to freeze them in the workflow
+exceptions = [
+    'portal_type', 'claimsSynthesis', 'environmentTechnicalAdviceAfterInquiry'
+]
+
 CODT_UniqueLicence.schema = set_field_permissions(
     CODT_UniqueLicence.schema,
     permissions_mapping,
+    exceptions,
 )

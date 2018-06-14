@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-06-12 08:53+0000\n"
+"POT-Creation-Date: 2018-06-14 11:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,6 +79,7 @@ msgstr "Nature des travaux (codes Ville)"
 msgid "urban_label_closeDate"
 msgstr "Date de séance de clôture"
 
+#: ../content/codt_uniquelicence.py:50
 #: ../content/env_base.py:65
 msgid "urban_label_decisionNotificationTo"
 msgstr "Notification de la décision à"

@@ -31,3 +31,5 @@ def set_environment_field_permissions(schema, mapping={}, exceptions=['portal_ty
                 field.write_permission = write_permission
 
     return schema
+
+

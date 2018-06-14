@@ -161,6 +161,9 @@ msgstr ""
 msgid "propose_report"
 msgstr ""
 
+msgid "propose_technical_report"
+msgstr ""
+
 msgid "proposed"
 msgstr ""
 
@@ -182,6 +185,9 @@ msgstr ""
 msgid "refuse_report"
 msgstr ""
 
+msgid "refuse_technical_report"
+msgstr ""
+
 msgid "report_written"
 msgstr ""
 
@@ -195,6 +201,9 @@ msgid "suspend"
 msgstr ""
 
 msgid "technical_refuse"
+msgstr ""
+
+msgid "technical_report_validation"
 msgstr ""
 
 msgid "technical_validate"
@@ -228,6 +237,9 @@ msgid "validate_report_1"
 msgstr ""
 
 msgid "validate_report_2"
+msgstr ""
+
+msgid "validate_technical_report"
 msgstr ""
 
 msgid "validate_temporary_address"
