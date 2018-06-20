@@ -40,9 +40,12 @@ def setAllowedTypes(context):
             type_info.allowed_content_types = values + ('UrbanEventAcknowledgment',)
 
     type_info = getattr(portal_types, 'CODT_UniqueLicence')
+    new_values = type_info.allowed_content_types
     if 'UrbanEventAcknowledgment' not in values:
-        type_info.allowed_content_types = values + ('UrbanEventAcknowledgment',)
-        type_info.allowed_content_types = values + ('UrbanEventPreliminaryAdvice',)
+        new_values = new_values + ('UrbanEventAcknowledgment',)
+    if 'UrbanEventPreliminaryAdvice' not in values:
+        new_values = new_values + ('UrbanEventPreliminaryAdvice',)
+    type_info.allowed_content_types = new_values
 
 
 def addLiegeGroups(context):
