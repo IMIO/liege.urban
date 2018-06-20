@@ -2288,7 +2288,7 @@
  <transition transition_id="send_preliminary_advice" title="send_preliminary_advice" new_state="internal_advice_done" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">send_preliminary_advice</action>
   <guard>
-   <guard-group>administrative_validators_environment</guard-group>
+   <guard-group>administrative_validators</guard-group>
   </guard>
  </transition>
  <transition transition_id="suspend" title="suspend" new_state="suspension" trigger="USER" before_script="" after_script="">
