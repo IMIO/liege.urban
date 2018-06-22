@@ -107,7 +107,7 @@ msgstr "Incomplet"
 msgid "internal_advice_done"
 msgstr "Avis préalable rendu"
 
-msgid "internal_prelimnary_advice"
+msgid "internal_preliminary_advice"
 msgstr "En cours d'avis préalable"
 
 msgid "invalidate_completion"

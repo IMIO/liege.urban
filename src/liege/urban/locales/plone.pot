@@ -110,7 +110,7 @@ msgstr ""
 msgid "internal_advice_done"
 msgstr ""
 
-msgid "internal_prelimnary_advice"
+msgid "internal_preliminary_advice"
 msgstr ""
 
 msgid "invalidate_completion"
