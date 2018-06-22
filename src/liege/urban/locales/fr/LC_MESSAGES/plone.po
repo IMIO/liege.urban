@@ -105,10 +105,10 @@ msgid "incomplete"
 msgstr "Incomplet"
 
 msgid "internal_advice_done"
-msgstr "Avis préliminaire rendu"
+msgstr "Avis préalable rendu"
 
 msgid "internal_prelimnary_advice"
-msgstr "En cours d'avis préliminaire"
+msgstr "En cours d'avis préalable"
 
 msgid "invalidate_completion"
 msgstr "Revérifier la complétude"
@@ -159,7 +159,7 @@ msgid "propose_report"
 msgstr "proposer le rapport d'analyse"
 
 msgid "propose_technical_report"
-msgstr "proposer le rapport technique"
+msgstr "proposer le rapport technique après enquête"
 
 msgid "proposed"
 msgstr "Projet de décision rédigé"
@@ -195,7 +195,7 @@ msgid "send_opinion"
 msgstr "envoyer l'avis"
 
 msgid "send_preliminary_advice"
-msgstr "Envoyer l'avis préliminaire"
+msgstr "Envoyer l'avis préalable"
 
 msgid "suspend"
 msgstr "suspendre"
