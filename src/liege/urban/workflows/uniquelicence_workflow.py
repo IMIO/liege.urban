@@ -48,6 +48,7 @@ class StateRolesMapping(LiegeBase):
             'administrative_validators_environment': ('Contributor', 'EnvironmentEditor'),
             'technical_editors_environment': ('Editor', 'EnvironmentEditor'),
             'technical_validators_environment': ('Contributor', 'EnvironmentEditor'),
+            'administrative_validators': ('Contributor', 'UrbanEditor'),
             'technical_editors': ('Editor', 'UrbanEditor'),
             'technical_validators': ('Contributor', 'UrbanEditor'),
             'Voirie_editors': ('RoadReader',),
