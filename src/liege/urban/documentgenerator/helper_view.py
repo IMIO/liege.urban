@@ -2,6 +2,8 @@
 
 from liege.urban.interfaces import IShore
 
+from plone import api
+
 from Products.urban.docgen.helper_view import LicenceDisplayProxyObject
 from Products.urban.interfaces import IEnvironmentBase
 
@@ -50,9 +52,12 @@ class LiegeLicenceProxyObject(LicenceDisplayProxyObject):
                 'technical_validators_environment'
             ],
         }
-        for folder_manager in self.getFoldermanagers():
-            if folder_manager.getGrade() == grade:
-               groups = set([g.id for g in api.group.get_groups(username=folder_manager.getPloneUserId())])
-               if groups_mapping.get(group, None) and groups.intersection(groups_mapping.get(group)):
-                   return folder_manager
+        folder_managers = [fm for fm in self.getFoldermanagers() if not grade or fm.getGrade() == grade]
+        for folder_manager in folder_managers:
+            if group:
+                groups = set([g.id for g in api.group.get_groups(username=folder_manager.getPloneUserId())])
+                if groups.intersection(groups_mapping.get(group, set())):
+                    return folder_manager
+            else:
+                return folder_manager
 
