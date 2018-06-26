@@ -36,7 +36,7 @@ def setAllowedTypes(context):
         'Article127',
         'UniqueLicence',
         'IntegratedLicence',
-        'UrbanCertificateTwo'
+        'UrbanCertificateTwo',
         'CODT_BuildLicence',
         'CODT_Article127',
         'CODT_UniqueLicence',
