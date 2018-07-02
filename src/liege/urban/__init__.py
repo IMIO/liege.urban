@@ -36,6 +36,10 @@ mode_values.append((Interface, 'assigned_group', 'hidden'))
 ITask._Element__tagged_values[mode.key] = mode_values
 # END # hide assigned_user and assigned_group fields from task
 
+from Products.urban.schedule.vocabulary import URBAN_TYPES_INTERFACES
+from liege.urban.interfaces import IInternalOpinionRequestEvent
+URBAN_TYPES_INTERFACES[u'Avis de services internes à la ville'] = IInternalOpinionRequestEvent
+
 
 def initialize(context):
     """Initializer called when used as a Zope 2 product."""
