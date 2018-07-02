@@ -61,7 +61,7 @@ class StateRolesMapping(BaseRolesMapping):
         },
 
         'decision_in_progress': {
-            get_editors: ('Reader',),
+            get_editors: ('Editor',),
             get_contributors: ('Contributor',),
             BaseRolesMapping.get_readers: ('Reader',),
         },
