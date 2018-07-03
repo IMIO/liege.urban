@@ -4,6 +4,7 @@ from imio.schedule.content.object_factories import CreationConditionObject
 from imio.schedule.content.object_factories import EndConditionObject
 from imio.schedule.content.object_factories import MacroCreationConditionObject
 from imio.schedule.content.object_factories import MacroEndConditionObject
+from imio.schedule.content.object_factories import MacroStartConditionObject
 from imio.schedule.content.object_factories import StartConditionObject
 
 schedule_config = {
@@ -1413,7 +1414,7 @@ schedule_config = {
             'creation_state': ('college',),
             'starting_states': ('college',),
             'end_conditions': (
-                MacroEndConditionObject('liege.urban.schedule.notification_project_validated'),
+                MacroEndConditionObject('liege.urban.schedule.college_project_validated'),
             ),
             'start_date': 'schedule.start_date.subtask_highest_due_date',
             'additional_delay': 2,
@@ -1427,7 +1428,7 @@ schedule_config = {
                     'creation_state': ('college',),
                     'starting_states': ('college',),
                     'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.college_project_sent'),
+                        EndConditionObject('liege.urban.schedule.project_sent_to_college'),
                     ),
                     'start_date': 'schedule.start_date.task_starting_date',
                     'additional_delay': 2,
@@ -1441,7 +1442,7 @@ schedule_config = {
                     'creation_state': ('college',),
                     'starting_states': ('college',),
                     'start_conditions': (
-                        StartConditionObject('liege.urban.schedule.college_project_sent'),
+                        StartConditionObject('liege.urban.schedule.project_sent_to_college'),
                     ),
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.college_done'),
@@ -1461,7 +1462,7 @@ schedule_config = {
                         StartConditionObject('liege.urban.schedule.college_done'),
                     ),
                     'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.notification_project_written'),
+                        EndConditionObject('liege.urban.schedule.college_project_writen'),
                     ),
                     'start_date': 'schedule.start_date.task_starting_date',
                     'additional_delay': 2,
@@ -1477,11 +1478,11 @@ schedule_config = {
             'creation_state': ('college',),
             'starting_states': ('college',),
             'start_conditions': (
-                StartConditionObject('liege.urban.schedule.notification_project_validated'),
+                MacroStartConditionObject('liege.urban.schedule.college_project_validated'),
             ),
             'ending_states': ('favorable', 'defavorable'),
             'end_conditions': (
-                MacroEndConditionObject('liege.urban.schedule.notification_sent'),
+                MacroEndConditionObject('liege.urban.schedule.decision_notified'),
             ),
             'start_date': 'urban.schedule.start_date.creation_date',
             'additional_delay': 5,
