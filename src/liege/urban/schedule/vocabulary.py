@@ -5,10 +5,30 @@ from collective.eeafaceted.collectionwidget.vocabulary import CollectionVocabula
 from plone import api
 
 from Products.urban.schedule.vocabulary import UsersFromGroupsVocabularyFactory
+from Products.urban.schedule.vocabulary import URBAN_TYPES_INTERFACES
 
 from zope.i18n import translate as _
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
+
+
+class UrbanScheduledTypeVocabulary(ScheduledContentTypeVocabulary):
+     """
+     Adapts a TaskConfig fti to return a specific
+     vocabulary for the 'task_container' field.
+     """
+
+     def content_types(self):
+         """
+         - The key of a voc term is the class of the content type
+         - The display value is the translation of the content type
+         """
+         URBAN_TYPES_INTERFACES['Avis de services internes à la ville'] = IInternalOpinionRequestEvent
+         return URBAN_TYPES_INTERFACES
+
+     def get_message_factory(self):
+         return UrbanMessage
+
 
 
 class SurveyScheduleCollectionVocabulary(CollectionVocabulary):

@@ -202,7 +202,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBaseAllBuildLicence
+        for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task_config.ITaskConfig"
         provides="imio.schedule.interfaces.ICreationCondition"
         factory=".conditions.LicenceStateIsFDOpinion"
@@ -210,7 +210,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBaseAllBuildLicence
+        for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IStartCondition"
         factory=".conditions.CollegeProjectWritten"
@@ -218,7 +218,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBaseAllBuildLicence
+        for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.CollegeProjectWritten"
@@ -226,7 +226,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBaseAllBuildLicence
+        for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IStartCondition"
         factory=".conditions.CollegeProjectValidated"
@@ -234,7 +234,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBaseAllBuildLicence
+        for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.CollegeProjectValidated"
@@ -242,7 +242,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBaseAllBuildLicence
+        for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IStartCondition"
         factory=".conditions.ProjectSentToCollege"
@@ -250,7 +250,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBaseAllBuildLicence
+        for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.ProjectSentToCollege"
@@ -258,7 +258,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBaseAllBuildLicence
+        for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IStartCondition"
         factory=".conditions.CollegeDone"
@@ -266,7 +266,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBaseAllBuildLicence
+        for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.CollegeDone"
@@ -274,7 +274,7 @@
     />
 
     <adapter
-        for="Products.urban.interfaces.IBaseAllBuildLicence
+        for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.CollegeEventClosed"
