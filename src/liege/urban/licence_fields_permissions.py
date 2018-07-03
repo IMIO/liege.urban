@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-def set_field_permissions(schema, mapping={}, exceptions=['portal_type']):
+def set_field_permissions(schema, mapping={}, exceptions=['portal_type', 'id']):
     """
     """
 
@@ -17,7 +17,7 @@ def set_field_permissions(schema, mapping={}, exceptions=['portal_type']):
     return schema
 
 
-def set_environment_field_permissions(schema, mapping={}, exceptions=['portal_type']):
+def set_environment_field_permissions(schema, mapping={}, exceptions=['portal_type', 'id']):
     """
     """
 
