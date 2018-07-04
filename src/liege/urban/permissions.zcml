@@ -52,4 +52,9 @@
     title="liege.urban: Validate"
     />
 
+  <permission
+    id="liege.urban.envtecheditor"
+    title="liege.urban: Environment Technical Editor"
+    />
+
 </configure>

@@ -16,6 +16,7 @@
  <permission>liege.urban: Urban Reader</permission>
  <permission>liege.urban: Environment Editor</permission>
  <permission>liege.urban: Environment Reader</permission>
+ <permission>liege.urban: Environment Validator</permission>
  <permission>liege.urban: Road Editor</permission>
  <permission>liege.urban: Road Reader</permission>
  <permission>liege.urban: Validate</permission>
@@ -76,6 +77,11 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
+   <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Environment Validator" acquired="False">
    <permission-role>EnvironmentEditor</permission-role>
    <permission-role>Reviewer</permission-role>
    <permission-role>Manager</permission-role>
@@ -240,6 +246,11 @@
    <permission-role>Reviewer</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="liege.urban: Environment Validator" acquired="False">
+   <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="View" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -395,6 +406,11 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
+   <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Environment Validator" acquired="False">
    <permission-role>EnvironmentEditor</permission-role>
    <permission-role>Reviewer</permission-role>
    <permission-role>Manager</permission-role>
@@ -558,6 +574,11 @@
    <permission-role>Reviewer</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="liege.urban: Environment Validator" acquired="False">
+   <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="View" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -714,6 +735,11 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
+   <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Environment Validator" acquired="False">
    <permission-role>EnvironmentEditor</permission-role>
    <permission-role>Reviewer</permission-role>
    <permission-role>Manager</permission-role>
@@ -879,6 +905,11 @@
    <permission-role>Reviewer</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="liege.urban: Environment Validator" acquired="False">
+   <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="View" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -986,6 +1017,8 @@
  </state>
  <state state_id="complete" title="complete">
   <exit-transition transition_id="propose_technical_report"/>
+  <exit-transition transition_id="suspend"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -1033,6 +1066,11 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
+   <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Environment Validator" acquired="False">
    <permission-role>EnvironmentEditor</permission-role>
    <permission-role>Reviewer</permission-role>
    <permission-role>Manager</permission-role>
@@ -1145,6 +1183,8 @@
  <state state_id="technical_report_validation" title="technical_report_validation">
   <exit-transition transition_id="validate_technical_report"/>
   <exit-transition transition_id="refuse_technical_report"/>
+  <exit-transition transition_id="suspend"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -1192,6 +1232,11 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Environment Validator" acquired="False">
+   <permission-role>EnvironmentEditor</permission-role>
    <permission-role>Reviewer</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -1301,6 +1346,332 @@
   </permission-map>
  </state>
  <state state_id="college_in_progress" title="college_in_progress">
+  <exit-transition transition_id="propose_technical_synthesis"/>
+  <exit-transition transition_id="suspend"/>
+  <exit-transition transition_id="abandon"/>
+  <permission-map name="ATContentTypes: Add File" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="ATContentTypes: Add Image" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Access contents information" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="List folder contents" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>AddressEditor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="False">
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Environment Validator" acquired="False">
+   <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: External Reader" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Internal Editor" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Internal Reader" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Urban Editor" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>UrbanEditor</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Urban Reader" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>UrbanEditor</permission-role>
+   <permission-role>UrbanReader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Environment Editor" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>EnvironmentEditor</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Environment Reader" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>EnvironmentReader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Road Editor" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>RoadEditor</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Road Reader" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Validate" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Applicant" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Contact" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add PortionOut" acquired="False">
+   <permission-role>AddressEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEvent" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEventOpinionRequest" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="technical_synthesis_validation" title="technical_synthesis_validation">
+  <exit-transition transition_id="validate_technical_synthesis"/>
+  <exit-transition transition_id="refuse_technical_synthesis"/>
+  <exit-transition transition_id="suspend"/>
+  <exit-transition transition_id="abandon"/>
+  <permission-map name="ATContentTypes: Add File" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="ATContentTypes: Add Image" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Access contents information" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="List folder contents" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>AddressEditor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="False">
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Environment Validator" acquired="False">
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: External Reader" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Internal Editor" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Internal Reader" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Urban Editor" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>UrbanEditor</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Urban Reader" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>UrbanEditor</permission-role>
+   <permission-role>UrbanReader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Environment Editor" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>EnvironmentEditor</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Environment Reader" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>EnvironmentReader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Road Editor" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>RoadEditor</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Road Reader" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Validate" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Applicant" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Contact" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add PortionOut" acquired="False">
+   <permission-role>AddressEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEvent" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEventOpinionRequest" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="final_decision_in_progress" title="final_decision_in_progress">
   <exit-transition transition_id="authorize_licence"/>
   <exit-transition transition_id="refuse_licence"/>
   <exit-transition transition_id="suspend"/>
@@ -1352,7 +1723,9 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
-   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Environment Validator" acquired="False">
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
@@ -1509,7 +1882,9 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
-   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Environment Validator" acquired="False">
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
@@ -1666,7 +2041,9 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
-   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Environment Validator" acquired="False">
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
@@ -1823,7 +2200,9 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
-   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Environment Validator" acquired="False">
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
@@ -1980,7 +2359,9 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
-   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Environment Validator" acquired="False">
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
@@ -2137,7 +2518,9 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
-   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Environment Validator" acquired="False">
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
@@ -2294,7 +2677,13 @@
   </guard>
  </transition>
  <transition transition_id="propose_technical_report" title="propose_technical_report" new_state="technical_report_validation" trigger="USER" before_script="" after_script="">
-  <action url="" category="workflow" icon="">refuse_technical_report</action>
+  <action url="" category="workflow" icon="">propose_technical_report</action>
+  <guard>
+   <guard-group>technical_editors_environment</guard-group>
+  </guard>
+ </transition>
+ <transition transition_id="propose_technical_synthesis" title="propose_technical_synthesis" new_state="technical_synthesis_validation" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">propose_technical_synthesis</action>
   <guard>
    <guard-group>technical_editors_environment</guard-group>
   </guard>
@@ -2307,6 +2696,12 @@
  </transition>
  <transition transition_id="refuse_technical_report" title="refuse_technical_report" new_state="complete" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">refuse_technical_report</action>
+  <guard>
+   <guard-group>technical_validators_environment</guard-group>
+  </guard>
+ </transition>
+ <transition transition_id="refuse_technical_synthesis" title="refuse_technical_synthesis" new_state="college_in_progress" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">refuse_technical_synthesis</action>
   <guard>
    <guard-group>technical_validators_environment</guard-group>
   </guard>
@@ -2349,6 +2744,12 @@
  </transition>
  <transition transition_id="validate_technical_report" title="validate_technical_report" new_state="college_in_progress" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">validate_technical_report</action>
+  <guard>
+   <guard-group>technical_validators_environment</guard-group>
+  </guard>
+ </transition>
+ <transition transition_id="validate_technical_synthesis" title="validate_technical_synthesis" new_state="final_decision_in_progress" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">validate_technical_synthesis</action>
   <guard>
    <guard-group>technical_validators_environment</guard-group>
   </guard>

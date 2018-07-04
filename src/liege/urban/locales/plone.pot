@@ -23,6 +23,9 @@ msgstr ""
 msgid "abandoned"
 msgstr ""
 
+msgid "acceptable"
+msgstr ""
+
 msgid "analysis"
 msgstr ""
 
@@ -92,6 +95,9 @@ msgstr ""
 msgid "filed_away"
 msgstr ""
 
+msgid "final_decision_in_progress"
+msgstr ""
+
 msgid "go_back_1"
 msgstr ""
 
@@ -120,6 +126,12 @@ msgid "invalidate_opinion"
 msgstr ""
 
 msgid "invalidate_procedure_choice"
+msgstr ""
+
+msgid "is_acceptable"
+msgstr ""
+
+msgid "is_acceptable_with_conditions"
 msgstr ""
 
 msgid "is_complete"
@@ -164,6 +176,9 @@ msgstr ""
 msgid "propose_technical_report"
 msgstr ""
 
+msgid "propose_synthesis_report"
+msgstr ""
+
 msgid "proposed"
 msgstr ""
 
@@ -186,6 +201,9 @@ msgid "refuse_report"
 msgstr ""
 
 msgid "refuse_technical_report"
+msgstr ""
+
+msgid "refuse_technical_synthesis"
 msgstr ""
 
 msgid "report_written"
@@ -240,6 +258,9 @@ msgid "validate_report_2"
 msgstr ""
 
 msgid "validate_technical_report"
+msgstr ""
+
+msgid "validate_technical_synthesis"
 msgstr ""
 
 msgid "validate_temporary_address"

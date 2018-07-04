@@ -20,6 +20,9 @@ msgstr "abandonner"
 msgid "abandoned"
 msgstr "Abandonné"
 
+msgid "acceptable"
+msgstr "Recevable"
+
 msgid "analysis"
 msgstr "Analyse du dossier"
 
@@ -89,6 +92,9 @@ msgstr "Validation direction"
 msgid "filed_away"
 msgstr "Classé sans suite"
 
+msgid "final_decision_in_progress"
+msgstr "Décision finale en cours"
+
 msgid "go_back_1"
 msgstr "Retour"
 
@@ -118,6 +124,12 @@ msgstr "refuser"
 
 msgid "invalidate_procedure_choice"
 msgstr "refuser"
+
+msgid "is_acceptable"
+msgstr "Déclarer recevable"
+
+msgid "is_acceptable_with_conditions"
+msgstr "Déclarer recevable avec conditions"
 
 msgid "is_complete"
 msgstr "déclarer complet"
@@ -158,6 +170,9 @@ msgstr "proposer le choix de procédure"
 msgid "propose_report"
 msgstr "proposer le rapport d'analyse"
 
+msgid "propose_synthesis_report"
+msgstr "proposer les conclusions techniques pour décision finale"
+
 msgid "propose_technical_report"
 msgstr "proposer le rapport technique après enquête"
 
@@ -188,6 +203,9 @@ msgstr "Refaire le rapport d'analyse"
 msgid "refuse_technical_report"
 msgstr "Renvoyer"
 
+msgid "refuse_technical_synthesis"
+msgstr "Renvoyer"
+
 msgid "report_written"
 msgstr "Rapport d'analyse écrit"
 
@@ -201,7 +219,7 @@ msgid "suspend"
 msgstr "suspendre"
 
 msgid "technical_refuse"
-msgstr "Refuser"
+msgstr "Refuser l'analyse"
 
 msgid "technical_report_validation"
 msgstr "Validation du rapport technique"
@@ -238,6 +256,9 @@ msgstr "Valider le rapport d'analyse (FD)"
 
 msgid "validate_technical_report"
 msgstr "Valider le rapport technique"
+
+msgid "validate_technical_synthesis"
+msgstr "Valider les conclusions techniques"
 
 msgid "validate_temporary_address"
 msgstr "valider l'adresse temporaire"
