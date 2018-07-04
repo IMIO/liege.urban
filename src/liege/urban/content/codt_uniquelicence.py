@@ -79,7 +79,7 @@ exceptions = [
     'claimsSynthesis',
     'environmentTechnicalAdviceAfterInquiry',
     'commentsOnSPWOpinion',
-    'conclusions
+    'conclusions'
 ]
 
 CODT_UniqueLicence.schema = set_field_permissions(
