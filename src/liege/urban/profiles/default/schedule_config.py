@@ -311,7 +311,6 @@ schedule_config = {
                                     ),
                                     'end_conditions': (
                                         EndConditionObject('urban.schedule.condition.inquiry_event_created', 'AND'),
-                                        EndConditionObject('liege.urban.schedule.inquiry_zone_identified'),
                                     ),
                                     'start_date': 'urban.schedule.start_date.deposit_date',
                                     'additional_delay': 11,
@@ -774,7 +773,6 @@ schedule_config = {
                             ),
                             'end_conditions': (
                                 EndConditionObject('urban.schedule.condition.inquiry_event_created', 'AND'),
-                                EndConditionObject('liege.urban.schedule.inquiry_zone_identified'),
                             ),
                             'start_date': 'urban.schedule.start_date.deposit_date',
                             'additional_delay': 11,
@@ -1145,7 +1143,6 @@ schedule_config = {
                             ),
                             'end_conditions': (
                                 EndConditionObject('urban.schedule.condition.inquiry_event_created', 'AND'),
-                                EndConditionObject('liege.urban.schedule.inquiry_zone_identified'),
                             ),
                             'start_date': 'urban.schedule.start_date.deposit_date',
                             'additional_delay': 11,
