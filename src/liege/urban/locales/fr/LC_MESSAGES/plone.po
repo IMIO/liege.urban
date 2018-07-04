@@ -227,6 +227,9 @@ msgstr "Refuser l'analyse"
 msgid "technical_report_validation"
 msgstr "Validation du rapport technique"
 
+msgid "technical_synthesis_validation"
+msgstr "Validation des conclusions technique"
+
 msgid "technical_validate"
 msgstr "Valider"
 

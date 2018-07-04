@@ -227,6 +227,9 @@ msgstr ""
 msgid "technical_report_validation"
 msgstr ""
 
+msgid "technical_synthesis_validation"
+msgstr ""
+
 msgid "technical_validate"
 msgstr ""
 
