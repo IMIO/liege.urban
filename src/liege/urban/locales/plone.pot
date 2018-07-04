@@ -71,6 +71,9 @@ msgstr ""
 msgid "college"
 msgstr ""
 
+msgid "college_in_progress"
+msgstr ""
+
 msgid "complete"
 msgstr ""
 
