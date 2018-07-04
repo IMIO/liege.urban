@@ -173,11 +173,11 @@ msgstr "proposer le choix de procédure"
 msgid "propose_report"
 msgstr "proposer le rapport d'analyse"
 
-msgid "propose_synthesis_report"
-msgstr "proposer les conclusions techniques pour décision finale"
-
 msgid "propose_technical_report"
 msgstr "proposer le rapport technique après enquête"
+
+msgid "propose_technical_synthesis"
+msgstr "proposer les conclusions techniques pour décision finale"
 
 msgid "proposed"
 msgstr "Projet de décision rédigé"
