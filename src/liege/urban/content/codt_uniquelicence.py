@@ -74,7 +74,12 @@ permissions_mapping = {
 # claimsSynthesis and environmentTechnicalAdviceAfterInquiry must have reviewer
 # write permission to be able to freeze them in the workflow
 exceptions = [
-    'portal_type', 'claimsSynthesis', 'environmentTechnicalAdviceAfterInquiry'
+    'portal_type',
+    'id',
+    'claimsSynthesis',
+    'environmentTechnicalAdviceAfterInquiry',
+    'commentsOnSPWOpinion',
+    'conclusions
 ]
 
 CODT_UniqueLicence.schema = set_field_permissions(
