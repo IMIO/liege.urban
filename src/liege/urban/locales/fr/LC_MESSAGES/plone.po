@@ -143,6 +143,9 @@ msgstr "déclarer incomplet"
 msgid "notification"
 msgstr "Notification du permis"
 
+msgid "opinion_given"
+msgstr "Avis rendu"
+
 msgid "opinion_validation"
 msgstr "validation"
 

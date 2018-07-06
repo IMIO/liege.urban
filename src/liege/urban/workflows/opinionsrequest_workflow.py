@@ -62,7 +62,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'Voirie_editors': ('Reader',),
             'Voirie_validators': ('Reader',),
             'survey_editors': ('Reader',),
-            'urban_readers': ('Reader',),
+            LocalRoleAdapter.get_readers: ('Reader',),
         },
 
         'waiting_opinion': OrderedDict([
@@ -74,7 +74,7 @@ class StateRolesMapping(LocalRoleAdapter):
             (get_opinion_editor, (get_opinion_editor_role,)),
             (get_opinion_validator, (get_opinion_editor_role,)),
             ('survey_editors', ('Reader',)),
-            ('urban_readers', ('Reader',)),
+            (LocalRoleAdapter.get_readers, ('Reader',)),
         ]),
 
         'opinion_validation': OrderedDict([
@@ -83,7 +83,7 @@ class StateRolesMapping(LocalRoleAdapter):
             (get_opinion_editor, ('Reader',)),
             (get_opinion_validator, ('Reader', 'Contributor',)),
             ('survey_editors', ('Reader',)),
-            ('urban_readers', ('Reader',)),
+            (LocalRoleAdapter.get_readers, ('Reader',)),
         ]),
 
         'opinion_given': OrderedDict([
@@ -92,7 +92,7 @@ class StateRolesMapping(LocalRoleAdapter):
             (get_opinion_editor, ('Reader',)),
             (get_opinion_validator, ('Reader',)),
             ('survey_editors', ('Reader',)),
-            ('urban_readers', ('Reader',)),
+            (LocalRoleAdapter.get_readers, ('Reader',)),
         ]),
 
     }

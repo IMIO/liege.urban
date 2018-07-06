@@ -146,6 +146,9 @@ msgstr ""
 msgid "notification"
 msgstr ""
 
+msgid "opinion_given"
+msgstr ""
+
 msgid "opinion_validation"
 msgstr ""
 
