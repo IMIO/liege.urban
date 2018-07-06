@@ -12,6 +12,10 @@ from plone import api
 class StateRolesMapping(LocalRoleAdapter):
     """
     """
+    def __init__(self, context):
+        self.context = context
+        self.licence = self.context.aq_parent
+
 
     def get_opinion_group(self, groupe_type='editors'):
         opinion_request = self.context
@@ -31,7 +35,7 @@ class StateRolesMapping(LocalRoleAdapter):
         if task:
             return (task.assigned_group,)
 
-        return ('technical_editors',)
+        return ('technical_editors', 'technical_editors_environment')
 
     def get_opinion_editor(self):
         return self.get_opinion_group('editors')
