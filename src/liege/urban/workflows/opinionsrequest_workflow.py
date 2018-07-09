@@ -12,6 +12,10 @@ from plone import api
 class StateRolesMapping(LocalRoleAdapter):
     """
     """
+    def __init__(self, context):
+        self.context = context
+        self.licence = self.context.aq_parent
+
 
     def get_opinion_group(self, groupe_type='editors'):
         opinion_request = self.context
@@ -31,7 +35,7 @@ class StateRolesMapping(LocalRoleAdapter):
         if task:
             return (task.assigned_group,)
 
-        return ('technical_editors',)
+        return ('technical_editors', 'technical_editors_environment')
 
     def get_opinion_editor(self):
         return self.get_opinion_group('editors')
@@ -58,7 +62,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'Voirie_editors': ('Reader',),
             'Voirie_validators': ('Reader',),
             'survey_editors': ('Reader',),
-            'urban_readers': ('Reader',),
+            LocalRoleAdapter.get_readers: ('Reader',),
         },
 
         'waiting_opinion': OrderedDict([
@@ -70,7 +74,7 @@ class StateRolesMapping(LocalRoleAdapter):
             (get_opinion_editor, (get_opinion_editor_role,)),
             (get_opinion_validator, (get_opinion_editor_role,)),
             ('survey_editors', ('Reader',)),
-            ('urban_readers', ('Reader',)),
+            (LocalRoleAdapter.get_readers, ('Reader',)),
         ]),
 
         'opinion_validation': OrderedDict([
@@ -79,7 +83,7 @@ class StateRolesMapping(LocalRoleAdapter):
             (get_opinion_editor, ('Reader',)),
             (get_opinion_validator, ('Reader', 'Contributor',)),
             ('survey_editors', ('Reader',)),
-            ('urban_readers', ('Reader',)),
+            (LocalRoleAdapter.get_readers, ('Reader',)),
         ]),
 
         'opinion_given': OrderedDict([
@@ -88,7 +92,7 @@ class StateRolesMapping(LocalRoleAdapter):
             (get_opinion_editor, ('Reader',)),
             (get_opinion_validator, ('Reader',)),
             ('survey_editors', ('Reader',)),
-            ('urban_readers', ('Reader',)),
+            (LocalRoleAdapter.get_readers, ('Reader',)),
         ]),
 
     }

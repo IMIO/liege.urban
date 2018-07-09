@@ -53,6 +53,10 @@ def update_item_schema(baseSchema):
     LicenceSchema['claimsSynthesis'].write_permission = 'Review portal content'
     LicenceSchema['environmentTechnicalAdviceAfterInquiry'].read_permission = 'liege.urban: External Reader'
     LicenceSchema['environmentTechnicalAdviceAfterInquiry'].write_permission = 'Review portal content'
+    LicenceSchema['commentsOnSPWOpinion'].read_permission = 'liege.urban: External Reader'
+    LicenceSchema['commentsOnSPWOpinion'].write_permission = 'liege.urban: Environment Validator'
+    LicenceSchema['conclusions'].read_permission = 'liege.urban: External Reader'
+    LicenceSchema['conclusions'].write_permission = 'liege.urban: Environment Validator'
 
     return LicenceSchema
 
@@ -70,7 +74,12 @@ permissions_mapping = {
 # claimsSynthesis and environmentTechnicalAdviceAfterInquiry must have reviewer
 # write permission to be able to freeze them in the workflow
 exceptions = [
-    'portal_type', 'claimsSynthesis', 'environmentTechnicalAdviceAfterInquiry'
+    'portal_type',
+    'id',
+    'claimsSynthesis',
+    'environmentTechnicalAdviceAfterInquiry',
+    'commentsOnSPWOpinion',
+    'conclusions'
 ]
 
 CODT_UniqueLicence.schema = set_field_permissions(

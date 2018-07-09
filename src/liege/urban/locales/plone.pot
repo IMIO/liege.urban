@@ -74,6 +74,9 @@ msgstr ""
 msgid "college"
 msgstr ""
 
+msgid "college_in_progress"
+msgstr ""
+
 msgid "complete"
 msgstr ""
 
@@ -96,6 +99,9 @@ msgid "executive_validation"
 msgstr ""
 
 msgid "filed_away"
+msgstr ""
+
+msgid "final_decision_in_progress"
 msgstr ""
 
 msgid "go_back_1"
@@ -146,6 +152,9 @@ msgstr ""
 msgid "notification"
 msgstr ""
 
+msgid "opinion_given"
+msgstr ""
+
 msgid "opinion_validation"
 msgstr ""
 
@@ -179,6 +188,9 @@ msgstr ""
 msgid "propose_technical_report"
 msgstr ""
 
+msgid "propose_technical_synthesis"
+msgstr ""
+
 msgid "proposed"
 msgstr ""
 
@@ -203,6 +215,9 @@ msgstr ""
 msgid "refuse_technical_report"
 msgstr ""
 
+msgid "refuse_technical_synthesis"
+msgstr ""
+
 msgid "report_written"
 msgstr ""
 
@@ -219,6 +234,9 @@ msgid "technical_refuse"
 msgstr ""
 
 msgid "technical_report_validation"
+msgstr ""
+
+msgid "technical_synthesis_validation"
 msgstr ""
 
 msgid "technical_validate"
@@ -255,6 +273,9 @@ msgid "validate_report_2"
 msgstr ""
 
 msgid "validate_technical_report"
+msgstr ""
+
+msgid "validate_technical_synthesis"
 msgstr ""
 
 msgid "validate_temporary_address"

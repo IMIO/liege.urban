@@ -71,6 +71,9 @@ msgstr "Avis favorable"
 msgid "college"
 msgstr "Passage en séance e-délib"
 
+msgid "college_in_progress"
+msgstr "Collège après enquête en cours"
+
 msgid "complete"
 msgstr "Complet"
 
@@ -94,6 +97,9 @@ msgstr "Validation direction"
 
 msgid "filed_away"
 msgstr "Classé sans suite"
+
+msgid "final_decision_in_progress"
+msgstr "Décision finale en cours"
 
 msgid "go_back_1"
 msgstr "Retour"
@@ -143,6 +149,9 @@ msgstr "déclarer incomplet"
 msgid "notification"
 msgstr "Notification du permis"
 
+msgid "opinion_given"
+msgstr "Avis rendu"
+
 msgid "opinion_validation"
 msgstr "validation"
 
@@ -176,6 +185,9 @@ msgstr "proposer le rapport d'analyse"
 msgid "propose_technical_report"
 msgstr "proposer le rapport technique après enquête"
 
+msgid "propose_technical_synthesis"
+msgstr "proposer les conclusions techniques pour décision finale"
+
 msgid "proposed"
 msgstr "Projet de décision rédigé"
 
@@ -203,6 +215,9 @@ msgstr "Refaire le rapport d'analyse"
 msgid "refuse_technical_report"
 msgstr "Renvoyer"
 
+msgid "refuse_technical_synthesis"
+msgstr "Renvoyer"
+
 msgid "report_written"
 msgstr "Rapport d'analyse écrit"
 
@@ -216,10 +231,13 @@ msgid "suspend"
 msgstr "suspendre"
 
 msgid "technical_refuse"
-msgstr "Refuser la validation"
+msgstr "Refuser l'analyse"
 
 msgid "technical_report_validation"
 msgstr "Validation du rapport technique"
+
+msgid "technical_synthesis_validation"
+msgstr "Validation des conclusions technique"
 
 msgid "technical_validate"
 msgstr "Valider"
@@ -253,6 +271,9 @@ msgstr "Valider le rapport d'analyse (FD)"
 
 msgid "validate_technical_report"
 msgstr "Valider le rapport technique"
+
+msgid "validate_technical_synthesis"
+msgstr "Valider les conclusions techniques"
 
 msgid "validate_temporary_address"
 msgstr "valider l'adresse temporaire"

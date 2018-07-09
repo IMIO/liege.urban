@@ -20,13 +20,10 @@
      name="buildlicence_local_roles"
   />
 
-  <!--!!! not a mistake !!!
-      CODT unique licence has the same workflow local roles than buildlicence
-    -->
   <adapter
      for="Products.urban.interfaces.ICODT_UniqueLicence"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
-     factory=".uniquelicence_workflow.StateRolesMapping"
+     factory=".codt_uniquelicence_workflow.StateRolesMapping"
      name="codt_uniquelicence_local_roles"
   />
 
@@ -47,7 +44,7 @@
      for="Products.urban.interfaces.ICODT_ParcelOutLicence"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
      factory=".buildlicence_workflow.StateRolesMapping"
-     name="codt_uniquelicence_local_roles"
+     name="codt_parceloutlicence_local_roles"
   />
 
   <!--!!! not a mistake !!!
