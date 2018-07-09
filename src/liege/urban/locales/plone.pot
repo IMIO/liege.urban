@@ -26,7 +26,13 @@ msgstr ""
 msgid "acceptable"
 msgstr ""
 
+msgid "acceptable_validation"
+msgstr ""
+
 msgid "acceptable_with_conditions"
+msgstr ""
+
+msgid "acceptable_with_conditions_validation"
 msgstr ""
 
 msgid "analysis"
@@ -149,6 +155,9 @@ msgstr ""
 msgid "is_incomplete"
 msgstr ""
 
+msgid "inacceptable_validation"
+msgstr ""
+
 msgid "notification"
 msgstr ""
 
@@ -257,10 +266,19 @@ msgstr ""
 msgid "receive_college_decision"
 msgstr ""
 
+msgid "validate_acceptable"
+msgstr ""
+
+msgid "validate_acceptable_with_conditions"
+msgstr ""
+
 msgid "validate_address"
 msgstr ""
 
 msgid "validate_completion"
+msgstr ""
+
+msgid "validate_inacceptable"
 msgstr ""
 
 msgid "validate_procedure_choice"

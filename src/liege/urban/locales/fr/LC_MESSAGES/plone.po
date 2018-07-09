@@ -23,8 +23,14 @@ msgstr "Abandonné"
 msgid "acceptable"
 msgstr "Recevable"
 
+msgid "acceptable_validation"
+msgstr "Recevable (validation)"
+
 msgid "acceptable_with_conditions"
 msgstr "Recevable avec conditions"
+
+msgid "acceptable_with_conditions_validation"
+msgstr "Recevable avec condition (validation)"
 
 msgid "analysis"
 msgstr "Analyse du dossier"
@@ -112,6 +118,9 @@ msgstr "Retour"
 
 msgid "go_back_4"
 msgstr "Retour"
+
+msgid "inacceptable_validation"
+msgstr "Irrecevable (validation)"
 
 msgid "incomplete"
 msgstr "Incomplet"
@@ -231,7 +240,7 @@ msgid "suspend"
 msgstr "suspendre"
 
 msgid "technical_refuse"
-msgstr "Refuser l'analyse"
+msgstr "Refuser"
 
 msgid "technical_report_validation"
 msgstr "Validation du rapport technique"
@@ -254,11 +263,20 @@ msgstr "Envoi de l'accusé"
 msgid "to_validate"
 msgstr "à valider"
 
+msgid "validate_acceptable"
+msgstr "Valider"
+
+msgid "validate_acceptable_with_conditions"
+msgstr "Valider"
+
 msgid "validate_address"
 msgstr "valider l'adresse"
 
 msgid "validate_completion"
 msgstr "Valider la complétude"
+
+msgid "validate_inacceptable"
+msgstr "Valider"
 
 msgid "validate_procedure_choice"
 msgstr "Valider la procédure"

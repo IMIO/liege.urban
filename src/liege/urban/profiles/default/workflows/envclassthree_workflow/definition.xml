@@ -112,7 +112,9 @@
   </permission-map>
  </state>
  <state state_id="procedure_analysis" title="procedure_analysis">
-  <exit-transition transition_id="propose_analysis"/>
+  <exit-transition transition_id="is_inacceptable"/>
+  <exit-transition transition_id="is_acceptable"/>
+  <exit-transition transition_id="is_acceptable_with_conditions"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -204,11 +206,197 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="technical_validation" title="technical_validation">
+ <state state_id="inacceptable_validation" title="inacceptable_validation">
   <exit-transition transition_id="technical_refuse"/>
-  <exit-transition transition_id="is_inacceptable"/>
-  <exit-transition transition_id="is_acceptable"/>
-  <exit-transition transition_id="is_acceptable_with_conditions"/>
+  <exit-transition transition_id="validate_inacceptable"/>
+  <permission-map name="ATContentTypes: Add File" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="ATContentTypes: Add Image" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Access contents information" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="List folder contents" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="False">
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: External Reader" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Validate" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Applicant" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Contact" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add PortionOut" acquired="False">
+   <permission-role>AddressEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEvent" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEventOpinionRequest" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="acceptable_validation" title="acceptable_validation">
+  <exit-transition transition_id="technical_refuse"/>
+  <exit-transition transition_id="validate_acceptable"/>
+  <permission-map name="ATContentTypes: Add File" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="ATContentTypes: Add Image" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Access contents information" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="List folder contents" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Review portal content" acquired="False">
+   <permission-role>Reviewer</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: External Reader" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Validate" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Applicant" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Contact" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add PortionOut" acquired="False">
+   <permission-role>AddressEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEvent" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEventOpinionRequest" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+ </state>
+ <state state_id="acceptable_with_conditions_validation" title="acceptable_with_conditions_validation">
+  <exit-transition transition_id="technical_refuse"/>
+  <exit-transition transition_id="validate_acceptable_with_conditions"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -585,37 +773,49 @@
    <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="propose_analysis" title="propose_analysis" new_state="technical_validation" trigger="USER" before_script="" after_script="">
-  <action url="" category="workflow" icon="">propose_analysis</action>
-  <guard>
-   <guard-permission>Modify portal content</guard-permission>
-  </guard>
- </transition>
  <transition transition_id="technical_refuse" title="technical_refuse" new_state="procedure_analysis" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">technical_refuse</action>
   <guard>
    <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="is_inacceptable" title="is_inacceptable" new_state="inacceptable" trigger="USER" before_script="" after_script="">
+ <transition transition_id="is_inacceptable" title="is_inacceptable" new_state="inacceptable_validation" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">is_inacceptable</action>
   <guard>
    <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="is_acceptable" title="is_acceptable" new_state="acceptable" trigger="USER" before_script="" after_script="">
+ <transition transition_id="is_acceptable" title="is_acceptable" new_state="acceptable_validation" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">is_acceptable</action>
   <guard>
    <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="is_acceptable_with_conditions" title="is_acceptable_with_conditions" new_state="acceptable_with_conditions" trigger="USER" before_script="" after_script="">
+ <transition transition_id="is_acceptable_with_conditions" title="is_acceptable_with_conditions" new_state="acceptable_with_conditions_validation" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">is_acceptable_with_conditions</action>
   <guard>
    <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="reopen" title="reopen" new_state="technical_validation" trigger="USER" before_script="" after_script="">
+ <transition transition_id="validate_inacceptable" title="validate_inacceptable" new_state="inacceptable" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">validate_inacceptable</action>
+  <guard>
+   <guard-permission>Modify portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="validate_acceptable" title="validate_acceptable" new_state="acceptable" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">validate_acceptable</action>
+  <guard>
+   <guard-permission>Modify portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="validate_acceptable_with_conditions" title="validate_acceptable_with_conditions" new_state="acceptable_with_conditions" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">validate_acceptable_with_conditions</action>
+  <guard>
+   <guard-permission>Modify portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="reopen" title="reopen" new_state="procedure_analysis" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">reopen</action>
   <guard>
    <guard-permission>Modify portal content</guard-permission>
