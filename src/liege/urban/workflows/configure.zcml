@@ -109,6 +109,13 @@
   />
 
   <adapter
+     for="Products.urban.interfaces.IEnvClassThree"
+     provides="borg.localrole.interfaces.ILocalRoleProvider"
+     factory=".envclassthree_workflow.StateRolesMapping"
+     name="preliminarynotice_local_roles"
+  />
+
+  <adapter
      for="Products.urban.interfaces.IPortionOut"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
      factory=".address_workflow.StateRolesMapping"

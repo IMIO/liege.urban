@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 
 from liege.urban.workflows.licences_workflow import DefaultStateRolesMapping as LiegeBase
 
@@ -6,7 +8,6 @@ class StateRolesMapping(LiegeBase):
     """ """
 
     mapping = {
-        'deposit': {
             'administrative_editors_environment': ('Editor', 'AddressEditor'),
             'administrative_validators_environment': ('Contributor', 'AddressEditor'),
             'technical_editors_environment': ('Reader',),

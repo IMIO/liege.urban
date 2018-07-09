@@ -42,137 +42,6 @@ schedule_config = {
         },
     ],
     'opinions_schedule': [
-#        {
-#            'type_name': 'MacroTaskConfig',
-#            'id': 'ask_road_opinion',
-#            'title': "Avis voirie",
-#            'default_assigned_group': 'Voirie_editors',
-#            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-#            'creation_state': ('creation',),
-#            'creation_conditions': (
-#                CreationConditionObject('liege.urban.schedule.is_internal_opinion'),
-#            ),
-#            'starting_states': ('waiting_opinion',),
-#            'ending_states': ('opinions_given',),
-#            'start_date': 'liege.urban.schedule.asking_date',
-#            'additional_delay': 15,
-#            'subtasks': [
-#                {
-#                    'type_name': 'TaskConfig',
-#                    'id': 'valide',
-#                    'title': 'Valider',
-#                    'default_assigned_group': 'Voirie_validators',
-#                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-#                    'creation_state': ('creation',),
-#                    'starting_states': ('opinion_validation',),
-#                    'ending_states': ('opinions_given',),
-#                    'start_date': 'liege.urban.schedule.asking_date',
-#                    'additional_delay': 15,
-#                },
-#            ]
-#        },
-#        {
-#            'type_name': 'TaskConfig',
-#            'id': 'ask_sssp_opinion',
-#            'title': "Avis SSSP",
-#            'default_assigned_group': 'SSSP_editors',
-#            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-#            'creation_state': ('creation',),
-#            'creation_conditions': (
-#                CreationConditionObject('liege.urban.schedule.is_internal_opinion'),
-#            ),
-#            'starting_states': ('waiting_opinion',),
-#            'ending_states': ('opinions_given',),
-#            'start_date': 'liege.urban.schedule.asking_date',
-#            'additional_delay': 15,
-#        },
-#        {
-#            'type_name': 'MacroTaskConfig',
-#            'id': 'ask_access_opinion',
-#            'title': "Avis Access",
-#            'default_assigned_group': 'Access_editors',
-#            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-#            'creation_state': ('creation',),
-#            'creation_conditions': (
-#                CreationConditionObject('liege.urban.schedule.is_internal_opinion'),
-#            ),
-#            'starting_states': ('waiting_opinion',),
-#            'ending_states': ('opinions_given',),
-#            'start_date': 'liege.urban.schedule.asking_date',
-#            'additional_delay': 15,
-#            'subtasks': [
-#                {
-#                    'type_name': 'TaskConfig',
-#                    'id': 'valide',
-#                    'title': 'Valider',
-#                    'default_assigned_group': 'Access_validators',
-#                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-#                    'creation_state': ('creation',),
-#                    'starting_states': ('opinion_validation',),
-#                    'ending_states': ('opinions_given',),
-#                    'start_date': 'liege.urban.schedule.asking_date',
-#                    'additional_delay': 15,
-#                },
-#            ]
-#        },
-#        {
-#            'type_name': 'MacroTaskConfig',
-#            'id': 'ask_plantation_opinion',
-#            'title': "Avis Plantation",
-#            'default_assigned_group': 'Plantation_editors',
-#            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-#            'creation_state': ('creation',),
-#            'creation_conditions': (
-#                CreationConditionObject('liege.urban.schedule.is_internal_opinion'),
-#            ),
-#            'starting_states': ('waiting_opinion',),
-#            'ending_states': ('opinions_given',),
-#            'start_date': 'liege.urban.schedule.asking_date',
-#            'additional_delay': 15,
-#            'subtasks': [
-#                {
-#                    'type_name': 'TaskConfig',
-#                    'id': 'valide',
-#                    'title': 'Valider',
-#                    'default_assigned_group': 'Plantation_validators',
-#                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-#                    'creation_state': ('creation',),
-#                    'starting_states': ('opinion_validation',),
-#                    'ending_states': ('opinions_given',),
-#                    'start_date': 'liege.urban.schedule.asking_date',
-#                    'additional_delay': 15,
-#                },
-#            ]
-#        },
-#        {
-#            'type_name': 'MacroTaskConfig',
-#            'id': 'ask_edii_opinion',
-#            'title': "Avis EDII",
-#            'default_assigned_group': 'EDII_editors',
-#            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-#            'creation_state': ('creation',),
-#            'creation_conditions': (
-#                CreationConditionObject('liege.urban.schedule.is_internal_opinion'),
-#            ),
-#            'starting_states': ('waiting_opinion',),
-#            'ending_states': ('opinions_given',),
-#            'start_date': 'liege.urban.schedule.asking_date',
-#            'additional_delay': 15,
-#            'subtasks': [
-#                {
-#                    'type_name': 'TaskConfig',
-#                    'id': 'valide',
-#                    'title': 'Valider',
-#                    'default_assigned_group': 'EDII_validators',
-#                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-#                    'creation_state': ('creation',),
-#                    'starting_states': ('opinion_validation',),
-#                    'ending_states': ('opinions_given',),
-#                    'start_date': 'liege.urban.schedule.asking_date',
-#                    'additional_delay': 15,
-#                },
-#            ]
-#        },
     ],
     'buildlicence': [
         {
@@ -289,7 +158,7 @@ schedule_config = {
                             'additional_delay': 11,
                         },
                         {
-                            'type_name': 'MacroTaskConfig',
+                            'type_name': 'TaskConfig',
                             'id': 'choix',
                             'title': 'Choix de la procédure',
                             'default_assigned_group': 'technical_editors',
@@ -299,36 +168,6 @@ schedule_config = {
                             'ending_states': ('procedure_choosen',),
                             'start_date': 'urban.schedule.start_date.deposit_date',
                             'additional_delay': 11,
-                            'subtasks': [
-                                {
-                                    'type_name': 'TaskConfig',
-                                    'id': 'rayon-enquete',
-                                    'title': 'Identifier la zone d\'enquête',
-                                    'default_assigned_group': 'technical_editors',
-                                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                                    'creation_conditions': (
-                                        CreationConditionObject('urban.schedule.condition.will_have_inquiry'),
-                                    ),
-                                    'end_conditions': (
-                                        EndConditionObject('urban.schedule.condition.inquiry_event_created', 'AND'),
-                                        EndConditionObject('liege.urban.schedule.inquiry_zone_identified'),
-                                    ),
-                                    'start_date': 'urban.schedule.start_date.deposit_date',
-                                    'additional_delay': 11,
-                                },
-                            ],
-                        },
-                        {
-                            'type_name': 'TaskConfig',
-                            'id': 'validate_procedure',
-                            'title': 'Valider la procédure',
-                            'default_assigned_group': 'technical_validators',
-                            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                            'creation_state': ('procedure_choosen',),
-                            'starting_states': ('procedure_choosen',),
-                            'ending_states': ('procedure_validated',),
-                            'start_date': 'urban.schedule.start_date.deposit_date',
-                            'additional_delay': 12,
                         },
                         {
                             'type_name': 'TaskConfig',
@@ -765,22 +604,6 @@ schedule_config = {
                     'subtasks': [
                         {
                             'type_name': 'TaskConfig',
-                            'id': 'rayon-enquete',
-                            'title': 'Identifier la zone d\'enquête',
-                            'default_assigned_group': 'technical_editors',
-                            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                            'creation_conditions': (
-                                CreationConditionObject('urban.schedule.condition.will_have_inquiry'),
-                            ),
-                            'end_conditions': (
-                                EndConditionObject('urban.schedule.condition.inquiry_event_created', 'AND'),
-                                EndConditionObject('liege.urban.schedule.inquiry_zone_identified'),
-                            ),
-                            'start_date': 'urban.schedule.start_date.deposit_date',
-                            'additional_delay': 11,
-                        },
-                        {
-                            'type_name': 'TaskConfig',
                             'id': 'enquete-dates',
                             'title': 'Définir les dates de d\'enquête',
                             'default_assigned_group': 'administrative_editors',
@@ -1145,7 +968,6 @@ schedule_config = {
                             ),
                             'end_conditions': (
                                 EndConditionObject('urban.schedule.condition.inquiry_event_created', 'AND'),
-                                EndConditionObject('liege.urban.schedule.inquiry_zone_identified'),
                             ),
                             'start_date': 'urban.schedule.start_date.deposit_date',
                             'additional_delay': 11,

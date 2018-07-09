@@ -23,6 +23,9 @@ msgstr "Abandonné"
 msgid "acceptable"
 msgstr "Recevable"
 
+msgid "acceptable_with_conditions"
+msgstr "Recevable avec conditions"
+
 msgid "analysis"
 msgstr "Analyse du dossier"
 
@@ -129,13 +132,16 @@ msgid "invalidate_procedure_choice"
 msgstr "refuser"
 
 msgid "is_acceptable"
-msgstr "Déclarer recevable"
+msgstr "Recevable"
 
 msgid "is_acceptable_with_conditions"
-msgstr "Déclarer recevable avec conditions"
+msgstr "Recevable avec conditions"
 
 msgid "is_complete"
 msgstr "déclarer complet"
+
+msgid "is_inacceptable"
+msgstr "Irrecevable"
 
 msgid "is_incomplete"
 msgstr "déclarer incomplet"
