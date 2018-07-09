@@ -23,6 +23,12 @@ msgstr ""
 msgid "abandoned"
 msgstr ""
 
+msgid "acceptable"
+msgstr ""
+
+msgid "acceptable_with_conditions"
+msgstr ""
+
 msgid "analysis"
 msgstr ""
 
@@ -122,7 +128,16 @@ msgstr ""
 msgid "invalidate_procedure_choice"
 msgstr ""
 
+msgid "is_acceptable"
+msgstr ""
+
+msgid "is_acceptable_with_conditions"
+msgstr ""
+
 msgid "is_complete"
+msgstr ""
+
+msgid "is_inacceptable"
 msgstr ""
 
 msgid "is_incomplete"

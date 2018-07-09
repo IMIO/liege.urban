@@ -206,7 +206,7 @@
  </state>
  <state state_id="technical_validation" title="technical_validation">
   <exit-transition transition_id="technical_refuse"/>
-  <exit-transition transition_id="isinacceptable"/>
+  <exit-transition transition_id="is_inacceptable"/>
   <exit-transition transition_id="is_acceptable"/>
   <exit-transition transition_id="is_acceptable_with_conditions"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
@@ -585,7 +585,7 @@
    <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="propose_analysis" title="propose_analysis" new_state="validate_analysis" trigger="USER" before_script="" after_script="">
+ <transition transition_id="propose_analysis" title="propose_analysis" new_state="technical_validation" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">propose_analysis</action>
   <guard>
    <guard-permission>Modify portal content</guard-permission>
@@ -597,8 +597,8 @@
    <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="isinacceptable" title="isinacceptable" new_state="inacceptable" trigger="USER" before_script="" after_script="">
-  <action url="" category="workflow" icon="">isinacceptable</action>
+ <transition transition_id="is_inacceptable" title="is_inacceptable" new_state="inacceptable" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">is_inacceptable</action>
   <guard>
    <guard-permission>Modify portal content</guard-permission>
   </guard>

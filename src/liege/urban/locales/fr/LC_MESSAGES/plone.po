@@ -20,6 +20,12 @@ msgstr "abandonner"
 msgid "abandoned"
 msgstr "Abandonné"
 
+msgid "acceptable"
+msgstr "Recevable"
+
+msgid "acceptable_with_conditions"
+msgstr "Recevable avec conditions"
+
 msgid "analysis"
 msgstr "Analyse du dossier"
 
@@ -119,8 +125,17 @@ msgstr "refuser"
 msgid "invalidate_procedure_choice"
 msgstr "refuser"
 
+msgid "is_acceptable"
+msgstr "Recevable"
+
+msgid "is_acceptable_with_conditions"
+msgstr "Recevable avec conditions"
+
 msgid "is_complete"
 msgstr "déclarer complet"
+
+msgid "is_inacceptable"
+msgstr "Irrecevable"
 
 msgid "is_incomplete"
 msgstr "déclarer incomplet"
@@ -201,7 +216,7 @@ msgid "suspend"
 msgstr "suspendre"
 
 msgid "technical_refuse"
-msgstr "Refuser"
+msgstr "Refuser la validation"
 
 msgid "technical_report_validation"
 msgstr "Validation du rapport technique"
