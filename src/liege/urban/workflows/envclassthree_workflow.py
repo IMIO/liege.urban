@@ -27,7 +27,7 @@ class StateRolesMapping(LiegeBase):
         'inacceptable_validation': {
             'administrative_editors_environment': ('Reader',),
             'administrative_validators_environment': ('Reader',),
-            'technical_editors_environment': ('Editor',),
+            'technical_editors_environment': ('Reader',),
             'technical_validators_environment': ('Contributor', 'AddressEditor'),
             'environment_readers': ('Reader',),
         },
@@ -35,7 +35,7 @@ class StateRolesMapping(LiegeBase):
         'acceptable_validation': {
             'administrative_editors_environment': ('Reader',),
             'administrative_validators_environment': ('Reader',),
-            'technical_editors_environment': ('Editor',),
+            'technical_editors_environment': ('Reader',),
             'technical_validators_environment': ('Contributor', 'AddressEditor'),
             'environment_readers': ('Reader',),
         },
@@ -43,7 +43,7 @@ class StateRolesMapping(LiegeBase):
         'acceptable_with_conditions_validation': {
             'administrative_editors_environment': ('Reader',),
             'administrative_validators_environment': ('Reader',),
-            'technical_editors_environment': ('Editor',),
+            'technical_editors_environment': ('Reader',),
             'technical_validators_environment': ('Contributor', 'AddressEditor'),
             'environment_readers': ('Reader',),
         },
