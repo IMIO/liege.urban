@@ -27,10 +27,10 @@ msgid "acceptable_validation"
 msgstr "Recevable (validation)"
 
 msgid "acceptable_with_conditions"
-msgstr "Recevable avec conditions"
+msgstr "Recevable avec conditions ultérieures"
 
 msgid "acceptable_with_conditions_validation"
-msgstr "Recevable avec condition (validation)"
+msgstr "Recevable avec conditionis ultérieures (validation)"
 
 msgid "analysis"
 msgstr "Analyse du dossier"
