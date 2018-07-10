@@ -32,6 +32,22 @@
     background-color: green;
 }
 
+.urban_state_acceptable{
+    background-color: green;
+}
+
+.urban_state_acceptable_with_conditions{
+    background-color: green;
+}
+
+.state-acceptable_with_conditions {
+    color: green !important;
+}
+
+.urban_state_inacceptable{
+    background-color: red;
+}
+
 .urban_state_Passed{
     background-color: #75ad0a;
 }
