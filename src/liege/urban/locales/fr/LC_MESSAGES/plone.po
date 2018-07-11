@@ -30,7 +30,7 @@ msgid "acceptable_with_conditions"
 msgstr "Recevable avec conditions ultérieures"
 
 msgid "acceptable_with_conditions_validation"
-msgstr "Recevable avec conditionis ultérieures (validation)"
+msgstr "Recevable avec conditions ultérieures (validation)"
 
 msgid "analysis"
 msgstr "Analyse du dossier"
