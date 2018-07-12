@@ -104,6 +104,9 @@ msgstr ""
 msgid "executive_validation"
 msgstr ""
 
+msgid "FD_opinion"
+msgstr ""
+
 msgid "filed_away"
 msgstr ""
 
