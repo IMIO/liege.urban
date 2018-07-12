@@ -2305,12 +2305,6 @@
   <guard>
   </guard>
  </transition>
- <transition transition_id="refuse_procedure_choice" title="refuse_procedure_choice" new_state="analysis" trigger="USER" before_script="" after_script="">
-  <action url="" category="workflow" icon="">refuse_procedure_choice</action>
-  <guard>
-   <guard-permission>liege.urban: Validate</guard-permission>
-  </guard>
- </transition>
  <transition transition_id="refuse_report" title="refuse_report" new_state="procedure_validated" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">refuse_report</action>
   <guard>
@@ -2336,12 +2330,6 @@
   <action url="" category="workflow" icon="">validate_address</action>
   <guard>
    <guard-permission>urban: Add PortionOut</guard-permission>
-  </guard>
- </transition>
- <transition transition_id="validate_completion" title="validate_completion" new_state="analysis" trigger="USER" before_script="" after_script="">
-  <action url="" category="workflow" icon="">validate_completion</action>
-  <guard>
-   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="validate_procedure_choice" title="validate_procedure_choice" new_state="procedure_validated" trigger="USER" before_script="" after_script="">
