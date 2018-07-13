@@ -180,5 +180,11 @@
      factory=".preliminaryadvice_event_workflow.StateRolesMapping"
      name="preliminaryadviceevent_local_roles"
   />
+  <adapter
+    for="Products.urban.interfaces.IInternalPreliminaryAdviceEvent"
+    provides="borg.localrole.interfaces.ILocalRoleProvider"
+    factory=".urbanenvironment_workflow.StateRolesMapping"
+    name="urbanenvironment_workflow_local_roles"
+  />
 
 </configure>
