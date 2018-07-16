@@ -80,6 +80,9 @@ msgstr ""
 msgid "college"
 msgstr ""
 
+msgid "college_done"
+msgstr ""
+
 msgid "college_in_progress"
 msgstr ""
 
@@ -237,6 +240,9 @@ msgid "send_opinion"
 msgstr ""
 
 msgid "send_preliminary_advice"
+msgstr ""
+
+msgid "sending_deposit_to_spw"
 msgstr ""
 
 msgid "suspend"

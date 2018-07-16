@@ -80,6 +80,9 @@ msgstr "Avis favorable"
 msgid "college"
 msgstr "Passage en séance e-délib"
 
+msgid "college_done"
+msgstr "Collège terminé"
+
 msgid "college_in_progress"
 msgstr "Collège après enquête en cours"
 
@@ -238,6 +241,9 @@ msgstr "envoyer l'avis"
 
 msgid "send_preliminary_advice"
 msgstr "Envoyer l'avis préalable"
+
+msgid "sending_deposit_to_spw"
+msgstr "Transmettre le dossier au SPW"
 
 msgid "suspend"
 msgstr "suspendre"

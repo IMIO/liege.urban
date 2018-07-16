@@ -5,6 +5,7 @@
     <role name="UrbanEditor"/>
     <role name="EnvironmentReader"/>
     <role name="EnvironmentEditor"/>
+    <role name="EnvironmentContributor"/>
     <role name="ExternalReader"/>
     <role name="AddressEditor"/>
     <role name="RoadReader"/>

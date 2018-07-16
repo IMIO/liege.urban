@@ -35,6 +35,38 @@
         name="liege.urban.schedule.validating_address"
     />
 
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".end_conditions.AllParcelsAreValidated"
+        name="liege.urban.schedule.parcels_validated"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".end_conditions.ParcelsAdded"
+        name="liege.urban.schedule.parcels_added"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".end_conditions.LicenceInTemporaryAddressState"
+        name="liege.urban.schedule.temporary_address"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentLicence
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".creation_conditions.LicenceInValidatingAddressState"
+        name="liege.urban.schedule.validating_address"
+    />
+
     <!-- acknowledgment conditions -->
     <adapter
         for="Products.urban.interfaces.IGenericLicence

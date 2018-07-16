@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-07-12 09:29+0000\n"
+"POT-Creation-Date: 2018-07-16 08:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,11 +62,11 @@ msgid "liege.urban"
 msgstr ""
 
 #: ../content/codt_uniquelicence.py:49
-#: ../content/env_base.py:66
+#: ../content/env_base.py:68
 msgid "urban_label_CommentsOnDecisionProject"
 msgstr ""
 
-#: ../content/env_base.py:47
+#: ../content/env_base.py:48
 msgid "urban_label_ExploitationUsage"
 msgstr ""
 
@@ -83,7 +83,7 @@ msgid "urban_label_closeDate"
 msgstr ""
 
 #: ../content/codt_uniquelicence.py:50
-#: ../content/env_base.py:65
+#: ../content/env_base.py:67
 msgid "urban_label_decisionNotificationTo"
 msgstr ""
 
@@ -110,7 +110,7 @@ msgstr ""
 msgid "urban_label_explanationDate"
 msgstr ""
 
-#: ../content/env_base.py:46
+#: ../content/env_base.py:47
 msgid "urban_label_exploitationAddress"
 msgstr ""
 
@@ -136,7 +136,7 @@ msgstr ""
 msgid "urban_label_pmObject"
 msgstr ""
 
-#: ../content/env_base.py:45
+#: ../content/env_base.py:46
 msgid "urban_label_procedureType"
 msgstr ""
 

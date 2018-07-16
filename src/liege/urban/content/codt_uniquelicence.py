@@ -54,9 +54,9 @@ def update_item_schema(baseSchema):
     LicenceSchema['environmentTechnicalAdviceAfterInquiry'].read_permission = 'liege.urban: External Reader'
     LicenceSchema['environmentTechnicalAdviceAfterInquiry'].write_permission = 'Review portal content'
     LicenceSchema['commentsOnSPWOpinion'].read_permission = 'liege.urban: External Reader'
-    LicenceSchema['commentsOnSPWOpinion'].write_permission = 'liege.urban: Environment Validator'
+    LicenceSchema['commentsOnSPWOpinion'].write_permission = 'liege.urban: Environment Contributor'
     LicenceSchema['conclusions'].read_permission = 'liege.urban: External Reader'
-    LicenceSchema['conclusions'].write_permission = 'liege.urban: Environment Validator'
+    LicenceSchema['conclusions'].write_permission = 'liege.urban: Environment Contributor'
 
     return LicenceSchema
 

@@ -6,6 +6,7 @@
  <object name="codt_buildlicence_workflow" meta_type="Workflow"/>
  <object name="codt_uniquelicence_workflow" meta_type="Workflow"/>
  <object name="college_event_workflow" meta_type="Workflow"/>
+ <object name="envclassone_workflow" meta_type="Workflow"/>
  <object name="envclassthree_workflow" meta_type="Workflow"/>
  <object name="inquiry_event_workflow" meta_type="Workflow"/>
  <object name="opinion_request_workflow" meta_type="Workflow"/>
@@ -33,6 +34,9 @@
   </type>
   <type type_id="COTD_UrbanCertificateTwo">
      <bound-workflow workflow_id="cu2_workflow" />
+  </type>
+  <type type_id="EnvClassOne">
+     <bound-workflow workflow_id="envclassone_workflow" />
   </type>
   <type type_id="EnvClassThree">
      <bound-workflow workflow_id="envclassthree_workflow" />
