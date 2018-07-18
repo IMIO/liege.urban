@@ -27,7 +27,7 @@ class StateRolesMapping(LiegeBase):
         },
 
 
-        'sending_deposit_to_spw': {
+        'checking_completion': {
             LiegeBase.get_opinion_editors: ('ExternalReader',),
             'administrative_editors_environment': ('Editor',),
             'administrative_validators_environment': ('Contributor',),

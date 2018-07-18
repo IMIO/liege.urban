@@ -242,9 +242,6 @@ msgstr "envoyer l'avis"
 msgid "send_preliminary_advice"
 msgstr "Envoyer l'avis préalable"
 
-msgid "sending_deposit_to_spw"
-msgstr "Transmettre le dossier au SPW"
-
 msgid "suspend"
 msgstr "suspendre"
 

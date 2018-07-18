@@ -242,9 +242,6 @@ msgstr ""
 msgid "send_preliminary_advice"
 msgstr ""
 
-msgid "sending_deposit_to_spw"
-msgstr ""
-
 msgid "suspend"
 msgstr ""
 

@@ -4,6 +4,7 @@ from collections import OrderedDict
 
 from imio.schedule.content.task import IAutomatedTask
 
+from Products.urban.interfaces import IEnvironmentLicence
 from Products.urban.workflows.adapter import LocalRoleAdapter
 
 from plone import api
@@ -37,6 +38,16 @@ class StateRolesMapping(LocalRoleAdapter):
 
         return ('technical_editors', 'technical_editors_environment')
 
+    def get_administrative_editors(self):
+        if IEnvironmentLicence.providedBy(self.licence):
+            return ('administrative_editors_environment',)
+        return ('administrative_editors',)
+
+    def get_administrative_validators(self):
+        if IEnvironmentLicence.providedBy(self.licence):
+            return ('administrative_validators_environment',)
+        return ('administrative_validators',)
+
     def get_opinion_editor(self):
         return self.get_opinion_group('editors')
 
@@ -56,8 +67,8 @@ class StateRolesMapping(LocalRoleAdapter):
 
     mapping = {
         'creation': {
-            'administrative_editors': ('Editor',),
-            'administrative_validators': ('Contributor',),
+            get_administrative_editors: ('Editor',),
+            get_administrative_validators: ('Contributor',),
             'opinions_editors': ('Reader',),
             'Voirie_editors': ('Reader',),
             'Voirie_validators': ('Reader',),
@@ -66,8 +77,8 @@ class StateRolesMapping(LocalRoleAdapter):
         },
 
         'waiting_opinion': OrderedDict([
-            ('administrative_editors', (get_technical_roles,)),
-            ('administrative_validators', (get_technical_roles,)),
+            (get_administrative_editors, (get_technical_roles,)),
+            (get_administrative_validators, (get_technical_roles,)),
             ('technical_editors', (get_technical_roles,)),
             ('Voirie_editors', ('Reader',)),   # !!! order matters, let voirie role be overwritten
             ('Voirie_validators', ('Reader',)),# by ('get_opinion_...' if needed

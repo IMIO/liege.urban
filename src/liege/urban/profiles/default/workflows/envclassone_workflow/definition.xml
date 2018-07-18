@@ -475,7 +475,7 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="sending_deposit_to_spw" title="sending_deposit_to_spw">
+ <state state_id="checking_completion" title="checking_completion">
   <exit-transition transition_id="is_complete"/>
   <exit-transition transition_id="is_incomplete"/>
   <exit-transition transition_id="abandon"/>
@@ -2318,7 +2318,7 @@
    <guard-permission>liege.urban: Internal Editor</guard-permission>
   </guard>
  </transition>
- <transition transition_id="validate_address" title="validate_address" new_state="sending_deposit_to_spw" trigger="USER" before_script="" after_script="">
+ <transition transition_id="validate_address" title="validate_address" new_state="checking_completion" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">validate_address</action>
   <guard>
    <guard-permission>urban: Add PortionOut</guard-permission>
