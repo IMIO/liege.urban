@@ -14,6 +14,9 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
+msgid "FD_opinion"
+msgstr "En attente de l'avis du FD"
+
 msgid "abandon"
 msgstr "abandonner"
 
@@ -76,6 +79,9 @@ msgstr "Avis favorable"
 
 msgid "college"
 msgstr "Passage en séance e-délib"
+
+msgid "college_done"
+msgstr "Collège terminé"
 
 msgid "college_in_progress"
 msgstr "Collège après enquête en cours"

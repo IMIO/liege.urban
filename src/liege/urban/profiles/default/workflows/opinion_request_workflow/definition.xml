@@ -263,6 +263,7 @@
   <guard>
    <guard-permission>liege.urban: Internal Editor</guard-permission>
    <guard-group>administrative_editors</guard-group>
+   <guard-group>administrative_editors_environment</guard-group>
   </guard>
  </transition>
  <transition transition_id="reopen" title="reopen" new_state="waiting_opinion" trigger="USER" before_script="" after_script="">

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from liege.urban import UrbanMessage as _
+from liege.urban.licence_fields_permissions import set_field_permissions
 from Products.urban.EnvClassOne import EnvClassOne
 from Products.urban.EnvClassThree import EnvClassThree
 from Products.urban.EnvClassTwo import EnvClassTwo
@@ -54,6 +55,7 @@ env_base_classes = [
 
 for licence_class in env_base_classes:
     licence_class.schema = update_base_schema(licence_class.schema)
+EnvClassThree.schema = set_field_permissions(EnvClassThree.schema)
 
 
 def update_licences_schema(baseSchema):
@@ -64,6 +66,15 @@ def update_licences_schema(baseSchema):
     # rename fields
     LicenceSchema['ftSolicitOpinionsTo'].widget.label = _('urban_label_decisionNotificationTo')
     LicenceSchema['commentsOnSPWOpinion'].widget.label = _('urban_label_CommentsOnDecisionProject')
+    # change permissions of some fields
+    LicenceSchema['claimsSynthesis'].read_permission = 'liege.urban: Internal Reader'
+    LicenceSchema['claimsSynthesis'].write_permission = 'Review portal content'
+    LicenceSchema['environmentTechnicalAdviceAfterInquiry'].read_permission = 'liege.urban: Internal Reader'
+    LicenceSchema['environmentTechnicalAdviceAfterInquiry'].write_permission = 'Review portal content'
+    LicenceSchema['commentsOnSPWOpinion'].read_permission = 'liege.urban: Internal Reader'
+    LicenceSchema['commentsOnSPWOpinion'].write_permission = 'liege.urban: Environment Contributor'
+    LicenceSchema['conclusions'].read_permission = 'liege.urban: Internal Reader'
+    LicenceSchema['conclusions'].write_permission = 'liege.urban: Environment Contributor'
 
     return LicenceSchema
 
@@ -71,5 +82,26 @@ env_licence_classes = [
     EnvClassOne, EnvClassTwo
 ]
 
+licences_permissions_mapping = {
+    'urban_description': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
+    'urban_location': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
+    'urban_environment': ('liege.urban: Internal Reader', 'liege.urban: Environment Editor'),
+    'urban_road': ('liege.urban: Road Reader', 'liege.urban: Road Editor'),
+}
+
+exceptions = [
+    'portal_type',
+    'id',
+    'claimsSynthesis',
+    'environmentTechnicalAdviceAfterInquiry',
+    'commentsOnSPWOpinion',
+    'conclusions'
+]
+
 for licence_class in env_licence_classes:
     licence_class.schema = update_licences_schema(licence_class.schema)
+    licence_class.schema = set_field_permissions(
+        licence_class.schema,
+        licences_permissions_mapping,
+        exceptions,
+    )

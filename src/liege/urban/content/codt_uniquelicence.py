@@ -54,9 +54,9 @@ def update_item_schema(baseSchema):
     LicenceSchema['environmentTechnicalAdviceAfterInquiry'].read_permission = 'liege.urban: External Reader'
     LicenceSchema['environmentTechnicalAdviceAfterInquiry'].write_permission = 'Review portal content'
     LicenceSchema['commentsOnSPWOpinion'].read_permission = 'liege.urban: External Reader'
-    LicenceSchema['commentsOnSPWOpinion'].write_permission = 'liege.urban: Environment Validator'
+    LicenceSchema['commentsOnSPWOpinion'].write_permission = 'liege.urban: Environment Contributor'
     LicenceSchema['conclusions'].read_permission = 'liege.urban: External Reader'
-    LicenceSchema['conclusions'].write_permission = 'liege.urban: Environment Validator'
+    LicenceSchema['conclusions'].write_permission = 'liege.urban: Environment Contributor'
 
     return LicenceSchema
 
@@ -64,8 +64,8 @@ CODT_UniqueLicence.schema = update_item_schema(base_update_item_schema(CODT_Uniq
 
 permissions_mapping = {
     'urban_description': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
-    'urban_analysis': ('liege.urban: External Reader', 'liege.urban: Urban Editor'),
-    'urban_environment': ('liege.urban: External Reader', 'liege.urban: Environment Editor'),
+    'urban_analysis': ('liege.urban: Internal Reader', 'liege.urban: Urban Editor'),
+    'urban_environment': ('liege.urban: Internal Reader', 'liege.urban: Environment Editor'),
     'urban_location': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
     'urban_road': ('liege.urban: Road Reader', 'liege.urban: Road Editor'),
     'urban_habitation': ('liege.urban: External Reader', 'urban: Add PortionOut'),
