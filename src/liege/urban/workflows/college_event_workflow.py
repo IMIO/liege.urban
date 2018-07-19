@@ -2,6 +2,8 @@
 
 from Products.urban.workflows.urbanevent_workflow import StateRolesMapping as BaseRolesMapping
 
+from collections import OrderedDict
+
 
 class StateRolesMapping(BaseRolesMapping):
     """
@@ -48,28 +50,28 @@ class StateRolesMapping(BaseRolesMapping):
             return mapping.get(allowed_group)
 
     mapping = {
-        'draft': {
-            get_editors: ('Editor',),
-            get_contributors: ('Contributor',),
-            BaseRolesMapping.get_readers: ('Reader',),
-        },
+        'draft': OrderedDict([
+            (BaseRolesMapping.get_readers, ('Reader',)),
+            (get_editors, ('Editor',)),
+            (get_contributors, ('Contributor',)),
+        ]),
 
-        'to_validate': {
-            get_editors: ('Reader',),
-            get_contributors: ('Contributor',),
-            BaseRolesMapping.get_readers: ('Reader',),
-        },
+        'to_validate': OrderedDict([
+            (BaseRolesMapping.get_readers, ('Reader',)),
+            (get_editors, ('Reader',)),
+            (get_contributors, ('Contributor',)),
+        ]),
 
-        'decision_in_progress': {
-            get_editors: ('Editor',),
-            get_contributors: ('Contributor',),
-            BaseRolesMapping.get_readers: ('Reader',),
-        },
+        'decision_in_progress': OrderedDict([
+            (BaseRolesMapping.get_readers, ('Reader',)),
+            (get_editors, ('Editor',)),
+            (get_contributors, ('Contributor',)),
+        ]),
 
-        'closed': {
-            get_editors: ('Editor',),
-            get_contributors: ('Contributor',),
-            BaseRolesMapping.get_readers: ('Reader',),
-        },
+        'closed': OrderedDict([
+            (BaseRolesMapping.get_readers, ('Reader',)),
+            (get_editors, ('Editor',)),
+            (get_contributors, ('Contributor',)),
+        ]),
 
     }

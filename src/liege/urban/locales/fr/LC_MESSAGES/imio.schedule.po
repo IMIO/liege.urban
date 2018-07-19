@@ -35,7 +35,7 @@ msgstr "Valider les documents de l'annonce de projet"
 msgid "liege.urban.schedule.assign_task_owner"
 msgstr "Utilisateur connecté, sinon agent du dossier, sinon 'À ASSIGNER'"
 
-msgid "liege.urban.schedule.college_project_written"
+msgid "liege.urban.schedule.college_project_writen"
 msgstr "Rédiger le projet de collège"
 
 msgid "liege.urban.schedule.decision_notified"
