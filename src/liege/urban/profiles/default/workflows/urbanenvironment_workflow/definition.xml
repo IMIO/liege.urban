@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<dc-workflow workflow_id="urbanenvironment_workflow"
+             title="urban environment workflow definition"
+             initial_state="deposite_folder"
+             description=""
+             state_variable="review_state"
+             xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+             i18n:domain="plone">
+    <state state_id="Requests_discount__notice" title="">
+        <exit-transition transition_id="Requests_discount__notice_complete"/>
+        <exit-transition transition_id="Requests_discount__notice_imcomplete"/>
+    </state>
+    <state state_id="address_validating" title="">
+        <exit-transition transition_id="address_validating"/>
+    </state>
+    <state state_id="analysis_report" title="">
+        <exit-transition transition_id="analysis_report"/>
+    </state>
+    <state state_id="analysis_report_resume" title="">
+        <exit-transition transition_id="analysis_report_resume_delivry_spw"/>
+        <exit-transition transition_id="delivry_licence_by_commune"/>
+    </state>
+    <state state_id="college_opinion_after_investigation" title="">
+        <exit-transition transition_id="college_opinion_after_investigation"/>
+    </state>
+    <state state_id="complete" title="">
+        <exit-transition transition_id="complete"/>
+    </state>
+    <state state_id="delivry_licence_by_commune" title="">
+        <exit-transition transition_id="notification"/>
+    </state>
+    <state state_id="delivry_licence_by_spw" title="">
+        <exit-transition transition_id="notification"/>
+    </state>
+    <state state_id="deposite_complement" title="">
+        <exit-transition transition_id="deposite_complement"/>
+    </state>
+    <state state_id="deposite_folder" title="">
+        <exit-transition transition_id="deposite_folder"/>
+    </state>
+    <state state_id="folder_sending_to_spw" title="">
+        <exit-transition transition_id="folder_sending_to_spw"/>
+    </state>
+    <state state_id="inadmissible" title="">
+    </state>
+    <state state_id="incomplete" title="">
+        <exit-transition transition_id="incomplete_deposite_complement"/>
+        <exit-transition transition_id="incomplete_inadmissible"/>
+    </state>
+    <state state_id="notification" title="">
+    </state>
+    <state state_id="public_investigation" title="">
+        <exit-transition transition_id="public_investigation"/>
+    </state>
+    <state state_id="rapport_resume_spw" title="">
+        <exit-transition transition_id="rapport_resume_spw"/>
+    </state>
+    <state state_id="rubrics_identifications" title="">
+        <exit-transition transition_id="rubrics_identifications"/>
+    </state>
+    <state state_id="sending_college_notice_spw" title="">
+        <exit-transition transition_id="sending_college_notice_spw"/>
+    </state>
+    <state state_id="sending_deposite_complement_spw" title="">
+        <exit-transition transition_id="sending_deposite_complement_spw_complete"/>
+        <exit-transition transition_id="sending_deposite_complement_spw_incomplete"/>
+    </state>
+    <state state_id="technical_pre_analysis" title="">
+        <exit-transition transition_id="technical_pre_analysis"/>
+    </state>
+    <transition transition_id="Requests_discount__notice_complete" title="Requests_discount__notice_complete"
+                new_state="complete" trigger="USER" before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">Requests discount notice complete</action>
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="Requests_discount__notice_imcomplete" title="Requests_discount__notice_imcomplete"
+                new_state="incomplete" trigger="USER" before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">Requests discount notice imcomplete</action>
+
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="address_validating" title="" new_state="folder_sending_to_spw" trigger="USER"
+                before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">address validating</action>
+
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="analysis_report" title="analysis_report" new_state="college_opinion_after_investigation"
+                trigger="USER" before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">analysis report</action>
+
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="analysis_report_resume_delivry_spw" title="analysis_report_resume_delivry_spw"
+                new_state="delivry_licence_by_spw" trigger="USER" before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">analysis report resume delivry spw</action>
+
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="college_opinion_after_investigation" title="" new_state="sending_college_notice_spw"
+                trigger="USER" before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">college opinion after investigation</action>
+
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="complete" title="complete" new_state="rubrics_identifications" trigger="USER"
+                before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">complete</action>
+
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="delivry_licence_by_commune" title="delivry_licence_by_commune"
+                new_state="delivry_licence_by_commune" trigger="USER" before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">delivry licence by commune</action>
+
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="deposite_complement" title="deposite_complement"
+                new_state="sending_deposite_complement_spw" trigger="USER" before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">deposite complement</action>
+
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="deposite_folder" title="deposite_folder" new_state="address_validating" trigger="USER"
+                before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">deposite folder</action>
+
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="folder_sending_to_spw" title="folder_sending_to_spw"
+                new_state="technical_pre_analysis" trigger="USER" before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">folder sending to spw</action>
+
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="incomplete_deposite_complement" title="incomplete_deposite_complement"
+                new_state="deposite_complement" trigger="USER" before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">incomplete deposite complement</action>
+
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="incomplete_inadmissible" title="incomplete_inadmissible" new_state="inadmissible"
+                trigger="USER" before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">incomplete inadmissible</action>
+
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="notification" title="" new_state="notification" trigger="USER" before_script=""
+                after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">notification</action>
+
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="public_investigation" title="public_investigation" new_state="analysis_report"
+                trigger="USER" before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">public investigation</action>
+
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="rapport_resume_spw" title="rapport_resume_spw" new_state="analysis_report_resume"
+                trigger="USER" before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">rapport resume spw</action>
+
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="rubrics_identifications" title="" new_state="public_investigation" trigger="USER"
+                before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">rubrics identifications</action>
+
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="sending_college_notice_spw" title="sending_college_notice_spw"
+                new_state="rapport_resume_spw" trigger="USER" before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">sending college notice spw</action>
+
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="sending_deposite_complement_spw_complete" title="" new_state="complete" trigger="USER"
+                before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">sending deposite complement spw complete</action>
+
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="sending_deposite_complement_spw_incomplete" title="" new_state="incomplete"
+                trigger="USER" before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">sending deposite complement spw incomplete</action>
+
+        <guard>
+        </guard>
+    </transition>
+    <transition transition_id="technical_pre_analysis" title="technical_pre_analysis"
+                new_state="Requests_discount__notice" trigger="USER" before_script="" after_script="">
+        <action url="" category="workflow" icon="" i18n:translate="">technical pre analysis</action>
+
+        <guard>
+        </guard>
+    </transition>
+</dc-workflow>

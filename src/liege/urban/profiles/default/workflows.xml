@@ -14,6 +14,7 @@
  <object name="urbancertificateone_workflow" meta_type="Workflow"/>
  <object name="urban_licence_workflow" meta_type="Workflow"/>
  <object name="urbandoc_workflow" meta_type="Workflow"/>
+ <object name="urbanenvironment_workflow" meta_type="Workflow"/>
 <!-- ##code-section workflowobjects -->
  <object name="article127_workflow" meta_type="Workflow"/>
  <object name="cu2_workflow" meta_type="Workflow"/>
@@ -64,9 +65,9 @@
   <type type_id="UrbanEventAnnouncement">
      <bound-workflow workflow_id="inquiry_event_workflow" />
   </type>
-  <type type_id="UrbanEventNotificationCollege">
-     <bound-workflow workflow_id="notification_college_event_workflow" />
-  </type>
+  <!--<type type_id="UrbanEventNotificationCollege">-->
+     <!--<bound-workflow workflow_id="notification_college_event_workflow" />-->
+  <!--</type>-->
   <type type_id="UrbanEventOpinionRequest">
      <bound-workflow workflow_id="opinion_request_workflow" />
   </type>
@@ -81,5 +82,11 @@
      <bound-workflow workflow_id="urbandoc_workflow" />
   </type>
 <!-- ##/code-section workflowbindings -->
+  <type type_id="EnvClassOne">
+     <bound-workflow workflow_id="urbanenvironment_workflow" />
+  </type>
+  <type type_id="EnvClassTwo">
+     <bound-workflow workflow_id="urbanenvironment_workflow" />
+  </type>
  </bindings>
 </object>
