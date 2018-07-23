@@ -23,7 +23,7 @@ def set_environment_field_permissions(schema, mapping={}, exceptions=['portal_ty
 
     for field in schema.fields():
         if field.getName() not in exceptions:
-            default = ('liege.urban: Environment Reader', 'liege.urban: Environment Editor')
+            default = ('View', 'Modify portal content')
             read_permission, write_permission = mapping.get(field.schemata, default)
             if read_permission:
                 field.read_permission = read_permission
