@@ -2,6 +2,7 @@
 
 from liege.urban import UrbanMessage as _
 from liege.urban.licence_fields_permissions import set_field_permissions
+from liege.urban.licence_fields_permissions import set_environment_field_permissions
 from Products.urban.EnvClassOne import EnvClassOne
 from Products.urban.EnvClassThree import EnvClassThree
 from Products.urban.EnvClassTwo import EnvClassTwo
@@ -55,7 +56,7 @@ env_base_classes = [
 
 for licence_class in env_base_classes:
     licence_class.schema = update_base_schema(licence_class.schema)
-EnvClassThree.schema = set_field_permissions(EnvClassThree.schema)
+EnvClassThree.schema = set_environment_field_permissions(EnvClassThree.schema)
 
 
 def update_licences_schema(baseSchema):
