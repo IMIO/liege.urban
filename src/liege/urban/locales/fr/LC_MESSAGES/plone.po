@@ -150,7 +150,7 @@ msgid "is_acceptable"
 msgstr "Recevable"
 
 msgid "is_acceptable_with_conditions"
-msgstr "Recevable avec conditions"
+msgstr "Recevable avec conditions ultérieures"
 
 msgid "is_complete"
 msgstr "déclarer complet"
