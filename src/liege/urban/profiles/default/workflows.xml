@@ -38,6 +38,10 @@
   <type type_id="EnvClassOne">
      <bound-workflow workflow_id="envclassone_workflow" />
   </type>
+  <!-- use same workflow for envclassone and envclasstwo -->
+  <type type_id="EnvClassTwo">
+     <bound-workflow workflow_id="envclassone_workflow" />
+  </type>
   <type type_id="EnvClassThree">
      <bound-workflow workflow_id="envclassthree_workflow" />
   </type>

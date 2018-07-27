@@ -687,6 +687,7 @@
  <state state_id="internal_advice_done" title="internal_advice_done">
   <exit-transition transition_id="is_incomplete"/>
   <exit-transition transition_id="is_complete"/>
+  <exit-transition transition_id="isinacceptable"/>
   <exit-transition transition_id="suspend"/>
   <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
