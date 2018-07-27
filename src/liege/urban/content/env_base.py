@@ -59,6 +59,15 @@ for licence_class in env_base_classes:
 EnvClassThree.schema = set_environment_field_permissions(EnvClassThree.schema)
 
 
+
+def update_classthree_schema(baseSchema):
+    LicenceSchema = baseSchema.copy()
+    # reorder fields
+    LicenceSchema.moveField('description', after='inadmissibilityreasonsDetails')
+    return LicenceSchema
+
+EnvClassThree.schema = update_classthree_schema(EnvClassThree.schema)
+
 def update_licences_schema(baseSchema):
     LicenceSchema = baseSchema.copy()
 
@@ -67,6 +76,8 @@ def update_licences_schema(baseSchema):
     # rename fields
     LicenceSchema['ftSolicitOpinionsTo'].widget.label = _('urban_label_decisionNotificationTo')
     LicenceSchema['commentsOnSPWOpinion'].widget.label = _('urban_label_CommentsOnDecisionProject')
+    # reorder fields
+    LicenceSchema.moveField('description', after='ftSolicitOpinionsTo')
     # change permissions of some fields
     LicenceSchema['claimsSynthesis'].read_permission = 'liege.urban: Internal Reader'
     LicenceSchema['claimsSynthesis'].write_permission = 'Review portal content'
