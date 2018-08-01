@@ -120,7 +120,7 @@
      for="Products.urban.interfaces.IEnvClassTwo"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
      factory=".envclassone_workflow.StateRolesMapping"
-     name="envclassone_local_roles"
+     name="envclasstwo_local_roles"
   />
 
   <adapter

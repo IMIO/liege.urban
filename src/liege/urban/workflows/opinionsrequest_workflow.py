@@ -4,7 +4,7 @@ from collections import OrderedDict
 
 from imio.schedule.content.task import IAutomatedTask
 
-from Products.urban.interfaces import IEnvironmentLicence
+from Products.urban.interfaces import IEnvironmentBase
 from Products.urban.workflows.adapter import LocalRoleAdapter
 
 from plone import api
@@ -39,12 +39,12 @@ class StateRolesMapping(LocalRoleAdapter):
         return ('technical_editors', 'technical_editors_environment')
 
     def get_administrative_editors(self):
-        if IEnvironmentLicence.providedBy(self.licence):
+        if IEnvironmentBase.providedBy(self.licence):
             return ('administrative_editors_environment',)
         return ('administrative_editors',)
 
     def get_administrative_validators(self):
-        if IEnvironmentLicence.providedBy(self.licence):
+        if IEnvironmentBase.providedBy(self.licence):
             return ('administrative_validators_environment',)
         return ('administrative_validators',)
 
@@ -66,15 +66,15 @@ class StateRolesMapping(LocalRoleAdapter):
         return ('Reader',)
 
     mapping = {
-        'creation': {
-            get_administrative_editors: ('Editor',),
-            get_administrative_validators: ('Contributor',),
-            'opinions_editors': ('Reader',),
-            'Voirie_editors': ('Reader',),
-            'Voirie_validators': ('Reader',),
-            'survey_editors': ('Reader',),
-            LocalRoleAdapter.get_readers: ('Reader',),
-        },
+        'creation': OrderedDict([
+            (get_administrative_editors, ('Editor',)),
+            (get_administrative_validators, ('Contributor',)),
+            ('opinions_editors', ('Reader',)),
+            ('Voirie_editors', ('Reader',)),
+            ('Voirie_validators', ('Reader',)),
+            ('survey_editors', ('Reader',)),
+            (LocalRoleAdapter.get_readers, ('Reader',)),
+        ]),
 
         'waiting_opinion': OrderedDict([
             (get_administrative_editors, (get_technical_roles,)),
