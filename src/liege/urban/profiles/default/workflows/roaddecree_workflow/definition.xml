@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<dc-workflow workflow_id="roaddecree_workflow" title="roaddecree_workflow" description="" state_variable="review_state"
+             initial_state="folder_creation" manager_bypass="False">
+    <state state_id="abandoned" title="abandoned">
+    </state>
+    <state state_id="authorized" title="authorized">
+    </state>
+    <state state_id="college_council_passage" title="college_council_passage">
+        <exit-transition transition_id=" to_abandoned"/>
+        <exit-transition transition_id="to_authorized"/>
+        <exit-transition transition_id="to_refuse"/>
+    </state>
+    <state state_id="folder_creation" title="folder_creation">
+        <description>folder_creation</description>
+        <exit-transition transition_id="to_public_investigation"/>
+    </state>
+    <state state_id="public_investigation" title="public_investigation">
+        <exit-transition transition_id="to_technical_analysis_post_investigation"/>
+    </state>
+    <state state_id="refuse" title="refuse">
+    </state>
+    <state state_id="technical_analysis_post_investigation" title="technical_analysis_post_investigation">
+        <exit-transition transition_id="to_college_council_passage"/>
+    </state>
+    <transition transition_id=" to_abandoned" title="to_abandoned" new_state="abandoned" trigger="USER" before_script=""
+                after_script="">
+        <action url="" category="workflow" icon="">to_abandoned</action>
+        <guard>
+            <guard-role>Manager</guard-role>
+        </guard>
+    </transition>
+    <transition transition_id="to_authorized" title="to_authorized" new_state="authorized" trigger="USER"
+                before_script="" after_script="">
+        <action url="" category="workflow" icon="">to_authorized</action>
+        <guard>
+            <guard-role>Manager</guard-role>
+        </guard>
+    </transition>
+    <transition transition_id="to_college_council_passage" title="to_college_council_passage"
+                new_state="college_council_passage" trigger="USER" before_script="" after_script="">
+        <action url="" category="workflow" icon="">to_college_council_passage</action>
+        <guard>
+            <guard-role>Manager</guard-role>
+        </guard>
+    </transition>
+    <transition transition_id="to_public_investigation" title="to_public_investigation" new_state="public_investigation"
+                trigger="USER" before_script="" after_script="">
+        <description>folder_creation</description>
+        <action url="" category="workflow" icon="">to_public_investigation</action>
+        <guard>
+            <guard-role>Manager</guard-role>
+        </guard>
+    </transition>
+    <transition transition_id="to_refuse" title="to_refuse" new_state="refuse" trigger="USER" before_script=""
+                after_script="">
+        <action url="" category="workflow" icon="">to_refuse</action>
+        <guard>
+            <guard-role>Manager</guard-role>
+        </guard>
+    </transition>
+    <transition transition_id="to_technical_analysis_post_investigation"
+                title="to_technical_analysis_post_investigation" new_state="technical_analysis_post_investigation"
+                trigger="USER" before_script="" after_script="">
+        <action url="" category="workflow" icon="">to_technical_analysis_post_investigation</action>
+        <guard>
+            <guard-role>Manager</guard-role>
+        </guard>
+    </transition>
+</dc-workflow>
