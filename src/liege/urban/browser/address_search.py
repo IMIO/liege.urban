@@ -16,7 +16,7 @@ from z3c.form import form, field
 from zope.interface import Interface
 from zope.schema import TextLine
 from zope.i18nmessageid import MessageFactory
-_ = MessageFactory('hello_world')
+_ = MessageFactory('liege.urban')
 
 
 class StreetNameField(TextLine):

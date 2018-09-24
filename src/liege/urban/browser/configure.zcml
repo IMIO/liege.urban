@@ -73,6 +73,51 @@
     />
 
   <adapter
+        for="Products.urban.interfaces.IUniqueLicence
+             zope.publisher.interfaces.browser.IBrowserRequest"
+        provides="zope.interface.Interface"
+        factory=".codt_uniquelicence.IsLeaderUser"
+        name="is_licence_leader"
+        permission="zope2.View"
+  />
+
+  <adapter
+        for="Products.urban.interfaces.IUniqueLicence
+             zope.publisher.interfaces.browser.IBrowserRequest"
+        provides="zope.interface.Interface"
+        factory=".codt_uniquelicence.IsUrbanLeader"
+        name="is_urban_leader"
+        permission="zope2.View"
+  />
+
+  <adapter
+        for="Products.urban.interfaces.IUniqueLicence
+             zope.publisher.interfaces.browser.IBrowserRequest"
+        provides="zope.interface.Interface"
+        factory=".codt_uniquelicence.IsEnvironmentLeader"
+        name="is_environment_leader"
+        permission="zope2.View"
+  />
+
+  <adapter
+        for="Products.urban.interfaces.IUniqueLicence
+             zope.publisher.interfaces.browser.IBrowserRequest"
+        provides="zope.interface.Interface"
+        factory=".codt_uniquelicence.IsUrbanUser"
+        name="is_urban_user"
+        permission="zope2.View"
+  />
+
+  <adapter
+        for="Products.urban.interfaces.IUniqueLicence
+             zope.publisher.interfaces.browser.IBrowserRequest"
+        provides="zope.interface.Interface"
+        factory=".codt_uniquelicence.IsEnvironmentUser"
+        name="is_environment_user"
+        permission="zope2.View"
+  />
+
+  <adapter
         for="Products.urban.interfaces.ICODT_UniqueLicence
              zope.publisher.interfaces.browser.IBrowserRequest"
         provides="zope.interface.Interface"
