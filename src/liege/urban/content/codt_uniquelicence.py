@@ -2,7 +2,7 @@
 
 from Products.Archetypes.atapi import Schema
 
-from Products.urban.CODT_UniqueLicence import CODT_UniqueLicence
+from Products.urban.content.licence.CODT_UniqueLicence import CODT_UniqueLicence
 
 from liege.urban import UrbanMessage as _
 # buildlicence and uniquelicence schema should have the same changes

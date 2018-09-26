@@ -3,9 +3,9 @@
 from liege.urban import UrbanMessage as _
 from liege.urban.licence_fields_permissions import set_field_permissions
 from liege.urban.licence_fields_permissions import set_environment_field_permissions
-from Products.urban.EnvClassOne import EnvClassOne
-from Products.urban.EnvClassThree import EnvClassThree
-from Products.urban.EnvClassTwo import EnvClassTwo
+from Products.urban.content.licence.EnvClassOne import EnvClassOne
+from Products.urban.content.licence.EnvClassThree import EnvClassThree
+from Products.urban.content.licence.EnvClassTwo import EnvClassTwo
 
 
 def update_base_schema(baseSchema):

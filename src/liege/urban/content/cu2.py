@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from Products.urban.UrbanCertificateTwo import UrbanCertificateTwo
+from Products.urban.content.licence.UrbanCertificateTwo import UrbanCertificateTwo
 
 # buildlicence and article127 schema should have the same changes
 from liege.urban.content.buildlicence import update_item_schema
