@@ -319,3 +319,30 @@ msgstr ""
 
 msgid "waiting_opinion"
 msgstr ""
+
+msgid "folder_creation"
+msgstr ""
+
+msgid "authorize_decree"
+msgstr ""
+
+msgid "refuse_decree"
+msgstr ""
+
+msgid "to_college_council_passage"
+msgstr ""
+
+msgid "college_council_passage"
+msgstr ""
+
+msgid "to_public_investigation"
+msgstr ""
+
+msgid "public_investigation"
+msgstr ""
+
+msgid "to_technical_analysis_post_investigation"
+msgstr ""
+
+msgid "technical_analysis_post_investigation"
+msgstr ""
