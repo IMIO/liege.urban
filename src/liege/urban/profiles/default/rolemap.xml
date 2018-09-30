@@ -10,6 +10,8 @@
     <role name="AddressEditor"/>
     <role name="RoadReader"/>
     <role name="RoadEditor"/>
+    <role name="FittingOutReader"/>
+    <role name="FittingOutEditor"/>
  </roles>
  <permissions>
  </permissions>
