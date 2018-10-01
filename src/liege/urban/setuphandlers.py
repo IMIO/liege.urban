@@ -21,7 +21,6 @@ def post_install(context):
     setAllowedTypes(context)
     addLiegeGroups(context)
     setupSurveySchedule(context)
-    setupOpinionsSchedule(context)
     addScheduleConfigs(context)
     addTestUsers(context)
 
@@ -130,7 +129,6 @@ def addLiegeGroups(context):
     portal_urban.manage_addLocalRoles("fittingout_technicians_validators", ("Reader", ))
     portal_groups.addPrincipalToGroup("fittingout_technicians_validators", 'urban_readers')
     portal_groups.addPrincipalToGroup("fittingout_technicians_validators", 'technical_editors')
-
 
     # external services
     services = ['Voirie', 'Access', 'Plantation', 'SSSP', 'EDII']
