@@ -5,26 +5,26 @@ from liege.urban.interfaces import IShore
 
 from Products.Archetypes.atapi import Schema
 
-from Products.urban.Article127 import Article127
-from Products.urban.BuildLicence import BuildLicence
-from Products.urban.CODT_Article127 import CODT_Article127
-from Products.urban.CODT_BuildLicence import CODT_BuildLicence
-from Products.urban.CODT_IntegratedLicence import CODT_IntegratedLicence
-from Products.urban.CODT_UniqueLicence import CODT_UniqueLicence
-from Products.urban.CODT_UrbanCertificateTwo import CODT_UrbanCertificateTwo
-from Products.urban.Declaration import Declaration
-from Products.urban.Division import Division
-from Products.urban.EnvClassOne import EnvClassOne
-from Products.urban.EnvClassThree import EnvClassThree
-from Products.urban.EnvClassTwo import EnvClassTwo
-from Products.urban.GenericLicence import GenericLicence
-from Products.urban.IntegratedLicence import IntegratedLicence
-from Products.urban.MiscDemand import MiscDemand
-from Products.urban.ParcelOutLicence import ParcelOutLicence
-from Products.urban.PatrimonyCertificate import PatrimonyCertificate
-from Products.urban.UniqueLicence import UniqueLicence
-from Products.urban.UrbanCertificateBase import UrbanCertificateBase
-from Products.urban.UrbanCertificateTwo import UrbanCertificateTwo
+from Products.urban.content.licence.Article127 import Article127
+from Products.urban.content.licence.BuildLicence import BuildLicence
+from Products.urban.content.licence.CODT_Article127 import CODT_Article127
+from Products.urban.content.licence.CODT_BuildLicence import CODT_BuildLicence
+from Products.urban.content.licence.CODT_IntegratedLicence import CODT_IntegratedLicence
+from Products.urban.content.licence.CODT_UniqueLicence import CODT_UniqueLicence
+from Products.urban.content.licence.CODT_UrbanCertificateTwo import CODT_UrbanCertificateTwo
+from Products.urban.content.licence.Declaration import Declaration
+from Products.urban.content.licence.Division import Division
+from Products.urban.content.licence.EnvClassOne import EnvClassOne
+from Products.urban.content.licence.EnvClassThree import EnvClassThree
+from Products.urban.content.licence.EnvClassTwo import EnvClassTwo
+from Products.urban.content.licence.GenericLicence import GenericLicence
+from Products.urban.content.licence.IntegratedLicence import IntegratedLicence
+from Products.urban.content.licence.MiscDemand import MiscDemand
+from Products.urban.content.licence.ParcelOutLicence import ParcelOutLicence
+from Products.urban.content.licence.PatrimonyCertificate import PatrimonyCertificate
+from Products.urban.content.licence.UniqueLicence import UniqueLicence
+from Products.urban.content.licence.UrbanCertificateBase import UrbanCertificateBase
+from Products.urban.content.licence.UrbanCertificateTwo import UrbanCertificateTwo
 
 from zope.i18n import translate
 from zope.component import queryAdapter

@@ -189,4 +189,11 @@
      name="preliminaryadviceevent_local_roles"
   />
 
+  <adapter
+     for="Products.urban.interfaces.IRoadDecree"
+     provides="borg.localrole.interfaces.ILocalRoleProvider"
+     factory=".roaddecree_workflow.StateRolesMapping"
+     name="roaddecree_local_roles"
+  />
+
 </configure>

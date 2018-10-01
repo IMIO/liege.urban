@@ -119,6 +119,19 @@ def addLiegeGroups(context):
     portal_groups.setRolesForGroup('survey_editors', ('UrbanMapReader', ))
     portal_urban.manage_addLocalRoles("survey_editors", ("Reader", ))
 
+    portal_groups.addGroup("fittingout_technicians", title="fitting-out technicians")
+    portal_groups.setRolesForGroup('fittingout_technicians', ('UrbanMapReader', ))
+    portal_urban.manage_addLocalRoles("fittingout_technicians", ("Reader", ))
+    portal_groups.addPrincipalToGroup("fittingout_technicians", 'urban_readers')
+    portal_groups.addPrincipalToGroup("fittingout_technicians", 'urban_editors')
+
+    portal_groups.addGroup("fittingout_technicians_validators", title="Technical Validators")
+    portal_groups.setRolesForGroup('fittingout_technicians_validators', ('UrbanMapReader', ))
+    portal_urban.manage_addLocalRoles("fittingout_technicians_validators", ("Reader", ))
+    portal_groups.addPrincipalToGroup("fittingout_technicians_validators", 'urban_readers')
+    portal_groups.addPrincipalToGroup("fittingout_technicians_validators", 'technical_editors')
+
+
     # external services
     services = ['Voirie', 'Access', 'Plantation', 'SSSP', 'EDII']
     for service in services:

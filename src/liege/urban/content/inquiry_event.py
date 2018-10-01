@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from Products.urban.UrbanEventInquiry import UrbanEventInquiry
+from Products.urban.content.UrbanEventInquiry import UrbanEventInquiry
 
 from liege.urban import UrbanMessage as _
 
