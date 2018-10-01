@@ -65,6 +65,9 @@ msgstr ""
 msgid "back_in_draft"
 msgstr ""
 
+msgid "back_to_deposit"
+msgstr ""
+
 msgid "check_completion"
 msgstr ""
 

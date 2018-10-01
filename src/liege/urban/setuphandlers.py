@@ -120,9 +120,6 @@ def addLiegeGroups(context):
     portal_urban.manage_addLocalRoles("survey_editors", ("Reader", ))
 
     # external services
-    portal_groups.addGroup("opinions_editors", title="Opinion Editors")
-    portal_groups.setRolesForGroup('opinions_editors', ('UrbanMapReader', ))
-    portal_urban.manage_addLocalRoles("opinions_editors", ("Reader", ))
     services = ['Voirie', 'Access', 'Plantation', 'SSSP', 'EDII']
     for service in services:
         portal_groups.addGroup("{}_editors".format(service), title="{} Editors".format(service))
@@ -156,31 +153,6 @@ def setupSurveySchedule(context):
         portal_type='GenericLicence',
         title=u'Configuration d\'échéances survey',
         id='survey_schedule'
-    )
-
-    config_path = '{}/schedule/config/survey_schedule.xml'.format(os.path.dirname(__file__))
-    set_schedule_view(schedule_folder, config_path, schedule_config)
-
-
-def setupOpinionsSchedule(context):
-    """
-    Enable schedule faceted navigation on schedule folder.
-    """
-    site = context.getSite()
-    urban_folder = site.urban
-    portal_urban = api.portal.get_tool('portal_urban')
-
-    if not hasattr(urban_folder, 'opinions_schedule'):
-        urban_folder.invokeFactory('Folder', id='opinions_schedule')
-    schedule_folder = getattr(urban_folder, 'opinions_schedule')
-    schedule_folder.manage_addLocalRoles("opinions_editors", ("Reader", ))
-    schedule_folder.reindexObjectSecurity()
-
-    schedule_config = createScheduleConfig(
-        container=portal_urban,
-        portal_type='UrbanEventOpinionRequest',
-        id='opinions_schedule',
-        title=u'Configuration d\'échéances avis de services',
     )
 
     config_path = '{}/schedule/config/survey_schedule.xml'.format(os.path.dirname(__file__))

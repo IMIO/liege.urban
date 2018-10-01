@@ -87,6 +87,7 @@ def update_item_schema(baseSchema):
     LicenceSchema.moveField('floodingLevelDetails', after='floodingLevel')
 
     LicenceSchema['locationTechnicalRemarks'].widget.label = _('urban_label_description')
+    LicenceSchema['pipelinesDetails'].widget.label = _('urban_label_pipeSevesoDetails')
     rcu = LicenceSchema.get('RCU', None)
     if rcu:
         rcu.widget.label = _('urban_label_RCB')

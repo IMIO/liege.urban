@@ -126,8 +126,8 @@ class StateRolesMapping(LiegeBase):
         'college_in_progress': {
             'administrative_editors_environment': ('Editor', 'EnvironmentEditor'),
             'administrative_validators_environment': ('Contributor', 'EnvironmentEditor'),
-            'technical_editors_environment': ('Editor', 'EnvironmentEditor'),
-            'technical_validators_environment': ('Contributor', 'EnvironmentEditor'),
+            'technical_editors_environment': ('Reviewer', 'Editor', 'EnvironmentEditor'),
+            'technical_validators_environment': ('Reviewer', 'Contributor', 'EnvironmentEditor'),
             'administrative_editors': ('Editor', 'UrbanEditor'),
             'administrative_validators': ('Contributor', 'UrbanEditor'),
             'technical_editors': ('Editor', 'UrbanEditor'),

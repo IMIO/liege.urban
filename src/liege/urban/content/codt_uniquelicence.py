@@ -32,8 +32,9 @@ def update_item_schema(baseSchema):
     LicenceSchema['demandDisplay'].widget.visible = {'edit': 'visible', 'view': 'visible'}
     LicenceSchema['investigationDetails'].widget.visible = {'edit': 'visible', 'view': 'visible'}
     # reorder fields
+    LicenceSchema.moveField('folderTendency', after='licenceSubject')
     LicenceSchema.moveField('inquiry_category', after='divergenceDetails')
-    LicenceSchema.moveField('rubrics', after='folderTendency')
+    LicenceSchema.moveField('rubrics', after='prorogation')
     LicenceSchema.moveField('rubricsDetails', after='rubrics')
     LicenceSchema.moveField('minimumLegalConditions', after='rubricsDetails')
     LicenceSchema.moveField('additionalLegalConditions', after='minimumLegalConditions')

@@ -110,6 +110,8 @@
  <state state_id="to_send" title="to_send">
   <exit-transition transition_id="close"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="Access contents information" acquired="False">

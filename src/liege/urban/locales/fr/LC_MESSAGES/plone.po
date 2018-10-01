@@ -54,7 +54,7 @@ msgid "ask_temporary_address"
 msgstr "demander une adresse temporaire"
 
 msgid "ask_validation"
-msgstr "faire valider"
+msgstr "Faire valider"
 
 msgid "authorize_licence"
 msgstr "Permis autorisé"
@@ -64,6 +64,9 @@ msgstr "Autorisé"
 
 msgid "back_in_draft"
 msgstr "retour"
+
+msgid "back_to_deposit"
+msgstr "Revenir au dépot du dossier"
 
 msgid "check_completion"
 msgstr "Vérifier la complétude"
@@ -141,7 +144,7 @@ msgid "invalidate_completion"
 msgstr "Revérifier la complétude"
 
 msgid "invalidate_opinion"
-msgstr "refuser"
+msgstr "Refuser"
 
 msgid "invalidate_procedure_choice"
 msgstr "refuser"
@@ -213,7 +216,7 @@ msgid "receive_complements"
 msgstr "compléments reçus"
 
 msgid "receive_opinion"
-msgstr "recevoir l'avis"
+msgstr "Recevoir l'avis"
 
 msgid "refuse_analysis"
 msgstr "Renvoyer"
@@ -237,7 +240,7 @@ msgid "report_written"
 msgstr "Rapport d'analyse écrit"
 
 msgid "send_opinion"
-msgstr "envoyer l'avis"
+msgstr "Envoyer l'avis"
 
 msgid "send_preliminary_advice"
 msgstr "Envoyer l'avis préalable"
@@ -315,4 +318,4 @@ msgid "waiting_address"
 msgstr "En attente d'une adresse temporaire"
 
 msgid "waiting_opinion"
-msgstr "En attente d'avis"
+msgstr "En attente de l'avis"

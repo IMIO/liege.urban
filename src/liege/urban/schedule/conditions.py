@@ -174,18 +174,6 @@ class AcknowledgmentValidatedCondition(Condition):
         return api.content.get_state(ack_event) == 'to_send'
 
 
-class IsInternalOpinionRequest(CreationCondition):
-    """
-    Licence folderComplete event is created.
-    """
-
-    def evaluate(self):
-        opinion_request = self.task_container
-        opinion_config = opinion_request.getUrbaneventtypes()
-        is_internal = opinion_config.id in self.task_config.id
-        return is_internal
-
-
 class OnlyNeedFDOpinion(CreationCondition):
     """
     Procedure choice is FD opinion only.

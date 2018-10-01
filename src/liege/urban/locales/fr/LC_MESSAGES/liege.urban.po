@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-07-27 08:56+0000\n"
+"POT-Creation-Date: 2018-09-26 11:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,7 +58,7 @@ msgstr "Attention, il reste des actions à prendre pour les tâches ci-dessus!!!
 msgid "liege.urban"
 msgstr ""
 
-#: ../content/codt_uniquelicence.py:49
+#: ../content/codt_uniquelicence.py:50
 #: ../content/env_base.py:79
 msgid "urban_label_CommentsOnDecisionProject"
 msgstr "Commentaire sur le projet de décision"
@@ -71,7 +71,7 @@ msgstr "Nature de l'exploitation"
 msgid "urban_label_LiegeEnvironmentConditions"
 msgstr "conditions Ville de Liège"
 
-#: ../content/genericlicence.py:92
+#: ../content/genericlicence.py:93
 msgid "urban_label_RCB"
 msgstr "Réglement communal sur les Bâtisses"
 
@@ -83,7 +83,7 @@ msgstr "Nature des travaux (codes Ville)"
 msgid "urban_label_closeDate"
 msgstr "Date de séance de clôture"
 
-#: ../content/codt_uniquelicence.py:50
+#: ../content/codt_uniquelicence.py:51
 #: ../content/env_base.py:78
 msgid "urban_label_decisionNotificationTo"
 msgstr "Notification de la décision à"
@@ -115,7 +115,7 @@ msgstr "Date de soirée de consultation"
 msgid "urban_label_exploitationAddress"
 msgstr "Adresse de l'exploitation"
 
-#: ../content/codt_uniquelicence.py:48
+#: ../content/codt_uniquelicence.py:49
 msgid "urban_label_folderCategory"
 msgstr "Type de dossier"
 
@@ -132,6 +132,10 @@ msgstr "Motivation"
 msgid "urban_label_pathCoating"
 msgstr "Revêtement de trottoir existant"
 
+#: ../content/genericlicence.py:90
+msgid "urban_label_pipeSevesoDetails"
+msgstr "Détails sur les canalisations et sites Seveso"
+
 #. Default: "Pmobject"
 #: ../content/urbanevent.py:21
 msgid "urban_label_pmObject"
@@ -141,11 +145,11 @@ msgstr "Objet"
 msgid "urban_label_procedureType"
 msgstr "Type de dossier"
 
-#: ../content/genericlicence.py:94
+#: ../content/genericlicence.py:95
 msgid "urban_label_rcbDetails"
 msgstr "Détails concernant le RCB"
 
-#: ../content/codt_uniquelicence.py:47
+#: ../content/codt_uniquelicence.py:48
 msgid "urban_label_referenceFD"
 msgstr "Référence FD"
 
@@ -161,6 +165,6 @@ msgstr "Avis externe(s) sollicité(s)"
 msgid "urban_label_solicitInternalOpinionsTo"
 msgstr "Avis interne(s) sollicité(s)"
 
-#: ../content/codt_uniquelicence.py:46
+#: ../content/codt_uniquelicence.py:47
 msgid "urban_label_urbanReference"
 msgstr "Référence urbanisme"

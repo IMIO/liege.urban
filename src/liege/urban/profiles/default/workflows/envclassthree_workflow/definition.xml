@@ -112,6 +112,7 @@
   </permission-map>
  </state>
  <state state_id="procedure_analysis" title="procedure_analysis">
+  <exit-transition transition_id="back_to_deposit"/>
   <exit-transition transition_id="is_inacceptable"/>
   <exit-transition transition_id="is_acceptable"/>
   <exit-transition transition_id="is_acceptable_with_conditions"/>
@@ -769,6 +770,12 @@
  </state>
  <transition transition_id="to_analyse" title="to_analyse" new_state="procedure_analysis" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">to_analyse</action>
+  <guard>
+   <guard-permission>Modify portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="back_to_deposit" title="back_to_deposit" new_state="deposit" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">technical_refuse</action>
   <guard>
    <guard-permission>Modify portal content</guard-permission>
   </guard>
