@@ -5,6 +5,7 @@ from collections import OrderedDict
 from imio.schedule.content.task import IAutomatedTask
 
 from Products.urban.interfaces import IEnvironmentBase
+from Products.urban.interfaces import ICODT_UniqueLicence
 from Products.urban.workflows.adapter import LocalRoleAdapter
 
 from plone import api
@@ -16,7 +17,6 @@ class StateRolesMapping(LocalRoleAdapter):
     def __init__(self, context):
         self.context = context
         self.licence = self.context.aq_parent
-
 
     def get_opinion_group(self, groupe_type='editors'):
         opinion_request = self.context
@@ -39,11 +39,15 @@ class StateRolesMapping(LocalRoleAdapter):
         return ('technical_editors', 'technical_editors_environment')
 
     def get_administrative_editors(self):
+        if ICODT_UniqueLicence.providedBy(self.licence):
+            return ('administrative_editors_environment', 'administrative_editors')
         if IEnvironmentBase.providedBy(self.licence):
             return ('administrative_editors_environment',)
         return ('administrative_editors',)
 
     def get_administrative_validators(self):
+        if ICODT_UniqueLicence.providedBy(self.licence):
+            return ('administrative_validators_environment', 'administrative_validators')
         if IEnvironmentBase.providedBy(self.licence):
             return ('administrative_validators_environment',)
         return ('administrative_validators',)
