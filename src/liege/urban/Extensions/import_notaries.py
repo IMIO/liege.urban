@@ -20,7 +20,7 @@ def do_import():
         'phone',
         'fax',
         'title',
-        'disable',
+        'double',
     ]
 
     title_maping = {
@@ -33,8 +33,4 @@ def do_import():
     for notary_arg in notaries_args:
         notary_arg['street'] = '{} {}'.format(notary_arg.pop('street1'), notary_arg.pop('street2'))
         notary_arg['personTitle'] = title_maping.get(notary_arg.pop('title'), 'notitle')
-        disable = int(notary_arg.pop('disable'))
         notaries_folder.invokeFactory('Notary', **notary_arg)
-        if disable:
-            notary = getattr(notaries_folder, notary_arg['id'])
-            api.content.transition(notary, 'disable')
