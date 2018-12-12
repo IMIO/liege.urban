@@ -54,6 +54,12 @@
          factory="liege.urban.workflows.opinionsrequest_workflow.StateRolesMapping"
          name="opinionrequest_local_roles"
       />
+      <adapter
+         for="Products.urban.interfaces.ISimpleCollegeEvent"
+         provides="borg.localrole.interfaces.ILocalRoleProvider"
+         factory="liege.urban.workflows.college_event_workflow.StateRolesMapping"
+         name="simplecollege_local_roles"
+      />
 
       <!-- documentgenerator proxy object-->
       <adapter
