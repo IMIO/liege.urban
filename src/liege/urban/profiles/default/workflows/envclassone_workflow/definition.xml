@@ -26,6 +26,7 @@
  <permission>List folder contents</permission>
  <state state_id="deposit" title="deposit">
   <exit-transition transition_id="ask_address_validation"/>
+  <exit-transition transition_id="is_inacceptable"/>
   <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -177,6 +178,7 @@
  <state state_id="validating_address" title="validating_address">
   <exit-transition transition_id="validate_address"/>
   <exit-transition transition_id="ask_temporary_address"/>
+  <exit-transition transition_id="is_inacceptable"/>
   <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -327,6 +329,7 @@
  </state>
  <state state_id="waiting_address" title="waiting_address">
   <exit-transition transition_id="validate_temporary_address"/>
+  <exit-transition transition_id="is_inacceptable"/>
   <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -478,6 +481,7 @@
  <state state_id="checking_completion" title="checking_completion">
   <exit-transition transition_id="is_complete"/>
   <exit-transition transition_id="is_incomplete"/>
+  <exit-transition transition_id="is_inacceptable"/>
   <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
