@@ -493,7 +493,7 @@
   </permission-map>
  </state>
  <state state_id="refused" title="refused">
-  <exit-transition transition_id="resume"/>
+  <exit-transition transition_id="reopen"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -617,7 +617,7 @@
   </permission-map>
  </state>
  <state state_id="abandoned" title="abandoned">
-  <exit-transition transition_id="resume"/>
+  <exit-transition transition_id="reopen"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -896,11 +896,6 @@
  </transition>
  <transition transition_id="reopen" title="reopen" new_state="college_council_passage" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">reopen</action>
-  <guard>
-  </guard>
- </transition>
- <transition transition_id="resume" title="resume" new_state="college_council_passage" trigger="USER" before_script="" after_script="">
-  <action url="" category="workflow" icon="">resume</action>
   <guard>
   </guard>
  </transition>
