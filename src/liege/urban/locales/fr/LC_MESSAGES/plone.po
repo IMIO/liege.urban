@@ -17,6 +17,9 @@ msgstr ""
 msgid "FD_opinion"
 msgstr "En attente de l'avis du FD"
 
+msgid "FT_opinion"
+msgstr "En attente de l'avis du FT"
+
 msgid "abandon"
 msgstr "abandonner"
 

@@ -1225,7 +1225,7 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="FD_opinion" title="FD_opinion">
+ <state state_id="FT_opinion" title="FT_opinion">
   <exit-transition transition_id="propose_technical_synthesis"/>
   <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
@@ -2262,7 +2262,7 @@
    <guard-permission>liege.urban: Internal Editor</guard-permission>
   </guard>
  </transition>
- <transition transition_id="college_done" title="college_done" new_state="FD_opinion" trigger="USER" before_script="" after_script="">
+ <transition transition_id="college_done" title="college_done" new_state="FT_opinion" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">college_done</action>
   <guard>
    <guard-permission>liege.urban: Internal Editor</guard-permission>
@@ -2310,7 +2310,7 @@
    <guard-group>technical_validators_environment</guard-group>
   </guard>
  </transition>
- <transition transition_id="refuse_technical_synthesis" title="refuse_technical_synthesis" new_state="FD_opinion" trigger="USER" before_script="" after_script="">
+ <transition transition_id="refuse_technical_synthesis" title="refuse_technical_synthesis" new_state="FT_opinion" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">refuse_technical_synthesis</action>
   <guard>
    <guard-group>technical_validators_environment</guard-group>

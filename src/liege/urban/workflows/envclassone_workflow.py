@@ -69,7 +69,7 @@ class StateRolesMapping(LiegeBase):
             'environment_readers': ('Reader',),
         },
 
-        'FD_opinion': {
+        'FT_opinion': {
             LiegeBase.get_opinion_editors: ('ExternalReader',),
             'administrative_editors_environment': ('Editor',),
             'administrative_validators_environment': ('Contributor',),

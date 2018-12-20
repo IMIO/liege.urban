@@ -113,6 +113,9 @@ msgstr ""
 msgid "FD_opinion"
 msgstr ""
 
+msgid "FT_opinion"
+msgstr ""
+
 msgid "filed_away"
 msgstr ""
 

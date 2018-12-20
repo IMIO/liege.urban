@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-09-26 11:34+0000\n"
+"POT-Creation-Date: 2018-12-20 12:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,7 +61,7 @@ msgstr ""
 msgid "liege.urban"
 msgstr ""
 
-#: ../content/codt_uniquelicence.py:50
+#: ../content/codt_uniquelicence.py:49
 #: ../content/env_base.py:79
 msgid "urban_label_CommentsOnDecisionProject"
 msgstr ""
@@ -86,7 +86,7 @@ msgstr ""
 msgid "urban_label_closeDate"
 msgstr ""
 
-#: ../content/codt_uniquelicence.py:51
+#: ../content/codt_uniquelicence.py:50
 #: ../content/env_base.py:78
 msgid "urban_label_decisionNotificationTo"
 msgstr ""
@@ -118,7 +118,7 @@ msgstr ""
 msgid "urban_label_exploitationAddress"
 msgstr ""
 
-#: ../content/codt_uniquelicence.py:49
+#: ../content/codt_uniquelicence.py:48
 msgid "urban_label_folderCategory"
 msgstr ""
 
@@ -152,7 +152,7 @@ msgstr ""
 msgid "urban_label_rcbDetails"
 msgstr ""
 
-#: ../content/codt_uniquelicence.py:48
+#: ../content/codt_uniquelicence.py:47
 msgid "urban_label_referenceFD"
 msgstr ""
 
@@ -168,6 +168,6 @@ msgstr ""
 msgid "urban_label_solicitInternalOpinionsTo"
 msgstr ""
 
-#: ../content/codt_uniquelicence.py:47
+#: ../content/codt_uniquelicence.py:46
 msgid "urban_label_urbanReference"
 msgstr ""
