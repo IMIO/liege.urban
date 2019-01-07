@@ -1,6 +1,6 @@
 /* liege.urban stylesheet */
 
-.urban_state_deposit{
+.urban_state_deposit, .urban_state_folder_creation {
     background-color: grey;
 }
 
@@ -8,11 +8,11 @@
     background-color: grey;
 }
 
-.urban_state_waiting_address{
+.urban_state_waiting_address, .urban_state_public_investigation, .urban_state_technical_analysis_post_investigation{
     background-color: orange;
 }
 
-.urban_state_procedure_choice{
+.urban_state_procedure_choice, .urban_state_college_council_passage {
     background-color: purple;
 }
 
@@ -28,7 +28,7 @@
     background-color: #ea6619;
 }
 
-.urban_state_complete{
+.urban_state_complete, .urban_state_authorized{
     background-color: green;
 }
 
@@ -44,7 +44,7 @@
     color: green !important;
 }
 
-.urban_state_inacceptable{
+.urban_state_inacceptable, .urban_state_refused, .urban_state_abandoned{
     background-color: red;
 }
 
