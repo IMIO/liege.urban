@@ -106,7 +106,7 @@ class LicencesExtractForm(form.Form):
             'incomplete_dates': self.extract_incomplete_dates(licence),
             'inquiry_dates': self.extract_inquiry_dates(licence),
             'decision_date': self.extract_decision_date(licence),
-            'decision': licence.getLastTheLicence() and licence.getLastTheLicence().getDecision() or '',
+            'decision': self.extract_decision_date(licence),
         }
         if brain.licence_final_duedate and brain.licence_final_duedate.year < 9000:
             licence_dict['due_date'] = str(brain.licence_final_duedate)
