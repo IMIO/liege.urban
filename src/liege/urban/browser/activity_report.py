@@ -105,7 +105,7 @@ class LicencesExtractForm(form.Form):
             'deposit_dates': self.extract_deposit_dates(licence),
             'incomplete_dates': self.extract_incomplete_dates(licence),
             'inquiry_dates': self.extract_inquiry_dates(licence),
-            'decision_date': licence.getLastTheLicence() and str(licence.getLastTheLicence().getDecisionDate()) or '',
+            'decision_date': self.extract_decision_date(licence),
             'decision': licence.getLastTheLicence() and licence.getLastTheLicence().getDecision() or '',
         }
         if brain.licence_final_duedate and brain.licence_final_duedate.year < 9000:
@@ -137,6 +137,14 @@ class LicencesExtractForm(form.Form):
             licence_dict['habitations_authorized'] = licence.getAdditionalHabitationsGiven() or 0
 
         return licence_dict
+
+    def extract_decision_date(self, licence):
+        if interfaces.IEnvironmentBase.providedBy(licence):
+            decision_event = licence.getLastLicenceDelivery()
+        else:
+            decision_event = licence.getLastTheLicence()
+        decision_date = decision_event and str(decision_event.getDecisionDate()) or ''
+        return decision_date
 
     def extract_annonced_delay(self, licence, cfg):
         delay = ''
