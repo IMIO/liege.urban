@@ -26,6 +26,7 @@
   <include package=".dashboard" />
   <include package=".documentgenerator" />
   <include package=".events" />
+  <include package=".migration" />
   <include package=".schedule" />
   <include package=".services" />
   <include package=".workflows" />
