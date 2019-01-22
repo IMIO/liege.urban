@@ -17,12 +17,20 @@ class StateRolesMapping(LiegeBase):
         'validating_address': {
             LiegeBase.get_opinion_editors: ('ExternalReader',),
             'survey_editors': ('Reader', 'AddressEditor'),
+            'administrative_editors_environment': ('Editor',),
+            'administrative_validators_environment': ('Contributor',),
+            'technical_editors_environment': ('EnvironmentEditor',),
+            'technical_validators_environment': ('EnvironmentContributor',),
             'environment_readers': ('Reader',),
         },
 
         'waiting_address': {
             LiegeBase.get_opinion_editors: ('ExternalReader',),
             'survey_editors': ('Reader', 'AddressEditor'),
+            'administrative_editors_environment': ('Editor',),
+            'administrative_validators_environment': ('Contributor',),
+            'technical_editors_environment': ('EnvironmentEditor',),
+            'technical_validators_environment': ('EnvironmentContributor',),
             'environment_readers': ('Reader',),
         },
 
