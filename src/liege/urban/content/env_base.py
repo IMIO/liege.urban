@@ -79,6 +79,7 @@ def update_licences_schema(baseSchema):
     LicenceSchema['commentsOnSPWOpinion'].widget.label = _('urban_label_CommentsOnDecisionProject')
     # reorder fields
     LicenceSchema.moveField('description', after='ftSolicitOpinionsTo')
+    LicenceSchema.moveField('referenceFT', after='referenceDGATLP')
     # change permissions of some fields
     LicenceSchema['claimsSynthesis'].read_permission = 'liege.urban: Internal Reader'
     LicenceSchema['claimsSynthesis'].write_permission = 'Review portal content'
