@@ -2316,7 +2316,7 @@
    <guard-group>technical_validators_environment</guard-group>
   </guard>
  </transition>
- <transition transition_id="reopen" title="reopen" new_state="procedure_analysis" trigger="USER" before_script="" after_script="">
+ <transition transition_id="reopen" title="reopen" new_state="complete" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">reopen</action>
   <guard>
    <guard-permission>liege.urban: Internal Editor</guard-permission>
