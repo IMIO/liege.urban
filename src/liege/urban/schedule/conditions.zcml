@@ -401,7 +401,48 @@
         factory=".conditions.DecisionNotifiedCondition"
         name="liege.urban.schedule.decision_notified"
     />
+    <!-- environment final decision conditions -->
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentBase
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.EnvironmentDecisionProjectDraftedCondition"
+        name="liege.urban.schedule.decision_project_drafted"
+    />
 
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentBase
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.EnvironmentDecisionProjectDraftedCondition"
+        name="liege.urban.schedule.decision_project_drafted"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentBase
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.EnvironmentDecisionProjectSentCondition"
+        name="liege.urban.schedule.decision_project_sent"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentBase
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.EnvironmentDecisionProjectSentCondition"
+        name="liege.urban.schedule.decision_project_sent"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentBase
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.EnvironmentDecisionNotifiedCondition"
+        name="liege.urban.schedule.decision_notified"
+    />
+
+    <!-- licence ended-->
     <adapter
         for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"
