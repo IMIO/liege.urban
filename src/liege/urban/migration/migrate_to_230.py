@@ -44,6 +44,8 @@ def migrate_internal_advices(context):
             else:
                 new_condition = RecurrenceConditionObject('urban.schedule.condition.is_internal_opinion')
             task_config.recurrence_conditions = (new_condition,)
+        if task_config.id.endswith('_1'):
+            api.content.rename(obj=task_config, new_id='give_{}_opinion'.format(task_config.id.split('_')[1]))
     logger.info("migrated internal services schedule config")
     logger.info("migration step done!")
 
