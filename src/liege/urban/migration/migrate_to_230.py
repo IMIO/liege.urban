@@ -53,5 +53,7 @@ def migrate_internal_advices(context):
 def migrate(context):
     logger = logging.getLogger('urban: migrate to 2.3')
     logger.info("starting migration steps")
+    setup_tool = api.portal.get_tool('portal_setup')
+    setup_tool.runImportStepFromProfile('profile-Products.urban:preinstall', 'update-workflow-rolemap')
     migrate_internal_advices(context)
     logger.info("migration done!")
