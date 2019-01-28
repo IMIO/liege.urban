@@ -140,12 +140,14 @@ class LicencesExtractForm(form.Form):
 
     def extract_decision_date(self, licence):
         decision_event = self._get_decision_event(licence)
-        decision_date = decision_event and str(decision_event.getDecisionDate()) or ''
+        decision_date = decision_event and decision_event.getDecisionDate() or ''
+        decision_date = decision_date and str(decision_date) or ''
         return decision_date
 
     def extract_decision(self, licence):
         decision_event = self._get_decision_event(licence)
-        decision = decision_event and str(decision_event.getDecision()) or ''
+        decision = decision_event and decision_event.getDecision() or ''
+        decision = decision and str(decision) or ''
         return decision
 
     def _get_decision_event(self, licence):
