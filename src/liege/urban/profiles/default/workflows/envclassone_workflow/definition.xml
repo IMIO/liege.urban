@@ -1226,6 +1226,8 @@
   </permission-map>
  </state>
  <state state_id="FT_opinion" title="FT_opinion">
+  <exit-transition transition_id="authorize_licence_FT"/>
+  <exit-transition transition_id="refuse_licence_FT"/>
   <exit-transition transition_id="propose_technical_synthesis"/>
   <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
@@ -2262,6 +2264,13 @@
    <guard-permission>liege.urban: Internal Editor</guard-permission>
   </guard>
  </transition>
+ <transition transition_id="authorize_licence_FT" title="authorize_licence" new_state="authorized" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">authorize_licence</action>
+  <guard>
+   <guard-permission>liege.urban: Internal Editor</guard-permission>
+   <guard-expression>python: 'ft' in here.getAuthority()</guard-expression>
+  </guard>
+ </transition>
  <transition transition_id="college_done" title="college_done" new_state="FT_opinion" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">college_done</action>
   <guard>
@@ -2302,6 +2311,13 @@
   <action url="" category="workflow" icon="">refuse_licence</action>
   <guard>
    <guard-permission>liege.urban: Internal Editor</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="refuse_licence_FT" title="refuse_licence" new_state="refused" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">refuse_licence</action>
+  <guard>
+   <guard-permission>liege.urban: Internal Editor</guard-permission>
+   <guard-expression>python: 'ft' in here.getAuthority()</guard-expression>
   </guard>
  </transition>
  <transition transition_id="refuse_technical_report" title="refuse_technical_report" new_state="complete" trigger="USER" before_script="" after_script="">
