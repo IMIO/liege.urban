@@ -25,6 +25,7 @@ import liege.urban.content.portion_out
 import liege.urban.content.urbanevent
 import liege.urban.content.urbanevent_opinionrequest
 import liege.urban.content.roaddecree  # noqa
+from liege.urban.config import LICENCE_FINAL_STATES
 
 
 # hide assigned_user and assigned_group fields from task
@@ -40,6 +41,8 @@ ITask._Element__tagged_values[mode.key] = mode_values
 from Products.urban.schedule.vocabulary import URBAN_TYPES_INTERFACES
 from liege.urban.interfaces import IInternalOpinionRequestEvent
 URBAN_TYPES_INTERFACES[u'Avis de services internes à la ville'] = IInternalOpinionRequestEvent
+from Products.urban import config
+config.LICENCE_FINAL_STATES = LICENCE_FINAL_STATES
 
 
 def initialize(context):
