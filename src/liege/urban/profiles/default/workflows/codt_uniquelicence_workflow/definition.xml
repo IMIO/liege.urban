@@ -2729,7 +2729,7 @@
    <guard-expression>python: here.restrictedTraverse('is_licence_leader')()</guard-expression>
   </guard>
  </transition>
- <transition transition_id="resume" title="resume" new_state="internal_advice_done" trigger="USER" before_script="" after_script="">
+ <transition transition_id="resume" title="resume" new_state="internal_preliminary_advice" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">resume</action>
   <guard>
    <guard-expression>python: here.restrictedTraverse('is_licence_leader')()</guard-expression>
