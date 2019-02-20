@@ -119,6 +119,9 @@ class LicencesExtractForm(form.Form):
         if hasattr(licence, 'getLastLicenceNotification'):
             licence_dict['notification_date'] = licence.getLastLicenceNotification() and str(licence.getLastLicenceNotification().getEventDate()) or ''
 
+        if hasattr(licence, 'getLastRecourse'):
+            licence_dict['recourse_date'] = licence.getLastRecourse() and str(licence.getLastRecourse().getEventDate()) or ''
+
         if hasattr(licence, 'annoncedDelay'):
             licence_dict['delay'] = self.extract_annonced_delay(licence, cfg)
 
@@ -135,6 +138,30 @@ class LicencesExtractForm(form.Form):
             licence_dict['habitations_before_licence'] = licence.getHabitationsBeforeLicence() or 0
             licence_dict['habitations_asked'] = licence.getAdditionalHabitationsAsked() or 0
             licence_dict['habitations_authorized'] = licence.getAdditionalHabitationsGiven() or 0
+
+        if hasattr(licence, 'authority'):
+            licence_dict['authority'] = self.extract_authority(licence, cfg)
+
+        if hasattr(licence, 'folderTendency'):
+            licence_dict['folder_tendency'] = licence.getFolderTendency()
+
+        if hasattr(licence, 'rubrics'):
+            licence_dict['rubrics'] = self.extract_rubrics(licence)
+
+        if licence.portal_type == 'EnvClassBordering':
+            licence_dict['external_address'] = self.extract_external_address(licence)
+
+        if interfaces.IEnvironmentBase.providedBy(licence):
+            licence_dict['authorization_start_date'] = licence.getLastLicenceEffectiveStart() and str(licence.getLastLicenceEffectiveStart().getEventDate()) or ''
+            licence_dict['authorization_end_date'] = licence.getLastLicenceExpiration() and str(licence.getLastLicenceExpiration().getEventDate()) or ''
+            licence_dict['displaying_date'] = licence.getLastDisplayingTheDecision() and str(licence.getLastDisplayingTheDecision().getEventDate()) or ''
+            licence_dict['archives_date'] = licence.getLastSentToArchives() and str(licence.getLastSentToArchives().getEventDate()) or ''
+            licence_dict['archives_description'] = licence.getLastSentToArchives() and str(licence.getLastSentToArchives().getEventDate()) or ''
+            licence_dict['activity_ended_date'] = licence.getLastActivityEnded() and licence.getLastActivityEnded().description() or ''
+            licence_dict['forced_end_date'] = licence.getLastForcedEnd() and str(licence.getLastForcedEnd().getEventDate()) or ''
+            licence_dict['modification_registry_date'] = licence.getLastModificationRegistry() and str(licence.getLastModificationRegistry().getEventDate()) or ''
+            licence_dict['iile_prescription_date'] = licence.getLastIILEPrescription() and str(licence.getLastIILEPrescription().getEventDate()) or ''
+            licence_dict['provocation_date'] = licence.getLastProvocation() and str(licence.getLastProvocation().getEventDate()) or ''
 
         return licence_dict
 
@@ -184,6 +211,24 @@ class LicencesExtractForm(form.Form):
         else:
             return []
 
+    def extract_authority(self, licence, cfg):
+        if licence.getAuthority():
+            term = cfg.authority.get(licence.getAuthority())
+            if term:
+                return term.Title()
+        return ''
+
+    def extract_rubrics(self, licence):
+        rubrics = []
+        for rubric in licence.getRubrics():
+            rubric = {
+                'num': rubric.id,
+                'class': rubric.getExtraValue(),
+                'description': rubric.description(),
+            }
+            rubrics.append(rubric)
+        return rubrics
+
     def extract_address(self, address):
         address_dict = {
             'street_name': address.getStreet_name(),
@@ -199,6 +244,18 @@ class LicencesExtractForm(form.Form):
             capakey = ''
         address_dict['capakey'] = capakey
         return address_dict
+
+    def extract_external_address(self, licence):
+        addresses_dict = []
+        for address in licence.getWorklocations():
+            address_dict = {
+                'street_name': address['street'],
+                'street_number': address['number'],
+                'street_code': licence.getStreet_code(),
+                'zipe_code': licence.getZipcode(),
+            }
+            addresses_dict.append(address_dict)
+        return addresses_dict
 
     def extract_folder_managers(self, folder_manager):
         fm_dict = {
