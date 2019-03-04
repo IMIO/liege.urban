@@ -50,6 +50,8 @@ def update_item_schema(baseSchema):
     LicenceSchema['commentsOnSPWOpinion'].widget.label = _('urban_label_CommentsOnDecisionProject')
     LicenceSchema['ftSolicitOpinionsTo'].widget.label = _('urban_label_decisionNotificationTo')
 
+    return LicenceSchema
+
 
 permissions_mapping = {
     'urban_description': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
