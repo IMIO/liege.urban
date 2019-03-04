@@ -35,7 +35,7 @@
      <bound-workflow workflow_id="article127_workflow" />
   </type>
   <type type_id="CODT_IntegratedLicence">
-     <bound-workflow workflow_id="integratedlicence_workflow" />
+     <bound-workflow workflow_id="urban_licence_workflow" />
   </type>
   <type type_id="COTD_UrbanCertificateTwo">
      <bound-workflow workflow_id="cu2_workflow" />
@@ -54,7 +54,7 @@
      <bound-workflow workflow_id="envclassthree_workflow" />
   </type>
   <type type_id="IntegratedLicence">
-     <bound-workflow workflow_id="integratedlicence_workflow" />
+     <bound-workflow workflow_id="urban_licence_workflow" />
   </type>
   <type type_id="PortionOut">
      <bound-workflow workflow_id="address_workflow" />

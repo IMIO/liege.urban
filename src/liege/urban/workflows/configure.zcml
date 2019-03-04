@@ -85,20 +85,6 @@
   />
 
   <adapter
-     for="Products.urban.interfaces.IIntegratedLicence"
-     provides="borg.localrole.interfaces.ILocalRoleProvider"
-     factory=".integratedlicence_workflow.StateRolesMapping"
-     name="integratedlicence_local_roles"
-  />
-
-  <adapter
-     for="Products.urban.interfaces.ICODT_IntegratedLicence"
-     provides="borg.localrole.interfaces.ILocalRoleProvider"
-     factory=".integratedlicence_workflow.StateRolesMapping"
-     name="codt_integratedlicence_local_roles"
-  />
-
-  <adapter
      for="Products.urban.interfaces.IUrbanCertificateOne"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
      factory=".urbancertificateone_workflow.StateRolesMapping"
