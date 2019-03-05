@@ -99,6 +99,15 @@
          name="urbanevent_local_roles"
       />
 
+      <!-- Override integrated licence view to always display env tab-->
+      <browser:page
+         for="Products.urban.interfaces.ICODT_IntegratedLicence"
+         name="codt_integratedlicenceview"
+         class="liege.urban.browser.codt_integratedlicenceview.CODTIntegratedLicenceView"
+         template="browser/templates/codt_integratedlicenceview.pt"
+         permission="zope2.View"
+      />
+
   </configure>
 
 </configure>
