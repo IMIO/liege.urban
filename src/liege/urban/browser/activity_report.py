@@ -151,6 +151,7 @@ class LicencesExtractForm(form.Form):
 
         if licence.portal_type == 'EnvClassBordering':
             licence_dict['external_address'] = self.extract_external_address(licence)
+            licence_dict['external_parcels'] = self.extract_external_parcels(licence)
 
         if interfaces.IEnvironmentBase.providedBy(licence):
             licence_dict['authorization_start_date'] = licence.getLastLicenceEffectiveStart() and str(licence.getLastLicenceEffectiveStart().getEventDate()) or ''
@@ -252,11 +253,21 @@ class LicencesExtractForm(form.Form):
             address_dict = {
                 'street_name': address['street'],
                 'street_number': address['number'],
-                'street_code': licence.getStreet_code(),
                 'zipe_code': licence.getZipcode(),
+                'city': licence.getCity(),
             }
             addresses_dict.append(address_dict)
         return addresses_dict
+
+    def extract_external_parcels(self, licence):
+        parcels_dict = []
+        for parcel in licence.getManualParcels():
+            parcel_dict = {
+                'parcel': parcel['ref'],
+                'capakey': parcel['capakey'],
+            }
+            parcels_dict.append(parcel_dict)
+        return parcels_dict
 
     def extract_form_address(self, licence):
         catalog = api.portal.get_tool('portal_catalog')
