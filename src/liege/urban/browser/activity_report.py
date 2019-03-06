@@ -96,6 +96,7 @@ class LicencesExtractForm(form.Form):
             'portal_type': brain.portal_type,
             'reference': brain.getReference,
             'address': [self.extract_address(addr) for addr in licence.getParcels()],
+            'form_address': self.extract_form_address(licence),
             'subject': licence.getLicenceSubject(),
             'workflow_state': brain.review_state,
             'folder_managers': [self.extract_folder_managers(fm)
@@ -253,6 +254,20 @@ class LicencesExtractForm(form.Form):
                 'street_number': address['number'],
                 'street_code': licence.getStreet_code(),
                 'zipe_code': licence.getZipcode(),
+            }
+            addresses_dict.append(address_dict)
+        return addresses_dict
+
+    def extract_form_address(self, licence):
+        catalog = api.portal.get_tool('portal_catalog')
+        addresses_dict = []
+        for address in licence.getWorklocations():
+            street_brain = catalog(UID=address['street'])
+            street = street_brain and street_brain[0].getObject() or None
+            address_dict = {
+                'street_name': street and street.getStreetName() or '',
+                'street_code': street and street.getStreetCode() or '',
+                'street_number': address['number'],
             }
             addresses_dict.append(address_dict)
         return addresses_dict
