@@ -248,7 +248,7 @@ class LicencesExtractForm(form.Form):
 
     def extract_external_address(self, licence):
         addresses_dict = []
-        for address in licence.getWorklocations():
+        for address in licence.getWorkLocations():
             address_dict = {
                 'street_name': address['street'],
                 'street_number': address['number'],
@@ -261,7 +261,7 @@ class LicencesExtractForm(form.Form):
     def extract_form_address(self, licence):
         catalog = api.portal.get_tool('portal_catalog')
         addresses_dict = []
-        for address in licence.getWorklocations():
+        for address in licence.getWorkLocations():
             street_brain = catalog(UID=address['street'])
             street = street_brain and street_brain[0].getObject() or None
             address_dict = {
