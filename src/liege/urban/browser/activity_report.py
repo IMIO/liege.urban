@@ -146,9 +146,6 @@ class LicencesExtractForm(form.Form):
         if hasattr(licence, 'folderTendency'):
             licence_dict['folder_tendency'] = licence.getFolderTendency()
 
-        if hasattr(licence, 'rubrics'):
-            licence_dict['rubrics'] = self.extract_rubrics(licence)
-
         if licence.portal_type == 'EnvClassBordering':
             licence_dict['external_address'] = self.extract_external_address(licence)
             licence_dict['external_parcels'] = self.extract_external_parcels(licence)
@@ -164,6 +161,7 @@ class LicencesExtractForm(form.Form):
             licence_dict['modification_registry_date'] = licence.getLastModificationRegistry() and str(licence.getLastModificationRegistry().getEventDate()) or ''
             licence_dict['iile_prescription_date'] = licence.getLastIILEPrescription() and str(licence.getLastIILEPrescription().getEventDate()) or ''
             licence_dict['provocation_date'] = licence.getLastProvocation() and str(licence.getLastProvocation().getEventDate()) or ''
+            licence_dict['rubrics'] = self.extract_rubrics(licence)
 
         return licence_dict
 
