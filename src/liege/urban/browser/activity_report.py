@@ -155,7 +155,7 @@ class LicencesExtractForm(form.Form):
             licence_dict['authorization_end_date'] = licence.getLastLicenceExpiration() and str(licence.getLastLicenceExpiration().getEventDate()) or ''
             licence_dict['displaying_date'] = licence.getLastDisplayingTheDecision() and str(licence.getLastDisplayingTheDecision().getEventDate()) or ''
             licence_dict['archives_date'] = licence.getLastSentToArchives() and str(licence.getLastSentToArchives().getEventDate()) or ''
-            licence_dict['archives_description'] = licence.getLastSentToArchives() and str(licence.getLastSentToArchives().getEventDate()) or ''
+            licence_dict['archives_description'] = licence.getLastSentToArchives() and str(licence.getLastSentToArchives().getMisc_description()) or ''
             licence_dict['activity_ended_date'] = licence.getLastActivityEnded() and licence.getLastActivityEnded().description() or ''
             licence_dict['forced_end_date'] = licence.getLastForcedEnd() and str(licence.getLastForcedEnd().getEventDate()) or ''
             licence_dict['modification_registry_date'] = licence.getLastModificationRegistry() and str(licence.getLastModificationRegistry().getEventDate()) or ''
