@@ -162,6 +162,8 @@ class LicencesExtractForm(form.Form):
             licence_dict['iile_prescription_date'] = licence.getLastIILEPrescription() and str(licence.getLastIILEPrescription().getEventDate()) or ''
             licence_dict['provocation_date'] = licence.getLastProvocation() and str(licence.getLastProvocation().getEventDate()) or ''
             licence_dict['rubrics'] = self.extract_rubrics(licence)
+
+        if hasattr(licence, 'getReferenceSPE'):
             licence_dict['reference_SPE'] = licence.getReferenceSPE() or ''
 
         return licence_dict
