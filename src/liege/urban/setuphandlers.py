@@ -4,10 +4,13 @@ from plone import api
 
 from Products.urban.config import URBAN_TYPES
 from Products.urban.setuphandlers import createScheduleConfig
+from Products.urban.utils import getEnvironmentLicenceFolderIds
+from Products.urban.utils import getLicenceFolderId
 
 from imio.schedule.utils import set_schedule_view
 
 from zope.interface import alsoProvides
+from zExceptions import BadRequest
 
 import os
 
@@ -150,20 +153,19 @@ def setDefaultApplicationSecurity(context):
     """
        Set sharing on differents folders to access the application
     """
+    site = context.getSite()
+    app_folder = getattr(site, "urban")
     uniquelicences_names = [
         getLicenceFolderId('UniqueLicence'),
-        getLicenceFolderId('CODT_UniqueLicence')
-        getLicenceFolderId('IntegratedLicence')
-        getLicenceFolderId('CODT_IntegratedLicence')
+        getLicenceFolderId('CODT_UniqueLicence'),
+        getLicenceFolderId('IntegratedLicence'),
+        getLicenceFolderId('CODT_IntegratedLicence'),
     ]
     environment_folder_names = getEnvironmentLicenceFolderIds() + uniquelicences_names
-    #licence folder : "urban_readers" can read and "urban_editors" can edit...
-    for folder_name in licencesfolder_names:
+    for folder_name in environment_folder_names:
         if hasattr(app_folder, folder_name):
             folder = getattr(app_folder, folder_name)
-            #we add a property usefull for portal_urban.getUrbanConfig
             try:
-                #we try in case we apply the profile again...
                 folder.manage_addProperty('urbanConfigId', folder_name.strip('s'), 'string')
             except BadRequest:
                 pass
