@@ -20,6 +20,7 @@ def post_install(context):
 
     setAllowedTypes(context)
     addLiegeGroups(context)
+    setDefaultApplicationSecurity(context)
     setupSurveySchedule(context)
     addScheduleConfigs(context)
     addTestUsers(context)
@@ -143,6 +144,36 @@ def addLiegeGroups(context):
         portal_groups.addPrincipalToGroup("{}_validators".format(service), 'opinions_editors')
 
     portal_urban.reindexObjectSecurity()
+
+
+def setDefaultApplicationSecurity(context):
+    """
+       Set sharing on differents folders to access the application
+    """
+    uniquelicences_names = [
+        getLicenceFolderId('UniqueLicence'),
+        getLicenceFolderId('CODT_UniqueLicence')
+        getLicenceFolderId('IntegratedLicence')
+        getLicenceFolderId('CODT_IntegratedLicence')
+    ]
+    environment_folder_names = getEnvironmentLicenceFolderIds() + uniquelicences_names
+    #licence folder : "urban_readers" can read and "urban_editors" can edit...
+    for folder_name in licencesfolder_names:
+        if hasattr(app_folder, folder_name):
+            folder = getattr(app_folder, folder_name)
+            #we add a property usefull for portal_urban.getUrbanConfig
+            try:
+                #we try in case we apply the profile again...
+                folder.manage_addProperty('urbanConfigId', folder_name.strip('s'), 'string')
+            except BadRequest:
+                pass
+            folder.manage_delLocalRoles(["environment_editors"])
+            folder.manage_delLocalRoles(["administrative_editors_environment"])
+            folder.manage_delLocalRoles(["administrative_validators_environment"])
+            if folder_name in environment_folder_names:
+                folder.manage_addLocalRoles("environment_readers", ("Reader", ))
+                folder.manage_addLocalRoles("administrative_editors_environment", ("Contributor",))
+                folder.manage_addLocalRoles("administrative_validators_environment", ("Contributor",))
 
 
 def setupSurveySchedule(context):
