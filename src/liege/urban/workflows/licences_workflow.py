@@ -6,10 +6,35 @@ from Products.urban.workflows.licence_workflow import StateRolesMapping as BaseR
 class DefaultStateRolesMapping(BaseRolesMapping):
     """ """
 
+    def get_editors(self):
+        """ """
+        licence = self.licence
+        mapping = {
+            'urban_only': [
+                'urban_editors',
+            ],
+            'environment_only': [
+                'administrative_editors_environment',
+                'administrative_validators_environment',
+                'technical_editors_environment',
+                'technical_validators_environment',
+            ],
+            'urban_and_environment': [
+                'urban_editors',
+                'administrative_editors_environment',
+                'administrative_validators_environment',
+                'technical_editors_environment',
+                'technical_validators_environment',
+            ]
+        }
+        allowed_group = self.get_allowed_groups(licence)
+        if allowed_group in mapping:
+            return mapping.get(allowed_group)
+
     mapping = {
         'in_progress': {
             BaseRolesMapping.get_readers: ('Reader',),
-            BaseRolesMapping.get_editors: ('Editor',),
+            DefaultStateRolesMapping.get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
             BaseRolesMapping.get_opinion_editors: ('ExternalReader',),
@@ -18,7 +43,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
 
         'accepted': {
             BaseRolesMapping.get_readers: ('Reader',),
-            BaseRolesMapping.get_editors: ('Editor',),
+            DefaultStateRolesMapping.get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
             BaseRolesMapping.get_opinion_editors: ('ExternalReader',),
@@ -27,7 +52,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
 
         'incomplete': {
             BaseRolesMapping.get_readers: ('Reader',),
-            BaseRolesMapping.get_editors: ('Editor',),
+            DefaultStateRolesMapping.get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
             BaseRolesMapping.get_opinion_editors: ('ExternalReader',),
@@ -36,7 +61,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
 
         'refused': {
             BaseRolesMapping.get_readers: ('Reader',),
-            BaseRolesMapping.get_editors: ('Editor',),
+            DefaultStateRolesMapping.get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
             BaseRolesMapping.get_opinion_editors: ('ExternalReader',),
@@ -45,7 +70,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
 
         'inacceptable': {
             BaseRolesMapping.get_readers: ('Reader',),
-            BaseRolesMapping.get_editors: ('Editor',),
+            DefaultStateRolesMapping.get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
             BaseRolesMapping.get_opinion_editors: ('ExternalReader',),
@@ -54,7 +79,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
 
         'retired': {
             BaseRolesMapping.get_readers: ('Reader',),
-            BaseRolesMapping.get_editors: ('Editor',),
+            DefaultStateRolesMapping.get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
             BaseRolesMapping.get_opinion_editors: ('ExternalReader',),
