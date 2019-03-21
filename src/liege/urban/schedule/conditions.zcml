@@ -346,6 +346,70 @@
     />
 
     <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".creation_conditions.OneMayorCollegeProjectCreated"
+        name="liege.urban.schedule.one_mayor_project_created"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.MayorCollegeProjectsWritten"
+        name="liege.urban.schedule.all_mayor_projects_drafted"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".creation_conditions.OneMayorCollegeProjectWritten"
+        name="liege.urban.schedule.one_mayor_project_drafted"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.MayorCollegeProjectsValidated"
+        name="liege.urban.schedule.all_mayor_projects_validated"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.ProjectsSentToMayorCollege"
+        name="liege.urban.schedule.all_mayor_projects_sent"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".creation_conditions.OneProjectsSentToMayorCollege"
+        name="liege.urban.schedule.one_mayor_project_sent"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.MayorCollegesDone"
+        name="liege.urban.schedule.all_mayor_colleges_done"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.MayorCollegeEventsClosed"
+        name="liege.urban.schedule.all_mayor_events_closed"
+    />
+
+    <adapter
         for="Products.urban.interfaces.IBaseAllBuildLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
@@ -407,7 +471,7 @@
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IStartCondition"
         factory=".conditions.EnvironmentDecisionProjectDraftedCondition"
-        name="liege.urban.schedule.decision_project_drafted"
+        name="liege.urban.schedule.env_decision_project_drafted"
     />
 
     <adapter
@@ -415,7 +479,7 @@
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.EnvironmentDecisionProjectDraftedCondition"
-        name="liege.urban.schedule.decision_project_drafted"
+        name="liege.urban.schedule.env_decision_project_drafted"
     />
 
     <adapter
@@ -423,7 +487,7 @@
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IStartCondition"
         factory=".conditions.EnvironmentDecisionProjectSentCondition"
-        name="liege.urban.schedule.decision_project_sent"
+        name="liege.urban.schedule.env_decision_project_sent"
     />
 
     <adapter
@@ -431,7 +495,7 @@
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.EnvironmentDecisionProjectSentCondition"
-        name="liege.urban.schedule.decision_project_sent"
+        name="liege.urban.schedule.env_decision_project_sent"
     />
 
     <adapter
@@ -439,7 +503,7 @@
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.EnvironmentDecisionNotifiedCondition"
-        name="liege.urban.schedule.decision_notified"
+        name="liege.urban.schedule.env_decision_notified"
     />
 
     <!-- licence ended-->

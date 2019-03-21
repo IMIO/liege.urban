@@ -280,6 +280,105 @@ class CollegeEventClosed(SimpleCollegeCondition):
         return api.content.get_state(self.college_event) == 'closed'
 
 
+class MayorCollegeCondition(Condition):
+    """
+    Base class for college event based conditions
+    """
+
+    def __init__(self, licence, task):
+        super(MayorCollegeCondition, self).__init__(licence, task)
+        self.mayor_events = licence.getAllMayorColleges()
+
+
+class MayorCollegeProjectsWritten(MayorCollegeCondition):
+    """
+    All MayorCollege projects are written
+    """
+
+    def evaluate(self):
+        if not self.mayor_events:
+            return False
+        for event in self.mayor_events:
+            if api.content.get_state(event) == 'draft':
+                return False
+        return True
+
+
+class MayorCollegeProjectsValidated(MayorCollegeCondition):
+    """
+    All MayorCollege projects are validated
+    """
+
+    def evaluate(self):
+        if not self.mayor_events:
+            return False
+        for event in self.mayor_events:
+            if api.content.get_state(event) in ['draft', 'to_validate']:
+                return False
+        return True
+
+
+class ProjectsSentToMayorCollege(MayorCollegeCondition):
+    """
+    All MayorCollege projects are sent to college
+    """
+
+    def evaluate(self):
+        if not self.mayor_events:
+            return False
+        request = api.portal.getRequest()
+        ws4pm = getMultiAdapter((api.portal.get(), request), name='ws4pmclient-settings')
+
+        for event in self.mayor_events:
+            sent = ws4pm.checkAlreadySentToPloneMeeting(self.mayor_events)
+            if not sent:
+                return False
+        return True
+
+
+class MayorCollegesDone(MayorCollegeCondition):
+    """
+    All MayorCollege are done
+    """
+
+    def evaluate(self):
+        if not self.mayor_events:
+            return False
+
+        request = api.portal.getRequest()
+        ws4pm = getMultiAdapter((api.portal.get(), request), name='ws4pmclient-settings')
+
+        # if the current user has no acces to pm return False
+        if not ws4pm._soap_getUserInfos():
+            return False
+
+        for event in self.mayor_events:
+            items = ws4pm._soap_searchItems({'externalIdentifier': event.UID()})
+            if not items:
+                return False
+
+            accepted_states = ['accepted', 'accepted_but_modified', 'accepted_and_returned']
+            mayor_college_done = items and items[0]['review_state'] in accepted_states
+
+            if not mayor_college_done:
+                return False
+        return True
+
+
+class MayorCollegeEventsClosed(MayorCollegeCondition):
+    """
+    All MayorCollege events state is 'closed'
+    """
+
+    def evaluate(self):
+        if not self.mayor_events:
+            return False
+        for event in self.mayor_events:
+            if api.content.get_state(event) != 'closed':
+                return False
+        return True
+
+
 class FDCondition(Condition):
     """
     Base class for FD opinion request condition
