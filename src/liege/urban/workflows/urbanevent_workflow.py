@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from collections import OrderedDict
+
+from plone import api
+
 from Products.urban.workflows.urbanevent_workflow import StateRolesMapping as BaseRolesMapping
 
 
@@ -32,14 +35,21 @@ class StateRolesMapping(BaseRolesMapping):
         if allowed_group in mapping:
             return mapping.get(allowed_group)
 
+    def get_readers(self):
+        """ """
+        reader_groups = super(StateRolesMapping, self).get_readers()
+        if api.content.get_state(self.licence) in ['validating_address', 'waiting_address']:
+            reader_groups.append('survey_editors')
+        return reader_groups
+
     mapping = {
         'in_progress': OrderedDict([
-            (BaseRolesMapping.get_readers, ('Reader',)),
+            (get_readers, ('Reader',)),
             (get_editors, ('Editor',)),  # !!! order matters, let editors group be overwritten
         ]),
 
         'closed': OrderedDict([
-            (BaseRolesMapping.get_readers, ('Reader',)),
+            (get_readers, ('Reader',)),
             (get_editors, ('Editor',)),  # !!! order matters, let editors group be overwritten
         ]),
     }

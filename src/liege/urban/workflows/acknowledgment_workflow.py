@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from Products.urban.workflows.urbanevent_workflow import StateRolesMapping as BaseRolesMapping
+from liege.urban.workflows.urbanevent_workflow import StateRolesMapping as BaseRolesMapping
 
 
 class StateRolesMapping(BaseRolesMapping):
