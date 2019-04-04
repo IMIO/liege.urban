@@ -65,6 +65,7 @@ class MayorCollegeCondition(CreationCondition):
     def __init__(self, licence, task):
         super(MayorCollegeCondition, self).__init__(licence, task)
         self.mayor_events = licence.getAllMayorColleges()
+        self.licence = licence
 
 
 class OneMayorCollegeProjectCreated(MayorCollegeCondition):
