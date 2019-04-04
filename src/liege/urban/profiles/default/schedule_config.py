@@ -4,7 +4,9 @@ from imio.schedule.content.object_factories import CreationConditionObject
 from imio.schedule.content.object_factories import EndConditionObject
 from imio.schedule.content.object_factories import MacroCreationConditionObject
 from imio.schedule.content.object_factories import MacroEndConditionObject
+from imio.schedule.content.object_factories import MacroRecurrenceConditionObject
 from imio.schedule.content.object_factories import MacroStartConditionObject
+from imio.schedule.content.object_factories import RecurrenceConditionObject
 from imio.schedule.content.object_factories import StartConditionObject
 
 schedule_config = {
@@ -1968,6 +1970,9 @@ schedule_config = {
             'start_date': 'urban.schedule.start_date.creation_date',
             'additional_delay': 30,
             'activate_recurrency': True,
+            'recurrence_conditions': (
+                MacroRecurrenceConditionObject('liege.urban.schedule.one_mayor_project_created'),
+            ),
             'subtasks': [
                 {
                     'type_name': 'TaskConfig',
@@ -1984,6 +1989,9 @@ schedule_config = {
                     'start_date': 'urban.schedule.start_date.creation_date',
                     'additional_delay': 10,
                     'activate_recurrency': True,
+                    'recurrence_conditions': (
+                        RecurrenceConditionObject('liege.urban.schedule.one_mayor_project_created'),
+                    ),
                 },
                 {
                     'type_name': 'TaskConfig',
@@ -2001,6 +2009,9 @@ schedule_config = {
                     'start_date': 'urban.schedule.start_date.creation_date',
                     'additional_delay': 11,
                     'activate_recurrency': True,
+                    'recurrence_conditions': (
+                        RecurrenceConditionObject('liege.urban.schedule.one_mayor_project_drafted'),
+                    ),
                 },
                 {
                     'type_name': 'TaskConfig',
@@ -2017,6 +2028,9 @@ schedule_config = {
                     'start_date': 'urban.schedule.start_date.creation_date',
                     'additional_delay': 23,
                     'activate_recurrency': True,
+                    'recurrence_conditions': (
+                        RecurrenceConditionObject('liege.urban.schedule.one_mayor_project_sent'),
+                    ),
                 },
             ]
         },

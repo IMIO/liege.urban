@@ -330,7 +330,7 @@ class ProjectsSentToMayorCollege(MayorCollegeCondition):
         ws4pm = getMultiAdapter((api.portal.get(), request), name='ws4pmclient-settings')
 
         for event in self.mayor_events:
-            sent = ws4pm.checkAlreadySentToPloneMeeting(self.mayor_events)
+            sent = ws4pm.checkAlreadySentToPloneMeeting(event)
             if not sent:
                 return False
         return True
