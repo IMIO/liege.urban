@@ -53,18 +53,4 @@ def update_item_schema(baseSchema):
     return LicenceSchema
 
 
-permissions_mapping = {
-    'urban_description': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
-    'urban_analysis': ('liege.urban: Internal Reader', 'liege.urban: Urban Editor'),
-    'urban_environment': ('liege.urban: Internal Reader', 'liege.urban: Environment Editor'),
-    'urban_location': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
-    'urban_road': ('liege.urban: Road Reader', 'liege.urban: Road Editor'),
-    'urban_habitation': ('liege.urban: External Reader', 'urban: Add PortionOut'),
-}
-
-
 CODT_IntegratedLicence.schema = update_item_schema(base_update_item_schema(CODT_IntegratedLicence.schema))
-CODT_IntegratedLicence.schema = set_field_permissions(
-    CODT_IntegratedLicence.schema,
-    permissions_mapping,
-)
