@@ -123,7 +123,7 @@ class LicencesExtractForm(form.Form):
         if hasattr(licence, 'getLastRecourse'):
             licence_dict['recourse_date'] = licence.getLastRecourse() and str(licence.getLastRecourse().getEventDate()) or ''
 
-        if hasattr(licence, 'getAnnoncedDelay'):
+        if hasattr(licence, 'annoncedDelay'):
             licence_dict['delay'] = self.extract_annonced_delay(licence, cfg)
 
         if hasattr(licence, 'getProcedureChoice'):
