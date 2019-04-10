@@ -123,16 +123,16 @@ class LicencesExtractForm(form.Form):
         if hasattr(licence, 'getLastRecourse'):
             licence_dict['recourse_date'] = licence.getLastRecourse() and str(licence.getLastRecourse().getEventDate()) or ''
 
-        if hasattr(licence, 'annoncedDelay'):
+        if hasattr(licence, 'getAnnoncedDelay'):
             licence_dict['delay'] = self.extract_annonced_delay(licence, cfg)
 
-        if hasattr(licence, 'procedureChoice'):
+        if hasattr(licence, 'getProcedureChoice'):
             licence_dict['procedure_choice'] = licence.getProcedureChoice()
 
-        if hasattr(licence, 'workType'):
+        if hasattr(licence, 'getWorkType'):
             licence_dict['worktype_220'] = licence.getWorkType()
 
-        if hasattr(licence, 'folderCategoryTownship'):
+        if hasattr(licence, 'getFolderCategoryTownship'):
             licence_dict['worktype_city'] = self.extract_foldercategory_township(licence, cfg)
 
         if hasattr(licence, 'habitationsBeforeLicence'):
@@ -140,10 +140,10 @@ class LicencesExtractForm(form.Form):
             licence_dict['habitations_asked'] = licence.getAdditionalHabitationsAsked() or 0
             licence_dict['habitations_authorized'] = licence.getAdditionalHabitationsGiven() or 0
 
-        if hasattr(licence, 'authority'):
+        if hasattr(licence, 'getAuthority'):
             licence_dict['authority'] = self.extract_authority(licence, cfg)
 
-        if hasattr(licence, 'folderTendency'):
+        if hasattr(licence, 'getFolderTendency'):
             licence_dict['folder_tendency'] = licence.getFolderTendency()
 
         if licence.portal_type == 'EnvClassBordering':
