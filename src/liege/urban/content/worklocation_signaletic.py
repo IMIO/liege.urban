@@ -34,3 +34,19 @@ class LiegeLicenceToWorklocationsSignaletic(object):
             return signaletic
         else:
             return licence.getDefaultWorkLocationSignaletic()
+
+    def get_street_and_number(self):
+        licence = self.licence
+        address_points = licence.getParcels()
+        if address_points:
+            signaletic = ''
+            for address in address_points:
+                street = address.getStreet_name()
+                number = address.getStreet_number()
+                if number:
+                    signaletic = '{} {} {}'.format(signaletic, street, number)
+                else:
+                    signaletic = '{} {}'.format(signaletic, street)
+            return signaletic
+        else:
+            return licence.getDefaultStreetAndNumber()
