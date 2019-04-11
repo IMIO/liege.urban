@@ -14,6 +14,7 @@ def updateTitle(self):
     title = "{} - {}".format(base_title, streets)
     self.setTitle(title)
     self.reindexObject(idxs=('Title', 'applicantInfosIndex', 'sortable_title', ))
+    return title
 
 
 EnvClassBordering.updateTitle = updateTitle

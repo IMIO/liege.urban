@@ -121,5 +121,6 @@ def updateTitle(self):
     title = "%s %s - %s - %s" % (self.getReference(), to_shore.display(), self.getLicenceSubject(), applicantTitle)
     self.setTitle(title)
     self.reindexObject(idxs=('Title', 'applicantInfosIndex', 'sortable_title', ))
+    return title
 
 GenericLicence.updateTitle = updateTitle
