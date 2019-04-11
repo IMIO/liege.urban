@@ -17,6 +17,7 @@ import liege.urban.content.codt_integratedlicence
 import liege.urban.content.codt_uniquelicence
 import liege.urban.content.contact
 import liege.urban.content.cu2
+import liege.urban.content.env_bordering
 import liege.urban.content.integratedlicence
 import liege.urban.content.uniquelicence
 import liege.urban.content.foldermanager
