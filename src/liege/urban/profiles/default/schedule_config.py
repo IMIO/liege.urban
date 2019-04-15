@@ -1955,7 +1955,7 @@ schedule_config = {
         {
             'type_name': 'MacroTaskConfig',
             'id': 'college-bourgmestre',
-            'title': 'Collèges e-bourgmestre',
+            'title': 'Séances e-bourgmestre',
             'default_assigned_group': 'administrative_editors_environment',
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
             'creation_conditions': (
@@ -2013,7 +2013,7 @@ schedule_config = {
                 {
                     'type_name': 'TaskConfig',
                     'id': 'college-en-cours',
-                    'title': 'Collège en cours',
+                    'title': 'Séance en cours',
                     'default_assigned_group': 'administrative_editors_environment',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
                     'creation_conditions': (
@@ -2136,7 +2136,7 @@ schedule_config = {
         {
             'type_name': 'MacroTaskConfig',
             'id': 'college-bourgmestre',
-            'title': 'Collèges e-bourgmestre',
+            'title': 'Séances e-bourgmestre',
             'default_assigned_group': 'administrative_editors_environment',
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
             'creation_conditions': (
@@ -2194,7 +2194,7 @@ schedule_config = {
                 {
                     'type_name': 'TaskConfig',
                     'id': 'college-en-cours',
-                    'title': 'Collège en cours',
+                    'title': 'Séance en cours',
                     'default_assigned_group': 'administrative_editors_environment',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
                     'creation_conditions': (
