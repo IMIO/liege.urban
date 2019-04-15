@@ -1676,18 +1676,38 @@ schedule_config = {
             ]
         },
         {
-            'type_name': 'MacroTaskConfig',
+            'type_name': 'TaskConfig',
+            'id': 'rapport-analyse',
+            'title': 'Rapport d\'analyse',
+            'default_assigned_group': 'technical_editors_environment',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('complete',),
+            'start_conditions': (
+                StartConditionObject('urban.schedule.condition.inquiry_done'),
+            ),
+            'ending_states': (
+                'technical_report_validation',
+            ),
+            'start_date': 'urban.schedule.start_date.inquiry_end_date',
+            'additional_delay': 2,
+            'activate_recurrency': True,
+            'recurrence_states': (
+                'complete',
+            ),
+        },
+        {
+            'type_name': 'TaskConfig',
             'id': 'validation-rapport-analyse',
             'title': 'Validation du rapport d\'analyse',
             'default_assigned_group': 'technical_validators_environment',
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
             'creation_state': ('complete',),
             'creation_conditions': (
-                MacroCreationConditionObject('urban.schedule.condition.acknowledgment_done'),
+                CreationConditionObject('urban.schedule.condition.acknowledgment_done'),
             ),
-            'starting_states': ('complete',),
+            'starting_states': ('technical_report_validation',),
             'start_conditions': (
-                MacroStartConditionObject('urban.schedule.condition.inquiry_done'),
+                StartConditionObject('urban.schedule.condition.inquiry_done'),
             ),
             'ending_states': (
                 'complete',
@@ -1697,30 +1717,8 @@ schedule_config = {
             'additional_delay': 3,
             'activate_recurrency': True,
             'recurrence_states': (
-                'complete',
+                'technical_report_validation',
             ),
-            'subtasks': [
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'rapport-analyse',
-                    'title': 'Rapport d\'analyse',
-                    'default_assigned_group': 'technical_editors_environment',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('complete',),
-                    'start_conditions': (
-                        StartConditionObject('urban.schedule.condition.inquiry_done'),
-                    ),
-                    'ending_states': (
-                        'technical_report_validation',
-                    ),
-                    'start_date': 'urban.schedule.start_date.inquiry_end_date',
-                    'additional_delay': 2,
-                    'activate_recurrency': True,
-                    'recurrence_states': (
-                        'complete',
-                    ),
-                },
-            ],
         },
         {
             'type_name': 'MacroTaskConfig',
@@ -1838,15 +1836,35 @@ schedule_config = {
             'additional_delay': 110,
         },
         {
-            'type_name': 'MacroTaskConfig',
+            'type_name': 'TaskConfig',
+            'id': 'rapport-synthese',
+            'title': 'Rapport de synthèse',
+            'default_assigned_group': 'technical_editors_environment',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('FD_opinion',),
+            'start_conditions': (
+                StartConditionObject('urban.schedule.condition.spw_project_receipt_done'),
+            ),
+            'ending_states': (
+                'technical_synthesis_validation',
+            ),
+            'start_date': 'urban.schedule.start_date.spw_decision_project_receipt_date',
+            'additional_delay': 3,
+            'activate_recurrency': True,
+            'recurrence_states': (
+                'FD_opinion',
+            ),
+        },
+        {
+            'type_name': 'TaskConfig',
             'id': 'validation-synthese',
             'title': 'Validation du rapport de synthèse',
             'default_assigned_group': 'technical_validators_environment',
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-            'creation_state': ('FD_opinion',),
-            'starting_states': ('FD_opinion',),
+            'creation_state': ('technical_synthesis_validation',),
+            'starting_states': ('technical_synthesis_validation',),
             'start_conditions': (
-                MacroStartConditionObject('urban.schedule.condition.spw_project_receipt_done'),
+                StartConditionObject('urban.schedule.condition.spw_project_receipt_done'),
             ),
             'ending_states': (
                 'FD_opinion',
@@ -1856,30 +1874,8 @@ schedule_config = {
             'additional_delay': 4,
             'activate_recurrency': True,
             'recurrence_states': (
-                'complete',
+                'technical_synthesis_validation',
             ),
-            'subtasks': [
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'rapport-synthese',
-                    'title': 'Rapport de synthèse',
-                    'default_assigned_group': 'technical_editors_environment',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('FD_opinion',),
-                    'start_conditions': (
-                        StartConditionObject('urban.schedule.condition.spw_project_receipt_done'),
-                    ),
-                    'ending_states': (
-                        'technical_synthesis_validation',
-                    ),
-                    'start_date': 'urban.schedule.start_date.spw_decision_project_receipt_date',
-                    'additional_delay': 3,
-                    'activate_recurrency': True,
-                    'recurrence_states': (
-                        'complete',
-                    ),
-                },
-            ],
         },
         {
             'type_name': 'MacroTaskConfig',
