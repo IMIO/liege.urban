@@ -38,6 +38,12 @@ msgstr ""
 msgid "liege.urban.schedule.college_done"
 msgstr ""
 
+msgid "liege.urban.schedule.project_sent_to_college"
+msgstr ""
+
+msgid "liege.urban.schedule.college_project_validated"
+msgstr ""
+
 msgid "liege.urban.schedule.college_project_writen"
 msgstr ""
 

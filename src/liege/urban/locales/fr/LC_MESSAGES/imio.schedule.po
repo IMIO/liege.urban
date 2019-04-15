@@ -38,6 +38,9 @@ msgstr "Utilisateur connecté, sinon agent du dossier, sinon 'À ASSIGNER'"
 msgid "liege.urban.schedule.college_done"
 msgstr "Collège terminé"
 
+msgid "liege.urban.schedule.college_project_validated"
+msgstr "Valider le projet de collège"
+
 msgid "liege.urban.schedule.college_project_writen"
 msgstr "Rédiger le projet de collège"
 
@@ -91,3 +94,6 @@ msgstr "Avis préliminaire validé (technique)"
 
 msgid "liege.urban.schedule.preliminary_advice_written"
 msgstr "Avis préliminaire proposé à validation technique"
+
+msgid "liege.urban.schedule.project_sent_to_college"
+msgstr "Envoyer le projet collège vers e-délib"
