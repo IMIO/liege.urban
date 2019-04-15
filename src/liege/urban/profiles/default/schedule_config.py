@@ -1757,8 +1757,8 @@ schedule_config = {
                             'title': 'Rédiger le projet d\'avis',
                             'default_assigned_group': 'administrative_editors_environment',
                             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                            'creation_state': ('college_in_progress', 'FD_opinion'),
-                            'starting_states': ('college_in_progress', 'FD_opinion'),
+                            'creation_state': ('college_in_progress', 'FT_opinion'),
+                            'starting_states': ('college_in_progress', 'FT_opinion'),
                             'end_conditions': (
                                 EndConditionObject('liege.urban.schedule.college_project_writen'),
                             ),
@@ -1771,8 +1771,8 @@ schedule_config = {
                             'title': 'Valider le projet d\'avis',
                             'default_assigned_group': 'administrative_validators_environment',
                             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                            'creation_state': ('college_in_progress', 'FD_opinion'),
-                            'starting_states': ('college_in_progress', 'FD_opinion'),
+                            'creation_state': ('college_in_progress', 'FT_opinion'),
+                            'starting_states': ('college_in_progress', 'FT_opinion'),
                             'start_conditions': (
                                 StartConditionObject('liege.urban.schedule.college_project_writen'),
                             ),
@@ -1789,8 +1789,8 @@ schedule_config = {
                             'title': 'Collège en cours',
                             'default_assigned_group': 'administrative_editors_environment',
                             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                            'creation_state': ('college_in_progress', 'FD_opinion'),
-                            'starting_states': ('college_in_progress', 'FD_opinion'),
+                            'creation_state': ('college_in_progress', 'FT_opinion'),
+                            'starting_states': ('college_in_progress', 'FT_opinion'),
                             'start_conditions': (
                                 StartConditionObject('liege.urban.schedule.project_sent_to_college'),
                             ),
@@ -1804,12 +1804,12 @@ schedule_config = {
                 },
                 {
                     'type_name': 'TaskConfig',
-                    'id': 'envoyer-avis-FD',
+                    'id': 'envoyer-avis-FT',
                     'title': 'Envoyer la demande d\'avis',
                     'default_assigned_group': 'administrative_editors_environment',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('college_in_progress', 'FD_opinion'),
-                    'starting_states': ('college_in_progress', 'FD_opinion'),
+                    'creation_state': ('college_in_progress', 'FT_opinion'),
+                    'starting_states': ('college_in_progress', 'FT_opinion'),
                     'start_conditions': (
                         StartConditionObject('liege.urban.schedule.college_done'),
                     ),
@@ -1827,8 +1827,8 @@ schedule_config = {
             'title': 'Réception du projet d\'arrêté',
             'default_assigned_group': 'administrative_editors_environment',
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-            'creation_state': ('FD_opinion',),
-            'starting_states': ('FD_opinion',),
+            'creation_state': ('FT_opinion',),
+            'starting_states': ('FT_opinion',),
             'end_conditions': (
                 EndConditionObject('urban.schedule.condition.spw_project_receipt_done'),
             ),
@@ -1841,7 +1841,7 @@ schedule_config = {
             'title': 'Rapport de synthèse',
             'default_assigned_group': 'technical_editors_environment',
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-            'creation_state': ('FD_opinion',),
+            'creation_state': ('FT_opinion',),
             'start_conditions': (
                 StartConditionObject('urban.schedule.condition.spw_project_receipt_done'),
             ),
@@ -1852,7 +1852,7 @@ schedule_config = {
             'additional_delay': 3,
             'activate_recurrency': True,
             'recurrence_states': (
-                'FD_opinion',
+                'FT_opinion',
             ),
         },
         {
@@ -1867,7 +1867,7 @@ schedule_config = {
                 StartConditionObject('urban.schedule.condition.spw_project_receipt_done'),
             ),
             'ending_states': (
-                'FD_opinion',
+                'FT_opinion',
                 'final_decision_in_progress',
             ),
             'start_date': 'urban.schedule.start_date.spw_decision_project_receipt_date',
