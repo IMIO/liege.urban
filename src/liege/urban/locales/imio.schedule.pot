@@ -35,6 +35,9 @@ msgstr ""
 msgid "liege.urban.schedule.assign_task_owner"
 msgstr ""
 
+msgid "liege.urban.schedule.college_done"
+msgstr ""
+
 msgid "liege.urban.schedule.college_project_writen"
 msgstr ""
 
@@ -45,6 +48,21 @@ msgid "liege.urban.schedule.decision_project_drafted"
 msgstr ""
 
 msgid "liege.urban.schedule.decision_project_sent"
+msgstr ""
+
+msgid "liege.urban.schedule.env_decision_project_drafted"
+msgstr ""
+
+msgid "liege.urban.schedule.env_decision_project_validated"
+msgstr ""
+
+msgid "liege.urban.schedule.env_decision_project_sent"
+msgstr ""
+
+msgid "liege.urban.schedule.env_decision_college_done"
+msgstr ""
+
+msgid "liege.urban.schedule.env_decision_notified"
 msgstr ""
 
 msgid "liege.urban.schedule.inquiry_documents_done"

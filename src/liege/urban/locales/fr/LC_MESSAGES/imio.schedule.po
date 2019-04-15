@@ -35,6 +35,9 @@ msgstr "Valider les documents de l'annonce de projet"
 msgid "liege.urban.schedule.assign_task_owner"
 msgstr "Utilisateur connecté, sinon agent du dossier, sinon 'À ASSIGNER'"
 
+msgid "liege.urban.schedule.college_done"
+msgstr "Collège terminé"
+
 msgid "liege.urban.schedule.college_project_writen"
 msgstr "Rédiger le projet de collège"
 
@@ -46,6 +49,21 @@ msgstr "Passer l'événement d'octroi du permis dans l'état 'Projet de décisio
 
 msgid "liege.urban.schedule.decision_project_sent"
 msgstr "Passer l'événement d'octroi du permis dans l'état 'Passage au collège'"
+
+msgid "liege.urban.schedule.env_decision_college_done"
+msgstr "Collège pour décision finale terminé (environnement)"
+
+msgid "liege.urban.schedule.env_decision_notified"
+msgstr "Notifier la décision (environnement)"
+
+msgid "liege.urban.schedule.env_decision_project_drafted"
+msgstr "Rédiger le projet de décision (environnement)"
+
+msgid "liege.urban.schedule.env_decision_project_sent"
+msgstr "Envoyer le drojet de décision vers e-délib (environnement)"
+
+msgid "liege.urban.schedule.env_decision_project_validated"
+msgstr "Valider le projet de décision finale (environnement)"
 
 msgid "liege.urban.schedule.inquiry_documents_done"
 msgstr "Générer les documents d'enquête publique"

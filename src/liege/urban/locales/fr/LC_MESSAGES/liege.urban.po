@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2018-12-20 12:37+0000\n"
+"POT-Creation-Date: 2019-04-15 08:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgstr ""
 msgid "IInternalOpinionRequestEvent type marker interface"
 msgstr "Demande d'avis interne"
 
-#: ../configure.zcml:44
+#: ../configure.zcml:45
 msgid "Installs liege.urban add-on."
 msgstr ""
 
@@ -53,11 +53,12 @@ msgstr "Numéro"
 msgid "The above listed tasks are not done yet !!!"
 msgstr "Attention, il reste des actions à prendre pour les tâches ci-dessus!!!"
 
-#: ../configure.zcml:44
+#: ../configure.zcml:45
 #: ../schedule/vocabulary.py:99
 msgid "liege.urban"
 msgstr ""
 
+#: ../content/codt_integratedlicence.py:50
 #: ../content/codt_uniquelicence.py:49
 #: ../content/env_base.py:79
 msgid "urban_label_CommentsOnDecisionProject"
@@ -83,6 +84,7 @@ msgstr "Nature des travaux (codes Ville)"
 msgid "urban_label_closeDate"
 msgstr "Date de séance de clôture"
 
+#: ../content/codt_integratedlicence.py:51
 #: ../content/codt_uniquelicence.py:50
 #: ../content/env_base.py:78
 msgid "urban_label_decisionNotificationTo"
@@ -115,6 +117,7 @@ msgstr "Date de soirée de consultation"
 msgid "urban_label_exploitationAddress"
 msgstr "Adresse de l'exploitation"
 
+#: ../content/codt_integratedlicence.py:49
 #: ../content/codt_uniquelicence.py:48
 msgid "urban_label_folderCategory"
 msgstr "Type de dossier"
@@ -149,11 +152,13 @@ msgstr "Type de dossier"
 msgid "urban_label_rcbDetails"
 msgstr "Détails concernant le RCB"
 
+#: ../content/codt_integratedlicence.py:48
 #: ../content/codt_uniquelicence.py:47
 msgid "urban_label_referenceFD"
 msgstr "Référence FD"
 
 #: ../content/buildlicence.py:43
+#: ../content/roaddecree.py:18
 msgid "urban_label_roadDescription"
 msgstr "Observations/commentaires"
 
@@ -165,6 +170,19 @@ msgstr "Avis externe(s) sollicité(s)"
 msgid "urban_label_solicitInternalOpinionsTo"
 msgstr "Avis interne(s) sollicité(s)"
 
+#: ../content/codt_integratedlicence.py:47
 #: ../content/codt_uniquelicence.py:46
 msgid "urban_label_urbanReference"
 msgstr "Référence urbanisme"
+
+#: ../browser/codt_integratedlicenceview.py:21
+msgid "warning_add_a_parcel"
+msgstr ""
+
+#: ../browser/codt_integratedlicenceview.py:23
+msgid "warning_add_an_applicant"
+msgstr ""
+
+#: ../browser/codt_integratedlicenceview.py:25
+msgid "warning_outdated_parcel"
+msgstr ""

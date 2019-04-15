@@ -486,6 +486,22 @@
         for="Products.urban.interfaces.IEnvironmentBase
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.EnvironmentDecisionProjectValidatedCondition"
+        name="liege.urban.schedule.env_decision_project_validated"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentBase
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.EnvironmentDecisionProjectValidatedCondition"
+        name="liege.urban.schedule.env_decision_project_validated"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentBase
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
         factory=".conditions.EnvironmentDecisionProjectSentCondition"
         name="liege.urban.schedule.env_decision_project_sent"
     />
@@ -496,6 +512,14 @@
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.EnvironmentDecisionProjectSentCondition"
         name="liege.urban.schedule.env_decision_project_sent"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentBase
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.EnvironmentDecisionCollegeDone"
+        name="liege.urban.schedule.env_decision_college_done"
     />
 
     <adapter

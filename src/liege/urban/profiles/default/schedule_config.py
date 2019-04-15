@@ -1924,6 +1924,7 @@ schedule_config = {
                         StartConditionObject('liege.urban.schedule.env_decision_project_drafted'),
                     ),
                     'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.env_decision_project_validated'),
                         EndConditionObject('liege.urban.schedule.env_decision_project_sent'),
                     ),
                     'start_date': 'urban.schedule.start_date.spw_decision_project_receipt_date',
@@ -1941,10 +1942,10 @@ schedule_config = {
                     ),
                     'starting_states': ('final_decision_in_progress',),
                     'start_conditions': (
-                        StartConditionObject('liege.urban.schedule.project_sent_to_college'),
+                        StartConditionObject('liege.urban.schedule.env_decision_project_sent'),
                     ),
                     'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.college_done'),
+                        EndConditionObject('liege.urban.schedule.env_decision_college_done'),
                     ),
                     'start_date': 'urban.schedule.start_date.spw_decision_project_receipt_date',
                     'additional_delay': 23,

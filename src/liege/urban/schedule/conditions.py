@@ -458,52 +458,93 @@ class DecisionNotifiedCondition(Condition):
         return api.content.get_state(decision_event) == 'closed'
 
 
-class EnvironmentDecisionProjectDraftedCondition(Condition):
+class EnvironmentDecisionCondition(Condition):
+    """
+    Base class for college event based conditions
+    """
+
+    def __init__(self, licence, task):
+        super(EnvironmentDecisionCondition, self).__init__(licence, task)
+        self.decision_event = licence.getLastLicenceDelivery()
+
+
+class EnvironmentDecisionProjectDraftedCondition(EnvironmentDecisionCondition):
     """
     Licence decision project is drafted.
     """
 
     def evaluate(self):
-        licence = self.task_container
-        decision_event = licence.getLastLicenceDelivery()
-        if not decision_event:
+        if not self.decision_event:
             return False
 
-        if api.content.get_state(decision_event) == 'draft':
+        return api.content.get_state(self.decision_event) != 'draft'
+
+
+class EnvironmentDecisionProjectValidatedCondition(EnvironmentDecisionCondition):
+    """
+    Licence decision project is validated.
+    """
+
+    def evaluate(self):
+        if not self.decision_event:
             return False
 
-        return True
+        return api.content.get_state(self.decision_event) in ['decision_in_progress', 'notification', 'closed']
 
 
-class EnvironmentDecisionProjectSentCondition(Condition):
+class EnvironmentDecisionProjectSentCondition(EnvironmentDecisionCondition):
     """
     Licence decision project is sent to PM.
     """
 
     def evaluate(self):
-        licence = self.task_container
-        decision_event = licence.getLastLicenceDelivery()
-        if not decision_event:
+        if not self.decision_event:
             return False
 
-        if api.content.get_state(decision_event) not in ['decision_in_progress', 'notification', 'closed']:
+        request = api.portal.getRequest()
+        ws4pm = getMultiAdapter((api.portal.get(), request), name='ws4pmclient-settings')
+
+        sent = ws4pm.checkAlreadySentToPloneMeeting(self.decision_event)
+
+        return sent
+
+
+class EnvironmentDecisionCollegeDone(EnvironmentDecisionCondition):
+    """
+    College is done
+    """
+
+    def evaluate(self):
+        if not self.decision_event:
             return False
 
-        return True
+        request = api.portal.getRequest()
+        ws4pm = getMultiAdapter((api.portal.get(), request), name='ws4pmclient-settings')
+
+        # if the current user has no acces to pm return False
+        if not ws4pm._soap_getUserInfos():
+            return False
+
+        items = ws4pm._soap_searchItems({'externalIdentifier': self.decision_event.UID()})
+        if not items:
+            return False
+
+        accepted_states = ['accepted', 'accepted_but_modified', 'accepted_and_returned']
+        college_done = items and items[0]['review_state'] in accepted_states
+
+        return college_done
 
 
-class EnvironmentDecisionNotifiedCondition(Condition):
+class EnvironmentDecisionNotifiedCondition(EnvironmentDecisionCondition):
     """
     Licence decision has been notified to applicants, FD, ...
     """
 
     def evaluate(self):
-        licence = self.task_container
-        decision_event = licence.getLastLicenceDelivery()
-        if not decision_event:
+        if not self.decision_event:
             return False
 
-        return api.content.get_state(decision_event) == 'closed'
+        return api.content.get_state(self.decision_event) == 'closed'
 
 
 class LicenceEndedCondition(Condition):
