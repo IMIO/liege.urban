@@ -2092,7 +2092,7 @@ schedule_config = {
             ],
         },
         {
-            'type_name': 'MacroTaskConfig',
+            'type_name': 'TaskConfig',
             'id': 'recevable',
             'title': 'Recevable',
             'default_assigned_group': 'administrative_editors_environment',
@@ -2100,72 +2100,13 @@ schedule_config = {
             'creation_state': ('acceptable',),
             'starting_states': ('acceptable',),
             'end_conditions': (
-                MacroEndConditionObject('urban.schedule.condition.decision_delivered'),
+                EndConditionObject('urban.schedule.condition.decision_delivered'),
             ),
             'start_date': 'urban.schedule.start_date.deposit_date',
             'additional_delay': 8,
-            'subtasks': [
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'rediger-proposition-decision',
-                    'title': 'Rédiger le projet de permis',
-                    'default_assigned_group': 'administrative_editors_environment',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('final_decision_in_progress',),
-                    'creation_conditions': (
-                        CreationConditionObject('urban.schedule.condition.authority_is_college'),
-                    ),
-                    'starting_states': ('final_decision_in_progress',),
-                    'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.env_decision_project_drafted'),
-                    ),
-                    'start_date': 'urban.schedule.start_date.spw_decision_project_receipt_date',
-                    'additional_delay': 10,
-                },
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'envoyer-proposition-decision',
-                    'title': 'Valider et envoyer vers IA délib',
-                    'default_assigned_group': 'administrative_validators_environment',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('final_decision_in_progress',),
-                    'creation_conditions': (
-                        CreationConditionObject('urban.schedule.condition.authority_is_college'),
-                    ),
-                    'starting_states': ('final_decision_in_progress',),
-                    'start_conditions': (
-                        StartConditionObject('liege.urban.schedule.env_decision_project_drafted'),
-                    ),
-                    'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.env_decision_project_sent'),
-                    ),
-                    'start_date': 'urban.schedule.start_date.spw_decision_project_receipt_date',
-                    'additional_delay': 11,
-                },
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'college-en-cours',
-                    'title': 'Collège en cours',
-                    'default_assigned_group': 'administrative_editors_environment',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('final_decision_in_progress',),
-                    'creation_conditions': (
-                        CreationConditionObject('urban.schedule.condition.authority_is_college'),
-                    ),
-                    'starting_states': ('final_decision_in_progress',),
-                    'start_conditions': (
-                        StartConditionObject('liege.urban.schedule.project_sent_to_college'),
-                    ),
-                    'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.college_done'),
-                    ),
-                    'start_date': 'urban.schedule.start_date.spw_decision_project_receipt_date',
-                    'additional_delay': 23,
-                },
-            ]
         },
         {
-            'type_name': 'MacroTaskConfig',
+            'type_name': 'TaskConfig',
             'id': 'irrecevable',
             'title': 'Irrecevable',
             'default_assigned_group': 'administrative_editors_environment',
@@ -2173,13 +2114,13 @@ schedule_config = {
             'creation_state': ('inacceptable',),
             'starting_states': ('inacceptable',),
             'end_conditions': (
-                MacroEndConditionObject('urban.schedule.condition.decision_delivered'),
+                EndConditionObject('urban.schedule.condition.decision_delivered'),
             ),
             'start_date': 'urban.schedule.start_date.deposit_date',
             'additional_delay': 15,
         },
         {
-            'type_name': 'MacroTaskConfig',
+            'type_name': 'TaskConfig',
             'id': 'recevable_avec_conditions',
             'title': 'Recevable avec conditions',
             'default_assigned_group': 'administrative_editors_environment',
@@ -2187,69 +2128,10 @@ schedule_config = {
             'creation_state': ('acceptable_with_conditions',),
             'starting_states': ('acceptable_with_conditions',),
             'end_conditions': (
-                MacroEndConditionObject('urban.schedule.condition.decision_delivered'),
+                EndConditionObject('urban.schedule.condition.decision_delivered'),
             ),
             'start_date': 'urban.schedule.start_date.deposit_date',
             'additional_delay': 30,
-            'subtasks': [
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'rediger-proposition-decision',
-                    'title': 'Rédiger le projet de permis',
-                    'default_assigned_group': 'administrative_editors_environment',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('final_decision_in_progress',),
-                    'creation_conditions': (
-                        CreationConditionObject('urban.schedule.condition.authority_is_college'),
-                    ),
-                    'starting_states': ('final_decision_in_progress',),
-                    'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.env_decision_project_drafted'),
-                    ),
-                    'start_date': 'urban.schedule.start_date.spw_decision_project_receipt_date',
-                    'additional_delay': 10,
-                },
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'envoyer-proposition-decision',
-                    'title': 'Valider et envoyer vers IA délib',
-                    'default_assigned_group': 'administrative_validators_environment',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('final_decision_in_progress',),
-                    'creation_conditions': (
-                        CreationConditionObject('urban.schedule.condition.authority_is_college'),
-                    ),
-                    'starting_states': ('final_decision_in_progress',),
-                    'start_conditions': (
-                        StartConditionObject('liege.urban.schedule.env_decision_project_drafted'),
-                    ),
-                    'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.env_decision_project_sent'),
-                    ),
-                    'start_date': 'urban.schedule.start_date.spw_decision_project_receipt_date',
-                    'additional_delay': 11,
-                },
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'college-en-cours',
-                    'title': 'Collège en cours',
-                    'default_assigned_group': 'administrative_editors_environment',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('final_decision_in_progress',),
-                    'creation_conditions': (
-                        CreationConditionObject('urban.schedule.condition.authority_is_college'),
-                    ),
-                    'starting_states': ('final_decision_in_progress',),
-                    'start_conditions': (
-                        StartConditionObject('liege.urban.schedule.project_sent_to_college'),
-                    ),
-                    'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.college_done'),
-                    ),
-                    'start_date': 'urban.schedule.start_date.spw_decision_project_receipt_date',
-                    'additional_delay': 23,
-                },
-            ]
         },
         {
             'type_name': 'MacroTaskConfig',
