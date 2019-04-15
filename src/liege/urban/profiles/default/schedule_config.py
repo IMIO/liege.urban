@@ -2251,6 +2251,85 @@ schedule_config = {
                 },
             ]
         },
+        {
+            'type_name': 'MacroTaskConfig',
+            'id': 'college-bourgmestre',
+            'title': 'Collèges e-bourgmestre',
+            'default_assigned_group': 'administrative_editors_environment',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_conditions': (
+                MacroCreationConditionObject('liege.urban.schedule.one_mayor_project_created'),
+            ),
+            'end_conditions': (
+                MacroEndConditionObject('liege.urban.schedule.all_mayor_events_closed'),
+            ),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 30,
+            'activate_recurrency': True,
+            'recurrence_conditions': (
+                MacroRecurrenceConditionObject('liege.urban.schedule.one_mayor_project_created'),
+            ),
+            'subtasks': [
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'rediger-point',
+                    'title': 'Rédiger le point',
+                    'default_assigned_group': 'administrative_editors_environment',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_conditions': (
+                        CreationConditionObject('liege.urban.schedule.one_mayor_project_created'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.all_mayor_projects_drafted'),
+                    ),
+                    'start_date': 'urban.schedule.start_date.creation_date',
+                    'additional_delay': 10,
+                    'activate_recurrency': True,
+                    'recurrence_conditions': (
+                        RecurrenceConditionObject('liege.urban.schedule.one_mayor_project_created'),
+                    ),
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'envoyer-point',
+                    'title': 'Valider et envoyer vers IA délib',
+                    'default_assigned_group': 'administrative_validators_environment',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_conditions': (
+                        CreationConditionObject('liege.urban.schedule.one_mayor_project_drafted'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.all_mayor_projects_validated'),
+                        EndConditionObject('liege.urban.schedule.all_mayor_projects_sent'),
+                    ),
+                    'start_date': 'urban.schedule.start_date.creation_date',
+                    'additional_delay': 11,
+                    'activate_recurrency': True,
+                    'recurrence_conditions': (
+                        RecurrenceConditionObject('liege.urban.schedule.one_mayor_project_drafted'),
+                    ),
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'college-en-cours',
+                    'title': 'Collège en cours',
+                    'default_assigned_group': 'administrative_editors_environment',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_conditions': (
+                        CreationConditionObject('liege.urban.schedule.one_mayor_project_sent'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.all_mayor_colleges_done'),
+                    ),
+                    'start_date': 'urban.schedule.start_date.creation_date',
+                    'additional_delay': 23,
+                    'activate_recurrency': True,
+                    'recurrence_conditions': (
+                        RecurrenceConditionObject('liege.urban.schedule.one_mayor_project_sent'),
+                    ),
+                },
+            ]
+        },
     ],
     'roaddecree': [
 #        {
