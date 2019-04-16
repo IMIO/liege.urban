@@ -1701,7 +1701,7 @@ schedule_config = {
             'title': 'Validation du rapport d\'analyse',
             'default_assigned_group': 'technical_validators_environment',
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-            'creation_state': ('complete',),
+            'creation_state': ('technical_report_validation',),
             'creation_conditions': (
                 CreationConditionObject('urban.schedule.condition.acknowledgment_done'),
             ),

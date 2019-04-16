@@ -632,6 +632,7 @@
  </state>
  <state state_id="complete" title="complete">
   <exit-transition transition_id="propose_technical_report"/>
+  <exit-transition transition_id="propose_technical_synthesis_shortcut"/>
   <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -2447,6 +2448,13 @@
   <action url="" category="workflow" icon="">propose_technical_synthesis</action>
   <guard>
    <guard-group>technical_editors_environment</guard-group>
+  </guard>
+ </transition>
+ <transition transition_id="propose_technical_synthesis_shortcut" title="propose_technical_synthesis" new_state="technical_synthesis_validation" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">propose_technical_synthesis</action>
+  <guard>
+   <guard-group>technical_editors_environment</guard-group>
+   <guard-expression>python: here.portal_type == 'EnvClassTwo' and 'temporary' in here.getProcedureChoice()</guard-expression>
   </guard>
  </transition>
  <transition transition_id="refuse_licence" title="refuse_licence" new_state="refused" trigger="USER" before_script="" after_script="">
