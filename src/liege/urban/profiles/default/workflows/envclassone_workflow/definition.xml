@@ -2442,7 +2442,7 @@
   <action url="" category="workflow" icon="">propose_technical_report</action>
   <guard>
    <guard-group>technical_editors_environment</guard-group>
-   <guard-expression>python: here.portal_type != 'EnvClassTwo' or 'temporary' in here.getProcedureChoice()</guard-expression>
+   <guard-expression>python: here.portal_type != 'EnvClassTwo' or here.getProcedureChoice() != 'temporary'</guard-expression>
   </guard>
  </transition>
  <transition transition_id="propose_technical_synthesis" title="propose_technical_synthesis" new_state="technical_synthesis_validation" trigger="USER" before_script="" after_script="">
@@ -2455,7 +2455,7 @@
   <action url="" category="workflow" icon="">propose_technical_synthesis</action>
   <guard>
    <guard-group>technical_editors_environment</guard-group>
-   <guard-expression>python: here.portal_type == 'EnvClassTwo' and 'temporary' in here.getProcedureChoice()</guard-expression>
+   <guard-expression>python: here.portal_type == 'EnvClassTwo' and here.getProcedureChoice() =='temporary'</guard-expression>
   </guard>
  </transition>
  <transition transition_id="refuse_licence" title="refuse_licence" new_state="refused" trigger="USER" before_script="" after_script="">
