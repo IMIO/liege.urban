@@ -2326,7 +2326,7 @@ schedule_config = {
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
             'creation_state': ('complete',),
             'creation_conditions': (
-                MacroCreationConditionObject('urban.schedule.condition.is_not_temporary_licence', 'AND'),
+                CreationConditionObject('urban.schedule.condition.is_not_temporary_licence', 'AND'),
             ),
             'start_conditions': (
                 StartConditionObject('urban.schedule.condition.inquiry_done'),
