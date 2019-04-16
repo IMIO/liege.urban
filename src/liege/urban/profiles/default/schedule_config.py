@@ -2340,6 +2340,9 @@ schedule_config = {
             'recurrence_states': (
                 'complete',
             ),
+            'recurrence_conditions': (
+                CreationConditionObject('urban.schedule.condition.is_not_temporary_licence', 'AND'),
+            ),
         },
         {
             'type_name': 'TaskConfig',
