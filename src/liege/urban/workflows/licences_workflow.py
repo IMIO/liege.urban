@@ -37,7 +37,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
             get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
-            BaseRolesMapping.get_opinion_editors: ('ExternalReader',),
+            BaseRolesMapping.get_opinion_editors: ('Reader',),
             'survey_editors': ('Reader', 'AddressEditor'),
         },
 
@@ -46,7 +46,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
             get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
-            BaseRolesMapping.get_opinion_editors: ('ExternalReader',),
+            BaseRolesMapping.get_opinion_editors: ('Reader',),
             'survey_editors': ('Reader', 'AddressEditor'),
         },
 
@@ -55,7 +55,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
             get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
-            BaseRolesMapping.get_opinion_editors: ('ExternalReader',),
+            BaseRolesMapping.get_opinion_editors: ('Reader',),
             'survey_editors': ('Reader', 'AddressEditor'),
         },
 
@@ -64,7 +64,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
             get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
-            BaseRolesMapping.get_opinion_editors: ('ExternalReader',),
+            BaseRolesMapping.get_opinion_editors: ('Reader',),
             'survey_editors': ('Reader', 'AddressEditor'),
         },
 
@@ -73,7 +73,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
             get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
-            BaseRolesMapping.get_opinion_editors: ('ExternalReader',),
+            BaseRolesMapping.get_opinion_editors: ('Reader',),
             'survey_editors': ('Reader', 'AddressEditor'),
         },
 
@@ -82,7 +82,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
             get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
-            BaseRolesMapping.get_opinion_editors: ('ExternalReader',),
+            BaseRolesMapping.get_opinion_editors: ('Reader',),
             'survey_editors': ('Reader', 'AddressEditor'),
         },
     }
