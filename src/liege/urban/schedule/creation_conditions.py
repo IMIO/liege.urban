@@ -111,7 +111,11 @@ class OneProjectsSentToMayorCollege(MayorCollegeCondition):
         for event in self.mayor_events:
             sent = ws4pm.checkAlreadySentToPloneMeeting(event)
             if sent:
-                items = ws4pm._soap_searchItems({'externalIdentifier': event.UID()})
+                try:
+                    items = ws4pm._soap_searchItems({'externalIdentifier': event.UID()})
+                except:
+                    return False
+
                 if not items:
                     return False
 
