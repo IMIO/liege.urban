@@ -57,6 +57,18 @@ class PreliminaryAdviceTechnicalValidationDone(PreliminaryAdviceCondition):
         return api.content.get_state(self.preliminary_advice_event) == 'executive_validation'
 
 
+class FTOpinionStateOrIsTemporaryLicence(CreationCondition):
+    """
+    Preliminary advice event is proposed to executive validation
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        if licence.getProcedureChoice() == 'temporary':
+            return api.content.get_state(licence) in ['complete', 'FT_opinion']
+        return api.content.get_state(licence) == 'FT_opinion'
+
+
 class MayorCollegeCondition(CreationCondition):
     """
     Base class for college event based conditions

@@ -597,6 +597,15 @@
         name="liege.urban.schedule.preliminary_advice_sent"
     />
 
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentLicence
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".creation_conditions.FTOpinionStateOrIsTemporaryLicence"
+        name="liege.urban.schedule.is_temporary_licence_or_in_FT_opinion_state"
+    />
+
+
     <!-- Road decree specific condition -->
 
     <adapter

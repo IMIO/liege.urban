@@ -23,6 +23,9 @@ msgstr "Recevoir l'avis du FD"
 msgid "liege.urban.schedule.acknowledgment_written"
 msgstr "Rédiger l'accusé de réception"
 
+msgid "liege.urban.schedule.all_mayor_events_closed"
+msgstr "Cloturer tous les événements e-bourgmestre"
+
 msgid "liege.urban.schedule.announcement_documents_done"
 msgstr "Générer les documents de l'annonce de projet"
 
@@ -76,6 +79,12 @@ msgstr "Envoyer les documents d'enquête publique"
 
 msgid "liege.urban.schedule.inquiry_documents_validated"
 msgstr "Valider les documents d'enquête publique"
+
+msgid "liege.urban.schedule.is_temporary_licence_or_in_FT_opinion_state"
+msgstr "Est un dossier temporaire ou est dans l'état \"en attente de l'avis du FT\""
+
+msgid "liege.urban.schedule.one_mayor_project_created"
+msgstr "Créer au moins un événement e-bourgmestre"
 
 msgid "liege.urban.schedule.parcels_added"
 msgstr "Ajouter au moins une parcelle"

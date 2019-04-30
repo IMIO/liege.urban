@@ -23,6 +23,9 @@ msgstr ""
 msgid "liege.urban.schedule.acknowledgment_written"
 msgstr ""
 
+msgid "liege.urban.schedule.all_mayor_events_closed"
+msgstr ""
+
 msgid "liege.urban.schedule.announcement_documents_done"
 msgstr ""
 
@@ -78,6 +81,12 @@ msgid "liege.urban.schedule.inquiry_documents_sent"
 msgstr ""
 
 msgid "liege.urban.schedule.inquiry_documents_validated"
+msgstr ""
+
+msgid "liege.urban.schedule.is_temporary_licence_or_in_FT_opinion_state"
+msgstr ""
+
+msgid "liege.urban.schedule.one_mayor_project_created"
 msgstr ""
 
 msgid "liege.urban.schedule.parcels_validated"
