@@ -2478,7 +2478,7 @@ schedule_config = {
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
             'creation_conditions': (
                 CreationConditionObject('liege.urban.schedule.is_temporary_licence_or_in_FT_opinion_state'),
-            )
+            ),
             'ending_states': (
                 'FT_opinion',
             ),
