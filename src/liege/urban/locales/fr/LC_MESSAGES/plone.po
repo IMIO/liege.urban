@@ -344,6 +344,9 @@ msgstr "Validation de la complétude"
 msgid "verify_completion"
 msgstr "vérifier la complétude"
 
+msgid "wait_for_FT_opinion"
+msgstr "attendre le projet d'arrêté du FT"
+
 msgid "waiting_address"
 msgstr "En attente d'une adresse temporaire"
 

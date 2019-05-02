@@ -2476,8 +2476,12 @@ schedule_config = {
             'title': 'Réception du projet d\'arrêté',
             'default_assigned_group': 'administrative_editors_environment',
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-            'creation_state': ('FT_opinion',),
-            'starting_states': ('FT_opinion',),
+            'creation_conditions': (
+                CreationConditionObject('liege.urban.schedule.is_temporary_licence_or_in_FT_opinion_state'),
+            )
+            'ending_states': (
+                'FT_opinion',
+            ),
             'end_conditions': (
                 EndConditionObject('urban.schedule.condition.spw_project_receipt_done'),
             ),
@@ -2512,9 +2516,6 @@ schedule_config = {
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
             'creation_state': ('technical_synthesis_validation',),
             'starting_states': ('technical_synthesis_validation',),
-            'start_conditions': (
-                StartConditionObject('urban.schedule.condition.spw_project_receipt_done'),
-            ),
             'ending_states': (
                 'FT_opinion',
                 'final_decision_in_progress',

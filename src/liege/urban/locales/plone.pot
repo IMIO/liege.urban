@@ -323,6 +323,9 @@ msgstr ""
 msgid "waiting_address"
 msgstr ""
 
+msgid "wait_for_FT_opinion"
+msgstr ""
+
 msgid "waiting_opinion"
 msgstr ""
 

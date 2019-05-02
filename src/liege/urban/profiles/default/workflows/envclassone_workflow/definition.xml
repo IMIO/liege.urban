@@ -632,7 +632,7 @@
  </state>
  <state state_id="complete" title="complete">
   <exit-transition transition_id="propose_technical_report"/>
-  <exit-transition transition_id="propose_technical_synthesis_shortcut"/>
+  <exit-transition transition_id="wait_for_FT_opinion"/>
   <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -2451,7 +2451,7 @@
    <guard-group>technical_editors_environment</guard-group>
   </guard>
  </transition>
- <transition transition_id="propose_technical_synthesis_shortcut" title="propose_technical_synthesis" new_state="technical_synthesis_validation" trigger="USER" before_script="" after_script="">
+ <transition transition_id="wait_for_FT_opinion" title="wait_for_FT_opinion" new_state="FT_opinion" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">propose_technical_synthesis</action>
   <guard>
    <guard-group>technical_editors_environment</guard-group>
