@@ -118,7 +118,12 @@ class LicencesExtractForm(form.Form):
             licence_dict['acknowledgement_date'] = licence.getLastAcknowledgment() and str(licence.getLastAcknowledgment().getEventDate()) or ''
 
         if hasattr(licence, 'getLastLicenceNotification'):
-            licence_dict['notification_date'] = licence.getLastLicenceNotification() and str(licence.getLastLicenceNotification().getEventDate()) or ''
+            notification_event = licence.getLastLicenceNotification()
+            notification_date = ''
+            if notification_event:
+                notification_date = str(notification_event.getTransmitDate()) or ''
+                notification_date = notification_date or str(notification_event.getEventDate()) or ''
+            licence_dict['notification_date'] = notification_date
 
         if hasattr(licence, 'getLastRecourse'):
             licence_dict['recourse_date'] = licence.getLastRecourse() and str(licence.getLastRecourse().getEventDate()) or ''
