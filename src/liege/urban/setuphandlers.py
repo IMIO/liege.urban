@@ -122,6 +122,10 @@ def addLiegeGroups(context):
     portal_groups.setRolesForGroup('survey_editors', ('UrbanMapReader', ))
     portal_urban.manage_addLocalRoles("survey_editors", ("Reader", ))
 
+    portal_groups.addGroup("inspectors", title="Inspectors")
+    portal_groups.setRolesForGroup('inspectors', ('UrbanMapReader', ))
+    portal_urban.manage_addLocalRoles("inspectors", ("Reader", ))
+
     portal_groups.addGroup("fittingout_technicians", title="fitting-out technicians")
     portal_groups.setRolesForGroup('fittingout_technicians', ('UrbanMapReader', ))
     portal_urban.manage_addLocalRoles("fittingout_technicians", ("Reader", ))
@@ -176,6 +180,8 @@ def setDefaultApplicationSecurity(context):
                 folder.manage_addLocalRoles("environment_readers", ("Reader", ))
                 folder.manage_addLocalRoles("administrative_editors_environment", ("Contributor",))
                 folder.manage_addLocalRoles("administrative_validators_environment", ("Contributor",))
+            if folder_name == getLicenceFolderId('Inspection'):
+                folder.manage_addLocalRoles("inspectors", ("Contributor", ))
 
 
 def setupSurveySchedule(context):

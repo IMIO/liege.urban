@@ -80,6 +80,9 @@
   <type type_id="UrbanEventInquiry">
      <bound-workflow workflow_id="inquiry_event_workflow" />
   </type>
+  <type type_id="UrbanEventInspectionReport">
+     <bound-workflow workflow_id="inspectionreport_event_workflow" />
+  </type>
   <type type_id="UrbanEventAnnouncement">
      <bound-workflow workflow_id="inquiry_event_workflow" />
   </type>
