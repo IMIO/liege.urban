@@ -76,6 +76,9 @@ class LicencesExtractForm(form.Form):
         response.setHeader('Content-disposition', 'report.json')
         response.setBody(licences_json)
         self.result = licences_json
+        output = open('activity_report.json', 'w')
+        output.write(licences_json)
+        output.close()
         return licences_json
 
     def query_licences(self, start_date, end_date, date_index='created', licence_type=[]):
