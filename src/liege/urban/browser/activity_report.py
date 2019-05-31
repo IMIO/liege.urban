@@ -101,8 +101,8 @@ class LicencesExtractForm(form.Form):
             'workflow_state': brain.review_state,
             'folder_managers': [self.extract_folder_managers(fm)
                                 for fm in licence.getFoldermanagers()],
-            'applicants': [self.extract_applicants(obj) for obj in licence.objectValues()
-                           if interfaces.IContact.providedBy(obj)],
+            'applicants': [self.extract_applicants(obj) for obj in licence.getApplicants()],
+            'applicants_historic': [self.extract_applicants(obj) for obj in licence.get_applicants_history()],
             'deposit_dates': self.extract_deposit_dates(licence),
             'incomplete_dates': self.extract_incomplete_dates(licence),
             'inquiry_dates': self.extract_inquiry_dates(licence),
@@ -113,6 +113,9 @@ class LicencesExtractForm(form.Form):
             licence_dict['due_date'] = str(brain.licence_final_duedate)
         else:
             licence_dict['due_date'] = ''
+
+        if hasattr(licence, 'getArchitects'):
+            licence_dict['architects'] = [self.extract_applicants(arch) for arch in licence.getArchitects()]
 
         if hasattr(licence, 'getLastAcknowledgment'):
             licence_dict['acknowledgement_date'] = licence.getLastAcknowledgment() and str(licence.getLastAcknowledgment().getEventDate()) or ''
@@ -161,7 +164,7 @@ class LicencesExtractForm(form.Form):
             licence_dict['displaying_date'] = licence.getLastDisplayingTheDecision() and str(licence.getLastDisplayingTheDecision().getEventDate()) or ''
             licence_dict['archives_date'] = licence.getLastSentToArchives() and str(licence.getLastSentToArchives().getEventDate()) or ''
             licence_dict['archives_description'] = licence.getLastSentToArchives() and str(licence.getLastSentToArchives().getMisc_description()) or ''
-            licence_dict['activity_ended_date'] = licence.getLastActivityEnded() and licence.getLastActivityEnded().description() or ''
+            licence_dict['activity_ended_date'] = licence.getLastActivityEnded() and str(licence.getLastActivityEnded().getEventDate()) or ''
             licence_dict['forced_end_date'] = licence.getLastForcedEnd() and str(licence.getLastForcedEnd().getEventDate()) or ''
             licence_dict['modification_registry_date'] = licence.getLastModificationRegistry() and str(licence.getLastModificationRegistry().getEventDate()) or ''
             licence_dict['iile_prescription_date'] = licence.getLastIILEPrescription() and str(licence.getLastIILEPrescription().getEventDate()) or ''
@@ -306,6 +309,7 @@ class LicencesExtractForm(form.Form):
             'city': applicant_obj.getCity(),
             'country': applicant_obj.getCountry(),
             'phone': applicant_obj.getPhone(),
+            'email': applicant_obj.getEmail(),
         }
         if not applicant['firstname'] and not applicant['lastname']:
             if hasattr(applicant_obj, 'denomination'):
