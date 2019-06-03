@@ -137,7 +137,7 @@ class LicencesExtractForm(form.Form):
         if hasattr(licence, 'annoncedDelay'):
             licence_dict['delay'] = self.extract_annonced_delay(licence, cfg)
 
-        if hasattr(licence, 'getProcedureChoice'):
+        if hasattr(licence, 'getProcedureChoice') and hasattr(licence, 'procedureChoice'):
             licence_dict['procedure_choice'] = licence.getProcedureChoice()
 
         if hasattr(licence, 'getWorkType'):
@@ -151,7 +151,7 @@ class LicencesExtractForm(form.Form):
             licence_dict['habitations_asked'] = licence.getAdditionalHabitationsAsked() or 0
             licence_dict['habitations_authorized'] = licence.getAdditionalHabitationsGiven() or 0
 
-        if hasattr(licence, 'getAuthority'):
+        if hasattr(licence, 'getAuthority') and hasattr(licence, 'authority'):
             licence_dict['authority'] = self.extract_authority(licence, cfg)
 
         if hasattr(licence, 'getFolderTendency'):
