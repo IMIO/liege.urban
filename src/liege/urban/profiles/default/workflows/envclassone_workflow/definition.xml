@@ -2426,7 +2426,7 @@
    <guard-permission>liege.urban: Internal Editor</guard-permission>
   </guard>
  </transition>
- <transition transition_id="is_inacceptable" title="is_inacceptable" new_state="inacceptable_validation" trigger="USER" before_script="" after_script="">
+ <transition transition_id="is_inacceptable" title="is_inacceptable" new_state="inacceptable" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">is_inacceptable</action>
   <guard>
    <guard-permission>liege.urban: Internal Editor</guard-permission>
