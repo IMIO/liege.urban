@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from liege.urban.interfaces import IShore
+
 from Products.Archetypes.atapi import Schema
 
 from Products.urban.content.licence.CODT_UniqueLicence import CODT_UniqueLicence
@@ -8,6 +10,9 @@ from liege.urban import UrbanMessage as _
 # buildlicence and uniquelicence schema should have the same changes
 from liege.urban.content.buildlicence import update_item_schema as base_update_item_schema
 from liege.urban.licence_fields_permissions import set_field_permissions
+
+from zope.i18n import translate
+from zope.component import queryAdapter
 
 specific_schema = Schema((
 ),)
@@ -60,7 +65,9 @@ def update_item_schema(baseSchema):
 
     return LicenceSchema
 
+
 CODT_UniqueLicence.schema = update_item_schema(base_update_item_schema(CODT_UniqueLicence.schema))
+
 
 permissions_mapping = {
     'urban_description': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
@@ -87,3 +94,21 @@ CODT_UniqueLicence.schema = set_field_permissions(
     permissions_mapping,
     exceptions,
 )
+
+
+def updateTitle(self):
+    """
+        Update the title to clearly identify the licence
+    """
+    if self.getApplicants():
+        applicantTitle = self.getApplicants()[0].Title()
+    else:
+        applicantTitle = translate('no_applicant_defined', 'urban', context=self.REQUEST).encode('utf8')
+    to_shore = queryAdapter(self, IShore)
+    title = "%s %s - %s - %s - %s" % (self.getReference(), to_shore.display(), self.getReferenceSPE(), self.getLicenceSubject(), applicantTitle)
+    self.setTitle(title)
+    self.reindexObject(idxs=('Title', 'applicantInfosIndex', 'sortable_title', ))
+    return title
+
+
+CODT_UniqueLicence.updateTitle = updateTitle
