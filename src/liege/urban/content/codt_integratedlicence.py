@@ -3,11 +3,11 @@
 from Products.Archetypes.atapi import Schema
 
 from Products.urban.content.licence.CODT_IntegratedLicence import CODT_IntegratedLicence
+from Products.urban.content.licence.UniqueLicence import updateTitle
 
 from liege.urban import UrbanMessage as _
 # buildlicence and integratedlicence schema should have the same changes
 from liege.urban.content.buildlicence import update_item_schema as base_update_item_schema
-from liege.urban.licence_fields_permissions import set_field_permissions
 
 
 specific_schema = Schema((
@@ -54,3 +54,6 @@ def update_item_schema(baseSchema):
 
 
 CODT_IntegratedLicence.schema = update_item_schema(base_update_item_schema(CODT_IntegratedLicence.schema))
+
+
+CODT_IntegratedLicence.updateTitle = updateTitle
