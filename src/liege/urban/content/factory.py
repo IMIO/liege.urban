@@ -6,7 +6,6 @@ from plone import api
 
 from Products.Five import BrowserView
 from Products.urban.services import cadastre
-from Products.urban.services.cadastral import parse_cadastral_reference
 
 from zope.interface import implements
 
@@ -42,7 +41,7 @@ class AdressFactory(BrowserView):
         if parcel:
             reference_dict = parcel.reference_as_dict()
         else:
-            reference_dict = parse_cadastral_reference(capakey)
+            reference_dict = self.parse_cadastral_reference(capakey)
 
         licence = self.context
         portal_urban = api.portal.get_tool('portal_urban')
@@ -56,3 +55,16 @@ class AdressFactory(BrowserView):
             field.set(address, value)
 
         licence.updateTitle()
+
+    def parse_cadastral_reference(sef, capakey):
+        """
+        """
+        reference_as_dict = {
+            'division': capakey[0:5],
+            'section': capakey[5],
+            'radical': int(capakey[6:10]) and str(int(capakey[6:10])) or '',
+            'bis': int(capakey[11:13]) and str(int(capakey[11:13])) or '',
+            'exposant': capakey[13] and capakey[13] or '',
+            'puissance': int(capakey[14:17]) and str(int(capakey[14:17])) or '',
+        }
+        return reference_as_dict
