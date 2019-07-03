@@ -38,6 +38,12 @@ msgstr "Recevable avec conditions ultérieures"
 msgid "acceptable_with_conditions_validation"
 msgstr "Recevable avec conditions ultérieures (validation)"
 
+msgid "analyse"
+msgstr "analyser"
+
+msgid "analyse_again"
+msgstr "ré-analyser"
+
 msgid "analysis"
 msgstr "Analyse du dossier"
 
@@ -128,6 +134,12 @@ msgstr "Décision finale en cours"
 msgid "folder_creation"
 msgstr "Dossier créé"
 
+msgid "follow_up"
+msgstr "faire suivre"
+
+msgid "give_administrative_answer"
+msgstr "réponse administrative"
+
 msgid "go_back_1"
 msgstr "Retour"
 
@@ -145,6 +157,9 @@ msgstr "Irrecevable (validation)"
 
 msgid "incomplete"
 msgstr "Incomplet"
+
+msgid "inspection_follow_up"
+msgstr "Suivi par l'inspection"
 
 msgid "internal_advice_done"
 msgstr "Avis préalable rendu"

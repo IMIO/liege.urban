@@ -122,9 +122,10 @@ def addLiegeGroups(context):
     portal_groups.setRolesForGroup('survey_editors', ('UrbanMapReader', ))
     portal_urban.manage_addLocalRoles("survey_editors", ("Reader", ))
 
-    portal_groups.addGroup("inspectors", title="Inspectors")
-    portal_groups.setRolesForGroup('inspectors', ('UrbanMapReader', ))
-    portal_urban.manage_addLocalRoles("inspectors", ("Reader", ))
+    portal_groups.addGroup("inspection_validators", title="Inspection Validators")
+    portal_groups.setRolesForGroup('inspection_validators', ('UrbanMapReader', ))
+    portal_urban.manage_addLocalRoles("inspection_validators", ("Reader", ))
+    portal_groups.addPrincipalToGroup("inspection_validators", 'inspection_editors')
 
     portal_groups.addGroup("fittingout_technicians", title="fitting-out technicians")
     portal_groups.setRolesForGroup('fittingout_technicians', ('UrbanMapReader', ))
@@ -180,8 +181,10 @@ def setDefaultApplicationSecurity(context):
                 folder.manage_addLocalRoles("environment_readers", ("Reader", ))
                 folder.manage_addLocalRoles("administrative_editors_environment", ("Contributor",))
                 folder.manage_addLocalRoles("administrative_validators_environment", ("Contributor",))
-            if folder_name == getLicenceFolderId('Inspection'):
-                folder.manage_addLocalRoles("inspectors", ("Contributor", ))
+    inspection_folder = getattr(app_folder, getLicenceFolderId('Inspection'))
+    if inspection_folder:
+        folder.manage_addLocalRoles("inspection_editors", ("Contributor", ))
+        folder.manage_addLocalRoles("inspection_validators", ("Contributor", ))
 
 
 def setupSurveySchedule(context):
@@ -321,6 +324,16 @@ def addTestUsers(context):
             'username': 'survivor',
             'group': 'survey_editors',
             'properties': {'fullname': 'Survivor Survey'},
+        },
+        {
+            'username': 'gadget',
+            'group': 'inspection_editors',
+            'properties': {'fullname': 'Inspector Gadget'},
+        },
+        {
+            'username': 'derrick',
+            'group': 'inspection_validators',
+            'properties': {'fullname': 'Inspector Derrick'},
         },
     ]
 

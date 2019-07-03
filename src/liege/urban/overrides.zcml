@@ -56,6 +56,12 @@
          name="licence_local_roles"
       />
       <adapter
+         for="Products.urban.interfaces.IInspection"
+         provides="borg.localrole.interfaces.ILocalRoleProvider"
+         factory="liege.urban.workflows.inspection_workflow.StateRolesMapping"
+         name="inspection_local_roles"
+      />
+      <adapter
          for="Products.urban.interfaces.IUrbanEventOpinionRequest"
          provides="borg.localrole.interfaces.ILocalRoleProvider"
          factory="liege.urban.workflows.opinionsrequest_workflow.StateRolesMapping"

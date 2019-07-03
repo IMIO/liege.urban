@@ -35,6 +35,12 @@ msgstr ""
 msgid "acceptable_with_conditions_validation"
 msgstr ""
 
+msgid "analyse"
+msgstr ""
+
+msgid "analyse_again"
+msgstr ""
+
 msgid "analysis"
 msgstr ""
 
@@ -122,6 +128,12 @@ msgstr ""
 msgid "final_decision_in_progress"
 msgstr ""
 
+msgid "follow_up"
+msgstr ""
+
+msgid "give_administrative_answer"
+msgstr ""
+
 msgid "go_back_1"
 msgstr ""
 
@@ -135,6 +147,9 @@ msgid "go_back_4"
 msgstr ""
 
 msgid "incomplete"
+msgstr ""
+
+msgid "inspection_follow_up"
 msgstr ""
 
 msgid "internal_advice_done"

@@ -23,7 +23,7 @@
  <permission>urban: Add Applicant</permission>
  <permission>urban: Add Contact</permission>
  <permission>urban: Add Corporation</permission>
- <permission>urban: Add CODT_Inquiry</permission>
+ <permission>urban: Add CODT_UniqueLicenceInquiry</permission>
  <permission>urban: Add PortionOut</permission>
  <permission>urban: Add UrbanEvent</permission>
  <permission>urban: Add UrbanEventOpinionRequest</permission>
@@ -171,7 +171,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -336,7 +336,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -500,7 +500,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -664,7 +664,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -830,7 +830,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -996,7 +996,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -1161,7 +1161,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -1326,7 +1326,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -1491,7 +1491,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -1654,7 +1654,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -1816,7 +1816,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -1975,7 +1975,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -2134,7 +2134,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -2293,7 +2293,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -2452,7 +2452,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -2611,7 +2611,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
