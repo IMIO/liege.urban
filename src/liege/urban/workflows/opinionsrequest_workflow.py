@@ -104,9 +104,9 @@ class StateRolesMapping(LocalRoleAdapter):
         'opinion_given': OrderedDict([
             ('Voirie_editors', ('Reader',)),   # !!! order matters, let voirie role be overwritten
             ('Voirie_validators', ('Reader',)),# by ('get_opinion_...' if needed
-            (get_opinion_editor, (get_technical_roles)),
-            (get_opinion_validator, (get_technical_roles)),
-            ('administrative_editors', (get_technical_roles)),
+            (get_opinion_editor, (get_technical_roles,)),
+            (get_opinion_validator, (get_technical_roles,)),
+            ('administrative_editors', (get_technical_roles,)),
             ('survey_editors', ('Reader',)),
             (LocalRoleAdapter.get_readers, ('Reader',)),
         ]),
