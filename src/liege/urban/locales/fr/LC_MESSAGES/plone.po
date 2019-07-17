@@ -131,6 +131,9 @@ msgstr "Classé sans suite"
 msgid "final_decision_in_progress"
 msgstr "Décision finale en cours"
 
+msgid "first_administrative_answer"
+msgstr "réponse administrative (plainte)"
+
 msgid "folder_creation"
 msgstr "Dossier créé"
 

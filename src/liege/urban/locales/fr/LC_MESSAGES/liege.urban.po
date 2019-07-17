@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-07-03 13:11+0000\n"
+"POT-Creation-Date: 2019-07-17 12:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,7 +59,7 @@ msgid "liege.urban"
 msgstr ""
 
 #: ../content/codt_integratedlicence.py:50
-#: ../content/codt_uniquelicence.py:49
+#: ../content/codt_uniquelicence.py:54
 #: ../content/env_base.py:79
 msgid "urban_label_CommentsOnDecisionProject"
 msgstr "Commentaire sur le projet de décision"
@@ -85,7 +85,7 @@ msgid "urban_label_closeDate"
 msgstr "Date de séance de clôture"
 
 #: ../content/codt_integratedlicence.py:51
-#: ../content/codt_uniquelicence.py:50
+#: ../content/codt_uniquelicence.py:55
 #: ../content/env_base.py:78
 msgid "urban_label_decisionNotificationTo"
 msgstr "Notification de la décision à"
@@ -118,7 +118,7 @@ msgid "urban_label_exploitationAddress"
 msgstr "Adresse de l'exploitation"
 
 #: ../content/codt_integratedlicence.py:49
-#: ../content/codt_uniquelicence.py:48
+#: ../content/codt_uniquelicence.py:53
 msgid "urban_label_folderCategory"
 msgstr "Type de dossier"
 
@@ -153,7 +153,7 @@ msgid "urban_label_rcbDetails"
 msgstr "Détails concernant le RCB"
 
 #: ../content/codt_integratedlicence.py:48
-#: ../content/codt_uniquelicence.py:47
+#: ../content/codt_uniquelicence.py:52
 msgid "urban_label_referenceFD"
 msgstr "Référence FD"
 
@@ -171,7 +171,7 @@ msgid "urban_label_solicitInternalOpinionsTo"
 msgstr "Avis interne(s) sollicité(s)"
 
 #: ../content/codt_integratedlicence.py:47
-#: ../content/codt_uniquelicence.py:46
+#: ../content/codt_uniquelicence.py:51
 msgid "urban_label_urbanReference"
 msgstr "Référence urbanisme"
 
