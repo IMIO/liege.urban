@@ -9,42 +9,42 @@ class StateRolesMapping(BaseRolesMapping):
 
     mapping = {
         'writing_report': {
-            'inspectors': ('Editor',),
+            'inspection_editors': ('Editor',),
             'technical_editors': ('Editor',),
             'technical_validators': ('Contributor',),
             BaseRolesMapping.get_readers: ('Reader',),
         },
 
         'to_validate': {
-            'inspectors': ('Reader',),
+            'inspection_editors': ('Reader',),
             'technical_editors': ('reader',),
             'technical_validators': ('Contributor',),
             BaseRolesMapping.get_readers: ('Reader',),
         },
 
         'preparing_documents': {
-            'inspectors': ('Reader',),
+            'inspection_editors': ('Reader',),
             'administrative_editors': ('Editor',),
             'administrative_validators': ('Contributor',),
             BaseRolesMapping.get_readers: ('Reader',),
         },
 
         'validating_documents': {
-            'inspectors': ('Reader',),
+            'inspection_editors': ('Reader',),
             'administrative_editors': ('reader',),
             'administrative_validators': ('Contributor',),
             BaseRolesMapping.get_readers: ('Reader',),
         },
 
         'sending_documents': {
-            'inspectors': ('Reader',),
+            'inspection_editors': ('Reader',),
             'administrative_editors': ('Editor',),
             'administrative_validators': ('Contributor',),
             BaseRolesMapping.get_readers: ('Reader',),
         },
 
         'closed': {
-            'inspectors': ('Reader',),
+            'inspection_editors': ('Reader',),
             BaseRolesMapping.get_readers: ('Reader',),
         },
 
