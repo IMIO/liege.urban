@@ -754,7 +754,7 @@
     <guard-expression>python: 'plainte' not in here.getInspection_context()</guard-expression>
   </guard>
  </transition>
- <transition transition_id="analyse_2" title="analyse_2" new_state="analysis" trigger="USER" before_script="" after_script="">
+ <transition transition_id="analyse_2" title="analyse" new_state="analysis" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">analyse</action>
   <guard>
     <guard-permission>Modify portal content</guard-permission>
