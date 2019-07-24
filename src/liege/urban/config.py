@@ -5,6 +5,7 @@ PROJECTNAME = "liege.urban"
 LICENCE_FINAL_STATES = [
     'accepted',
     'authorized',
+    'inacceptable'
     'refused',
     'suspension',
     'retired',
