@@ -2341,7 +2341,7 @@ schedule_config = {
                 'complete',
             ),
             'recurrence_conditions': (
-                CreationConditionObject('urban.schedule.condition.is_not_temporary_licence', 'AND'),
+                RecurrenceConditionObject('urban.schedule.condition.is_not_temporary_licence', 'AND'),
             ),
         },
         {
