@@ -355,7 +355,7 @@ class MayorCollegesDone(MayorCollegeCondition):
         for event in self.mayor_events:
             items = ws4pm._soap_searchItems({'externalIdentifier': event.UID()})
             if not items:
-                return False
+                continue
 
             accepted_states = ['accepted', 'accepted_but_modified', 'accepted_and_returned']
             mayor_college_done = items and items[0]['review_state'] in accepted_states
