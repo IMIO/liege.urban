@@ -174,7 +174,7 @@ class LicencesExtractForm(form.Form):
             licence_dict['modification_registry_date'] = licence.getLastModificationRegistry() and str(licence.getLastModificationRegistry().getEventDate()) or ''
             licence_dict['iile_prescription_date'] = licence.getLastIILEPrescription() and str(licence.getLastIILEPrescription().getEventDate()) or ''
             licence_dict['provocation_date'] = licence.getLastProvocation() and str(licence.getLastProvocation().getEventDate()) or ''
-            licence_dict['exploitant_change_date'] = licence.getLastProprietaryChangeEvent()and str(licence.getLastProprietaryChangeEvent.getEventDate()) or ''
+            licence_dict['exploitant_change_date'] = licence.getLastProprietaryChangeEvent() and str(licence.getLastProprietaryChangeEvent().getEventDate()) or ''
             licence_dict['rubrics'] = self.extract_rubrics(licence)
             licence_dict['rubrics_history'] = getattr(licence, 'rubrics_history', [])
 
