@@ -121,7 +121,8 @@ class LicencesExtractForm(form.Form):
             licence_dict['architects'] = [self.extract_applicants(arch) for arch in licence.getArchitects()]
 
         if hasattr(licence, 'getLastAcknowledgment'):
-            licence_dict['acknowledgement_date'] = licence.getLastAcknowledgment() and str(licence.getLastAcknowledgment().getEventDate()) or ''
+            event = licence.getLastAcknowledgment()
+            licence_dict['acknowledgement_date'] = event and str(event.getEventDate()) or ''
 
         if hasattr(licence, 'getLastLicenceNotification'):
             notification_event = licence.getLastLicenceNotification()
@@ -132,7 +133,8 @@ class LicencesExtractForm(form.Form):
             licence_dict['notification_date'] = notification_date
 
         if hasattr(licence, 'getLastRecourse'):
-            licence_dict['recourse_date'] = licence.getLastRecourse() and str(licence.getLastRecourse().getEventDate()) or ''
+            event = licence.getLastRecourse()
+            licence_dict['recourse_date'] = event and str(event.getEventDate()) or ''
 
         if hasattr(licence, 'annoncedDelay'):
             licence_dict['delay'] = self.extract_annonced_delay(licence, cfg)
@@ -172,7 +174,9 @@ class LicencesExtractForm(form.Form):
             licence_dict['modification_registry_date'] = licence.getLastModificationRegistry() and str(licence.getLastModificationRegistry().getEventDate()) or ''
             licence_dict['iile_prescription_date'] = licence.getLastIILEPrescription() and str(licence.getLastIILEPrescription().getEventDate()) or ''
             licence_dict['provocation_date'] = licence.getLastProvocation() and str(licence.getLastProvocation().getEventDate()) or ''
+            licence_dict['exploitant_change_date'] = licence.getLastProprietaryChangeEvent()and str(licence.getLastProprietaryChangeEvent.getEventDate()) or ''
             licence_dict['rubrics'] = self.extract_rubrics(licence)
+            licence_dict['rubrics_history'] = getattr(licence, 'rubrics_history', [])
 
         if hasattr(licence, 'getReferenceSPE'):
             licence_dict['reference_SPE'] = licence.getReferenceSPE() or ''
@@ -314,11 +318,10 @@ class LicencesExtractForm(form.Form):
             'phone': applicant_obj.getPhone(),
             'email': applicant_obj.getEmail(),
         }
-        if not applicant['firstname'] and not applicant['lastname']:
-            if hasattr(applicant_obj, 'denomination'):
-                applicant['lastname'] = applicant_obj.getDenomination()
-            if hasattr(applicant_obj, 'legalForm'):
-                applicant['firstname'] = applicant_obj.getLegalForm()
+        if hasattr(applicant_obj, 'denomination'):
+            applicant['lastname'] = applicant_obj.getDenomination()
+        if hasattr(applicant_obj, 'legalForm'):
+            applicant['firstname'] = applicant_obj.getLegalForm()
         return applicant
 
     def extract_deposit_dates(self, licence):
