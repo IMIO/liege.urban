@@ -176,7 +176,7 @@ class LicencesExtractForm(form.Form):
             licence_dict['provocation_date'] = licence.getLastProvocation() and str(licence.getLastProvocation().getEventDate()) or ''
             licence_dict['exploitant_change_date'] = licence.getLastProprietaryChangeEvent() and str(licence.getLastProprietaryChangeEvent().getEventDate()) or ''
             licence_dict['rubrics'] = self.extract_rubrics(licence)
-            licence_dict['rubrics_history'] = getattr(licence, 'rubrics_history', [])
+            licence_dict['rubrics_history'] = self.extract_rubrics_history(licence)
 
         if hasattr(licence, 'getReferenceSPE'):
             licence_dict['reference_SPE'] = licence.getReferenceSPE() or ''
@@ -246,6 +246,14 @@ class LicencesExtractForm(form.Form):
             }
             rubrics.append(rubric)
         return rubrics
+
+    def extract_rubrics_history(self, licence):
+        historic = []
+        for line in getattr(licence, 'rubrics_history', []):
+            new_line = line.copy()
+            new_line['time'] = str(line['time'])
+            historic.append(new_line)
+        return historic
 
     def extract_address(self, address):
         address_dict = {
