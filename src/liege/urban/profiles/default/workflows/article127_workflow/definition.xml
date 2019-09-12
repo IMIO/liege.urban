@@ -21,6 +21,128 @@
  <permission>urban: Add UrbanEventOpinionRequest</permission>
  <permission>urban: Add Corporation</permission>
  <permission>List folder contents</permission>
+ <state state_id="abandoned" title="abandoned">
+  <exit-transition transition_id="resume"/>
+  <permission-map name="ATContentTypes: Add File" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="ATContentTypes: Add Image" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Access contents information" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="Delete objects" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="List folder contents" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: External Reader" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadReader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Internal Editor" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Internal Reader" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Road Editor" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>RoadEditor</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Road Reader" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Validate" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Applicant" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Contact" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add Corporation" acquired="True">
+  </permission-map>
+  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add PortionOut" acquired="False">
+   <permission-role>AddressEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEvent" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEventOpinionRequest" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+ </state>
  <state state_id="accepted" title="accepted">
   <exit-transition transition_id="reopen"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
@@ -153,6 +275,7 @@
  <state state_id="complete" title="complete">
   <exit-transition transition_id="invalidate_completion"/>
   <exit-transition transition_id="propose_procedure_choice"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -273,6 +396,7 @@
  <state state_id="decision_in_progress" title="decision_in_progress">
   <exit-transition transition_id="refuse_licence"/>
   <exit-transition transition_id="accept_licence"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -402,6 +526,7 @@
  </state>
  <state state_id="deposit" title="deposit">
   <exit-transition transition_id="ask_address_validation"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -522,6 +647,7 @@
  <state state_id="procedure_choosen" title="procedure_choosen">
   <exit-transition transition_id="invalidate_procedure_choice"/>
   <exit-transition transition_id="validate_procedure_choice"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -641,6 +767,7 @@
  </state>
  <state state_id="procedure_validated" title="procedure_validated">
   <exit-transition transition_id="propose_report"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -901,6 +1028,7 @@
   <exit-transition transition_id="refuse_report"/>
   <exit-transition transition_id="validate_report_2"/>
   <exit-transition transition_id="validate_report_1"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -1031,6 +1159,7 @@
  <state state_id="validating_address" title="validating_address">
   <exit-transition transition_id="validate_address"/>
   <exit-transition transition_id="ask_temporary_address"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -1150,6 +1279,7 @@
  </state>
  <state state_id="waiting_address" title="waiting_address">
   <exit-transition transition_id="validate_temporary_address"/>
+  <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -1266,6 +1396,11 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
+ <transition transition_id="abandon" title="abandon" new_state="abandoned" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">abandon</action>
+  <guard>
+  </guard>
+ </transition>
  <transition transition_id="accept_licence" title="accept_licence" new_state="accepted" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">accept_licence</action>
   <guard>
@@ -1320,6 +1455,11 @@
  </transition>
  <transition transition_id="reopen" title="reopen" new_state="decision_in_progress" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">reopen</action>
+  <guard>
+  </guard>
+ </transition>
+ <transition transition_id="resume" title="resume" new_state="complete" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">resume</action>
   <guard>
   </guard>
  </transition>
