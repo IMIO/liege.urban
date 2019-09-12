@@ -22,6 +22,7 @@
  <permission>urban: Add Corporation</permission>
  <permission>List folder contents</permission>
  <state state_id="accepted" title="accepted">
+  <exit-transition transition_id="reopen"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -1315,6 +1316,11 @@
   <action url="" category="workflow" icon="">refuse_report</action>
   <guard>
    <guard-permission>liege.urban: Validate</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="reopen" title="reopen" new_state="decision_in_progress" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">reopen</action>
+  <guard>
   </guard>
  </transition>
  <transition transition_id="validate_address" title="validate_address" new_state="complete" trigger="USER" before_script="" after_script="">
