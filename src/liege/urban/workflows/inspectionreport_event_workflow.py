@@ -17,7 +17,7 @@ class StateRolesMapping(BaseRolesMapping):
 
         'to_validate': {
             'inspection_editors': ('Reader',),
-            'technical_editors': ('reader',),
+            'technical_editors': ('Reader',),
             'technical_validators': ('Contributor',),
             BaseRolesMapping.get_readers: ('Reader',),
         },
@@ -31,7 +31,7 @@ class StateRolesMapping(BaseRolesMapping):
 
         'validating_documents': {
             'inspection_editors': ('Reader',),
-            'administrative_editors': ('reader',),
+            'administrative_editors': ('Reader',),
             'administrative_validators': ('Contributor',),
             BaseRolesMapping.get_readers: ('Reader',),
         },
