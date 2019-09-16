@@ -330,7 +330,7 @@
    <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="refuse" title="refuse" new_state="propose_report" trigger="USER" before_script="" after_script="">
+ <transition transition_id="refuse" title="refuse" new_state="writing_report" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">refuse</action>
   <guard>
    <guard-permission>liege.urban: Validate</guard-permission>
