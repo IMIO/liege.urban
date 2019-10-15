@@ -4,7 +4,7 @@ from imio.schedule.content.object_factories import EndConditionObject
 from imio.schedule.content.object_factories import FreezeConditionObject
 from imio.schedule.content.object_factories import MacroEndConditionObject
 
-from liege.urban.setuphandlers import _create_task_config
+from liege.urban.setuphandlers import _create_task_configs
 
 from plone import api
 
@@ -71,7 +71,7 @@ def add_licence_freeze_thaw_states():
             continue
 
         schedule_cfg = licence_config.schedule
-        _create_task_config(schedule_cfg, suspension_task_cfg)
+        _create_task_configs(schedule_cfg, suspension_task_cfg)
 
         for task_cfg in schedule_cfg.get_all_task_configs():
 
