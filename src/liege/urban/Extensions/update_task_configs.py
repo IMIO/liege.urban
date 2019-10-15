@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from imio.schedule.content.object_factories import EndConditionObject
+from imio.schedule.content.object_factories import FreezeConditionObject
 from imio.schedule.content.object_factories import MacroEndConditionObject
+
+from liege.urban.setuphandlers import _create_task_config
 
 from plone import api
 
@@ -39,9 +42,36 @@ def add_licence_ended_condition():
 def add_licence_freeze_thaw_states():
     """
     """
+    suspension_licences = [
+        'codt_buildlicence',
+        'integratedlicence',
+        'codt_integratedlicence',
+        'codt_uniquelicence',
+    ]
+    suspension_task_cfg = {
+        'type_name': 'TaskConfig',
+        'id': 'suspension',
+        'title': 'Dossiers suspendus',
+        'default_assigned_group': 'technical_editors',
+        'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+        'creation_state': ('frozen_suspension',),
+        'starting_states': ('frozen_suspension',),
+        'ending_conditions': (
+            EndConditionObject('urban.schedule.condition.LicenceThawed'),
+        ),
+        'freeze_conditions': (
+            FreezeConditionObject('urban.schedule.condition.False'),
+        ),
+        'start_date': 'urban.schedule.start_date.creation_date',
+        'additional_delay': 0,
+    }
     portal_urban = api.portal.get_tool('portal_urban')
     for licence_config in portal_urban.objectValues('LicenceConfig'):
+        if licence_config.id not in suspension_licences:
+            continue
+
         schedule_cfg = licence_config.schedule
+        _create_task_config(schedule_cfg, suspension_task_cfg)
 
         for task_cfg in schedule_cfg.get_all_task_configs():
 
