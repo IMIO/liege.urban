@@ -2,8 +2,6 @@
 
 from imio.schedule.content.object_factories import EndConditionObject
 from imio.schedule.content.object_factories import MacroEndConditionObject
-from imio.schedule.content.object_factories import MacroThawConditionObject
-from imio.schedule.content.object_factories import ThawConditionObject
 
 from plone import api
 
@@ -49,22 +47,3 @@ def add_licence_freeze_thaw_states():
 
             # add 'frozen_suspension' to the end states
             task_cfg.freeze_states = ['frozen_suspension']
-
-            # add thaw condition
-            thaw_conditions = task_cfg.thaw_conditions or []
-            thaw_condition_ids = thaw_conditions and [c.condition for c in thaw_conditions]
-            condition_id = 'urban.schedule.condition.licence_thawed'
-            if condition_id not in thaw_condition_ids:
-                if task_cfg.portal_type == 'MacroTaskConfig':
-                    condition = MacroThawConditionObject(
-                        condition=condition_id,
-                        operator='OR',
-                        display_status=False
-                    )
-                else:
-                    condition = ThawConditionObject(
-                        condition=condition_id,
-                        operator='OR',
-                        display_status=False
-                    )
-                task_cfg.thaw_conditions = (condition,) + tuple(thaw_conditions)
