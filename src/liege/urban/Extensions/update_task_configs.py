@@ -71,7 +71,7 @@ def add_licence_freeze_thaw_states():
             continue
 
         schedule_cfg = licence_config.schedule
-        _create_task_configs(schedule_cfg, suspension_task_cfg)
+        _create_task_configs(schedule_cfg, [suspension_task_cfg])
 
         for task_cfg in schedule_cfg.get_all_task_configs():
 
