@@ -51,6 +51,10 @@ class LiegeLicenceProxyObject(LicenceDisplayProxyObject):
                 'technical_editors_environment',
                 'technical_validators_environment'
             ],
+            'inspection': [
+                'inspection_editors',
+                'inspection_validators',
+            ],
         }
         folder_managers = [fm for fm in self.getFoldermanagers() if not grade or fm.getGrade() == grade]
         for folder_manager in folder_managers:
@@ -60,4 +64,3 @@ class LiegeLicenceProxyObject(LicenceDisplayProxyObject):
                     return folder_manager
             else:
                 return folder_manager
-
