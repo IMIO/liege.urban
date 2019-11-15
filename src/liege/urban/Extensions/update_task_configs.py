@@ -56,7 +56,7 @@ def add_licence_freeze_thaw_states():
         'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
         'creation_state': ('frozen_suspension',),
         'starting_states': ('frozen_suspension',),
-        'ending_conditions': (
+        'end_conditions': (
             EndConditionObject('urban.schedule.condition.LicenceThawed'),
         ),
         'freeze_conditions': (
