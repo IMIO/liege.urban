@@ -177,14 +177,18 @@ def setDefaultApplicationSecurity(context):
             folder.manage_delLocalRoles(["environment_editors"])
             folder.manage_delLocalRoles(["administrative_editors_environment"])
             folder.manage_delLocalRoles(["administrative_validators_environment"])
+            folder.manage_delLocalRoles(["inspection_editors"])
+            folder.manage_delLocalRoles(["inspection_validators"])
             if folder_name in environment_folder_names:
                 folder.manage_addLocalRoles("environment_readers", ("Reader", ))
                 folder.manage_addLocalRoles("administrative_editors_environment", ("Contributor",))
                 folder.manage_addLocalRoles("administrative_validators_environment", ("Contributor",))
     inspection_folder = getattr(app_folder, getLicenceFolderId('Inspection'))
     if inspection_folder:
-        folder.manage_addLocalRoles("inspection_editors", ("Contributor", ))
-        folder.manage_addLocalRoles("inspection_validators", ("Contributor", ))
+        inspection_folder.manage_delLocalRoles(["inspection_editors"])
+        inspection_folder.manage_delLocalRoles(["inspection_validators"])
+        inspection_folder.manage_addLocalRoles("inspection_editors", ("Contributor", ))
+        inspection_folder.manage_addLocalRoles("inspection_validators", ("Contributor", ))
 
 
 def setupSurveySchedule(context):
