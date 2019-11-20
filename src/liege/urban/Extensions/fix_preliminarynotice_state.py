@@ -5,7 +5,7 @@ from plone import api
 from Products.urban.interfaces import IPreliminaryNotice
 
 
-def fix_decisions_dates():
+def fix_final_state():
     catalog = api.portal.get_tool('portal_catalog')
     licences_brains = catalog(
         object_provides=IPreliminaryNotice.__identifier__,
