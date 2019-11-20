@@ -124,6 +124,11 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add UrbanEventInspectionReport" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
  <state state_id="first_administrative_answer" title="first_administrative_answer">
   <exit-transition transition_id="analyse_2"/>
@@ -229,6 +234,11 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add UrbanEventInspectionReport" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
  <state state_id="analysis" title="analysis">
   <exit-transition transition_id="propose_analysis"/>
@@ -330,6 +340,11 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add UrbanEventOpinionRequest" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEventInspectionReport" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -526,6 +541,11 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add UrbanEventInspectionReport" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
  <state state_id="inspection_follow_up" title="inspection_follow_up">
   <exit-transition transition_id="close"/>
@@ -633,6 +653,11 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add UrbanEventInspectionReport" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
  <state state_id="closed" title="closed">
   <exit-transition transition_id="reopen"/>
@@ -735,6 +760,11 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add UrbanEventOpinionRequest" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add UrbanEventInspectionReport" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
