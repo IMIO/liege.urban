@@ -342,6 +342,12 @@
    <guard-permission>liege.urban: Validate</guard-permission>
   </guard>
  </transition>
+ <transition transition_id="propose_documents" title="refuse" new_state="preparing_documents" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">refuse</action>
+  <guard>
+   <guard-permission>Modify portal content</guard-permission>
+  </guard>
+ </transition>
  <transition transition_id="refuse_documents" title="refuse" new_state="preparing_documents" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">refuse</action>
   <guard>
