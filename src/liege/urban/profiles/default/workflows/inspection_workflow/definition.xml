@@ -436,6 +436,11 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add UrbanEventInspectionReport" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
  <state state_id="administrative_answer" title="administrative_answer">
   <exit-transition transition_id="follow_up"/>
