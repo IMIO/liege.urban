@@ -122,19 +122,19 @@ class LicencesExtractForm(form.Form):
 
         if hasattr(licence, 'getLastAcknowledgment'):
             event = licence.getLastAcknowledgment()
-            licence_dict['acknowledgement_date'] = event and str(event.getEventDate()) or ''
+            licence_dict['acknowledgement_date'] = event and str(event.getEventDate() or '')
 
         if hasattr(licence, 'getLastLicenceNotification'):
             notification_event = licence.getLastLicenceNotification()
             notification_date = ''
             if notification_event:
-                notification_date = str(notification_event.getTransmitDate()) or ''
-                notification_date = notification_date or str(notification_event.getEventDate()) or ''
+                notification_date = str(notification_event.getTransmitDate() or '')
+                notification_date = notification_date or str(notification_event.getEventDate() or '')
             licence_dict['notification_date'] = notification_date
 
         if hasattr(licence, 'getLastRecourse'):
             event = licence.getLastRecourse()
-            licence_dict['recourse_date'] = event and str(event.getEventDate()) or ''
+            licence_dict['recourse_date'] = event and str(event.getEventDate() or '')
 
         if hasattr(licence, 'annoncedDelay'):
             licence_dict['delay'] = self.extract_annonced_delay(licence, cfg)
@@ -164,17 +164,17 @@ class LicencesExtractForm(form.Form):
             licence_dict['external_parcels'] = self.extract_external_parcels(licence)
 
         if interfaces.IEnvironmentBase.providedBy(licence):
-            licence_dict['authorization_start_date'] = licence.getLastLicenceEffectiveStart() and str(licence.getLastLicenceEffectiveStart().getEventDate()) or ''
-            licence_dict['authorization_end_date'] = licence.getLastLicenceExpiration() and str(licence.getLastLicenceExpiration().getEventDate()) or ''
-            licence_dict['displaying_date'] = licence.getLastDisplayingTheDecision() and str(licence.getLastDisplayingTheDecision().getEventDate()) or ''
-            licence_dict['archives_date'] = licence.getLastSentToArchives() and str(licence.getLastSentToArchives().getEventDate()) or ''
+            licence_dict['authorization_start_date'] = licence.getLastLicenceEffectiveStart() and str(licence.getLastLicenceEffectiveStart().getEventDate() or '')
+            licence_dict['authorization_end_date'] = licence.getLastLicenceExpiration() and str(licence.getLastLicenceExpiration().getEventDate() or '')
+            licence_dict['displaying_date'] = licence.getLastDisplayingTheDecision() and str(licence.getLastDisplayingTheDecision().getEventDate() or '')
+            licence_dict['archives_date'] = licence.getLastSentToArchives() and str(licence.getLastSentToArchives().getEventDate() or '')
             licence_dict['archives_description'] = licence.getLastSentToArchives() and str(licence.getLastSentToArchives().getMisc_description()) or ''
-            licence_dict['activity_ended_date'] = licence.getLastActivityEnded() and str(licence.getLastActivityEnded().getEventDate()) or ''
-            licence_dict['forced_end_date'] = licence.getLastForcedEnd() and str(licence.getLastForcedEnd().getEventDate()) or ''
-            licence_dict['modification_registry_date'] = licence.getLastModificationRegistry() and str(licence.getLastModificationRegistry().getEventDate()) or ''
-            licence_dict['iile_prescription_date'] = licence.getLastIILEPrescription() and str(licence.getLastIILEPrescription().getEventDate()) or ''
-            licence_dict['provocation_date'] = licence.getLastProvocation() and str(licence.getLastProvocation().getEventDate()) or ''
-            licence_dict['exploitant_change_date'] = licence.getLastProprietaryChangeEvent() and str(licence.getLastProprietaryChangeEvent().getEventDate()) or ''
+            licence_dict['activity_ended_date'] = licence.getLastActivityEnded() and str(licence.getLastActivityEnded().getEventDate() or '')
+            licence_dict['forced_end_date'] = licence.getLastForcedEnd() and str(licence.getLastForcedEnd().getEventDate() or '')
+            licence_dict['modification_registry_date'] = licence.getLastModificationRegistry() and str(licence.getLastModificationRegistry().getEventDate() or '')
+            licence_dict['iile_prescription_date'] = licence.getLastIILEPrescription() and str(licence.getLastIILEPrescription().getEventDate() or '')
+            licence_dict['provocation_date'] = licence.getLastProvocation() and str(licence.getLastProvocation().getEventDate() or '')
+            licence_dict['exploitant_change_date'] = licence.getLastProprietaryChangeEvent() and str(licence.getLastProprietaryChangeEvent().getEventDate() or '')
             licence_dict['rubrics'] = self.extract_rubrics(licence)
             licence_dict['rubrics_history'] = self.extract_rubrics_history(licence)
 
