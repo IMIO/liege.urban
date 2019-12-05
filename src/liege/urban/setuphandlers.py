@@ -183,14 +183,25 @@ def setDefaultApplicationSecurity(context):
                 folder.manage_addLocalRoles("environment_readers", ("Reader", ))
                 folder.manage_addLocalRoles("administrative_editors_environment", ("Contributor",))
                 folder.manage_addLocalRoles("administrative_validators_environment", ("Contributor",))
-    inspection_folder = getattr(app_folder, getLicenceFolderId('Inspection'))
-    if inspection_folder:
-        inspection_folder.manage_delLocalRoles(["inspection_editors"])
-        inspection_folder.manage_delLocalRoles(["inspection_validators"])
-        inspection_folder.manage_addLocalRoles("inspection_editors", ("Contributor", ))
-        inspection_folder.manage_addLocalRoles("inspection_validators", ("Contributor", ))
-        inspection_folder.manage_addLocalRoles("administrative_editors_environment", ("Contributor",))
-        inspection_folder.manage_addLocalRoles("administrative_validators_environment", ("Contributor",))
+    inspection_folder_names = [
+        getLicenceFolderId('Inspection'),
+        getLicenceFolderId('Ticket'),
+    ]
+    for folder_name in inspection_folder_names:
+        if hasattr(app_folder, folder_name):
+            folder = getattr(app_folder, folder_name)
+            try:
+                folder.manage_addProperty('urbanConfigId', folder_name.strip('s'), 'string')
+            except BadRequest:
+                pass
+            folder.manage_delLocalRoles(["inspection_editors"])
+            folder.manage_delLocalRoles(["inspection_validators"])
+            folder.manage_delLocalRoles(["administrative_editors"])
+            folder.manage_delLocalRoles(["administrative_validators"])
+            folder.manage_addLocalRoles("inspection_editors", ("Contributor", ))
+            folder.manage_addLocalRoles("inspection_validators", ("Contributor", ))
+            folder.manage_addLocalRoles("administrative_editors", ("Contributor",))
+            folder.manage_addLocalRoles("administrative_validators", ("Contributor",))
 
 
 def setupSurveySchedule(context):
