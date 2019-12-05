@@ -189,6 +189,8 @@ def setDefaultApplicationSecurity(context):
         inspection_folder.manage_delLocalRoles(["inspection_validators"])
         inspection_folder.manage_addLocalRoles("inspection_editors", ("Contributor", ))
         inspection_folder.manage_addLocalRoles("inspection_validators", ("Contributor", ))
+        inspection_folder.manage_addLocalRoles("administrative_editors_environment", ("Contributor",))
+        inspection_folder.manage_addLocalRoles("administrative_validators_environment", ("Contributor",))
 
 
 def setupSurveySchedule(context):
