@@ -22,27 +22,6 @@ class StateRolesMapping(BaseRolesMapping):
             BaseRolesMapping.get_readers: ('Reader',),
         },
 
-        'preparing_documents': {
-            'inspection_editors': ('Reader',),
-            'administrative_editors': ('Editor',),
-            'administrative_validators': ('Contributor',),
-            BaseRolesMapping.get_readers: ('Reader',),
-        },
-
-        'validating_documents': {
-            'inspection_editors': ('Reader',),
-            'administrative_editors': ('Reader',),
-            'administrative_validators': ('Contributor',),
-            BaseRolesMapping.get_readers: ('Reader',),
-        },
-
-        'sending_documents': {
-            'inspection_editors': ('Reader',),
-            'administrative_editors': ('Editor',),
-            'administrative_validators': ('Contributor',),
-            BaseRolesMapping.get_readers: ('Reader',),
-        },
-
         'closed': {
             'inspection_editors': ('Reader',),
             BaseRolesMapping.get_readers: ('Reader',),
