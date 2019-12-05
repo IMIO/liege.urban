@@ -18,6 +18,7 @@ from Products.urban.content.licence.EnvClassOne import EnvClassOne
 from Products.urban.content.licence.EnvClassThree import EnvClassThree
 from Products.urban.content.licence.EnvClassTwo import EnvClassTwo
 from Products.urban.content.licence.GenericLicence import GenericLicence
+from Products.urban.content.licence.Inspection import Inspection
 from Products.urban.content.licence.IntegratedLicence import IntegratedLicence
 from Products.urban.content.licence.MiscDemand import MiscDemand
 from Products.urban.content.licence.ParcelOutLicence import ParcelOutLicence
@@ -59,6 +60,8 @@ def update_item_schema(baseSchema):
     LicenceSchema.moveField('folderCategoryTownship', after='folderCategory')
 
     # move some road fields to location schemata
+    LicenceSchema['protectedBuilding'].schemata = 'urban_location'
+    LicenceSchema['protectedBuildingDetails'].schemata = 'urban_location'
     LicenceSchema['sevesoSite'].schemata = 'urban_location'
     LicenceSchema.moveField('sevesoSite', after='airportNoiseZoneDetails')
     LicenceSchema['pipelines'].schemata = 'urban_location'
@@ -122,5 +125,6 @@ def updateTitle(self):
     self.setTitle(title)
     self.reindexObject(idxs=('Title', 'applicantInfosIndex', 'sortable_title', ))
     return title
+
 
 GenericLicence.updateTitle = updateTitle
