@@ -61,7 +61,9 @@ def update_item_schema(baseSchema):
 
     # move some road fields to location schemata
     LicenceSchema['protectedBuilding'].schemata = 'urban_location'
+    LicenceSchema.moveField('protectedBuilding', after='enoughRoadEquipmentDetails')
     LicenceSchema['protectedBuildingDetails'].schemata = 'urban_location'
+    LicenceSchema.moveField('protectedBuildingDetails', after='protectedBuilding')
     LicenceSchema['sevesoSite'].schemata = 'urban_location'
     LicenceSchema.moveField('sevesoSite', after='airportNoiseZoneDetails')
     LicenceSchema['pipelines'].schemata = 'urban_location'
