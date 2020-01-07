@@ -74,9 +74,10 @@ class FieldDefaultValue(object):
         for manual_address in location:
             street_UID = manual_address['street']
             street_brains = catalog(UID=street_UID)
-            street = street_brains[0].getObject()
-            if street.getStreetCode() not in addresses_street_codes:
-                return manual_address, street
+            if street_brains:
+                street = street_brains[0].getObject()
+                if street.getStreetCode() not in addresses_street_codes:
+                    return manual_address, street
 
         return (None, None)
 
