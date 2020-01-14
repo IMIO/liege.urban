@@ -96,6 +96,7 @@ class LicencesExtractForm(form.Form):
     def extract_licence_dict(self, brain, licence):
         cfg = licence.getUrbanConfig()
         licence_dict = {
+            'UID': brain.UID,
             'portal_type': brain.portal_type,
             'reference': brain.getReference,
             'address': [self.extract_address(addr) for addr in licence.getParcels()],
