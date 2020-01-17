@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2019-07-17 12:15+0000\n"
+"POT-Creation-Date: 2020-01-17 09:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -75,11 +75,11 @@ msgstr ""
 msgid "urban_label_LiegeEnvironmentConditions"
 msgstr ""
 
-#: ../content/genericlicence.py:93
+#: ../content/genericlicence.py:99
 msgid "urban_label_RCB"
 msgstr ""
 
-#: ../content/genericlicence.py:56
+#: ../content/genericlicence.py:58
 msgid "urban_label_UsageTownship"
 msgstr ""
 
@@ -93,7 +93,7 @@ msgstr ""
 msgid "urban_label_decisionNotificationTo"
 msgstr ""
 
-#: ../content/genericlicence.py:89
+#: ../content/genericlicence.py:95
 msgid "urban_label_description"
 msgstr ""
 
@@ -125,7 +125,12 @@ msgstr ""
 msgid "urban_label_folderCategory"
 msgstr ""
 
-#: ../content/genericlicence.py:58
+#. Default: "Formal_notice_old_reference"
+#: ../content/inspection.py:16
+msgid "urban_label_formal_notice_old_reference"
+msgstr ""
+
+#: ../content/genericlicence.py:60
 msgid "urban_label_futurePathCoating"
 msgstr ""
 
@@ -134,11 +139,11 @@ msgstr ""
 msgid "urban_label_motivation"
 msgstr ""
 
-#: ../content/genericlicence.py:57
+#: ../content/genericlicence.py:59
 msgid "urban_label_pathCoating"
 msgstr ""
 
-#: ../content/genericlicence.py:90
+#: ../content/genericlicence.py:96
 msgid "urban_label_pipeSevesoDetails"
 msgstr ""
 
@@ -151,7 +156,7 @@ msgstr ""
 msgid "urban_label_procedureType"
 msgstr ""
 
-#: ../content/genericlicence.py:95
+#: ../content/genericlicence.py:101
 msgid "urban_label_rcbDetails"
 msgstr ""
 
