@@ -22,6 +22,7 @@ import liege.urban.content.integratedlicence
 import liege.urban.content.uniquelicence
 import liege.urban.content.foldermanager
 import liege.urban.content.inquiry_event
+import liege.urban.content.inspection
 import liege.urban.content.portion_out
 import liege.urban.content.urbanevent
 import liege.urban.content.urbanevent_opinionrequest
