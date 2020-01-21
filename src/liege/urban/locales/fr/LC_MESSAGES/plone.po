@@ -140,6 +140,12 @@ msgstr "Dossier créé"
 msgid "follow_up"
 msgstr "faire suivre"
 
+msgid "follow_with_prosecutor"
+msgstr "Suivre avec PR"
+
+msgid "follow_without_prosecutor"
+msgstr "Suivre sans PR"
+
 msgid "give_administrative_answer"
 msgstr "réponse administrative"
 
@@ -154,6 +160,12 @@ msgstr "Retour"
 
 msgid "go_back_4"
 msgstr "Retour"
+
+msgid "in_progress_with_prosecutor"
+msgstr "Suite avec PR"
+
+msgid "in_progress_without_prosecutor"
+msgstr "Suite sans PR"
 
 msgid "inacceptable_validation"
 msgstr "Irrecevable (validation)"
@@ -239,6 +251,9 @@ msgstr "proposer les conclusions techniques pour décision finale"
 msgid "proposed"
 msgstr "Projet de décision rédigé"
 
+msgid "prosecution_analysis"
+msgstr "En analyse au parquet"
+
 msgid "public_investigation"
 msgstr "Enquête publique"
 
@@ -280,6 +295,9 @@ msgstr "Envoyer l'avis"
 
 msgid "send_preliminary_advice"
 msgstr "Envoyer l'avis préalable"
+
+msgid "send_to_prosecutor"
+msgstr "envoyer au parquet"
 
 msgid "suspend"
 msgstr "suspendre"

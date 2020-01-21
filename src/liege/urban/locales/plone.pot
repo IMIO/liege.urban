@@ -134,6 +134,12 @@ msgstr ""
 msgid "follow_up"
 msgstr ""
 
+msgid "follow_with_prosecutor"
+msgstr ""
+
+msgid "follow_without_prosecutor"
+msgstr ""
+
 msgid "give_administrative_answer"
 msgstr ""
 
@@ -147,6 +153,12 @@ msgid "go_back_3"
 msgstr ""
 
 msgid "go_back_4"
+msgstr ""
+
+msgid "in_progress_with_prosecutor"
+msgstr ""
+
+msgid "in_progress_without_prosecutor"
 msgstr ""
 
 msgid "incomplete"
@@ -230,6 +242,9 @@ msgstr ""
 msgid "propose_technical_synthesis"
 msgstr ""
 
+msgid "prosecution_analysis"
+msgstr ""
+
 msgid "proposed"
 msgstr ""
 
@@ -264,6 +279,9 @@ msgid "send_opinion"
 msgstr ""
 
 msgid "send_preliminary_advice"
+msgstr ""
+
+msgid "send_to_prosecutor"
 msgstr ""
 
 msgid "suspend"
