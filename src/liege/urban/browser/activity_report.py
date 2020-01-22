@@ -108,6 +108,7 @@ class LicencesExtractForm(form.Form):
             'applicants': [self.extract_applicants(obj) for obj in licence.getApplicants()],
             'applicants_historic': [self.extract_applicants(obj) for obj in licence.get_applicants_history()],
             'deposit_dates': self.extract_deposit_dates(licence),
+            'deposit_types': self.extract_deposit_types(licence),
             'incomplete_dates': self.extract_incomplete_dates(licence),
             'inquiry_dates': self.extract_inquiry_dates(licence),
             'decision_date': self.extract_decision_date(licence),
@@ -337,6 +338,11 @@ class LicencesExtractForm(form.Form):
         deposits = licence.getAllEvents(interfaces.IDepositEvent)
         dates = [str(event.getEventDate()) for event in deposits]
         return dates
+
+    def extract_deposit_types(self, licence):
+        deposits = licence.getAllEvents(interfaces.IDepositEvent)
+        deposit_types = [str(event.getDepositType()) for event in deposits]
+        return deposit_types
 
     def extract_incomplete_dates(self, licence):
         deposits = licence.getAllEvents(interfaces.IMissingPartEvent)
