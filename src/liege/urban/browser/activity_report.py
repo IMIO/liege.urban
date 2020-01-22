@@ -183,6 +183,9 @@ class LicencesExtractForm(form.Form):
         if hasattr(licence, 'getReferenceSPE'):
             licence_dict['reference_SPE'] = licence.getReferenceSPE() or ''
 
+        if hasattr(licence, 'getDepositType'):
+            licence_dict['envclass3_deposit_type'] = licence.getDepositType() or ''
+
         return licence_dict
 
     def extract_decision_date(self, licence):
