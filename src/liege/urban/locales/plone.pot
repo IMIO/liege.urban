@@ -365,6 +365,9 @@ msgstr ""
 msgid "waiting_opinion"
 msgstr ""
 
+msgid "writing_report"
+msgstr ""
+
 msgid "folder_creation"
 msgstr ""
 

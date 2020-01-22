@@ -388,3 +388,6 @@ msgstr "En attente d'une adresse temporaire"
 
 msgid "waiting_opinion"
 msgstr "En attente de l'avis"
+
+msgid "writing_report"
+msgstr "En rédaction"
