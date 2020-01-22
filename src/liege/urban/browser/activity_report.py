@@ -341,7 +341,7 @@ class LicencesExtractForm(form.Form):
 
     def extract_deposit_types(self, licence):
         deposits = licence.getAllEvents(interfaces.IDepositEvent)
-        deposit_types = [str(event.getDepositType()) for event in deposits]
+        deposit_types = [str(event.getDepositType() or "") for event in deposits]
         return deposit_types
 
     def extract_incomplete_dates(self, licence):
