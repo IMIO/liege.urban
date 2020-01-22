@@ -43,7 +43,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'urban_readers': ('Reader',),
         },
 
-        'closed': {
+        'ended': {
             'inspection_editors': ('Editor', 'AddressEditor'),
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor', 'AddressEditor'),

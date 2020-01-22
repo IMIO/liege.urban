@@ -664,7 +664,7 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="closed" title="closed">
+ <state state_id="ended" title="ended">
   <exit-transition transition_id="reopen"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -825,7 +825,7 @@
     <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="close" title="close" new_state="closed" trigger="USER" before_script="" after_script="">
+ <transition transition_id="close" title="close" new_state="ended" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">close</action>
   <guard>
     <guard-permission>Modify portal content</guard-permission>
