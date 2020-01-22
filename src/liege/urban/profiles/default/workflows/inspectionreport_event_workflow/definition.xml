@@ -190,7 +190,7 @@
    <guard-permission>liege.urban: Validate</guard-permission>
   </guard>
  </transition>
- <transition transition_id="reopen" title="reopen" new_state="propose_report" trigger="USER" before_script="" after_script="">
+ <transition transition_id="reopen" title="reopen" new_state="writing_report" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">reopen</action>
   <guard>
    <guard-permission>liege.urban: Validate</guard-permission>
