@@ -18,8 +18,8 @@ class LiegeAddressService(SQLService):
     """
     """
 
-    def __init__(self, dialect='postgresql+psycopg2', user='', host='', db_name='', password=''):
-        super(LiegeAddressService, self).__init__(dialect, user, host, db_name, password)
+    def __init__(self, dialect='postgresql+psycopg2', user='', host='', port='', db_name='', password=''):
+        super(LiegeAddressService, self).__init__(dialect, user, host, port, db_name, password)
 
         if self.can_connect():
             self._init_table(
