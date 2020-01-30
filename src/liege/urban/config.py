@@ -7,7 +7,7 @@ LICENCE_FINAL_STATES = [
     'acceptable',
     'acceptable_with_conditions',
     'authorized',
-    'inacceptable'
+    'inacceptable',
     'refused',
     'suspension',
     'retired',
