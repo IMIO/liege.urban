@@ -72,8 +72,6 @@ class StateRolesMapping(LiegeBase):
             'environment_readers': ('Reader',),
         },
 
-        # not in default env class thre workflow, but to some licences
-        # imported from SECURT are in that state
         'abandoned': {
             'administrative_editors_environment': ('Editor',),
             'administrative_validators_environment': ('Contributor',),
