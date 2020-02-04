@@ -502,7 +502,7 @@
         for="Products.urban.interfaces.IEnvironmentBase
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
-        factory=".conditions.EnvironmentDecisionCollegeEventCreatedCondition"
+        factory=".conditions.EnvironmentDecisionEventCreatedCondition"
         name="liege.urban.schedule.env_decision_mayor_event_created"
     />
 
