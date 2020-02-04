@@ -2754,6 +2754,53 @@ schedule_config = {
             ),
             'start_date': 'urban.schedule.start_date.deposit_date',
             'additional_delay': 8,
+            'subtasks': [
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'creer-evenement-decision-ebourgmestre',
+                    'title': "Créer événement 'recevable'",
+                    'default_assigned_group': 'administrative_editors_environment',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_conditions': (
+                        CreationConditionObject('liege.urban.schedule.decision_mayor_event_not_created'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.decision_mayor_event_created'),
+                    ),
+                    'start_date': 'urban.schedule.start_date.creation_date',
+                    'additional_delay': 10,
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'decision-ebourgmestre-en-cours',
+                    'title': 'E-bourgmestre en cours',
+                    'default_assigned_group': 'administrative_editors_environment',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_conditions': (
+                        CreationConditionObject('liege.urban.schedule.decision_mayor_event_created'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.decision_mayor_event_closed'),
+                    ),
+                    'start_date': 'urban.schedule.start_date.creation_date',
+                    'additional_delay': 10,
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'notifier-decision',
+                    'title': 'Notifier',
+                    'default_assigned_group': 'administrative_editors_environment',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_conditions': (
+                        CreationConditionObject('liege.urban.schedule.decision_mayor_event_closed'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.env_decision_notified'),
+                    ),
+                    'start_date': 'urban.schedule.start_date.creation_date',
+                    'additional_delay': 10,
+                },
+            ]
         },
         {
             'type_name': 'MacroTaskConfig',

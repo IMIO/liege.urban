@@ -494,6 +494,24 @@ class EnvironmentDecisionCondition(Condition):
         self.decision_event = licence.getLastLicenceDelivery()
 
 
+class EnvironmentDecisionEventNotCreatedCondition(EnvironmentDecisionCondition):
+    """
+    Licence decision project is not created.
+    """
+
+    def evaluate(self):
+        return not bool(self.decision_event)
+
+
+class EnvironmentDecisionEventCreatedCondition(EnvironmentDecisionCondition):
+    """
+    Licence decision project exists.
+    """
+
+    def evaluate(self):
+        return bool(self.decision_event)
+
+
 class EnvironmentDecisionProjectDraftedCondition(EnvironmentDecisionCondition):
     """
     Licence decision project is drafted.
@@ -561,16 +579,30 @@ class EnvironmentDecisionCollegeDone(EnvironmentDecisionCondition):
         return college_done
 
 
-class EnvironmentDecisionNotifiedCondition(EnvironmentDecisionCondition):
+class EnvironmentDecisionEventClosed(EnvironmentDecisionCondition):
     """
-    Licence decision has been notified to applicants, FD, ...
+    College is done
     """
 
     def evaluate(self):
         if not self.decision_event:
             return False
 
-        return api.content.get_state(self.decision_event) == 'closed'
+        event_closed = api.content.get_state(self.decision_event) == 'closed'
+        return event_closed
+
+
+class EnvironmentDecisionNotifiedCondition(Condition):
+    """
+    Licence decision has been notified to applicants, FD, ...
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        notification_event = licence.getLastLicenNotification()
+
+        event_closed = api.content.get_state(notification_event) == 'closed'
+        return event_closed
 
 
 class LicenceEndedCondition(Condition):

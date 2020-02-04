@@ -486,6 +486,46 @@
         for="Products.urban.interfaces.IEnvironmentBase
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.EnvironmentDecisionEventNotCreatedCondition"
+        name="liege.urban.schedule.env_decision_mayor_event_not_created"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentBase
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.EnvironmentDecisionEventCreatedCondition"
+        name="liege.urban.schedule.env_decision_mayor_event_created"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentBase
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.EnvironmentDecisionCollegeEventCreatedCondition"
+        name="liege.urban.schedule.env_decision_mayor_event_created"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentBase
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.EnvironmentDecisionCollegeEventClosed"
+        name="liege.urban.schedule.env_decision_mayor_event_closed"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentBase
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.EnvironmentDecisionEventClosed"
+        name="liege.urban.schedule.env_decision_mayor_event_closed"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentBase
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
         factory=".conditions.EnvironmentDecisionProjectDraftedCondition"
         name="liege.urban.schedule.env_decision_project_drafted"
     />
