@@ -2750,7 +2750,7 @@ schedule_config = {
             'creation_state': ('acceptable',),
             'starting_states': ('acceptable',),
             'end_conditions': (
-                MacroEndConditionObject('urban.schedule.condition.env_decision_notified'),
+                MacroEndConditionObject('liege.urban.schedule.condition.env_decision_notified'),
             ),
             'start_date': 'urban.schedule.start_date.deposit_date',
             'additional_delay': 8,
@@ -2811,7 +2811,7 @@ schedule_config = {
             'creation_state': ('inacceptable',),
             'starting_states': ('inacceptable',),
             'end_conditions': (
-                EndConditionObject('urban.schedule.condition.env_decision_notified'),
+                MacroEndConditionObject('liege.urban.schedule.condition.env_decision_notified'),
             ),
             'start_date': 'urban.schedule.start_date.deposit_date',
             'additional_delay': 15,
@@ -2825,7 +2825,7 @@ schedule_config = {
             'creation_state': ('acceptable_with_conditions',),
             'starting_states': ('acceptable_with_conditions',),
             'end_conditions': (
-                EndConditionObject('urban.schedule.condition.env_decision_notified'),
+                MacroEndConditionObject('liege.urban.schedule.condition.env_decision_notified'),
             ),
             'start_date': 'urban.schedule.start_date.deposit_date',
             'additional_delay': 30,
