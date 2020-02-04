@@ -2750,7 +2750,7 @@ schedule_config = {
             'creation_state': ('acceptable',),
             'starting_states': ('acceptable',),
             'end_conditions': (
-                EndConditionObject('urban.schedule.condition.decision_delivered'),
+                MacroEndConditionObject('urban.schedule.condition.env_decision_notified'),
             ),
             'start_date': 'urban.schedule.start_date.deposit_date',
             'additional_delay': 8,
@@ -2761,11 +2761,11 @@ schedule_config = {
                     'title': "Créer événement 'recevable'",
                     'default_assigned_group': 'administrative_editors_environment',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_conditions': (
-                        CreationConditionObject('liege.urban.schedule.decision_mayor_event_not_created'),
+                    'start_conditions': (
+                        StartConditionObject('liege.urban.schedule.env_decision_mayor_event_not_created'),
                     ),
                     'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.decision_mayor_event_created'),
+                        EndConditionObject('liege.urban.schedule.env_decision_mayor_event_created'),
                     ),
                     'start_date': 'urban.schedule.start_date.creation_date',
                     'additional_delay': 10,
@@ -2776,11 +2776,11 @@ schedule_config = {
                     'title': 'E-bourgmestre en cours',
                     'default_assigned_group': 'administrative_editors_environment',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_conditions': (
-                        CreationConditionObject('liege.urban.schedule.decision_mayor_event_created'),
+                    'start_conditions': (
+                        StartConditionObject('liege.urban.schedule.env_decision_mayor_event_created'),
                     ),
                     'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.decision_mayor_event_closed'),
+                        EndConditionObject('liege.urban.schedule.env_decision_mayor_event_closed'),
                     ),
                     'start_date': 'urban.schedule.start_date.creation_date',
                     'additional_delay': 10,
@@ -2792,7 +2792,7 @@ schedule_config = {
                     'default_assigned_group': 'administrative_editors_environment',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
                     'creation_conditions': (
-                        CreationConditionObject('liege.urban.schedule.decision_mayor_event_closed'),
+                        StartConditionObject('liege.urban.schedule.env_decision_mayor_event_closed'),
                     ),
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.env_decision_notified'),
@@ -2811,7 +2811,7 @@ schedule_config = {
             'creation_state': ('inacceptable',),
             'starting_states': ('inacceptable',),
             'end_conditions': (
-                EndConditionObject('urban.schedule.condition.decision_delivered'),
+                EndConditionObject('urban.schedule.condition.env_decision_notified'),
             ),
             'start_date': 'urban.schedule.start_date.deposit_date',
             'additional_delay': 15,
@@ -2825,7 +2825,7 @@ schedule_config = {
             'creation_state': ('acceptable_with_conditions',),
             'starting_states': ('acceptable_with_conditions',),
             'end_conditions': (
-                EndConditionObject('urban.schedule.condition.decision_delivered'),
+                EndConditionObject('urban.schedule.condition.env_decision_notified'),
             ),
             'start_date': 'urban.schedule.start_date.deposit_date',
             'additional_delay': 30,
