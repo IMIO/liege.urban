@@ -600,6 +600,8 @@ class EnvironmentDecisionNotifiedCondition(Condition):
     def evaluate(self):
         licence = self.task_container
         notification_event = licence.getLastLicenceNotification()
+        if not notification_event:
+            return False
 
         event_closed = api.content.get_state(notification_event) == 'closed'
         return event_closed
