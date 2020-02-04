@@ -510,7 +510,7 @@
         for="Products.urban.interfaces.IEnvironmentBase
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IStartCondition"
-        factory=".conditions.EnvironmentDecisionCollegeEventClosed"
+        factory=".conditions.EnvironmentDecisionEventClosed"
         name="liege.urban.schedule.env_decision_mayor_event_closed"
     />
 
