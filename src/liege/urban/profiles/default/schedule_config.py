@@ -2791,7 +2791,7 @@ schedule_config = {
                     'title': 'Notifier',
                     'default_assigned_group': 'administrative_editors_environment',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_conditions': (
+                    'start_conditions': (
                         StartConditionObject('liege.urban.schedule.env_decision_mayor_event_closed'),
                     ),
                     'end_conditions': (
