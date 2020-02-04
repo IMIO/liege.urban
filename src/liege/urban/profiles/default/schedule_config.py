@@ -2742,7 +2742,7 @@ schedule_config = {
             ],
         },
         {
-            'type_name': 'TaskConfig',
+            'type_name': 'MacroTaskConfig',
             'id': 'recevable',
             'title': 'Recevable',
             'default_assigned_group': 'administrative_editors_environment',
@@ -2756,7 +2756,7 @@ schedule_config = {
             'additional_delay': 8,
         },
         {
-            'type_name': 'TaskConfig',
+            'type_name': 'MacroTaskConfig',
             'id': 'irrecevable',
             'title': 'Irrecevable',
             'default_assigned_group': 'administrative_editors_environment',
@@ -2770,7 +2770,7 @@ schedule_config = {
             'additional_delay': 15,
         },
         {
-            'type_name': 'TaskConfig',
+            'type_name': 'MacroTaskConfig',
             'id': 'recevable_avec_conditions',
             'title': 'Recevable avec conditions',
             'default_assigned_group': 'administrative_editors_environment',
@@ -2858,6 +2858,25 @@ schedule_config = {
                     'activate_recurrency': True,
                     'recurrence_conditions': (
                         RecurrenceConditionObject('liege.urban.schedule.one_mayor_project_sent'),
+                    ),
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'college-termine',
+                    'title': 'Séance terminée',
+                    'default_assigned_group': 'administrative_editors_environment',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_conditions': (
+                        CreationConditionObject('liege.urban.schedule.one_mayor_project_meeting_done'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.all_done_mayor_meeting_colleges_events_are_closed'),
+                    ),
+                    'start_date': 'urban.schedule.start_date.creation_date',
+                    'additional_delay': 23,
+                    'activate_recurrency': True,
+                    'recurrence_conditions': (
+                        RecurrenceConditionObject('liege.urban.schedule.one_mayor_project_meeting_done'),
                     ),
                 },
             ]

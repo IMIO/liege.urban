@@ -371,6 +371,14 @@
 
     <adapter
         for="Products.urban.interfaces.IGenericLicence
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".creation_conditions.OneMayorCollegeMeetingDone"
+        name="liege.urban.schedule.one_mayor_project_meeting_done"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.MayorCollegeProjectsValidated"
@@ -399,6 +407,14 @@
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.MayorCollegesDone"
         name="liege.urban.schedule.all_mayor_colleges_done"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.DoneMayorCollegesEventsClosed"
+        name="liege.urban.schedule.all_done_mayor_meeting_colleges_events_are_closed"
     />
 
     <adapter
