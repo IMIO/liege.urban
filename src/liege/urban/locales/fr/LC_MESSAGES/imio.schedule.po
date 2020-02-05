@@ -23,8 +23,20 @@ msgstr "Recevoir l'avis du FD"
 msgid "liege.urban.schedule.acknowledgment_written"
 msgstr "Rédiger l'accusé de réception"
 
+msgid "liege.urban.schedule.all_done_mayor_meeting_colleges_events_are_closed"
+msgstr "Cloturer tous les événements acceptés dans e-bourgmestre"
+
+msgid "liege.urban.schedule.all_mayor_colleges_done"
+msgstr "Cloturer tous les événements e-bourgmestre"
+
 msgid "liege.urban.schedule.all_mayor_events_closed"
 msgstr "Cloturer tous les événements e-bourgmestre"
+
+msgid "liege.urban.schedule.all_mayor_projects_drafted"
+msgstr "Créer les événements e-bourgmestre"
+
+msgid "liege.urban.schedule.all_mayor_projects_validated"
+msgstr "Valider tous les événements e-bourgmestre"
 
 msgid "liege.urban.schedule.announcement_documents_done"
 msgstr "Générer les documents de l'annonce de projet"
@@ -85,6 +97,15 @@ msgstr "Est un dossier temporaire ou est dans l'état \"en attente de l'avis du 
 
 msgid "liege.urban.schedule.one_mayor_project_created"
 msgstr "Créer au moins un événement e-bourgmestre"
+
+msgid "liege.urban.schedule.one_mayor_project_drafted"
+msgstr "Au moins un événement e-bourgmestre est créé"
+
+msgid "liege.urban.schedule.one_mayor_project_meeting_done"
+msgstr "Au moins un événement e-bourgmestre a été accepté dans e-délib"
+
+msgid "liege.urban.schedule.one_mayor_project_sent"
+msgstr "Au moins un événement e-bourgmestre a été envoyé dans e-délib"
 
 msgid "liege.urban.schedule.parcels_added"
 msgstr "Ajouter au moins une parcelle"

@@ -23,7 +23,19 @@ msgstr ""
 msgid "liege.urban.schedule.acknowledgment_written"
 msgstr ""
 
+msgid "liege.urban.schedule.all_mayor_colleges_done"
+msgstr ""
+
 msgid "liege.urban.schedule.all_mayor_events_closed"
+msgstr ""
+
+msgid "liege.urban.schedule.all_done_mayor_meeting_colleges_events_are_closed"
+msgstr ""
+
+msgid "liege.urban.schedule.all_mayor_projects_drafted"
+msgstr ""
+
+msgid "liege.urban.schedule.all_mayor_projects_validated"
 msgstr ""
 
 msgid "liege.urban.schedule.announcement_documents_done"
@@ -87,6 +99,15 @@ msgid "liege.urban.schedule.is_temporary_licence_or_in_FT_opinion_state"
 msgstr ""
 
 msgid "liege.urban.schedule.one_mayor_project_created"
+msgstr ""
+
+msgid "liege.urban.schedule.one_mayor_project_drafted"
+msgstr ""
+
+msgid "liege.urban.schedule.one_mayor_project_meeting_done"
+msgstr ""
+
+msgid "liege.urban.schedule.one_mayor_project_sent"
 msgstr ""
 
 msgid "liege.urban.schedule.parcels_validated"
