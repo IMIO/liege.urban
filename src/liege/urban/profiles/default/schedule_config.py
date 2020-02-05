@@ -2753,7 +2753,7 @@ schedule_config = {
                 MacroEndConditionObject('liege.urban.schedule.env_decision_notified'),
             ),
             'start_date': 'urban.schedule.start_date.deposit_date',
-            'additional_delay': 8,
+            'additional_delay': 30,
             'subtasks': [
                 {
                     'type_name': 'TaskConfig',
@@ -2768,7 +2768,7 @@ schedule_config = {
                         EndConditionObject('liege.urban.schedule.env_decision_mayor_event_created'),
                     ),
                     'start_date': 'urban.schedule.start_date.creation_date',
-                    'additional_delay': 10,
+                    'additional_delay': 2,
                 },
                 {
                     'type_name': 'TaskConfig',
@@ -2782,8 +2782,8 @@ schedule_config = {
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.env_decision_mayor_event_closed'),
                     ),
-                    'start_date': 'urban.schedule.start_date.creation_date',
-                    'additional_delay': 10,
+                    'start_date': 'urban.schedule.start_date.deposit_date',
+                    'additional_delay': 25,
                 },
                 {
                     'type_name': 'TaskConfig',
@@ -2797,8 +2797,8 @@ schedule_config = {
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.env_decision_notified'),
                     ),
-                    'start_date': 'urban.schedule.start_date.creation_date',
-                    'additional_delay': 10,
+                    'start_date': 'urban.schedule.start_date.deposit_date',
+                    'additional_delay': 30,
                 },
             ]
         },
@@ -2829,7 +2829,7 @@ schedule_config = {
                         EndConditionObject('liege.urban.schedule.env_decision_mayor_event_created'),
                     ),
                     'start_date': 'urban.schedule.start_date.creation_date',
-                    'additional_delay': 10,
+                    'additional_delay': 2,
                 },
                 {
                     'type_name': 'TaskConfig',
@@ -2843,7 +2843,7 @@ schedule_config = {
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.env_decision_mayor_event_closed'),
                     ),
-                    'start_date': 'urban.schedule.start_date.creation_date',
+                    'start_date': 'urban.schedule.start_date.deposit_date',
                     'additional_delay': 10,
                 },
                 {
@@ -2858,8 +2858,8 @@ schedule_config = {
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.env_decision_notified'),
                     ),
-                    'start_date': 'urban.schedule.start_date.creation_date',
-                    'additional_delay': 10,
+                    'start_date': 'urban.schedule.start_date.deposit_date',
+                    'additional_delay': 15,
                 },
             ]
         },
@@ -2890,7 +2890,7 @@ schedule_config = {
                         EndConditionObject('liege.urban.schedule.env_decision_mayor_event_created'),
                     ),
                     'start_date': 'urban.schedule.start_date.creation_date',
-                    'additional_delay': 10,
+                    'additional_delay': 2,
                 },
                 {
                     'type_name': 'TaskConfig',
@@ -2904,8 +2904,8 @@ schedule_config = {
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.env_decision_mayor_event_closed'),
                     ),
-                    'start_date': 'urban.schedule.start_date.creation_date',
-                    'additional_delay': 10,
+                    'start_date': 'urban.schedule.start_date.deposit_date',
+                    'additional_delay': 25,
                 },
                 {
                     'type_name': 'TaskConfig',
@@ -2919,8 +2919,8 @@ schedule_config = {
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.env_decision_notified'),
                     ),
-                    'start_date': 'urban.schedule.start_date.creation_date',
-                    'additional_delay': 10,
+                    'start_date': 'urban.schedule.start_date.deposit_date',
+                    'additional_delay': 30,
                 },
             ]
         },
