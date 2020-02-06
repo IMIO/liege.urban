@@ -37,12 +37,44 @@ def migrate_default_text_newlines_for_pmws(context):
     logger = logging.getLogger('urban: migrate newlines for default texts sent to pm')
     logger.info("starting migration step")
     catalog = api.portal.get_tool('portal_catalog')
-    event_type_brains = catalog(object_provides=IUrbanEventType.__interface__)
+    event_type_brains = catalog(object_provides=IUrbanEventType.__indentifier__)
     for brain in event_type_brains:
         event_type = brain.getObject()
         if event_type.getEventPortalType() in ['UrbanEventCollege', 'UrbanEventMayor', 'UrbanEventNotificationCollege']:
-            import ipdb; ipdb.set_trace()
+            default_texts = event_type.getTextDefaultValues()
+            new_default_texts = ()
+            for default_text in default_texts:
+                new_default_text = default_text.copy()
+                new_default_text['text'] = remove_newlines(new_default_text['text'])
+                new_default_texts.append(new_default_text)
+            event_type.setTextDefaultValues(new_default_texts)
+
     logger.info("migration step done!")
+
+
+def remove_newlines(text):
+    if text.find('>&nbsp;</p>') != -1:
+        for prefix in ('</p>', ):
+            for pre_prefix in ('', '\n', '\n\n', '\r\n', '\r\n\r\n', '\n\r\n\r\n', '\r\n\r\n\r\n'):
+                suffixes = (
+                    '<p>',
+                    '<p style="margin-right:0cm">',
+                    '<p style="margin-right:0px">',
+                    '<p style="margin-left:0cm">',
+                    '<p style="margin-left:0px">',
+                    '<p style="text-align:justify">',
+                    '<p style="text-align:start">',
+                    '<p style="margin-left:0cm; margin-right:0cm">',
+                    '<p style="margin-left:0px; margin-right:0px">',
+                    '<p style="margin-left:0cm; margin-right:0cm; text-align:justify">',
+                    '<p style="margin-left:0cm; margin-right:0cm; text-align:start">',
+                    '<p style="margin-left:0px; margin-right:0px; text-align:justify">',
+                    '<p style="margin-left:0px; margin-right:0px; text-align:start">'
+                )
+                for suffix in suffixes:
+                    to_replace = prefix + pre_prefix + suffix + "&nbsp;</p>"
+                    text = text.replace(to_replace, prefix + '\n')
+        return text
 
 
 def migrate(context):
