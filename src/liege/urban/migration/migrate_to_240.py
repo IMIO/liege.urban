@@ -5,11 +5,13 @@ from imio.schedule.config import STARTED
 from imio.schedule.interfaces import TaskConfigNotFound
 
 from Products.urban.interfaces import IUrbanEventType
+from Products.urban.interfaces import ILicenceConfig
 
 from plone import api
 
 
 import logging
+import re
 
 logger = logging.getLogger('urban: migrations')
 
@@ -37,26 +39,30 @@ def migrate_default_text_newlines_for_pmws(context):
     logger = logging.getLogger('urban: migrate newlines for default texts sent to pm')
     logger.info("starting migration step")
     catalog = api.portal.get_tool('portal_catalog')
-    event_type_brains = catalog(object_provides=IUrbanEventType.__indentifier__)
-    for brain in event_type_brains:
-        event_type = brain.getObject()
-        if event_type.getEventPortalType() in ['UrbanEventCollege', 'UrbanEventMayor', 'UrbanEventNotificationCollege']:
-            default_texts = event_type.getTextDefaultValues()
-            new_default_texts = ()
+    config_brains = catalog(object_provides=[IUrbanEventType.__identifier__, ILicenceConfig.__identifier__])
+    for brain in config_brains:
+        cfg_obj = brain.getObject()
+        if cfg_obj.portal_type == 'LicenceConfig' or cfg_obj.getEventPortalType() in ['UrbanEventCollege', 'UrbanEventMayor', 'UrbanEventNotificationCollege']:
+            default_texts = cfg_obj.getTextDefaultValues()
+            new_default_texts = []
+            #if cfg_obj.id == 'delivrance-du-permis-octroi-ou-refus' and  cfg_obj.aq_parent.aq_parent.id == 'codt_buildlicence':
+            #    import ipdb; ipdb.set_trace()
             for default_text in default_texts:
                 new_default_text = default_text.copy()
-                new_default_text['text'] = remove_newlines(new_default_text['text'])
+                new_default_text['text'] = remove_newlines(new_default_text['text'], logger)
                 new_default_texts.append(new_default_text)
-            event_type.setTextDefaultValues(new_default_texts)
+            cfg_obj.setTextDefaultValues(tuple(new_default_texts))
+            logger.info("migrated {} {}".format(cfg_obj.portal_type, cfg_obj))
 
     logger.info("migration step done!")
 
 
-def remove_newlines(text):
+def remove_newlines(text, logger):
     if text.find('>&nbsp;</p>') != -1:
+        logger.info("migrated text")
         for prefix in ('</p>', ):
             for pre_prefix in ('', '\n', '\n\n', '\r\n', '\r\n\r\n', '\n\r\n\r\n', '\r\n\r\n\r\n'):
-                suffixes = (
+                suffixes = [
                     '<p>',
                     '<p style="margin-right:0cm">',
                     '<p style="margin-right:0px">',
@@ -70,11 +76,14 @@ def remove_newlines(text):
                     '<p style="margin-left:0cm; margin-right:0cm; text-align:start">',
                     '<p style="margin-left:0px; margin-right:0px; text-align:justify">',
                     '<p style="margin-left:0px; margin-right:0px; text-align:start">'
-                )
-                for suffix in suffixes:
+                ]
+                tal_regex = '(<p tal:condition="\w+">)&nbsp;</p>'
+                tal_suffixes = re.findall(tal_regex, text)
+                for suffix in suffixes + tal_suffixes:
                     to_replace = prefix + pre_prefix + suffix + "&nbsp;</p>"
                     text = text.replace(to_replace, prefix + '\n')
-        return text
+        text = text.replace('<p>&nbsp;</p>', '')
+    return text
 
 
 def migrate(context):
