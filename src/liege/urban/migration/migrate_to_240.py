@@ -45,8 +45,6 @@ def migrate_default_text_newlines_for_pmws(context):
         if cfg_obj.portal_type == 'LicenceConfig' or cfg_obj.getEventPortalType() in ['UrbanEventCollege', 'UrbanEventMayor', 'UrbanEventNotificationCollege']:
             default_texts = cfg_obj.getTextDefaultValues()
             new_default_texts = []
-            #if cfg_obj.id == 'delivrance-du-permis-octroi-ou-refus' and  cfg_obj.aq_parent.aq_parent.id == 'codt_buildlicence':
-            #    import ipdb; ipdb.set_trace()
             for default_text in default_texts:
                 new_default_text = default_text.copy()
                 new_default_text['text'] = remove_newlines(new_default_text['text'], logger)
@@ -87,7 +85,7 @@ def remove_newlines(text, logger):
 
 
 def migrate(context):
-    logger = logging.getLogger('urban: migrate to 2.3')
+    logger = logging.getLogger('urban: migrate to 2.4')
     logger.info("starting migration steps")
     migrate_env_class_three_tasks(context)
     migrate_default_text_newlines_for_pmws(context)
