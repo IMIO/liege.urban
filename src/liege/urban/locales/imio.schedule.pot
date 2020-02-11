@@ -38,9 +38,6 @@ msgstr ""
 msgid "liege.urban.schedule.all_mayor_projects_drafted"
 msgstr ""
 
-msgid "liege.urban.schedule.all_mayor_projects_validated"
-msgstr ""
-
 msgid "liege.urban.schedule.announcement_documents_done"
 msgstr ""
 

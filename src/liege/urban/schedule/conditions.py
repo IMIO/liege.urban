@@ -304,20 +304,6 @@ class MayorCollegeProjectsWritten(MayorCollegeCondition):
         return True
 
 
-class MayorCollegeProjectsValidated(MayorCollegeCondition):
-    """
-    All MayorCollege projects are validated
-    """
-
-    def evaluate(self):
-        if not self.mayor_events:
-            return False
-        for event in self.mayor_events:
-            if api.content.get_state(event) in ['draft', 'to_validate']:
-                return False
-        return True
-
-
 class ProjectsValidatedAndSentToMayorCollege(MayorCollegeCondition):
     """
     All MayorCollege projects are validated and sent to college or back to draft
