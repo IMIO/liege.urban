@@ -318,9 +318,9 @@ class MayorCollegeProjectsValidated(MayorCollegeCondition):
         return True
 
 
-class ProjectsSentToMayorCollege(MayorCollegeCondition):
+class ProjectsValidatedAndSentToMayorCollege(MayorCollegeCondition):
     """
-    All MayorCollege projects are sent to college
+    All MayorCollege projects are validated and sent to college or back to draft
     """
 
     def evaluate(self):
@@ -330,9 +330,14 @@ class ProjectsSentToMayorCollege(MayorCollegeCondition):
         ws4pm = getMultiAdapter((api.portal.get(), request), name='ws4pmclient-settings')
 
         for event in self.mayor_events:
-            sent = ws4pm.checkAlreadySentToPloneMeeting(event)
-            if not sent:
+            if api.content.get_state(event) == 'draft':
+                continue  # drafted events are ignored as they can be validation refused events
+            if api.content.get_state(event) == 'to_validate':
                 return False
+            else:
+                sent = ws4pm.checkAlreadySentToPloneMeeting(event)
+                if not sent:
+                    return False
         return True
 
 

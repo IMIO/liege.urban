@@ -99,7 +99,7 @@ msgid "liege.urban.schedule.one_mayor_project_created"
 msgstr "Créer au moins un événement e-bourgmestre"
 
 msgid "liege.urban.schedule.one_mayor_project_drafted"
-msgstr "Au moins un événement e-bourgmestre est créé"
+msgstr "Au moins un événement e-bourgmestre est rédigé et soumis à validation"
 
 msgid "liege.urban.schedule.one_mayor_project_meeting_done"
 msgstr "Au moins un événement e-bourgmestre a été accepté dans e-délib"
