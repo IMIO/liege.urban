@@ -2000,7 +2000,6 @@ schedule_config = {
                         CreationConditionObject('liege.urban.schedule.one_mayor_project_drafted'),
                     ),
                     'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.all_mayor_projects_validated'),
                         EndConditionObject('liege.urban.schedule.all_mayor_projects_sent'),
                     ),
                     'start_date': 'urban.schedule.start_date.creation_date',
@@ -2650,7 +2649,6 @@ schedule_config = {
                         CreationConditionObject('liege.urban.schedule.one_mayor_project_drafted'),
                     ),
                     'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.all_mayor_projects_validated'),
                         EndConditionObject('liege.urban.schedule.all_mayor_projects_sent'),
                     ),
                     'start_date': 'urban.schedule.start_date.creation_date',
@@ -2972,7 +2970,6 @@ schedule_config = {
                         CreationConditionObject('liege.urban.schedule.one_mayor_project_drafted'),
                     ),
                     'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.all_mayor_projects_validated'),
                         EndConditionObject('liege.urban.schedule.all_mayor_projects_sent'),
                     ),
                     'start_date': 'urban.schedule.start_date.creation_date',
