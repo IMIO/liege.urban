@@ -35,6 +35,9 @@ msgstr "Cloturer tous les événements e-bourgmestre"
 msgid "liege.urban.schedule.all_mayor_projects_drafted"
 msgstr "Créer les événements e-bourgmestre"
 
+msgid "liege.urban.schedule.all_mayor_projects_sent"
+msgstr "Tous les évémenents e-bourgmestre sont validés et énvoyés vers e-délib (ou refusés)"
+
 msgid "liege.urban.schedule.all_mayor_projects_validated"
 msgstr "Valider tous les événements e-bourgmestre"
 

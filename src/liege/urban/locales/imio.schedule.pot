@@ -29,6 +29,9 @@ msgstr ""
 msgid "liege.urban.schedule.all_mayor_events_closed"
 msgstr ""
 
+msgid "liege.urban.schedule.all_mayor_projects_sent"
+msgstr""
+
 msgid "liege.urban.schedule.all_done_mayor_meeting_colleges_events_are_closed"
 msgstr ""
 
