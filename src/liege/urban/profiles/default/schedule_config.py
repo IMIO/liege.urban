@@ -3268,4 +3268,22 @@ schedule_config = {
 #            ],
 #        },
     ],
+
+    'inspection': [
+        {
+            'type_name': 'TaskConfig',
+            'id': 'creation',
+            'title': "Création",
+            'default_assigned_group': 'survey_editors',
+            'default_assigned_user': 'survivor',
+            'creation_state': ('creation',),
+            'starting_states': ('creation',),
+            'ending_states': ('analysis', 'first_administrative_answer'),
+            'end_conditions': (
+                EndConditionObject('liege.urban.schedule.parcels_validated'),
+            ),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 1,
+        },
+    ],
 }
