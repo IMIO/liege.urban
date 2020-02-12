@@ -3280,6 +3280,7 @@ schedule_config = {
             'starting_states': ('creation',),
             'ending_states': ('analysis', 'first_administrative_answer'),
             'end_conditions': (
+                EndConditionObject('liege.urban.schedule.parcels_added', 'AND'),
                 EndConditionObject('liege.urban.schedule.parcels_validated'),
             ),
             'start_date': 'urban.schedule.start_date.creation_date',
