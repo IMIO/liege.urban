@@ -3286,5 +3286,25 @@ schedule_config = {
             'start_date': 'urban.schedule.start_date.creation_date',
             'additional_delay': 1,
         },
+        {
+            'type_name': 'TaskConfig',
+            'id': 'rediger_rapport',
+            'title': "Rapport à rédiger",
+            'default_assigned_group': 'inspection_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('analysis',),
+            'creation_conditions': (
+                CreationConditionObject('liege.urban.schedule.should_create_report_event'),
+            ),
+            'end_conditions': (
+                EndConditionObject('liege.urban.schedule.report_event_redacted'),
+            ),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 21,
+            'activate_recurrency': True,
+            'recurrence_conditions': (
+                RecurrenceConditionObject('liege.urban.schedule.should_create_report_event'),
+            ),
+        },
     ],
 }

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-02-11 08:36+0000\n"
+"POT-Creation-Date: 2020-02-12 15:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,15 +60,15 @@ msgstr ""
 
 #: ../content/codt_integratedlicence.py:50
 #: ../content/codt_uniquelicence.py:54
-#: ../content/env_base.py:79
+#: ../content/env_base.py:81
 msgid "urban_label_CommentsOnDecisionProject"
 msgstr "Commentaire sur le projet de décision"
 
-#: ../content/env_base.py:49
+#: ../content/env_base.py:50
 msgid "urban_label_ExploitationUsage"
 msgstr "Nature de l'exploitation"
 
-#: ../content/env_base.py:50
+#: ../content/env_base.py:51
 msgid "urban_label_LiegeEnvironmentConditions"
 msgstr "conditions Ville de Liège"
 
@@ -86,7 +86,7 @@ msgstr "Date de séance de clôture"
 
 #: ../content/codt_integratedlicence.py:51
 #: ../content/codt_uniquelicence.py:55
-#: ../content/env_base.py:78
+#: ../content/env_base.py:80
 msgid "urban_label_decisionNotificationTo"
 msgstr "Notification de la décision à"
 
@@ -113,7 +113,7 @@ msgstr "Fin du dispositif"
 msgid "urban_label_explanationDate"
 msgstr "Date de soirée de consultation"
 
-#: ../content/env_base.py:48
+#: ../content/env_base.py:49
 msgid "urban_label_exploitationAddress"
 msgstr "Adresse de l'exploitation"
 
@@ -149,7 +149,7 @@ msgstr "Détails sur les canalisations et sites Seveso"
 msgid "urban_label_pmObject"
 msgstr "Objet"
 
-#: ../content/env_base.py:47
+#: ../content/env_base.py:48
 msgid "urban_label_procedureType"
 msgstr "Type de dossier"
 

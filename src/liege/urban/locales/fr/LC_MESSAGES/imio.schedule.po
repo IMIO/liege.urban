@@ -38,9 +38,6 @@ msgstr "Créer les événements e-bourgmestre"
 msgid "liege.urban.schedule.all_mayor_projects_sent"
 msgstr "Tous les évémenents e-bourgmestre sont validés et énvoyés vers e-délib (ou refusés)"
 
-msgid "liege.urban.schedule.all_mayor_projects_validated"
-msgstr "Valider tous les événements e-bourgmestre"
-
 msgid "liege.urban.schedule.announcement_documents_done"
 msgstr "Générer les documents de l'annonce de projet"
 
@@ -130,3 +127,6 @@ msgstr "Avis préliminaire proposé à validation technique"
 
 msgid "liege.urban.schedule.project_sent_to_college"
 msgstr "Envoyer le projet collège vers e-délib"
+
+msgid "liege.urban.schedule.should_create_report_event"
+msgstr "Doit créer un événement de rapport d'inspection"
