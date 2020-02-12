@@ -76,7 +76,8 @@ def update_licences_schema(baseSchema):
     # hide some fields
     LicenceSchema['isSeveso'].widget.visible = {'edit': 'invisible', 'view': 'invisible'}
     # rename fields
-    LicenceSchema['ftSolicitOpinionsTo'].widget.label = _('urban_label_decisionNotificationTo')
+    if hasattr(LicenceSchema, 'ftSolicitOpinionsTo'):
+        LicenceSchema['ftSolicitOpinionsTo'].widget.label = _('urban_label_decisionNotificationTo')
     LicenceSchema['commentsOnSPWOpinion'].widget.label = _('urban_label_CommentsOnDecisionProject')
     # reorder fields
     LicenceSchema.moveField('description', after='ftSolicitOpinionsTo')
