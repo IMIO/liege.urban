@@ -3,6 +3,7 @@
 from liege.urban import UrbanMessage as _
 from liege.urban.licence_fields_permissions import set_field_permissions
 from liege.urban.licence_fields_permissions import set_environment_field_permissions
+from Products.urban.content.licence.EnvClassBordering import EnvClassBordering
 from Products.urban.content.licence.EnvClassOne import EnvClassOne
 from Products.urban.content.licence.EnvClassThree import EnvClassThree
 from Products.urban.content.licence.EnvClassTwo import EnvClassTwo
@@ -52,7 +53,7 @@ def update_base_schema(baseSchema):
     return LicenceSchema
 
 env_base_classes = [
-    EnvClassOne, EnvClassThree, EnvClassTwo
+    EnvClassOne, EnvClassThree, EnvClassTwo, EnvClassBordering
 ]
 
 for licence_class in env_base_classes:
@@ -93,7 +94,7 @@ def update_licences_schema(baseSchema):
     return LicenceSchema
 
 env_licence_classes = [
-    EnvClassOne, EnvClassTwo
+    EnvClassOne, EnvClassTwo, EnvClassBordering
 ]
 
 licences_permissions_mapping = {

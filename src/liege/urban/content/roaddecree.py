@@ -16,7 +16,7 @@ permissions_mapping = {
 def update_item_schema(base_schema):
     licence_schema = base_schema.copy()
     licence_schema['roadTechnicalAdvice'].widget.label = _(
-        'urban_label_roadDescription',
+        'urban_label_roadDescription'
     )
 
     return licence_schema
