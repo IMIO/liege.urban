@@ -28,11 +28,6 @@ class StateRolesMapping(LocalRoleAdapter):
             'urban_readers': ('Reader',),
         },
 
-        'analysis_validation': {
-            'inspection_validators': ('Contributor', 'AddressEditor'),
-            'urban_readers': ('Reader',),
-        },
-
         'administrative_answer': {
             'inspection_editors': ('Reader',),
             'administrative_editors': ('Editor', 'AddressEditor'),

@@ -241,7 +241,7 @@
   </permission-map>
  </state>
  <state state_id="analysis" title="analysis">
-  <exit-transition transition_id="propose_analysis"/>
+  <exit-transition transition_id="validate"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -340,98 +340,6 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add UrbanEventOpinionRequest" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add UrbanEventInspectionReport" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
- </state>
- <state state_id="analysis_validation" title="analysis_validation">
-  <exit-transition transition_id="validate"/>
-  <exit-transition transition_id="refuse_analysis"/>
-  <permission-map name="ATContentTypes: Add File" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="ATContentTypes: Add Image" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="Access contents information" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
-  </permission-map>
-  <permission-map name="Add portal content" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
-  </permission-map>
-  <permission-map name="Delete objects" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="List folder contents" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="View" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
-  </permission-map>
-  <permission-map name="liege.urban: External Reader" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
-  </permission-map>
-  <permission-map name="liege.urban: Validate" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add Applicant" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add Contact" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add Corporation" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add PortionOut" acquired="False">
-   <permission-role>AddressEditor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add UrbanEvent" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -795,20 +703,8 @@
     <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="propose_analysis" title="propose_analysis" new_state="analysis_validation" trigger="USER" before_script="" after_script="">
-  <action url="" category="workflow" icon="">propose_analysis</action>
-  <guard>
-    <guard-permission>Modify portal content</guard-permission>
-  </guard>
- </transition>
  <transition transition_id="validate" title="validate" new_state="administrative_answer" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">validate</action>
-  <guard>
-   <guard-permission>liege.urban: Validate</guard-permission>
-  </guard>
- </transition>
- <transition transition_id="refuse_analysis" title="refuse_analysis" new_state="analysis" trigger="USER" before_script="" after_script="">
-  <action url="" category="workflow" icon="">refuse_analysis</action>
   <guard>
    <guard-permission>liege.urban: Validate</guard-permission>
   </guard>
