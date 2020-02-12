@@ -179,4 +179,4 @@ class ShouldCreateInspectionReportEvent(CreationCondition):
 
     def evaluate(self):
         licence = self.task_container
-        return api.content.get_state(licence) == 'validating_address'
+        return False

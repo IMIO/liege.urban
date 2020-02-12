@@ -128,5 +128,8 @@ msgstr ""
 msgid "liege.urban.schedule.preliminary_advice_written"
 msgstr ""
 
+msgid "liege.urban.schedule.report_event_redacted"
+msgstr ""
+
 msgid "liege.urban.schedule.should_create_report_event"
 msgstr ""

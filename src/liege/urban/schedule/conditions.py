@@ -659,3 +659,17 @@ class PreliminaryAdviceSent(PreliminaryAdviceCondition):
         if not self.preliminary_advice_event:
             return False
         return api.content.get_state(self.preliminary_advice_event) == 'preliminary_advice_sent'
+
+
+class InspectionReportRedacted(Condition):
+    """
+    InspectionReportEvent has been submited to validation.
+    """
+    def evaluate(self):
+        licence = self.task_container
+        report_event = licence.getLastReportEvent()
+        if not report_event:
+            return True
+
+        is_redacted = api.content.get_state(report_event) == 'to_validate'
+        return is_redacted
