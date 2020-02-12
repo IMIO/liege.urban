@@ -80,7 +80,9 @@ def update_licences_schema(baseSchema):
         LicenceSchema['ftSolicitOpinionsTo'].widget.label = _('urban_label_decisionNotificationTo')
     LicenceSchema['commentsOnSPWOpinion'].widget.label = _('urban_label_CommentsOnDecisionProject')
     # reorder fields
-    LicenceSchema.moveField('description', after='ftSolicitOpinionsTo')
+    LicenceSchema.moveField('description', after='hasEnvironmentImpactStudy')
+    if hasattr(LicenceSchema, 'ftSolicitOpinionsTo'):
+        LicenceSchema.moveField('description', after='ftSolicitOpinionsTo')
     LicenceSchema.moveField('referenceFT', after='referenceDGATLP')
     # change permissions of some fields
     LicenceSchema['claimsSynthesis'].read_permission = 'liege.urban: Internal Reader'
