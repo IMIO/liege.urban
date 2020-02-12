@@ -10,6 +10,12 @@ class StateRolesMapping(LiegeBase):
 
     mapping = {
 
+        'folder_creation': {
+            LiegeBase.get_editors: ('Editor',),
+            'survey_editors': ('Reader', 'AddressEditor'),
+            'urban_readers': ('Reader',),
+        },
+
         'validating_address': {
             LiegeBase.get_opinion_editors: ('ExternalReader',),
             'survey_editors': ('Reader', 'AddressEditor'),
