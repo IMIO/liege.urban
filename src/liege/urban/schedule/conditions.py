@@ -673,3 +673,17 @@ class InspectionReportRedacted(Condition):
 
         is_redacted = api.content.get_state(report_event) == 'to_validate'
         return is_redacted
+
+
+class InspectionReportValidated(Condition):
+    """
+    InspectionReportEvent has been been validated or refused
+    """
+    def evaluate(self):
+        licence = self.task_container
+        report_event = licence.getLastReportEvent()
+        if not report_event:
+            return False
+
+        is_validated = api.content.get_state(report_event) != 'to_validate'
+        return is_validated
