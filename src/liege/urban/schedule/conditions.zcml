@@ -71,7 +71,7 @@
         for="Products.urban.interfaces.IInspection
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
-        factory=".creation_conditions.InspectionReportRedacted"
+        factory=".conditions.InspectionReportRedacted"
         name="liege.urban.schedule.report_event_redacted"
     />
 
