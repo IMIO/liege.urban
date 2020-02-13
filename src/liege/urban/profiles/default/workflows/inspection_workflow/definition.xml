@@ -241,7 +241,7 @@
   </permission-map>
  </state>
  <state state_id="analysis" title="analysis">
-  <exit-transition transition_id="validate"/>
+  <exit-transition transition_id="give_administrative_answer_1"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -703,8 +703,8 @@
     <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
- <transition transition_id="validate" title="validate" new_state="administrative_answer" trigger="USER" before_script="" after_script="">
-  <action url="" category="workflow" icon="">validate</action>
+ <transition transition_id="give_administrative_answer_1" title="give_administrative_answer_1" new_state="administrative_answer" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">give_administrative_answer</action>
   <guard>
    <guard-permission>liege.urban: Validate</guard-permission>
   </guard>
