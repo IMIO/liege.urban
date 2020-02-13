@@ -190,8 +190,25 @@ class ShouldCreateInspectionReportEvent(CreationCondition):
                 break
 
         for report in report_events:
-            creation_date = report.workflow_history.values()[0][0]['time']
-            if creation_date > last_analysis_date:
+            workflow_history = report.workflow_history.values()[0]
+            creation_date = workflow_history[0]['time']
+            last_transition = workflow_history[-1]['action']
+            # restart the task if the report validation is refused
+            if creation_date > last_analysis_date and last_transition != 'refuse':
                 return False
 
         return True
+
+
+class InspectionReportRedacted(CreationCondition):
+    """
+    InspectionReportEvent has been submited to validation.
+    """
+    def evaluate(self):
+        licence = self.task_container
+        report_event = licence.getLastReportEvent()
+        if not report_event:
+            return False
+
+        is_redacted = api.content.get_state(report_event) == 'to_validate'
+        return is_redacted

@@ -69,10 +69,26 @@
 
     <adapter
         for="Products.urban.interfaces.IInspection
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".creation_conditions.InspectionReportRedacted"
+        name="liege.urban.schedule.report_event_redacted"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IInspection
              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.InspectionReportRedacted"
         name="liege.urban.schedule.report_event_redacted"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IInspection
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.InspectionReportValidated"
+        name="liege.urban.schedule.report_event_validated_or_refused"
     />
 
     <adapter
