@@ -131,5 +131,8 @@ msgstr ""
 msgid "liege.urban.schedule.report_event_redacted"
 msgstr ""
 
+msgid "liege.urban.schedule.report_event_validated_or_refused"
+msgstr ""
+
 msgid "liege.urban.schedule.should_create_report_event"
 msgstr ""

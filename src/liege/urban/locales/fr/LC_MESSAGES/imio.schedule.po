@@ -131,5 +131,8 @@ msgstr "Envoyer le projet collège vers e-délib"
 msgid "liege.urban.schedule.report_event_redacted"
 msgstr "Créer un nouveau rapport d'sinpection et le proposer pour validation"
 
+msgid "liege.urban.schedule.report_event_validated_or_refused"
+msgstr "Valider le rapport et passer le dossier à l'état 'réponse adminsitrative'"
+
 msgid "liege.urban.schedule.should_create_report_event"
 msgstr "Doit créer un événement de rapport d'inspection"

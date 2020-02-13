@@ -685,5 +685,8 @@ class InspectionReportValidated(Condition):
         if not report_event:
             return False
 
-        is_validated = api.content.get_state(report_event) != 'to_validate'
-        return is_validated
+        is_validated = api.content.get_state(report_event) == 'closed'
+        is_validated = is_validated and api.content.get_state(licence) == 'administrative_answer'
+        is_refused = api.content.get_state(report_event) == 'writing_report'
+
+        return is_validated or is_refused
