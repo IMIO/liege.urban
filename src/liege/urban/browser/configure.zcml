@@ -155,4 +155,13 @@
         permission="zope2.View"
   />
 
+  <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             zope.publisher.interfaces.browser.IBrowserRequest"
+        provides="zope.interface.Interface"
+        factory=".inspection.IsInspector"
+        name="is_inspector"
+        permission="zope2.View"
+  />
+
 </configure>
