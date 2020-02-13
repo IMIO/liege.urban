@@ -179,4 +179,19 @@ class ShouldCreateInspectionReportEvent(CreationCondition):
 
     def evaluate(self):
         licence = self.task_container
-        return False
+        report_events = licence.getAllReportEvents()
+        if not report_events:
+            return True
+
+        last_analysis_date = None
+        for action in licence.workflow_history.values()[0][::-1]:
+            if action['review_state'] == 'analysis':
+                last_analysis_date = action['time']
+                break
+
+        for report in report_events:
+            creation_date = report.workflow_history.values()[0][0]['time']
+            if creation_date > last_analysis_date:
+                return False
+
+        return True
