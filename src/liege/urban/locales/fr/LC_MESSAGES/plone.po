@@ -149,6 +149,9 @@ msgstr "Suivre sans PR"
 msgid "give_administrative_answer"
 msgstr "réponse administrative"
 
+msgid "give_administrative_answer_1"
+msgstr "réponse administrative"
+
 msgid "go_back_1"
 msgstr "Retour"
 

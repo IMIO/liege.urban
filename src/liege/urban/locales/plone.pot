@@ -143,6 +143,9 @@ msgstr ""
 msgid "give_administrative_answer"
 msgstr ""
 
+msgid "give_administrative_answer_1"
+msgstr ""
+
 msgid "go_back_1"
 msgstr ""
 
