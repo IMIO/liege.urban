@@ -19,7 +19,7 @@ class IsInspector(object):
         is_admin = api.user.get_permissions(user=current_user, obj=self.context)['Manage portal']
         if is_admin:
             return True
-        user_groups = self.get_groups_ids(current_user)
+        user_groups = set([g.id for g in api.group.get_groups(user=current_user)])
         if 'inspection_editors' in user_groups or 'inspection_validators' in user_groups:
             return True
         return False
