@@ -2745,8 +2745,8 @@ schedule_config = {
             'title': 'Recevable',
             'default_assigned_group': 'administrative_editors_environment',
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-            'creation_state': ('acceptable',),
-            'starting_states': ('acceptable',),
+            'creation_state': ('acceptable', 'acceptable_with_conditions'),
+            'starting_states': ('acceptable', 'acceptable_with_conditions'),
             'end_conditions': (
                 MacroEndConditionObject('liege.urban.schedule.env_decision_notified'),
             ),
@@ -2858,67 +2858,6 @@ schedule_config = {
                     ),
                     'start_date': 'urban.schedule.start_date.deposit_date',
                     'additional_delay': 15,
-                },
-            ]
-        },
-        {
-            'type_name': 'MacroTaskConfig',
-            'id': 'recevable_avec_conditions',
-            'title': 'Recevable avec conditions',
-            'default_assigned_group': 'administrative_editors_environment',
-            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-            'creation_state': ('acceptable_with_conditions',),
-            'starting_states': ('acceptable_with_conditions',),
-            'end_conditions': (
-                MacroEndConditionObject('liege.urban.schedule.env_decision_notified'),
-            ),
-            'start_date': 'urban.schedule.start_date.deposit_date',
-            'additional_delay': 30,
-            'subtasks': [
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'creer-evenement-decision-ebourgmestre',
-                    'title': "Créer événement 'recevable avec conditions'",
-                    'default_assigned_group': 'administrative_editors_environment',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'start_conditions': (
-                        StartConditionObject('liege.urban.schedule.env_decision_mayor_event_not_created'),
-                    ),
-                    'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.env_decision_mayor_event_created'),
-                    ),
-                    'start_date': 'urban.schedule.start_date.creation_date',
-                    'additional_delay': 2,
-                },
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'decision-ebourgmestre-en-cours',
-                    'title': 'E-bourgmestre en cours',
-                    'default_assigned_group': 'administrative_editors_environment',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'start_conditions': (
-                        StartConditionObject('liege.urban.schedule.env_decision_mayor_event_created'),
-                    ),
-                    'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.env_decision_mayor_event_closed'),
-                    ),
-                    'start_date': 'urban.schedule.start_date.deposit_date',
-                    'additional_delay': 25,
-                },
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'notifier-decision',
-                    'title': 'Notifier',
-                    'default_assigned_group': 'administrative_editors_environment',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'start_conditions': (
-                        StartConditionObject('liege.urban.schedule.env_decision_mayor_event_closed'),
-                    ),
-                    'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.env_decision_notified'),
-                    ),
-                    'start_date': 'urban.schedule.start_date.deposit_date',
-                    'additional_delay': 30,
                 },
             ]
         },
