@@ -185,7 +185,6 @@ def setDefaultApplicationSecurity(context):
                 folder.manage_addLocalRoles("administrative_validators_environment", ("Contributor",))
     inspection_folder_names = [
         getLicenceFolderId('Inspection'),
-        getLicenceFolderId('Ticket'),
     ]
     for folder_name in inspection_folder_names:
         if hasattr(app_folder, folder_name):
