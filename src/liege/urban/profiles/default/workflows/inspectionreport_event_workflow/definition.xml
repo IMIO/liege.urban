@@ -181,7 +181,7 @@
  <transition transition_id="refuse" title="refuse" new_state="writing_report" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">refuse</action>
   <guard>
-   <guard-expression>here.restrictedTraverse('is_inspector')()</guard-permission>
+   <guard-expression>python: here.restrictedTraverse('is_inspector')()</guard-expression>
   </guard>
  </transition>
  <transition transition_id="validate" title="validate" new_state="closed" trigger="USER" before_script="" after_script="">
