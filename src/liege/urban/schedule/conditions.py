@@ -669,7 +669,7 @@ class InspectionReportRedacted(Condition):
         licence = self.task_container
         report_event = licence.getLastReportEvent()
         if not report_event:
-            return True
+            return False
 
         is_redacted = api.content.get_state(report_event) == 'to_validate'
         return is_redacted
