@@ -36,7 +36,7 @@ msgid "liege.urban.schedule.all_mayor_projects_drafted"
 msgstr "Créer les événements e-bourgmestre"
 
 msgid "liege.urban.schedule.all_mayor_projects_sent"
-msgstr "Tous les évémenents e-bourgmestre sont validés et énvoyés vers e-délib (ou refusés)"
+msgstr "Tous les évémenents e-bourgmestre sont validés et envoyés vers e-délib (ou refusés)"
 
 msgid "liege.urban.schedule.announcement_documents_done"
 msgstr "Générer les documents de l'annonce de projet"
@@ -70,6 +70,15 @@ msgstr "Passer l'événement d'octroi du permis dans l'état 'Passage au collèg
 
 msgid "liege.urban.schedule.env_decision_college_done"
 msgstr "Collège pour décision finale terminé (environnement)"
+
+msgid "liege.urban.schedule.env_decision_mayor_event_closed"
+msgstr "Clôturer l'événement de recevabilité"
+
+msgid "liege.urban.schedule.env_decision_mayor_event_created"
+msgstr "Créer l'événement de recevabilité"
+
+msgid "liege.urban.schedule.env_decision_mayor_event_not_created"
+msgstr "L'événement de recevabilité n'est pas encore créé"
 
 msgid "liege.urban.schedule.env_decision_notified"
 msgstr "Notifier la décision (environnement)"
