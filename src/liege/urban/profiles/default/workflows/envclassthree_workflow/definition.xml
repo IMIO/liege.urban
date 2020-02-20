@@ -770,7 +770,7 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="abandoned" title="acceptable">
+ <state state_id="abandoned" title="abandoned">
   <exit-transition transition_id="reopen"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
