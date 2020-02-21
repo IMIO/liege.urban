@@ -153,4 +153,4 @@ msgid "liege.urban.schedule.should_create_ticket"
 msgstr "'Créer un PV' est sélectionné dans la proposition de suivi du dernier rapport"
 
 msgid "liege.urban.schedule.should_end_inspection"
-msgstr "'Clore le dossier' est sélectionné dans la proposition de suivi du dernier rapport""
+msgstr "'Clore le dossier' est sélectionné dans la proposition de suivi du dernier rapport"
