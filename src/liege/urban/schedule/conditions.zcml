@@ -63,8 +63,8 @@
         for="Products.urban.interfaces.IInspection
              imio.schedule.content.task_config.ITaskConfig"
         provides="imio.schedule.interfaces.ICreationCondition"
-        factory=".creation_conditions.ShouldCreateInspectionReportEvent"
-        name="liege.urban.schedule.should_create_report_event"
+        factory=".creation_conditions.ShouldWriteInspectionReportEvent"
+        name="liege.urban.schedule.should_write_report_event"
     />
 
     <adapter
@@ -89,6 +89,30 @@
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.InspectionReportValidated"
         name="liege.urban.schedule.report_event_validated_or_refused"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IInspection
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".creation_conditions.ShouldEndInspection"
+        name="liege.urban.schedule.should_end_inspection"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IInspection
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".creation_conditions.ShouldCreateTicket"
+        name="liege.urban.schedule.should_create_ticket"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IInspection
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.FollowUpTicketCreated"
+        name="liege.urban.schedule.followup_ticket_created"
     />
 
     <adapter

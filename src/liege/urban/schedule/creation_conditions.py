@@ -173,15 +173,15 @@ class OneMayorCollegeMeetingDone(MayorCollegeCondition):
         return False
 
 
-class ShouldCreateInspectionReportEvent(CreationCondition):
+class InspectionCreationCondition(CreationCondition):
     """
+    Base class for inspection condition checking values on the last report event
+    Provides a method returning the last relevant inspection report event.
     """
 
-    def evaluate(self):
+    def get_current_inspection_report(self):
         licence = self.task_container
         report_events = licence.getAllReportEvents()
-        if not report_events:
-            return True
 
         last_analysis_date = None
         for action in licence.workflow_history.values()[0][::-1]:
@@ -192,18 +192,36 @@ class ShouldCreateInspectionReportEvent(CreationCondition):
         for report in report_events:
             workflow_history = report.workflow_history.values()[0]
             creation_date = workflow_history[0]['time']
-            last_transition = workflow_history[-1]['action']
-            # restart the task if the report validation is refused
-            if creation_date > last_analysis_date and last_transition != 'refuse':
-                return False
+            if creation_date > last_analysis_date:
+                return report
 
-        return True
+
+class ShouldWriteInspectionReportEvent(InspectionCreationCondition):
+    """
+    True in two cases:
+        - the report event does not exist
+        - the report event validation has been refused
+    """
+
+    def evaluate(self):
+        report = self.get_current_inspection_report()
+        if not report:
+            return True
+
+        workflow_history = report.workflow_history.values()[0]
+        last_transition = workflow_history[-1]['action']
+        # restart the task if the report validation is refused
+        if last_transition == 'refuse':
+            return True
+
+        return False
 
 
 class InspectionReportRedacted(CreationCondition):
     """
     InspectionReportEvent has been submited to validation.
     """
+
     def evaluate(self):
         licence = self.task_container
         report_event = licence.getLastReportEvent()
@@ -212,3 +230,27 @@ class InspectionReportRedacted(CreationCondition):
 
         is_redacted = api.content.get_state(report_event) == 'to_validate'
         return is_redacted
+
+
+class ShouldEndInspection(InspectionCreationCondition):
+    """
+    Should end inspection when 'close' is selected in the followup proposition of the
+    last inspection report event.
+    """
+    def evaluate(self):
+        report = self.get_current_inspection_report()
+        if report and 'close' in report.getFollowup_proposition():
+            return True
+        return False
+
+
+class ShouldCreateTicket(InspectionCreationCondition):
+    """
+    Should create Ticket when 'ticket' is selected in the followup proposition of the
+    last inspection report event.
+    """
+    def evaluate(self):
+        report = self.get_current_inspection_report()
+        if report and 'ticket' in report.getFollowup_proposition():
+            return True
+        return False

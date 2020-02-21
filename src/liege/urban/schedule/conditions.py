@@ -690,3 +690,36 @@ class InspectionReportValidated(Condition):
         is_refused = api.content.get_state(report_event) == 'writing_report'
 
         return is_validated or is_refused
+
+
+class FollowUpTicketCreated(Condition):
+    """
+    A ticket has been created as an inspection followup result.
+    """
+    def evaluate(self):
+        licence = self.task_container
+        tickets = licence.getBoundTickets()
+        if not tickets:
+            return False
+
+        ticket_creation_dates = []
+        for ticket in tickets:
+            workflow_history = ticket.workflow_history.values()[0]
+            creation_date = workflow_history[0]['time']
+            ticket_creation_dates.append[creation_date]
+
+        report_events = licence.getAllReportEvents()[::-1]
+        # check the most recent report with 'ticket' in the followup
+        # proposition
+        for report in report_events:
+            if 'ticket' in report.getFollowup_proposition():
+                report_workflow_history = report.workflow_history.values()[0]
+                report_creation_date = report_workflow_history[0]['time']
+                # if a referring ticket has been created after this report
+                # return True
+                for ticket_creation_date in ticket_creation_dates:
+                    if ticket_creation_date > report_creation_date:
+                        return True
+                return False
+
+        return False
