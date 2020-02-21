@@ -92,6 +92,9 @@ msgstr "Envoyer le drojet de décision vers e-délib (environnement)"
 msgid "liege.urban.schedule.env_decision_project_validated"
 msgstr "Valider le projet de décision finale (environnement)"
 
+msgid "liege.urban.schedule.followup_ticket_created"
+msgstr "Créer un nouveau PV référençant ce dossier"
+
 msgid "liege.urban.schedule.inquiry_documents_done"
 msgstr "Générer les documents d'enquête publique"
 
@@ -145,3 +148,9 @@ msgstr "Valider le rapport et passer le dossier à l'état 'réponse administrat
 
 msgid "liege.urban.schedule.should_create_report_event"
 msgstr "Doit créer un événement de rapport d'inspection"
+
+msgid "liege.urban.schedule.should_create_ticket"
+msgstr "'Créer un PV' est sélectionné dans la proposition de suivi du dernier rapport"
+
+msgid "liege.urban.schedule.should_end_inspection"
+msgstr "'Clore le dossier' est sélectionné dans la proposition de suivi du dernier rapport""

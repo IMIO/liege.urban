@@ -3290,7 +3290,7 @@ schedule_config = {
             'type_name': 'TaskConfig',
             'id': 'creer_pv',
             'title': "Créer PV",
-            'default_assigned_group': 'inspection_editors',
+            'default_assigned_group': 'administrative_editors',
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
             'creation_state': ('administrative_answer',),
             'creation_conditions': (
