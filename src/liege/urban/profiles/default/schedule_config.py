@@ -3277,11 +3277,11 @@ schedule_config = {
             'creation_conditions': (
                 CreationConditionObject('liege.urban.schedule.should_end_inspection'),
             ),
-            'ending_states': 'ended',
+            'ending_states': ('ended',),
             'start_date': 'urban.schedule.start_date.creation_date',
             'additional_delay': 1,
             'activate_recurrency': True,
-            'recurrence_states': ('analysis',),
+            'recurrence_states': ('administrative_answer',),
             'recurrence_conditions': (
                 RecurrenceConditionObject('liege.urban.schedule.should_end_inspection'),
             ),
@@ -3302,7 +3302,7 @@ schedule_config = {
             'start_date': 'urban.schedule.start_date.creation_date',
             'additional_delay': 1,
             'activate_recurrency': True,
-            'recurrence_states': ('analysis',),
+            'recurrence_states': ('administrative_answer',),
             'recurrence_conditions': (
                 RecurrenceConditionObject('liege.urban.schedule.should_create_ticket'),
             ),
