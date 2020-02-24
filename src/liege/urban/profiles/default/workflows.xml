@@ -98,6 +98,9 @@
   <type type_id="UrbanEventOpinionRequest">
      <bound-workflow workflow_id="opinion_request_workflow" />
   </type>
+  <type type_id="UrbanEventFollowUp">
+     <bound-workflow workflow_id="acknowledgment_event_workflow" />
+  </type>
 <!-- ##code-section workflowbindings -->
   <type type_id="Article127">
      <bound-workflow workflow_id="article127_workflow" />
