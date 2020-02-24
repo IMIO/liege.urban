@@ -156,7 +156,7 @@
   />
 
   <adapter
-        for="Products.urban.interfaces.IGenericLicence
+        for="*
              zope.publisher.interfaces.browser.IBrowserRequest"
         provides="zope.interface.Interface"
         factory=".inspection.IsInspector"
