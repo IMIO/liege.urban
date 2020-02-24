@@ -706,7 +706,7 @@ class FollowUpTicketCreated(Condition):
         for ticket in tickets:
             workflow_history = ticket.workflow_history.values()[0]
             creation_date = workflow_history[0]['time']
-            ticket_creation_dates.append[creation_date]
+            ticket_creation_dates.append(creation_date)
 
         report_events = licence.getAllReportEvents()[::-1]
         # check the most recent report with 'ticket' in the followup
