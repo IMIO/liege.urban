@@ -15,6 +15,7 @@
  <object name="opinion_request_workflow" meta_type="Workflow"/>
  <object name="preliminary_notice_workflow" meta_type="Workflow"/>
  <object name="preliminaryadvice_event_workflow" meta_type="Workflow"/>
+ <object name="uniquelicence_workflow" meta_type="Workflow"/>
  <object name="urbancertificateone_workflow" meta_type="Workflow"/>
  <object name="urban_licence_workflow" meta_type="Workflow"/>
  <object name="urbandoc_workflow" meta_type="Workflow"/>
