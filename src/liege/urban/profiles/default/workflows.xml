@@ -15,7 +15,6 @@
  <object name="opinion_request_workflow" meta_type="Workflow"/>
  <object name="preliminary_notice_workflow" meta_type="Workflow"/>
  <object name="preliminaryadvice_event_workflow" meta_type="Workflow"/>
- <object name="uniquelicence_workflow" meta_type="Workflow"/>
  <object name="urbancertificateone_workflow" meta_type="Workflow"/>
  <object name="urban_licence_workflow" meta_type="Workflow"/>
  <object name="urbandoc_workflow" meta_type="Workflow"/>
@@ -71,9 +70,6 @@
   </type>
   <type type_id="Ticket">
      <bound-workflow workflow_id="ticket_workflow" />
-  </type>
-  <type type_id="UniqueLicence">
-     <bound-workflow workflow_id="uniquelicence_workflow" />
   </type>
   <type type_id="UrbanCertificateOne">
      <bound-workflow workflow_id="urbancertificateone_workflow" />
