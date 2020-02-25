@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from liege.urban.wokflows.licences_workflow import DefaultStateRolesMapping
+from liege.urban.workflows.licences_workflow import DefaultStateRolesMapping
 
 
 class StateRolesMapping(DefaultStateRolesMapping):
