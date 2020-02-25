@@ -71,6 +71,9 @@
   <type type_id="Ticket">
      <bound-workflow workflow_id="ticket_workflow" />
   </type>
+  <type type_id="UniqueLicence">
+     <bound-workflow workflow_id="uniquelicence_workflow" />
+  </type>
   <type type_id="UrbanCertificateOne">
      <bound-workflow workflow_id="urbancertificateone_workflow" />
   </type>

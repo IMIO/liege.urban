@@ -10,6 +10,13 @@
      name="buildlicence_local_roles"
   />
 
+  <adapter
+     for="Products.urban.interfaces.IUniqueLicence"
+     provides="borg.localrole.interfaces.ILocalRoleProvider"
+     factory=".uniquelicence_workflow.StateRolesMapping"
+     name="uniquelicence_local_roles"
+  />
+
   <!--!!! not a mistake !!!
       CODT buildlicence has the same workflow local roles than buildlicence
     -->
