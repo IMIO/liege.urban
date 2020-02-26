@@ -123,3 +123,5 @@ for licence_class in env_licence_classes:
         licences_permissions_mapping,
         exceptions,
     )
+# env class bordering has no specific worfklow, apply same permissions than class 3
+EnvClassBordering.schema = set_environment_field_permissions(EnvClassBordering.schema)
