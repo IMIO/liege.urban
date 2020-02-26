@@ -3307,5 +3307,95 @@ schedule_config = {
                 RecurrenceConditionObject('liege.urban.schedule.should_create_ticket'),
             ),
         },
+        {
+            'type_name': 'MacroTaskConfig',
+            'id': 'reponse-administrative',
+            'title': 'Réponse administrative',
+            'default_assigned_group': 'administrative_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'marker_interfaces': [u'Products.urban.schedule.interfaces.IInspectionFollowUpTask'],
+            'creation_state': ('administrative_answer',),
+            'creation_conditions': (
+                MacroCreationConditionObject('urban.schedule.condition.should_do_followups'),
+            ),
+            'end_conditions': (
+                MacroEndConditionObject('urban.schedule.condition.all_followups_done'),
+            ),
+            'ending_states': (),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'activate_recurrency': True,
+            'recurrence_states': ('administrative_answer',),
+            'recurrence_conditions': (
+                MacroRecurrenceConditionObject('urban.schedule.condition.should_do_followups'),
+            ),
+            'subtasks': [
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'rediger-reponse',
+                    'title': 'Rédiger réponse',
+                    'default_assigned_group': 'administrative_editors',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'marker_interfaces': [u'Products.urban.schedule.interfaces.ICreateFollowupTask'],
+                    'creation_state': ('administrative_answer',),
+                    'creation_conditions': (
+                        CreationConditionObject('urban.schedule.condition.should_write_one_followup'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('urban.schedule.condition.all_followups_written'),
+                    ),
+                    'start_date': 'urban.schedule.start_date.creation_date',
+                    'additional_delay': 0,
+                    'activate_recurrency': True,
+                    'recurrence_states': ('administrative_answer',),
+                    'recurrence_conditions': (
+                        RecurrenceConditionObject('urban.schedule.condition.should_write_one_followup'),
+                    ),
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'valider-reponse',
+                    'title': 'Valider réponse',
+                    'default_assigned_group': 'administrative_validators',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'marker_interfaces': [u'Products.urban.schedule.interfaces.ICreateOpinionRequestsTask'],
+                    'creation_state': ('administrative_answer',),
+                    'creation_conditions': (
+                        CreationConditionObject('urban.schedule.condition.followups_written'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('urban.schedule.condition.followups_validated'),
+                    ),
+                    'start_date': 'urban.schedule.start_date.creation_date',
+                    'additional_delay': 0,
+                    'activate_recurrency': True,
+                    'recurrence_states': ('administrative_answer',),
+                    'recurrence_conditions': (
+                        RecurrenceConditionObject('urban.schedule.condition.followups_written'),
+                    ),
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'envoyer-reponse',
+                    'title': 'Envoyer réponse',
+                    'default_assigned_group': 'administrative_editors',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'marker_interfaces': [u'Products.urban.schedule.interfaces.IInspectionFollowUpTask'],
+                    'creation_state': ('administrative_answer',),
+                    'creation_conditions': (
+                        CreationConditionObject('urban.schedule.condition.followups_to_send'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('urban.schedule.condition.followups_done'),
+                    ),
+                    'start_date': 'urban.schedule.start_date.creation_date',
+                    'additional_delay': 0,
+                    'activate_recurrency': True,
+                    'recurrence_states': ('administrative_answer',),
+                    'recurrence_conditions': (
+                        RecurrenceConditionObject('urban.schedule.condition.followups_to_send'),
+                    ),
+                },
+            ],
+        },
     ],
 }

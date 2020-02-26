@@ -2,6 +2,8 @@
 
 from imio.schedule.content.condition import CreationCondition
 
+from Products.urban.schedule.conditions.creation import InspectionCreationCondition
+
 from plone import api
 
 from zope.component import getMultiAdapter
@@ -171,29 +173,6 @@ class OneMayorCollegeMeetingDone(MayorCollegeCondition):
                 if mayor_college_done:
                     return True
         return False
-
-
-class InspectionCreationCondition(CreationCondition):
-    """
-    Base class for inspection condition checking values on the last report event
-    Provides a method returning the last relevant inspection report event.
-    """
-
-    def get_current_inspection_report(self):
-        licence = self.task_container
-        report_events = licence.getAllReportEvents()
-
-        last_analysis_date = None
-        for action in licence.workflow_history.values()[0][::-1]:
-            if action['review_state'] == 'analysis':
-                last_analysis_date = action['time']
-                break
-
-        for report in report_events:
-            workflow_history = report.workflow_history.values()[0]
-            creation_date = workflow_history[0]['time']
-            if creation_date > last_analysis_date:
-                return report
 
 
 class ShouldWriteInspectionReportEvent(InspectionCreationCondition):
