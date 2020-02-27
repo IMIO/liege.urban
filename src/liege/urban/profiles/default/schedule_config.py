@@ -3313,7 +3313,6 @@ schedule_config = {
             'title': 'Réponse administrative',
             'default_assigned_group': 'administrative_editors',
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-            'marker_interfaces': [u'Products.urban.schedule.interfaces.IInspectionFollowUpTask'],
             'creation_state': ('administrative_answer',),
             'creation_conditions': (
                 MacroCreationConditionObject('urban.schedule.condition.should_do_followups'),
@@ -3357,7 +3356,7 @@ schedule_config = {
                     'title': 'Valider réponse',
                     'default_assigned_group': 'administrative_validators',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'marker_interfaces': [u'Products.urban.schedule.interfaces.ICreateOpinionRequestsTask'],
+                    'marker_interfaces': [u'Products.urban.schedule.interfaces.IValidateFollowupTask'],
                     'creation_state': ('administrative_answer',),
                     'creation_conditions': (
                         CreationConditionObject('urban.schedule.condition.followups_written'),
@@ -3379,7 +3378,7 @@ schedule_config = {
                     'title': 'Envoyer réponse',
                     'default_assigned_group': 'administrative_editors',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'marker_interfaces': [u'Products.urban.schedule.interfaces.IInspectionFollowUpTask'],
+                    'marker_interfaces': [u'Products.urban.schedule.interfaces.ISendFollowupTask'],
                     'creation_state': ('administrative_answer',),
                     'creation_conditions': (
                         CreationConditionObject('urban.schedule.condition.followups_to_send'),
