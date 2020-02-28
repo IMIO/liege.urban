@@ -3320,7 +3320,7 @@ schedule_config = {
             'end_conditions': (
                 MacroEndConditionObject('urban.schedule.condition.all_followups_done'),
             ),
-            'ending_states': ('inspection_follow_up'),
+            'ending_states': ('inspection_follow_up',),
             'start_date': 'urban.schedule.start_date.creation_date',
             'activate_recurrency': True,
             'recurrence_states': ('administrative_answer',),
