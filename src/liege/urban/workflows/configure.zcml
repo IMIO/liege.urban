@@ -189,7 +189,7 @@
   <adapter
      for="Products.urban.interfaces.IUrbanEventFollowUp"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
-     factory=".acknowledgment_workflow.StateRolesMapping"
+     factory=".followup_event_workflow.StateRolesMapping"
      name="followupevent_local_roles"
   />
 
