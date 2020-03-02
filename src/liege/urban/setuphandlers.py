@@ -3,6 +3,7 @@
 from plone import api
 
 from Products.urban.config import URBAN_TYPES
+from Products.urban.config import URBAN_ENVIRONMENT_TYPES
 from Products.urban.setuphandlers import createScheduleConfig
 from Products.urban.utils import getEnvironmentLicenceFolderIds
 from Products.urban.utils import getLicenceFolderId
@@ -52,6 +53,12 @@ def setAllowedTypes(context):
         values = type_info.allowed_content_types
         if 'UrbanEventAcknowledgment' not in values:
             type_info.allowed_content_types = values + ('UrbanEventAcknowledgment',)
+
+    for licence_type in URBAN_ENVIRONMENT_TYPES:
+        type_info = getattr(portal_types, licence_type)
+        values = type_info.allowed_content_types
+        if 'UrbanEventMayor' not in values:
+            type_info.allowed_content_types = values + ('UrbanEventMayor',)
 
     type_info = getattr(portal_types, 'CODT_UniqueLicence')
     new_values = type_info.allowed_content_types
