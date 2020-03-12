@@ -95,9 +95,6 @@ msgstr ""
 msgid "liege.urban.schedule.env_decision_notified"
 msgstr ""
 
-msgid "liege.urban.schedule.followup_ticket_created"
-msgstr ""
-
 msgid "liege.urban.schedule.inquiry_documents_done"
 msgstr ""
 
@@ -140,17 +137,5 @@ msgstr ""
 msgid "liege.urban.schedule.preliminary_advice_written"
 msgstr ""
 
-msgid "liege.urban.schedule.report_event_redacted"
-msgstr ""
-
 msgid "liege.urban.schedule.report_event_validated_or_refused"
-msgstr ""
-
-msgid "liege.urban.schedule.should_create_report_event"
-msgstr ""
-
-msgid "liege.urban.schedule.should_create_ticket"
-msgstr ""
-
-msgid "liege.urban.schedule.should_end_inspection"
 msgstr ""

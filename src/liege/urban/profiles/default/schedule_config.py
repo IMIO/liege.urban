@@ -3268,46 +3268,6 @@ schedule_config = {
             ),
         },
         {
-            'type_name': 'TaskConfig',
-            'id': 'clore',
-            'title': "À clôturer",
-            'default_assigned_group': 'inspection_editors',
-            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-            'creation_state': ('administrative_answer',),
-            'creation_conditions': (
-                CreationConditionObject('liege.urban.schedule.should_end_inspection'),
-            ),
-            'ending_states': ('ended',),
-            'start_date': 'urban.schedule.start_date.creation_date',
-            'additional_delay': 1,
-            'activate_recurrency': True,
-            'recurrence_states': ('administrative_answer',),
-            'recurrence_conditions': (
-                RecurrenceConditionObject('liege.urban.schedule.should_end_inspection'),
-            ),
-        },
-        {
-            'type_name': 'TaskConfig',
-            'id': 'creer_pv',
-            'title': "Créer PV",
-            'default_assigned_group': 'administrative_editors',
-            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-            'creation_state': ('administrative_answer',),
-            'creation_conditions': (
-                CreationConditionObject('liege.urban.schedule.should_create_ticket'),
-            ),
-            'end_conditions': (
-                EndConditionObject('liege.urban.schedule.followup_ticket_created'),
-            ),
-            'start_date': 'urban.schedule.start_date.creation_date',
-            'additional_delay': 1,
-            'activate_recurrency': True,
-            'recurrence_states': ('administrative_answer',),
-            'recurrence_conditions': (
-                RecurrenceConditionObject('liege.urban.schedule.should_create_ticket'),
-            ),
-        },
-        {
             'type_name': 'MacroTaskConfig',
             'id': 'reponse-administrative',
             'title': 'Réponse administrative',
@@ -3395,6 +3355,85 @@ schedule_config = {
                     ),
                 },
             ],
+        },
+        {
+            'type_name': 'TaskConfig',
+            'id': 'creer_pv',
+            'title': "Créer PV",
+            'default_assigned_group': 'administrative_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('administrative_answer',),
+            'creation_conditions': (
+                CreationConditionObject('urban.schedule.condition.should_create_ticket'),
+            ),
+            'end_conditions': (
+                EndConditionObject('urban.schedule.condition.followup_ticket_created'),
+            ),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 1,
+            'activate_recurrency': True,
+            'recurrence_states': ('administrative_answer',),
+            'recurrence_conditions': (
+                RecurrenceConditionObject('urban.schedule.condition.should_create_ticket'),
+            ),
+        },
+        {
+            'type_name': 'TaskConfig',
+            'id': 'pv_en_cours',
+            'title': 'PV en cours',
+            'default_assigned_group': 'inspection_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_conditions': (
+                CreationConditionObject('urban.schedule.condition.followup_ticket_created'),
+            ),
+            'end_conditions': (
+                EndConditionObject('urban.schedule.condition.followup_ticket_is_closed'),
+            ),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 0,
+            'activate_recurrency': True,
+            'recurrence_conditions': (
+                RecurrenceConditionObject('urban.schedule.condition.followup_ticket_created'),
+            ),
+        },
+        {
+            'type_name': 'TaskConfig',
+            'id': 'pv_termine',
+            'title': 'PV terminé',
+            'default_assigned_group': 'inspection_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_conditions': (
+                CreationConditionObject('urban.schedule.condition.followup_ticket_is_closed'),
+            ),
+            'end_conditions': (
+                EndConditionObject('liege.urban.schedule.report_event_redacted'),
+            ),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 0,
+            'activate_recurrency': True,
+            'recurrence_states': ('administrative_answer', 'inspection_follow_up', 'closed'),
+            'recurrence_conditions': (
+                RecurrenceConditionObject('urban.schedule.condition.followup_ticket_is_closed'),
+            ),
+        },
+        {
+            'type_name': 'TaskConfig',
+            'id': 'clore',
+            'title': "À clôturer",
+            'default_assigned_group': 'inspection_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('administrative_answer',),
+            'creation_conditions': (
+                CreationConditionObject('urban.schedule.condition.should_end_inspection'),
+            ),
+            'ending_states': ('ended',),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 1,
+            'activate_recurrency': True,
+            'recurrence_states': ('administrative_answer',),
+            'recurrence_conditions': (
+                RecurrenceConditionObject('urban.schedule.condition.should_end_inspection'),
+            ),
         },
     ],
 }
