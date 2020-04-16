@@ -129,7 +129,7 @@ class AnnouncementDocumentsValidatedCondition(Condition):
         if not announcement:
             return False
 
-        return api.content.get_state(announcement) in ['to_validate', 'sending_documents']
+        return api.content.get_state(announcement) in ['preparing_documents', 'sending_documents']
 
 
 class AnnouncementDocumentsSentCondition(Condition):
