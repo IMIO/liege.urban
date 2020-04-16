@@ -1602,7 +1602,7 @@ schedule_config = {
                     'creation_state': ('complete',),
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
-                        EndConditionObject('urban.schedule.condition.inquiry_event_created'),
+                        EndConditionObject('urban.schedule.condition.inquiry_event_created', 'AND'),
                         EndConditionObject('urban.schedule.condition.inquiry_dates_defined'),
                     ),
                     'start_date': 'urban.schedule.start_date.deposit_date',
@@ -1638,7 +1638,8 @@ schedule_config = {
                     ),
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
-                        EndConditionObject('liege.urban.schedule.inquiry_documents_validated'),
+                        EndConditionObject('liege.urban.schedule.inquiry_documents_validated', 'OR'),
+                        EndConditionObject('liege.urban.schedule.write_inquiry_documents'),
                     ),
                     'start_date': 'urban.schedule.start_date.deposit_date',
                     'additional_delay': 18,
