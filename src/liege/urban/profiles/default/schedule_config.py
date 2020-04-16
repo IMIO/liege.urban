@@ -1437,6 +1437,10 @@ schedule_config = {
                     ),
                     'start_date': 'urban.schedule.start_date.deposit_date',
                     'additional_delay': 17,
+                    'activate_recurrency': True,
+                    'recurrence_conditions': (
+                        RecurrenceConditionObject('liege.urban.schedule.write_inquiry_documents'),
+                    ),
                 },
                 {
                     'type_name': 'TaskConfig',
@@ -1454,6 +1458,10 @@ schedule_config = {
                     ),
                     'start_date': 'urban.schedule.start_date.deposit_date',
                     'additional_delay': 18,
+                    'activate_recurrency': True,
+                    'recurrence_conditions': (
+                        RecurrenceConditionObject('liege.urban.schedule.inquiry_documents_done'),
+                    ),
                 },
                 {
                     'type_name': 'TaskConfig',
@@ -1468,88 +1476,6 @@ schedule_config = {
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
                         EndConditionObject('liege.urban.schedule.inquiry_documents_sent'),
-                    ),
-                    'start_date': 'urban.schedule.start_date.deposit_date',
-                    'additional_delay': 18,
-                },
-            ]
-        },
-        {
-            'type_name': 'MacroTaskConfig',
-            'id': 'annonce-de-projet',
-            'title': 'Annonce de projet',
-            'default_assigned_group': 'administrative_editors',
-            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-            'creation_state': ('procedure_validated',),
-            'creation_conditions': (
-                MacroCreationConditionObject('urban.schedule.condition.will_have_announcement', 'AND'),
-            ),
-            'starting_states': ('procedure_validated',),
-            'end_conditions': (
-                MacroEndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
-                MacroEndConditionObject('urban.schedule.condition.announcement_done'),
-            ),
-            'start_date': 'urban.schedule.start_date.announcement_end_date',
-            'additional_delay': 1,
-            'subtasks': [
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'annonce-dates',
-                    'title': 'Définir les dates de d\'annonce de projet',
-                    'default_assigned_group': 'administrative_editors',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('procedure_validated',),
-                    'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
-                        EndConditionObject('urban.schedule.condition.announcement_dates_defined'),
-                    ),
-                    'start_date': 'urban.schedule.start_date.deposit_date',
-                    'additional_delay': 17,
-                },
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'annonce-documents',
-                    'title': 'Produire les documents',
-                    'default_assigned_group': 'administrative_editors',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('procedure_validated',),
-                    'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
-                        EndConditionObject('liege.urban.schedule.announcement_documents_done'),
-                    ),
-                    'start_date': 'urban.schedule.start_date.deposit_date',
-                    'additional_delay': 17,
-                },
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'valider-documents',
-                    'title': 'Valider les documents',
-                    'default_assigned_group': 'administrative_validators',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('procedure_validated',),
-                    'start_conditions': (
-                        StartConditionObject('liege.urban.schedule.announcement_documents_done'),
-                    ),
-                    'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
-                        EndConditionObject('liege.urban.schedule.announcement_documents_validated'),
-                    ),
-                    'start_date': 'urban.schedule.start_date.deposit_date',
-                    'additional_delay': 18,
-                },
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'envoyer-documents',
-                    'title': 'Envoyer les documents',
-                    'default_assigned_group': 'administrative_editors',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('procedure_validated',),
-                    'start_conditions': (
-                        StartConditionObject('liege.urban.schedule.announcement_documents_validated'),
-                    ),
-                    'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
-                        EndConditionObject('liege.urban.schedule.announcement_documents_sent'),
                     ),
                     'start_date': 'urban.schedule.start_date.deposit_date',
                     'additional_delay': 18,
@@ -1560,89 +1486,6 @@ schedule_config = {
     'codt_urbancertificatetwo': [
         {
             'type_name': 'MacroTaskConfig',
-            'id': 'enquete',
-            'title': 'Enquête publique',
-            'default_assigned_group': 'administrative_editors',
-            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-            'creation_state': ('procedure_validated',),
-            'creation_conditions': (
-                MacroCreationConditionObject('urban.schedule.condition.will_have_inquiry', 'AND'),
-            ),
-            'starting_states': ('procedure_validated',),
-            'end_conditions': (
-                MacroEndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
-                MacroEndConditionObject('urban.schedule.condition.inquiry_done'),
-            ),
-            'start_date': 'urban.schedule.start_date.inquiry_end_date',
-            'additional_delay': 1,
-            'subtasks': [
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'enquete-dates',
-                    'title': 'Définir les dates de d\'enquête',
-                    'default_assigned_group': 'administrative_editors',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('procedure_validated',),
-                    'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
-                        EndConditionObject('urban.schedule.condition.inquiry_event_created'),
-                        EndConditionObject('urban.schedule.condition.inquiry_dates_defined'),
-                    ),
-                    'start_date': 'urban.schedule.start_date.deposit_date',
-                    'additional_delay': 17,
-                },
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'enquete-documents',
-                    'title': 'Produire les documents',
-                    'default_assigned_group': 'administrative_editors',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('procedure_validated',),
-                    'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
-                        EndConditionObject('liege.urban.schedule.inquiry_documents_done'),
-                    ),
-                    'start_date': 'urban.schedule.start_date.deposit_date',
-                    'additional_delay': 17,
-                },
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'valider-documents',
-                    'title': 'Valider les documents',
-                    'default_assigned_group': 'administrative_validators',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('procedure_validated',),
-                    'start_conditions': (
-                        StartConditionObject('liege.urban.schedule.inquiry_documents_done'),
-                    ),
-                    'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
-                        EndConditionObject('liege.urban.schedule.inquiry_documents_validated'),
-                    ),
-                    'start_date': 'urban.schedule.start_date.deposit_date',
-                    'additional_delay': 18,
-                },
-                {
-                    'type_name': 'TaskConfig',
-                    'id': 'envoyer-documents',
-                    'title': 'Envoyer les documents',
-                    'default_assigned_group': 'administrative_editors',
-                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                    'creation_state': ('procedure_validated',),
-                    'start_conditions': (
-                        StartConditionObject('liege.urban.schedule.inquiry_documents_validated'),
-                    ),
-                    'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
-                        EndConditionObject('liege.urban.schedule.inquiry_documents_sent'),
-                    ),
-                    'start_date': 'urban.schedule.start_date.deposit_date',
-                    'additional_delay': 18,
-                },
-            ]
-        },
-        {
-            'type_name': 'MacroTaskConfig',
             'id': 'annonce-de-projet',
             'title': 'Annonce de projet',
             'default_assigned_group': 'administrative_editors',
@@ -1686,6 +1529,10 @@ schedule_config = {
                     ),
                     'start_date': 'urban.schedule.start_date.deposit_date',
                     'additional_delay': 17,
+                    'activate_recurrency': True,
+                    'recurrence_conditions': (
+                        RecurrenceConditionObject('liege.urban.schedule.write_announcement_documents'),
+                    ),
                 },
                 {
                     'type_name': 'TaskConfig',
@@ -1703,6 +1550,10 @@ schedule_config = {
                     ),
                     'start_date': 'urban.schedule.start_date.deposit_date',
                     'additional_delay': 18,
+                    'activate_recurrency': True,
+                    'recurrence_conditions': (
+                        RecurrenceConditionObject('liege.urban.schedule.announcement_documents_done'),
+                    ),
                 },
                 {
                     'type_name': 'TaskConfig',
@@ -1768,6 +1619,10 @@ schedule_config = {
                     ),
                     'start_date': 'urban.schedule.start_date.deposit_date',
                     'additional_delay': 17,
+                    'activate_recurrency': True,
+                    'recurrence_conditions': (
+                        RecurrenceConditionObject('liege.urban.schedule.write_inquiry_documents'),
+                    ),
                 },
                 {
                     'type_name': 'TaskConfig',
@@ -1785,6 +1640,10 @@ schedule_config = {
                     ),
                     'start_date': 'urban.schedule.start_date.deposit_date',
                     'additional_delay': 18,
+                    'activate_recurrency': True,
+                    'recurrence_conditions': (
+                        RecurrenceConditionObject('liege.urban.schedule.inquiry_documents_done'),
+                    ),
                 },
                 {
                     'type_name': 'TaskConfig',
