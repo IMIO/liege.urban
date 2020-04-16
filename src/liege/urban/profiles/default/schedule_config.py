@@ -1454,7 +1454,8 @@ schedule_config = {
                     ),
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
-                        EndConditionObject('liege.urban.schedule.inquiry_documents_validated'),
+                        EndConditionObject('liege.urban.schedule.inquiry_documents_validated', 'OR'),
+                        EndConditionObject('liege.urban.schedule.write_inquiry_documents'),
                     ),
                     'start_date': 'urban.schedule.start_date.deposit_date',
                     'additional_delay': 18,
@@ -1546,7 +1547,8 @@ schedule_config = {
                     ),
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
-                        EndConditionObject('liege.urban.schedule.announcement_documents_validated'),
+                        EndConditionObject('liege.urban.schedule.announcement_documents_validated', 'OR'),
+                        EndConditionObject('liege.urban.schedule.write_announcement_documents'),
                     ),
                     'start_date': 'urban.schedule.start_date.deposit_date',
                     'additional_delay': 18,

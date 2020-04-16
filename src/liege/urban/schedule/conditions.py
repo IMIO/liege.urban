@@ -10,7 +10,21 @@ from plone import api
 from zope.component import getMultiAdapter
 
 
-class WriteInquiryDocumentsCondition(CreationCondition):
+class WriteInquiryDocumentsCreationCondition(CreationCondition):
+    """
+    Licence inquiry documents are produced.
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        inquiry = licence.getLastInquiry()
+        if not inquiry:
+            return False
+
+        return api.content.get_state(inquiry) == 'preparing_documents'
+
+
+class WriteInquiryDocumentsCondition(Condition):
     """
     Licence inquiry documents are produced.
     """
@@ -78,7 +92,21 @@ class InquiryDocumentsSentCondition(Condition):
         return api.content.get_state(inquiry) == 'in_progress'
 
 
-class WriteAnnouncementDocumentsCondition(CreationCondition):
+class WriteAnnouncementDocumentsCreationCondition(CreationCondition):
+    """
+    Licence announcement documents are produced.
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        announcement = licence.getLastAnnouncement()
+        if not announcement:
+            return False
+
+        return api.content.get_state(announcement) == 'preparing_documents'
+
+
+class WriteAnnouncementDocumentsCondition(Condition):
     """
     Licence announcement documents are produced.
     """
@@ -129,7 +157,7 @@ class AnnouncementDocumentsValidatedCondition(Condition):
         if not announcement:
             return False
 
-        return api.content.get_state(announcement) in ['preparing_documents', 'sending_documents']
+        return api.content.get_state(announcement) == 'sending_documents'
 
 
 class AnnouncementDocumentsSentCondition(Condition):
