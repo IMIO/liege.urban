@@ -1240,48 +1240,6 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
- <state state_id="preparing_decision" title="preparing_decision">
-  <permission-map name="ATContentTypes: Add File" acquired="True">
-  </permission-map>
-  <permission-map name="ATContentTypes: Add Image" acquired="True">
-  </permission-map>
-  <permission-map name="Access contents information" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>ExternalReader</permission-role>
-   <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
-  </permission-map>
-  <permission-map name="Add portal content" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
-  </permission-map>
-  <permission-map name="Delete objects" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="List folder contents" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>ExternalReader</permission-role>
-   <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
-  </permission-map>
-  <permission-map name="Modify portal content" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="View" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>ExternalReader</permission-role>
-   <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
-  </permission-map>
   <permission-map name="liege.urban: External Reader" acquired="True">
   </permission-map>
   <permission-map name="liege.urban: Internal Editor" acquired="True">
