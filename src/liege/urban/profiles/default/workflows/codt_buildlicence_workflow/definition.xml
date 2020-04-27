@@ -1240,53 +1240,6 @@
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
-  <permission-map name="liege.urban: External Reader" acquired="True">
-  </permission-map>
-  <permission-map name="liege.urban: Internal Editor" acquired="True">
-  </permission-map>
-  <permission-map name="liege.urban: Internal Reader" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
-  </permission-map>
-  <permission-map name="liege.urban: Road Editor" acquired="True">
-  </permission-map>
-  <permission-map name="liege.urban: Road Reader" acquired="True">
-  </permission-map>
-  <permission-map name="liege.urban: Validate" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add Applicant" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add Contact" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add Corporation" acquired="True">
-  </permission-map>
-  <permission-map name="urban: Add CODT_Inquiry" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add PortionOut" acquired="False">
-   <permission-role>AddressEditor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add UrbanEvent" acquired="False">
-   <permission-role>Contributor</permission-role>
-   <permission-role>Editor</permission-role>
-   <permission-role>Manager</permission-role>
-  </permission-map>
-  <permission-map name="urban: Add UrbanEventOpinionRequest" acquired="True">
-  </permission-map>
- </state>
  <state state_id="procedure_choosen" title="procedure_choosen">
   <exit-transition transition_id="invalidate_procedure_choice"/>
   <exit-transition transition_id="validate_procedure_choice"/>
