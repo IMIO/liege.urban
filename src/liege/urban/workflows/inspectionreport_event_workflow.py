@@ -24,6 +24,8 @@ class StateRolesMapping(BaseRolesMapping):
 
         'closed': {
             'inspection_editors': ('Reader',),
+            'inspection_validators': ('Contributor',),
+            'technical_validators': ('Contributor',),
             BaseRolesMapping.get_readers: ('Reader',),
         },
 
