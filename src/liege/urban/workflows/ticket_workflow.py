@@ -8,34 +8,57 @@ class StateRolesMapping(LocalRoleAdapter):
 
     mapping = {
         'creation': {
-            'inspection_editors': ('Editor', 'AddressEditor'),
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor', 'AddressEditor'),
+            'inspection_editors': ('Reader',),
             'urban_readers': ('Reader',),
         },
 
         'prosecution_analysis': {
-            'inspection_editors': ('Editor', 'AddressEditor'),
             'administrative_editors': ('Editor', 'AddressEditor'),
+            'administrative_validators': ('Contributor', 'AddressEditor'),
+            'inspection_editors': ('Reader',),
             'urban_readers': ('Reader',),
         },
 
-        'in_progress_with_prosecutor': {
-            'inspection_editors': ('Editor', 'AddressEditor'),
-            'administrative_editors': ('Editor', 'AddressEditor'),
+        'technical_analysis': {
+            'technical_editors': ('Editor', 'AddressEditor'),
+            'technical_validators': ('Editor', 'AddressEditor'),
+            'inspection_editors': ('Reader',),
             'urban_readers': ('Reader',),
         },
 
-        'in_progress_without_prosecutor': {
-            'inspection_editors': ('Editor', 'AddressEditor'),
+        'technical_validation': {
+            'technical_validators': ('Contributor', 'AddressEditor'),
+            'inspection_editors': ('Reader',),
+            'urban_readers': ('Reader',),
+        },
+
+        'waiting_for_agreement': {
             'administrative_editors': ('Editor', 'AddressEditor'),
+            'administrative_validators': ('Contributor', 'AddressEditor'),
+            'inspection_editors': ('Reader',),
+            'urban_readers': ('Reader',),
+        },
+
+        'waiting_to_finalize': {
+            'administrative_editors': ('Editor', 'AddressEditor'),
+            'administrative_validators': ('Contributor', 'AddressEditor'),
+            'inspection_editors': ('Reader',),
+            'urban_readers': ('Reader',),
+        },
+
+        'in_court': {
+            'administrative_editors': ('Editor', 'AddressEditor'),
+            'administrative_validators': ('Contributor', 'AddressEditor'),
+            'inspection_editors': ('Reader',),
             'urban_readers': ('Reader',),
         },
 
         'ended': {
-            'inspection_editors': ('Editor', 'AddressEditor'),
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor', 'AddressEditor'),
+            'inspection_editors': ('Reader',),
             'urban_readers': ('Reader',),
         },
     }
