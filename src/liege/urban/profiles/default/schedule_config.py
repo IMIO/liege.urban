@@ -3734,4 +3734,53 @@ schedule_config = {
             ),
         },
     ],
+
+    'ticket': [
+        {
+            'type_name': 'TaskConfig',
+            'id': 'creation',
+            'title': "Création",
+            'default_assigned_group': 'administrative_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('creation',),
+            'starting_states': ('creation',),
+            'ending_states': ('prosecution_analysis',),
+            'end_conditions': (
+                EndConditionObject('urban.schedule.condition.deposit_done', 'AND'),
+            ),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 1,
+        },
+        {
+            'type_name': 'TaskConfig',
+            'id': 'prosecution_analysis',
+            'title': "Analyse parquet",
+            'default_assigned_group': 'administrative_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('prosecution_analysis',),
+            'starting_states': ('prosecution_analysis',),
+            'ending_states': ('technical_analysis',),
+            'end_conditions': (
+                EndConditionObject('urban.schedule.condition.ticket_redacted', 'OR'),
+                EndConditionObject('urban.schedule.condition.ticket_redaction_over_deadline',),
+            ),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 90,
+        },
+        {
+            'type_name': 'TaskConfig',
+            'id': 'prosecution_analysis_over_deadline',
+            'title': "Délai analyse dépassé",
+            'default_assigned_group': 'administrative_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('prosecution_analysis',),
+            'creation_conditions': (
+                EndConditionObject('urban.schedule.condition.ticket_redaction_over_deadline',),
+            ),
+            'starting_states': ('prosecution_analysis',),
+            'ending_states': ('technical_analysis',),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 0
+        },
+    ]
 }
