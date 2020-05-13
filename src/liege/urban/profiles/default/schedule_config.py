@@ -3636,6 +3636,27 @@ schedule_config = {
         },
         {
             'type_name': 'TaskConfig',
+            'id': 'delai-citoyen',
+            'title': 'Délai citoyen',
+            'default_assigned_group': 'administrative_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('administrative_answer',),
+            'creation_conditions': (
+                CreationConditionObject('urban.schedule.condition.followup_with_delay_written'),
+            ),
+            'ending_states': ('ended',),
+            'start_date': 'urban.schedule.start_date.followup_date',
+            'calculation_delay': (
+                'urban.schedule.delay.inspection_followup_delay',
+            ),
+            'activate_recurrency': True,
+            'recurrence_states': ('administrative_answer',),
+            'recurrence_conditions': (
+                RecurrenceConditionObject('urban.schedule.condition.followup_with_delay_written'),
+            ),
+        },
+        {
+            'type_name': 'TaskConfig',
             'id': 'creer_pv',
             'title': "Créer PV",
             'default_assigned_group': 'administrative_editors',
