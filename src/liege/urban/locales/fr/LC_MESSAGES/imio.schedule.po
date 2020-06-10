@@ -137,11 +137,5 @@ msgstr "Avis préliminaire proposé à validation technique"
 msgid "liege.urban.schedule.project_sent_to_college"
 msgstr "Envoyer le projet collège vers e-délib"
 
-msgid "liege.urban.schedule.report_event_redacted"
-msgstr "Créer un nouveau rapport d'inspection et le proposer pour validation"
-
 msgid "liege.urban.schedule.report_event_validated_or_refused"
 msgstr "Valider le rapport et passer le dossier à l'état 'réponse administrative'"
-
-msgid "liege.urban.schedule.should_create_report_event"
-msgstr "Doit créer un événement de rapport d'inspection"

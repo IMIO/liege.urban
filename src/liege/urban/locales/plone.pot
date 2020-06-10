@@ -74,6 +74,9 @@ msgstr ""
 msgid "back_to_deposit"
 msgstr ""
 
+msgid "back_to_technical_analysis"
+msgstr ""
+
 msgid "check_completion"
 msgstr ""
 
@@ -128,16 +131,19 @@ msgstr ""
 msgid "final_decision_in_progress"
 msgstr ""
 
+msgid "finalize"
+msgstr ""
+
 msgid "first_administrative_answer"
+msgstr ""
+
+msgid "follow_in_court"
 msgstr ""
 
 msgid "follow_up"
 msgstr ""
 
-msgid "follow_with_prosecutor"
-msgstr ""
-
-msgid "follow_without_prosecutor"
+msgid "follow_to_technical_analysis"
 msgstr ""
 
 msgid "give_administrative_answer"
@@ -156,6 +162,9 @@ msgid "go_back_3"
 msgstr ""
 
 msgid "go_back_4"
+msgstr ""
+
+msgid "in_court"
 msgstr ""
 
 msgid "in_progress_with_prosecutor"
@@ -290,6 +299,9 @@ msgstr ""
 msgid "suspend"
 msgstr ""
 
+msgid "technical_analysis"
+msgstr ""
+
 msgid "technical_refuse"
 msgstr ""
 
@@ -324,6 +336,9 @@ msgid "validate_acceptable_with_conditions"
 msgstr ""
 
 msgid "validate_address"
+msgstr ""
+
+msgid "validate_analysis"
 msgstr ""
 
 msgid "validate_completion"
@@ -362,10 +377,16 @@ msgstr ""
 msgid "waiting_address"
 msgstr ""
 
+msgid "waiting_for_agreement"
+msgstr ""
+
 msgid "wait_for_FT_opinion"
 msgstr ""
 
 msgid "waiting_opinion"
+msgstr ""
+
+msgid "waiting_to_finalize"
 msgstr ""
 
 msgid "writing_report"

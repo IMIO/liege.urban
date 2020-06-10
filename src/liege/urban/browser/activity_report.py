@@ -137,6 +137,8 @@ class LicencesExtractForm(form.Form):
         if hasattr(licence, 'getLastRecourse'):
             event = licence.getLastRecourse()
             licence_dict['recourse_date'] = event and str(event.getEventDate() or '')
+            licence_dict['recourse_decision_date'] = event and str(event.getDecisionDate() or '')
+            licence_dict['recourse_decision'] = event and str(event.getRecourseDecision() or '')
 
         if hasattr(licence, 'annoncedDelay'):
             licence_dict['delay'] = self.extract_annonced_delay(licence, cfg)

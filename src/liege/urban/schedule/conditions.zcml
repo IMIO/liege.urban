@@ -63,8 +63,8 @@
         for="Products.urban.interfaces.IInspection
              imio.schedule.content.task_config.ITaskConfig"
         provides="imio.schedule.interfaces.ICreationCondition"
-        factory=".creation_conditions.ShouldCreateInspectionReportEvent"
-        name="liege.urban.schedule.should_create_report_event"
+        factory=".creation_conditions.ShouldWriteInspectionReportEvent"
+        name="liege.urban.schedule.should_write_report_event"
     />
 
     <adapter
@@ -155,6 +155,14 @@
         for="Products.urban.interfaces.ICODT_BaseBuildLicence
              imio.schedule.content.task_config.ITaskConfig"
         provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".conditions.WriteAnnouncementDocumentsCreationCondition"
+        name="liege.urban.schedule.write_announcement_documents"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.ICODT_BaseBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.WriteAnnouncementDocumentsCondition"
         name="liege.urban.schedule.write_announcement_documents"
     />
@@ -212,6 +220,14 @@
         for="Products.urban.interfaces.IBaseAllBuildLicence
              imio.schedule.content.task_config.ITaskConfig"
         provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".conditions.WriteInquiryDocumentsCreationCondition"
+        name="liege.urban.schedule.write_inquiry_documents"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IBaseAllBuildLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.WriteInquiryDocumentsCondition"
         name="liege.urban.schedule.write_inquiry_documents"
     />
@@ -388,6 +404,14 @@
     <adapter
         for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.CollegeEventClosed"
+        name="liege.urban.schedule.college_event_closed"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".conditions.CollegeEventClosed"
         name="liege.urban.schedule.college_event_closed"
@@ -521,6 +545,15 @@
         factory=".conditions.DecisionNotifiedCondition"
         name="liege.urban.schedule.decision_notified"
     />
+
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".conditions.DecisionNotifiedCondition"
+        name="liege.urban.schedule.decision_notified"
+    />
+
     <!-- environment final decision conditions -->
     <adapter
         for="Products.urban.interfaces.IEnvironmentBase

@@ -74,12 +74,18 @@
    <permission-role>Reader</permission-role>
   </permission-map>
   <permission-map name="urban: Add Applicant" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Corporation" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Inquiry" acquired="False">
@@ -249,12 +255,18 @@
    <permission-role>Reader</permission-role>
   </permission-map>
   <permission-map name="urban: Add Applicant" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Corporation" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Inquiry" acquired="False">
@@ -331,12 +343,18 @@
    <permission-role>Reader</permission-role>
   </permission-map>
   <permission-map name="urban: Add Applicant" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Contact" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Corporation" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Inquiry" acquired="False">

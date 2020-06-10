@@ -2,6 +2,8 @@
 
 from imio.schedule.content.condition import CreationCondition
 
+from Products.urban.schedule.conditions.creation import InspectionCreationCondition
+
 from plone import api
 
 from zope.component import getMultiAdapter
@@ -173,37 +175,32 @@ class OneMayorCollegeMeetingDone(MayorCollegeCondition):
         return False
 
 
-class ShouldCreateInspectionReportEvent(CreationCondition):
+class ShouldWriteInspectionReportEvent(InspectionCreationCondition):
     """
+    True in two cases:
+        - the report event does not exist
+        - the report event validation has been refused
     """
 
     def evaluate(self):
-        licence = self.task_container
-        report_events = licence.getAllReportEvents()
-        if not report_events:
+        report = self.get_current_inspection_report()
+        if not report:
             return True
 
-        last_analysis_date = None
-        for action in licence.workflow_history.values()[0][::-1]:
-            if action['review_state'] == 'analysis':
-                last_analysis_date = action['time']
-                break
+        workflow_history = report.workflow_history.values()[0]
+        last_transition = workflow_history[-1]['action']
+        # restart the task if the report validation is refused
+        if last_transition == 'refuse':
+            return True
 
-        for report in report_events:
-            workflow_history = report.workflow_history.values()[0]
-            creation_date = workflow_history[0]['time']
-            last_transition = workflow_history[-1]['action']
-            # restart the task if the report validation is refused
-            if creation_date > last_analysis_date and last_transition != 'refuse':
-                return False
-
-        return True
+        return False
 
 
 class InspectionReportRedacted(CreationCondition):
     """
     InspectionReportEvent has been submited to validation.
     """
+
     def evaluate(self):
         licence = self.task_container
         report_event = licence.getLastReportEvent()

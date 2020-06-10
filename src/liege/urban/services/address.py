@@ -29,7 +29,6 @@ class LiegeAddressService(SQLService):
                     'secteururb',
                     'num_cad_a_',
                     'coderue',
-                    'ref_rue',
                     'adresse',
                     'num_police',
                     'lishab_cp',

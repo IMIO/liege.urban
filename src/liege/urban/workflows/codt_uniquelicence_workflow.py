@@ -174,6 +174,8 @@ class StateRolesMapping(LiegeBase):
         'authorized': {
             'administrative_editors_environment': ('Editor', 'EnvironmentEditor'),
             'administrative_validators_environment': ('Editor', 'EnvironmentEditor'),
+            'technical_editors_environment': ('Editor', 'EnvironmentEditor'),
+            'technical_validators_environment': ('Editor', 'EnvironmentEditor'),
             'administrative_editors': ('Editor', 'UrbanEditor'),
             'administrative_validators': ('Editor', 'UrbanEditor'),
             'Voirie_editors': ('RoadReader',),
@@ -186,6 +188,8 @@ class StateRolesMapping(LiegeBase):
         'refused': {
             'administrative_editors_environment': ('Editor', 'EnvironmentEditor'),
             'administrative_validators_environment': ('Editor', 'EnvironmentEditor'),
+            'technical_editors_environment': ('Editor', 'EnvironmentEditor'),
+            'technical_validators_environment': ('Editor', 'EnvironmentEditor'),
             'administrative_editors': ('Editor', 'UrbanEditor'),
             'administrative_validators': ('Editor', 'UrbanEditor'),
             'Voirie_editors': ('RoadReader',),
@@ -230,6 +234,8 @@ class StateRolesMapping(LiegeBase):
         'abandoned': {
             'administrative_editors_environment': ('Editor', 'EnvironmentEditor'),
             'administrative_validators_environment': ('Editor', 'EnvironmentEditor'),
+            'technical_editors_environment': ('Editor', 'EnvironmentEditor'),
+            'technical_validators_environment': ('Editor', 'EnvironmentEditor'),
             'administrative_editors': ('Editor', 'UrbanEditor'),
             'administrative_validators': ('Editor', 'UrbanEditor'),
             'Voirie_editors': ('RoadReader',),

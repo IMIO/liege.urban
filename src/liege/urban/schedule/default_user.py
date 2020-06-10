@@ -33,17 +33,17 @@ class LiegeDefaultTaskOwner(AssignTaskUser):
         task_group = api.group.get(task.assigned_group)
         group_users = task_group.getGroupMemberIds()
 
-        # try to assign current user
-        user = api.user.get_current()
-        user_id = user.getUserName()
-        if user_id in group_users:
-            return user_id
-
         # try to assign licence foldermanager
         for foldermanager in licence.getFoldermanagers():
             user_id = foldermanager.getPloneUserId()
             if user_id in group_users:
                 return user_id
+
+        # try to assign current user
+        user = api.user.get_current()
+        user_id = user.getUserName()
+        if user_id in group_users:
+            return user_id
 
         # try to assign owner of previous task with the same group
         # TO IMPLEMENTS
