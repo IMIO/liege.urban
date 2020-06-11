@@ -11,8 +11,8 @@ class StateRolesMapping(LiegeBase):
         'deposit': {
             'administrative_editors_environment': ('Editor',),
             'administrative_validators_environment': ('Contributor',),
-            'technical_editors_environment': ('Reader',),
-            'technical_validators_environment': ('Reader',),
+            'technical_editors_environment': ('Editor',),
+            'technical_validators_environment': ('Contributor',),
             'environment_readers': ('Reader',),
         },
 

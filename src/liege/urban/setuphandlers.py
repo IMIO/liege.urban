@@ -190,6 +190,9 @@ def setDefaultApplicationSecurity(context):
                 folder.manage_addLocalRoles("environment_readers", ("Reader", ))
                 folder.manage_addLocalRoles("administrative_editors_environment", ("Contributor",))
                 folder.manage_addLocalRoles("administrative_validators_environment", ("Contributor",))
+            if folder_name == 'envclasthrees':
+                folder.manage_addLocalRoles("technical_editors_environment", ("Contributor",))
+                folder.manage_addLocalRoles("technical_validators_environment", ("Contributor",))
     inspection_folder_names = [
         getLicenceFolderId('Inspection'),
     ]
