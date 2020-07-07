@@ -25,6 +25,7 @@ class StateRolesMapping(BaseRolesMapping):
         'closed': {
             'inspection_editors': ('Reader',),
             'inspection_validators': ('Contributor',),
+            'technical_editors': ('Contributor',),  # allow technical editors to reopen the event.
             'technical_validators': ('Contributor',),
             BaseRolesMapping.get_readers: ('Reader',),
         },
