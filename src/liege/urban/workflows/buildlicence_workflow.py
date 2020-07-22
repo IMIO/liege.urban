@@ -159,6 +159,18 @@ class StateRolesMapping(LiegeBase):
             'urban_readers': ('Reader',),
         },
 
+        'forzen_suspension': {
+            'administrative_editors': ('Editor',),
+            'administrative_validators': ('Editor',),
+            'technical_editors': ('Editor',),
+            'technical_validators': ('Editor',),
+            'Voirie_editors': ('RoadEditor', 'RoadReader'),
+            'Voirie_validators': ('RoadEditor', 'RoadReader'),
+            LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
+            'urban_readers': ('Reader',),
+        },
+
         'filed_away': {
             'Voirie_editors': ('RoadReader',),
             'Voirie_validators': ('RoadReader',),

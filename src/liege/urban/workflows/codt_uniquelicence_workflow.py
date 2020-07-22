@@ -231,6 +231,22 @@ class StateRolesMapping(LiegeBase):
             'environment_readers': ('Reader',),
         },
 
+        'frozen_suspension': {
+            'administrative_editors_environment': ('Editor', 'EnvironmentEditor'),
+            'administrative_validators_environment': ('Editor', 'EnvironmentEditor'),
+            'technical_editors_environment': ('Editor', 'EnvironmentEditor'),
+            'technical_validators_environment': ('Editor', 'EnvironmentEditor'),
+            'administrative_editors': ('Editor', 'UrbanEditor'),
+            'administrative_validators': ('Editor', 'UrbanEditor'),
+            'technical_editors': ('Editor', 'UrbanEditor'),
+            'technical_validators': ('Editor', 'UrbanEditor'),
+            'Voirie_editors': ('RoadReader',),
+            'Voirie_validators': ('RoadReader',),
+            LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'urban_readers': ('Reader',),
+            'environment_readers': ('Reader',),
+        },
+
         'abandoned': {
             'administrative_editors_environment': ('Editor', 'EnvironmentEditor'),
             'administrative_validators_environment': ('Editor', 'EnvironmentEditor'),
