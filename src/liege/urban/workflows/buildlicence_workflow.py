@@ -159,7 +159,7 @@ class StateRolesMapping(LiegeBase):
             'urban_readers': ('Reader',),
         },
 
-        'forzen_suspension': {
+        'frozen_suspension': {
             'administrative_editors': ('Editor',),
             'administrative_validators': ('Editor',),
             'technical_editors': ('Editor',),
