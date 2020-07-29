@@ -61,6 +61,9 @@ class LiegeLicenceProxyObject(LicenceDisplayProxyObject):
             if group:
                 groups = set([g.id for g in api.group.get_groups(username=folder_manager.getPloneUserId())])
                 if groups.intersection(groups_mapping.get(group, set())):
-                    return folder_manager
+                    fm_proxy = folder_manager.restrictedTraverse('@@document_generation_helper_view').context
+                    return fm_proxy
+
             else:
-                return folder_manager
+                fm_proxy = folder_manager.restrictedTraverse('@@document_generation_helper_view').context
+                return fm_proxy
