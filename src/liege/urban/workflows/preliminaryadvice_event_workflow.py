@@ -24,6 +24,7 @@ class StateRolesMapping(LocalRoleAdapter):
         },
 
         'executive_validation': {
+            'administrative_editors': ('Editor',),
             'administrative_validators': ('Editor', 'Contributor'),
             'urban_readers': ('Reader',),
             'environment_readers': ('Reader',),
