@@ -3644,7 +3644,7 @@ schedule_config = {
             'creation_conditions': (
                 CreationConditionObject('urban.schedule.condition.followup_with_delay_written'),
             ),
-            'ending_states': ('ended',),
+            'ending_states': ('ended', 'analysis'),
             'start_date': 'urban.schedule.start_date.followup_date',
             'calculation_delay': (
                 'urban.schedule.delay.inspection_followup_delay',
@@ -3713,6 +3713,22 @@ schedule_config = {
             'recurrence_states': ('administrative_answer', 'inspection_follow_up', 'closed'),
             'recurrence_conditions': (
                 RecurrenceConditionObject('urban.schedule.condition.followup_ticket_is_closed'),
+            ),
+        },
+        {
+            'type_name': 'TaskConfig',
+            'id': 'suivi-inspection',
+            'title': 'Suivi inspection',
+            'default_assigned_group': 'inspection_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('inspection_follow_up',),
+            'ending_states': ('analysis', 'ended',),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 1,
+            'activate_recurrency': True,
+            'recurrence_states': ('inspection_follow_up',),
+            'recurrence_conditions': (
+                RecurrenceConditionObject('urban.schedule.condition.followup_with_delay_written'),
             ),
         },
         {
