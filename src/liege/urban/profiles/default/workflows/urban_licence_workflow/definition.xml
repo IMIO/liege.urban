@@ -12,6 +12,7 @@
  <permission>urban: Add Applicant</permission>
  <permission>urban: Add Corporation</permission>
  <permission>urban: Add Inquiry</permission>
+ <permission>urban: Add CODT_UniqueLicenceInquiry</permission>
  <permission>urban: Add PortionOut</permission>
  <permission>urban: Add UrbanEvent</permission>
  <permission>urban: Add UrbanEventOpinionRequest</permission>
@@ -89,6 +90,11 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Inquiry" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -184,6 +190,11 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut" acquired="False">
    <permission-role>AddressEditor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -270,6 +281,11 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Inquiry" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -362,6 +378,11 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut" acquired="False">
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -445,6 +466,11 @@
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Inquiry" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
@@ -539,6 +565,11 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="urban: Add CODT_UniqueLicenceInquiry" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
   <permission-map name="urban: Add PortionOut" acquired="False">
    <permission-role>AddressEditor</permission-role>
    <permission-role>Contributor</permission-role>
@@ -583,13 +614,13 @@
  <transition transition_id="isinacceptable" title="isinacceptable" new_state="inacceptable" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="%(portal_url)s/isincomplete.png">retire</action>
   <guard>
-   <guard-permission>Review portal content</guard-permission>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="retire" title="retire" new_state="retired" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="%(portal_url)s/retire.png">retire</action>
   <guard>
-   <guard-permission>Review portal content</guard-permission>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
