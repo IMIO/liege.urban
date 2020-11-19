@@ -733,6 +733,7 @@
    <permission-role>AddressEditor</permission-role>
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
+   <permission-role>RoadEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
