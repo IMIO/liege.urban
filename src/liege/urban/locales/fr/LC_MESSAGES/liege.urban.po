@@ -125,7 +125,7 @@ msgstr "Type de dossier"
 #. Default: "Formal_notice_old_reference"
 #: ../content/inspection.py:16
 msgid "urban_label_formal_notice_old_reference"
-msgstr "Ancien n° de mise en demeure"
+msgstr "Ancien n° d'AD"
 
 #: ../content/genericlicence.py:60
 msgid "urban_label_futurePathCoating"
