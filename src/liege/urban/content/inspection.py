@@ -29,3 +29,24 @@ def update_item_schema(baseSchema):
 
 
 Inspection.schema = update_item_schema(Inspection.schema)
+
+
+def updateTitle(self):
+    """
+        Update the title to clearly identify the licence
+    """
+    proprietary = ''
+    if self.getProprietaries():
+        proprietary = self.getProprietaries()[0].Title()
+    AD_refs = self.getFormal_notice_old_reference()
+    title = "{}{}{} - {}".format(
+        self.getReference(),
+        AD_refs and ' - {}'.format(AD_refs) or '',
+        proprietary and ' - {}'.format(proprietary) or '',
+        self.getLicenceSubject()
+    )
+    self.setTitle(title)
+    self.reindexObject(idxs=('Title', 'sortable_title',))
+
+
+Inspection.updateTitle = updateTitle
