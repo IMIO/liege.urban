@@ -11,7 +11,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
         # EnvBordering can be edited by urban groups as well.
         if IEnvClassBordering.providedBy(licence):
             return 'urban_and_environment'
-        return super(DefaultStateRolesMapping, self).get_allowed_groups()
+        return super(DefaultStateRolesMapping, self).get_allowed_groups(licence)
 
     def get_editors(self):
         """ """
