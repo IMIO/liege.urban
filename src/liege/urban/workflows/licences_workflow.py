@@ -7,14 +7,11 @@ from Products.urban.workflows.licence_workflow import StateRolesMapping as BaseR
 class DefaultStateRolesMapping(BaseRolesMapping):
     """ """
 
-    def get_readers(self):
-        """ """
-        licence = self.licence
-        # Bordering can be read by urban groups as well.
+    def get_allowed_groups(self, licence):
+        # EnvBordering can be edited by urban groups as well.
         if IEnvClassBordering.providedBy(licence):
-            return ['urban_readers', 'environment_readers']
-        else:
-            return super(DefaultStateRolesMapping, self).get_readers()
+            return 'urban_and_environment'
+        return super(DefaultStateRolesMapping, self).get_allowed_groups()
 
     def get_editors(self):
         """ """
@@ -43,7 +40,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
 
     mapping = {
         'in_progress': {
-            get_readers: ('Reader',),
+            BaseRolesMapping.get_readers: ('Reader',),
             get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
@@ -52,7 +49,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
         },
 
         'accepted': {
-            get_readers: ('Reader',),
+            BaseRolesMapping.get_readers: ('Reader',),
             get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
@@ -61,7 +58,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
         },
 
         'incomplete': {
-            get_readers: ('Reader',),
+            BaseRolesMapping.get_readers: ('Reader',),
             get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
@@ -70,7 +67,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
         },
 
         'refused': {
-            get_readers: ('Reader',),
+            BaseRolesMapping.get_readers: ('Reader',),
             get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
@@ -79,7 +76,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
         },
 
         'inacceptable': {
-            get_readers: ('Reader',),
+            BaseRolesMapping.get_readers: ('Reader',),
             get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
@@ -88,7 +85,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
         },
 
         'retired': {
-            get_readers: ('Reader',),
+            BaseRolesMapping.get_readers: ('Reader',),
             get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
