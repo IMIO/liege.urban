@@ -22,6 +22,8 @@ class StateRolesMapping(LocalRoleAdapter):
         },
 
         'technical_analysis': {
+            'administrative_editors': ('Editor', 'AddressEditor'),
+            'administrative_validators': ('Contributor', 'AddressEditor'),
             'technical_editors': ('Editor', 'AddressEditor'),
             'technical_validators': ('Editor', 'AddressEditor'),
             'inspection_editors': ('Reader',),
@@ -29,6 +31,8 @@ class StateRolesMapping(LocalRoleAdapter):
         },
 
         'technical_validation': {
+            'administrative_editors': ('Editor', 'AddressEditor'),
+            'administrative_validators': ('Contributor', 'AddressEditor'),
             'technical_validators': ('Contributor', 'AddressEditor'),
             'inspection_editors': ('Reader',),
             'urban_readers': ('Reader',),
