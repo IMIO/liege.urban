@@ -71,6 +71,14 @@
         for="Products.urban.interfaces.IInspection
              imio.schedule.content.task_config.ITaskConfig"
         provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".creation_conditions.ShouldReWriteInspectionReportEvent"
+        name="liege.urban.schedule.should_rewrite_report_event"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IInspection
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
         factory=".creation_conditions.InspectionReportRedacted"
         name="liege.urban.schedule.report_event_redacted"
     />

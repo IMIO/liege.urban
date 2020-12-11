@@ -177,15 +177,26 @@ class OneMayorCollegeMeetingDone(MayorCollegeCondition):
 
 class ShouldWriteInspectionReportEvent(InspectionCreationCondition):
     """
-    True in two cases:
-        - the report event does not exist
-        - the report event validation has been refused
+    The report event does not exist
     """
 
     def evaluate(self):
         report = self.get_current_inspection_report()
         if not report:
             return True
+
+        return False
+
+
+class ShouldReWriteInspectionReportEvent(InspectionCreationCondition):
+    """
+    The report event validation has been refused
+    """
+
+    def evaluate(self):
+        report = self.get_current_inspection_report()
+        if not report:
+            return False
 
         workflow_history = report.workflow_history.values()[0]
         last_transition = workflow_history[-1]['action']
