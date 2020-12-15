@@ -154,9 +154,15 @@
  </state>
  <state state_id="abandoned" title="abandoned">
   <exit-transition transition_id="resume"/>
-  <permission-map name="ATContentTypes: Add File" acquired="True">
+  <permission-map name="ATContentTypes: Add File" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="ATContentTypes: Add Image" acquired="True">
+  <permission-map name="ATContentTypes: Add Image" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="Access contents information" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -178,7 +184,14 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="List folder contents" acquired="True">
+  <permission-map name="List folder contents" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -194,9 +207,19 @@
    <permission-role>RoadEditor</permission-role>
    <permission-role>RoadReader</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: External Reader" acquired="True">
+  <permission-map name="liege.urban: External Reader" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: Internal Editor" acquired="True">
+  <permission-map name="liege.urban: Internal Editor" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="liege.urban: Internal Reader" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -204,9 +227,19 @@
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: Road Editor" acquired="True">
+  <permission-map name="liege.urban: Road Editor" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>RoadEditor</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: Road Reader" acquired="True">
+  <permission-map name="liege.urban: Road Reader" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
   </permission-map>
   <permission-map name="liege.urban: Validate" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -222,7 +255,10 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add Corporation" acquired="True">
+  <permission-map name="urban: Add Corporation" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Inquiry" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -238,7 +274,10 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add UrbanEventOpinionRequest" acquired="True">
+  <permission-map name="urban: Add UrbanEventOpinionRequest" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
   </permission-map>
  </state>
  <state state_id="accepted" title="accepted">
@@ -1010,9 +1049,15 @@
  </state>
  <state state_id="filed_away" title="filed_away">
   <exit-transition transition_id="reopen"/>
-  <permission-map name="ATContentTypes: Add File" acquired="True">
+  <permission-map name="ATContentTypes: Add File" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="ATContentTypes: Add Image" acquired="True">
+  <permission-map name="ATContentTypes: Add Image" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="Access contents information" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1057,9 +1102,19 @@
    <permission-role>RoadEditor</permission-role>
    <permission-role>RoadReader</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: External Reader" acquired="True">
+  <permission-map name="liege.urban: External Reader" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>ExternalReader</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: Internal Editor" acquired="True">
+  <permission-map name="liege.urban: Internal Editor" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="liege.urban: Internal Reader" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1067,9 +1122,19 @@
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: Road Editor" acquired="True">
+  <permission-map name="liege.urban: Road Editor" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>RoadEditor</permission-role>
   </permission-map>
-  <permission-map name="liege.urban: Road Reader" acquired="True">
+  <permission-map name="liege.urban: Road Reader" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadEditor</permission-role>
+   <permission-role>RoadReader</permission-role>
   </permission-map>
   <permission-map name="liege.urban: Validate" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1085,7 +1150,10 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add Corporation" acquired="True">
+  <permission-map name="urban: Add Corporation" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
   </permission-map>
   <permission-map name="urban: Add Inquiry" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1101,7 +1169,10 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add UrbanEventOpinionRequest" acquired="True">
+  <permission-map name="urban: Add UrbanEventOpinionRequest" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
   </permission-map>
  </state>
  <state state_id="incomplete" title="incomplete">
