@@ -218,9 +218,10 @@ class LicencesExtractForm(form.Form):
         return decision
 
     def _get_decision_event(self, licence):
+        decision_event = None
         if interfaces.IEnvironmentBase.providedBy(licence):
             decision_event = licence.getLastLicenceDelivery()
-        else:
+        elif hasattr(licence, 'getLastTheLicence'):
             decision_event = licence.getLastTheLicence()
         return decision_event
 
