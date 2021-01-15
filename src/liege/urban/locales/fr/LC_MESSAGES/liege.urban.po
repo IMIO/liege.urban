@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-05-11 07:43+0000\n"
+"POT-Creation-Date: 2021-01-15 09:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,14 @@ msgstr ""
 #: ../browser/activity_report.py:24
 msgid "Date start"
 msgstr ""
+
+#: ../interfaces.py:33
+msgid "IInspectionBuidlingDivisionAttestationCollege type marker interface"
+msgstr "Courrier attestation conformité"
+
+#: ../interfaces.py:29
+msgid "IInspectionBuidlingDivisionAttestationMail type marker interface"
+msgstr "Collège attestation conformité"
 
 #: ../interfaces.py:25
 msgid "IInternalOpinionRequestEvent type marker interface"
@@ -123,7 +131,7 @@ msgid "urban_label_folderCategory"
 msgstr "Type de dossier"
 
 #. Default: "Formal_notice_old_reference"
-#: ../content/inspection.py:16
+#: ../content/inspection.py:17
 msgid "urban_label_formal_notice_old_reference"
 msgstr "Ancien n° d'AD"
 

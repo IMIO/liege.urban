@@ -26,6 +26,9 @@ msgstr "abandonner"
 msgid "abandoned"
 msgstr "Abandonné"
 
+msgid "accept_licence"
+msgstr "Permis autorisé"
+
 msgid "acceptable"
 msgstr "Recevable"
 

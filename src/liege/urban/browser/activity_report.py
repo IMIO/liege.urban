@@ -188,6 +188,21 @@ class LicencesExtractForm(form.Form):
         if hasattr(licence, 'getDepositType'):
             licence_dict['envclass3_deposit_type'] = licence.getDepositType() or ''
 
+        if hasattr(licence, 'getInspection_context'):
+            licence_dict['inspection_context'] = licence.getInspection_context() or ''
+
+        if hasattr(licence, 'getLastBuidlingDivisionAttestationMail'):
+            event = self.getLastBuidlingDivisionAttestationMail(licence)
+            date = event and str(event.getEventDate() or '')
+            licence_dict['inspection_courrier_conformite_date'] = date
+            licence_dict['inspection_courrier_conformite_avis'] = event and event.getExternalDecision() or ''
+
+        if hasattr(licence, 'getLastBuidlingDivisionAttestationCollege'):
+            event = self.getLastBuidlingDivisionAttestationCollege(licence)
+            date = event and str(event.getEventDate() or '')
+            licence_dict['inspection_college_conformite_date'] = date
+            licence_dict['inspection_college_conformite_avis'] = event and event.getExternalDecision() or ''
+
         return licence_dict
 
     def extract_decision_date(self, licence):
@@ -273,7 +288,7 @@ class LicencesExtractForm(form.Form):
         }
         try:
             capakey = address.get_capakey()
-        except:
+        except Exception:
             capakey = ''
         address_dict['capakey'] = capakey
         return address_dict

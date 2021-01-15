@@ -23,3 +23,11 @@ class IShore(Interface):
 
 class IInternalOpinionRequestEvent(IOpinionRequestEvent):
     __doc__ = _("""IInternalOpinionRequestEvent type marker interface""")
+
+
+class IInspectionBuidlingDivisionAttestationMail(Interface):
+    __doc__ = _("""IInspectionBuidlingDivisionAttestationMail type marker interface""")
+
+
+class IInspectionBuidlingDivisionAttestationCollege(Interface):
+    __doc__ = _("""IInspectionBuidlingDivisionAttestationCollege type marker interface""")

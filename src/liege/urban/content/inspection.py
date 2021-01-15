@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from liege.urban import UrbanMessage as _
+from liege.urban import interfaces
 
 from Products.Archetypes.atapi import Schema
 from Products.Archetypes.atapi import StringField
@@ -49,4 +50,14 @@ def updateTitle(self):
     self.reindexObject(idxs=('Title', 'sortable_title',))
 
 
+def getLastBuidlingDivisionAttestationMail(self):
+    return self.getLastEvent(interfaces.IInspectionBuidlingDivisionAttestationMail)
+
+
+def getLastBuidlingDivisionAttestationCollege(self):
+    return self.getLastEvent(interfaces.IInspectionBuidlingDivisionAttestationCollege)
+
+
 Inspection.updateTitle = updateTitle
+Inspection.getLastBuidlingDivisionAttestationMail = getLastBuidlingDivisionAttestationMail
+Inspection.getLastBuidlingDivisionAttestationCollege = getLastBuidlingDivisionAttestationCollege

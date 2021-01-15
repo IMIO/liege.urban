@@ -26,6 +26,9 @@ msgstr ""
 msgid "acceptable"
 msgstr ""
 
+msgid "accept_licence"
+msgstr ""
+
 msgid "acceptable_validation"
 msgstr ""
 

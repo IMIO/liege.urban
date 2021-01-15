@@ -6,4 +6,12 @@
     interface=".interfaces.IInternalOpinionRequestEvent"
     type="Products.urban.interfaces.IEventTypeType"/>
 
+  <interface
+    interface=".interfaces.IInspectionBuidlingDivisionAttestationMail"
+    type="Products.urban.interfaces.IEventTypeType"/>
+
+  <interface
+    interface=".interfaces.IInspectionBuidlingDivisionAttestationCollege"
+    type="Products.urban.interfaces.IEventTypeType"/>
+
 </configure>
