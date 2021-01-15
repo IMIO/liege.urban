@@ -192,13 +192,13 @@ class LicencesExtractForm(form.Form):
             licence_dict['inspection_context'] = licence.getInspection_context() or ''
 
         if hasattr(licence, 'getLastBuidlingDivisionAttestationMail'):
-            event = self.getLastBuidlingDivisionAttestationMail(licence)
+            event = licence.getLastBuidlingDivisionAttestationMail(licence)
             date = event and str(event.getEventDate() or '')
             licence_dict['inspection_courrier_conformite_date'] = date
             licence_dict['inspection_courrier_conformite_avis'] = event and event.getExternalDecision() or ''
 
         if hasattr(licence, 'getLastBuidlingDivisionAttestationCollege'):
-            event = self.getLastBuidlingDivisionAttestationCollege(licence)
+            event = licence.getLastBuidlingDivisionAttestationCollege(licence)
             date = event and str(event.getEventDate() or '')
             licence_dict['inspection_college_conformite_date'] = date
             licence_dict['inspection_college_conformite_avis'] = event and event.getExternalDecision() or ''
