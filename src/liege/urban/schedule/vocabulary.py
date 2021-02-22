@@ -78,6 +78,8 @@ class ScheduleUsersVocabularyFactory(UsersFromGroupsVocabularyFactory):
         'technical_validators',
         'administrative_editors',
         'administrative_validators',
+        'inspection_editors',
+        'inspection_validators',
     ]
 
 
