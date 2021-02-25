@@ -88,6 +88,13 @@
           factory="liege.urban.documentgenerator.helper_view.LiegeLicenceProxyObject"
           permission="zope2.View"
        />
+      <adapter
+          for="Products.urban.interfaces.IGenericLicence
+               zope.interface.Interface"
+          provides="collective.documentgenerator.interfaces.IDisplayProxyObject"
+          factory="liege.urban.documentgenerator.helper_view.LiegeEventProxyObject"
+          permission="zope2.View"
+       />
 
       <!-- documentgenerator proxy object-->
       <adapter
