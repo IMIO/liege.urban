@@ -37,8 +37,10 @@ def updateTitle(self):
         Update the title to clearly identify the licence
     """
     proprietary = ''
-    if self.getProprietaries():
-        proprietary = self.getProprietaries()[0].Title()
+    proprietaries = [pro for pro in context.getProprietaries()
+                        if api.content.get_state(pro) == 'enabled']
+    if proprietaries:
+        proprietary = proprietaries[0].Title()
     AD_refs = self.getFormal_notice_old_reference()
     title = "{}{}{} - {}".format(
         self.getReference(),
