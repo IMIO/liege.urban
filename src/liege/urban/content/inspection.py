@@ -37,7 +37,7 @@ def updateTitle(self):
         Update the title to clearly identify the licence
     """
     proprietary = ''
-    proprietaries = [pro for pro in context.getProprietaries()
+    proprietaries = [pro for pro in self.getProprietaries()
                         if api.content.get_state(pro) == 'enabled']
     if proprietaries:
         proprietary = proprietaries[0].Title()
