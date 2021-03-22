@@ -8,6 +8,8 @@ from Products.Archetypes.atapi import StringField
 
 from Products.urban.content.licence.Inspection import Inspection
 
+from plone import api
+
 
 specific_schema = Schema((
     StringField(
