@@ -593,40 +593,43 @@
  <transition transition_id="abandon" title="abandon" new_state="abandoned" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">abandon</action>
   <guard>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="close_defavorable" title="close_defavorable" new_state="defavorable" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">close_defavorable</action>
   <guard>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="close_favorable" title="close_favorable" new_state="favorable" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">close_favorable</action>
   <guard>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="go_back_1" title="go_back_1" new_state="deposit" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">go_back_1</action>
   <guard>
-   <guard-permission>Manage portal content</guard-permission>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="go_back_2" title="go_back_2" new_state="analysis_validation" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">go_back_2</action>
   <guard>
-   <guard-permission>Manage portal content</guard-permission>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="go_back_3" title="go_back_3" new_state="college" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">go_back_3</action>
   <guard>
-   <guard-permission>Manage portal content</guard-permission>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="go_back_4" title="go_back_4" new_state="college" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">go_back_4</action>
   <guard>
-   <guard-permission>Manage portal content</guard-permission>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="propose_analysis" title="propose_analysis" new_state="analysis_validation" trigger="USER" before_script="" after_script="">
