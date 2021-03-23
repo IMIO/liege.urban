@@ -13,4 +13,6 @@ LICENCE_FINAL_STATES = [
     'retired',
     'abandoned',
     'filed_away',
+    'favorable',
+    'defavorable',
 ]

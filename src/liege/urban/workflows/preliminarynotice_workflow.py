@@ -45,4 +45,12 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_validators': ('Editor',),
             'urban_readers': ('Reader',),
         },
+
+        'abandoned': {
+            'administrative_editors': ('Editor',),
+            'administrative_validators': ('Editor',),
+            'technical_editors': ('Editor',),
+            'technical_validators': ('Editor',),
+            'urban_readers': ('Reader',),
+        },
     }
