@@ -23,6 +23,7 @@ class StateRolesMapping(LiegeBase):
             'administrative_validators_environment': ('Contributor',),
             'technical_editors_environment': ('EnvironmentEditor',),
             'technical_validators_environment': ('EnvironmentContributor',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'environment_readers': ('Reader',),
         },
 
@@ -39,6 +40,7 @@ class StateRolesMapping(LiegeBase):
 
         'checking_completion': {
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'administrative_editors_environment': ('Editor',),
             'administrative_validators_environment': ('Contributor',),
             'technical_editors_environment': ('EnvironmentEditor',),
@@ -48,6 +50,7 @@ class StateRolesMapping(LiegeBase):
 
         'complete': {
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'administrative_editors_environment': ('Editor',),
             'administrative_validators_environment': ('Contributor',),
             'technical_editors_environment': ('EnvironmentEditor',),
@@ -57,6 +60,7 @@ class StateRolesMapping(LiegeBase):
 
         'incomplete': {
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'administrative_editors_environment': ('Editor',),
             'administrative_validators_environment': ('Contributor',),
             'technical_editors_environment': ('Editor',),
@@ -66,6 +70,7 @@ class StateRolesMapping(LiegeBase):
 
         'technical_report_validation': {
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'administrative_editors_environment': ('Editor',),
             'administrative_validators_environment': ('Contributor',),
             'technical_validators_environment': ('EnvironmentContributor',),
@@ -74,6 +79,7 @@ class StateRolesMapping(LiegeBase):
 
         'college_in_progress': {
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'administrative_editors_environment': ('Editor',),
             'administrative_validators_environment': ('Contributor',),
             'technical_editors_environment': ('EnvironmentEditor',),
@@ -83,6 +89,7 @@ class StateRolesMapping(LiegeBase):
 
         'FT_opinion': {
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'administrative_editors_environment': ('Editor',),
             'administrative_validators_environment': ('Contributor',),
             'technical_editors_environment': ('EnvironmentEditor',),
@@ -92,6 +99,7 @@ class StateRolesMapping(LiegeBase):
 
         'technical_synthesis_validation': {
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'administrative_editors_environment': ('Editor',),
             'administrative_validators_environment': ('Contributor',),
             'technical_validators_environment': ('EnvironmentContributor',),
@@ -100,6 +108,7 @@ class StateRolesMapping(LiegeBase):
 
         'final_decision_in_progress': {
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'administrative_editors_environment': ('Editor',),
             'administrative_validators_environment': ('Contributor',),
             'technical_editors_environment': ('EnvironmentEditor',),
@@ -109,6 +118,7 @@ class StateRolesMapping(LiegeBase):
 
         'inacceptable': {
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'administrative_editors_environment': ('Editor',),
             'administrative_validators_environment': ('Contributor',),
             'technical_editors_environment': ('EnvironmentEditor',),
@@ -118,6 +128,7 @@ class StateRolesMapping(LiegeBase):
 
         'authorized': {
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'administrative_editors_environment': ('Editor',),
             'administrative_validators_environment': ('Contributor',),
             'technical_editors_environment': ('EnvironmentEditor',),
@@ -127,6 +138,7 @@ class StateRolesMapping(LiegeBase):
 
         'refused': {
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'administrative_editors_environment': ('Editor',),
             'administrative_validators_environment': ('Contributor',),
             'technical_editors_environment': ('EnvironmentEditor',),
@@ -136,6 +148,7 @@ class StateRolesMapping(LiegeBase):
 
         'abandoned': {
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'administrative_editors_environment': ('Editor',),
             'administrative_validators_environment': ('Contributor',),
             'technical_editors_environment': ('EnvironmentEditor',),

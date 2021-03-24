@@ -53,6 +53,16 @@
     />
 
   <permission
+    id="liege.urban.descriptioneditor"
+    title="liege.urban: Description Editor"
+    />
+
+  <permission
+    id="liege.urban.habitationeditor"
+    title="liege.urban: Habitation Editor"
+    />
+
+  <permission
     id="liege.urban.validate"
     title="liege.urban: Validate"
     />

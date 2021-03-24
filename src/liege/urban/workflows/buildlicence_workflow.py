@@ -11,6 +11,7 @@ class StateRolesMapping(LiegeBase):
             LiegeBase.get_opinion_editors: ('ExternalReader',),
             'administrative_editors': ('Editor',),
             'administrative_validators': ('Contributor',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 
@@ -32,6 +33,7 @@ class StateRolesMapping(LiegeBase):
             'Voirie_editors': ('RoadReader',),
             'Voirie_validators': ('RoadReader',),
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 
@@ -41,6 +43,7 @@ class StateRolesMapping(LiegeBase):
             'Voirie_editors': ('RoadReader',),
             'Voirie_validators': ('RoadReader',),
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 
@@ -50,6 +53,7 @@ class StateRolesMapping(LiegeBase):
             'Voirie_editors': ('RoadReader',),
             'Voirie_validators': ('RoadReader',),
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 
@@ -61,6 +65,7 @@ class StateRolesMapping(LiegeBase):
             'Voirie_editors': ('RoadReader',),
             'Voirie_validators': ('RoadReader',),
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 
@@ -69,6 +74,7 @@ class StateRolesMapping(LiegeBase):
             'Voirie_editors': ('RoadReader',),
             'Voirie_validators': ('RoadReader',),
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 
@@ -80,6 +86,7 @@ class StateRolesMapping(LiegeBase):
             'Voirie_editors': ('RoadEditor', 'RoadReader'),
             'Voirie_validators': ('RoadEditor', 'RoadReader'),
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 
@@ -88,6 +95,7 @@ class StateRolesMapping(LiegeBase):
             'Voirie_editors': ('RoadEditor', 'RoadReader'),
             'Voirie_validators': ('RoadEditor', 'RoadReader'),
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 
@@ -99,6 +107,7 @@ class StateRolesMapping(LiegeBase):
             'Voirie_editors': ('RoadEditor', 'RoadReader'),
             'Voirie_validators': ('RoadEditor', 'RoadReader'),
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 
@@ -108,6 +117,7 @@ class StateRolesMapping(LiegeBase):
             'Voirie_editors': ('RoadEditor', 'RoadReader'),
             'Voirie_validators': ('RoadEditor', 'RoadReader'),
             LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 

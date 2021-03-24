@@ -29,6 +29,7 @@ class StateRolesMapping(LiegeBase):
         },
 
         'technical_analysis_post_investigation': {
+            'survey_editors': ('Reader', 'AddressEditor'),
             'fittingout_technicians': ('Editor', ),
             'fittingout_technicians_validators': ('Contributor', )
         }

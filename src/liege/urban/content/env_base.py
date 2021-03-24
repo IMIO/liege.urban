@@ -101,7 +101,7 @@ env_licence_classes = [
 ]
 
 licences_permissions_mapping = {
-    'urban_description': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
+    'urban_description': ('liege.urban: External Reader', 'liege.urban: Description Editor'),
     'urban_location': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
     'urban_environment': ('liege.urban: Internal Reader', 'liege.urban: Environment Editor'),
     'urban_road': ('liege.urban: Road Reader', 'liege.urban: Road Editor'),
