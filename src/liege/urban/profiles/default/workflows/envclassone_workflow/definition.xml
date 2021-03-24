@@ -75,6 +75,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>EnvironmentContributor</permission-role>
    <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>Reviewer</permission-role>
@@ -237,6 +238,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>EnvironmentContributor</permission-role>
    <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>Reviewer</permission-role>
@@ -398,6 +400,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>EnvironmentContributor</permission-role>
    <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>Reviewer</permission-role>
@@ -560,6 +563,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>EnvironmentContributor</permission-role>
    <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>Reviewer</permission-role>
@@ -721,6 +725,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>EnvironmentContributor</permission-role>
    <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>Reviewer</permission-role>
@@ -882,6 +887,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>EnvironmentContributor</permission-role>
    <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>Reviewer</permission-role>
@@ -1043,6 +1049,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>EnvironmentContributor</permission-role>
    <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>Reviewer</permission-role>
@@ -1200,6 +1207,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>EnvironmentContributor</permission-role>
    <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>Reviewer</permission-role>
@@ -1358,6 +1366,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>EnvironmentContributor</permission-role>
    <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>Reviewer</permission-role>
@@ -1515,6 +1524,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>EnvironmentContributor</permission-role>
    <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>Reviewer</permission-role>
@@ -1670,6 +1680,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>EnvironmentContributor</permission-role>
    <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>Reviewer</permission-role>
@@ -1822,6 +1833,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>EnvironmentContributor</permission-role>
    <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>Reviewer</permission-role>
@@ -1974,6 +1986,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>EnvironmentContributor</permission-role>
    <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>Reviewer</permission-role>
@@ -2126,6 +2139,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>EnvironmentContributor</permission-role>
    <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>Reviewer</permission-role>
@@ -2278,6 +2292,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>EnvironmentContributor</permission-role>
    <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>Reviewer</permission-role>
@@ -2439,6 +2454,7 @@
    <permission-role>Manager</permission-role>
    <permission-role>EnvironmentContributor</permission-role>
    <permission-role>EnvironmentEditor</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Review portal content" acquired="False">
    <permission-role>Reviewer</permission-role>
