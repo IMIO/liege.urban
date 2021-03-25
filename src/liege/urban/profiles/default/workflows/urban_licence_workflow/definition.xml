@@ -62,6 +62,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Modify view template" acquired="False">
   </permission-map>
@@ -169,6 +170,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Modify view template" acquired="False">
    <permission-role>Manager</permission-role>
@@ -277,6 +279,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Modify view template" acquired="False">
    <permission-role>Manager</permission-role>
@@ -381,6 +384,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Modify view template" acquired="False">
    <permission-role>Manager</permission-role>
@@ -486,6 +490,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Modify view template" acquired="False">
    <permission-role>Manager</permission-role>
@@ -593,6 +598,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="Modify view template" acquired="False">
    <permission-role>Manager</permission-role>

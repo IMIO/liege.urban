@@ -10,23 +10,27 @@ class StateRolesMapping(LocalRoleAdapter):
         'deposit': {
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor', 'AddressEditor'),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 
         'analysis': {
             'technical_editors': ('Editor',),
             'technical_validators': ('Contributor',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 
         'analysis_validation': {
             'technical_validators': ('Contributor',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 
         'college': {
             'administrative_editors': ('Editor',),
             'administrative_validators': ('Contributor',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 
@@ -35,6 +39,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Editor',),
             'technical_editors': ('Editor',),
             'technical_validators': ('Editor',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 
@@ -43,6 +48,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Editor',),
             'technical_editors': ('Editor',),
             'technical_validators': ('Editor',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
 
@@ -51,6 +57,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Editor',),
             'technical_editors': ('Editor',),
             'technical_validators': ('Editor',),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
         },
     }
