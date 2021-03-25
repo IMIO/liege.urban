@@ -9,6 +9,8 @@
  <permission>View</permission>
  <permission>liege.urban: External Reader</permission>
  <permission>liege.urban: Validate</permission>
+ <permission>liege.urban: Description Editor</permission>
+ <permission>liege.urban: Habitation Editor</permission>
  <permission>urban: Add Applicant</permission>
  <permission>urban: Add Contact</permission>
  <permission>urban: Add Corporation</permission>
@@ -62,6 +64,16 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Description Editor" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Habitation Editor" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="liege.urban: External Reader" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -145,6 +157,16 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Description Editor" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Habitation Editor" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="liege.urban: External Reader" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -230,6 +252,16 @@
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
+  <permission-map name="liege.urban: Description Editor" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Habitation Editor" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
+  </permission-map>
   <permission-map name="liege.urban: External Reader" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -310,6 +342,16 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Description Editor" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Habitation Editor" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="liege.urban: External Reader" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -393,6 +435,16 @@
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
+  <permission-map name="liege.urban: Description Editor" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Habitation Editor" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
+  </permission-map>
   <permission-map name="liege.urban: External Reader" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -474,6 +526,16 @@
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
+  <permission-map name="liege.urban: Description Editor" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Habitation Editor" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
+  </permission-map>
   <permission-map name="liege.urban: External Reader" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -554,6 +616,16 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Description Editor" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
+  </permission-map>
+  <permission-map name="liege.urban: Habitation Editor" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>AddressEditor</permission-role>
   </permission-map>
   <permission-map name="liege.urban: External Reader" acquired="False">
    <permission-role>Contributor</permission-role>

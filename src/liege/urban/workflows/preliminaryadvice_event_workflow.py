@@ -12,6 +12,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_editors': ('Editor',),
             'technical_editors': ('Editor',),
             'technical_validators': ('Editor', 'Contributor'),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
             'environment_readers': ('Reader',),
         },
@@ -19,6 +20,7 @@ class StateRolesMapping(LocalRoleAdapter):
         'technical_validation': {
             'administrative_editors': ('Editor',),
             'technical_validators': ('Editor', 'Contributor'),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
             'environment_readers': ('Reader',),
         },
@@ -26,6 +28,7 @@ class StateRolesMapping(LocalRoleAdapter):
         'executive_validation': {
             'administrative_editors': ('Editor',),
             'administrative_validators': ('Editor', 'Contributor'),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
             'environment_readers': ('Reader',),
         },
@@ -33,6 +36,7 @@ class StateRolesMapping(LocalRoleAdapter):
         'preliminary_advice_sent': {
             'administrative_validators': ('Editor', 'Contributor'),
             'technical_validators': ('Editor', 'Contributor'),
+            'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
             'environment_readers': ('Reader',),
         },

@@ -24,6 +24,7 @@ import liege.urban.content.foldermanager
 import liege.urban.content.inquiry_event
 import liege.urban.content.inspection
 import liege.urban.content.portion_out
+import liege.urban.content.preliminarynotice
 import liege.urban.content.urbanevent
 import liege.urban.content.urbanevent_opinionrequest
 import liege.urban.content.roaddecree  # noqa
