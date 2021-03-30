@@ -6,6 +6,12 @@ from liege.urban.workflows.licences_workflow import DefaultStateRolesMapping as 
 class StateRolesMapping(LiegeBase):
     """ """
 
+    def __init__(self, context):
+        self.context = context
+        self.licence = self.context
+        if ICODT_IntegratedLicence.providedBy(context):
+            self.mapping = LiegeBase.mapping
+
     mapping = {
         'deposit': {
             'administrative_editors_environment': ('Editor', 'EnvironmentEditor'),
