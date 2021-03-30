@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from Products.urban.browser.licence.codt_uniquelicenceview import CODTUniqueLicenceView
-from Products.urban.browser.licence.codt_integratedlicenceedit import LicenceEditView
+from Products.urban.browser.licence.licenceedit import LicenceEditView
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone import PloneMessageFactory as _
 
