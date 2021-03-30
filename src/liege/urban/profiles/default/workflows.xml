@@ -3,7 +3,6 @@
  <object name="acknowledgment_event_workflow" meta_type="Workflow"/>
  <object name="address_workflow" meta_type="Workflow"/>
  <object name="buildlicence_workflow" meta_type="Workflow"/>
- <object name="integratedlicence_workflow" meta_type="Workflow"/>
  <object name="codt_buildlicence_workflow" meta_type="Workflow"/>
  <object name="codt_uniquelicence_workflow" meta_type="Workflow"/>
  <object name="college_event_workflow" meta_type="Workflow"/>
