@@ -41,7 +41,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
     mapping = {
         'in_progress': {
             BaseRolesMapping.get_readers: ('Reader',),
-            get_editors: ('Editor', 'EnvironmentEditor'),
+            get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
             BaseRolesMapping.get_opinion_editors: ('Reader',),
@@ -50,7 +50,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
 
         'accepted': {
             BaseRolesMapping.get_readers: ('Reader',),
-            get_editors: ('Editor', 'EnvironmentEditor'),
+            get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
             BaseRolesMapping.get_opinion_editors: ('Reader',),
@@ -59,7 +59,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
 
         'incomplete': {
             BaseRolesMapping.get_readers: ('Reader',),
-            get_editors: ('Editor', 'EnvironmentEditor'),
+            get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
             BaseRolesMapping.get_opinion_editors: ('Reader',),
@@ -68,7 +68,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
 
         'refused': {
             BaseRolesMapping.get_readers: ('Reader',),
-            get_editors: ('Editor', 'EnvironmentEditor'),
+            get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
             BaseRolesMapping.get_opinion_editors: ('Reader',),
@@ -77,7 +77,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
 
         'inacceptable': {
             BaseRolesMapping.get_readers: ('Reader',),
-            get_editors: ('Editor', 'EnvironmentEditor'),
+            get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
             BaseRolesMapping.get_opinion_editors: ('Reader',),
@@ -86,7 +86,7 @@ class DefaultStateRolesMapping(BaseRolesMapping):
 
         'retired': {
             BaseRolesMapping.get_readers: ('Reader',),
-            get_editors: ('Editor', 'EnvironmentEditor'),
+            get_editors: ('Editor',),
             'Voirie_editors': ('RoadEditor', 'Reader'),
             'Voirie_validators': ('RoadEditor', 'Reader'),
             BaseRolesMapping.get_opinion_editors: ('Reader',),
