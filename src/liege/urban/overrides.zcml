@@ -126,7 +126,7 @@
          for="Products.urban.interfaces.ICODT_IntegratedLicence"
          name="licenceedit"
          class="liege.urban.browser.codt_integratedlicenceview.CODT_IntegratedLicenceEditView"
-         template="browser/liege/templates/licenceedit.pt"
+         template="browser/licence/templates/licenceedit.pt"
          permission="zope2.View"
       />
 
