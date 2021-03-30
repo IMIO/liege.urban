@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from liege.urban.workflows.licences_workflow import DefaultStateRolesMapping as LiegeBase
-from Product.urban.interfaces import ICODT_IntegratedLicence
+from Products.urban.interfaces import ICODT_IntegratedLicence
 
 
 class StateRolesMapping(LiegeBase):
