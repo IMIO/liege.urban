@@ -2469,6 +2469,7 @@
  <transition transition_id="abandon" title="abandon" new_state="abandoned" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">abandon</action>
   <guard>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="accept_licence" title="accept_licence" new_state="accepted" trigger="USER" before_script="" after_script="">
@@ -2498,6 +2499,7 @@
  <transition transition_id="authorize_licence" title="authorize_licence" new_state="authorized" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">authorize_licence</action>
   <guard>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="check_completion" title="check_completion" new_state="complete" trigger="USER" before_script="" after_script="">
@@ -2552,6 +2554,7 @@
  <transition transition_id="refuse_licence" title="refuse_licence" new_state="refused" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">refuse_licence</action>
   <guard>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="refuse_report" title="refuse_report" new_state="procedure_validated" trigger="USER" before_script="" after_script="">
@@ -2563,16 +2566,19 @@
  <transition transition_id="reopen" title="reopen" new_state="decision_in_progress" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">reopen</action>
   <guard>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="resume" title="resume" new_state="checking_completion" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">resume</action>
   <guard>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="suspend" title="suspend" new_state="suspension" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">suspend</action>
   <guard>
+   <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="validate_address" title="validate_address" new_state="checking_completion" trigger="USER" before_script="" after_script="">
