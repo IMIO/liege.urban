@@ -2,6 +2,7 @@
 
 from liege.urban import UrbanMessage as _
 from liege.urban.interfaces import IShore
+from liege.urban.licence_fields_permissions import set_field_permissions
 
 from Products.Archetypes.atapi import Schema
 
@@ -113,6 +114,10 @@ licence_classes = [
 
 for licence_class in licence_classes:
     licence_class.schema = update_item_schema(licence_class.schema)
+    permissions_mapping = {
+        'urban_analysis': ('liege.urban: Internal Reader', 'liege.urban: Internal Editor'),
+    }
+    licence_class.schema = set_field_permissions(licence_class.schema, permissions_mapping)
 
 
 def updateTitle(self):
