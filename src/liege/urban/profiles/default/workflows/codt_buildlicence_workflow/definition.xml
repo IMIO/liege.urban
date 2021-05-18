@@ -2566,13 +2566,13 @@
  <transition transition_id="reopen" title="reopen" new_state="decision_in_progress" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">reopen</action>
   <guard>
-   <guard-permission>Modify portal content</guard-permission>
+   <guard-group>urban_editors</guard-group>
   </guard>
  </transition>
  <transition transition_id="resume" title="resume" new_state="checking_completion" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">resume</action>
   <guard>
-   <guard-permission>Modify portal content</guard-permission>
+   <guard-group>urban_editors</guard-group>
   </guard>
  </transition>
  <transition transition_id="suspend" title="suspend" new_state="suspension" trigger="USER" before_script="" after_script="">
