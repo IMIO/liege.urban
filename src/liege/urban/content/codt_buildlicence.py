@@ -8,9 +8,12 @@ from liege.urban.licence_fields_permissions import set_field_permissions
 
 permissions_mapping = {
     'urban_description': ('liege.urban: External Reader', 'liege.urban: Description Editor'),
+    'urban_advices': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
     'urban_location': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
     'urban_road': ('liege.urban: Road Reader', 'liege.urban: Road Editor'),
     'urban_habitation': ('liege.urban: External Reader', 'liege.urban: Habitation Editor'),
+    'urban_peb': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
+    'urban_patrimony': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
 }
 
 
