@@ -73,7 +73,6 @@ permissions_mapping = {
     'urban_description': ('liege.urban: External Reader', 'liege.urban: Description Editor'),
     'urban_analysis': ('liege.urban: Internal Reader', 'liege.urban: Urban Editor'),
     'urban_environment': ('liege.urban: Internal Reader', 'liege.urban: Environment Editor'),
-    'urban_location': ('liege.urban: External Reader', 'liege.urban: Internal Editor'),
     'urban_road': ('liege.urban: Road Reader', 'liege.urban: Road Editor'),
     'urban_habitation': ('liege.urban: External Reader', 'liege.urban: Habitation Editor'),
 }
@@ -105,7 +104,13 @@ def updateTitle(self):
     else:
         applicantTitle = translate('no_applicant_defined', 'urban', context=self.REQUEST).encode('utf8')
     to_shore = queryAdapter(self, IShore)
-    title = "%s %s - %s - %s - %s" % (self.getReference(), to_shore.display(), self.getReferenceSPE(), self.getLicenceSubject(), applicantTitle)
+    title = "%s %s - %s - %s - %s" % (
+        self.getReference(),
+        to_shore.display(),
+        self.getReferenceSPE(),
+        self.getLicenceSubject(),
+        applicantTitle
+    )
     self.setTitle(title)
     self.reindexObject(idxs=('Title', 'applicantInfosIndex', 'sortable_title', ))
     return title

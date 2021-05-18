@@ -12,29 +12,29 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_editors': ('Editor',),
             'technical_editors': ('Editor',),
             'technical_validators': ('Editor', 'Contributor'),
-            'urban_readers': ('Reader',),
-            'environment_readers': ('Reader',),
+            'urban_readers': ('ExternalReader', 'RoadReader'),
+            'urban_readers': ('ExternalReader', 'RoadReader'),
         },
 
         'technical_validation': {
             'administrative_editors': ('Editor',),
             'technical_validators': ('Editor', 'Contributor'),
-            'urban_readers': ('Reader',),
-            'environment_readers': ('Reader',),
+            'urban_readers': ('ExternalReader', 'RoadReader'),
+            'urban_readers': ('ExternalReader', 'RoadReader'),
         },
 
         'executive_validation': {
             'administrative_editors': ('Editor',),
             'administrative_validators': ('Editor', 'Contributor'),
-            'urban_readers': ('Reader',),
-            'environment_readers': ('Reader',),
+            'urban_readers': ('ExternalReader', 'RoadReader'),
+            'urban_readers': ('ExternalReader', 'RoadReader'),
         },
 
         'preliminary_advice_sent': {
             'administrative_validators': ('Editor', 'Contributor'),
             'technical_validators': ('Editor', 'Contributor'),
-            'urban_readers': ('Reader',),
-            'environment_readers': ('Reader',),
+            'urban_readers': ('ExternalReader', 'RoadReader'),
+            'urban_readers': ('ExternalReader', 'RoadReader'),
         },
 
     }
