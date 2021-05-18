@@ -12,6 +12,7 @@ from Products.urban.content.licence.CODT_Article127 import CODT_Article127
 from Products.urban.content.licence.CODT_BuildLicence import CODT_BuildLicence
 from Products.urban.content.licence.CODT_IntegratedLicence import CODT_IntegratedLicence
 from Products.urban.content.licence.CODT_UniqueLicence import CODT_UniqueLicence
+from Products.urban.content.licence.CODT_UrbanCertificateBase import CODT_UrbanCertificateBase
 from Products.urban.content.licence.CODT_UrbanCertificateTwo import CODT_UrbanCertificateTwo
 from Products.urban.content.licence.Declaration import Declaration
 from Products.urban.content.licence.Division import Division
@@ -109,7 +110,7 @@ licence_classes = [
     EnvClassThree, EnvClassTwo, MiscDemand, ParcelOutLicence, PatrimonyCertificate,
     UrbanCertificateBase, UrbanCertificateTwo, IntegratedLicence, UniqueLicence,
     CODT_Article127, CODT_BuildLicence, CODT_UrbanCertificateTwo, CODT_IntegratedLicence,
-    CODT_UniqueLicence, Inspection, Ticket
+    CODT_UniqueLicence, CODT_UrbanCertificateBase, Inspection, Ticket
 ]
 
 for licence_class in licence_classes:
