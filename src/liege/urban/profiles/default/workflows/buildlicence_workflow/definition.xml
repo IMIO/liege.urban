@@ -625,6 +625,10 @@
    <permission-role>RoadReader</permission-role>
   </permission-map>
   <permission-map name="Modify portal content" acquired="False">
+   <permission-role>Contributor</permission-role>
+   <permission-role>Editor</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>RoadEditor</permission-role>
   </permission-map>
   <permission-map name="View" acquired="False">
    <permission-role>Contributor</permission-role>
