@@ -12,7 +12,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Contributor', 'AddressEditor'),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
-            'urban_readers': ('ExternalReader',),
+            'urban_readers': ('Reader',),
         },
 
         'analysis': {
@@ -20,7 +20,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Reader',),
             'technical_editors': ('Editor',),
             'technical_validators': ('Contributor',),
-            'urban_readers': ('ExternalReader',),
+            'urban_readers': ('Reader',),
         },
 
         'college': {
@@ -28,7 +28,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Contributor',),
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
-            'urban_readers': ('ExternalReader',),
+            'urban_readers': ('Reader',),
         },
 
         'done': {
@@ -36,6 +36,6 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Editor',),
             'technical_editors': ('Editor',),
             'technical_validators': ('Editor',),
-            'urban_readers': ('ExternalReader',),
+            'urban_readers': ('Reader',),
         },
     }
