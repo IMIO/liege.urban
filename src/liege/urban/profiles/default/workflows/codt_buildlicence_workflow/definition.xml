@@ -2585,7 +2585,7 @@
  <transition transition_id="suspend" title="suspend" new_state="suspension" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">suspend</action>
   <guard>
-   <guard-permission>Modify portal content</guard-permission>
+   <guard-group>urban_editors</guard-group>
   </guard>
  </transition>
  <transition transition_id="validate_address" title="validate_address" new_state="checking_completion" trigger="USER" before_script="" after_script="">
