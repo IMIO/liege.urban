@@ -2,6 +2,7 @@
 
 from plone import api
 
+from Products.cron4plone.browser.configlets.cron_configuration import ICronConfiguration
 from Products.urban.config import URBAN_TYPES
 from Products.urban.config import URBAN_ENVIRONMENT_TYPES
 from Products.urban.setuphandlers import createScheduleConfig
@@ -10,6 +11,7 @@ from Products.urban.utils import getLicenceFolderId
 
 from imio.schedule.utils import set_schedule_view
 
+from zope.component import queryUtility
 from zope.interface import alsoProvides
 from zExceptions import BadRequest
 
@@ -28,6 +30,7 @@ def post_install(context):
     setupSurveySchedule(context)
     addScheduleConfigs(context)
     addTestUsers(context)
+    addDefaultCronJobs(context)
 
 
 def setAllowedTypes(context):
@@ -368,3 +371,11 @@ def addTestUsers(context):
         if not api.user.get(username=user_args.get('username')):
             user = api.user.create(password=password, email=email, **user_args)
             api.group.add_user(groupname=group_id, username=user.id)
+
+
+def addDefaultCronJobs(context):
+    cron_cfg = queryUtility(ICronConfiguration, name='cron4plone_config', context=api.portal.get())
+    if u'55 0 1 * portal/@@monthly_activity_report' not in cron_cfg.cronjobs:
+        cron_cfg.cronjobs = cron_cfg.cronjobs + [
+            u'55 0 1 * portal/@@monthly_activity_report',
+        ]
