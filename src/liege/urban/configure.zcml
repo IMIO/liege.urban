@@ -12,6 +12,7 @@
 
   <include package="collective.wfadaptations" />
   <include package="imio.actionspanel"/>
+  <include package="plone.app.async" />
   <include package="Products.urban"/>
   <include package="z3c.jbot" file="meta.zcml" />
 

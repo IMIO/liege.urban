@@ -15,13 +15,6 @@
 
   <configure package="Products.urban">
 
-     <browser:page
-         for="*"
-         name="urbanstatsview"
-         class="liege.urban.browser.activity_report.LicencesExtractForm"
-         permission="zope2.View"
-      />
-
       <!-- overrides Portion table title display to also display address -->
       <adapter
          for="zope.interface.Interface
