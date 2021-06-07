@@ -55,6 +55,7 @@ class AdressFactory(BrowserView):
             field.set(address, value)
 
         licence.updateTitle()
+        licence.reindexObject(idxs=['parcelInfosIndex', 'shore'])
 
     def parse_cadastral_reference(sef, capakey):
         """
