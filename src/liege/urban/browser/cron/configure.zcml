@@ -12,10 +12,10 @@
   />
 
   <browser:page
-    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    for="Products.urban.interfaces.IUrbanTool"
     name="get_monthly_activity_report"
     class=".activity_report.GetMonthlyActivityReportResult"
-    permission="cmf.ManagePortal"
+    permission="cmf.ModifyPortalContent"
   />
 
 </configure>

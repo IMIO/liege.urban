@@ -19,7 +19,7 @@
                 <fieldset>
                 <legend i18n:translate="">Export mensuel</legend>
                 <a href=""
-                   tal:attributes="href python: '{}/get_monthly_activity_report'.format(context.aq_parent.absolute_url())"
+                   tal:attributes="href python: '{}/get_monthly_activity_report'.format(context.aq_parent.portal_urban.absolute_url())"
                    tal:content="view/monthly_export_name"></a>
                 </fieldset>
             </div>
