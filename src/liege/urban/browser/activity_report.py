@@ -79,9 +79,6 @@ def do_export(portal, query, filename='activity_report'):
     licences_dict = compute_json(licences)
     licences_json = json.dumps(licences_dict)
     create_archive(filename, licences_json)
-#    output = open('{}.json'.format(filename), 'w')
-#    output.write(licences_json)
-#    output.close()
     return licences_json
 
 
@@ -92,7 +89,7 @@ def create_archive(filename, content):
         archive = zipfile.ZipFile('{}.zip'.format(filename), 'w', zipfile.ZIP_DEFLATED)
     except RuntimeError:
         archive = zipfile.ZipFile('{}.zip'.format(filename), 'w')
-    archive.writestr('{}-{}.js'.format(filename, str(date.today())), content)
+    archive.writestr('{}.json'.format(filename), content)
     archive.close()
     return archive
 
