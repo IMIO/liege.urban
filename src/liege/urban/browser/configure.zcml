@@ -21,6 +21,13 @@
 
     <browser:page
         for="zope.interface.Interface"
+        name="activityreport"
+        permission="zope2.View"
+        class=".activity_report.LicencesExtractForm"
+    />
+
+    <browser:page
+        for="zope.interface.Interface"
         name="urbanstatsview"
         permission="zope2.View"
         class=".activity_report.LicencesExtractFormView"
