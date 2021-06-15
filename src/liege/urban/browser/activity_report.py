@@ -69,8 +69,8 @@ class LicencesExtractForm(form.Form):
         self.result = json_export
         response = self.context.REQUEST.RESPONSE
         response.setHeader('Content-type', 'application/json')
-        response.setHeader('Content-disposition', 'report.json')
-        response.setBody(json_export)
+        response.setHeader('Content-disposition', 'attachment; filename=report.json')
+        response.setBody(json_export, lock=True)
         return json_export
 
 
