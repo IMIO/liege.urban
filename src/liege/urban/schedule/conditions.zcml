@@ -124,6 +124,23 @@
     />
 
     <!-- acknowledgment conditions -->
+
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".creation_conditions.AcknowledgmentToWriteCondition"
+        name="liege.urban.schedule.acknowledgment_to_write"
+    />
+
+    <adapter
+        for="Products.urban.interfaces.IGenericLicence
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".creation_conditions.AcknowledgmentProposedToValidationCondition"
+        name="liege.urban.schedule.acknowledgment_to_validate"
+    />
+
     <adapter
         for="Products.urban.interfaces.IGenericLicence
              imio.schedule.content.task.IAutomatedTask"

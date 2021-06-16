@@ -18,6 +18,32 @@ class LicenceInValidatingAddressState(CreationCondition):
         return api.content.get_state(licence) == 'validating_address'
 
 
+class AcknowledgmentProposedToValidationCondition(CreationCondition):
+    """
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        ack_event = licence.getLastAcknowledgment()
+        if not ack_event:
+            return False
+
+        return api.content.get_state(ack_event) == 'to_validate'
+
+
+class AcknowledgmentToWriteCondition(CreationCondition):
+    """
+    """
+
+    def evaluate(self):
+        licence = self.task_container
+        ack_event = licence.getLastAcknowledgment()
+        if not ack_event:
+            return True
+
+        return api.content.get_state(ack_event) == 'draft'
+
+
 class PreliminaryAdviceCondition(CreationCondition):
     """
     """
