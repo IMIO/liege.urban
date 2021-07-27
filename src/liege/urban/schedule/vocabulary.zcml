@@ -23,6 +23,11 @@
         name="liege.survey_users"
         provides="zope.schema.interfaces.IVocabularyFactory"
     />
+    <utility
+        factory=".vocabulary.InspectionUsersVocabularyFactory"
+        name="liege.inspection_users"
+        provides="zope.schema.interfaces.IVocabularyFactory"
+    />
 
     <!-- Opinionrequests worfklow states vocabulary -->
     <utility

@@ -33,6 +33,7 @@ class SurveyScheduleCollectionVocabulary(CollectionVocabulary):
         )
         return brains
 
+
 SurveyScheduleCollectionVocabularyFactory = SurveyScheduleCollectionVocabulary()
 
 
@@ -58,6 +59,7 @@ class OpinionsScheduleCollectionVocabulary(CollectionVocabulary):
         )
         return brains
 
+
 OpinionsScheduleCollectionVocabularyFactory = OpinionsScheduleCollectionVocabulary()
 
 
@@ -78,6 +80,17 @@ class ScheduleUsersVocabularyFactory(UsersFromGroupsVocabularyFactory):
         'technical_validators',
         'administrative_editors',
         'administrative_validators',
+        'inspection_editors',
+        'inspection_validators',
+    ]
+
+
+class InspectionUsersVocabularyFactory(UsersFromGroupsVocabularyFactory):
+    """
+    Vocabulary factory listing all the users of the inspection group.
+    """
+    me_value = True
+    group_ids = [
         'inspection_editors',
         'inspection_validators',
     ]
