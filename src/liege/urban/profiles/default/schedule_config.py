@@ -1873,7 +1873,7 @@ schedule_config = {
             'end_conditions': (
                 EndConditionObject('urban.schedule.condition.rubrics_choice_done'),
             ),
-            'start_date': 'urban.schedule.acknowledgment_date.',
+            'start_date': 'urban.schedule.start_date.acknowledgment_date.',
             'additional_delay': 3,
         },
         {
@@ -2110,7 +2110,7 @@ schedule_config = {
             'end_conditions': (
                 EndConditionObject('urban.schedule.condition.spw_project_receipt_done'),
             ),
-            'start_date': 'urban.schedule.acknowledgment_date.',
+            'start_date': 'urban.schedule.start_date.acknowledgment_date.',
             'additional_delay': 110,
         },
         {
@@ -2514,7 +2514,7 @@ schedule_config = {
             'end_conditions': (
                 EndConditionObject('urban.schedule.condition.rubrics_choice_done'),
             ),
-            'start_date': 'urban.schedule.acknowledgment_date.',
+            'start_date': 'urban.schedule.start_date.acknowledgment_date.',
             'additional_delay': 3,
         },
         {
@@ -2762,7 +2762,7 @@ schedule_config = {
             'end_conditions': (
                 EndConditionObject('urban.schedule.condition.spw_project_receipt_done'),
             ),
-            'start_date': 'urban.schedule.acknowledgment_date.',
+            'start_date': 'urban.schedule.start_date.acknowledgment_date.',
             'additional_delay': 110,
         },
         {
