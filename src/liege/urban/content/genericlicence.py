@@ -25,6 +25,7 @@ from Products.urban.content.licence.IntegratedLicence import IntegratedLicence
 from Products.urban.content.licence.MiscDemand import MiscDemand
 from Products.urban.content.licence.ParcelOutLicence import ParcelOutLicence
 from Products.urban.content.licence.PatrimonyCertificate import PatrimonyCertificate
+from Products.urban.content.licence.RoadDecree import RoadDecree
 from Products.urban.content.licence.Ticket import Ticket
 from Products.urban.content.licence.UniqueLicence import UniqueLicence
 from Products.urban.content.licence.UrbanCertificateBase import UrbanCertificateBase
@@ -110,7 +111,7 @@ licence_classes = [
     EnvClassThree, EnvClassTwo, MiscDemand, ParcelOutLicence, PatrimonyCertificate,
     UrbanCertificateBase, UrbanCertificateTwo, IntegratedLicence, UniqueLicence,
     CODT_Article127, CODT_BuildLicence, CODT_UrbanCertificateTwo, CODT_IntegratedLicence,
-    CODT_UniqueLicence, CODT_UrbanCertificateBase, Inspection, Ticket
+    CODT_UniqueLicence, CODT_UrbanCertificateBase, Inspection, Ticket, RoadDecree
 ]
 
 for licence_class in licence_classes:
