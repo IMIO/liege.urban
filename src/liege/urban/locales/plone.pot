@@ -110,6 +110,12 @@ msgstr ""
 msgid "deposit"
 msgstr ""
 
+msgid "display"
+msgstr ""
+
+msgid "display_in_progress"
+msgstr ""
+
 msgid "draft"
 msgstr ""
 
@@ -303,6 +309,9 @@ msgid "suspend"
 msgstr ""
 
 msgid "technical_analysis"
+msgstr ""
+
+msgid "technical_analysis_validation"
 msgstr ""
 
 msgid "technical_refuse"

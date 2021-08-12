@@ -11,26 +11,56 @@ class StateRolesMapping(LiegeBase):
     mapping = {
 
         'folder_creation': {
-            LiegeBase.get_editors: ('Editor',),
-            'survey_editors': ('Reader', 'AddressEditor'),
-            'urban_readers': ('Reader',),
+            'administrative_editors': ('Editor', 'AddressEditor'),
+            'administrative_validators': ('Contributor',),
+            'urban_readers': ('Reader', 'RoadDecree'),
         },
 
-        'validating_address': {
-            LiegeBase.get_opinion_editors: ('ExternalReader',),
-            'survey_editors': ('Reader', 'AddressEditor'),
-            'urban_readers': ('Reader',),
-        },
-
-        'waiting_address': {
-            LiegeBase.get_opinion_editors: ('ExternalReader',),
-            'survey_editors': ('Reader', 'AddressEditor'),
-            'urban_readers': ('Reader',),
+        'public_investigation': {
+            'administrative_editors': ('Editor', 'AddressEditor'),
+            'administrative_validators': ('Contributor',),
+            'urban_readers': ('Reader', 'RoadDecree'),
         },
 
         'technical_analysis_post_investigation': {
-            'survey_editors': ('Reader', 'AddressEditor'),
             'fittingout_technicians': ('Editor', ),
-            'fittingout_technicians_validators': ('Contributor', )
-        }
+            'fittingout_technicians_validators': ('Contributor',),
+            'urban_readers': ('Reader', 'RoadDecree'),
+        },
+
+        'technical_analysis_validation': {
+            'fittingout_technicians': ('Reader',),
+            'fittingout_technicians_validators': ('Contributor',),
+            'urban_readers': ('Reader', 'RoadDecree'),
+        },
+
+        'college_council_passage': {
+            'administrative_editors': ('Editor', 'AddressEditor'),
+            'administrative_validators': ('Contributor',),
+            'urban_readers': ('Reader', 'RoadDecree'),
+        },
+
+        'display_in_progress': {
+            'administrative_editors': ('Editor', 'AddressEditor'),
+            'administrative_validators': ('Contributor',),
+            'urban_readers': ('Reader', 'RoadDecree'),
+        },
+
+        'authorized': {
+            'administrative_editors': ('Editor', 'AddressEditor'),
+            'administrative_validators': ('Contributor',),
+            'urban_readers': ('Reader', 'RoadDecree'),
+        },
+
+        'refused': {
+            'administrative_editors': ('Editor', 'AddressEditor'),
+            'administrative_validators': ('Contributor',),
+            'urban_readers': ('Reader', 'RoadDecree'),
+        },
+
+        'abandoned': {
+            'administrative_editors': ('Editor', 'AddressEditor'),
+            'administrative_validators': ('Contributor',),
+            'urban_readers': ('Reader', 'RoadDecree'),
+        },
     }

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-01-15 09:26+0000\n"
+"POT-Creation-Date: 2021-08-12 13:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,15 +14,15 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ../browser/activity_report.py:29
+#: ../browser/activity_report.py:34
 msgid "Date end"
 msgstr ""
 
-#: ../browser/activity_report.py:34
+#: ../browser/activity_report.py:39
 msgid "Date index"
 msgstr ""
 
-#: ../browser/activity_report.py:24
+#: ../browser/activity_report.py:29
 msgid "Date start"
 msgstr ""
 
@@ -38,11 +38,11 @@ msgstr "Collège attestation conformité"
 msgid "IInternalOpinionRequestEvent type marker interface"
 msgstr "Demande d'avis interne"
 
-#: ../configure.zcml:45
+#: ../configure.zcml:46
 msgid "Installs liege.urban add-on."
 msgstr ""
 
-#: ../browser/activity_report.py:41
+#: ../browser/activity_report.py:46
 msgid "Licence types"
 msgstr ""
 
@@ -61,12 +61,12 @@ msgstr "Numéro"
 msgid "The above listed tasks are not done yet !!!"
 msgstr "Attention, il reste des actions à prendre pour les tâches ci-dessus!!!"
 
-#: ../configure.zcml:45
-#: ../schedule/vocabulary.py:99
+#: ../configure.zcml:46
+#: ../schedule/vocabulary.py:114
 msgid "liege.urban"
 msgstr ""
 
-#: ../content/codt_integratedlicence.py:50
+#: ../content/codt_integratedlicence.py:57
 #: ../content/codt_uniquelicence.py:54
 #: ../content/env_base.py:81
 msgid "urban_label_CommentsOnDecisionProject"
@@ -80,11 +80,11 @@ msgstr "Nature de l'exploitation"
 msgid "urban_label_LiegeEnvironmentConditions"
 msgstr "conditions Ville de Liège"
 
-#: ../content/genericlicence.py:99
+#: ../content/genericlicence.py:102
 msgid "urban_label_RCB"
 msgstr "Réglement communal sur les Bâtisses"
 
-#: ../content/genericlicence.py:58
+#: ../content/genericlicence.py:61
 msgid "urban_label_UsageTownship"
 msgstr "Nature des travaux (codes Ville)"
 
@@ -92,13 +92,13 @@ msgstr "Nature des travaux (codes Ville)"
 msgid "urban_label_closeDate"
 msgstr "Date de séance de clôture"
 
-#: ../content/codt_integratedlicence.py:51
+#: ../content/codt_integratedlicence.py:58
 #: ../content/codt_uniquelicence.py:55
 #: ../content/env_base.py:80
 msgid "urban_label_decisionNotificationTo"
 msgstr "Notification de la décision à"
 
-#: ../content/genericlicence.py:95
+#: ../content/genericlicence.py:98
 msgid "urban_label_description"
 msgstr "Observations"
 
@@ -125,17 +125,17 @@ msgstr "Date de soirée de consultation"
 msgid "urban_label_exploitationAddress"
 msgstr "Adresse de l'exploitation"
 
-#: ../content/codt_integratedlicence.py:49
+#: ../content/codt_integratedlicence.py:56
 #: ../content/codt_uniquelicence.py:53
 msgid "urban_label_folderCategory"
 msgstr "Type de dossier"
 
 #. Default: "Formal_notice_old_reference"
-#: ../content/inspection.py:17
+#: ../content/inspection.py:19
 msgid "urban_label_formal_notice_old_reference"
 msgstr "Ancien n° d'AD"
 
-#: ../content/genericlicence.py:60
+#: ../content/genericlicence.py:63
 msgid "urban_label_futurePathCoating"
 msgstr "Revêtement de trottoir futur"
 
@@ -144,11 +144,11 @@ msgstr "Revêtement de trottoir futur"
 msgid "urban_label_motivation"
 msgstr "Motivation"
 
-#: ../content/genericlicence.py:59
+#: ../content/genericlicence.py:62
 msgid "urban_label_pathCoating"
 msgstr "Revêtement de trottoir existant"
 
-#: ../content/genericlicence.py:96
+#: ../content/genericlicence.py:99
 msgid "urban_label_pipeSevesoDetails"
 msgstr "Détails sur les canalisations et sites Seveso"
 
@@ -161,11 +161,11 @@ msgstr "Objet"
 msgid "urban_label_procedureType"
 msgstr "Type de dossier"
 
-#: ../content/genericlicence.py:101
+#: ../content/genericlicence.py:104
 msgid "urban_label_rcbDetails"
 msgstr "Détails concernant le RCB"
 
-#: ../content/codt_integratedlicence.py:48
+#: ../content/codt_integratedlicence.py:55
 #: ../content/codt_uniquelicence.py:52
 msgid "urban_label_referenceFD"
 msgstr "Référence FD"
@@ -183,19 +183,19 @@ msgstr "Avis externe(s) sollicité(s)"
 msgid "urban_label_solicitInternalOpinionsTo"
 msgstr "Avis interne(s) sollicité(s)"
 
-#: ../content/codt_integratedlicence.py:47
+#: ../content/codt_integratedlicence.py:54
 #: ../content/codt_uniquelicence.py:51
 msgid "urban_label_urbanReference"
 msgstr "Référence urbanisme"
 
-#: ../browser/codt_integratedlicenceview.py:21
+#: ../browser/codt_integratedlicenceview.py:22
 msgid "warning_add_a_parcel"
 msgstr ""
 
-#: ../browser/codt_integratedlicenceview.py:23
+#: ../browser/codt_integratedlicenceview.py:24
 msgid "warning_add_an_applicant"
 msgstr ""
 
-#: ../browser/codt_integratedlicenceview.py:25
+#: ../browser/codt_integratedlicenceview.py:26
 msgid "warning_outdated_parcel"
 msgstr ""

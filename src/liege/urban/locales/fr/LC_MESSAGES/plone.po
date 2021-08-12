@@ -119,6 +119,12 @@ msgstr "Passage au collége"
 msgid "deposit"
 msgstr "Dépôt"
 
+msgid "display"
+msgstr "Afficher"
+
+msgid "display_in_progress"
+msgstr "Affichage en cours"
+
 msgid "draft"
 msgstr "Brouillon"
 
@@ -322,6 +328,9 @@ msgstr "Analyse technique"
 
 msgid "technical_analysis_post_investigation"
 msgstr "Analyse technique post enquête"
+
+msgid "technical_analysis_validation"
+msgstr "Validation technique"
 
 msgid "technical_refuse"
 msgstr "Refuser"
