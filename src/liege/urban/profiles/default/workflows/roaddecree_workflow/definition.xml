@@ -279,7 +279,7 @@
   </permission-map>
  </state>
  <state state_id="technical_analysis_post_investigation" title="technical_analysis_post_investigation">
-  <exit-transition transition_id="to_college_council_passage"/>
+  <exit-transition transition_id="propose_analysis"/>
   <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1224,6 +1224,12 @@
   <action url="" category="workflow" icon="">to_public_investigation</action>
   <guard>
    <guard-permission>Modify portal content</guard-permission>
+  </guard>
+ </transition>
+ <transition transition_id="propose_analysis" title="propose_analysis" new_state="technical_analysis_validation" trigger="USER" before_script="" after_script="">
+  <action url="" category="workflow" icon="">propose_analysis</action>
+  <guard>
+    <guard-permission>Modify portal content</guard-permission>
   </guard>
  </transition>
  <transition transition_id="refuse_decree" title="refuse_decree" new_state="refused" trigger="USER" before_script="" after_script="">
