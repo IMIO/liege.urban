@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from Products.urban.content.CODT_Inquiry import CODT_Inquiry
 from Products.urban.content.licence.Article127 import Article127
 from Products.urban.content.licence.BuildLicence import BuildLicence
 from Products.urban.content.licence.CODT_Article127 import CODT_Article127
@@ -47,7 +48,7 @@ def update_item_schema(baseSchema):
 
 licence_classes = [
     Article127, BuildLicence, CODT_Article127, CODT_BuildLicence, CODT_IntegratedLicence,
-    CODT_ParcelOutLicence, CODT_UniqueLicence, CODT_UrbanCertificateTwo,
+    CODT_ParcelOutLicence, CODT_UniqueLicence, CODT_UrbanCertificateTwo, CODT_Inquiry,
     IntegratedLicence, MiscDemand, ParcelOutLicence, PatrimonyCertificate, UniqueLicence,
     UrbanCertificateTwo, EnvClassOne, EnvClassTwo, EnvClassThree
 ]
