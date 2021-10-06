@@ -41,6 +41,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -59,6 +60,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -72,6 +74,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -79,6 +82,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -168,6 +172,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -186,6 +191,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -199,6 +205,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -206,6 +213,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -295,6 +303,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>FittingOutReader</permission-role>
@@ -316,6 +325,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>FittingOutReader</permission-role>
@@ -332,6 +342,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>FittingOutReader</permission-role>
@@ -341,6 +352,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -431,6 +443,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>FittingOutReader</permission-role>
@@ -452,6 +465,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>FittingOutReader</permission-role>
@@ -468,6 +482,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>FittingOutReader</permission-role>
@@ -477,6 +492,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -566,6 +582,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -584,6 +601,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -597,6 +615,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -604,6 +623,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -694,6 +714,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -712,6 +733,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -725,6 +747,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -732,6 +755,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -820,6 +844,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>RoadEditor</permission-role>
@@ -840,6 +865,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>RoadEditor</permission-role>
@@ -856,6 +882,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>RoadEditor</permission-role>
@@ -865,6 +892,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>RoadReader</permission-role>
@@ -954,6 +982,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>RoadEditor</permission-role>
@@ -974,6 +1003,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>RoadEditor</permission-role>
@@ -989,6 +1019,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -996,6 +1027,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>RoadReader</permission-role>
@@ -1082,6 +1114,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>RoadEditor</permission-role>
@@ -1102,6 +1135,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>RoadEditor</permission-role>
@@ -1118,6 +1152,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>RoadEditor</permission-role>
@@ -1127,6 +1162,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
    <permission-role>RoadEditor</permission-role>

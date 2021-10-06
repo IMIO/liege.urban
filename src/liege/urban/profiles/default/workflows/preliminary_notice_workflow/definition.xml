@@ -93,6 +93,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -199,6 +200,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -306,6 +308,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -410,6 +413,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -515,6 +519,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -619,6 +624,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
@@ -723,6 +729,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>ExternalReader</permission-role>
+   <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
   </permission-map>
