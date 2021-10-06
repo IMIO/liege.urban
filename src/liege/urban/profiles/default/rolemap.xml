@@ -6,6 +6,7 @@
     <role name="EnvironmentReader"/>
     <role name="EnvironmentEditor"/>
     <role name="EnvironmentContributor"/>
+    <role name="InternalReader"/>
     <role name="ExternalReader"/>
     <role name="AddressEditor"/>
     <role name="RoadReader"/>

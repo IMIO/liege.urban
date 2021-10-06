@@ -97,7 +97,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
+   <permission-role>InternalReader</permission-role>
   </permission-map>
   <permission-map name="liege.urban: Description Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -235,7 +235,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
+   <permission-role>InternalReader</permission-role>
   </permission-map>
   <permission-map name="liege.urban: Description Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -370,7 +370,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
+   <permission-role>InternalReader</permission-role>
   </permission-map>
   <permission-map name="liege.urban: Description Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -503,7 +503,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
+   <permission-role>InternalReader</permission-role>
   </permission-map>
   <permission-map name="liege.urban: Description Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -636,7 +636,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
+   <permission-role>InternalReader</permission-role>
   </permission-map>
   <permission-map name="liege.urban: Description Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -776,7 +776,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
+   <permission-role>InternalReader</permission-role>
   </permission-map>
   <permission-map name="liege.urban: Description Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -908,7 +908,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
+   <permission-role>InternalReader</permission-role>
   </permission-map>
   <permission-map name="liege.urban: Description Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1040,7 +1040,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
+   <permission-role>InternalReader</permission-role>
   </permission-map>
   <permission-map name="liege.urban: Description Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1173,7 +1173,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
+   <permission-role>InternalReader</permission-role>
   </permission-map>
   <permission-map name="liege.urban: Description Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1312,7 +1312,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
+   <permission-role>InternalReader</permission-role>
   </permission-map>
   <permission-map name="liege.urban: Description Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1451,7 +1451,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
+   <permission-role>InternalReader</permission-role>
   </permission-map>
   <permission-map name="liege.urban: Description Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1592,7 +1592,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
+   <permission-role>InternalReader</permission-role>
   </permission-map>
   <permission-map name="liege.urban: Description Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1725,7 +1725,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
+   <permission-role>InternalReader</permission-role>
   </permission-map>
   <permission-map name="liege.urban: Description Editor" acquired="False">
    <permission-role>Contributor</permission-role>
@@ -1857,7 +1857,7 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
-   <permission-role>Reader</permission-role>
+   <permission-role>InternalReader</permission-role>
   </permission-map>
   <permission-map name="liege.urban: Description Editor" acquired="False">
    <permission-role>Contributor</permission-role>
