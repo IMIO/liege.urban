@@ -14,53 +14,62 @@ class StateRolesMapping(LiegeBase):
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
+            'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
 
         'public_investigation': {
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
+            'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
 
         'technical_analysis_post_investigation': {
             'fittingout_technicians': ('Editor', ),
             'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
+            'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
 
         'technical_analysis_validation': {
             'fittingout_technicians': ('Reader',),
             'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
+            'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
 
         'college_council_passage': {
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
+            'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
 
         'display_in_progress': {
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
+            'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
 
         'authorized': {
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
+            'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
 
         'refused': {
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
+            'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
 
         'abandoned': {
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
+            'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
     }

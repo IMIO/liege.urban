@@ -23,4 +23,4 @@ def update_item_schema(base_schema):
 
 
 RoadDecree.schema = update_item_schema(RoadDecree.schema)
-RoadDecree.schema = set_field_permissions(RoadDecree.schema)
+RoadDecree.schema = set_field_permissions(RoadDecree.schema, permissions_mapping)

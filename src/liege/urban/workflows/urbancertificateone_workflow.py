@@ -13,6 +13,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
             'urban_readers': ('Reader',),
+            'urban_internal_readers': ('InternalReader',),
         },
 
         'analysis': {
@@ -21,6 +22,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_editors': ('Editor',),
             'technical_validators': ('Contributor',),
             'urban_readers': ('Reader',),
+            'urban_internal_readers': ('InternalReader',),
         },
 
         'college': {
@@ -29,6 +31,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_editors': ('Reader',),
             'technical_validators': ('Reader',),
             'urban_readers': ('Reader',),
+            'urban_internal_readers': ('InternalReader',),
         },
 
         'done': {
@@ -37,5 +40,6 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_editors': ('Editor',),
             'technical_validators': ('Editor',),
             'urban_readers': ('Reader',),
+            'urban_internal_readers': ('InternalReader',),
         },
     }
