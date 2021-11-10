@@ -74,37 +74,27 @@ class LiegeEventProxyObject(EventDisplayProxyObject):
     """
     """
 
-    def get_wspm_detailedDescription_text(self, style='UrbanBody'):
+    def get_wspm_detailedDescription_text(self):
         field_name = 'detailedDescription'
         description_text = self._get_wspm_field(field_name)
-        if description_text != 'NO FIELD {} FOUND'.format(field_name):
-            description_text = self.helper_view.xhtml(description_text, style)
         return description_text
 
-    def get_wspm_motivation_text(self, style='UrbanBody'):
+    def get_wspm_motivation_text(self):
         field_name = 'motivation'
         motivation_text = self._get_wspm_field(field_name)
-        if motivation_text != 'NO FIELD {} FOUND'.format(field_name):
-            motivation_text = self.helper_view.xhtml(motivation_text, style)
         return motivation_text
 
-    def get_wspm_decisionSuite_text(self, style='UrbanBody'):
+    def get_wspm_decisionSuite_text(self):
         field_name = 'decisionSuite'
         decision_text = self._get_wspm_field(field_name)
-        if decision_text != 'NO FIELD {} FOUND'.format(field_name):
-            decision_text = self.helper_view.xhtml(decision_text, style)
         return decision_text
 
-    def get_wspm_decisionEnd_text(self, style='UrbanBody'):
+    def get_wspm_decisionEnd_text(self):
         field_name = 'decisionEnd'
         decision_text = self._get_wspm_field(field_name)
-        if decision_text != 'NO FIELD {} FOUND'.format(field_name):
-            decision_text = self.helper_view.xhtml(decision_text, style)
         return decision_text
 
-    def get_wspm_observations_text(self, style='UrbanBody'):
+    def get_wspm_observations_text(self):
         field_name = 'observations'
         observations_text = self._get_wspm_field(field_name)
-        if observations_text != 'NO FIELD {} FOUND'.format(field_name):
-            observations_text = self.helper_view.xhtml(observations_text, style)
         return observations_text
