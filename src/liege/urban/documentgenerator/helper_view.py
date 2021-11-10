@@ -76,25 +76,25 @@ class LiegeEventProxyObject(EventDisplayProxyObject):
 
     def get_wspm_detailedDescription_text(self):
         field_name = 'detailedDescription'
-        description_text = self._get_wspm_field(field_name)
+        description_text = self._get_wspm_text_field(field_name)
         return description_text
 
     def get_wspm_motivation_text(self):
         field_name = 'motivation'
-        motivation_text = self._get_wspm_field(field_name)
+        motivation_text = self._get_wspm_text_field(field_name)
         return motivation_text
 
     def get_wspm_decisionSuite_text(self):
         field_name = 'decisionSuite'
-        decision_text = self._get_wspm_field(field_name)
+        decision_text = self._get_wspm_text_field(field_name)
         return decision_text
 
     def get_wspm_decisionEnd_text(self):
         field_name = 'decisionEnd'
-        decision_text = self._get_wspm_field(field_name)
+        decision_text = self._get_wspm_text_field(field_name)
         return decision_text
 
     def get_wspm_observations_text(self):
         field_name = 'observations'
-        observations_text = self._get_wspm_field(field_name)
+        observations_text = self._get_wspm_text_field(field_name)
         return observations_text
