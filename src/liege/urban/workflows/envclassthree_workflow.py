@@ -13,7 +13,7 @@ class StateRolesMapping(LiegeBase):
             'administrative_validators_environment': ('Contributor',),
             'technical_editors_environment': ('Editor',),
             'technical_validators_environment': ('Contributor',),
-            'environment_readers': ('Reader',),
+            'environment_readers': ('Reader', 'InternalReader'),
         },
 
         'procedure_analysis': {
@@ -21,7 +21,7 @@ class StateRolesMapping(LiegeBase):
             'administrative_validators_environment': ('Reader',),
             'technical_editors_environment': ('Editor', 'AddressEditor'),
             'technical_validators_environment': ('Contributor', 'AddressEditor'),
-            'environment_readers': ('Reader',),
+            'environment_readers': ('Reader', 'InternalReader'),
         },
 
         'inacceptable_validation': {
@@ -29,7 +29,7 @@ class StateRolesMapping(LiegeBase):
             'administrative_validators_environment': ('Reader',),
             'technical_editors_environment': ('Reader',),
             'technical_validators_environment': ('Contributor', 'AddressEditor'),
-            'environment_readers': ('Reader',),
+            'environment_readers': ('Reader', 'InternalReader'),
         },
 
         'acceptable_validation': {
@@ -37,7 +37,7 @@ class StateRolesMapping(LiegeBase):
             'administrative_validators_environment': ('Reader',),
             'technical_editors_environment': ('Reader',),
             'technical_validators_environment': ('Contributor', 'AddressEditor'),
-            'environment_readers': ('Reader',),
+            'environment_readers': ('Reader', 'InternalReader'),
         },
 
         'acceptable_with_conditions_validation': {
@@ -45,7 +45,7 @@ class StateRolesMapping(LiegeBase):
             'administrative_validators_environment': ('Reader',),
             'technical_editors_environment': ('Reader',),
             'technical_validators_environment': ('Contributor', 'AddressEditor'),
-            'environment_readers': ('Reader',),
+            'environment_readers': ('Reader', 'InternalReader'),
         },
 
         'inacceptable': {
@@ -53,7 +53,7 @@ class StateRolesMapping(LiegeBase):
             'administrative_validators_environment': ('Contributor',),
             'technical_editors_environment': ('Editor',),
             'technical_validators_environment': ('Contributor',),
-            'environment_readers': ('Reader',),
+            'environment_readers': ('Reader', 'InternalReader'),
         },
 
         'acceptable': {
@@ -61,7 +61,7 @@ class StateRolesMapping(LiegeBase):
             'administrative_validators_environment': ('Contributor',),
             'technical_editors_environment': ('Editor',),
             'technical_validators_environment': ('Contributor',),
-            'environment_readers': ('Reader',),
+            'environment_readers': ('Reader', 'InternalReader'),
         },
 
         'acceptable_with_conditions': {
@@ -69,7 +69,7 @@ class StateRolesMapping(LiegeBase):
             'administrative_validators_environment': ('Contributor',),
             'technical_editors_environment': ('Editor',),
             'technical_validators_environment': ('Contributor',),
-            'environment_readers': ('Reader',),
+            'environment_readers': ('Reader', 'InternalReader'),
         },
 
         'abandoned': {
@@ -77,6 +77,6 @@ class StateRolesMapping(LiegeBase):
             'administrative_validators_environment': ('Contributor',),
             'technical_editors_environment': ('Editor',),
             'technical_validators_environment': ('Contributor',),
-            'environment_readers': ('Reader',),
+            'environment_readers': ('Reader', 'InternalReader'),
         },
     }
