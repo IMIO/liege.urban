@@ -12,6 +12,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Contributor', 'AddressEditor'),
             'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
+            'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
 
         'analysis': {
@@ -19,12 +20,14 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_validators': ('Contributor',),
             'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
+            'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
 
         'analysis_validation': {
             'technical_validators': ('Contributor',),
             'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
+            'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
 
         'college': {
@@ -32,6 +35,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'administrative_validators': ('Contributor',),
             'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
+            'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
 
         'favorable': {
@@ -41,6 +45,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_validators': ('Editor',),
             'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
+            'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
 
         'defavorable': {
@@ -50,6 +55,7 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_validators': ('Editor',),
             'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
+            'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
 
         'abandoned': {
@@ -59,5 +65,6 @@ class StateRolesMapping(LocalRoleAdapter):
             'technical_validators': ('Editor',),
             'survey_editors': ('Reader', 'AddressEditor'),
             'urban_readers': ('Reader',),
+            'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
     }
