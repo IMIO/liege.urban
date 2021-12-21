@@ -18,6 +18,8 @@ def update_item_schema(base_schema):
     licence_schema['roadTechnicalAdvice'].widget.label = _(
         'urban_label_roadDescription'
     )
+    licence_schema['requirementFromFDModifiedBp'].widget.visible = {'view': 'invisible', 'edit': 'invisible'}
+    licence_schema['exemptFDArticleModifiedBp'].widget.visible = {'view': 'invisible', 'edit': 'invisible'}
 
     return licence_schema
 
