@@ -3897,5 +3897,96 @@ schedule_config = {
             'activate_recurrency': True,
             'recurrence_states': ('in_court',),
         },
-    ]
+    ],
+    'roaddecree': [
+        {
+            'type_name': 'MacroTaskConfig',
+            'id': 'enquete',
+            'title': 'Enquête publique',
+            'default_assigned_group': 'administrative_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('folder_creation',),
+            'starting_states': ('folder_creation',),
+            'end_conditions': (
+                MacroEndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
+                MacroEndConditionObject('urban.schedule.condition.inquiry_done'),
+            ),
+            'start_date': 'urban.schedule.start_date.inquiry_end_date',
+            'additional_delay': 1,
+            'subtasks': [
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'enquete-dates',
+                    'title': 'Définir les dates de d\'enquête',
+                    'default_assigned_group': 'administrative_editors',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_state': ('folder_creation',),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
+                        EndConditionObject('urban.schedule.condition.inquiry_event_created'),
+                        EndConditionObject('urban.schedule.condition.inquiry_dates_defined'),
+                    ),
+                    'start_date': 'schedule.start_date.task_starting_date',
+                    'additional_delay': 17,
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'enquete-documents',
+                    'title': 'Produire les documents',
+                    'default_assigned_group': 'administrative_editors',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_state': ('folder_creation',),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
+                        EndConditionObject('liege.urban.schedule.inquiry_documents_done'),
+                    ),
+                    'start_date': 'schedule.start_date.task_starting_date',
+                    'additional_delay': 17,
+                    'activate_recurrency': True,
+                    'recurrence_conditions': (
+                        RecurrenceConditionObject('liege.urban.schedule.write_inquiry_documents'),
+                    ),
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'valider-documents',
+                    'title': 'Valider les documents',
+                    'default_assigned_group': 'administrative_validators',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_state': ('procedure_validated',),
+                    'start_conditions': (
+                        StartConditionObject('liege.urban.schedule.inquiry_documents_done'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
+                        EndConditionObject('liege.urban.schedule.inquiry_documents_validated', 'OR'),
+                        EndConditionObject('liege.urban.schedule.write_inquiry_documents'),
+                    ),
+                    'start_date': 'schedule.start_date.task_starting_date',
+                    'additional_delay': 18,
+                    'activate_recurrency': True,
+                    'recurrence_conditions': (
+                        RecurrenceConditionObject('liege.urban.schedule.inquiry_documents_done'),
+                    ),
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'envoyer-documents',
+                    'title': 'Envoyer les documents',
+                    'default_assigned_group': 'administrative_editors',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_state': ('procedure_validated',),
+                    'start_conditions': (
+                        StartConditionObject('liege.urban.schedule.inquiry_documents_validated'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
+                        EndConditionObject('liege.urban.schedule.inquiry_documents_sent'),
+                    ),
+                    'start_date': 'schedule.start_date.task_starting_date',
+                    'additional_delay': 18,
+                },
+            ]
+        },
+    ],
 }
