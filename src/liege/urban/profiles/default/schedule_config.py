@@ -3907,8 +3907,8 @@ schedule_config = {
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
             'creation_state': ('folder_creation',),
             'starting_states': ('folder_creation',),
+            'ending_states': ('technical_analysis_post_investigation',),
             'end_conditions': (
-                MacroEndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
                 MacroEndConditionObject('urban.schedule.condition.inquiry_done'),
             ),
             'start_date': 'urban.schedule.start_date.inquiry_end_date',
@@ -3922,7 +3922,6 @@ schedule_config = {
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
                     'creation_state': ('folder_creation',),
                     'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
                         EndConditionObject('urban.schedule.condition.inquiry_event_created'),
                         EndConditionObject('urban.schedule.condition.inquiry_dates_defined'),
                     ),
@@ -3937,7 +3936,6 @@ schedule_config = {
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
                     'creation_state': ('folder_creation',),
                     'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
                         EndConditionObject('liege.urban.schedule.inquiry_documents_done'),
                     ),
                     'start_date': 'schedule.start_date.task_starting_date',
@@ -3958,7 +3956,6 @@ schedule_config = {
                         StartConditionObject('liege.urban.schedule.inquiry_documents_done'),
                     ),
                     'end_conditions': (
-                        EndConditionObject('liege.urban.schedule.licence_ended', 'OR'),
                         EndConditionObject('liege.urban.schedule.inquiry_documents_validated', 'OR'),
                         EndConditionObject('liege.urban.schedule.write_inquiry_documents'),
                     ),
@@ -3987,6 +3984,32 @@ schedule_config = {
                     'additional_delay': 18,
                 },
             ]
+        },
+        {
+            'type_name': 'TaskConfig',
+            'id': 'rediger_rapport',
+            'title': "Rapport d'analyse",
+            'default_assigned_group': 'inspection_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('technical_analysis_post_investigation',),
+            'ending_states': ('technical_analysis_validation',),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 5,
+            'activate_recurrency': True,
+            'recurrence_states': ('technical_analysis_post_investigation',),
+        },
+        {
+            'type_name': 'TaskConfig',
+            'id': 'valider_rapport',
+            'title': "Rapport à valider",
+            'default_assigned_group': 'inspection_validators',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('technical_analysis_validation',),
+            'ending_states': ('technical_analysis_post_investigation', 'college_council_passage'),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 1,
+            'activate_recurrency': True,
+            'recurrence_states': ('technical_analysis_validation',),
         },
     ],
 }
