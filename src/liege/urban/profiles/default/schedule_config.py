@@ -3392,6 +3392,9 @@ schedule_config = {
                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
                    'creation_state': ('college_council_passage',),
                    'starting_states': ('college_council_passage',),
+                   'start_conditions': (
+                       StartConditionObject('urban.schedule.condition.inquiry_event_created'),
+                   ),
                    'end_conditions': (
                        EndConditionObject('liege.urban.schedule.decree_project_writed'),
                    ),
@@ -3489,13 +3492,13 @@ schedule_config = {
                    'title': "Affichage en cours",
                    'default_assigned_group': 'administrative_editors',
                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                   'creation_state': ('college_council_passage',),
-                   'starting_states': ('college_council_passage',),
+                   'creation_state': ('display_in_progress',),
+                   'starting_states': ('display_in_progress',),
                    'start_conditions': (
-                       StartConditionObject('liege.urban.schedule.council_in_progress'),
+                       StartConditionObject('liege.urban.schedule.display_in_progress'),
                    ),
                    'end_conditions': (
-                       EndConditionObject('liege.urban.schedule.council_completed'),
+                       EndConditionObject('liege.urban.schedule.display_completed'),
                    ),
                    'start_date': 'schedule.start_date.subtask_highest_due_date',
                    'additional_delay': 0,
@@ -3506,13 +3509,13 @@ schedule_config = {
                    'title': "Affichage terminé",
                    'default_assigned_group': 'administrative_editors',
                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                   'creation_state': ('college_council_passage',),
-                   'starting_states': ('college_council_passage',),
+                   'creation_state': ('display_in_progress',),
+                   'starting_states': ('display_in_progress',),
                    'start_conditions': (
-                       StartConditionObject('liege.urban.schedule.council_in_progress'),
+                       StartConditionObject('liege.urban.schedule.display_in_progress'),
                    ),
                    'end_conditions': (
-                       EndConditionObject('liege.urban.schedule.council_completed'),
+                       EndConditionObject('liege.urban.schedule.display_completed'),
                    ),
                    'start_date': 'schedule.start_date.subtask_highest_due_date',
                    'additional_delay': 0,
