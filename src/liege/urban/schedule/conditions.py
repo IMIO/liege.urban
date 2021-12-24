@@ -718,3 +718,16 @@ class InspectionReportValidated(Condition):
         is_refused = api.content.get_state(report_event) == 'writing_report'
 
         return is_validated or is_refused
+
+
+class DisplayCompleted(Condition):
+
+    def evaluate(self):
+        licence = self.task_container
+
+        display_completed = False
+        display_event = licence.getLastDisplayingTheDecision()
+        if display_event:
+            display_completed = api.content.get_state(display_event) == 'closed'
+
+        return display_completed

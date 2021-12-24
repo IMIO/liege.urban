@@ -773,144 +773,17 @@
     <adapter
         for="Products.urban.interfaces.IRoadDecree
               imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IStartCondition"
-        factory=".road_decree_conditions.StreetTechnicalAnalysisCompleted"
-        name="liege.urban.schedule.streets_technical_analysis_completed"
-        />
-
-    <adapter
-        for="Products.urban.interfaces.IRoadDecree
-              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
-        factory=".road_decree_conditions.StreetTechnicalAnalysisCompleted"
-        name="liege.urban.schedule.streets_technical_analysis_completed"
-        />
-
-    <adapter
-        for="Products.urban.interfaces.IRoadDecree
-              imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IStartCondition"
-        factory=".road_decree_conditions.StreetTechnicalAnalysisValidated"
-        name="liege.urban.schedule.streets_technical_analysis_validated"
-        />
-
-    <adapter
-        for="Products.urban.interfaces.IRoadDecree
-              imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IEndCondition"
-        factory=".road_decree_conditions.StreetTechnicalAnalysisValidated"
-        name="liege.urban.schedule.streets_technical_analysis_validated"
-        />
-
-    <adapter
-        for="Products.urban.interfaces.IRoadDecree
-              imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IStartCondition"
-        factory=".road_decree_conditions.DecreeProjectWrited"
-        name="liege.urban.schedule.decree_project_writed"
-        />
-
-    <adapter
-        for="Products.urban.interfaces.IRoadDecree
-              imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IEndCondition"
-        factory=".road_decree_conditions.DecreeProjectWrited"
-        name="liege.urban.schedule.decree_project_writed"
-        />
-
-    <adapter
-        for="Products.urban.interfaces.IRoadDecree
-              imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IStartCondition"
-        factory=".road_decree_conditions.DecreeProjectValidatedSended"
-        name="liege.urban.schedule.decree_project_validated_and_sended"
-        />
-
-    <adapter
-        for="Products.urban.interfaces.IRoadDecree
-              imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IEndCondition"
-        factory=".road_decree_conditions.DecreeProjectValidatedSended"
-        name="liege.urban.schedule.decree_project_validated_and_sended"
-        />
-
-    <adapter
-        for="Products.urban.interfaces.IRoadDecree
-              imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IStartCondition"
-        factory=".road_decree_conditions.CollegeInProgress"
-        name="liege.urban.schedule.college_in_progress"
-        />
-
-    <adapter
-        for="Products.urban.interfaces.IRoadDecree
-              imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IEndCondition"
-        factory=".road_decree_conditions.CollegeInProgress"
-        name="liege.urban.schedule.college_in_progress"
-        />
-
-    <adapter
-        for="Products.urban.interfaces.IRoadDecree
-              imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IStartCondition"
-        factory=".road_decree_conditions.CollegeCompleted"
-        name="liege.urban.schedule.college_completed"
-        />
-
-    <adapter
-        for="Products.urban.interfaces.IRoadDecree
-              imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IEndCondition"
-        factory=".road_decree_conditions.CollegeCompleted"
-        name="liege.urban.schedule.college_completed"
-        />
-
-    <adapter
-        for="Products.urban.interfaces.IRoadDecree
-              imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IStartCondition"
-        factory=".road_decree_conditions.CouncilInProgress"
-        name="liege.urban.schedule.council_in_progress"
-        />
-
-    <adapter
-        for="Products.urban.interfaces.IRoadDecree
-              imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IEndCondition"
-        factory=".road_decree_conditions.CouncilInProgress"
-        name="liege.urban.schedule.council_in_progress"
-        />
-
-    <adapter
-        for="Products.urban.interfaces.IRoadDecree
-              imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IStartCondition"
-        factory=".road_decree_conditions.CouncilCompleted"
-        name="liege.urban.schedule.council_completed"
-        />
-
-    <adapter
-        for="Products.urban.interfaces.IRoadDecree
-              imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IEndCondition"
-        factory=".road_decree_conditions.CouncilCompleted"
-        name="liege.urban.schedule.council_completed"
-        />
-
-    <adapter
-        for="Products.urban.interfaces.IRoadDecree
-              imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IStartCondition"
-        factory=".road_decree_conditions.DisplayInProgress"
-        name="liege.urban.schedule.display_in_progress"
-        />
-
-    <adapter
-        for="Products.urban.interfaces.IRoadDecree
-              imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IEndCondition"
-        factory=".road_decree_conditions.DisplayCompleted"
+        factory=".conditions.DisplayCompleted"
         name="liege.urban.schedule.display_completed"
         />
+
+    <adapter
+        for="Products.urban.interfaces.IRoadDecree
+              imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.DisplayCompleted"
+        name="liege.urban.schedule.display_completed"
+        />
+
 </configure>

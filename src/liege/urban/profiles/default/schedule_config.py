@@ -2026,7 +2026,6 @@ schedule_config = {
                     'end_conditions': (
                         MacroEndConditionObject('liege.urban.schedule.college_done'),
                     ),
-                    'start_date': 'schedule.start_date.task_starting_date',
                     'additional_delay': 2,
                     'subtasks': [
                         {
@@ -2365,7 +2364,7 @@ schedule_config = {
             'ending_states': ('complete', 'inacceptable', 'abandoned'),
             'start_date': 'schedule.start_date.subtask_highest_due_date',
             'additional_delay': 0,
-            'subtasks' : [
+            'subtasks': [
                 {
                     'type_name': 'TaskConfig',
                     'id': 'demande_complements',
@@ -2674,7 +2673,6 @@ schedule_config = {
                     'end_conditions': (
                         MacroEndConditionObject('liege.urban.schedule.college_done'),
                     ),
-                    'start_date': 'schedule.start_date.task_starting_date',
                     'additional_delay': 2,
                     'subtasks': [
                         {
@@ -3237,293 +3235,6 @@ schedule_config = {
             ]
         },
     ],
-    'roaddecree': [
-       {
-           'type_name': 'TaskConfig',
-           'id': 'folder-creation',
-           'title': 'Création du dossier',
-           'default_assigned_group': 'administrative_editors',
-           'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-           'creation_state': ('folder_creation',),
-           'starting_states': ('folder_creation',),
-           'ending_states': (
-               'public_investigation',
-               'technical_analysis_post_investigation',
-               'abandon',
-           ),
-           'start_date': 'urban.schedule.start_date.creation_date',
-           'additional_delay': 0,
-       },
-       # {
-       #     'type_name': 'MacroTaskConfig',
-       #     'id': 'public-investigation',
-       #     'title': 'Enquête publique',
-       #     'default_assigned_group': 'administrative_editors',
-       #     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-       #     'creation_state': ('public_investigation',),
-       #     'starting_states': ('public_investigation',),
-       #     'ending_states': ('technical_analysis_post_investigation'),
-       #     'end_conditions': (
-       #         MacroEndConditionObject('urban.schedule.condition.inquiry_done'),
-       #     ),
-       #     'start_date': 'urban.schedule.start_date.inquiry_end_date',
-       #     'additional_delay': 0,
-       #     'subtasks': [
-       #         {
-       #             'type_name': 'TaskConfig',
-       #             'id': 'enquete-dates',
-       #             'title': 'Définir les dates de d\'enquête',
-       #             'default_assigned_group': 'administrative_editors',
-       #             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-       #             'creation_state': ('public_investigation',),
-       #             'end_conditions': (
-       #                 EndConditionObject('urban.schedule.condition.inquiry_dates_defined'),
-       #             ),
-       #             'start_date': 'schedule.start_date.subtask_highest_due_date',
-       #             'additional_delay': 1,
-       #         },
-       #         {
-       #             'type_name': 'TaskConfig',
-       #             'id': 'enquete-documents',
-       #             'title': 'Produire les documents',
-       #             'default_assigned_group': 'administrative_editors',
-       #             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-       #             'creation_state': ('public_investigation',),
-       #             'end_conditions': (
-       #                 EndConditionObject('liege.urban.schedule.inquiry_documents_done'),
-       #             ),
-       #             'start_date': 'schedule.start_date.subtask_highest_due_date',
-       #             'additional_delay': 1,
-       #         },
-       #         {
-       #             'type_name': 'TaskConfig',
-       #             'id': 'valider-documents',
-       #             'title': 'Valider les documents',
-       #             'default_assigned_group': 'administrative_editors',
-       #             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-       #             'creation_state': ('public_investigation',),
-       #             'start_conditions': (
-       #                 StartConditionObject('liege.urban.schedule.inquiry_documents_done'),
-       #             ),
-       #             'end_conditions': (
-       #                 EndConditionObject('liege.urban.schedule.inquiry_documents_validated'),
-       #             ),
-       #             'start_date': 'schedule.start_date.subtask_highest_due_date',
-       #             'additional_delay': 2,
-       #         },
-       #         {
-       #             'type_name': 'TaskConfig',
-       #             'id': 'envoyer-documents',
-       #             'title': 'Envoyer les documents',
-       #             'default_assigned_group': 'administrative_editors',
-       #             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-       #             'creation_state': ('public_investigation',),
-       #             'start_conditions': (
-       #                 StartConditionObject('liege.urban.schedule.inquiry_documents_validated'),
-       #             ),
-       #             'end_conditions': (
-       #                 EndConditionObject('liege.urban.schedule.inquiry_documents_sent'),
-       #             ),
-       #             'start_date': 'schedule.start_date.subtask_highest_due_date',
-       #             'additional_delay': 3,
-       #         },
-       #     ]
-       # },
-       # {
-       #     'type_name': 'MacroTaskConfig',
-       #     'id': 'technical-analysis-post-enquiry',
-       #     'title': 'Analyse technique post enquête',
-       #     'default_assigned_group': 'administrative_editors',
-       #     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-       #     'creation_state': ('technical_analysis_post_investigation',),
-       #     'starting_states': ('technical_analysis_post_investigation',),
-       #     'ending_states': ('college_council_passage',),
-       #     'start_date': 'schedule.start_date.subtask_highest_due_date',
-       #     'additional_delay': 0,
-       #     'subtasks': [
-       #         {
-       #             'type_name': 'TaskConfig',
-       #             'id': 'analysis-report',
-       #             'title': "Rapport d'analyse",
-       #             'default_assigned_group': 'administrative_editors',
-       #             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-       #             'creation_state': ('technical_analysis_post_investigation',),
-       #             'end_conditions': (
-       #                 EndConditionObject('liege.urban.schedule.streets_technical_analysis_completed'),
-       #             ),
-       #             'start_date': 'schedule.start_date.subtask_highest_due_date',
-       #             'additional_delay': 0,
-       #         },
-       #         {
-       #             'type_name': 'TaskConfig',
-       #             'id': 'analysis-report-validation',
-       #             'title': "Validation du rapport d'analyse",
-       #             'default_assigned_group': 'administrative_editors',
-       #             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-       #             'creation_state': ('technical_analysis_post_investigation',),
-       #             'start_conditions': (
-       #                 StartConditionObject('liege.urban.schedule.streets_technical_analysis_completed'),
-       #             ),
-       #             'end_conditions': (
-       #                 EndConditionObject('liege.urban.schedule.streets_technical_analysis_validated'),
-       #             ),
-       #             'start_date': 'schedule.start_date.subtask_highest_due_date',
-       #             'additional_delay': 0,
-       #         },
-       #     ],
-       # },
-       {
-           'type_name': 'MacroTaskConfig',
-           'id': 'decision-notification',
-           'title': 'Notification décision finale',
-           'default_assigned_group': 'administrative_editors',
-           'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-           'creation_state': ('college_council_passage',),
-           'starting_states': ('college_council_passage',),
-           'ending_states': ('authorized', 'abandoned', 'refused'),
-           'start_date': 'schedule.start_date.subtask_highest_due_date',
-           'additional_delay': 0,
-           'subtasks': [
-               {
-                   'type_name': 'TaskConfig',
-                   'id': 'write-road-decree-project',
-                   'title': "Rédiger le projet de Décret voirie",
-                   'default_assigned_group': 'administrative_editors',
-                   'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                   'creation_state': ('college_council_passage',),
-                   'starting_states': ('college_council_passage',),
-                   'start_conditions': (
-                       StartConditionObject('urban.schedule.condition.inquiry_event_created'),
-                   ),
-                   'end_conditions': (
-                       EndConditionObject('liege.urban.schedule.decree_project_writed'),
-                   ),
-                   'start_date': 'schedule.start_date.subtask_highest_due_date',
-                   'additional_delay': 0,
-               },
-               {
-                   'type_name': 'TaskConfig',
-                   'id': 'validate-decree-project',
-                   'title': "Valider le projet et envoyer vers IA Delib",
-                   'default_assigned_group': 'administrative_editors',
-                   'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                   'creation_state': ('college_council_passage',),
-                   'starting_states': ('college_council_passage',),
-                   'start_conditions': (
-                       StartConditionObject('liege.urban.schedule.decree_project_writed'),
-                   ),
-                   'end_conditions': (
-                       EndConditionObject('liege.urban.schedule.decree_project_validated_and_sended'),
-                   ),
-                   'start_date': 'schedule.start_date.subtask_highest_due_date',
-                   'additional_delay': 0,
-               },
-               {
-                   'type_name': 'TaskConfig',
-                   'id': 'college-in-progress',
-                   'title': "Collège en cours",
-                   'default_assigned_group': 'administrative_editors',
-                   'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                   'creation_state': ('college_council_passage',),
-                   'starting_states': ('college_council_passage',),
-                   'start_conditions': (
-                       StartConditionObject('liege.urban.schedule.decree_project_validated_and_sended'),
-                   ),
-                   'end_conditions': (
-                       EndConditionObject('liege.urban.schedule.college_in_progress'),
-                   ),
-                   'start_date': 'schedule.start_date.subtask_highest_due_date',
-                   'additional_delay': 0,
-               },
-               {
-                   'type_name': 'TaskConfig',
-                   'id': 'college-completed',
-                   'title': "Collège terminé",
-                   'default_assigned_group': 'administrative_editors',
-                   'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                   'creation_state': ('college_council_passage',),
-                   'starting_states': ('college_council_passage',),
-                   'start_conditions': (
-                       StartConditionObject('liege.urban.schedule.college_in_progress'),
-                   ),
-                   'end_conditions': (
-                       EndConditionObject('liege.urban.schedule.college_completed'),
-                   ),
-                   'start_date': 'schedule.start_date.subtask_highest_due_date',
-                   'additional_delay': 0,
-               },
-               {
-                   'type_name': 'TaskConfig',
-                   'id': 'council-in-progress',
-                   'title': "Conseil en cours",
-                   'default_assigned_group': 'administrative_editors',
-                   'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                   'creation_state': ('college_council_passage',),
-                   'starting_states': ('college_council_passage',),
-                   'start_conditions': (
-                       StartConditionObject('liege.urban.schedule.college_completed'),
-                   ),
-                   'end_conditions': (
-                       EndConditionObject('liege.urban.schedule.council_in_progress'),
-                   ),
-                   'start_date': 'schedule.start_date.subtask_highest_due_date',
-                   'additional_delay': 0,
-               },
-               {
-                   'type_name': 'TaskConfig',
-                   'id': 'council-completed',
-                   'title': "Conseil terminé",
-                   'default_assigned_group': 'administrative_editors',
-                   'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                   'creation_state': ('college_council_passage',),
-                   'starting_states': ('college_council_passage',),
-                   'start_conditions': (
-                       StartConditionObject('liege.urban.schedule.council_in_progress'),
-                   ),
-                   'end_conditions': (
-                       EndConditionObject('liege.urban.schedule.council_completed'),
-                   ),
-                   'start_date': 'schedule.start_date.subtask_highest_due_date',
-                   'additional_delay': 0,
-               },
-               {
-                   'type_name': 'TaskConfig',
-                   'id': 'current-display',
-                   'title': "Affichage en cours",
-                   'default_assigned_group': 'administrative_editors',
-                   'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                   'creation_state': ('display_in_progress',),
-                   'starting_states': ('display_in_progress',),
-                   'start_conditions': (
-                       StartConditionObject('liege.urban.schedule.display_in_progress'),
-                   ),
-                   'end_conditions': (
-                       EndConditionObject('liege.urban.schedule.display_completed'),
-                   ),
-                   'start_date': 'schedule.start_date.subtask_highest_due_date',
-                   'additional_delay': 0,
-               },
-               {
-                   'type_name': 'TaskConfig',
-                   'id': 'completed-display',
-                   'title': "Affichage terminé",
-                   'default_assigned_group': 'administrative_editors',
-                   'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-                   'creation_state': ('display_in_progress',),
-                   'starting_states': ('display_in_progress',),
-                   'start_conditions': (
-                       StartConditionObject('liege.urban.schedule.display_in_progress'),
-                   ),
-                   'end_conditions': (
-                       EndConditionObject('liege.urban.schedule.display_completed'),
-                   ),
-                   'start_date': 'schedule.start_date.subtask_highest_due_date',
-                   'additional_delay': 0,
-               },
-           ],
-       },
-    ],
-
     'inspection': [
         {
             'type_name': 'TaskConfig',
@@ -3938,6 +3649,21 @@ schedule_config = {
     ],
     'roaddecree': [
         {
+            'type_name': 'TaskConfig',
+            'id': 'folder-creation',
+            'title': 'Création du dossier',
+            'default_assigned_group': 'administrative_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('folder_creation',),
+            'starting_states': ('folder_creation',),
+            'ending_states': (
+                'public_investigation',
+                'technical_analysis_post_investigation',
+            ),
+            'start_date': 'urban.schedule.start_date.creation_date',
+            'additional_delay': 0,
+        },
+        {
             'type_name': 'MacroTaskConfig',
             'id': 'enquete',
             'title': 'Enquête publique',
@@ -4048,6 +3774,120 @@ schedule_config = {
             'additional_delay': 1,
             'activate_recurrency': True,
             'recurrence_states': ('technical_analysis_validation',),
+        },
+        {
+            'type_name': 'MacroTaskConfig',
+            'id': 'decision-notification',
+            'title': 'Notification décision finale',
+            'default_assigned_group': 'administrative_editors',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_state': ('college_council_passage',),
+            'starting_states': ('college_council_passage',),
+            'ending_states': ('authorized', 'abandoned', 'refused'),
+            'start_date': 'schedule.start_date.subtask_highest_due_date',
+            'additional_delay': 0,
+            'subtasks': [
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'rediger-proposition-decision',
+                    'title': 'Rédiger le projet de permis',
+                    'default_assigned_group': 'administrative_editors',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_state': ('college_council_passage',),
+                    'starting_states': ('college_council_passage',),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.decision_project_drafted'),
+                    ),
+                    'start_date': 'schedule.start_date.task_starting_date',
+                    'calculation_delay': (
+                        'urban.schedule.delay.annonced_delay',
+                    ),
+                    'additional_delay': -7,
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'envoyer-proposition-decision',
+                    'title': 'Valider et envoyer vers IA délib',
+                    'default_assigned_group': 'administrative_validators',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_state': ('college_council_passage',),
+                    'starting_states': ('college_council_passage',),
+                    'start_conditions': (
+                        StartConditionObject('liege.urban.schedule.decision_project_drafted'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.decision_project_sent'),
+                    ),
+                    'start_date': 'schedule.start_date.task_starting_date',
+                    'additional_delay': 2,
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'college-en-cours',
+                    'title': "Collège en cours",
+                    'default_assigned_group': 'administrative_editors',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_state': ('college_council_passage',),
+                    'starting_states': ('college_council_passage',),
+                    'start_conditions': (
+                        StartConditionObject('liege.urban.schedule.decision_project_sent'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.college_done'),
+                    ),
+                    'start_date': 'schedule.start_date.task_starting_date',
+                    'additional_delay': 0,
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'college-termine',
+                    'title': "Collège terminé",
+                    'default_assigned_group': 'administrative_editors',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_state': ('college_council_passage',),
+                    'starting_states': ('college_council_passage',),
+                    'start_conditions': (
+                        StartConditionObject('liege.urban.schedule.college_done'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.college_event_closed'),
+                    ),
+                    'start_date': 'schedule.start_date.task_starting_date',
+                    'additional_delay': 0,
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'current-display',
+                    'title': "Affichage en cours",
+                    'default_assigned_group': 'administrative_editors',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_state': ('display_in_progress',),
+                    'starting_states': ('display_in_progress',),
+                    'start_conditions': (
+                        StartConditionObject('liege.urban.schedule.display_in_progress'),
+                    ),
+                    'end_conditions': (
+                        EndConditionObject('liege.urban.schedule.display_completed'),
+                    ),
+                    'start_date': 'schedule.start_date.task_starting_date',
+                    'additional_delay': 0,
+                },
+                {
+                    'type_name': 'TaskConfig',
+                    'id': 'completed-display',
+                    'title': "Affichage terminé",
+                    'default_assigned_group': 'administrative_editors',
+                    'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+                    'creation_state': ('display_in_progress',),
+                    'starting_states': ('display_in_progress',),
+                    'ending_states': ('authorized', 'abandoned', 'refused'),
+                    'start_conditions': (
+                        StartConditionObject('liege.urban.schedule.display_completed'),
+                    ),
+                    'start_date': 'schedule.start_date.task_starting_date',
+                    'additional_delay': 0,
+                },
+            ],
         },
     ],
 }
