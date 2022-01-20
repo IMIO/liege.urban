@@ -20,7 +20,7 @@ class MonthlyActivityReport(BrowserView):
     query = {
         'date_index': 'created',
         'start_date': date(2000, 1, 1),
-        'end_date': date(date.today().year, date.today().month, 1),
+        'end_date': date(date.today().year, date.today().month, date.today().day),
         'licence_type': set(
             URBAN_TYPES
         ),
