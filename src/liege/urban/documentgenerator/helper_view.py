@@ -4,14 +4,14 @@ from liege.urban.interfaces import IShore
 
 from plone import api
 
-from Products.urban.docgen.helper_view import EventDisplayProxyObject
-from Products.urban.docgen.helper_view import LicenceDisplayProxyObject
+from Products.urban.docgen.helper_view import UrbanDocGenerationEventHelperView
+from Products.urban.docgen.helper_view import UrbanDocGenerationLicenceHelperView
 from Products.urban.interfaces import IEnvironmentBase
 
 from zope.component import queryAdapter
 
 
-class LiegeLicenceProxyObject(LicenceDisplayProxyObject):
+class LiegeLicenceHelperView(UrbanDocGenerationLicenceHelperView):
     """
     Archetypes implementation of DisplayProxyObject.
     """
@@ -70,7 +70,7 @@ class LiegeLicenceProxyObject(LicenceDisplayProxyObject):
                 return fm_proxy
 
 
-class LiegeEventProxyObject(EventDisplayProxyObject):
+class LiegeEventHelperView(UrbanDocGenerationEventHelperView):
     """
     """
 

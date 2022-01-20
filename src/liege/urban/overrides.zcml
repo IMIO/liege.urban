@@ -74,20 +74,18 @@
       />
 
       <!-- documentgenerator proxy object-->
-      <adapter
-          for="Products.urban.interfaces.IGenericLicence
-               zope.interface.Interface"
-          provides="collective.documentgenerator.interfaces.IDisplayProxyObject"
-          factory="liege.urban.documentgenerator.helper_view.LiegeLicenceProxyObject"
-          permission="zope2.View"
+      <browser:page
+         for="Products.urban.interfaces.IGenericLicence"
+         class="liege.urban.documentgenerator.helper_view.LiegeLicenceHelperView"
+         permission="zope2.View"
+         name="document_generation_helper_view"
        />
 
-      <adapter
-          for="Products.urban.interfaces.IUrbanEvent
-               zope.interface.Interface"
-          provides="collective.documentgenerator.interfaces.IDisplayProxyObject"
-          factory="liege.urban.documentgenerator.helper_view.LiegeEventProxyObject"
-          permission="zope2.View"
+      <browser:page
+         for="Products.urban.interfaces.IUrbanEvent"
+         class="liege.urban.documentgenerator.helper_view.LiegeEventHelperView"
+         permission="zope2.View"
+         name="document_generation_helper_view"
        />
 
       <!-- documentgenerator proxy object-->
