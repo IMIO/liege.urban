@@ -25,7 +25,6 @@
  <state state_id="folder_creation" title="folder_creation">
   <description>folder_creation</description>
   <exit-transition transition_id="to_public_investigation"/>
-  <exit-transition transition_id="to_technical_analysis_post_investigation"/>
   <exit-transition transition_id="abandon"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
