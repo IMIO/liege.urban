@@ -23,6 +23,12 @@ msgstr ""
 msgid "liege.urban.schedule.acknowledgment_written"
 msgstr ""
 
+msgid "liege.urban.schedule.all_env_validations_proposed"
+msgstr ""
+
+msgid "liege.urban.schedule.all_env_validations_validated_or_refused"
+msgstr ""
+
 msgid "liege.urban.schedule.all_mayor_colleges_done"
 msgstr ""
 
@@ -93,6 +99,12 @@ msgid "liege.urban.schedule.env_decision_college_done"
 msgstr ""
 
 msgid "liege.urban.schedule.env_decision_notified"
+msgstr ""
+
+msgid "liege.urban.schedule.env_validation_proposed"
+msgstr ""
+
+msgid "liege.urban.schedule.env_validation_refused"
 msgstr ""
 
 msgid "liege.urban.schedule.inquiry_documents_done"
