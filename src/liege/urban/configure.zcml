@@ -8,7 +8,11 @@
 
   <i18n:registerTranslations directory="locales" />
 
+  <include file="indexes.zcml" />
   <include file="interfaces.zcml" />
+  <include file="permissions.zcml" />
+  <include file="skins.zcml" />
+  <include file="vocabulary.zcml" />
 
   <include package="collective.wfadaptations" />
   <include package="imio.actionspanel"/>
@@ -31,11 +35,6 @@
   <include package=".schedule" />
   <include package=".services" />
   <include package=".workflows" />
-
-  <include file="indexes.zcml" />
-  <include file="permissions.zcml" />
-  <include file="skins.zcml" />
-  <include file="vocabulary.zcml" />
 
   <genericsetup:registerProfile
       name="default"

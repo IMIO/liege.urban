@@ -166,6 +166,13 @@
   />
 
   <adapter
+     for="liege.urban.interfaces.IUrbanEventWithEnvironmentValidation"
+     provides="borg.localrole.interfaces.ILocalRoleProvider"
+     factory=".acknowledgment_workflow.StateRolesMapping"
+     name="acknowledgmentevent_local_roles"
+  />
+
+  <adapter
      for="Products.urban.interfaces.IInternalPreliminaryAdviceEvent"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
      factory=".preliminaryadvice_event_workflow.StateRolesMapping"

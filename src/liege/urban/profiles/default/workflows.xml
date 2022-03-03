@@ -6,6 +6,7 @@
  <object name="codt_buildlicence_workflow" meta_type="Workflow"/>
  <object name="codt_uniquelicence_workflow" meta_type="Workflow"/>
  <object name="college_event_workflow" meta_type="Workflow"/>
+ <object name="env_validation_event_workflow" meta_type="Workflow"/>
  <object name="envclassone_workflow" meta_type="Workflow"/>
  <object name="envclassthree_workflow" meta_type="Workflow"/>
  <object name="inquiry_event_workflow" meta_type="Workflow"/>
@@ -99,6 +100,9 @@
   </type>
   <type type_id="UrbanEventFollowUp">
      <bound-workflow workflow_id="acknowledgment_event_workflow" />
+  </type>
+  <type type_id="UrbanEventWithEnvironmentValidation">
+     <bound-workflow workflow_id="env_validation_event_workflow" />
   </type>
 <!-- ##code-section workflowbindings -->
   <type type_id="Article127">

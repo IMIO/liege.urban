@@ -14,4 +14,8 @@
     interface=".interfaces.IInspectionBuidlingDivisionAttestationCollege"
     type="Products.urban.interfaces.IEventTypeType"/>
 
+  <interface
+    interface=".interfaces.IUrbanEventWithEnvironmentValidation"
+    type="Products.urban.interfaces.IEventTypeType"/>
+
 </configure>

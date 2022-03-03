@@ -31,3 +31,7 @@ class IInspectionBuidlingDivisionAttestationMail(Interface):
 
 class IInspectionBuidlingDivisionAttestationCollege(Interface):
     __doc__ = _("""IInspectionBuidlingDivisionAttestationCollege type marker interface""")
+
+
+class IUrbanEventWithEnvironmentValidation(Interface):
+    __doc__ = _("""Environment validation type marker interface""")

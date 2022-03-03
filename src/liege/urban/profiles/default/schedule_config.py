@@ -3828,7 +3828,6 @@ schedule_config = {
                     'default_assigned_group': 'administrative_editors',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
                     'creation_state': ('college_council_passage',),
-                    'starting_states': ('college_council_passage',),
                     'start_conditions': (
                         StartConditionObject('liege.urban.schedule.decision_project_sent'),
                     ),
@@ -3845,7 +3844,6 @@ schedule_config = {
                     'default_assigned_group': 'administrative_editors',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
                     'creation_state': ('college_council_passage',),
-                    'starting_states': ('college_council_passage',),
                     'start_conditions': (
                         StartConditionObject('liege.urban.schedule.college_done'),
                     ),
@@ -3864,7 +3862,7 @@ schedule_config = {
                     'creation_state': ('display_in_progress',),
                     'starting_states': ('display_in_progress',),
                     'start_conditions': (
-                        StartConditionObject('liege.urban.schedule.display_in_progress'),
+                        StartConditionObject('liege.urban.schedule.college_done'),
                     ),
                     'end_conditions': (
                         EndConditionObject('liege.urban.schedule.display_completed'),

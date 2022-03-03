@@ -3,5 +3,6 @@
  <factorytypes>
   <type portal_type="UrbanEventAcknowledgment"/>
   <type portal_type="UrbanEventPreliminaryAdvice"/>
+  <type portal_type="UrbanEventWithEnvironmentValidation"/>
  </factorytypes>
 </object>

@@ -3,6 +3,8 @@
         meta_type="Plone Types Tool">
  <object name="UrbanEventAcknowledgment"
          meta_type="Factory-based Type Information with dynamic views"/>
+ <object name="UrbanEventWithEnvironmentValidation"
+         meta_type="Factory-based Type Information with dynamic views"/>
  <object name="UrbanEventPreliminaryAdvice"
          meta_type="Factory-based Type Information with dynamic views"/>
 </object>

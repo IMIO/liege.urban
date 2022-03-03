@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2021-08-12 13:14+0000\n"
+"POT-Creation-Date: 2022-03-03 09:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,10 @@ msgstr ""
 msgid "Date start"
 msgstr ""
 
+#: ../interfaces.py:37
+msgid "Environment validation type marker interface"
+msgstr ""
+
 #: ../interfaces.py:33
 msgid "IInspectionBuidlingDivisionAttestationCollege type marker interface"
 msgstr ""
@@ -41,7 +45,7 @@ msgstr ""
 msgid "IInternalOpinionRequestEvent type marker interface"
 msgstr ""
 
-#: ../configure.zcml:46
+#: ../configure.zcml:45
 msgid "Installs liege.urban add-on."
 msgstr ""
 
@@ -64,7 +68,7 @@ msgstr ""
 msgid "The above listed tasks are not done yet !!!"
 msgstr ""
 
-#: ../configure.zcml:46
+#: ../configure.zcml:45
 #: ../schedule/vocabulary.py:114
 msgid "liege.urban"
 msgstr ""
@@ -178,11 +182,11 @@ msgstr ""
 msgid "urban_label_roadDescription"
 msgstr ""
 
-#: ../content/inquiry_licence.py:42
+#: ../content/inquiry_licence.py:43
 msgid "urban_label_solicitExternalOpinionsTo"
 msgstr ""
 
-#: ../content/inquiry_licence.py:43
+#: ../content/inquiry_licence.py:44
 msgid "urban_label_solicitInternalOpinionsTo"
 msgstr ""
 
