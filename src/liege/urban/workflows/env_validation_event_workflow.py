@@ -13,14 +13,14 @@ class StateRolesMapping(BaseRolesMapping):
         licence = self.licence
         mapping = {
             'urban_only': [
-                'administrative_editors',
+                'technical_editors',
             ],
             'environment_only': [
-                'administrative_editors_environment',
+                'technical_editors_environment',
             ],
             'urban_and_environment': [
-                'administrative_editors',
-                'administrative_editors_environment',
+                'technical_editors',
+                'technical_editors_environment',
             ]
         }
         allowed_group = self.get_allowed_groups(licence, event)
@@ -33,14 +33,14 @@ class StateRolesMapping(BaseRolesMapping):
         licence = self.licence
         mapping = {
             'urban_only': [
-                'administrative_validators',
+                'technical_validators',
             ],
             'environment_only': [
-                'administrative_validators_environment',
+                'technical_validators_environment',
             ],
             'urban_and_environment': [
-                'administrative_validators',
-                'administrative_validators_environment',
+                'technical_validators',
+                'technical_validators_environment',
             ]
         }
         allowed_group = self.get_allowed_groups(licence, event)
