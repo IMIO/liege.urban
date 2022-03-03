@@ -2993,6 +2993,44 @@ schedule_config = {
                 },
             ]
         },
+        {
+            'type_name': 'TaskConfig',
+            'id': 'validation-environnement',
+            'title': 'Validation',
+            'default_assigned_group': 'administrative_validators_environment',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_conditions': (
+                CreationConditionObject('liege.urban.schedule.env_validation_proposed'),
+            ),
+            'end_conditions': (
+                EndConditionObject('liege.urban.schedule.all_env_validations_validated_or_refused'),
+            ),
+            'start_date': 'urban.schedule.start_date.deposit_date',
+            'additional_delay': 2,
+            'activate_recurrency': True,
+            'recurrence_conditions': (
+                RecurrenceConditionObject('liege.urban.schedule.env_validation_proposed'),
+            ),
+        },
+        {
+            'type_name': 'TaskConfig',
+            'id': 'refus-environnement',
+            'title': 'Validation refusée',
+            'default_assigned_group': 'administrative_editors_environment',
+            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
+            'creation_conditions': (
+                CreationConditionObject('liege.urban.schedule.env_validation_refused'),
+            ),
+            'end_conditions': (
+                EndConditionObject('liege.urban.schedule.all_env_validations_proposed'),
+            ),
+            'start_date': 'urban.schedule.start_date.deposit_date',
+            'additional_delay': 3,
+            'activate_recurrency': True,
+            'recurrence_conditions': (
+                RecurrenceConditionObject('liege.urban.schedule.env_validation_refused'),
+            ),
+        },
     ],
     'envclassthree': [
         {
@@ -3271,44 +3309,6 @@ schedule_config = {
                     ),
                 },
             ]
-        },
-        {
-            'type_name': 'TaskConfig',
-            'id': 'validation-environnement',
-            'title': 'Validation',
-            'default_assigned_group': 'administrative_validators_environment',
-            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-            'creation_conditions': (
-                CreationConditionObject('liege.urban.schedule.env_validation_proposed'),
-            ),
-            'end_conditions': (
-                EndConditionObject('liege.urban.schedule.all_env_validations_validated_or_refused'),
-            ),
-            'start_date': 'urban.schedule.start_date.deposit_date',
-            'additional_delay': 2,
-            'activate_recurrency': True,
-            'recurrence_conditions': (
-                RecurrenceConditionObject('liege.urban.schedule.env_validation_proposed'),
-            ),
-        },
-        {
-            'type_name': 'TaskConfig',
-            'id': 'refus-environnement',
-            'title': 'Validation refusée',
-            'default_assigned_group': 'administrative_editors_environment',
-            'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-            'creation_conditions': (
-                CreationConditionObject('liege.urban.schedule.env_validation_refused'),
-            ),
-            'end_conditions': (
-                EndConditionObject('liege.urban.schedule.all_env_validations_proposed'),
-            ),
-            'start_date': 'urban.schedule.start_date.deposit_date',
-            'additional_delay': 3,
-            'activate_recurrency': True,
-            'recurrence_conditions': (
-                RecurrenceConditionObject('liege.urban.schedule.env_validation_refused'),
-            ),
         },
         {
             'type_name': 'TaskConfig',
