@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from liege.urban import interfaces
 from liege.urban import UrbanMessage as _
 from liege.urban.licence_fields_permissions import set_field_permissions
 from liege.urban.licence_fields_permissions import set_environment_field_permissions
@@ -7,6 +8,7 @@ from Products.urban.content.licence.EnvClassBordering import EnvClassBordering
 from Products.urban.content.licence.EnvClassOne import EnvClassOne
 from Products.urban.content.licence.EnvClassThree import EnvClassThree
 from Products.urban.content.licence.EnvClassTwo import EnvClassTwo
+from Products.urban.content.licence.EnvironmentBase import EnvironmentBase
 
 
 def update_base_schema(baseSchema):
@@ -52,6 +54,7 @@ def update_base_schema(baseSchema):
 
     return LicenceSchema
 
+
 env_base_classes = [
     EnvClassOne, EnvClassThree, EnvClassTwo, EnvClassBordering
 ]
@@ -61,14 +64,15 @@ for licence_class in env_base_classes:
 EnvClassThree.schema = set_environment_field_permissions(EnvClassThree.schema)
 
 
-
 def update_classthree_schema(baseSchema):
     LicenceSchema = baseSchema.copy()
     # reorder fields
     LicenceSchema.moveField('description', after='inadmissibilityreasonsDetails')
     return LicenceSchema
 
+
 EnvClassThree.schema = update_classthree_schema(EnvClassThree.schema)
+
 
 def update_licences_schema(baseSchema):
     LicenceSchema = baseSchema.copy()
@@ -96,9 +100,11 @@ def update_licences_schema(baseSchema):
 
     return LicenceSchema
 
+
 env_licence_classes = [
     EnvClassOne, EnvClassTwo, EnvClassBordering
 ]
+
 
 licences_permissions_mapping = {
     'urban_description': ('liege.urban: External Reader', 'liege.urban: Description Editor'),
@@ -125,3 +131,10 @@ for licence_class in env_licence_classes:
     )
 # env class bordering has no specific worfklow, apply same permissions than class 3
 EnvClassBordering.schema = set_environment_field_permissions(EnvClassBordering.schema)
+
+
+def getAllValidationEvents(self):
+    return self.getAllEvents(interfaces.IUrbanEventWithEnvironmentValidation)
+
+
+EnvironmentBase.getAllValidationEvents = getAllValidationEvents

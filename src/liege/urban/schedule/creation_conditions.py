@@ -246,3 +246,44 @@ class InspectionReportRedacted(CreationCondition):
 
         is_redacted = api.content.get_state(report_event) == 'to_validate'
         return is_redacted
+
+
+class EnvironmentValidationCondition(CreationCondition):
+    """
+    Base class for environnement validation event based conditions
+    """
+
+    def __init__(self, licence, task):
+        super(EnvironmentValidationCondition, self).__init__(licence, task)
+        self.validation_events = licence.getAllValidationEvents()
+        self.licence = licence
+
+
+class EventWithEnvValidationWritten(EnvironmentValidationCondition):
+    """
+    At least one validation event is proposed.
+    """
+
+    def evaluate(self):
+        if not self.validation_events:
+            return False
+        for event in self.validation_events:
+            if api.content.get_state(event) == 'to_validate':
+                return True
+        return False
+
+
+class EventWithEnvValidationRefused(EnvironmentValidationCondition):
+    """
+    At least one validation event is refused.
+    """
+
+    def evaluate(self):
+        if not self.validation_events:
+            return False
+        for event in self.validation_events:
+            wf_history = event.workflow_history.get('env_validation_event_workflow', [])
+            refused = len(wf_history) > 1
+            if api.content.get_state(event) == 'draft' and refused:
+                return True
+        return False

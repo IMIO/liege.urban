@@ -210,7 +210,7 @@ class OnlyNeedFDOpinion(CreationCondition):
     def evaluate(self):
         licence = self.task_container
         choice = licence.getProcedureChoice()
-        only_FD = 'FD' in choice and len(choice) is 1
+        only_FD = 'FD' in choice and len(choice) == 1
         return only_FD
 
 
@@ -731,3 +731,42 @@ class DisplayCompleted(Condition):
             display_completed = api.content.get_state(display_event) == 'closed'
 
         return display_completed
+
+
+class EnvironmentValidationCondition(Condition):
+    """
+    Base class for environnement validation event based conditions
+    """
+
+    def __init__(self, licence, task):
+        super(EnvironmentValidationCondition, self).__init__(licence, task)
+        self.validation_events = licence.getAllValidationEvents()
+        self.licence = licence
+
+
+class AllEventsWithEnvValidationWritten(EnvironmentValidationCondition):
+    """
+    At least one validation event is proposed.
+    """
+
+    def evaluate(self):
+        if not self.validation_events:
+            return True
+        for event in self.validation_events:
+            if api.content.get_state(event) == 'draft':
+                return False
+        return True
+
+
+class AllEventsWithEnvValidationValidatedOrRefused(EnvironmentValidationCondition):
+    """
+    At least one validation event is refused.
+    """
+
+    def evaluate(self):
+        if not self.validation_events:
+            return True
+        for event in self.validation_events:
+            if api.content.get_state(event) == 'to_validate':
+                return False
+        return True
