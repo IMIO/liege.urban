@@ -142,7 +142,7 @@
   />
 
   <adapter
-     for="Products.urban.interfaces.IInspectionEventReport"
+     for="Products.urban.interfaces.IInspectionReportEvent"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
      factory=".inspectionreport_event_workflow.StateRolesMapping"
      name="inspectionreport_local_roles"
