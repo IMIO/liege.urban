@@ -3766,7 +3766,7 @@ schedule_config = {
             'title': 'Réponse administrative',
             'default_assigned_group': 'administrative_editors',
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
-            'creation_state': ('administrative_answer',),
+            'creation_state': ('technical_analysis',),
             'creation_conditions': (
                 MacroCreationConditionObject('urban.schedule.condition.should_do_followups'),
             ),
@@ -3776,7 +3776,7 @@ schedule_config = {
             'ending_states': ('inspection_follow_up',),
             'start_date': 'urban.schedule.start_date.creation_date',
             'activate_recurrency': True,
-            'recurrence_states': ('administrative_answer',),
+            'recurrence_states': ('technical_analysis',),
             'recurrence_conditions': (
                 MacroRecurrenceConditionObject('urban.schedule.condition.should_do_followups'),
             ),
@@ -3788,7 +3788,7 @@ schedule_config = {
                     'default_assigned_group': 'administrative_editors',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
                     'marker_interfaces': [u'Products.urban.schedule.interfaces.ICreateFollowupTask'],
-                    'creation_state': ('administrative_answer',),
+                    'creation_state': ('technical_analysis',),
                     'creation_conditions': (
                         CreationConditionObject('urban.schedule.condition.should_write_one_followup'),
                     ),
@@ -3798,7 +3798,7 @@ schedule_config = {
                     'start_date': 'urban.schedule.start_date.creation_date',
                     'additional_delay': 0,
                     'activate_recurrency': True,
-                    'recurrence_states': ('administrative_answer',),
+                    'recurrence_states': ('technical_analysis',),
                     'recurrence_conditions': (
                         RecurrenceConditionObject('urban.schedule.condition.should_write_one_followup'),
                     ),
@@ -3810,7 +3810,7 @@ schedule_config = {
                     'default_assigned_group': 'administrative_validators',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
                     'marker_interfaces': [u'Products.urban.schedule.interfaces.IValidateFollowupTask'],
-                    'creation_state': ('administrative_answer',),
+                    'creation_state': ('technical_analysis',),
                     'creation_conditions': (
                         CreationConditionObject('urban.schedule.condition.followups_written'),
                     ),
@@ -3820,7 +3820,7 @@ schedule_config = {
                     'start_date': 'urban.schedule.start_date.creation_date',
                     'additional_delay': 0,
                     'activate_recurrency': True,
-                    'recurrence_states': ('administrative_answer',),
+                    'recurrence_states': ('technical_analysis',),
                     'recurrence_conditions': (
                         RecurrenceConditionObject('urban.schedule.condition.followups_written'),
                     ),
@@ -3832,7 +3832,7 @@ schedule_config = {
                     'default_assigned_group': 'administrative_editors',
                     'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
                     'marker_interfaces': [u'Products.urban.schedule.interfaces.ISendFollowupTask'],
-                    'creation_state': ('administrative_answer',),
+                    'creation_state': ('technical_analysis',),
                     'creation_conditions': (
                         CreationConditionObject('urban.schedule.condition.followups_to_send'),
                     ),
@@ -3842,7 +3842,7 @@ schedule_config = {
                     'start_date': 'urban.schedule.start_date.creation_date',
                     'additional_delay': 0,
                     'activate_recurrency': True,
-                    'recurrence_states': ('administrative_answer',),
+                    'recurrence_states': ('technical_analysis',),
                     'recurrence_conditions': (
                         RecurrenceConditionObject('urban.schedule.condition.followups_to_send'),
                     ),
