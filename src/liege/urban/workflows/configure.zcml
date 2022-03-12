@@ -168,7 +168,7 @@
   <adapter
      for="liege.urban.interfaces.IUrbanEventWithEnvironmentValidation"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
-     factory=".acknowledgment_workflow.StateRolesMapping"
+     factory=".env_validation_event_workflow.StateRolesMapping"
      name="acknowledgmentevent_local_roles"
   />
 
