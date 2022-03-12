@@ -16,4 +16,6 @@ def close_env_licences():
         api.content.transition(obj=licence, transition='propose_technical_report')
         api.content.transition(obj=licence, transition='validate_technical_report')
         api.content.transition(obj=licence, transition='college_done')
-        api.content.transition(obj=licence, transition='authorize_licence_FT ')
+        api.content.transition(obj=licence, transition='propose_technical_synthesis')
+        api.content.transition(obj=licence, transition='validate_technical_synthesis')
+        api.content.transition(obj=licence, transition='authorize_licence')
