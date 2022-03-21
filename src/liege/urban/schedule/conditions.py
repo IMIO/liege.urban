@@ -770,3 +770,17 @@ class AllEventsWithEnvValidationValidatedOrRefused(EnvironmentValidationConditio
             if api.content.get_state(event) == 'to_validate':
                 return False
         return True
+
+
+class AllEventsWithEnvValidationClosed(EnvironmentValidationCondition):
+    """
+    All validations event are closed.
+    """
+
+    def evaluate(self):
+        if not self.validation_events:
+            return True
+        for event in self.validation_events:
+            if api.content.get_state(event) != 'closed':
+                return False
+        return True

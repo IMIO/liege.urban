@@ -287,3 +287,17 @@ class EventWithEnvValidationRefused(EnvironmentValidationCondition):
             if api.content.get_state(event) == 'draft' and refused:
                 return True
         return False
+
+
+class EventWithEnvValidationValidated(EnvironmentValidationCondition):
+    """
+    At least one validation event is validated.
+    """
+
+    def evaluate(self):
+        if not self.validation_events:
+            return False
+        for event in self.validation_events:
+            if api.content.get_state(event) == 'to_send':
+                return True
+        return False

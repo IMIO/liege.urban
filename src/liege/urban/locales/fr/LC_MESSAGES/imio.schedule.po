@@ -26,6 +26,9 @@ msgstr "Rédiger l'accusé de réception"
 msgid "liege.urban.schedule.all_done_mayor_meeting_colleges_events_are_closed"
 msgstr "Cloturer tous les événements acceptés dans e-bourgmestre"
 
+msgid "liege.urban.schedule.all_env_validations_closed"
+msgstr "Cloturer tous les événements validation environnement"
+
 msgid "liege.urban.schedule.all_env_validations_proposed"
 msgstr "Soumissions pour validations environnement faites"
 
@@ -103,6 +106,9 @@ msgstr "Au moins une soumission pour validation environnement"
 
 msgid "liege.urban.schedule.env_validation_refused"
 msgstr "Au moins un refus de validation environnement"
+
+msgid "liege.urban.schedule.env_validation_validated"
+msgstr "Au moins une validation environnement acceptée"
 
 msgid "liege.urban.schedule.inquiry_documents_done"
 msgstr "Générer les documents d'enquête publique"

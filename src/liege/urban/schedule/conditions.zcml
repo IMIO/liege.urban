@@ -620,6 +620,14 @@
         name="liege.urban.schedule.all_env_validations_validated_or_refused"
     />
 
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentBase
+             imio.schedule.content.task_config.ITaskConfig"
+        provides="imio.schedule.interfaces.ICreationCondition"
+        factory=".creation_conditions.EventWithEnvValidationValidated"
+        name="liege.urban.schedule.env_validation_validated"
+    />
+
     <!-- environment final decision conditions -->
     <adapter
         for="Products.urban.interfaces.IEnvironmentBase
