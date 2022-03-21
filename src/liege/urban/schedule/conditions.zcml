@@ -628,6 +628,14 @@
         name="liege.urban.schedule.env_validation_validated"
     />
 
+    <adapter
+        for="Products.urban.interfaces.IEnvironmentBase
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.AllEventsWithEnvValidationClosed"
+        name="liege.urban.schedule.all_env_validations_closed"
+    />
+
     <!-- environment final decision conditions -->
     <adapter
         for="Products.urban.interfaces.IEnvironmentBase
