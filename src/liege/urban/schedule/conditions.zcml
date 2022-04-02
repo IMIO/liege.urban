@@ -629,6 +629,14 @@
     />
 
     <adapter
+        for="Products.urban.interfaces.ICODT_UniqueLicence
+             imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IEndCondition"
+        factory=".conditions.AllEventsWithEnvValidationClosed"
+        name="liege.urban.schedule.all_env_validations_closed"
+    />
+
+    <adapter
         for="Products.urban.interfaces.ICODT_IntegratedLicence
              imio.schedule.content.task_config.ITaskConfig"
         provides="imio.schedule.interfaces.ICreationCondition"
@@ -666,14 +674,6 @@
         provides="imio.schedule.interfaces.ICreationCondition"
         factory=".creation_conditions.EventWithEnvValidationValidated"
         name="liege.urban.schedule.env_validation_validated"
-    />
-
-    <adapter
-        for="Products.urban.interfaces.ICODT_IntegratedLicence
-             imio.schedule.content.task.IAutomatedTask"
-        provides="imio.schedule.interfaces.IEndCondition"
-        factory=".conditions.AllEventsWithEnvValidationClosed"
-        name="liege.urban.schedule.all_env_validations_closed"
     />
 
     <adapter
