@@ -18,4 +18,8 @@
     interface=".interfaces.IUrbanEventWithEnvironmentValidation"
     type="Products.urban.interfaces.IEventTypeType"/>
 
+  <interface
+    interface=".interfaces.IUrbanEventWithAcknowledgementWorkflow"
+    type="Products.urban.interfaces.IEventTypeType"/>
+
 </configure>
