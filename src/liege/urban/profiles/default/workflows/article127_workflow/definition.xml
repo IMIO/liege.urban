@@ -79,6 +79,8 @@
    <permission-role>InternalReader</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reader</permission-role>
+   <permission-role>Reader</permission-role>
+   <permission-role>RoadReader</permission-role>
   </permission-map>
   <permission-map name="liege.urban: External Reader" acquired="False">
    <permission-role>Contributor</permission-role>
