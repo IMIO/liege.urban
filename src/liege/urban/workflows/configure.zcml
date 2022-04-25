@@ -159,7 +159,7 @@
   />
 
   <adapter
-     for="Products.urban.interfaces.AcknowledgmentEvent"
+     for="Products.urban.interfaces.IAcknowledgmentEvent"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
      factory=".acknowledgment_workflow.StateRolesMapping"
      name="acknowledgmentevent_local_roles"
