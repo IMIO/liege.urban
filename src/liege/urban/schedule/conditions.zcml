@@ -926,6 +926,14 @@
     <adapter
         for="Products.urban.interfaces.IRoadDecree
               imio.schedule.content.task.IAutomatedTask"
+        provides="imio.schedule.interfaces.IStartCondition"
+        factory=".road_decree_conditions.DisplayCompleted"
+        name="liege.urban.schedule.display_completed"
+        />
+
+    <adapter
+        for="Products.urban.interfaces.IRoadDecree
+              imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
         factory=".road_decree_conditions.DisplayCompleted"
         name="liege.urban.schedule.display_completed"
