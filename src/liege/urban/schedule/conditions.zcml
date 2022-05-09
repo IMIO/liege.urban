@@ -919,8 +919,8 @@
         for="Products.urban.interfaces.IRoadDecree
               imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IStartCondition"
-        factory=".conditions.DisplayCompleted"
-        name="liege.urban.schedule.display_completed"
+        factory=".conditions.DisplayInProgress"
+        name="liege.urban.schedule.display_in_progress"
         />
 
     <adapter
