@@ -919,7 +919,7 @@
         for="Products.urban.interfaces.IRoadDecree
               imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IStartCondition"
-        factory=".conditions.DisplayInProgress"
+        factory=".road_decree_conditions.DisplayInProgress"
         name="liege.urban.schedule.display_in_progress"
         />
 
@@ -927,7 +927,7 @@
         for="Products.urban.interfaces.IRoadDecree
               imio.schedule.content.task.IAutomatedTask"
         provides="imio.schedule.interfaces.IEndCondition"
-        factory=".conditions.DisplayCompleted"
+        factory=".road_decree_conditions.DisplayCompleted"
         name="liege.urban.schedule.display_completed"
         />
 
