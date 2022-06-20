@@ -209,7 +209,7 @@
  <transition transition_id="close" title="close" new_state="closed" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">close</action>
   <guard>
-   <guard-group>technical_editors_environment</guard-group>
+   <guard-group>environment_editors</guard-group>
   </guard>
  </transition>
  <transition transition_id="propose" title="propose" new_state="to_validate" trigger="USER" before_script="" after_script="">
