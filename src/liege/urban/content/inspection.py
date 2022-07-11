@@ -40,9 +40,9 @@ def updateTitle(self):
     """
     proprietary = ''
     proprietaries = [pro for pro in self.getProprietaries()
-                        if api.content.get_state(pro) == 'enabled']
+                     if api.content.get_state(pro) == 'enabled']
     if proprietaries:
-        proprietary = proprietaries[0].Title()
+        proprietary = ', '.join([prop.Title() for prop in proprietaries])
     AD_refs = self.getFormal_notice_old_reference()
     title = "{}{}{} - {}".format(
         self.getReference(),

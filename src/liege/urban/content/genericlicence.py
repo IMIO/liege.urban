@@ -127,7 +127,7 @@ def updateTitle(self):
         Update the title to clearly identify the licence
     """
     if self.getApplicants():
-        applicantTitle = self.getApplicants()[0].Title()
+        applicantTitle = ', '.join([app.Title() for app in self.getApplicants()])
     else:
         applicantTitle = translate('no_applicant_defined', 'urban', context=self.REQUEST).encode('utf8')
     to_shore = queryAdapter(self, IShore)
