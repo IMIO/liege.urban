@@ -13,6 +13,8 @@ class StateRolesMapping(LiegeBase):
         'folder_creation': {
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
+            'fittingout_technicians': ('Editor', ),
+            'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
             'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
@@ -20,11 +22,15 @@ class StateRolesMapping(LiegeBase):
         'public_investigation': {
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
+            'fittingout_technicians': ('Editor', ),
+            'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
             'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
 
         'technical_analysis_post_investigation': {
+            'administrative_editors': ('Editor', 'AddressEditor'),
+            'administrative_validators': ('Contributor',),
             'fittingout_technicians': ('Editor', ),
             'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
@@ -32,6 +38,8 @@ class StateRolesMapping(LiegeBase):
         },
 
         'technical_analysis_validation': {
+            'administrative_editors': ('Editor', 'AddressEditor'),
+            'administrative_validators': ('Contributor',),
             'fittingout_technicians': ('Reader',),
             'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
@@ -41,6 +49,8 @@ class StateRolesMapping(LiegeBase):
         'college_council_passage': {
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
+            'fittingout_technicians': ('Editor', ),
+            'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
             'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
@@ -48,6 +58,8 @@ class StateRolesMapping(LiegeBase):
         'display_in_progress': {
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
+            'fittingout_technicians': ('Editor', ),
+            'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
             'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
@@ -55,6 +67,8 @@ class StateRolesMapping(LiegeBase):
         'authorized': {
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
+            'fittingout_technicians': ('Editor', ),
+            'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
             'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
@@ -62,6 +76,8 @@ class StateRolesMapping(LiegeBase):
         'refused': {
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
+            'fittingout_technicians': ('Editor', ),
+            'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
             'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
@@ -69,6 +85,8 @@ class StateRolesMapping(LiegeBase):
         'abandoned': {
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
+            'fittingout_technicians': ('Editor', ),
+            'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
             'urban_internal_readers': ('InternalReader', 'RoadReader'),
         },
