@@ -20,7 +20,7 @@ class LiegeLicenceHelperView(UrbanDocGenerationLicenceHelperView):
         return self.context.workflow_history['buildlicence_workflow'][-1]['review_state'] == 'authorized'
 
     def getShore(self):
-        licence = self.context
+        licence = self.real_context
         to_shore = queryAdapter(licence, IShore)
         return to_shore.display()
 
