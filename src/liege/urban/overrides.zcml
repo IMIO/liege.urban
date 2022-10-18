@@ -82,6 +82,13 @@
        />
 
       <browser:page
+         for="Products.urban.interfaces.IInquiry"
+         class="liege.urban.documentgenerator.helper_view.LiegeLicenceHelperView"
+         permission="zope2.View"
+         name="document_generation_helper_view"
+       />
+
+      <browser:page
          for="Products.urban.interfaces.IUrbanEvent"
          class="liege.urban.documentgenerator.helper_view.LiegeEventHelperView"
          permission="zope2.View"
