@@ -3959,7 +3959,7 @@ schedule_config = {
             'default_assigned_user': 'liege.urban.schedule.assign_task_owner',
             'creation_state': ('technical_analysis_post_investigation',),
             'ending_states': ('technical_analysis_validation',),
-            'start_date': 'urban.schedule.start_date.creation_date',
+            'start_date': 'liege.urban.schedule.inspection_report_analysis_date',
             'additional_delay': 5,
             'activate_recurrency': True,
             'recurrence_states': ('technical_analysis_post_investigation',),
