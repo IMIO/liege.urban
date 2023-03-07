@@ -17,6 +17,8 @@ class StateRolesMapping(LiegeBase):
             'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
             'urban_internal_readers': ('InternalReader', 'RoadReader'),
+            'Voirie_editors': ('ExternalReader',),
+            'Voirie_validators': ('ExternalReader',),
         },
 
         'public_investigation': {
@@ -26,6 +28,8 @@ class StateRolesMapping(LiegeBase):
             'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
             'urban_internal_readers': ('InternalReader', 'RoadReader'),
+            'Voirie_editors': ('ExternalReader',),
+            'Voirie_validators': ('ExternalReader',),
         },
 
         'technical_analysis_post_investigation': {
@@ -35,6 +39,8 @@ class StateRolesMapping(LiegeBase):
             'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
             'urban_internal_readers': ('InternalReader', 'RoadReader'),
+            'Voirie_editors': ('ExternalReader',),
+            'Voirie_validators': ('ExternalReader',),
         },
 
         'technical_analysis_validation': {
@@ -44,6 +50,8 @@ class StateRolesMapping(LiegeBase):
             'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
             'urban_internal_readers': ('InternalReader', 'RoadReader'),
+            'Voirie_editors': ('ExternalReader',),
+            'Voirie_validators': ('ExternalReader',),
         },
 
         'college_council_passage': {
@@ -53,6 +61,8 @@ class StateRolesMapping(LiegeBase):
             'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
             'urban_internal_readers': ('InternalReader', 'RoadReader'),
+            'Voirie_editors': ('ExternalReader',),
+            'Voirie_validators': ('ExternalReader',),
         },
 
         'display_in_progress': {
@@ -62,6 +72,8 @@ class StateRolesMapping(LiegeBase):
             'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
             'urban_internal_readers': ('InternalReader', 'RoadReader'),
+            'Voirie_editors': ('ExternalReader',),
+            'Voirie_validators': ('ExternalReader',),
         },
 
         'authorized': {
@@ -71,6 +83,8 @@ class StateRolesMapping(LiegeBase):
             'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
             'urban_internal_readers': ('InternalReader', 'RoadReader'),
+            'Voirie_editors': ('ExternalReader',),
+            'Voirie_validators': ('ExternalReader',),
         },
 
         'refused': {
@@ -80,6 +94,8 @@ class StateRolesMapping(LiegeBase):
             'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
             'urban_internal_readers': ('InternalReader', 'RoadReader'),
+            'Voirie_editors': ('ExternalReader',),
+            'Voirie_validators': ('ExternalReader',),
         },
 
         'abandoned': {
@@ -89,5 +105,7 @@ class StateRolesMapping(LiegeBase):
             'fittingout_technicians_validators': ('Contributor',),
             'urban_readers': ('Reader', 'RoadReader'),
             'urban_internal_readers': ('InternalReader', 'RoadReader'),
+            'Voirie_editors': ('ExternalReader',),
+            'Voirie_validators': ('ExternalReader',),
         },
     }
