@@ -11,6 +11,7 @@ class StateRolesMapping(LiegeBase):
     mapping = {
 
         'folder_creation': {
+            LiegeBase.get_opinion_editors: ('ExternalReader',),
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
             'fittingout_technicians': ('Editor', ),
@@ -22,6 +23,7 @@ class StateRolesMapping(LiegeBase):
         },
 
         'public_investigation': {
+            LiegeBase.get_opinion_editors: ('ExternalReader',),
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
             'fittingout_technicians': ('Editor', ),
@@ -33,6 +35,7 @@ class StateRolesMapping(LiegeBase):
         },
 
         'technical_analysis_post_investigation': {
+            LiegeBase.get_opinion_editors: ('ExternalReader',),
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
             'fittingout_technicians': ('Editor', ),
@@ -44,6 +47,7 @@ class StateRolesMapping(LiegeBase):
         },
 
         'technical_analysis_validation': {
+            LiegeBase.get_opinion_editors: ('ExternalReader',),
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
             'fittingout_technicians': ('Reader',),
@@ -55,6 +59,7 @@ class StateRolesMapping(LiegeBase):
         },
 
         'college_council_passage': {
+            LiegeBase.get_opinion_editors: ('ExternalReader',),
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
             'fittingout_technicians': ('Editor', ),
@@ -66,6 +71,7 @@ class StateRolesMapping(LiegeBase):
         },
 
         'display_in_progress': {
+            LiegeBase.get_opinion_editors: ('ExternalReader',),
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
             'fittingout_technicians': ('Editor', ),
@@ -77,6 +83,7 @@ class StateRolesMapping(LiegeBase):
         },
 
         'authorized': {
+            LiegeBase.get_opinion_editors: ('ExternalReader',),
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
             'fittingout_technicians': ('Editor', ),
@@ -88,6 +95,7 @@ class StateRolesMapping(LiegeBase):
         },
 
         'refused': {
+            LiegeBase.get_opinion_editors: ('ExternalReader',),
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
             'fittingout_technicians': ('Editor', ),
@@ -99,6 +107,7 @@ class StateRolesMapping(LiegeBase):
         },
 
         'abandoned': {
+            LiegeBase.get_opinion_editors: ('ExternalReader',),
             'administrative_editors': ('Editor', 'AddressEditor'),
             'administrative_validators': ('Contributor',),
             'fittingout_technicians': ('Editor', ),
