@@ -48,7 +48,9 @@ def setAllowedTypes(context):
         'CODT_Article127',
         'CODT_UniqueLicence',
         'CODT_IntegratedLicence',
-        'CODT_UrbanCertificateTwo'
+        'CODT_UrbanCertificateTwo',
+        'Inspection',
+        'Ticket'
     ]
 
     for licence_type in licence_types:
