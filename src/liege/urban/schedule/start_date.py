@@ -33,6 +33,6 @@ class ReportAnalysisDate(StartDate):
 
         for wf_action in licence.workflow_history['inspection_workflow'][::-1]:
             if wf_action['action'] in ['analyse', 'analyse2', 'analyse_again', 'reopen']:
-                analyse_date = wf_action['time']
+                return wf_action['time']
 
         return analyse_date
