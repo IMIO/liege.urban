@@ -149,7 +149,10 @@ class OneProjectsSentToMayorCollege(MayorCollegeCondition):
         ws4pm = getMultiAdapter((api.portal.get(), request), name='ws4pmclient-settings')
 
         for event in self.mayor_events:
-            sent = ws4pm.checkAlreadySentToPloneMeeting(event)
+            try:
+                sent = ws4pm.checkAlreadySentToPloneMeeting(event)
+            except:
+                return False
             if sent:
                 try:
                     items = ws4pm._soap_searchItems({'externalIdentifier': event.UID()})
@@ -183,7 +186,10 @@ class OneMayorCollegeMeetingDone(MayorCollegeCondition):
             if api.content.get_state(event) == 'closed':
                 continue
 
-            sent = ws4pm.checkAlreadySentToPloneMeeting(event)
+            try:
+                sent = ws4pm.checkAlreadySentToPloneMeeting(event)
+            except:
+                return False
             if sent:
                 try:
                     items = ws4pm._soap_searchItems({'externalIdentifier': event.UID()})
