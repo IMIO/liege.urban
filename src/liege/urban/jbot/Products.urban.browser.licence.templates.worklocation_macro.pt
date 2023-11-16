@@ -1,4 +1,4 @@
-<div metal:define-macro="worklocations_macro" i18n:domain="urban">
+<metal:address metal:define-macro="worklocations_macro" i18n:domain="urban">
 
     <tal:vars define="workLocations context/getWorkLocations;
                           member context/@@plone_portal_state/member;
@@ -33,9 +33,9 @@
         </div>
         <div tal:condition="python: not workLocations and not addresses" class="discreet clear" i18n:translate="content_none">None</div>
     </tal:vars>
-</div>
+</metal:address>
 
-<div metal:define-macro="env_worklocations_macro" i18n:domain="urban">
+<metal:env_address metal:define-macro="env_worklocations_macro" i18n:domain="urban">
     <tal:vars define="workLocations context/getWorkLocations;
                       old_workLocations context/getBusinessOldLocation;
                       member context/@@plone_portal_state/member;
@@ -80,4 +80,4 @@
         <div tal:condition="python: not old_workLocations and not addresses" class="discreet clear" i18n:translate="content_none">None</div>
     </fieldset>
     </tal:vars>
-</div>
+</metal:env_address>

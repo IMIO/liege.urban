@@ -5,7 +5,8 @@ Changelog
 1.0.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix template for worklocation [URB-2930]
+  [mpeeters]
 
 
 1.0.0 (2023-11-09)
