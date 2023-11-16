@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.1 (unreleased)
+1.0.1 (2023-11-16)
 ------------------
 
 - Fix template for worklocation [URB-2930]
