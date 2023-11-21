@@ -38,7 +38,7 @@ def setAllowedTypes(context):
     New content types are added on liege profile. Allow these types to be created.
     """
     portal_types = api.portal.get_tool('portal_types')
-    licence_types = [
+    licence_types = (
         'BuildLicence',
         'Article127',
         'UniqueLicence',
@@ -50,8 +50,8 @@ def setAllowedTypes(context):
         'CODT_IntegratedLicence',
         'CODT_UrbanCertificateTwo',
         'Inspection',
-        'Ticket'
-    ]
+        'Ticket',
+    )
 
     for licence_type in licence_types:
         type_info = getattr(portal_types, licence_type)
