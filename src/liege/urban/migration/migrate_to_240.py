@@ -90,3 +90,11 @@ def migrate(context):
     migrate_env_class_three_tasks(context)
     migrate_default_text_newlines_for_pmws(context)
     logger.info("migration done!")
+
+
+def upgrade_to_241(context):
+    logger = logging.getLogger('urban: migrate to 2.4.1')
+    logger.info("starting migration steps")
+    from liege.urban.setuphandlers import setAllowedTypes
+    setAllowedTypes(context)
+    logger.info("migration done!")

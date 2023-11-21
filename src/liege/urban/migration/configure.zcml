@@ -19,4 +19,12 @@
         handler=".migrate_to_240.migrate"
         profile="liege.urban:default" />
 
+    <gs:upgradeStep
+        title="Upgrade liege urban 2.4.1"
+        description="urban upgrade step"
+        source="*"
+        destination="241"
+        handler=".migrate_to_240.upgrade_to_241"
+        profile="liege.urban:default" />
+
 </configure>
