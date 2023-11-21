@@ -8,6 +8,16 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.2 (2023-11-21)
+------------------
+
+Bug fixes:
+
+
+- Ensure that every licence types can add `UrbanEventMayor` and `UrbanEventAcknowledgment`
+  [mpeeters] (SUP-33677)
+
+
 1.0.1 (2023-11-16)
 ------------------
 
