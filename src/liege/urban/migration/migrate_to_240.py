@@ -98,3 +98,11 @@ def upgrade_to_241(context):
     from liege.urban.setuphandlers import setAllowedTypes
     setAllowedTypes(context)
     logger.info("migration done!")
+
+
+def upgrade_to_242(context):
+    logger = logging.getLogger('urban: migrate to 2.4.2')
+    logger.info("starting migration steps")
+    setup_tool = api.portal.get_tool('portal_setup')
+    setup_tool.runImportStepFromProfile('profile-liege.urban:default', 'workflow')
+    logger.info("migration done!")
