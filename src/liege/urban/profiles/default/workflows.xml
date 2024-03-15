@@ -40,8 +40,8 @@
   <type type_id="CODT_IntegratedLicence">
      <bound-workflow workflow_id="urban_licence_workflow" />
   </type>
-  <type type_id="COTD_UrbanCertificateTwo">
-     <bound-workflow workflow_id="cu2_workflow" />
+  <type type_id="CODT_UrbanCertificateTwo">
+     <bound-workflow workflow_id="codt_buildlicence_workflow" />
   </type>
   <type type_id="EnvClassOne">
      <bound-workflow workflow_id="envclassone_workflow" />
