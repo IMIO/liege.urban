@@ -427,3 +427,9 @@ msgstr "En attente de finalisation"
 
 msgid "writing_report"
 msgstr "En rédaction"
+
+msgid "obsolete"
+msgstr "Caduc"
+
+msgid "make_obsolete"
+msgstr "Rendre caduc"
