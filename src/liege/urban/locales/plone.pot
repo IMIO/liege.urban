@@ -430,3 +430,9 @@ msgstr ""
 
 msgid "technical_analysis_post_investigation"
 msgstr ""
+
+msgid "obsolete"
+msgstr ""
+
+msgid "make_obsolete"
+msgstr ""

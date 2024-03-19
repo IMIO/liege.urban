@@ -7,6 +7,7 @@ from imio.schedule.interfaces import TaskConfigNotFound
 from Products.urban.interfaces import IUrbanEventType
 from Products.urban.interfaces import ILicenceConfig
 
+from liege.urban.migration.utils import refresh_workflow_permissions
 from plone import api
 
 
@@ -105,4 +106,9 @@ def upgrade_to_242(context):
     logger.info("starting migration steps")
     setup_tool = api.portal.get_tool('portal_setup')
     setup_tool.runImportStepFromProfile('profile-liege.urban:default', 'workflow')
+    refresh_workflow_permissions([
+        "article127_workflow",
+        "codt_buildlicence_workflow",
+        "codt_uniquelicence_workflow",
+    ])
     logger.info("migration done!")
