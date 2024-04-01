@@ -106,9 +106,50 @@ def upgrade_to_242(context):
     logger.info("starting migration steps")
     setup_tool = api.portal.get_tool('portal_setup')
     setup_tool.runImportStepFromProfile('profile-liege.urban:default', 'workflow')
-    refresh_workflow_permissions([
+    refresh_workflow_permissions(
         "article127_workflow",
+        for_states=[
+            "complete",
+            "decision_in_progress",
+            "deposit",
+            "procedure_choosen",
+            "procedure_validated",
+            "report_written",
+            "validating_address",
+            "waiting_address",
+        ],
+    )
+    refresh_workflow_permissions(
         "codt_buildlicence_workflow",
+        for_states=[
+            "FD_opinion",
+            "checking_completion",
+            "complete",
+            "decision_in_progress",
+            "deposit",
+            "incomplete",
+            "procedure_choosen",
+            "procedure_validated",
+            "report_written",
+            "suspension",
+            "validating_address",
+            "waiting_address",
+        ],
+    )
+    refresh_workflow_permissions(
         "codt_uniquelicence_workflow",
-    ])
+        for_states=[
+            "college_in_progress",
+            "complete",
+            "deposit",
+            "final_decision_in_progress",
+            "incomplete",
+            "internal_advice_done",
+            "internal_preliminary_advice",
+            "technical_report_validation",
+            "technical_synthesis_validation",
+            "validating_address",
+            "waiting_address",
+        ],
+    )
     logger.info("migration done!")
