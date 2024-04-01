@@ -1150,6 +1150,7 @@
   <exit-transition transition_id="propose_technical_report"/>
   <exit-transition transition_id="suspend"/>
   <exit-transition transition_id="abandon"/>
+  <exit-transition transition_id="make_obsolete"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -1336,6 +1337,7 @@
   <exit-transition transition_id="refuse_technical_report"/>
   <exit-transition transition_id="suspend"/>
   <exit-transition transition_id="abandon"/>
+  <exit-transition transition_id="make_obsolete"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -1522,6 +1524,7 @@
   <exit-transition transition_id="refuse_licence_FT"/>
   <exit-transition transition_id="suspend"/>
   <exit-transition transition_id="abandon"/>
+  <exit-transition transition_id="make_obsolete"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -1706,6 +1709,7 @@
   <exit-transition transition_id="refuse_technical_synthesis"/>
   <exit-transition transition_id="suspend"/>
   <exit-transition transition_id="abandon"/>
+  <exit-transition transition_id="make_obsolete"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>
@@ -1889,6 +1893,7 @@
   <exit-transition transition_id="refuse_licence"/>
   <exit-transition transition_id="suspend"/>
   <exit-transition transition_id="abandon"/>
+  <exit-transition transition_id="make_obsolete"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>

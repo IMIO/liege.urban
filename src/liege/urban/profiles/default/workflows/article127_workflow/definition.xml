@@ -1652,6 +1652,7 @@
  <state state_id="waiting_address" title="waiting_address">
   <exit-transition transition_id="validate_temporary_address"/>
   <exit-transition transition_id="abandon"/>
+  <exit-transition transition_id="make_obsolete"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>

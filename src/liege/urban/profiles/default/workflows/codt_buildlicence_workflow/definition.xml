@@ -28,6 +28,7 @@
   <exit-transition transition_id="receive_FD_opinion"/>
   <exit-transition transition_id="suspend"/>
   <exit-transition transition_id="abandon"/>
+  <exit-transition transition_id="make_obsolete"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
    <permission-role>Contributor</permission-role>
    <permission-role>Editor</permission-role>

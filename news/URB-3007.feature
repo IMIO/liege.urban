@@ -1,2 +1,2 @@
 Add caduc workflow state
-[jchandelle]
+[jchandelle,mpeeters]
