@@ -8,6 +8,25 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.3 (2024-04-01)
+------------------
+
+New features:
+
+
+- Add caduc workflow state
+  [jchandelle,mpeeters] (URB-3007)
+- Add frozen workflow state to article127, inspection and ticket
+  [jchandelle] (URB-3023)
+
+
+Bug fixes:
+
+
+- Fix an issue with zope users on urban homepage
+  [mpeeters] (URB-2956)
+
+
 1.0.2 (2023-11-21)
 ------------------
 
