@@ -128,6 +128,7 @@ def extract_licence_dict(brain, licence):
         'inquiry_dates': extract_inquiry_dates(licence),
         'decision_date': extract_decision_date(licence),
         'decision': extract_decision(licence),
+        'created': str(brain.created),
     }
     if brain.licence_final_duedate and brain.licence_final_duedate.year < 9000:
         licence_dict['due_date'] = str(brain.licence_final_duedate)
