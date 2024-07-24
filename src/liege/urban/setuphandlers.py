@@ -162,6 +162,10 @@ def addLiegeGroups(context):
     portal_urban.manage_addLocalRoles("fittingout_technicians_validators", ("Reader", ))
     portal_groups.addPrincipalToGroup("fittingout_technicians_validators", 'urban_readers')
 
+    portal_groups.addGroup("roaddecrees_readers", title="Roaddecrees readers")
+    portal_groups.setRolesForGroup('roaddecrees_readers', ('InternalReader', 'RoadReader' ))
+    portal_urban.manage_addLocalRoles("roaddecrees_readers", ("Reader", ))
+
     # external services
     services = ['Voirie', 'Access', 'Plantation', 'SSSP', 'EDII']
     for service in services:
