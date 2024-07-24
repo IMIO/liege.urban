@@ -33,4 +33,6 @@ class UrbanRootRedirects(object):
                 return 'urban'
             if 'opinions_editors' in group_ids:
                 return 'urban/opinions_schedule'
+            if 'roaddecrees_readers' in group_ids:
+                return 'urban/roaddecrees'
             return 'urban'

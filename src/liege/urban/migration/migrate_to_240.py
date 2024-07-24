@@ -1,5 +1,5 @@
 # encoding: utf-8
-
+from Products.urban.utils import getLicenceFolderId
 from imio.schedule.config import states_by_status
 from imio.schedule.config import STARTED
 from imio.schedule.interfaces import TaskConfigNotFound
@@ -160,7 +160,14 @@ def upgrade_to_243(context):
     logger.info("Adding roaddecrees_readers group...")
     portal_groups = api.portal.get_tool('portal_groups')
     portal_urban = api.portal.get_tool('portal_urban')
+    setup_tool = api.portal.get_tool('portal_setup')
+    app_folder = api.portal.get().urban
+
     portal_groups.addGroup("roaddecrees_readers", title="Roaddecrees readers")
-    portal_groups.setRolesForGroup('roaddecrees_readers', ('InternalReader', 'RoadReader' ))
+    portal_groups.setRolesForGroup('roaddecrees_readers', ('RoadReader', ))
     portal_urban.manage_addLocalRoles("roaddecrees_readers", ("Reader", ))
+    roaddecrees_folder = getattr(app_folder, "roaddecrees")
+    roaddecrees_folder.manage_addLocalRoles("roaddecrees_readers", ("Reader",))
+    setup_tool.runImportStepFromProfile('profile-Products.urban:preinstall', 'update-workflow-rolemap')
+
     logger.info("migration done!")
