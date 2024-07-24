@@ -153,3 +153,14 @@ def upgrade_to_242(context):
         ],
     )
     logger.info("migration done!")
+
+def upgrade_to_243(context):
+    logger = logging.getLogger('urban: migrate to 2.4.3')
+    logger.info("starting migration steps")
+    logger.info("Adding roaddecrees_readers group...")
+    portal_groups = api.portal.get_tool('portal_groups')
+    portal_urban = api.portal.get_tool('portal_urban')
+    portal_groups.addGroup("roaddecrees_readers", title="Roaddecrees readers")
+    portal_groups.setRolesForGroup('roaddecrees_readers', ('InternalReader', 'RoadReader' ))
+    portal_urban.manage_addLocalRoles("roaddecrees_readers", ("Reader", ))
+    logger.info("migration done!")
