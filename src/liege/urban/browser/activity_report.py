@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
-
+import logging
 from datetime import date
 from datetime import datetime
+from functools import wraps
+import time
 
+from Products.ZCatalog.ProgressHandler import ZLogHandler
 from plone import api
 from plone.z3cform.layout import FormWrapper
 
@@ -22,9 +25,10 @@ import os
 import re
 import zipfile
 
+logger = logging.getLogger("liege.urban")
+
 
 class ILicencesExtractForm(Interface):
-
     start_date = schema.Date(
         title=_(u'Date start'),
         required=False,
@@ -50,7 +54,6 @@ class ILicencesExtractForm(Interface):
 
 
 class LicencesExtractForm(form.Form):
-
     method = 'get'
     fields = field.Fields(ILicencesExtractForm)
     ignoreContext = True
@@ -75,11 +78,24 @@ class LicencesExtractForm(form.Form):
 
 
 def do_export(portal, query, filename='activity_report'):
-    licences = query_licences(**query)
-    licences_dict = compute_json(licences)
-    licences_json = json.dumps(licences_dict)
-    create_archive(filename, licences_json)
-    return licences_json
+    logger.info("Starting export...")
+    start_time = time.time()
+    licences_brains = query_licences_brains(**query)
+    query_end_time = time.time()
+    query_time = query_end_time - start_time
+    logger.info('query_licences_brains took {} seconds'.format(query_time))
+    licences_jsonl = compute_jsonl(licences_brains)
+    compute_jsonl_end_time = time.time()
+    compute_jsonl_time = compute_jsonl_end_time - query_end_time
+    logger.info('compute_jsonl took {} seconds'.format(compute_jsonl_time))
+    end_time = time.time()
+    total_time = end_time - start_time
+    logger.info('Export done.')
+    logger.info('Total time for {} elements: {} seconds'.format(len(licences_brains), total_time))
+    logger.info("That's {} elements/sec on average".format(len(licences_brains) / total_time))
+    logger.info("It should be around 30-50 elements/sec for a decent processing time")
+    create_archive(filename, licences_jsonl)
+    return licences_jsonl
 
 
 def create_archive(filename, content):
@@ -89,33 +105,49 @@ def create_archive(filename, content):
         archive = zipfile.ZipFile('{}.zip'.format(filename), 'w', zipfile.ZIP_DEFLATED)
     except RuntimeError:
         archive = zipfile.ZipFile('{}.zip'.format(filename), 'w')
-    archive.writestr('{}.json'.format(filename), content)
+    archive.writestr('{}.jsonl'.format(filename), content)
     archive.close()
     return archive
 
 
-def query_licences(start_date, end_date, date_index='created', licence_type=[]):
+def query_licences_brains(start_date, end_date, date_index='created', licence_type=[]):
     catalog = api.portal.get_tool('portal_catalog')
     query = {'portal_type': list(licence_type)}
     query[date_index] = {'query': (start_date, end_date), 'range': 'min:max'}
     licence_brains = catalog(**query)
-    licences = [(br, br.getObject()) for br in licence_brains]
-    return licences
+    return licence_brains
 
 
-def compute_json(licences):
-    licences_dict = [extract_licence_dict(*licence) for licence in licences]
-    return licences_dict
+def compute_jsonl(licence_brains):
+    CACHE_MINIMIZE_INTERVAL = 5000
+    portal = api.portal.get()
+    urban_tool = api.portal.get_tool('portal_urban')
+    catalog = api.portal.get_tool('portal_catalog')
+    pghandler = ZLogHandler(1000)
+    pghandler.init("Building JSONL of {} licences".format(len(licence_brains)), len(licence_brains))
+    jsonl_str = ""
+    addresses_path = urban_tool.absolute_url_path() + "/streets"
+    streets_by_UID = {brain.UID: brain for brain in catalog(path=addresses_path, portal_type="Street")}
+
+    for i, brain in enumerate(licence_brains):
+        pghandler.report(i)
+        jsonl_str += (json.dumps(extract_licence_dict(brain, streets_by_UID)) + '\n')
+        if i % CACHE_MINIMIZE_INTERVAL == 0:
+            # Making sure we don't blow up the memory consumption
+            portal._p_jar.db().cacheMinimize()
+    pghandler.finish()
+    return jsonl_str
 
 
-def extract_licence_dict(brain, licence):
+def extract_licence_dict(brain, streets_by_UID):
+    licence = brain.getObject()
     cfg = licence.getUrbanConfig()
     licence_dict = {
         'UID': brain.UID,
         'portal_type': brain.portal_type,
         'reference': brain.getReference,
         'address': [extract_address(addr) for addr in licence.getParcels()],
-        'form_address': extract_form_address(licence),
+        'form_address': extract_form_address(licence, streets_by_UID),
         'subject': licence.getLicenceSubject(),
         'workflow_state': brain.review_state,
         'folder_managers': [extract_folder_managers(fm)
@@ -183,17 +215,28 @@ def extract_licence_dict(brain, licence):
         licence_dict['external_parcels'] = extract_external_parcels(licence)
 
     if interfaces.IEnvironmentBase.providedBy(licence):
-        licence_dict['authorization_start_date'] = licence.getLastLicenceEffectiveStart() and str(licence.getLastLicenceEffectiveStart().getEventDate() or '')
-        licence_dict['authorization_end_date'] = licence.getLastLicenceExpiration() and str(licence.getLastLicenceExpiration().getEventDate() or '')
-        licence_dict['displaying_date'] = licence.getLastDisplayingTheDecision() and str(licence.getLastDisplayingTheDecision().getEventDate() or '')
-        licence_dict['archives_date'] = licence.getLastSentToArchives() and str(licence.getLastSentToArchives().getEventDate() or '')
-        licence_dict['archives_description'] = licence.getLastSentToArchives() and str(licence.getLastSentToArchives().getMisc_description()) or ''
-        licence_dict['activity_ended_date'] = licence.getLastActivityEnded() and str(licence.getLastActivityEnded().getEventDate() or '')
-        licence_dict['forced_end_date'] = licence.getLastForcedEnd() and str(licence.getLastForcedEnd().getEventDate() or '')
-        licence_dict['modification_registry_date'] = licence.getLastModificationRegistry() and str(licence.getLastModificationRegistry().getEventDate() or '')
-        licence_dict['iile_prescription_date'] = licence.getLastIILEPrescription() and str(licence.getLastIILEPrescription().getEventDate() or '')
-        licence_dict['provocation_date'] = licence.getLastProvocation() and str(licence.getLastProvocation().getEventDate() or '')
-        licence_dict['exploitant_change_date'] = licence.getLastProprietaryChangeEvent() and str(licence.getLastProprietaryChangeEvent().getEventDate() or '')
+        licence_dict['authorization_start_date'] = licence.getLastLicenceEffectiveStart() and str(
+            licence.getLastLicenceEffectiveStart().getEventDate() or '')
+        licence_dict['authorization_end_date'] = licence.getLastLicenceExpiration() and str(
+            licence.getLastLicenceExpiration().getEventDate() or '')
+        licence_dict['displaying_date'] = licence.getLastDisplayingTheDecision() and str(
+            licence.getLastDisplayingTheDecision().getEventDate() or '')
+        licence_dict['archives_date'] = licence.getLastSentToArchives() and str(
+            licence.getLastSentToArchives().getEventDate() or '')
+        licence_dict['archives_description'] = licence.getLastSentToArchives() and str(
+            licence.getLastSentToArchives().getMisc_description()) or ''
+        licence_dict['activity_ended_date'] = licence.getLastActivityEnded() and str(
+            licence.getLastActivityEnded().getEventDate() or '')
+        licence_dict['forced_end_date'] = licence.getLastForcedEnd() and str(
+            licence.getLastForcedEnd().getEventDate() or '')
+        licence_dict['modification_registry_date'] = licence.getLastModificationRegistry() and str(
+            licence.getLastModificationRegistry().getEventDate() or '')
+        licence_dict['iile_prescription_date'] = licence.getLastIILEPrescription() and str(
+            licence.getLastIILEPrescription().getEventDate() or '')
+        licence_dict['provocation_date'] = licence.getLastProvocation() and str(
+            licence.getLastProvocation().getEventDate() or '')
+        licence_dict['exploitant_change_date'] = licence.getLastProprietaryChangeEvent() and str(
+            licence.getLastProprietaryChangeEvent().getEventDate() or '')
         licence_dict['rubrics'] = extract_rubrics(licence)
         licence_dict['rubrics_history'] = extract_rubrics_history(licence)
 
@@ -343,15 +386,16 @@ def extract_external_parcels(licence):
     return parcels_dict
 
 
-def extract_form_address(licence):
-    catalog = api.portal.get_tool('portal_catalog')
+def extract_form_address(licence, streets_by_UID):
     addresses_dict = []
     for address in licence.getWorkLocations():
-        street_brain = catalog(UID=address['street'])
-        street = street_brain and street_brain[0].getObject() or None
+        street_brain = streets_by_UID.get(address['street'], None)
+        if not street_brain:
+            continue
+        street = street_brain.getObject()
         address_dict = {
-            'street_name': street and street.getStreetName() or '',
-            'street_code': street and street.getStreetCode() or '',
+            'street_name': street.getStreetName(),
+            'street_code': street.getStreetCode(),
             'street_number': address['number'],
         }
         addresses_dict.append(address_dict)
@@ -407,7 +451,8 @@ def extract_inquiry_dates(licence):
     inquiries = licence.getAllEvents(interfaces.IInquiryEvent)
     announcements = licence.getAllEvents(interfaces.IAnnouncementEvent)
     all_inquiries = inquiries + announcements
-    dates = [{'start_date': str(inq.getInvestigationStart()), 'end_date': str(inq.getInvestigationEnd())} for inq in all_inquiries]
+    dates = [{'start_date': str(inq.getInvestigationStart()), 'end_date': str(inq.getInvestigationEnd())} for inq in
+             all_inquiries]
     return dates
 
 
