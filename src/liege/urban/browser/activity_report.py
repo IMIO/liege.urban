@@ -26,24 +26,24 @@ logger = logging.getLogger("liege.urban")
 
 class ILicencesExtractForm(Interface):
     start_date = schema.Date(
-        title=_("Date start"),
+        title=_(u"Date start"),
         required=False,
     )
 
     end_date = schema.Date(
-        title=_("Date end"),
+        title=_(u"Date end"),
         required=False,
     )
 
     date_index = schema.Choice(
-        title=_("Date index"),
+        title=_(u"Date index"),
         vocabulary="urban.vocabularies.licence_date_indexes",
         default="created",
         required=False,
     )
 
     licence_type = schema.Set(
-        title=_("Licence types"),
+        title=_(u"Licence types"),
         value_type=schema.Choice(source="urban.vocabularies.licence_types"),
         required=False,
     )
@@ -59,7 +59,7 @@ class LicencesExtractForm(form.Form):
     def updateWidgets(self):
         super(LicencesExtractForm, self).updateWidgets()
 
-    @button.buttonAndHandler("Search")
+    @button.buttonAndHandler(u"Search")
     def handleSearch(self, action):
         data, errors = self.extractData()
         if errors:
