@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 import logging
-from datetime import date
 from datetime import datetime
-from functools import wraps
 import time
 
 from Products.ZCatalog.ProgressHandler import ZLogHandler
@@ -84,18 +82,20 @@ def do_export(portal, query, filename='activity_report'):
     query_end_time = time.time()
     query_time = query_end_time - start_time
     logger.info('query_licences_brains took {} seconds'.format(query_time))
-    licences_jsonl = compute_jsonl(licences_brains)
-    compute_jsonl_end_time = time.time()
-    compute_jsonl_time = compute_jsonl_end_time - query_end_time
-    logger.info('compute_jsonl took {} seconds'.format(compute_jsonl_time))
+    licences_json = compute_json(licences_brains)
+    compute_json_end_time = time.time()
+    compute_json_time = compute_json_end_time - query_end_time
+    logger.info('compute_json took {} seconds'.format(compute_json_time))
+    create_archive(filename, licences_json)
     end_time = time.time()
-    total_time = end_time - start_time
     logger.info('Export done.')
+    total_time = end_time - start_time
     logger.info('Total time for {} elements: {} seconds'.format(len(licences_brains), total_time))
-    logger.info("That's {} elements/sec on average".format(len(licences_brains) / total_time))
-    logger.info("It should be around 30-50 elements/sec for a decent processing time")
-    create_archive(filename, licences_jsonl)
-    return licences_jsonl
+    items_rate = len(licences_brains) / total_time
+    logger.info("That's {} elements/sec on average".format(items_rate))
+    if items_rate < 30 and len(licences_brains) > 5000: # Doesn't make sense to warn when treating small sample
+        logger.warn("Something is wrong with the process. It should be at least 30 elements/sec for a decent processing time")
+    return licences_json
 
 
 def create_archive(filename, content):
@@ -105,7 +105,7 @@ def create_archive(filename, content):
         archive = zipfile.ZipFile('{}.zip'.format(filename), 'w', zipfile.ZIP_DEFLATED)
     except RuntimeError:
         archive = zipfile.ZipFile('{}.zip'.format(filename), 'w')
-    archive.writestr('{}.jsonl'.format(filename), content)
+    archive.writestr('{}.json'.format(filename), content)
     archive.close()
     return archive
 
@@ -118,25 +118,32 @@ def query_licences_brains(start_date, end_date, date_index='created', licence_ty
     return licence_brains
 
 
-def compute_jsonl(licence_brains):
-    CACHE_MINIMIZE_INTERVAL = 5000
+def compute_json(licence_brains):
+    CACHE_MINIMIZE_INTERVAL = 5000 # At each interval of element we'll minimize the ZODB's cache
     portal = api.portal.get()
     urban_tool = api.portal.get_tool('portal_urban')
     catalog = api.portal.get_tool('portal_catalog')
     pghandler = ZLogHandler(1000)
-    pghandler.init("Building JSONL of {} licences".format(len(licence_brains)), len(licence_brains))
-    jsonl_str = ""
+    pghandler.init("Building JSON of {} licences".format(len(licence_brains)), len(licence_brains))
+
+    # The catalog is abnormally slow, so we'll make one big query and keep the streets in memory for later
     addresses_path = urban_tool.absolute_url_path() + "/streets"
     streets_by_UID = {brain.UID: brain for brain in catalog(path=addresses_path, portal_type="Street")}
 
+    # We'll build the JSON string ourself as it is more lightweight to keep a str in memory
+    # than a huge json dict and dumps it at the end
+    json_str = "["
     for i, brain in enumerate(licence_brains):
         pghandler.report(i)
-        jsonl_str += (json.dumps(extract_licence_dict(brain, streets_by_UID)) + '\n')
+        json_str += (json.dumps(extract_licence_dict(brain, streets_by_UID)))
+        if i < len(licence_brains) - 1:
+            json_str += ",\n"
         if i % CACHE_MINIMIZE_INTERVAL == 0:
             # Making sure we don't blow up the memory consumption
             portal._p_jar.db().cacheMinimize()
     pghandler.finish()
-    return jsonl_str
+    json_str += "]"
+    return json_str
 
 
 def extract_licence_dict(brain, streets_by_UID):
@@ -248,6 +255,9 @@ def extract_licence_dict(brain, streets_by_UID):
 
     if hasattr(licence, 'getInspection_context'):
         licence_dict['inspection_context'] = licence.getInspection_context() or ''
+
+    if hasattr(licence, 'getForm_composition') and hasattr(licence, 'form_composition'):
+        licence_dict['form_composition'] = licence.getForm_composition() or []
 
     if hasattr(licence, 'getLastBuidlingDivisionAttestationMail'):
         event = licence.getLastBuidlingDivisionAttestationMail()
