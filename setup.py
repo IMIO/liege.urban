@@ -46,6 +46,7 @@ setup(
         'borg.localrole',
         'plone.api',
         'Products.urban',
+        'imio.pm.wsclient>=2.0',
         'setuptools',
         'zope.schema',
         'z3c.jbot',
