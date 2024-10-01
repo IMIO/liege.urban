@@ -300,4 +300,13 @@ class StateRolesMapping(LiegeBase):
             'urban_internal_readers': ('InternalReader', 'RoadReader'),
             'environment_readers': ('Reader', 'RoadReader'),
         },
+        'obsolete': {
+            'Voirie_editors': ('RoadReader',),
+            'Voirie_validators': ('RoadReader',),
+            LiegeBase.get_opinion_editors: ('ExternalReader',),
+            'survey_editors': ('Reader', 'AddressEditor'),
+            'urban_readers': ('Reader', 'RoadReader'),
+            'urban_internal_readers': ('InternalReader', 'RoadReader'),
+            'environment_readers': ('Reader', 'RoadReader'),
+        },
     }
