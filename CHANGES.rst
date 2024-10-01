@@ -8,6 +8,23 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.4 (2024-10-01)
+------------------
+
+New features:
+
+
+- Add form_composition field to the export in `activity_report.py`.
+  [aduchene] (SUP-37960)
+
+
+Bug fixes:
+
+
+- Fix performance issue with `activity_report.py`.
+  [aduchene] (URB-3102)
+
+
 1.0.3 (2024-04-01)
 ------------------
 
