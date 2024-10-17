@@ -8,6 +8,16 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.5 (2024-10-17)
+------------------
+
+New features:
+
+
+- Compatible with imio.pm.wsclient 2.x.
+  [aduchene] (URB-3148)
+
+
 1.0.4 (2024-10-01)
 ------------------
 
