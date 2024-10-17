@@ -284,10 +284,10 @@ class CollegeDone(SimpleCollegeCondition):
         ws4pm = getMultiAdapter((api.portal.get(), request), name='ws4pmclient-settings')
 
         # if the current user has no acces to pm return False
-        if not ws4pm._soap_getUserInfos():
+        if not ws4pm._rest_getUserInfos():
             return False
 
-        items = ws4pm._soap_searchItems({'externalIdentifier': self.college_event.UID()})
+        items = ws4pm._rest_searchItems({'externalIdentifier': self.college_event.UID()})
         if not items:
             return False
 
@@ -365,11 +365,11 @@ class MayorCollegesDone(MayorCollegeCondition):
         ws4pm = getMultiAdapter((api.portal.get(), request), name='ws4pmclient-settings')
 
         # if the current user has no acces to pm return False
-        if not ws4pm._soap_getUserInfos():
+        if not ws4pm._rest_getUserInfos():
             return False
 
         for event in self.mayor_events:
-            items = ws4pm._soap_searchItems({'externalIdentifier': event.UID()})
+            items = ws4pm._rest_searchItems({'externalIdentifier': event.UID()})
             if not items:
                 continue
 
@@ -391,12 +391,12 @@ class DoneMayorCollegesEventsClosed(MayorCollegeCondition):
         ws4pm = getMultiAdapter((api.portal.get(), request), name='ws4pmclient-settings')
 
         # if the current user has no acces to pm return False
-        if not ws4pm._soap_getUserInfos():
+        if not ws4pm._rest_getUserInfos():
             return False
 
         for event in self.mayor_events:
 
-            items = ws4pm._soap_searchItems({'externalIdentifier': event.UID()})
+            items = ws4pm._rest_searchItems({'externalIdentifier': event.UID()})
             if not items:
                 continue
 
@@ -585,10 +585,10 @@ class EnvironmentDecisionCollegeDone(EnvironmentDecisionCondition):
         ws4pm = getMultiAdapter((api.portal.get(), request), name='ws4pmclient-settings')
 
         # if the current user has no acces to pm return False
-        if not ws4pm._soap_getUserInfos():
+        if not ws4pm._rest_getUserInfos():
             return False
 
-        items = ws4pm._soap_searchItems({'externalIdentifier': self.decision_event.UID()})
+        items = ws4pm._rest_searchItems({'externalIdentifier': self.decision_event.UID()})
         if not items:
             return False
 

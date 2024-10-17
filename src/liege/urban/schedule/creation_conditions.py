@@ -155,7 +155,7 @@ class OneProjectsSentToMayorCollege(MayorCollegeCondition):
                 return False
             if sent:
                 try:
-                    items = ws4pm._soap_searchItems({'externalIdentifier': event.UID()})
+                    items = ws4pm._rest_searchItems({'externalIdentifier': event.UID()})
                 except:
                     return False
 
@@ -192,7 +192,7 @@ class OneMayorCollegeMeetingDone(MayorCollegeCondition):
                 return False
             if sent:
                 try:
-                    items = ws4pm._soap_searchItems({'externalIdentifier': event.UID()})
+                    items = ws4pm._rest_searchItems({'externalIdentifier': event.UID()})
                 except:
                     continue
 
