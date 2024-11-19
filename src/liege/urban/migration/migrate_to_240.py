@@ -153,3 +153,21 @@ def upgrade_to_242(context):
         ],
     )
     logger.info("migration done!")
+
+
+def upgrade_to_243(context):
+    logger = logging.getLogger(
+        "urban: reindex cu2 workflow"
+    )
+    logger.info("starting upgrade steps")
+    portal_setup = api.portal.get_tool("portal_setup")
+    portal_setup.runImportStepFromProfile(
+        "profile-liege.urban:default", "workflow"
+    )
+    portal = api.portal.get()
+    urban_path = "/".join(portal["urban"].getPhysicalPath())
+    refresh_workflow_permissions(
+        "cu2_workflow",
+        folder_path=urban_path,
+        for_states=["accepted", "authorized", "refused"]
+    )
