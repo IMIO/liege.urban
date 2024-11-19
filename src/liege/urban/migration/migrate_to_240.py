@@ -1,5 +1,5 @@
 # encoding: utf-8
-from Products.urban.utils import getLicenceFolderId
+
 from imio.schedule.config import states_by_status
 from imio.schedule.config import STARTED
 from imio.schedule.interfaces import TaskConfigNotFound
@@ -179,7 +179,7 @@ def upgrade_to_243(context):
         state.permission_roles = permission_roles
 
     logger.info("Adding Voirie_readers group...")
-    portal_groups.addGroup("Voirie_readers", title="Voirie readers")
+    portal_groups.addGroup("Voirie_readers", title="Voirie Readers")
     portal_groups.setRolesForGroup('Voirie_readers', ('RoadReader', ))
     portal_urban.manage_addLocalRoles("Voirie_readers", ("Reader",'RoadReader', ))
     roaddecrees_folder = getattr(app_folder, "roaddecrees")
