@@ -155,19 +155,34 @@ def upgrade_to_242(context):
     logger.info("migration done!")
 
 def upgrade_to_243(context):
+    """
+    1. Add same permissions than Reader to RoadReader on codt_buildlicence_workflow
+    2. Create 'Voirie_readers' group to be RoadReader. Yes it's capitalized to be consistent with existing groups...
+    3. Manage some local roles to have access to the faceted view
+    """
     logger = logging.getLogger('urban: migrate to 2.4.3')
     logger.info("starting migration steps")
-    logger.info("Adding roaddecrees_readers group...")
     portal_groups = api.portal.get_tool('portal_groups')
     portal_urban = api.portal.get_tool('portal_urban')
-    setup_tool = api.portal.get_tool('portal_setup')
+    portal_workflow = api.portal.get_tool('portal_workflow')
     app_folder = api.portal.get().urban
 
-    portal_groups.addGroup("roaddecrees_readers", title="Roaddecrees readers")
-    portal_groups.setRolesForGroup('roaddecrees_readers', ('RoadReader', ))
-    portal_urban.manage_addLocalRoles("roaddecrees_readers", ("Reader", ))
+    logger.info("Adding permissions to codt_buildlicence_workflow...")
+    for state in portal_workflow['codt_buildlicence_workflow'].states.values():
+        permission_roles = copy.deepcopy(state.permission_roles)
+        for perm in permission_roles.keys():
+            if "Reader" in permission_roles[perm]:
+                if isinstance(permission_roles[perm], tuple): # Making sure we don't break (non-)acquired permissions
+                    permission_roles[perm] = permission_roles[perm] + ('RoadReader',)
+                else:
+                    permission_roles[perm].append('RoadReader')
+        state.permission_roles = permission_roles
+
+    logger.info("Adding Voirie_readers group...")
+    portal_groups.addGroup("Voirie_readers", title="Voirie readers")
+    portal_groups.setRolesForGroup('Voirie_readers', ('RoadReader', ))
+    portal_urban.manage_addLocalRoles("Voirie_readers", ("Reader",'RoadReader', ))
     roaddecrees_folder = getattr(app_folder, "roaddecrees")
-    roaddecrees_folder.manage_addLocalRoles("roaddecrees_readers", ("Reader",))
-    setup_tool.runImportStepFromProfile('profile-Products.urban:preinstall', 'update-workflow-rolemap')
+    roaddecrees_folder.manage_addLocalRoles("Voirie_readers", ("Reader",'RoadReader',))
 
     logger.info("migration done!")
