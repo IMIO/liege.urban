@@ -89,6 +89,7 @@ def addLiegeGroups(context):
 
     portal_groups = api.portal.get_tool('portal_groups')
     portal_urban = api.portal.get_tool('portal_urban')
+    app_folder = getattr(api.portal.get(), "urban")
 
     portal_groups.addGroup("urban_internal_readers", title="Internal readers")
     portal_groups.setRolesForGroup('urban_internal_readers', ('UrbanMapReader', ))
@@ -161,6 +162,12 @@ def addLiegeGroups(context):
     portal_groups.setRolesForGroup('fittingout_technicians_validators', ('UrbanMapReader', ))
     portal_urban.manage_addLocalRoles("fittingout_technicians_validators", ("Reader", ))
     portal_groups.addPrincipalToGroup("fittingout_technicians_validators", 'urban_readers')
+
+    portal_groups.addGroup("Voirie_readers", title="Roaddecrees readers")
+    portal_groups.setRolesForGroup('Voirie_readers', ('RoadReader', ))
+    portal_urban.manage_addLocalRoles("Voirie_readers", ("Reader",'RoadReader', ))
+    roaddecrees_folder = getattr(app_folder, "roaddecrees")
+    roaddecrees_folder.manage_addLocalRoles("Voirie_readers", ("Reader",'RoadReader',))
 
     # external services
     services = ['Voirie', 'Access', 'Plantation', 'SSSP', 'EDII']
