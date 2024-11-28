@@ -1,17 +1,13 @@
 # -*- coding: utf-8 -*-
 
+import logging
 from datetime import date
 
 from liege.urban.browser.activity_report import do_export
-
-from plone import api
-from plone.app.async.interfaces import IAsyncService
-
 from Products.Five import BrowserView
 from Products.urban.config import URBAN_TYPES
 
-from zope.component import getUtility
-
+logger = logging.getLogger('urban: cron')
 
 class MonthlyActivityReport(BrowserView):
     """
@@ -27,8 +23,8 @@ class MonthlyActivityReport(BrowserView):
     }
 
     def __call__(self):
-        _async = getUtility(IAsyncService)
-        job = _async.queueJob(do_export, self.context, self.query, 'monthly_activity_report')
+        do_export(self.context, self.query, 'monthly_activity_report')
+        logger.info("Monthly activity report done.")
 
 
 class GetMonthlyActivityReportResult(BrowserView):
