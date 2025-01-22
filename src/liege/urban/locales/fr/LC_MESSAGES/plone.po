@@ -227,8 +227,20 @@ msgstr "Irrecevable"
 msgid "is_incomplete"
 msgstr "déclarer incomplet"
 
+msgid "make_obsolete"
+msgstr "Rendre caduc"
+
 msgid "notification"
 msgstr "Notification du permis"
+
+msgid "obsolete"
+msgstr "Caduc"
+
+msgid "obsolete_accept"
+msgstr "Caduc"
+
+msgid "obsolete_authorized"
+msgstr "Caduc"
 
 msgid "opinion_given"
 msgstr "Avis rendu"
@@ -427,9 +439,3 @@ msgstr "En attente de finalisation"
 
 msgid "writing_report"
 msgstr "En rédaction"
-
-msgid "obsolete"
-msgstr "Caduc"
-
-msgid "make_obsolete"
-msgstr "Rendre caduc"
