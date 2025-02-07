@@ -436,3 +436,9 @@ msgstr ""
 
 msgid "make_obsolete"
 msgstr ""
+
+msgid "obsolete_authorized"
+msgstr ""
+
+msgid "obsolete_accept"
+msgstr ""
