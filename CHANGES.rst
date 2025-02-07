@@ -8,6 +8,16 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.7 (2025-02-07)
+------------------
+
+New features:
+
+
+- Modify obsolete state workflow and display order
+  [jchandelle] (SUP-36697)
+
+
 1.0.6 (2025-01-16)
 ------------------
 
