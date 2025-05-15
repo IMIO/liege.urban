@@ -11,6 +11,7 @@ from liege.urban.migration.utils import refresh_workflow_permissions
 from plone import api
 
 
+import copy
 import logging
 import re
 
