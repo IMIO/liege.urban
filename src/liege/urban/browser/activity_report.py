@@ -127,7 +127,7 @@ def compute_json(licence_brains):
     pghandler.init("Building JSON of {} licences".format(len(licence_brains)), len(licence_brains))
 
     # The catalog is abnormally slow, so we'll make one big query and keep the streets in memory for later
-    addresses_path = urban_tool.absolute_url_path() + "/streets"
+    addresses_path = "/".join(urban_tool.getPhysicalPath()) + "/streets"
     streets_by_UID = {brain.UID: brain for brain in catalog(path=addresses_path, portal_type="Street")}
 
     # We'll build the JSON string ourself as it is more lightweight to keep a str in memory
