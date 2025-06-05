@@ -8,6 +8,18 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.8 (2025-06-05)
+------------------
+
+Bug fixes:
+
+
+- Fix catalog query path for form_address in report
+  [jchandelle] (SUP-45007)
+- Fix missing import
+  [aduchene] (URB-3258)
+
+
 1.0.7 (2025-02-07)
 ------------------
 
