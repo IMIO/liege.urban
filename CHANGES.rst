@@ -8,6 +8,16 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.9 (2025-07-27)
+------------------
+
+Bug fixes:
+
+
+- Add an upgrade step for workflows, permissions and allowed content types
+  [mpeeters] (SUP-45220)
+
+
 1.0.8 (2025-06-05)
 ------------------
 
