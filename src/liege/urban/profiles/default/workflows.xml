@@ -104,7 +104,6 @@
   <type type_id="UrbanEventWithEnvironmentValidation">
      <bound-workflow workflow_id="env_validation_event_workflow" />
   </type>
-<!-- ##code-section workflowbindings -->
   <type type_id="Article127">
      <bound-workflow workflow_id="article127_workflow" />
   </type>
@@ -117,6 +116,11 @@
   <type type_id="RoadDecree">
      <bound-workflow workflow_id="roaddecree_workflow"/>
   </type>
-<!-- ##/code-section workflowbindings -->
+  <type type_id="UrbanVocabularyTerm">
+     <bound-workflow workflow_id="activation_workflow" />
+  </type>
+  <type type_id="ComplementaryDelayTerm">
+     <bound-workflow workflow_id="activation_workflow" />
+  </type>
  </bindings>
 </object>

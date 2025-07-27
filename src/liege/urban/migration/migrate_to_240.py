@@ -213,3 +213,32 @@ def upgrade_to_244(context):
             "waiting_address"
         ],
     )
+
+
+def upgrade_to_245(context):
+    from liege.urban.setuphandlers import setAllowedTypes
+
+    logger = logging.getLogger('urban: migrate to 2.4.5')
+    logger.info("starting migration steps")
+    setup_tool = api.portal.get_tool('portal_setup')
+    setup_tool.runImportStepFromProfile('profile-liege.urban:default', 'workflow')
+    refresh_workflow_permissions(
+        "codt_buildlicence_workflow",
+        for_states=[
+            "FD_opinion",
+            "accepted",
+            "authorized",
+            "checking_completion",
+            "complete",
+            "decision_in_progress",
+            "deposit",
+            "incomplete",
+            "procedure_choosen",
+            "procedure_validated",
+            "report_written",
+            "suspension",
+            "validating_address",
+            "waiting_address"
+        ],
+    )
+    setAllowedTypes(context)

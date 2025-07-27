@@ -51,4 +51,12 @@
         handler=".migrate_to_240.upgrade_to_244"
         profile="liege.urban:default" />
 
+    <gs:upgradeStep
+        title="Upgrade liege urban 2.4.5"
+        description="Reimport workflow, refresh workflow permissions and update allowed types"
+        source="244"
+        destination="245"
+        handler=".migrate_to_240.upgrade_to_245"
+        profile="liege.urban:default" />
+
 </configure>
