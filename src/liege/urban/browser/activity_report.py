@@ -220,6 +220,14 @@ def extract_licence_dict(brain, streets_by_UID):
         licence_dict["external_address"] = extract_external_address(licence)
         licence_dict["external_parcels"] = extract_external_parcels(licence)
 
+    if licence.getLastSentToArchives():
+        licence_dict["archives_date"] = str(
+            licence.getLastSentToArchives().getEventDate() or ""
+        )
+        licence_dict["archives_description"] = (
+            str(licence.getLastSentToArchives().getMisc_description()) or ""
+        )
+
     if interfaces.IEnvironmentBase.providedBy(licence):
         licence_dict["authorization_start_date"] = licence.getLastLicenceEffectiveStart() and str(
             licence.getLastLicenceEffectiveStart().getEventDate() or ""
@@ -229,12 +237,6 @@ def extract_licence_dict(brain, streets_by_UID):
         )
         licence_dict["displaying_date"] = licence.getLastDisplayingTheDecision() and str(
             licence.getLastDisplayingTheDecision().getEventDate() or ""
-        )
-        licence_dict["archives_date"] = licence.getLastSentToArchives() and str(
-            licence.getLastSentToArchives().getEventDate() or ""
-        )
-        licence_dict["archives_description"] = (
-            licence.getLastSentToArchives() and str(licence.getLastSentToArchives().getMisc_description()) or ""
         )
         licence_dict["activity_ended_date"] = licence.getLastActivityEnded() and str(
             licence.getLastActivityEnded().getEventDate() or ""
