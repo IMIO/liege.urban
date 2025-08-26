@@ -65,4 +65,11 @@ class StateRolesMapping(LocalRoleAdapter):
             'inspection_editors': ('Reader',),
             'urban_readers': ('Reader',),
         },
+
+        'frozen_suspension': {
+            'administrative_editors': ('Editor', 'AddressEditor'),
+            'administrative_validators': ('Contributor', 'AddressEditor'),
+            'inspection_editors': ('Reader',),
+            'urban_readers': ('Reader',),
+        },
     }
