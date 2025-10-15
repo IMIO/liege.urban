@@ -8,6 +8,16 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.10 (2025-10-15)
+-------------------
+
+Bug fixes:
+
+
+- Fix adapter for schedule collection icons
+  [mpeeters] (URBBDC-3204)
+
+
 1.0.9 (2025-07-27)
 ------------------
 
