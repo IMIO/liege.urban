@@ -3,7 +3,7 @@
     i18n_domain="liege.urban">
 
   <adapter
-     for="imio.dashboard.interfaces.IDashboardCollection"
+     for="collective.eeafaceted.collectionwidget.interfaces.IDashboardCollection"
      factory=".to_icon.ScheduleCollectionToIcon"
   />
 
