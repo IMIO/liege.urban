@@ -59,4 +59,11 @@
         handler=".migrate_to_240.upgrade_to_245"
         profile="liege.urban:default" />
 
+    <gs:upgradeStep
+        title="Import type profile"
+        source="245"
+        destination="246"
+        handler=".migrate_to_240.import_type_profile"
+        profile="liege.urban:default" />
+
 </configure>

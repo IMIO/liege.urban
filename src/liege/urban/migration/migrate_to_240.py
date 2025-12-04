@@ -242,3 +242,10 @@ def upgrade_to_245(context):
         ],
     )
     setAllowedTypes(context)
+
+
+def import_type_profile(context):
+    logger.info("starting migration steps : Import type profile")
+    setup_tool = api.portal.get_tool('portal_setup')
+    setup_tool.runImportStepFromProfile('profile-liege.urban:default', 'typeinfo')
+    logger.info("migration done!")
