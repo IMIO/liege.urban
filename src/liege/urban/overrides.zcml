@@ -128,14 +128,6 @@
          permission="zope2.View"
       />
 
-
-      <adapter
-         for="Products.urban.interfaces.ITicket"
-         provides="borg.localrole.interfaces.ILocalRoleProvider"
-         factory="liege.urban.workflows.ticket_workflow.StateRolesMapping"
-         name="ticket_local_roles"
-      />
-
   </configure>
 
 </configure>

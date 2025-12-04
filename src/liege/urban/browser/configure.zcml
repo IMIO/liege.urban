@@ -38,7 +38,6 @@
         for="Products.urban.interfaces.IGenericLicence"
         permission="zope2.View"
         class=".address_search.AddressSearchFormView"
-        layer="liege.urban.interfaces.ILiegeUrbanLayer"
     />
 
     <adapter
