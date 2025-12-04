@@ -7,6 +7,7 @@
     i18n_domain="liege.urban">
 
   <i18n:registerTranslations directory="locales" />
+
   <include file="indexes.zcml" />
   <include file="interfaces.zcml" />
   <include file="permissions.zcml" />
@@ -19,7 +20,6 @@
   <include package="plone.app.async" />
   <include package="Products.urban"/>
   <include package="z3c.jbot" file="meta.zcml" />
-  <include package="plone.app.dexterity" />
 
   <browser:jbot
       directory="jbot"
