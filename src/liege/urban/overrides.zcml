@@ -111,6 +111,13 @@
          name="urbanevent_local_roles"
       />
 
+      <adapter
+         for="Products.urban.interfaces.ITicket"
+         provides="borg.localrole.interfaces.ILocalRoleProvider"
+         factory="liege.urban.workflows.ticket_workflow.StateRolesMapping"
+         name="ticket_local_roles"
+      />
+
       <!-- Override integrated licence view to always display env tab-->
       <browser:page
          for="Products.urban.interfaces.ICODT_IntegratedLicence"
@@ -126,6 +133,13 @@
          class="liege.urban.browser.codt_integratedlicenceview.CODT_IntegratedLicenceEditView"
          template="browser/licence/templates/licenceedit.pt"
          permission="zope2.View"
+      />
+
+      <browser:page
+         name="searchparcels"
+         for="Products.urban.interfaces.IGenericLicence"
+         permission="zope2.View"
+         class="liege.urban.browser.address_search.AddressSearchFormView"
       />
 
   </configure>

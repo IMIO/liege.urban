@@ -33,13 +33,6 @@
         class=".activity_report.LicencesExtractFormView"
     />
 
-    <browser:page
-        name="searchparcels"
-        for="Products.urban.interfaces.IGenericLicence"
-        permission="zope2.View"
-        class=".address_search.AddressSearchFormView"
-    />
-
     <adapter
         for="Products.urban.interfaces.IGenericLicence
              zope.publisher.interfaces.browser.IBrowserRequest
