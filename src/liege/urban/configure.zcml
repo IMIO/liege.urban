@@ -19,6 +19,7 @@
   <include package="plone.app.async" />
   <include package="Products.urban"/>
   <include package="z3c.jbot" file="meta.zcml" />
+  <include package="plone.app.dexterity" />
 
   <browser:jbot
       directory="jbot"

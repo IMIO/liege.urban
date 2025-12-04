@@ -18,7 +18,7 @@ class LicenceToShore(object):
         for address in self.licence.getParcels():
             if hasattr(address, "getShore"):
                 shore = address.getShore()
-            elif hasattr(address, "shore"):
+            elif hasattr(address, "shore") and address.shore is not None:
                 shore = address.shore
             else:
                 shore = ""

@@ -6,7 +6,7 @@ from liege.urban import UrbanMessage as _
 
 
 class IBank(Interface):
-    shore = schema.Choices(
+    shore = schema.Choice(
         title=_(u"Bank"),
         required=False,
         vocabulary="liege.shore"
