@@ -6,6 +6,7 @@ from liege.urban.licence_fields_permissions import set_field_permissions
 
 from Products.Archetypes.atapi import Schema
 
+from Products.CMFPlone.utils import safe_unicode
 from Products.urban.content.licence.Article127 import Article127
 from Products.urban.content.licence.BuildLicence import BuildLicence
 from Products.urban.content.licence.CODT_Article127 import CODT_Article127
@@ -131,7 +132,12 @@ def updateTitle(self):
     else:
         applicantTitle = translate('no_applicant_defined', 'urban', context=self.REQUEST).encode('utf8')
     to_shore = queryAdapter(self, IShore)
-    title = "%s %s - %s - %s" % (self.getReference(), to_shore.display(), self.getLicenceSubject(), applicantTitle)
+    title = "%s %s - %s - %s" % (
+        safe_unicode(self.getReference()),
+        safe_unicode(to_shore.display()),
+        safe_unicode(self.getLicenceSubject()),
+        safe_unicode(applicantTitle)
+    )
     self.setTitle(title)
     self.reindexObject(idxs=('Title', 'applicantInfosIndex', 'sortable_title', ))
     return title

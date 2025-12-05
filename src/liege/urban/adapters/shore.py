@@ -16,7 +16,13 @@ class LicenceToShore(object):
     def get_shore(self):
         shores = set([])
         for address in self.licence.getParcels():
-            shores.add(address.getShore())
+            if hasattr(address, "getShore"):
+                shore = address.getShore()
+            elif hasattr(address, "shore") and address.shore is not None:
+                shore = address.shore
+            else:
+                shore = ""
+            shores.add(shore)
         return sorted(list(shores))
 
     def display(self):

@@ -14,6 +14,7 @@
   <include file="skins.zcml" />
   <include file="vocabulary.zcml" />
 
+  <include package="plone.app.dexterity" />
   <include package="collective.wfadaptations" />
   <include package="imio.actionspanel"/>
   <include package="plone.app.async" />
@@ -35,6 +36,7 @@
   <include package=".schedule" />
   <include package=".services" />
   <include package=".workflows" />
+  <include package=".behaviors" />
 
   <genericsetup:registerProfile
       name="default"
