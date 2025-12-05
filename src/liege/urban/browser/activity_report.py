@@ -367,12 +367,12 @@ def extract_rubrics_history(licence):
 
 def extract_address(address):
     address_dict = {
-        "street_name": address.getStreet_name(),
-        "street_number": address.getStreet_number(),
-        "street_code": address.getStreet_code(),
-        "zipe_code": address.getZip_code(),
-        "address_point": address.getAddress_point(),
-        "shore": address.getShore(),
+        "street_name": address.street_name,
+        "street_number": address.street_number,
+        "street_code": address.street_code,
+        "zipe_code": address.zip_code,
+        "address_point": address.address_point,
+        "shore": address.shore,
     }
     try:
         capakey = address.get_capakey()
