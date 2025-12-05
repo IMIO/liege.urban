@@ -20,11 +20,11 @@ class LiegeLicenceToWorklocationsSignaletic(object):
         if address_points:
             signaletic = ''
             for address in address_points:
-                zip_code = address.getZip_code()
-                city = address.getDivisionAlternativeName()
+                zip_code = address.zip_code
+                city = address.divisionAlternativeName
                 city = city and city.split('(')[0].encode('utf-8') or ''
-                street = address.getStreet_name()
-                number = address.getStreet_number()
+                street = address.street_name
+                number = address.street_number
                 if signaletic:
                     signaletic += ' %s ' % translate('and', 'urban', context=licence.REQUEST).encode('utf8')
                 if number:
@@ -41,8 +41,8 @@ class LiegeLicenceToWorklocationsSignaletic(object):
         if address_points:
             signaletic = ''
             for address in address_points:
-                street = address.getStreet_name()
-                number = address.getStreet_number()
+                street = address.street_name
+                number = address.street_number
                 if number:
                     signaletic = '{} {} {}'.format(signaletic, street, number)
                 else:
