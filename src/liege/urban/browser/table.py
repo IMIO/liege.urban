@@ -44,9 +44,9 @@ class AddressTitleDisplay(ParcelTitleDisplay):
 
     def render(self):
         address = self.obj
-        street_address = u'{}, {}'.format(address.getStreet_name().decode('utf-8'), str(address.getStreet_number()).decode('utf-8'))
-        city_name = address.getDivisionAlternativeName().split('(')[0]
-        city = u'{} {}'.format((address.getZip_code() or '').decode('utf-8'), city_name)
+        street_address = u'{}, {}'.format(address.street_name.decode('utf-8'), str(address.street_number).decode('utf-8'))
+        city_name = address.divisionAlternativeName.split('(')[0]
+        city = u'{} {}'.format((address.zip_code or '').decode('utf-8'), city_name)
         full_address = u'{}<br />{}'.format(street_address, city)
         return full_address.encode('utf-8')
 
@@ -62,7 +62,7 @@ class ShoreColumn(Column):
         return translate(self.header, 'urban', context=self.request)
 
     def renderCell(self, address):
-        return '<div style="text-align:center">%s</div>' % address.getShore()
+        return '<div style="text-align:center">%s</div>' % address.shore
 
 
 class CapakeyColumn(Column):
