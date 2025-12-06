@@ -12,4 +12,10 @@
       provides="liege.urban.behaviors.bank.IBank"
       />
 
+  <plone:behavior
+      name="liege.urban.address"
+      title="Display address options"
+      provides="liege.urban.behaviors.address.IAddress"
+      />
+
 </configure>
