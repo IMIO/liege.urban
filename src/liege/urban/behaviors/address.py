@@ -27,7 +27,7 @@ class IAddress(Interface):
         required=False,
     )
 
-    address_point = schema.Integer(
+    address_point = schema.Int(
         title=_(u"Address Point"),
         required=False,
     )
