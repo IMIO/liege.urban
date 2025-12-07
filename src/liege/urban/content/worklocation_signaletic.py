@@ -28,9 +28,9 @@ class LiegeLicenceToWorklocationsSignaletic(object):
                 if signaletic:
                     signaletic += ' %s ' % translate('and', 'urban', context=licence.REQUEST).encode('utf8')
                 if number:
-                    signaletic += "%s %s à %s %s" % (street, number, zip_code, city)
+                    signaletic += u"%s %s à %s %s" % (street, number, zip_code, city)
                 else:
-                    signaletic += "%s - %s %s" % (street, zip_code, city)
+                    signaletic += u"%s - %s %s" % (street, zip_code, city)
             return signaletic
         else:
             return licence.getDefaultWorkLocationSignaletic()
@@ -44,9 +44,9 @@ class LiegeLicenceToWorklocationsSignaletic(object):
                 street = address.street_name
                 number = address.street_number
                 if number:
-                    signaletic = '{} {} {}'.format(signaletic, street, number)
+                    signaletic = u'{} {} {}'.format(signaletic, street, number)
                 else:
-                    signaletic = '{} {}'.format(signaletic, street)
+                    signaletic = u'{} {}'.format(signaletic, street)
             return signaletic
         else:
             return licence.getDefaultStreetAndNumber()
