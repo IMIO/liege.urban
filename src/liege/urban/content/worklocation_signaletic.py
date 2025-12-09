@@ -20,17 +20,18 @@ class LiegeLicenceToWorklocationsSignaletic(object):
         if address_points:
             signaletic = ''
             for address in address_points:
-                zip_code = address.zip_code
+                zip_code = address.zip_code.encode("utf-8")
                 city = address.getDivisionAlternativeName()
                 city = city and city.split('(')[0].encode('utf-8') or ''
-                street = address.street_name
-                number = address.street_number
+                street = address.street_name.encode("utf-8")
+                number = address.street_number.encode("utf-8")
+                separator = u"à".encode("utf-8")
                 if signaletic:
                     signaletic += ' %s ' % translate('and', 'urban', context=licence.REQUEST).encode('utf8')
                 if number:
-                    signaletic += u"%s %s à %s %s" % (street, number, zip_code, city)
+                    signaletic += "%s %s %s %s %s" % (street, number, separator, zip_code, city)
                 else:
-                    signaletic += u"%s - %s %s" % (street, zip_code, city)
+                    signaletic += "%s - %s %s" % (street, zip_code, city)
             return signaletic
         else:
             return licence.getDefaultWorkLocationSignaletic()
@@ -41,12 +42,12 @@ class LiegeLicenceToWorklocationsSignaletic(object):
         if address_points:
             signaletic = ''
             for address in address_points:
-                street = address.street_name
-                number = address.street_number
+                street = address.street_name.encode("utf-8")
+                number = address.street_number.encode("utf-8")
                 if number:
-                    signaletic = u'{} {} {}'.format(signaletic, street, number)
+                    signaletic = '{} {} {}'.format(signaletic, street, number)
                 else:
-                    signaletic = u'{} {}'.format(signaletic, street)
+                    signaletic = '{} {}'.format(signaletic, street)
             return signaletic
         else:
             return licence.getDefaultStreetAndNumber()
