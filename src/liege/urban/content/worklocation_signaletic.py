@@ -21,7 +21,7 @@ class LiegeLicenceToWorklocationsSignaletic(object):
             signaletic = ''
             for address in address_points:
                 zip_code = address.zip_code
-                city = address.divisionAlternativeName
+                city = address.getDivisionAlternativeName()
                 city = city and city.split('(')[0].encode('utf-8') or ''
                 street = address.street_name
                 number = address.street_number
