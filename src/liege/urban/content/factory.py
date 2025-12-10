@@ -54,8 +54,7 @@ class AdressFactory(BrowserView):
 
         address = licence.getParcels()[-1]
         for field_name, value in address_args.iteritems():
-            field = address.getField(field_name)
-            field.set(address, value)
+            setattr(address, field_name, value)
 
         licence.updateTitle()
         licence.reindexObject(idxs=['parcelInfosIndex', 'shore'])
