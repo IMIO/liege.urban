@@ -47,12 +47,14 @@ class AdressFactory(BrowserView):
         portal_urban = api.portal.get_tool('portal_urban')
 
         with api.env.adopt_roles(['Manager']):
-            portal_urban.createPortionOut(licence, **reference_dict)
+            portal_urban.create_parcel(
+                container=licence,
+                **reference_dict
+            )
 
         address = licence.getParcels()[-1]
         for field_name, value in address_args.iteritems():
-            field = address.getField(field_name)
-            field.set(address, value)
+            setattr(address, field_name, value)
 
         licence.updateTitle()
         licence.reindexObject(idxs=['parcelInfosIndex', 'shore'])
