@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
+from Products.CMFPlone.utils import safe_unicode
 from Products.urban.interfaces import IWorklocationSignaletic
 
 from zope.i18n import translate
@@ -20,14 +21,14 @@ class LiegeLicenceToWorklocationsSignaletic(object):
         if address_points:
             signaletic = ''
             for address in address_points:
-                zip_code = address.zip_code.encode("utf-8")
+                zip_code = safe_unicode(address.zip_code)
                 city = address.getDivisionAlternativeName()
-                city = city and city.split('(')[0].encode('utf-8') or ''
-                street = address.street_name.encode("utf-8")
-                number = address.street_number.encode("utf-8")
-                separator = u"à".encode("utf-8")
+                city = city and safe_unicode(city.split('(')[0]) or ''
+                street = safe_unicode(address.street_name)
+                number = safe_unicode(address.street_number)
+                separator = safe_unicode(u"à")
                 if signaletic:
-                    signaletic += ' %s ' % translate('and', 'urban', context=licence.REQUEST).encode('utf8')
+                    signaletic += safe_unicode(' %s ' % translate('and', 'urban', context=licence.REQUEST))
                 if number:
                     signaletic += "%s %s %s %s %s" % (street, number, separator, zip_code, city)
                 else:
@@ -42,8 +43,8 @@ class LiegeLicenceToWorklocationsSignaletic(object):
         if address_points:
             signaletic = ''
             for address in address_points:
-                street = address.street_name.encode("utf-8")
-                number = address.street_number.encode("utf-8")
+                street = safe_unicode(address.street_name)
+                number = safe_unicode(address.street_number)
                 if number:
                     signaletic = '{} {} {}'.format(signaletic, street, number)
                 else:
