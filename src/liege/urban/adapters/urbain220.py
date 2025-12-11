@@ -12,7 +12,7 @@ class LiegeLicenceToUrbain220Street(object):
 
     def __init__(self, licence):
         first_address = None
-        for address in licence.objectValues('PortionOut'):
+        for address in licence.objectValues('Parcel'):
             if address.street_name and address.street_code:
                 first_address = address
                 break

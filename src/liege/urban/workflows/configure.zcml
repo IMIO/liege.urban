@@ -121,7 +121,7 @@
   />
 
   <adapter
-     for="Products.urban.interfaces.IPortionOut"
+     for="imio.urban.core.contents.parcel.IParcel"
      provides="borg.localrole.interfaces.ILocalRoleProvider"
      factory=".address_workflow.StateRolesMapping"
      name="address_local_roles"

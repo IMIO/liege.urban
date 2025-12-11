@@ -62,7 +62,7 @@
   <type type_id="IntegratedLicence">
      <bound-workflow workflow_id="urban_licence_workflow" />
   </type>
-  <type type_id="PortionOut">
+  <type type_id="Parcel">
      <bound-workflow workflow_id="address_workflow" />
   </type>
   <type type_id="PreliminaryNotice">

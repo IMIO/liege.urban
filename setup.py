@@ -47,6 +47,7 @@ setup(
         'plone.api',
         'Products.urban',
         'imio.pm.wsclient',
+        'imio.urban.core',
         'setuptools',
         'zope.schema',
         'z3c.jbot',

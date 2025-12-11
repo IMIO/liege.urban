@@ -414,8 +414,8 @@ def extract_form_address(licence, streets_by_UID):
             continue
         street = street_brain.getObject()
         address_dict = {
-            "street_name": street.getStreetName(),
-            "street_code": street.getStreetCode(),
+            "street_name": street.street_name,
+            "street_code": street.street_code,
             "street_number": address["number"],
         }
         addresses_dict.append(address_dict)

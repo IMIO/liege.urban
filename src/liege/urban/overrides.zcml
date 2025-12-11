@@ -20,7 +20,7 @@
          for="zope.interface.Interface
               Products.urban.browser.table.interfaces.ITitleColumn
               Products.urban.browser.table.interfaces.IItemForUrbanTable
-              Products.urban.interfaces.IPortionOut"
+              imio.urban.core.contents.parcel.IParcel"
          factory="liege.urban.browser.table.AddressTitleDisplay"
          provides="Products.urban.browser.table.interfaces.ITitleCell"
       />

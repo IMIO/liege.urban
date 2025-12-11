@@ -15,7 +15,7 @@
                    zope.lifecycleevent.interfaces.IObjectModifiedEvent"
               handler=".licence_events.reindex_licence_tasks" />
 
-  <subscriber for="Products.urban.interfaces.IPortionOut
+  <subscriber for="imio.urban.core.contents.parcel.IParcel
                    zope.container.interfaces.IObjectRemovedEvent"
               handler=".address_point_events.on_delete" />
 
