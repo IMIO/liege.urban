@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 
-from zope.interface import Interface
-from zope import schema
 from liege.urban import UrbanMessage as _
+from plone.autoform.interfaces import IFormFieldProvider
+from plone.supermodel import model
+from zope import schema
+from zope.interface import Interface
+from zope.interface import provider
 
 
-class IAddress(Interface):
+@provider(IFormFieldProvider)
+class IAddress(model.Schema):
 
     street_code = schema.TextLine(
         title=_(u"Street code"),
