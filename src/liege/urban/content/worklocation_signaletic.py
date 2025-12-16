@@ -21,11 +21,14 @@ class LiegeLicenceToWorklocationsSignaletic(object):
         if address_points:
             signaletic = ''
             for address in address_points:
-                zip_code = safe_unicode(address.zip_code).encode("utf-8")
+                zip_code = safe_unicode(address.zip_code)
+                zip_code = zip_code and zip_code.encode("utf-8") or ""
                 city = address.getDivisionAlternativeName()
                 city = city and safe_unicode(city.split('(')[0]).encode("utf-8") or ''
-                street = safe_unicode(address.street_name).encode("utf-8")
-                number = safe_unicode(address.street_number).encode("utf-8")
+                street = safe_unicode(address.street_name)
+                street = street and street.encode("utf-8") or ""
+                number = safe_unicode(address.street_number)
+                number = number and number.encode("utf-8") or ""
                 separator = safe_unicode(u"à").encode("utf-8")
                 if signaletic:
                     signaletic += safe_unicode(' %s ' % translate('and', 'urban', context=licence.REQUEST)).encode("utf-8")
@@ -43,8 +46,10 @@ class LiegeLicenceToWorklocationsSignaletic(object):
         if address_points:
             signaletic = ''
             for address in address_points:
-                street = safe_unicode(address.street_name).encode("utf-8")
-                number = safe_unicode(address.street_number).encode("utf-8")
+                street = safe_unicode(address.street_name)
+                street = street and street.encode("utf-8") or ""
+                number = safe_unicode(address.street_number)
+                number = number and number.encode("utf-8") or ""
                 if number:
                     signaletic = '{} {} {}'.format(signaletic, street, number)
                 else:
