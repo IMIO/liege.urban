@@ -1,5 +1,6 @@
 ## -*- coding: utf-8 -*-
 
+from Products.CMFPlone.utils import safe_unicode
 from Products.urban.browser.table.column import ParcelTitleDisplay
 from Products.urban.browser.table.column import RelatedLicencesColumn
 from Products.urban.browser.table.column import TitleColumnHeader
@@ -44,9 +45,9 @@ class AddressTitleDisplay(ParcelTitleDisplay):
 
     def render(self):
         address = self.obj
-        street_address = u'{}, {}'.format(address.street_name.decode('utf-8'), str(address.street_number).decode('utf-8'))
+        street_address = u'{}, {}'.format(safe_unicode(address.street_name), safe_unicode(str(address.street_number)))
         city_name = address.getDivisionAlternativeName().split('(')[0]
-        city = u'{} {}'.format((address.zip_code or '').decode('utf-8'), city_name)
+        city = u'{} {}'.format(safe_unicode((address.zip_code or '')), city_name)
         full_address = u'{}<br />{}'.format(street_address, city)
         return full_address.encode('utf-8')
 
