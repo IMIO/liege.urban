@@ -2,6 +2,7 @@
 
 from liege.urban.interfaces import IShore
 
+from Products.CMFPlone.utils import safe_unicode
 from Products.Archetypes.atapi import Schema
 
 from Products.urban.content.licence.CODT_UniqueLicence import CODT_UniqueLicence
@@ -105,11 +106,11 @@ def updateTitle(self):
         applicantTitle = translate('no_applicant_defined', 'urban', context=self.REQUEST).encode('utf8')
     to_shore = queryAdapter(self, IShore)
     title = "%s %s - %s - %s - %s" % (
-        self.getReference(),
-        to_shore.display(),
-        self.getReferenceSPE(),
-        self.getLicenceSubject(),
-        applicantTitle
+        safe_unicode(self.getReference()),
+        safe_unicode(to_shore.display()),
+        safe_unicode(self.getReferenceSPE()),
+        safe_unicode(self.getLicenceSubject()),
+        safe_unicode(applicantTitle)
     )
     self.setTitle(title)
     self.reindexObject(idxs=('Title', 'applicantInfosIndex', 'sortable_title', ))
