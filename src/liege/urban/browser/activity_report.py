@@ -148,7 +148,7 @@ def compute_json(licence_brains):
 
 def extract_licence_dict(brain, streets_by_UID):
     licence = brain.getObject()
-    cfg = licence.getUrbanConfig()
+    cfg = licence.getLicenceConfig()
     licence_dict = {
         "UID": brain.UID,
         "portal_type": brain.portal_type,
@@ -414,8 +414,8 @@ def extract_form_address(licence, streets_by_UID):
             continue
         street = street_brain.getObject()
         address_dict = {
-            "street_name": street.street_name,
-            "street_code": street.street_code,
+            "street_name": street.getStreetName(),
+            "street_code": street.getStreetCode(),
             "street_number": address["number"],
         }
         addresses_dict.append(address_dict)
