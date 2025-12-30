@@ -1,0 +1,2 @@
+Fix an issue with `address` indexed values where street numbers were missing
+[mpeeters]
