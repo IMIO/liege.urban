@@ -7,9 +7,9 @@ from Products.urban.interfaces import IOpinionRequestEvent
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 from zope.interface import Interface
+from Products.urban.interfaces import IProductUrbanLayer
 
-
-class ILiegeUrbanLayer(IDefaultBrowserLayer):
+class ILiegeUrbanLayer(IProductUrbanLayer):
     """Marker interface that defines a browser layer."""
 
 
