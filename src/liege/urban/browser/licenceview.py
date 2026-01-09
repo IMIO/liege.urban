@@ -2,16 +2,13 @@
 
 from Acquisition import aq_inner
 from Products.urban.browser.licence.licenceview import LicenceView
-from Products.urban.content.UrbanEventInquiry import UrbanEventInquiry_schema
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone import api
+from zope.i18n import translate
 
 
 class LiegeLicenceView(LicenceView):
 
     def getKeyDates(self):
-        # todo: PDB to remove before commit
-        __import__('pdb').set_trace()
         context = aq_inner(self.context)
         urban_tool = api.portal.get_tool("portal_urban")
         with_empty_dates = urban_tool.getDisplayEmptyKeyDates()
@@ -20,12 +17,21 @@ class LiegeLicenceView(LicenceView):
         key_dates = {}
         dates = {}
 
-        # search in the config for all the Key urbaneventtypes and their key dates
+        # search in the config for all the Key eventconfigs and their key dates
         for eventconfig in config.eventconfigs.objectValues():
             if eventconfig.getIsKeyEvent():
-                displaylist = eventconfig.listActivatedDates()
                 keydates = [
-                    (date, displaylist.getValue(date))
+                    (
+                        date,
+                        date == "eventDate"
+                        and eventconfig.getEventDateLabel()
+                        or translate(
+                            "urban_label_" + date,
+                            "urban",
+                            default=date,
+                            context=self.request,
+                        ),
+                    )
                     for date in eventconfig.getKeyDates()
                 ]
                 ordered_dates.append((eventconfig.UID(), eventconfig.getKeyDates()))
@@ -45,19 +51,15 @@ class LiegeLicenceView(LicenceView):
                         for date in keydates
                     ]
                 )
-
-        # now check each event to see if its a key Event, if yes, we gather the key date values found on this event
-        linked_eventtype_field = UrbanEventInquiry_schema.get("urbaneventtypes")
-
-        for event in self.context.getAllEvents():
-            eventtype_uid = linked_eventtype_field.getRaw(event)
-            if eventtype_uid in dates.keys() and not dates[eventtype_uid].get(
+        for event in context.getAllEvents():
+            eventconfig_uid = event.getUrbaneventtypes().UID()
+            if eventconfig_uid in dates.keys() and not dates[eventconfig_uid].get(
                 "url", ""
             ):
-                for date in key_dates[eventtype_uid]:
+                for date in key_dates[eventconfig_uid]:
                     date_value = getattr(event, date[0])
                     if with_empty_dates or date_value:
-                        dates[eventtype_uid][date[0]]["dates"].append(
+                        dates[eventconfig_uid][date[0]]["dates"].append(
                             {
                                 "url": event.absolute_url(),
                                 "date": date_value
