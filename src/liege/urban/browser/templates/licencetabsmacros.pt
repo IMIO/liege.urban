@@ -111,7 +111,7 @@
     </fieldset>
     <fieldset>
       <legend i18n:translate="urban_description_key_dates_legend">Key dates</legend>
-            <table tal:define="keyDates view/getKeyDates"
+            <table tal:define="keyDates here/@@licencetabs-macros/getKeyDates"
                    class="no-style-table" cellspacing=0 cellpadding=0 width=100%>
                 <tal:key_dates repeat="key_dates keyDates">
                     <tal:vars define="dates python: key_dates['dates'];
