@@ -3,11 +3,10 @@
 
 from Products.urban import UrbanMessage as _
 from Products.urban.interfaces import IOpinionRequestEvent
-
+from Products.urban.interfaces import IProductUrbanLayer
+from zope.interface import Interface
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
-from zope.interface import Interface
-from Products.urban.interfaces import IProductUrbanLayer
 
 class ILiegeUrbanLayer(IProductUrbanLayer):
     """Marker interface that defines a browser layer."""
