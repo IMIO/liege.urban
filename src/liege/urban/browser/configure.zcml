@@ -165,4 +165,13 @@
         permission="zope2.View"
   />
 
+  <browser:page
+        name="licencetabs-macros"
+        for="Products.urban.interfaces.IGenericLicence"
+        class=".licenceview.LiegeLicenceView"
+        template="templates/licencetabsmacros.pt"
+        permission="zope2.View"
+        layer="liege.urban.interfaces.ILiegeUrbanLayer"
+  />
+
 </configure>
