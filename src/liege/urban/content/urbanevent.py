@@ -25,6 +25,7 @@ specific_schema = Schema((
         default_output_type='text/html',
         optional=True,
         pm_text_field=True,
+        domain="liege.urban",
     ),
     TextField(
         name='motivation',
@@ -37,6 +38,7 @@ specific_schema = Schema((
         default_output_type='text/html',
         optional=True,
         pm_text_field=True,
+        domain="liege.urban",
     ),
     TextField(
         name='device',
@@ -49,6 +51,7 @@ specific_schema = Schema((
         default_output_type='text/html',
         optional=True,
         pm_text_field=True,
+        domain="liege.urban",
     ),
     TextField(
         name='deviceContinuation',
@@ -61,6 +64,7 @@ specific_schema = Schema((
         default_output_type='text/html',
         optional=True,
         pm_text_field=True,
+        domain="liege.urban",
     ),
     TextField(
         name='deviceEnd',
@@ -73,6 +77,7 @@ specific_schema = Schema((
         default_output_type='text/html',
         optional=True,
         pm_text_field=True,
+        domain="liege.urban",
     ),
 ),)
 
