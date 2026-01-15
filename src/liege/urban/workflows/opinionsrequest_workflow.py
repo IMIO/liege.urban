@@ -20,21 +20,23 @@ class StateRolesMapping(LocalRoleAdapter):
 
     def get_opinion_group(self, groupe_type='editors'):
         opinion_request = self.context
+        opinion_config = opinion_request.getUrbaneventtypes()
 
-        portal_urban = api.portal.get_tool('portal_urban')
-        schedule_config = portal_urban.opinions_schedule
+        if (
+            hasattr(opinion_config, "is_internal_service")
+            and opinion_config.getIs_internal_service()
+        ):
+            registry = api.portal.get_tool("portal_registry")
+            registry_field = registry[
+                "Products.urban.interfaces.IInternalOpinionServices.services"
+            ]
 
-        task = None
-        for task_config in schedule_config.get_all_task_configs():
-            for obj in opinion_request.objectValues():
-                is_task = IAutomatedTask.providedBy(obj)
-                if is_task and obj.task_config_UID == task_config.UID():
-                    if obj.assigned_group.endswith(groupe_type):
-                        task = obj
-                        break
-
-        if task:
-            return (task.assigned_group,)
+            record = registry_field.get(opinion_config.getInternal_service(), None)
+            if record:
+                if groupe_type == "editors":
+                    return (record["editor_group_id"],)
+                elif groupe_type == "validators":
+                    return (record["validator_group_id"],)
 
         return ('technical_editors', 'technical_editors_environment')
 
