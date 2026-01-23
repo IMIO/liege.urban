@@ -12,7 +12,9 @@ class LiegeLicenceToUrbain220Street(object):
 
     def __init__(self, licence):
         first_address = None
-        for address in licence.objectValues('Parcel'):
+        for address in (
+            licence.listFolderContents(contentFilter={"portal_type": "Parcel"})
+        ):
             if address.street_name and address.street_code:
                 first_address = address
                 break
