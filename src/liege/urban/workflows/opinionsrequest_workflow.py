@@ -73,16 +73,17 @@ class StateRolesMapping(LocalRoleAdapter):
 
     mapping = {
         'creation': OrderedDict([
+            (LocalRoleAdapter.get_readers, ('Reader',)),
             (get_administrative_editors, ('Editor',)),
             (get_administrative_validators, ('Contributor',)),
             ('opinions_editors', ('Reader',)),
             ('Voirie_editors', ('Reader',)),
             ('Voirie_validators', ('Reader',)),
             ('survey_editors', ('Reader',)),
-            (LocalRoleAdapter.get_readers, ('Reader',)),
         ]),
 
         'waiting_opinion': OrderedDict([
+            (LocalRoleAdapter.get_readers, ('Reader',)),
             (get_administrative_editors, (get_technical_roles,)),
             (get_administrative_validators, (get_technical_roles,)),
             ('technical_editors', (get_technical_roles,)),
@@ -91,26 +92,25 @@ class StateRolesMapping(LocalRoleAdapter):
             (get_opinion_editor, (get_opinion_editor_role,)),
             (get_opinion_validator, (get_opinion_editor_role,)),
             ('survey_editors', ('Reader',)),
-            (LocalRoleAdapter.get_readers, ('Reader',)),
         ]),
 
         'opinion_validation': OrderedDict([
+            (LocalRoleAdapter.get_readers, ('Reader',)),
             ('Voirie_editors', ('Reader',)),   # !!! order matters, let voirie role be overwritten
             ('Voirie_validators', ('Reader',)),# by ('get_opinion_...' if needed
             (get_opinion_editor, ('Reader',)),
             (get_opinion_validator, ('Reader', 'Contributor',)),
             ('survey_editors', ('Reader',)),
-            (LocalRoleAdapter.get_readers, ('Reader',)),
         ]),
 
         'opinion_given': OrderedDict([
+            (LocalRoleAdapter.get_readers, ('Reader',)),
             ('Voirie_editors', ('Reader',)),   # !!! order matters, let voirie role be overwritten
             ('Voirie_validators', ('Reader',)),# by ('get_opinion_...' if needed
             (get_opinion_editor, (get_technical_roles,)),
             (get_opinion_validator, (get_technical_roles,)),
             ('administrative_editors', (get_technical_roles,)),
             ('survey_editors', ('Reader',)),
-            (LocalRoleAdapter.get_readers, ('Reader',)),
         ]),
 
     }
