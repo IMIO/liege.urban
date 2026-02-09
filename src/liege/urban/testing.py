@@ -1,14 +1,19 @@
 # -*- coding: utf-8 -*-
 
+from Products.urban.interfaces import IProductUrbanLayer
+from Products.urban.testing import UrbanLayer
+from plone import api
 from plone.app.robotframework.testing import REMOTE_LIBRARY_BUNDLE_FIXTURE
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
-from plone.app.testing import PloneWithPackageLayer
-from plone.testing import z2
 from plone.app.testing import helpers
-from plone import api
+from plone.testing import z2
+from zope.globalrequest import setLocal
+from zope.globalrequest import setRequest
+from zope.interface import alsoProvides
 
 import liege.urban
+import os
 
 
 def override_testing_profile(profile):
@@ -23,8 +28,23 @@ def override_testing_profile(profile):
     profile.gs_profile_id = 'liege.urban:tests'
 
 
+class LiegeUrbanLayer(UrbanLayer):
+
+    def setUpPloneSite(self, portal):
+        alsoProvides(portal.REQUEST, IProductUrbanLayer)
+        setattr(portal.REQUEST, "URL", "")
+        setLocal("request", portal.REQUEST)
+        setRequest(portal.REQUEST)
+        setup_tool = api.portal.get_tool("portal_setup")
+        setup_tool.runImportStepFromProfile("profile-liege.urban:default", "catalog")
+        super(UrbanLayer, self).setUpPloneSite(portal)
+
+
 def override_testing_layers(layers):
     """ """
+    os.environ.setdefault("URBAN_EVENTS_CONFIGS", "default,liege")
+    os.environ.setdefault("URBAN_SCHEDULE_CONFIGS", "default,liege")
+    os.environ.setdefault("URBAN_DASHBOARD_CONFIGS", "liege")
 
     from Products.urban.testing import UrbanConfigFunctionalLayer
     from Products.urban.testing import UrbanConfigLayer
@@ -34,7 +54,7 @@ def override_testing_layers(layers):
     from Products.urban.testing import UrbanWithUsersFunctionalLayer
     from Products.urban.testing import UrbanWithUsersLayer
 
-    LIEGE_URBAN_FIXTURE = PloneWithPackageLayer(
+    LIEGE_URBAN_FIXTURE = LiegeUrbanLayer(
         zcml_filename="testing.zcml",
         zcml_package=liege.urban,
         additional_z2_products=(
