@@ -1,0 +1,2 @@
+Avoid errors if there is no zip code, street or street number
+[mpeeters]

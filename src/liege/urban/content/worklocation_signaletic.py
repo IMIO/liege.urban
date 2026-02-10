@@ -16,21 +16,24 @@ class LiegeLicenceToWorklocationsSignaletic(object):
         self.licence = licence
 
     def get_number(self, address):
-        number = safe_unicode(address.street_number)
+        number = address.street_number
+        number = number and safe_unicode(number) or u""
         if isinstance(number, int):
             number = str(number)
         number = number and number.encode("utf-8") or ""
         return number
 
     def get_zip_code(self, address):
-        zip_code = safe_unicode(address.zip_code)
+        zip_code = address.zip_code
+        zip_code = zip_code and safe_unicode(zip_code) or u""
         if isinstance(zip_code, int):
             zip_code = str(zip_code)
         zip_code = zip_code and zip_code.encode("utf-8") or ""
         return zip_code
 
     def get_street(self, address):
-        street = safe_unicode(address.street_name)
+        street = address.street_name
+        street = safe_unicode(street)
         return street and street.encode("utf-8") or ""
 
     def get_signaletic(self):
