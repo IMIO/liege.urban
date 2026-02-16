@@ -5,112 +5,128 @@ from Products.urban.browser.urbanconfigview import AddInternalServiceForm
 from plone import api
 
 import unittest
+import logging
+
+
+logger = logging.getLogger("urban.liege: test workflow local role")
+
 
 class TestOpinionsrequestWorkflow(unittest.TestCase):
 
     layer = URBAN_TESTS_LICENCES
 
     matrice = {
-        "plantation":{
+        "demande-davis-plantation": {
             "creation": {
-                "administrative_editors" : ["Editor"],
-                "administrative_validators" : ["Contributor"],
-                "opinions_editors" : ["Reader"],
-                "Voirie_editors" : ["Reader"],
-                "Voirie_validators" : ["Reader"],
-                "survey_editors" : ["Reader"],
+                "administrative_editors": ["Reader", "Editor"],
+                "administrative_validators": ["Reader", "Editor"],
+                "opinions_editors": None,
+                "survey_editors": ["Reader"],
                 "Plantation_editors": None,
                 "Plantation_validators": None,
                 "Access_editors": None,
                 "Access_validators": None,
                 "urban_readers": ["Reader"],
+                "technical_editors": ["Reader"],
             },
             "waiting_opinion": {
-                "administrative_editors" : ["Reader"],
-                "administrative_validators" : ["Reader"],
-                "technical_editors": ["Editor"],
-                "technical_editors_environement": ["Editor"],
-                "Voirie_editors" : ["Reader"],
-                "Voirie_validators" : ["Reader"],
-                "survey_editors" : ["Reader"],
-                "Plantation_validators": None,
+                "administrative_editors": ["Reader"],
+                "administrative_validators": ["Reader"],
+                "technical_editors": ["Reader"],
+                "technical_editors_environement": None,
+                "survey_editors": ["Reader"],
+                "Plantation_editors": ["Reader", "Editor", "Contributor"],
+                "Plantation_validators": ["Reader", "Editor", "Contributor"],
                 "Access_editors": None,
                 "Access_validators": None,
-                "Plantation_editors": ["Editor"],
                 "urban_readers": ["Reader"],
             },
             "opinion_validation": {
-                "Voirie_editors" : ["Reader"],
-                "Voirie_validators" : ["Reader"],
-                "Plantation_validators": ["Reader"],
-                "Plantation_editors": ["Reader", "Contributor"],
+                "Plantation_editors": ["Reader"],
+                "Plantation_validators": ["Reader", "Editor", "Reviewer"],
                 "Access_editors": None,
                 "Access_validators": None,
-                "survey_editors" : ["Reader"],
+                "survey_editors": ["Reader"],
                 "urban_readers": ["Reader"],
+                "technical_editors": ["Reader"],
             },
             "opinion_given": {
-                "Voirie_editors" : ["Reader"],
-                "Voirie_validators" : ["Reader"],
                 "Plantation_validators": ["Reader"],
                 "Plantation_editors": ["Reader"],
                 "Access_editors": None,
                 "Access_validators": None,
-                "administrative_editors" : ["Reader"],
-                "survey_editors" : ["Reader"],
+                "administrative_editors": ["Reader"],
+                "survey_editors": ["Reader"],
                 "urban_readers": ["Reader"],
+                "technical_editors": ["Reader"],
             }
         },
-        "access":{
+        "demande-davis-access": {
             "creation": {
-                "administrative_editors" : ["Editor"],
-                "administrative_validators" : ["Contributor"],
-                "opinions_editors" : ["Reader"],
-                "Voirie_editors" : ["Reader"],
-                "Voirie_validators" : ["Reader"],
-                "survey_editors" : ["Reader"],
+                "administrative_editors": ["Reader", "Editor"],
+                "administrative_validators": ["Reader", "Editor"],
+                "opinions_editors": None,
+                "survey_editors": ["Reader"],
                 "Plantation_editors": None,
                 "Plantation_validators": None,
                 "Access_editors": None,
                 "Access_validators": None,
                 "urban_readers": ["Reader"],
+                "technical_editors": ["Reader"],
             },
             "waiting_opinion": {
-                "administrative_editors" : ["Reader"],
-                "administrative_validators" : ["Reader"],
-                "technical_editors": ["Editor"],
-                "technical_editors_environement": ["Editor"],
-                "Voirie_editors" : ["Reader"],
-                "Voirie_validators" : ["Reader"],
-                "survey_editors" : ["Reader"],
-                "Plantation_validators": None,
-                "Access_editors": ["Editor"],
-                "Access_validators": None,
+                "administrative_editors": ["Reader"],
+                "administrative_validators": ["Reader"],
+                "technical_editors": ["Reader"],
+                "technical_editors_environement": None,
+                "survey_editors": ["Reader"],
                 "Plantation_editors": None,
+                "Plantation_validators": None,
+                "Access_editors": ["Reader", "Editor", "Contributor"],
+                "Access_validators": ["Reader", "Editor", "Contributor"],
                 "urban_readers": ["Reader"],
             },
             "opinion_validation": {
-                "Voirie_editors" : ["Reader"],
-                "Voirie_validators" : ["Reader"],
                 "Plantation_validators": None,
                 "Plantation_editors": None,
-                "Access_editors": ["Reader", "Contributor"],
-                "Access_validators": ["Reader"],
-                "survey_editors" : ["Reader"],
+                "Access_editors": ["Reader"],
+                "Access_validators": ["Reader", "Editor", "Reviewer"],
+                "survey_editors": ["Reader"],
                 "urban_readers": ["Reader"],
+                "technical_editors": ["Reader"],
             },
             "opinion_given": {
-                "Voirie_editors" : ["Reader"],
-                "Voirie_validators" : ["Reader"],
                 "Plantation_validators": None,
                 "Plantation_editors": None,
                 "Access_editors": ["Reader"],
                 "Access_validators": ["Reader"],
-                "administrative_editors" : ["Reader"],
-                "survey_editors" : ["Reader"],
+                "administrative_editors": ["Reader"],
+                "survey_editors": ["Reader"],
                 "urban_readers": ["Reader"],
+                "technical_editors": ["Reader"],
             }
         }
+    }
+
+    common_matrice = {}
+
+    workflow = [
+        "creation",
+        "waiting_opinion",
+        "opinion_validation",
+        "opinion_given",
+    ]
+
+    mapping_user_group = {
+        "administrative_editors": "rich",
+        "administrative_validators": "rach",
+        "technical_editors": "gert",
+        "technical_editors_environement": "gert_e",
+        "Voirie_editors": "voirie_edit",
+        "Voirie_validators": "voirie_valid",
+        "survey_editors": "survivor",
+        "urban_readers": "urb_read",
+        "opinions_editors": "opi_edit",
     }
 
     def setUp(self):
@@ -118,39 +134,87 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
         self.request = self.layer["request"]
         self.urban = self.portal.urban
         self.portal_urban = self.portal.portal_urban
+        email = 'dll@imio.be'
 
-        with api.env.adopt_roles(['Manager']):
-            add_internal_service = AddInternalServiceForm(self.portal_urban, self.request)
+        with api.env.adopt_roles(["Manager"]):
+            add_internal_service = AddInternalServiceForm(
+                self.portal_urban, self.request
+            )
             # create internal service
-            service_id = "plantation"
-            service_name = "plantation"
-            editor_group_id, validator_group_id = add_internal_service.create_groups(
-                service_id.capitalize(), service_name
+
+            services = [
+                "Voirie",
+                "Access",
+                "Plantation",
+                "SSSP",
+                "EDII",
+                "Am_territoire",
+                "Bic",
+                "Logement",
+                "Zip-qi"
+            ]
+            for service in services:
+                add_internal_service.create_groups(service, service)
+                add_internal_service.set_registry_mapping(
+                    service.lower(),
+                    service,
+                    "{}_editors".format(service),
+                    "{}_validators".format(service),
+                    "",
+                    "",
+                )
+                self.common_matrice["{}_editors".format(service)] = None
+                self.common_matrice["{}_validators".format(service)] = None
+
+                username_edit = "{}_edit_user".format(service)
+                user_edit = api.user.create(
+                    email=email,
+                    username=username_edit,
+                    password=username_edit
+                )
+                api.group.add_user(
+                    groupname="{}_editors".format(service),
+                    user=user_edit
+                )
+                self.mapping_user_group["{}_editors".format(service)] = (
+                    "{}_edit_user".format(service)
+                )
+
+                username_valid = "{}_valid_user".format(service)
+                user_valid = api.user.create(
+                    email=email,
+                    username=username_valid,
+                    password=username_valid
+                )
+                api.group.add_user(
+                    groupname="{}_validators".format(service),
+                    user=user_valid
+                )
+                self.mapping_user_group["{}_validators".format(service)] = (
+                    "{}_valid_user".format(service)
+                )
+
+            username = "urb_read"
+            user = api.user.create(
+                email=email,
+                username=username,
+                password=username
             )
-            add_internal_service.set_registry_mapping(
-                service_id,
-                service_name,
-                editor_group_id,
-                validator_group_id,
-                "",
-                "",
+            api.group.add_user(
+                groupname="urban_readers",
+                user=user
             )
 
-            service_id = "access"
-            service_name = "Access +"
-            editor_group_id, validator_group_id = add_internal_service.create_groups(
-                service_id.capitalize(), service_name
+            username = "opi_edit"
+            user = api.user.create(
+                email=email,
+                username=username,
+                password=username
             )
-            add_internal_service.set_registry_mapping(
-                service_id,
-                service_name,
-                editor_group_id,
-                validator_group_id,
-                "",
-                "",
+            api.group.add_user(
+                groupname="opinions_editors",
+                user=user
             )
-            
-            # XXX Add one user to each groups
 
             # create opinion ask event
             codt_buildlicence_event = self.portal_urban["codt_buildlicence"]["eventconfigs"]
@@ -217,8 +281,10 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
         - context: obj   Plone content object
         - expected_roles: list[str]   list of roles
         """
+        if expected_roles is None:
+            expected_roles = []
         roles = api.user.get_roles(username=username, obj=context)
-        ignored_roles = ("Authenticated", "Owner")
+        ignored_roles = ("Authenticated", "Owner", "UrbanMapReader", "Member")
         for role in ignored_roles:
             if role in roles:
                 roles.remove(role)
@@ -227,20 +293,64 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
             sorted(expected_roles),
         )
 
+    def execute_matrice_test(self, event, workflow_exception=None):
+        print("Event: {}".format(event))
+        config = self.matrice.get(event, None)
+        obj = self.licence[event]
+        if config is None:
+            return
+        for state in self.workflow:
+            group_mapping = config.get(state, None)
+            if group_mapping is None:
+                continue
+
+            new_group_mapping = self.common_matrice.copy()
+            new_group_mapping.update(group_mapping)
+
+            print("State: {}".format(state))
+            user_workflow = ["admin"]
+            if workflow_exception and state in workflow_exception:
+                user_workflow = workflow_exception[state]
+
+            with api.env.adopt_user(username=user_workflow):
+                api.content.transition(
+                    obj=obj,
+                    to_state=state
+                )
+
+            for group, roles in new_group_mapping.items():
+                print("Group: {}".format(group))
+                username = self.mapping_user_group.get(group, None)
+                if username is None:
+                    continue
+                self.assertRoles(
+                    username=username,
+                    context=obj,
+                    expected_roles=roles
+                )
+
     def tearDown(self):
-        with api.env.adopt_roles(['Manager']):
+        with api.env.adopt_roles(["Manager"]):
             api.content.delete(self.licence)
 
     def test_access(self):
-        with api.env.adopt_roles(['Manager']):
+        with api.env.adopt_roles(["Manager"]):
             avis_plantation = self.licence["demande-davis-plantation"]
             avis_access = self.licence["demande-davis-access"]
             self.assertRoles("admin", avis_plantation, ["Manager"])
             self.assertRoles("admin", avis_access, ["Manager"])
+            self.execute_matrice_test(
+                "demande-davis-access",
+                workflow_exception={"opinion_validation": "Access_edit_user"}
+            )
 
     def test_plantation(self):
-        with api.env.adopt_roles(['Manager']):
+        with api.env.adopt_roles(["Manager"]):
             avis_plantation = self.licence["demande-davis-plantation"]
             avis_access = self.licence["demande-davis-access"]
             self.assertRoles("admin", avis_plantation, ["Manager"])
             self.assertRoles("admin", avis_access, ["Manager"])
+            self.execute_matrice_test(
+                "demande-davis-plantation",
+                workflow_exception={"opinion_validation": "Plantation_edit_user"}
+            )
