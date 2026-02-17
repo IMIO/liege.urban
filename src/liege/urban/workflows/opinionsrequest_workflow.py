@@ -71,45 +71,42 @@ class StateRolesMapping(LocalRoleAdapter):
             return ('Reader', 'Contributor',)
         return ('Reader',)
 
+    def get_readers(self):
+        return super(StateRolesMapping, self).get_readers(add_opinion_editor=False)
+
     mapping = {
         'creation': OrderedDict([
-            (LocalRoleAdapter.get_readers, ('Reader',)),
+            (get_readers, ('Reader',)),
             (get_administrative_editors, ('Editor',)),
-            (get_administrative_validators, ('Contributor',)),
-            ('opinions_editors', ('Reader',)),
-            ('Voirie_editors', ('Reader',)),
-            ('Voirie_validators', ('Reader',)),
+            (get_administrative_validators, ("Editor",)),
             ('survey_editors', ('Reader',)),
+            ('technical_editors', ("Reader",)),
         ]),
 
         'waiting_opinion': OrderedDict([
-            (LocalRoleAdapter.get_readers, ('Reader',)),
-            (get_administrative_editors, (get_technical_roles,)),
-            (get_administrative_validators, (get_technical_roles,)),
-            ('technical_editors', (get_technical_roles,)),
-            ('Voirie_editors', ('Reader',)),   # !!! order matters, let voirie role be overwritten
-            ('Voirie_validators', ('Reader',)),# by ('get_opinion_...' if needed
-            (get_opinion_editor, (get_opinion_editor_role,)),
-            (get_opinion_validator, (get_opinion_editor_role,)),
+            (get_readers, ('Reader',)),
+            (get_administrative_editors, ("Reader",)),
+            (get_administrative_validators, ("Reader",)),
+            ('technical_editors', ("Reader",)),
+            (get_opinion_editor, ('Reader', 'Editor', "Contributor",)),
+            (get_opinion_validator, ('Reader', 'Editor', "Contributor",)),
             ('survey_editors', ('Reader',)),
         ]),
 
         'opinion_validation': OrderedDict([
-            (LocalRoleAdapter.get_readers, ('Reader',)),
-            ('Voirie_editors', ('Reader',)),   # !!! order matters, let voirie role be overwritten
-            ('Voirie_validators', ('Reader',)),# by ('get_opinion_...' if needed
+            (get_readers, ('Reader',)),
+            ('technical_editors', ("Reader",)),
             (get_opinion_editor, ('Reader',)),
-            (get_opinion_validator, ('Reader', 'Contributor',)),
+            (get_opinion_validator, ('Reader', 'Editor', "Reviewer",)),
             ('survey_editors', ('Reader',)),
         ]),
 
         'opinion_given': OrderedDict([
-            (LocalRoleAdapter.get_readers, ('Reader',)),
-            ('Voirie_editors', ('Reader',)),   # !!! order matters, let voirie role be overwritten
-            ('Voirie_validators', ('Reader',)),# by ('get_opinion_...' if needed
-            (get_opinion_editor, (get_technical_roles,)),
-            (get_opinion_validator, (get_technical_roles,)),
-            ('administrative_editors', (get_technical_roles,)),
+            (get_readers, ('Reader',)),
+            ('technical_editors', ("Reader",)),
+            (get_opinion_editor, ("Reader",)),
+            (get_opinion_validator, ("Reader",)),
+            ('administrative_editors', ("Reader",)),
             ('survey_editors', ('Reader',)),
         ]),
 
