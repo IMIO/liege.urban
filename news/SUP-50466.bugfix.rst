@@ -1,2 +1,0 @@
-Fix possible infinite recursion with foldermanagers title
-[mpeeters]

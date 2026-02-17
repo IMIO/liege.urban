@@ -8,6 +8,50 @@ Changelog
 
 .. towncrier release notes start
 
+2.0.0 (2026-02-17)
+------------------
+
+New features:
+
+
+- Change back key dates display from liege
+  [jchandelle] (SUP-49630)
+
+
+Bug fixes:
+
+
+- Fix string encoding worklocation signaletic
+  [jchandelle] (SUP-49356)
+- Fix CODT_UniqueLicence title encoding
+  [jchandelle] (SUP-49359)
+- Fix OpinionsRequest local role adapter
+  Fix local role order
+  Add test
+  [jchandelle] (SUP-49445)
+- Fix table encoding
+  [jchandelle] (SUP-49474)
+- Fix an issue with `address` indexed values where street numbers were missing
+  [mpeeters] (SUP-49602)
+- Fix list220 code ins getter
+  [jchandelle] (SUP-49906)
+- Add domain value in field to be translated in Product.urban
+  [jchandelle] (SUP-49912)
+- Fix possible infinite recursion with foldermanagers title
+  [mpeeters] (SUP-50466)
+- Avoid errors if there is no zip code, street or street number
+  [mpeeters] (URB-3523)
+
+
+Internal:
+
+
+- Fix dashboard configs that are required to run tests
+  [mpeeters] (SUP-49445)
+- Fix initialization of tests
+  [mpeeters] (URB-3522)
+
+
 1.0.10 (2025-10-15)
 -------------------
 
