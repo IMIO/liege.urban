@@ -108,8 +108,6 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
         }
     }
 
-    common_matrice = {}
-
     workflow = [
         "creation",
         "waiting_opinion",
@@ -117,23 +115,23 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
         "opinion_given",
     ]
 
-    mapping_user_group = {
-        "administrative_editors": "rich",
-        "administrative_validators": "rach",
-        "technical_editors": "gert",
-        "technical_editors_environement": "gert_e",
-        "Voirie_editors": "voirie_edit",
-        "Voirie_validators": "voirie_valid",
-        "survey_editors": "survivor",
-        "urban_readers": "urb_read",
-        "opinions_editors": "opi_edit",
-    }
-
     def setUp(self):
         self.portal = self.layer["portal"]
         self.request = self.layer["request"]
         self.urban = self.portal.urban
         self.portal_urban = self.portal.portal_urban
+        self.common_matrice = {}
+        self.mapping_user_group = {
+            "administrative_editors": "rich",
+            "administrative_validators": "rach",
+            "technical_editors": "gert",
+            "technical_editors_environement": "gert_e",
+            "Voirie_editors": "voirie_edit",
+            "Voirie_validators": "voirie_valid",
+            "survey_editors": "survivor",
+            "urban_readers": "urb_read",
+            "opinions_editors": "opi_edit",
+        }
         email = 'dll@imio.be'
 
         with api.env.adopt_roles(["Manager"]):
@@ -308,7 +306,7 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
             new_group_mapping.update(group_mapping)
 
             print("State: {}".format(state))
-            user_workflow = ["admin"]
+            user_workflow = "admin"
             if workflow_exception and state in workflow_exception:
                 user_workflow = workflow_exception[state]
 
