@@ -24,62 +24,12 @@ def post_install(context):
         return
     # Do something during the installation of this package
 
-    setAllowedTypes(context)
     addLiegeGroups(context)
     setDefaultApplicationSecurity(context)
     setupSurveySchedule(context)
     addScheduleConfigs(context)
     addTestUsers(context)
     addDefaultCronJobs(context)
-
-
-def setAllowedTypes(context):
-    """
-    New content types are added on liege profile. Allow these types to be created.
-    """
-    portal_types = api.portal.get_tool('portal_types')
-    licence_types = (
-        'BuildLicence',
-        'Article127',
-        'UniqueLicence',
-        'IntegratedLicence',
-        'UrbanCertificateTwo',
-        'CODT_BuildLicence',
-        'CODT_Article127',
-        'CODT_UniqueLicence',
-        'CODT_IntegratedLicence',
-        'CODT_UrbanCertificateTwo',
-        'Inspection',
-        'Ticket',
-    )
-
-    for licence_type in licence_types:
-        type_info = getattr(portal_types, licence_type)
-        values = type_info.allowed_content_types
-        if 'UrbanEventAcknowledgment' not in values:
-            type_info.allowed_content_types = values + ('UrbanEventAcknowledgment',)
-
-    for licence_type in URBAN_ENVIRONMENT_TYPES:
-        type_info = getattr(portal_types, licence_type)
-        values = type_info.allowed_content_types
-        if 'UrbanEventMayor' not in values:
-            type_info.allowed_content_types = values + ('UrbanEventMayor',)
-        if 'UrbanEventWithEnvironmentValidation' not in values:
-            type_info.allowed_content_types = values + ('UrbanEventWithEnvironmentValidation',)
-
-    for licence_type in URBAN_TYPES:
-        type_info = getattr(portal_types, licence_type)
-        values = type_info.allowed_content_types
-        if 'UrbanEventMayor' not in values:
-            type_info.allowed_content_types = values + ('UrbanEventMayor',)
-
-    type_info = getattr(portal_types, 'CODT_UniqueLicence')
-    new_values = type_info.allowed_content_types
-    if 'UrbanEventAcknowledgment' not in new_values:
-        new_values = new_values + ('UrbanEventAcknowledgment',)
-    if 'UrbanEventPreliminaryAdvice' not in new_values:
-        new_values = new_values + ('UrbanEventPreliminaryAdvice',)
-    type_info.allowed_content_types = new_values
 
 
 def addLiegeGroups(context):

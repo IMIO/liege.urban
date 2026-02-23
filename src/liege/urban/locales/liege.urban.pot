@@ -33,10 +33,6 @@ msgstr ""
 msgid "Date start"
 msgstr ""
 
-#: ../interfaces.py:37
-msgid "Environment validation type marker interface"
-msgstr ""
-
 #: ../interfaces.py:33
 msgid "IInspectionBuidlingDivisionAttestationCollege type marker interface"
 msgstr ""

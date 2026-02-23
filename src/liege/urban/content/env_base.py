@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from liege.urban import interfaces
 from liege.urban import UrbanMessage as _
 from liege.urban.licence_fields_permissions import set_field_permissions
 from liege.urban.licence_fields_permissions import set_environment_field_permissions
@@ -9,6 +8,7 @@ from Products.urban.content.licence.EnvClassOne import EnvClassOne
 from Products.urban.content.licence.EnvClassThree import EnvClassThree
 from Products.urban.content.licence.EnvClassTwo import EnvClassTwo
 from Products.urban.content.licence.EnvironmentBase import EnvironmentBase
+from Products.urban.interfaces import IUrbanEventWithEnvironmentValidation
 
 
 def update_base_schema(baseSchema):
@@ -134,7 +134,7 @@ EnvClassBordering.schema = set_environment_field_permissions(EnvClassBordering.s
 
 
 def getAllValidationEvents(self):
-    return self.getAllEvents(interfaces.IUrbanEventWithEnvironmentValidation)
+    return self.getAllEvents(IUrbanEventWithEnvironmentValidation)
 
 
 EnvironmentBase.getAllValidationEvents = getAllValidationEvents

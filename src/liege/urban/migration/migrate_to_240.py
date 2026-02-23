@@ -97,8 +97,6 @@ def migrate(context):
 def upgrade_to_241(context):
     logger = logging.getLogger('urban: migrate to 2.4.1')
     logger.info("starting migration steps")
-    from liege.urban.setuphandlers import setAllowedTypes
-    setAllowedTypes(context)
     logger.info("migration done!")
 
 
@@ -216,8 +214,6 @@ def upgrade_to_244(context):
 
 
 def upgrade_to_245(context):
-    from liege.urban.setuphandlers import setAllowedTypes
-
     logger = logging.getLogger('urban: migrate to 2.4.5')
     logger.info("starting migration steps")
     setup_tool = api.portal.get_tool('portal_setup')
@@ -241,7 +237,6 @@ def upgrade_to_245(context):
             "waiting_address"
         ],
     )
-    setAllowedTypes(context)
 
 
 def import_type_profile(context):

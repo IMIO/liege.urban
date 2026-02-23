@@ -32,9 +32,5 @@ class IInspectionBuidlingDivisionAttestationCollege(Interface):
     __doc__ = _("""IInspectionBuidlingDivisionAttestationCollege type marker interface""")
 
 
-class IUrbanEventWithEnvironmentValidation(Interface):
-    __doc__ = _("""Environment validation type marker interface""")
-
-
 class IUrbanEventWithAcknowledgementWorkflow(Interface):
     __doc__ = _("""AcknowledgmentEvent workflow type marker interface""")
