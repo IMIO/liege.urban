@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from liege.urban.interfaces import IAddressFactory
-
-from plone import api
-
 from Products.Five import BrowserView
 from Products.urban.services import cadastre
-
+from liege.urban.interfaces import IAddressFactory
+from plone import api
 from zope.interface import implements
 
 NOT_FOUND = []
@@ -26,7 +23,16 @@ class AdressFactory(BrowserView):
 
     def get_address_args(self):
         args = {}
-        for key in ['address_point', 'street_code', 'street_name', 'street_number', 'zip_code', 'capakey', 'shore']:
+        keys = [
+            'address_point',
+            'street_code',
+            'street_name',
+            'street_number',
+            'zip_code',
+            'capakey',
+            'shore',
+        ]
+        for key in keys:
             val = self.request.get(key, NOT_FOUND)
             if val is NOT_FOUND:
                 return NOT_FOUND
@@ -59,7 +65,7 @@ class AdressFactory(BrowserView):
         licence.updateTitle()
         licence.reindexObject(idxs=['parcelInfosIndex', 'shore'])
 
-    def parse_cadastral_reference(sef, capakey):
+    def parse_cadastral_reference(self, capakey):
         """
         """
         reference_as_dict = {

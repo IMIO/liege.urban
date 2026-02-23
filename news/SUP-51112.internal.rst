@@ -1,0 +1,2 @@
+Cleanup content factory module and remove unused imports
+[mpeeters]
