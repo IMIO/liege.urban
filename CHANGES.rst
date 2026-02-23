@@ -8,6 +8,23 @@ Changelog
 
 .. towncrier release notes start
 
+2.0.1 (2026-02-23)
+------------------
+
+Bug fixes:
+
+
+- Ensure that `address_point` value is always an integer as expected by behavior schema
+  [mpeeters] (SUP-51112)
+
+
+Internal:
+
+
+- Cleanup content factory module and remove unused imports
+  [mpeeters] (SUP-51112)
+
+
 2.0.0 (2026-02-17)
 ------------------
 
