@@ -1,0 +1,2 @@
+Ensure that `address_point` value is always an integer as expected by behavior schema
+[mpeeters]

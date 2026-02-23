@@ -37,6 +37,8 @@ class AdressFactory(BrowserView):
             if val is NOT_FOUND:
                 return NOT_FOUND
             args[key] = val
+        if "address_point" in args and args["address_point"]:
+            args["address_point"] = int(args["address_point"])
         return args
 
     def create_address(self, **address_args):
