@@ -66,4 +66,11 @@
         handler=".migrate_to_240.import_type_profile"
         profile="liege.urban:default" />
 
+    <gs:upgradeStep
+        title="Fix address point value type"
+        source="246"
+        destination="2000"
+        handler=".upgrade_2000.fix_address_point"
+        profile="liege.urban:default" />
+
 </configure>
