@@ -45,7 +45,8 @@ class AddressTitleDisplay(ParcelTitleDisplay):
 
     def render(self):
         address = self.obj
-        street_address = u'{}, {}'.format(safe_unicode(address.street_name), safe_unicode(str(address.street_number)))
+        street_number = address.street_number and address.street_number or ""
+        street_address = u'{}, {}'.format(safe_unicode(address.street_name), safe_unicode(street_number))
         city_name = address.getDivisionAlternativeName().split('(')[0]
         city = u'{} {}'.format(safe_unicode((address.zip_code or '')), city_name)
         full_address = u'{}<br />{}'.format(street_address, city)
