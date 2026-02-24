@@ -8,6 +8,16 @@ Changelog
 
 .. towncrier release notes start
 
+2.0.2 (2026-02-24)
+------------------
+
+Bug fixes:
+
+
+- Fix a display issue when address does not have a street number
+  [mpeeters] (SUP-51118)
+
+
 2.0.1 (2026-02-23)
 ------------------
 

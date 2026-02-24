@@ -1,2 +1,0 @@
-Fix a display issue when address does not have a street number
-[mpeeters]
