@@ -8,6 +8,16 @@ Changelog
 
 .. towncrier release notes start
 
+2.0.3 (2026-02-26)
+------------------
+
+Bug fixes:
+
+
+- Fix missing access to voirie tab by voirie group
+  [jchandelle] (SUP-51146)
+
+
 2.0.2 (2026-02-24)
 ------------------
 
