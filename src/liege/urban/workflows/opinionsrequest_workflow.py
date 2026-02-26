@@ -85,8 +85,8 @@ class StateRolesMapping(LocalRoleAdapter):
 
         'waiting_opinion': OrderedDict([
             (get_readers, ('Reader',)),
-            (get_administrative_editors, ("Reader",)),
-            (get_administrative_validators, ("Reader",)),
+            (get_administrative_editors, (get_technical_roles,)),
+            (get_administrative_validators, (get_technical_roles,)),
             ('technical_editors', ("Reader",)),
             (get_opinion_editor, ('Reader', 'Editor', "Contributor",)),
             (get_opinion_validator, ('Reader', 'Editor', "Contributor",)),
@@ -104,9 +104,9 @@ class StateRolesMapping(LocalRoleAdapter):
         'opinion_given': OrderedDict([
             (get_readers, ('Reader',)),
             ('technical_editors', ("Reader",)),
+            (get_administrative_editors, ("Reader",)),
             (get_opinion_editor, ("Reader",)),
             (get_opinion_validator, ("Reader",)),
-            ('administrative_editors', ("Reader",)),
             ('survey_editors', ('Reader',)),
         ]),
 
