@@ -118,6 +118,13 @@
          name="ticket_local_roles"
       />
 
+      <adapter
+         for="Products.urban.interfaces.IUrbanEventWithEnvironmentValidation"
+         provides="borg.localrole.interfaces.ILocalRoleProvider"
+         factory="liege.urban.workflows.env_validation_event_workflow.StateRolesMapping"
+         name="acknowledgmentevent_local_roles"
+      />
+
       <!-- Override integrated licence view to always display env tab-->
       <browser:page
          for="Products.urban.interfaces.ICODT_IntegratedLicence"
