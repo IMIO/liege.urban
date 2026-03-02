@@ -59,7 +59,14 @@ def setAllowedTypes(context):
         if 'UrbanEventAcknowledgment' not in values:
             type_info.allowed_content_types = values + ('UrbanEventAcknowledgment',)
 
-    for licence_type in URBAN_ENVIRONMENT_TYPES:
+    environment_types = URBAN_ENVIRONMENT_TYPES + [
+        "UniqueLicence",
+        "CODT_UniqueLicence",
+        "IntegratedLicence",
+        "CODT_IntegratedLicence",
+    ]
+
+    for licence_type in environment_types:
         type_info = getattr(portal_types, licence_type)
         values = type_info.allowed_content_types
         if 'UrbanEventMayor' not in values:
