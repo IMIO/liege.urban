@@ -1,0 +1,2 @@
+Fix folder manager title for tests
+[mpeeters]
