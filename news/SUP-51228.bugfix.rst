@@ -1,0 +1,1 @@
+Adapt permissions to add `Parcel` content type

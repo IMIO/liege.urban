@@ -27,7 +27,7 @@
  <permission>urban: Add Contact</permission>
  <permission>urban: Add Corporation</permission>
  <permission>urban: Add CODT_UniqueLicenceInquiry</permission>
- <permission>urban: Add PortionOut</permission>
+ <permission>imio.urban: Add Parcel</permission>
  <permission>urban: Add UrbanEvent</permission>
  <permission>urban: Add UrbanEventOpinionRequest</permission>
  <permission>List folder contents</permission>
@@ -201,7 +201,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add PortionOut" acquired="False">
+  <permission-map name="imio.urban: Add Parcel" acquired="False">
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -387,7 +387,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add PortionOut" acquired="False">
+  <permission-map name="imio.urban: Add Parcel" acquired="False">
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -572,7 +572,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add PortionOut" acquired="False">
+  <permission-map name="imio.urban: Add Parcel" acquired="False">
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -758,7 +758,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add PortionOut" acquired="False">
+  <permission-map name="imio.urban: Add Parcel" acquired="False">
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -944,7 +944,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add PortionOut" acquired="False">
+  <permission-map name="imio.urban: Add Parcel" acquired="False">
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -1131,7 +1131,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add PortionOut" acquired="False">
+  <permission-map name="imio.urban: Add Parcel" acquired="False">
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -1317,7 +1317,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add PortionOut" acquired="False">
+  <permission-map name="imio.urban: Add Parcel" acquired="False">
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -1503,7 +1503,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add PortionOut" acquired="False">
+  <permission-map name="imio.urban: Add Parcel" acquired="False">
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -1689,7 +1689,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add PortionOut" acquired="False">
+  <permission-map name="imio.urban: Add Parcel" acquired="False">
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -1873,7 +1873,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add PortionOut" acquired="False">
+  <permission-map name="imio.urban: Add Parcel" acquired="False">
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -2056,7 +2056,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add PortionOut" acquired="False">
+  <permission-map name="imio.urban: Add Parcel" acquired="False">
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -2235,7 +2235,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add PortionOut" acquired="False">
+  <permission-map name="imio.urban: Add Parcel" acquired="False">
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -2414,7 +2414,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add PortionOut" acquired="False">
+  <permission-map name="imio.urban: Add Parcel" acquired="False">
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -2593,7 +2593,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add PortionOut" acquired="False">
+  <permission-map name="imio.urban: Add Parcel" acquired="False">
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -2772,7 +2772,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add PortionOut" acquired="False">
+  <permission-map name="imio.urban: Add Parcel" acquired="False">
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -2950,7 +2950,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add PortionOut" acquired="False">
+  <permission-map name="imio.urban: Add Parcel" acquired="False">
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -3129,7 +3129,7 @@
    <permission-role>Editor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
-  <permission-map name="urban: Add PortionOut" acquired="False">
+  <permission-map name="imio.urban: Add Parcel" acquired="False">
    <permission-role>AddressEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
@@ -3272,7 +3272,7 @@
     <permission-role>Editor</permission-role>
     <permission-role>Manager</permission-role>
    </permission-map>
-   <permission-map name="urban: Add PortionOut" acquired="False">
+   <permission-map name="imio.urban: Add Parcel" acquired="False">
     <permission-role>AddressEditor</permission-role>
     <permission-role>Manager</permission-role>
    </permission-map>
@@ -3308,7 +3308,7 @@
  <transition transition_id="ask_temporary_address" title="ask_temporary_address" new_state="waiting_address" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">ask_temporary_address</action>
   <guard>
-   <guard-permission>urban: Add PortionOut</guard-permission>
+   <guard-permission>imio.urban: Add Parcel</guard-permission>
   </guard>
  </transition>
  <transition transition_id="authorize_licence" title="authorize_licence" new_state="authorized" trigger="USER" before_script="" after_script="">
@@ -3412,13 +3412,13 @@
  <transition transition_id="validate_address" title="validate_address" new_state="internal_preliminary_advice" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">validate_address</action>
   <guard>
-   <guard-permission>urban: Add PortionOut</guard-permission>
+   <guard-permission>imio.urban: Add Parcel</guard-permission>
   </guard>
  </transition>
  <transition transition_id="validate_temporary_address" title="validate_temporary_address" new_state="internal_preliminary_advice" trigger="USER" before_script="" after_script="">
   <action url="" category="workflow" icon="">validate_temporary_address</action>
   <guard>
-   <guard-permission>urban: Add PortionOut</guard-permission>
+   <guard-permission>imio.urban: Add Parcel</guard-permission>
   </guard>
  </transition>
  <transition transition_id="validate_technical_report" title="validate_technical_report" new_state="college_in_progress" trigger="USER" before_script="" after_script="">
