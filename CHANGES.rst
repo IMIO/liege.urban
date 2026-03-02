@@ -8,6 +8,23 @@ Changelog
 
 .. towncrier release notes start
 
+2.0.4 (2026-03-02)
+------------------
+
+Bug fixes:
+
+
+- Adapt permissions to add `Parcel` content type
+  [mpeeters] (SUP-51228)
+
+
+Internal:
+
+
+- Fix folder manager title for tests
+  [mpeeters] (SUP-51197)
+
+
 2.0.3 (2026-02-26)
 ------------------
 
