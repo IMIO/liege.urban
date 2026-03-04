@@ -19,7 +19,7 @@ long_description = (
 
 setup(
     name='liege.urban',
-    version='2.0.5',
+    version='2.0.6.dev0',
     description="Liège urban profile",
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
