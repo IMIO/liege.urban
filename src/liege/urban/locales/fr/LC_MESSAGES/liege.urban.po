@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-12-14 09:17+0000\n"
+"POT-Creation-Date: 2026-03-04 13:40+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,13 +14,21 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ../interfaces.py:41
+#: ../interfaces.py:40
 msgid "AcknowledgmentEvent workflow type marker interface"
 msgstr ""
 
+#: ../behaviors/address.py:34
+msgid "Address Point"
+msgstr "Point d'adresse"
+
+#: ../behaviors/bank.py:13
+msgid "Bank"
+msgstr "Rive"
+
 #: ../browser/activity_report.py:34
 msgid "Date end"
-msgstr ""
+msgstr "Date de fin"
 
 #: ../browser/activity_report.py:39
 msgid "Date index"
@@ -28,40 +36,51 @@ msgstr ""
 
 #: ../browser/activity_report.py:29
 msgid "Date start"
+msgstr "Date de début"
+
+#: ../behaviors/configure.zcml:19
+msgid "Display address options"
 msgstr ""
 
-#: ../interfaces.py:37
+#: ../behaviors/configure.zcml:13
+msgid "Display bank option"
+msgstr ""
+
+#: ../interfaces.py:36
 msgid "Environment validation type marker interface"
 msgstr "Validation environnement"
 
-#: ../interfaces.py:33
+#: ../interfaces.py:32
 msgid "IInspectionBuidlingDivisionAttestationCollege type marker interface"
 msgstr "Courrier attestation conformité"
 
-#: ../interfaces.py:29
+#: ../interfaces.py:28
 msgid "IInspectionBuidlingDivisionAttestationMail type marker interface"
 msgstr "Collège attestation conformité"
 
-#: ../interfaces.py:25
+#: ../interfaces.py:24
 msgid "IInternalOpinionRequestEvent type marker interface"
 msgstr "Demande d'avis interne"
 
-#: ../configure.zcml:45
+#: ../configure.zcml:47
 msgid "Installs liege.urban add-on."
 msgstr ""
 
 #: ../browser/activity_report.py:46
 msgid "Licence types"
-msgstr ""
+msgstr "Types de procédures"
 
+#: ../behaviors/address.py:14
 #: ../browser/address_search.py:42
 msgid "Street code"
 msgstr "Code rue"
 
+#: ../behaviors/address.py:19
 #: ../browser/address_search.py:37
 msgid "Street name"
 msgstr "Nom de la rue"
 
+#: ../behaviors/address.py:24
 #: ../browser/address_search.py:47
 msgid "Street number"
 msgstr "Numéro"
@@ -69,13 +88,17 @@ msgstr "Numéro"
 msgid "The above listed tasks are not done yet !!!"
 msgstr "Attention, il reste des actions à prendre pour les tâches ci-dessus!!!"
 
-#: ../configure.zcml:45
+#: ../behaviors/address.py:29
+msgid "Zip Code"
+msgstr "Code postal"
+
+#: ../configure.zcml:47
 #: ../schedule/vocabulary.py:114
 msgid "liege.urban"
 msgstr ""
 
 #: ../content/codt_integratedlicence.py:57
-#: ../content/codt_uniquelicence.py:54
+#: ../content/codt_uniquelicence.py:55
 #: ../content/env_base.py:85
 msgid "urban_label_CommentsOnDecisionProject"
 msgstr "Commentaire sur le projet de décision"
@@ -88,11 +111,11 @@ msgstr "Nature de l'exploitation"
 msgid "urban_label_LiegeEnvironmentConditions"
 msgstr "conditions Ville de Liège"
 
-#: ../content/genericlicence.py:102
+#: ../content/genericlicence.py:103
 msgid "urban_label_RCB"
 msgstr "Réglement communal sur les Bâtisses"
 
-#: ../content/genericlicence.py:61
+#: ../content/genericlicence.py:62
 msgid "urban_label_UsageTownship"
 msgstr "Nature des travaux (codes Ville)"
 
@@ -101,27 +124,27 @@ msgid "urban_label_closeDate"
 msgstr "Date de séance de clôture"
 
 #: ../content/codt_integratedlicence.py:58
-#: ../content/codt_uniquelicence.py:55
+#: ../content/codt_uniquelicence.py:56
 #: ../content/env_base.py:84
 msgid "urban_label_decisionNotificationTo"
 msgstr "Notification de la décision à"
 
-#: ../content/genericlicence.py:98
+#: ../content/genericlicence.py:99
 msgid "urban_label_description"
 msgstr "Observations"
 
 #. Default: "Device"
-#: ../content/urbanevent.py:45
+#: ../content/urbanevent.py:47
 msgid "urban_label_device"
 msgstr "Dispositif"
 
 #. Default: "DeviceContinuation"
-#: ../content/urbanevent.py:57
+#: ../content/urbanevent.py:60
 msgid "urban_label_deviceContinuation"
 msgstr "Suite du dispositif"
 
 #. Default: "DeviceEnd"
-#: ../content/urbanevent.py:69
+#: ../content/urbanevent.py:73
 msgid "urban_label_deviceEnd"
 msgstr "Fin du dispositif"
 
@@ -134,7 +157,7 @@ msgid "urban_label_exploitationAddress"
 msgstr "Adresse de l'exploitation"
 
 #: ../content/codt_integratedlicence.py:56
-#: ../content/codt_uniquelicence.py:53
+#: ../content/codt_uniquelicence.py:54
 msgid "urban_label_folderCategory"
 msgstr "Type de dossier"
 
@@ -143,20 +166,20 @@ msgstr "Type de dossier"
 msgid "urban_label_formal_notice_old_reference"
 msgstr "Ancien n° d'AD"
 
-#: ../content/genericlicence.py:63
+#: ../content/genericlicence.py:64
 msgid "urban_label_futurePathCoating"
 msgstr "Revêtement de trottoir futur"
 
 #. Default: "Motivation"
-#: ../content/urbanevent.py:33
+#: ../content/urbanevent.py:34
 msgid "urban_label_motivation"
 msgstr "Motivation"
 
-#: ../content/genericlicence.py:62
+#: ../content/genericlicence.py:63
 msgid "urban_label_pathCoating"
 msgstr "Revêtement de trottoir existant"
 
-#: ../content/genericlicence.py:99
+#: ../content/genericlicence.py:100
 msgid "urban_label_pipeSevesoDetails"
 msgstr "Détails sur les canalisations et sites Seveso"
 
@@ -169,12 +192,12 @@ msgstr "Objet"
 msgid "urban_label_procedureType"
 msgstr "Type de dossier"
 
-#: ../content/genericlicence.py:104
+#: ../content/genericlicence.py:105
 msgid "urban_label_rcbDetails"
 msgstr "Détails concernant le RCB"
 
 #: ../content/codt_integratedlicence.py:55
-#: ../content/codt_uniquelicence.py:52
+#: ../content/codt_uniquelicence.py:53
 msgid "urban_label_referenceFD"
 msgstr "Référence FD"
 
@@ -192,7 +215,7 @@ msgid "urban_label_solicitInternalOpinionsTo"
 msgstr "Avis interne(s) sollicité(s)"
 
 #: ../content/codt_integratedlicence.py:54
-#: ../content/codt_uniquelicence.py:51
+#: ../content/codt_uniquelicence.py:52
 msgid "urban_label_urbanReference"
 msgstr "Référence urbanisme"
 
