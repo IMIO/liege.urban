@@ -8,6 +8,18 @@ Changelog
 
 .. towncrier release notes start
 
+2.0.5 (2026-03-04)
+------------------
+
+Bug fixes:
+
+
+- Add missing french translations
+  [mpeeters] (SUP-51304)
+- Add an upgrade step to reindex security for objects with some workflows
+  [mpeeters] (SUP-51308)
+
+
 2.0.4 (2026-03-02)
 ------------------
 

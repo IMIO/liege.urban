@@ -1,2 +1,0 @@
-Add an upgrade step to reindex security for objects with some workflows
-[mpeeters]
