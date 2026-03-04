@@ -73,4 +73,11 @@
         handler=".upgrade_2000.fix_address_point"
         profile="liege.urban:default" />
 
+    <gs:upgradeStep
+        title="Fix workflow security and permissions"
+        source="2000"
+        destination="2001"
+        handler=".upgrade_2000.fix_workflow_security"
+        profile="liege.urban:default" />
+
 </configure>

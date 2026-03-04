@@ -34,3 +34,126 @@ def fix_address_point(context):
                 parcel.address_point = int(parcel.address_point)
                 parcel._p_changed = 1
     logger.info("migration step done!")
+
+
+def fix_workflow_security(context):
+    from liege.urban.migration.utils import refresh_workflow_permissions
+
+    logger = logging.getLogger('urban: Fix workflow security')
+    logger.info("starting migration steps")
+    setup_tool = api.portal.get_tool('portal_setup')
+    setup_tool.runImportStepFromProfile('profile-liege.urban:default', 'workflow')
+
+    urban_folder = api.portal.get()["urban"]
+    workflows = {
+        "article127_workflow": {
+            "folder_path": ["codt_article127s"],
+            "states": [
+                "abandoned",
+                "accepted",
+                "complete",
+                "decision_in_progress",
+                "deposit",
+                "procedure_choosen",
+                "procedure_validated",
+                "refused",
+                "report_written",
+                "frozen_suspension",
+                "validating_address",
+                "waiting_address",
+                "obsolete",
+            ]
+        },
+        "envclassone_workflow": {
+            "folder_path": ["envclassones", "envclasstwos"],
+            "states": [
+                "deposit",
+                "validating_address",
+                "waiting_address",
+                "checking_completion",
+                "complete",
+                "incomplete",
+                "technical_report_validation",
+                "college_in_progress",
+                "FT_opinion",
+                "technical_synthesis_validation",
+                "final_decision_in_progress",
+                "inacceptable",
+                "authorized",
+                "refused",
+                "abandoned",
+            ],
+        },
+        "envclassthree_workflow": {
+            "folder_path": ["envclassthrees"],
+            "states": [
+                "deposit",
+                "procedure_analysis",
+                "inacceptable_validation",
+                "acceptable_validation",
+                "acceptable_with_conditions_validation",
+                "inacceptable",
+                "acceptable",
+                "acceptable_with_conditions",
+                "abandoned",
+            ],
+        },
+        "roaddecree_workflow": {
+            "folder_path": ["roaddecrees"],
+            "states": [
+                "folder_creation",
+                "public_investigation",
+                "technical_analysis_post_investigation",
+                "technical_analysis_validation",
+                "college_council_passage",
+                "display_in_progress",
+                "refused",
+                "abandoned",
+                "authorized",
+            ],
+        },
+        "ticket_workflow": {
+            "folder_path": ["tickets"],
+            "states": [
+                "creation",
+                "prosecution_analysis",
+                "technical_analysis",
+                "technical_validation",
+                "waiting_for_agreement",
+                "waiting_to_finalize",
+                "in_court",
+                "ended",
+                "frozen_suspension",
+            ],
+        },
+        "urban_licence_workflow": {
+            "folder_path": [
+                "codt_urbancertificateones",
+                "codt_integratedlicences",
+                "envclassborderings",
+                "explosivespossessions",
+            ],
+            "states": [
+                "accepted",
+                "in_progress",
+                "incomplete",
+                "refused",
+                "inacceptable",
+                "retired",
+            ],
+        },
+    }
+
+    for workflow in workflows.keys():
+        for folder_name in workflows[workflow]["folder_path"]:
+            logger.info(
+                "Refresh workflow permissions for {0} in folder {1}".format(
+                    workflow, folder_name,
+                )
+            )
+            refresh_workflow_permissions(
+                workflow,
+                folder_path="/".join(urban_folder[folder_name].getPhysicalPath()),
+                for_states=workflows[workflow]["states"]
+            )
+    logger.info("migration step done!")
