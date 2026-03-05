@@ -107,6 +107,8 @@ Bug fixes:
   [mpeeters] (SUP-50466)
 - Avoid errors if there is no zip code, street or street number
   [mpeeters] (URB-3523)
+- Fix activity report export
+  [jchandelle] (SUP-49461)
 
 
 Internal:
