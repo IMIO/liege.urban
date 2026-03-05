@@ -80,4 +80,11 @@
         handler=".upgrade_2000.fix_workflow_security"
         profile="liege.urban:default" />
 
+    <gs:upgradeStep
+        title="Fix workflow security and permissions (more workflows)"
+        source="2001"
+        destination="2002"
+        handler=".upgrade_2000.fix_workflow_security_second"
+        profile="liege.urban:default" />
+
 </configure>

@@ -4,6 +4,7 @@ from datetime import datetime
 from plone import api
 
 import logging
+import transaction
 
 
 logger = logging.getLogger('urban: migrations')
@@ -156,4 +157,107 @@ def fix_workflow_security(context):
                 folder_path="/".join(urban_folder[folder_name].getPhysicalPath()),
                 for_states=workflows[workflow]["states"]
             )
+    logger.info("migration step done!")
+
+
+def fix_workflow_security_second(context):
+    from liege.urban.migration.utils import refresh_workflow_permissions
+
+    logger = logging.getLogger('urban: Fix workflow security')
+    logger.info("starting migration steps")
+    setup_tool = api.portal.get_tool('portal_setup')
+    setup_tool.runImportStepFromProfile('profile-liege.urban:default', 'workflow')
+
+    workflows = {
+        "inspection_workflow": {
+            "folder_path": [
+                "inspections",
+            ],
+            "states": [
+                "administrative_answer",
+                "analysis",
+                "creation",
+                "ended",
+                "first_administrative_answer",
+                "frozen_suspension",
+                "inspection_follow_up",
+            ],
+        },
+        "buildlicence_workflow": {
+            "folder_path": [
+                "buildlicences",
+            ],
+            "states": [
+                "FD_opinion",
+                "abandoned",
+                "accepted",
+                "authorized",
+                "checking_completion",
+                "complete",
+                "decision_in_progress",
+                "deposit",
+                "filed_away",
+                "frozen_suspension",
+                "incomplete",
+                "procedure_choosen",
+                "procedure_validated",
+                "refused",
+                "report_written",
+                "suspension",
+                "validating_address",
+                "waiting_address",
+            ],
+        },
+        "article127_workflow": {
+            "folder_path": [
+                "article127s",
+            ],
+            "states": [
+                "abandoned",
+                "accepted",
+                "complete",
+                "decision_in_progress",
+                "deposit",
+                "procedure_choosen",
+                "procedure_validated",
+                "refused",
+                "report_written",
+                "frozen_suspension",
+                "validating_address",
+                "waiting_address",
+                "obsolete",
+            ],
+        },
+        "urban_licence_workflow": {
+            "folder_path": [
+                "declarations",
+                "uniquelicences",
+                "integratedlicences",
+            ],
+            "states": [
+                "accepted",
+                "in_progress",
+                "inacceptable",
+                "incomplete",
+                "refused",
+                "retired",
+            ],
+        },
+    }
+
+    urban_folder = api.portal.get()["urban"]
+    for workflow in workflows.keys():
+        for folder_name in workflows[workflow]["folder_path"]:
+            logger.info(
+                "Refresh workflow permissions for {0} in folder {1}".format(
+                    workflow, folder_name,
+                )
+            )
+            refresh_workflow_permissions(
+                workflow,
+                folder_path="/".join(urban_folder[folder_name].getPhysicalPath()),
+                for_states=workflows[workflow]["states"]
+            )
+            transaction.commit()
+
     logger.info("migration step done!")
