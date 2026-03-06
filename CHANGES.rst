@@ -8,6 +8,21 @@ Changelog
 
 .. towncrier release notes start
 
+2.0.7 (2026-03-06)
+------------------
+
+Bug fixes:
+
+
+- Adapt upgrade step to include more workflows and reduce memory usage
+  [mpeeters] (SUP-51128)
+- Use `allow_duplicate` parameter for parcel creation to allow
+  multiple addresses with the same parcel
+  [mpeeters] (SUP-51199)
+- Fix encoding for env bordering title
+  [jchandelle] (SUP-51482)
+
+
 2.0.6 (2026-03-05)
 ------------------
 

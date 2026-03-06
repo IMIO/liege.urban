@@ -1,2 +1,0 @@
-Adapt upgrade step to include more workflows and reduce memory usage
-[mpeeters]
