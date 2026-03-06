@@ -233,6 +233,10 @@ def fix_workflow_security_second(context):
                 "declarations",
                 "uniquelicences",
                 "integratedlicences",
+                "codt_integratedlicences",
+                "codt_notaryletters",
+                "codt_urbancertificateones",
+                "notaryletters",
             ],
             "states": [
                 "accepted",
@@ -243,13 +247,42 @@ def fix_workflow_security_second(context):
                 "retired",
             ],
         },
+        "codt_buildlicence_workflow": {
+            "folder_path": [
+                "codt_buildlicences",
+                "codt_urbancertificatetwos",
+                "codt_commerciallicences",
+            ],
+            "states": [
+                "FD_opinion",
+                "abandoned",
+                "accepted",
+                "authorized",
+                "checking_completion",
+                "complete",
+                "decision_in_progress",
+                "deposit",
+                "filed_away",
+                "frozen_suspension",
+                "incomplete",
+                "obsolete_accept",
+                "obsolete_authorized",
+                "procedure_choosen",
+                "procedure_validated",
+                "refused",
+                "report_written",
+                "suspension",
+                "validating_address",
+                "waiting_address",
+            ],
+        }
     }
 
     urban_folder = api.portal.get()["urban"]
     for workflow in workflows.keys():
         for folder_name in workflows[workflow]["folder_path"]:
             logger.info(
-                "Refresh workflow permissions for {0} in folder {1}".format(
+                "Refresh workflow permissions for '{0}' in folder '{1}'".format(
                     workflow, folder_name,
                 )
             )
@@ -258,6 +291,5 @@ def fix_workflow_security_second(context):
                 folder_path="/".join(urban_folder[folder_name].getPhysicalPath()),
                 for_states=workflows[workflow]["states"]
             )
-            transaction.commit()
 
     logger.info("migration step done!")

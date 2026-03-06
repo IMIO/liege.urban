@@ -2,12 +2,26 @@
 
 from plone import api
 
+import transaction
 
-def refresh_workflow_permissions(workflow_id, folder_path=None, for_states=None):
+
+def brain_iterator(catalog, query):
+    for brain in catalog.unrestrictedSearchResults(query):
+        yield brain
+
+
+def refresh_workflow_permissions(
+    workflow_id,
+    folder_path=None,
+    for_states=None,
+    logger=None,
+    transaction_count=1000,
+):
     if not folder_path:
         folder_path = '/'.join(api.portal.get().getPhysicalPath())
     portal_workflow = api.portal.get_tool('portal_workflow')
     portal_catalog = api.portal.get_tool('portal_catalog')
+    index = 0
 
     for at_type, wf_ids in portal_workflow._chains_by_type.items():
         if len(wf_ids) < 1:
@@ -20,9 +34,14 @@ def refresh_workflow_permissions(workflow_id, folder_path=None, for_states=None)
             }
             if for_states is not None:
                 query["review_state"] = for_states
-            results = portal_catalog.unrestrictedSearchResults(query)
-            for brain in results:
+            for brain in brain_iterator(portal_catalog, query):
+                index += 1
                 obj = brain.getObject()
                 workflow.updateRoleMappingsFor(obj)
                 obj.reindexObjectSecurity()
                 obj.reindexObject(idxs=['allowedRolesAndUsers'])
+                if index % transaction_count == 0:
+                    transaction.commit()
+                    if logger is not None:
+                        logger.info("Commit {0}".format(index))
+    transaction.commit()
