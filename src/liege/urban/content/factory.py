@@ -57,6 +57,7 @@ class AdressFactory(BrowserView):
         with api.env.adopt_roles(['Manager']):
             portal_urban.create_parcel(
                 container=licence,
+                allow_duplicate=True,
                 **reference_dict
             )
 

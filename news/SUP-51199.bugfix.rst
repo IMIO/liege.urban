@@ -1,0 +1,3 @@
+Use `allow_duplicate` parameter for parcel creation to allow
+multiple addresses with the same parcel
+[mpeeters]
