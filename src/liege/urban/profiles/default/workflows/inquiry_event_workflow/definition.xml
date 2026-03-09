@@ -11,6 +11,7 @@
  <permission>WebDAV Unlock items</permission>
  <permission>liege.urban: Validate</permission>
  <permission>urban: Add Claimant</permission>
+ <permission>Manage properties</permission>
  <state state_id="closed" title="closed">
   <exit-transition transition_id="reopen"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
@@ -66,6 +67,12 @@
   </permission-map>
   <permission-map name="urban: Add Claimant" acquired="False">
    <permission-role>ClaimantEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Manage properties" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Owner</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
@@ -125,6 +132,12 @@
   </permission-map>
   <permission-map name="urban: Add Claimant" acquired="False">
    <permission-role>ClaimantEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Manage properties" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Owner</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
@@ -191,6 +204,12 @@
    <permission-role>ClaimantEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="Manage properties" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
  <state state_id="sending_documents" title="sending_documents">
   <exit-transition transition_id="documents_sent"/>
@@ -248,6 +267,12 @@
   </permission-map>
   <permission-map name="urban: Add Claimant" acquired="False">
    <permission-role>ClaimantEditor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Manage properties" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Owner</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
@@ -310,6 +335,12 @@
    <permission-role>ClaimantEditor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="Manage properties" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
  <state state_id="validating_documents" title="validating_documents">
   <exit-transition transition_id="validate"/>
@@ -342,6 +373,12 @@
   </permission-map>
   <permission-map name="liege.urban: Validate" acquired="False">
    <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Manage properties" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Owner</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>

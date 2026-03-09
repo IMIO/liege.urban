@@ -9,6 +9,7 @@
  <permission>WebDAV Lock items</permission>
  <permission>WebDAV Unlock items</permission>
  <permission>liege.urban: Validate</permission>
+ <permission>Manage properties</permission>
  <state state_id="closed" title="closed">
   <exit-transition transition_id="reopen"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
@@ -55,6 +56,12 @@
   </permission-map>
   <permission-map name="liege.urban: Validate" acquired="False">
    <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Manage properties" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Owner</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
@@ -110,6 +117,12 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="Manage properties" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
  <state state_id="to_send" title="to_send">
   <exit-transition transition_id="close"/>
@@ -157,6 +170,12 @@
   </permission-map>
   <permission-map name="liege.urban: Validate" acquired="False">
    <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Manage properties" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Owner</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
@@ -207,6 +226,12 @@
   </permission-map>
   <permission-map name="liege.urban: Validate" acquired="False">
    <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Manage properties" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Owner</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>

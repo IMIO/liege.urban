@@ -9,6 +9,7 @@
  <permission>WebDAV Lock items</permission>
  <permission>WebDAV Unlock items</permission>
  <permission>liege.urban: Validate</permission>
+ <permission>Manage properties</permission>
  <state state_id="in_progress" title="in_progress">
   <exit-transition transition_id="propose"/>
   <permission-map name="ATContentTypes: Add File" acquired="False">
@@ -61,6 +62,12 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="Manage properties" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
  <state state_id="technical_validation" title="technical_validation">
   <exit-transition transition_id="technical_refuse"/>
@@ -109,6 +116,12 @@
   </permission-map>
   <permission-map name="liege.urban: Validate" acquired="False">
    <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Manage properties" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Owner</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>
@@ -161,6 +174,12 @@
    <permission-role>Contributor</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
+  <permission-map name="Manage properties" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
  </state>
  <state state_id="preliminary_advice_sent" title="preliminary_advice_sent">
   <exit-transition transition_id="reopen"/>
@@ -208,6 +227,12 @@
   </permission-map>
   <permission-map name="liege.urban: Validate" acquired="False">
    <permission-role>Contributor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Manage properties" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Owner</permission-role>
    <permission-role>Manager</permission-role>
   </permission-map>
  </state>

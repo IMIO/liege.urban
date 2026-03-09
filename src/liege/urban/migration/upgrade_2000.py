@@ -292,3 +292,11 @@ def fix_workflow_security_second(context):
             )
 
     logger.info("migration step done!")
+
+
+def update_event_workflow(context):
+    logger = logging.getLogger('urban: Update event workflow')
+    logger.info("starting migration steps")
+    setup_tool = api.portal.get_tool('portal_setup')
+    setup_tool.runImportStepFromProfile('profile-liege.urban:default', 'workflow')
+    logger.info("migration step done!")

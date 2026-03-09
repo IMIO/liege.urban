@@ -87,4 +87,11 @@
         handler=".upgrade_2000.fix_workflow_security_second"
         profile="liege.urban:default" />
 
+    <gs:upgradeStep
+        title="Update event workflow"
+        source="2002"
+        destination="2003"
+        handler=".upgrade_2000.update_event_workflow"
+        profile="liege.urban:default" />
+
 </configure>
