@@ -8,6 +8,23 @@ Changelog
 
 .. towncrier release notes start
 
+2.0.8 (2026-03-09)
+------------------
+
+Bug fixes:
+
+
+- Add missing `Manage properties` permission to reorder uploaded files
+  [mpeeters] (SUP-51291)
+
+
+Internal:
+
+
+- Add a test for road editors permissions on licence
+  [mpeeters] (SUP-51128)
+
+
 2.0.7 (2026-03-06)
 ------------------
 
