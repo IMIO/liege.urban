@@ -34,6 +34,9 @@ def refresh_workflow_permissions(
             }
             if for_states is not None:
                 query["review_state"] = for_states
+            if logger is not None:
+                length = len(portal_catalog.unrestrictedSearchResults(query))
+                logger.info("{0} objects to reindex".format(length))
             for brain in brain_iterator(portal_catalog, query):
                 index += 1
                 obj = brain.getObject()
@@ -43,5 +46,7 @@ def refresh_workflow_permissions(
                 if index % transaction_count == 0:
                     transaction.commit()
                     if logger is not None:
-                        logger.info("Commit {0}".format(index))
-    transaction.commit()
+                        logger.info("Commit {0} / {1}".format(index, length))
+            transaction.commit()
+            if logger is not None:
+                logger.info("Commit {0} / {1}".format(index, length))

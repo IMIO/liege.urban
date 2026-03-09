@@ -234,9 +234,7 @@ def fix_workflow_security_second(context):
                 "uniquelicences",
                 "integratedlicences",
                 "codt_integratedlicences",
-                "codt_notaryletters",
                 "codt_urbancertificateones",
-                "notaryletters",
             ],
             "states": [
                 "accepted",
@@ -289,7 +287,8 @@ def fix_workflow_security_second(context):
             refresh_workflow_permissions(
                 workflow,
                 folder_path="/".join(urban_folder[folder_name].getPhysicalPath()),
-                for_states=workflows[workflow]["states"]
+                for_states=workflows[workflow]["states"],
+                logger=logger,
             )
 
     logger.info("migration step done!")
