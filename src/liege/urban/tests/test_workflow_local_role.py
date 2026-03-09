@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
-from Products.urban.testing import URBAN_TESTS_LICENCES
+from Products.urban.testing import URBAN_TESTS_CONFIG_FUNCTIONAL
 from Products.urban.browser.urbanconfigview import AddInternalServiceForm
 from plone import api
 
@@ -13,7 +13,7 @@ logger = logging.getLogger("urban.liege: test workflow local role")
 
 class TestOpinionsrequestWorkflow(unittest.TestCase):
 
-    layer = URBAN_TESTS_LICENCES
+    layer = URBAN_TESTS_CONFIG_FUNCTIONAL
 
     matrice = {
         "demande-davis-plantation": {
@@ -28,6 +28,8 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
                 "Access_validators": None,
                 "urban_readers": ["Reader"],
                 "technical_editors": ["Reader"],
+                "Voirie_editors": None,
+                "Voirie_validators": None,
             },
             "waiting_opinion": {
                 "administrative_editors": ["Reader"],
@@ -40,6 +42,8 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
                 "Access_editors": None,
                 "Access_validators": None,
                 "urban_readers": ["Reader"],
+                "Voirie_editors": None,
+                "Voirie_validators": None,
             },
             "opinion_validation": {
                 "Plantation_editors": ["Reader"],
@@ -49,6 +53,8 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
                 "survey_editors": ["Reader"],
                 "urban_readers": ["Reader"],
                 "technical_editors": ["Reader"],
+                "Voirie_editors": None,
+                "Voirie_validators": None,
             },
             "opinion_given": {
                 "Plantation_validators": ["Reader"],
@@ -59,6 +65,8 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
                 "survey_editors": ["Reader"],
                 "urban_readers": ["Reader"],
                 "technical_editors": ["Reader"],
+                "Voirie_editors": None,
+                "Voirie_validators": None,
             }
         },
         "demande-davis-access": {
@@ -73,6 +81,8 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
                 "Access_validators": None,
                 "urban_readers": ["Reader"],
                 "technical_editors": ["Reader"],
+                "Voirie_editors": None,
+                "Voirie_validators": None,
             },
             "waiting_opinion": {
                 "administrative_editors": ["Reader"],
@@ -85,6 +95,8 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
                 "Access_editors": ["Reader", "Editor", "Contributor"],
                 "Access_validators": ["Reader", "Editor", "Contributor"],
                 "urban_readers": ["Reader"],
+                "Voirie_editors": None,
+                "Voirie_validators": None,
             },
             "opinion_validation": {
                 "Plantation_validators": None,
@@ -94,6 +106,8 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
                 "survey_editors": ["Reader"],
                 "urban_readers": ["Reader"],
                 "technical_editors": ["Reader"],
+                "Voirie_editors": None,
+                "Voirie_validators": None,
             },
             "opinion_given": {
                 "Plantation_validators": None,
@@ -104,6 +118,62 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
                 "survey_editors": ["Reader"],
                 "urban_readers": ["Reader"],
                 "technical_editors": ["Reader"],
+                "Voirie_editors": None,
+                "Voirie_validators": None,
+            }
+        },
+        "demande-davis-voirie": {
+            "creation": {
+                "administrative_editors": ["Reader", "Editor"],
+                "administrative_validators": ["Reader", "Editor"],
+                "opinions_editors": None,
+                "survey_editors": ["Reader"],
+                "Plantation_editors": None,
+                "Plantation_validators": None,
+                "Access_editors": None,
+                "Access_validators": None,
+                "urban_readers": ["Reader"],
+                "technical_editors": ["Reader"],
+                "Voirie_editors": None,
+                "Voirie_validators": None,
+            },
+            "waiting_opinion": {
+                "administrative_editors": ["Reader"],
+                "administrative_validators": ["Reader"],
+                "technical_editors": ["Reader"],
+                "technical_editors_environement": None,
+                "survey_editors": ["Reader"],
+                "Plantation_editors": None,
+                "Plantation_validators": None,
+                "Access_editors": None,
+                "Access_validators": None,
+                "urban_readers": ["Reader"],
+                "Voirie_editors": ["Reader", "Editor", "Contributor"],
+                "Voirie_validators": ["Reader", "Editor", "Contributor"],
+
+            },
+            "opinion_validation": {
+                "Plantation_validators": None,
+                "Plantation_editors": None,
+                "Access_editors": None,
+                "Access_validators": None,
+                "survey_editors": ["Reader"],
+                "urban_readers": ["Reader"],
+                "technical_editors": ["Reader"],
+                "Voirie_editors": ["Reader"],
+                "Voirie_validators": ["Reader", "Editor", "Reviewer"],
+            },
+            "opinion_given": {
+                "Plantation_validators": None,
+                "Plantation_editors": None,
+                "Access_editors": None,
+                "Access_validators": None,
+                "administrative_editors": ["Reader"],
+                "survey_editors": ["Reader"],
+                "urban_readers": ["Reader"],
+                "technical_editors": ["Reader"],
+                "Voirie_editors": ["Reader"],
+                "Voirie_validators": ["Reader"],
             }
         }
     }
@@ -243,6 +313,19 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
                 TALCondition="python: event.mayAddOpinionRequestEvent(here)",
             )
             api.content.create(
+                type="OpinionEventConfig",
+                title="Demande d'avis (Voirie)",
+                abbreviation="Voirie",
+                id="demande-avis-voirie",
+                container=codt_buildlicence_event,
+                is_internal_service=True,
+                internal_service="voirie",
+                eventPortalType="UrbanEventOpinionRequest",
+                eventType=["liege.urban.interfaces.IInternalOpinionRequestEvent"],
+                activatedFields=["externalDecision"],
+                TALCondition="python: event.mayAddOpinionRequestEvent(here)",
+            )
+            api.content.create(
                 type="EventConfig",
                 title=u"*** Demande d'avis CONFIG ***",
                 id="config-opinion-request",
@@ -269,6 +352,7 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
                 (
                     "demande-avis-plantation",
                     "demande-avis-access",
+                    "demande-avis-voirie",
                 )
             )
             self.licence.createAllAdvices()
@@ -291,10 +375,9 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
             sorted(expected_roles),
         )
 
-    def execute_matrice_test(self, event, workflow_exception=None):
-        print("Event: {}".format(event))
-        config = self.matrice.get(event, None)
-        obj = self.licence[event]
+    def execute_matrice_test(self, event_name, workflow_exception=None):
+        config = self.matrice.get(event_name, None)
+        event_obj = self.licence[event_name]
         if config is None:
             return
         for state in self.workflow:
@@ -305,25 +388,23 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
             new_group_mapping = self.common_matrice.copy()
             new_group_mapping.update(group_mapping)
 
-            print("State: {}".format(state))
             user_workflow = "admin"
             if workflow_exception and state in workflow_exception:
                 user_workflow = workflow_exception[state]
 
             with api.env.adopt_user(username=user_workflow):
                 api.content.transition(
-                    obj=obj,
+                    obj=event_obj,
                     to_state=state
                 )
 
             for group, roles in new_group_mapping.items():
-                print("Group: {}".format(group))
                 username = self.mapping_user_group.get(group, None)
                 if username is None:
                     continue
                 self.assertRoles(
                     username=username,
-                    context=obj,
+                    context=event_obj,
                     expected_roles=roles
                 )
 
@@ -334,9 +415,11 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
     def test_access(self):
         with api.env.adopt_roles(["Manager"]):
             avis_plantation = self.licence["demande-davis-plantation"]
-            avis_access = self.licence["demande-davis-access"]
             self.assertRoles("admin", avis_plantation, ["Manager"])
+            avis_access = self.licence["demande-davis-access"]
             self.assertRoles("admin", avis_access, ["Manager"])
+            avis_voirie = self.licence["demande-davis-voirie"]
+            self.assertRoles("admin", avis_voirie, ["Manager"])
             self.execute_matrice_test(
                 "demande-davis-access",
                 workflow_exception={"opinion_validation": "Access_edit_user"}
@@ -345,10 +428,58 @@ class TestOpinionsrequestWorkflow(unittest.TestCase):
     def test_plantation(self):
         with api.env.adopt_roles(["Manager"]):
             avis_plantation = self.licence["demande-davis-plantation"]
-            avis_access = self.licence["demande-davis-access"]
             self.assertRoles("admin", avis_plantation, ["Manager"])
+            avis_access = self.licence["demande-davis-access"]
             self.assertRoles("admin", avis_access, ["Manager"])
+            avis_voirie = self.licence["demande-davis-voirie"]
+            self.assertRoles("admin", avis_voirie, ["Manager"])
             self.execute_matrice_test(
                 "demande-davis-plantation",
                 workflow_exception={"opinion_validation": "Plantation_edit_user"}
+            )
+
+    def test_voirie(self):
+        with api.env.adopt_roles(["Manager"]):
+            avis_plantation = self.licence["demande-davis-plantation"]
+            self.assertRoles("admin", avis_plantation, ["Manager"])
+            avis_access = self.licence["demande-davis-access"]
+            self.assertRoles("admin", avis_access, ["Manager"])
+            avis_voirie = self.licence["demande-davis-voirie"]
+            self.assertRoles("admin", avis_voirie, ["Manager"])
+            self.execute_matrice_test(
+                "demande-davis-voirie",
+                workflow_exception={"opinion_validation": "Voirie_edit_user"}
+            )
+
+    def test_voirie_licence_access(self):
+        with api.env.adopt_roles(["Manager"]):
+            event = self.licence["demande-davis-voirie"]
+            api.content.transition(
+                obj=event,
+                to_state="waiting_opinion",
+            )
+            self.assertRoles("Voirie_edit_user", self.licence, ())
+            self.assertRoles("Voirie_valid_user", self.licence, ())
+            api.content.transition(self.licence, to_state="validating_address")
+            self.assertRoles("Voirie_edit_user", self.licence, ())
+            self.assertRoles("Voirie_valid_user", self.licence, ())
+            api.content.transition(self.licence, to_state="checking_completion")
+            self.assertRoles("Voirie_edit_user", self.licence, ("RoadReader",))
+            self.assertRoles("Voirie_valid_user", self.licence, ("RoadReader",))
+            api.content.transition(self.licence, to_state="complete")
+            self.assertRoles("Voirie_edit_user", self.licence, ("RoadReader",))
+            self.assertRoles("Voirie_valid_user", self.licence, ("RoadReader",))
+            api.content.transition(self.licence, to_state="procedure_choosen")
+            self.assertRoles("Voirie_edit_user", self.licence, ("RoadReader",))
+            self.assertRoles("Voirie_valid_user", self.licence, ("RoadReader",))
+            api.content.transition(self.licence, to_state="procedure_validated")
+            self.assertRoles(
+                "Voirie_edit_user",
+                self.licence,
+                ("RoadReader", "RoadEditor"),
+            )
+            self.assertRoles(
+                "Voirie_valid_user",
+                self.licence,
+                ("RoadReader", "RoadEditor"),
             )
