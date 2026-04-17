@@ -68,7 +68,7 @@ class StateRolesMapping(LocalRoleAdapter):
 
     def get_technical_roles(self):
         if 'technical_editors' in self.get_opinion_editor():
-            return ('Reader', 'Contributor',)
+            return ('Reader', "Editor", "Reviewer",)
         return ('Reader',)
 
     def get_readers(self):
@@ -88,8 +88,8 @@ class StateRolesMapping(LocalRoleAdapter):
             (get_administrative_editors, (get_technical_roles,)),
             (get_administrative_validators, (get_technical_roles,)),
             ('technical_editors', ("Reader",)),
-            (get_opinion_editor, ('Reader', 'Editor', "Contributor",)),
-            (get_opinion_validator, ('Reader', 'Editor', "Contributor",)),
+            (get_opinion_editor, ('Reader', 'Editor', "Reviewer", "Contributor",)),
+            (get_opinion_validator, ('Reader', 'Editor', "Reviewer", "Contributor",)),
             ('survey_editors', ('Reader',)),
         ]),
 
@@ -104,9 +104,9 @@ class StateRolesMapping(LocalRoleAdapter):
         'opinion_given': OrderedDict([
             (get_readers, ('Reader',)),
             ('technical_editors', ("Reader",)),
-            (get_administrative_editors, ("Reader",)),
-            (get_opinion_editor, ("Reader",)),
-            (get_opinion_validator, ("Reader",)),
+            (get_administrative_editors, (get_technical_roles,)),
+            (get_opinion_editor, (get_technical_roles,)),
+            (get_opinion_validator, (get_technical_roles,)),
             ('survey_editors', ('Reader',)),
         ]),
 
