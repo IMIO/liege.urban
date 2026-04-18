@@ -8,6 +8,16 @@ Changelog
 
 .. towncrier release notes start
 
+2.0.9 (2026-04-18)
+------------------
+
+Bug fixes:
+
+
+- Fix opinion request permission
+  [jchandelle] (SUP-51111)
+
+
 2.0.8 (2026-03-09)
 ------------------
 
