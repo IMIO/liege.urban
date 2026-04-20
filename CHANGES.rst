@@ -8,6 +8,16 @@ Changelog
 
 .. towncrier release notes start
 
+2.0.10 (2026-04-20)
+-------------------
+
+Bug fixes:
+
+
+- Fix archive data for non env licence in activity report
+  [jchandelle] (SUP-46043)
+
+
 2.0.9 (2026-04-18)
 ------------------
 
