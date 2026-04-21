@@ -442,3 +442,15 @@ msgstr ""
 
 msgid "obsolete_accept"
 msgstr ""
+
+msgid "validating_documents"
+msgstr ""
+
+msgid "sending_documents"
+msgstr ""
+
+msgid "documents_sent"
+msgstr ""
+
+msgid "preparing_documents"
+msgstr ""
