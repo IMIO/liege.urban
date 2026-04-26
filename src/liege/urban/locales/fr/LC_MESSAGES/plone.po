@@ -442,3 +442,15 @@ msgstr "En rédaction"
 
 msgid "receive_FD_opinion"
 msgstr "Recevoir l'avis du FD"
+
+msgid "validating_documents"
+msgstr "Validation des documents"
+
+msgid "sending_documents"
+msgstr "Envoi de documents"
+
+msgid "documents_sent"
+msgstr "Documents envoyés"
+
+msgid "preparing_documents"
+msgstr "Préparation des documents"

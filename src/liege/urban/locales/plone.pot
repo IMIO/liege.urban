@@ -445,3 +445,15 @@ msgstr ""
 
 msgid "receive_FD_opinion"
 msgstr ""
+
+msgid "validating_documents"
+msgstr ""
+
+msgid "sending_documents"
+msgstr ""
+
+msgid "documents_sent"
+msgstr ""
+
+msgid "preparing_documents"
+msgstr ""
