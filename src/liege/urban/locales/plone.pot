@@ -443,6 +443,9 @@ msgstr ""
 msgid "obsolete_accept"
 msgstr ""
 
+msgid "receive_FD_opinion"
+msgstr ""
+
 msgid "validating_documents"
 msgstr ""
 

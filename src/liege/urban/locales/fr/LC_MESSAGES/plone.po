@@ -440,6 +440,9 @@ msgstr "En attente de finalisation"
 msgid "writing_report"
 msgstr "En rédaction"
 
+msgid "receive_FD_opinion"
+msgstr "Recevoir l'avis du FD"
+
 msgid "validating_documents"
 msgstr "Validation des documents"
 
