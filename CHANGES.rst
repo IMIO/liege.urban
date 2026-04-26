@@ -8,6 +8,18 @@ Changelog
 
 .. towncrier release notes start
 
+2.0.11 (2026-04-26)
+-------------------
+
+Bug fixes:
+
+
+- Add translation for inquiry workflow
+  [jchandelle] (SUP-51104)
+- Add translation for receive_FD_opinion workflow state
+  [jchandelle] (SUP-52700)
+
+
 2.0.10 (2026-04-20)
 -------------------
 
