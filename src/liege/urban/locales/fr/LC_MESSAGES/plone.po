@@ -439,3 +439,15 @@ msgstr "En attente de finalisation"
 
 msgid "writing_report"
 msgstr "En rédaction"
+
+msgid "validating_documents"
+msgstr "Validation des documents"
+
+msgid "sending_documents"
+msgstr "Envoi de documents"
+
+msgid "documents_sent"
+msgstr "Documents envoyés"
+
+msgid "preparing_documents"
+msgstr "Préparation des documents"
