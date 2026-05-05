@@ -27,6 +27,7 @@ import liege.urban.content.portion_out
 import liege.urban.content.preliminarynotice
 import liege.urban.content.urbanevent
 import liege.urban.content.urbanevent_opinionrequest
+import liege.urban.content.CODT_UniqueLicenceInquiry
 import liege.urban.content.roaddecree  # noqa
 from liege.urban.config import LICENCE_FINAL_STATES
 
