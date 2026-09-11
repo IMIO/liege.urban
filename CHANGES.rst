@@ -8,6 +8,16 @@ Changelog
 
 .. towncrier release notes start
 
+2.0.12 (2026-09-11)
+-------------------
+
+Bug fixes:
+
+
+- Add an upgrade step to ensure that the correct specific workflows are defined
+  [mpeeters] (URBBDC-3272)
+
+
 2.0.11 (2026-04-26)
 -------------------
 
