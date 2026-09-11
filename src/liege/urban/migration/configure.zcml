@@ -94,4 +94,11 @@
         handler=".upgrade_2000.update_event_workflow"
         profile="liege.urban:default" />
 
+    <gs:upgradeStep
+        title="Update workflows"
+        source="2003"
+        destination="2004"
+        handler=".upgrade_2000.update_workflows"
+        profile="liege.urban:default" />
+
 </configure>

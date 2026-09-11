@@ -300,3 +300,11 @@ def update_event_workflow(context):
     setup_tool = api.portal.get_tool('portal_setup')
     setup_tool.runImportStepFromProfile('profile-liege.urban:default', 'workflow')
     logger.info("migration step done!")
+
+
+def update_workflows(context):
+    logger = logging.getLogger('urban: Update workflows')
+    logger.info("starting migration steps")
+    setup_tool = api.portal.get_tool('portal_setup')
+    setup_tool.runImportStepFromProfile('profile-liege.urban:default', 'workflow')
+    logger.info("migration step done!")
