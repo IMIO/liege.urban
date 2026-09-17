@@ -14,7 +14,7 @@ def updateTitle(self):
     streets = u", ".join([safe_unicode(wl["street"]) for wl in self.getWorkLocations()])
     title = u"{} - {}".format(base_title, streets)
     self.setTitle(title)
-    self.reindexObject(idxs=("Title", "applicantInfosIndex", "sortable_title", ))
+    self.reindexObject(idxs=("Title", "applicantInfosIndex", "sortable_title", "SearchableText", ))
     return title
 
 
