@@ -8,6 +8,16 @@ Changelog
 
 .. towncrier release notes start
 
+2.0.13 (2026-09-19)
+-------------------
+
+Bug fixes:
+
+
+- Fix street_name unicode in list 220
+  [jchandelle] (SUP-49906)
+
+
 2.0.12 (2026-09-11)
 -------------------
 
