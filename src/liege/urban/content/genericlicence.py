@@ -139,7 +139,7 @@ def updateTitle(self):
         safe_unicode(applicantTitle)
     )
     self.setTitle(title)
-    self.reindexObject(idxs=('Title', 'applicantInfosIndex', 'sortable_title', ))
+    self.reindexObject(idxs=('Title', 'applicantInfosIndex', 'sortable_title', "SearchableText", ))
     return title
 
 

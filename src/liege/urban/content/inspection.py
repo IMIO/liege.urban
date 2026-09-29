@@ -51,7 +51,7 @@ def updateTitle(self):
         self.getLicenceSubject()
     )
     self.setTitle(title)
-    self.reindexObject(idxs=('Title', 'sortable_title',))
+    self.reindexObject(idxs=('Title', 'sortable_title', "SearchableText", ))
 
 
 def getLastBuidlingDivisionAttestationMail(self):
