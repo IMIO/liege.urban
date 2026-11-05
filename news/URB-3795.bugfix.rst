@@ -1,0 +1,2 @@
+Correctly set allowed types to include liege specific events
+[mpeeters]
