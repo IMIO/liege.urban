@@ -8,6 +8,16 @@ Changelog
 
 .. towncrier release notes start
 
+2.0.14 (2026-11-05)
+-------------------
+
+Bug fixes:
+
+
+- Correctly set allowed types to include liege specific events
+  [mpeeters] (URB-3795)
+
+
 2.0.13 (2026-09-19)
 -------------------
 
