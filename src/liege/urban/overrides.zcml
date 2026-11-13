@@ -142,6 +142,22 @@
          class="liege.urban.browser.address_search.AddressSearchFormView"
       />
 
+      <browser:page
+         name="urbaneventannouncementview"
+         for="Products.urban.interfaces.IUrbanEventAnnouncement"
+         class="Products.urban.browser.urbaneventviews.UrbanEventAnnouncementWithRoadAdaptationView"
+         template="templates/urbaneventannouncementview.pt"
+         permission="zope2.View"
+      />
+
+      <browser:page
+         name="urbaneventinquiryview"
+         for="Products.urban.interfaces.IUrbanEventInquiry"
+         class="Products.urban.browser.urbaneventviews.UrbanEventInquiryWithRoadAdaptationView"
+         template="templates/urbaneventinquiryview.pt"
+         permission="zope2.View"
+      />
+
   </configure>
 
 </configure>
