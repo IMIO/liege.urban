@@ -8,6 +8,16 @@ Changelog
 
 .. towncrier release notes start
 
+2.0.15 (2026-11-19)
+-------------------
+
+Bug fixes:
+
+
+- Add `SearchableText` to reindex object in content class and subscriber
+  [jchandelle] (SUP-51992)
+
+
 2.0.14 (2026-11-05)
 -------------------
 
